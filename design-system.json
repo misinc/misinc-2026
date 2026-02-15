@@ -1,0 +1,411 @@
+{
+  "name": "MIS, Inc. Design System",
+  "description": "A modern, minimalist design system for MIS, Inc. featuring Santa Fe-inspired warm earth tones, clean typography, and premium aesthetics. Built with Tailwind CSS v4.",
+  "version": "1.0.0",
+  "tailwind": {
+    "version": "4.0",
+    "theme": {
+      "colors": {
+        "primary": {
+          "DEFAULT": "#9B3139",
+          "dark": "#7A2730",
+          "light": "#B84650"
+        },
+        "secondary": {
+          "DEFAULT": "#D64F2A",
+          "dark": "#B84323",
+          "light": "#E6653D"
+        },
+        "accent": {
+          "gold": "#FFAA1D",
+          "turquoise": "#4FA5AE",
+          "adobe": "#E8B89A",
+          "sand": "#F4E8D8",
+          "clay": "#D4A574",
+          "sage": "#9CAF88"
+        },
+        "white": "#ffffff",
+        "neutral": {
+          "50": "#FDFAF7",
+          "100": "#F7F1EB",
+          "150": "#F0E6DB",
+          "200": "#E8D9C8",
+          "300": "#A89080",
+          "400": "#6B564A",
+          "500": "#4A3F37",
+          "900": "#2A2420"
+        },
+        "warm": {
+          "cream": "#FFF8F0",
+          "beige": "#F5EFE7",
+          "tan": "#E8DCC8",
+          "terracotta": "#D64F2A",
+          "brick": "#9B3139",
+          "adobe": "#E8B89A"
+        }
+      },
+      "fontFamily": {
+        "sans": ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+        "manrope": ["Manrope", "sans-serif"]
+      },
+      "fontWeight": {
+        "light": "300",
+        "normal": "400",
+        "medium": "500"
+      },
+      "fontSize": {
+        "xs": ["0.75rem", { "lineHeight": "1.4" }],
+        "sm": ["0.875rem", { "lineHeight": "1.4" }],
+        "base": ["1rem", { "lineHeight": "1.8" }],
+        "lg": ["1.125rem", { "lineHeight": "1.4" }],
+        "xl": ["1.5rem", { "lineHeight": "1.6" }],
+        "2xl": ["2rem", { "lineHeight": "1.4" }],
+        "3xl": ["3rem", { "lineHeight": "1.3" }],
+        "4xl": ["4rem", { "lineHeight": "1.2" }],
+        "5xl": ["6rem", { "lineHeight": "1.1" }]
+      },
+      "lineHeight": {
+        "none": "1",
+        "tight": "1.1",
+        "snug": "1.2",
+        "normal": "1.3",
+        "relaxed": "1.4",
+        "loose": "1.6",
+        "extra-loose": "1.8"
+      },
+      "letterSpacing": {
+        "tighter": "0.25px",
+        "normal": "0",
+        "wide": "1px"
+      },
+      "spacing": {
+        "0": "0",
+        "px": "1px",
+        "0.5": "0.125rem",
+        "1": "0.25rem",
+        "1.5": "0.375rem",
+        "2": "0.5rem",
+        "2.5": "0.625rem",
+        "3": "0.75rem",
+        "3.5": "0.875rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "7": "1.75rem",
+        "8": "2rem",
+        "9": "2.25rem",
+        "10": "2.5rem",
+        "11": "2.75rem",
+        "12": "3rem",
+        "14": "3.5rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem",
+        "28": "7rem",
+        "32": "8rem",
+        "36": "9rem",
+        "40": "10rem"
+      },
+      "borderRadius": {
+        "none": "0",
+        "sm": "0.375rem",
+        "DEFAULT": "1rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "full": "9999px"
+      },
+      "boxShadow": {
+        "paper": "0px 0px 50px 0px rgba(0, 0, 0, 0.1)",
+        "card": "0px 4px 20px 0px rgba(0, 0, 0, 0.08)",
+        "hover": "0px 8px 30px 0px rgba(0, 0, 0, 0.12)",
+        "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "DEFAULT": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "none": "none"
+      },
+      "transitionDuration": {
+        "fast": "150ms",
+        "DEFAULT": "300ms",
+        "slow": "500ms"
+      },
+      "transitionTimingFunction": {
+        "DEFAULT": "ease-in-out"
+      },
+      "screens": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1920px"
+      },
+      "maxWidth": {
+        "narrow": "600px",
+        "medium": "1000px",
+        "standard": "1200px",
+        "wide": "1400px",
+        "full": "1600px"
+      }
+    }
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "description": "Primary button with dark background",
+        "classes": "bg-primary text-white px-6 py-4 rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95"
+      },
+      "secondary": {
+        "description": "Secondary button with border",
+        "classes": "bg-transparent text-primary px-4 py-3 rounded-full border border-primary/60 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-black/5"
+      },
+      "small": {
+        "description": "Small button variant",
+        "classes": "px-4 py-3 text-sm"
+      },
+      "large": {
+        "description": "Large button variant",
+        "classes": "px-6 py-4 text-sm"
+      }
+    },
+    "badge": {
+      "default": {
+        "description": "Default badge/label component",
+        "classes": "bg-accent-gold text-primary px-3 py-1.5 rounded-full text-xs font-medium tracking-tighter"
+      },
+      "icon": {
+        "description": "Icon badge variant",
+        "classes": "bg-neutral-100 rounded-full p-2 size-9"
+      },
+      "label-uppercase": {
+        "description": "Uppercase label for section headers",
+        "classes": "text-xs font-normal tracking-wide uppercase text-primary"
+      }
+    },
+    "card": {
+      "service": {
+        "description": "Service card with hover effect",
+        "classes": "bg-white p-8 md:p-10 transition-all duration-300 hover:shadow-hover hover:-translate-y-2 cursor-pointer group"
+      },
+      "values": {
+        "description": "Values/features card",
+        "classes": "p-12 size-[376px]"
+      },
+      "post": {
+        "description": "Portfolio/blog post card",
+        "classes": "rounded-lg overflow-hidden"
+      }
+    },
+    "navbar": {
+      "container": {
+        "description": "Main navigation container with mobile responsiveness",
+        "classes": "h-[75px] py-8 border-b border-neutral-200"
+      },
+      "menuItem": {
+        "description": "Navigation menu item",
+        "classes": "h-[42px] px-0 text-sm font-medium tracking-wide text-primary transition-opacity hover:opacity-60"
+      },
+      "menuItemActive": {
+        "description": "Active navigation menu item",
+        "classes": "h-[42px] px-0 text-sm font-medium tracking-wide text-primary border-b border-primary"
+      },
+      "mobileMenu": {
+        "description": "Mobile slide-in menu panel",
+        "classes": "fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-white shadow-2xl z-50 overflow-y-auto"
+      }
+    },
+    "section": {
+      "hero": {
+        "description": "Hero section spacing",
+        "classes": "pt-16 md:pt-24 pb-20 md:pb-32"
+      },
+      "standard": {
+        "description": "Standard section spacing",
+        "classes": "py-20 md:py-32"
+      },
+      "cta": {
+        "description": "Call-to-action section",
+        "classes": "py-24 md:py-36"
+      }
+    },
+    "container": {
+      "full": {
+        "description": "Full width container with max-width",
+        "classes": "max-w-full px-16 mx-auto"
+      },
+      "wide": {
+        "description": "Wide container (1400px)",
+        "classes": "max-w-wide px-6 mx-auto"
+      },
+      "standard": {
+        "description": "Standard container (1200px)",
+        "classes": "max-w-standard px-5 md:px-8 lg:px-12 mx-auto"
+      },
+      "medium": {
+        "description": "Medium container (1000px)",
+        "classes": "max-w-medium px-6 mx-auto"
+      },
+      "narrow": {
+        "description": "Narrow container (600px)",
+        "classes": "max-w-narrow px-6 mx-auto"
+      }
+    },
+    "form": {
+      "input": {
+        "description": "Form input field",
+        "classes": "bg-white border border-neutral-200 rounded-sm px-4 py-3 text-sm focus:border-primary focus:outline-none"
+      },
+      "textarea": {
+        "description": "Form textarea field",
+        "classes": "bg-white border border-neutral-200 rounded-sm px-4 py-3 text-sm min-h-[120px] focus:border-primary focus:outline-none"
+      }
+    },
+    "divider": {
+      "default": {
+        "description": "Horizontal divider line",
+        "classes": "h-px bg-neutral-200 w-full"
+      }
+    },
+    "pageWrapper": {
+      "outer": {
+        "description": "Outer container with vibrant Santa Fe gradient background",
+        "classes": "min-h-screen bg-gradient-to-br from-[#9B3139] via-[#FFAA1D] to-[#4FA5AE] px-0 sm:px-6 md:px-8 lg:px-12"
+      },
+      "inner": {
+        "description": "White paper-like container with shadow (elevated paper-on-background design)",
+        "classes": "bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] w-full max-w-[1400px] mx-auto my-0 sm:my-8 md:my-12"
+      }
+    }
+  },
+  "typography": {
+    "textStyles": {
+      "hero": {
+        "description": "Hero headline style",
+        "classes": "text-5xl font-light leading-tight text-primary"
+      },
+      "h1": {
+        "description": "H1 heading style",
+        "classes": "text-4xl font-light leading-snug text-primary"
+      },
+      "h2": {
+        "description": "H2 heading style",
+        "classes": "text-3xl font-light leading-normal text-primary"
+      },
+      "h3": {
+        "description": "H3 heading style",
+        "classes": "text-2xl font-light leading-relaxed text-primary"
+      },
+      "h4": {
+        "description": "H4 heading style",
+        "classes": "text-xl font-light leading-loose text-primary"
+      },
+      "h5": {
+        "description": "H5 heading style",
+        "classes": "text-lg font-light leading-relaxed text-primary"
+      },
+      "body-large": {
+        "description": "Large body text",
+        "classes": "text-xl font-light leading-extra-loose text-primary"
+      },
+      "body": {
+        "description": "Standard body text",
+        "classes": "text-base font-light leading-extra-loose text-primary"
+      },
+      "body-small": {
+        "description": "Small body text",
+        "classes": "text-sm font-light leading-extra-loose text-primary"
+      },
+      "body-muted": {
+        "description": "Muted body text",
+        "classes": "text-base font-light leading-extra-loose text-neutral-300"
+      },
+      "label": {
+        "description": "Label text",
+        "classes": "text-xs font-medium leading-relaxed tracking-tighter text-primary"
+      },
+      "label-uppercase": {
+        "description": "Uppercase label for section headers",
+        "classes": "text-xs font-normal leading-relaxed tracking-wide uppercase text-primary"
+      },
+      "button": {
+        "description": "Button text style",
+        "classes": "text-sm font-medium leading-relaxed tracking-wide"
+      },
+      "nav": {
+        "description": "Navigation text style",
+        "classes": "text-sm font-medium leading-relaxed tracking-wide"
+      }
+    }
+  },
+  "utilities": {
+    "hover": {
+      "cardLift": "transition-all duration-300 hover:shadow-hover hover:-translate-y-0.5",
+      "scaleUp": "transition-all duration-300 hover:scale-105",
+      "opacity": "transition-opacity duration-300 hover:opacity-60",
+      "bgDark": "transition-colors duration-300 hover:bg-black/5"
+    },
+    "focus": {
+      "outline": "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+    }
+  },
+  "designPrinciples": {
+    "typography": "Use Manrope Light (font-light) for body text and headings to maintain a clean, modern aesthetic. Medium weight (font-medium) for labels and buttons.",
+    "spacing": "Generous white space creates a premium, breathable feel. Use pt-40 (160px) or more for major section spacing. Use p-12 (48px) for card padding.",
+    "color": "Santa Fe-inspired warm earth tones drawn from the MIS logo. Primary brick red (#9B3139) for emphasis, warm terracotta (#D64F2A) for accents, golden yellow (#FFAA1D) for highlights. Warm neutrals (cream, beige, tan) for backgrounds. Optional turquoise accent for Southwestern flair.",
+    "motion": "Subtle hover effects with scale (hover:scale-105) and opacity (hover:opacity-60) changes. Smooth transitions with duration-300 (300ms).",
+    "layout": "Paper-like page wrapper with shadow-paper on warm neutral backgrounds. Clean, grid-based layouts with max-width containers. Adobe-inspired texture and warmth.",
+    "components": "Rounded pill buttons (rounded-full), clean cards with minimal borders, subtle hover states with transform and shadow effects. Warm, inviting aesthetic."
+  },
+  "colorPalette": {
+    "description": "Santa Fe-inspired color palette based on the MIS logo featuring warm earth tones, desert colors, and Southwestern accents.",
+    "primary": {
+      "name": "Brick Red",
+      "hex": "#9B3139",
+      "usage": "Primary brand color from logo. Use for headings, CTAs, and emphasis.",
+      "pairsWith": ["white", "neutral-50", "accent-sand", "accent-gold"]
+    },
+    "secondary": {
+      "name": "Terracotta",
+      "hex": "#D64F2A",
+      "usage": "Secondary brand color from logo. Use for accents, highlights, and interactive elements.",
+      "pairsWith": ["white", "neutral-100", "accent-adobe"]
+    },
+    "accentGold": {
+      "name": "Golden Yellow",
+      "hex": "#FFAA1D",
+      "usage": "From logo letters. Use sparingly for highlights, badges, and important callouts.",
+      "pairsWith": ["primary", "neutral-900", "warm-brick"]
+    },
+    "accentTurquoise": {
+      "name": "Santa Fe Turquoise",
+      "hex": "#4FA5AE",
+      "usage": "Classic Southwestern accent. Use for links, secondary CTAs, and decorative elements.",
+      "pairsWith": ["warm-terracotta", "neutral-50", "accent-sand"]
+    },
+    "warmNeutrals": {
+      "name": "Desert Neutrals",
+      "range": ["#FFF8F0", "#F7F1EB", "#F0E6DB", "#E8D9C8"],
+      "usage": "Warm cream, beige, and tan tones for backgrounds, cards, and spacers. Creates adobe/clay feeling.",
+      "pairsWith": ["primary", "secondary", "neutral-400"]
+    },
+    "earthAccents": {
+      "name": "Adobe & Clay",
+      "colors": {
+        "adobe": "#E8B89A",
+        "sand": "#F4E8D8", 
+        "clay": "#D4A574",
+        "sage": "#9CAF88"
+      },
+      "usage": "Soft earth tones for backgrounds, badges, and subtle accents. Sage for natural/eco elements."
+    }
+  },
+  "usage": {
+    "gettingStarted": "This design system is built for Tailwind CSS v4. Use the provided class names directly in your components.",
+    "examples": {
+      "primaryButton": "<button class=\"bg-primary text-white px-6 py-4 rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95\">Click Me</button>",
+      "serviceCard": "<div class=\"bg-neutral-100 p-12 transition-all duration-300 hover:bg-neutral-150 hover:shadow-hover cursor-pointer group\">Card Content</div>",
+      "sectionHeading": "<h2 class=\"text-3xl font-light leading-normal text-primary\">Section Title</h2>",
+      "pageWrapper": "<div class=\"bg-accent-background min-h-screen p-6 md:p-12 lg:p-20\"><div class=\"bg-white shadow-paper w-full\"><!-- content --></div></div>"
+    }
+  }
+}
