@@ -1,0 +1,9 @@
+case_studies:
+  - slug: brand-x-growth-program
+    title: How We Helped Brand X Increase Qualified Leads by 47% in 6 Months
+    industry: Professional Services
+    problem: Traffic was strong, but qualified lead conversion was low.
+    strategy: Rebuilt information architecture and conversion paths.
+    outcome: Improved lead quality and pipeline consistency.
+    metric: +47% qualified leads
+    featured: true

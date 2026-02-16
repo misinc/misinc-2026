@@ -1,0 +1,237 @@
+media:
+  input: src/assets
+  output: /src/assets
+
+content:
+  - name: home-page
+    label: Home Page
+    type: file
+    path: src/content/home.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: hero_heading
+        label: Hero Heading
+        type: string
+      - name: hero_subheading
+        label: Hero Subheading
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+
+  - name: about-page
+    label: About Page
+    type: file
+    path: src/content/about.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: body
+        label: Page Content
+        type: rich-text
+
+  - name: services-page
+    label: Services Page
+    type: file
+    path: src/content/services.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: intro
+        label: Intro Text
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+      - name: service_highlights
+        label: Service Highlights
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: description
+            label: Description
+            type: text
+
+  - name: solutions-page
+    label: Solutions Page
+    type: file
+    path: src/content/solutions.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: intro
+        label: Intro Text
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+      - name: solution_rows
+        label: Solution Rows
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: summary
+            label: Summary
+            type: text
+          - name: url
+            label: URL
+            type: string
+
+  - name: case-studies-page
+    label: Case Studies Page
+    type: file
+    path: src/content/case-studies.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: intro
+        label: Intro Text
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+
+  - name: resources-page
+    label: Resources Page
+    type: file
+    path: src/content/resources.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: intro
+        label: Intro Text
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+
+  - name: contact-page
+    label: Contact Page
+    type: file
+    path: src/content/contact.md
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: intro
+        label: Intro Text
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+      - name: contact_items
+        label: Contact Items
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: value
+            label: Value
+            type: string
+
+  - name: navigation
+    label: Navigation
+    type: file
+    path: src/content/navigation.yml
+    fields:
+      - name: header_links
+        label: Header Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link Label
+            type: string
+          - name: url
+            label: Link URL
+            type: string
+      - name: footer_links
+        label: Footer Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link Label
+            type: string
+          - name: url
+            label: Link URL
+            type: string
+
+  - name: case-studies-data
+    label: Case Studies Data
+    type: file
+    path: src/content/case-studies.yml
+    fields:
+      - name: case_studies
+        label: Case Studies
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: industry
+            label: Industry
+            type: string
+          - name: problem
+            label: Problem
+            type: text
+          - name: strategy
+            label: Strategy
+            type: text
+          - name: outcome
+            label: Outcome
+            type: text
+          - name: metric
+            label: Metric
+            type: string
+          - name: featured
+            label: Featured
+            type: boolean
+
+  - name: blog-posts
+    label: Blog Posts
+    type: file
+    path: src/content/blog.yml
+    fields:
+      - name: posts
+        label: Posts
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: excerpt
+            label: Excerpt
+            type: text
+          - name: category
+            label: Category
+            type: string
+          - name: published_date
+            label: Published Date
+            type: date
+          - name: body
+            label: Post Content
+            type: rich-text

@@ -1,0 +1,7 @@
+posts:
+  - slug: aeo-basics-structured-content
+    title: AEO Basics for Structured Content
+    excerpt: A practical framework for making content answer-engine ready.
+    category: AEO
+    published_date: 2026-02-01
+    body: "<p>Use this rich text field for full blog content.</p>"
