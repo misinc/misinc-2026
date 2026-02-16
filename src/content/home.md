@@ -17,9 +17,9 @@ authority_intro: "<p>Since 1995, we've helped businesses navigate every major sh
 authority_milestones:
   - year: "1995"
     label: Founded
-  - year: 30+
+  - year: "30+"
     label: Years Experience
-  - year: 500+
+  - year: "500+"
     label: Projects Delivered
   - year: "2024"
     label: AI Integration
