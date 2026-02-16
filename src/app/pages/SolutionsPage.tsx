@@ -12,6 +12,7 @@ import {
 import { SiteShell } from "@/app/components/layout/SiteShell";
 import { SiteHeader } from "@/app/components/layout/SiteHeader";
 import { MainNavbar } from "@/app/components/layout/MainNavbar";
+import { SiteFooter } from "@/app/components/layout/SiteFooter";
 
 const solutions = [
   {
@@ -255,6 +256,7 @@ export default function SolutionsPage() {
         </div>
       </section>
       </main>
+      <SiteFooter />
     </SiteShell>
   );
 }

@@ -7,6 +7,7 @@ import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { SiteShell } from "@/app/components/layout/SiteShell";
 import { SiteHeader } from "@/app/components/layout/SiteHeader";
 import { MainNavbar } from "@/app/components/layout/MainNavbar";
+import { SiteFooter } from "@/app/components/layout/SiteFooter";
 
 type NavbarDropdownGroup = {
   label: string;
@@ -920,22 +921,6 @@ function SectionFinalCTA() {
   );
 }
 
-// Footer
-function Footer() {
-  return (
-    <footer className="content-stretch flex flex-col items-center py-[48px] relative shrink-0 w-full border-t border-[#f3f3f3]">
-      <div className="content-stretch flex flex-col md:flex-row gap-[24px] md:gap-[32px] items-center justify-between relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
-        <div className="flex items-center gap-[12px]">
-          <Logo />
-        </div>
-        <p className="font-['Manrope:Regular',sans-serif] text-[#777] text-[13px] text-center md:text-left">
-          © 2025 MIS, Inc. All rights reserved. • Albuquerque, New Mexico
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 // Main HomePage Component
 export default function HomePage() {
   return (
@@ -955,7 +940,7 @@ export default function HomePage() {
           <SectionFinalCTA />
         </main>
         
-        <Footer />
+        <SiteFooter />
     </SiteShell>
   );
 }
