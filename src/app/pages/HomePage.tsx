@@ -4,6 +4,9 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
+import { SiteShell } from "@/app/components/layout/SiteShell";
+import { SiteHeader } from "@/app/components/layout/SiteHeader";
+import { MainNavbar } from "@/app/components/layout/MainNavbar";
 
 type NavbarDropdownGroup = {
   label: string;
@@ -253,17 +256,29 @@ function Navbar() {
 
   return (
     <>
-      <div className="content-stretch h-[75px] py-[32px] relative shrink-0 w-full" data-name="Navbar">
-        <div className="flex items-center w-full h-full px-5 md:px-6 justify-between lg:justify-start lg:gap-[32px]">
-          {/* Logo - Always on left */}
-          <div className="shrink-0">
+      <div className="content-stretch h-[75px] relative shrink-0 w-full" data-name="Navbar">
+        <div className="hidden lg:grid grid-cols-[auto_1fr_auto] items-center w-full h-full px-5 md:px-6 gap-[24px]">
+          <div className="shrink-0 justify-self-start">
             <button onClick={() => scrollToSection('hero')}>
               <Logo />
             </button>
           </div>
-          
-          {/* Middle CTA Button - Mobile/Tablet, hidden on desktop */}
-          <div className="lg:hidden shrink-0">
+          <div className="flex items-center justify-center">
+            <NavbarMenu />
+          </div>
+          <div className="justify-self-end">
+            <PrimaryCTAButton text="Book a Free Strategy Call" onClick={() => scrollToSection('contact')} />
+          </div>
+        </div>
+
+        <div className="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center w-full h-full px-5 md:px-6">
+          <div className="justify-self-start">
+            <button onClick={() => scrollToSection('hero')}>
+              <Logo />
+            </button>
+          </div>
+
+          <div className="justify-self-center">
             <motion.button 
               onClick={() => scrollToSection('contact')} 
               className="bg-[#9B3139] content-stretch flex items-center justify-center px-[16px] py-[10px] relative rounded-[500px]"
@@ -273,9 +288,8 @@ function Navbar() {
               <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] relative shrink-0 text-white text-[12px] sm:text-[13px] tracking-[1px] whitespace-nowrap">Book Free Call</p>
             </motion.button>
           </div>
-          
-          {/* Hamburger Menu Button - Mobile/Tablet only */}
-          <div className="lg:hidden shrink-0">
+
+          <div className="justify-self-end">
             <button
               className="p-2 -mr-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -287,12 +301,6 @@ function Navbar() {
                 <Menu size={24} className="text-[#9B3139]" />
               )}
             </button>
-          </div>
-          
-          {/* Desktop Navigation - Hidden on mobile/tablet */}
-          <div className="hidden lg:flex flex-1 items-center justify-end gap-[16px]">
-            <NavbarMenu />
-            <PrimaryCTAButton text="Book a Free Strategy Call" onClick={() => scrollToSection('contact')} />
           </div>
         </div>
       </div>
@@ -446,10 +454,9 @@ function Navbar() {
 // Header
 function Header() {
   return (
-    <div className="content-stretch flex flex-col items-end pt-[32px] relative shrink-0" data-name="Header">
-      <Navbar />
-      <div className="bg-[#f3f3f3] h-px shrink-0 w-full" data-name="Border" />
-    </div>
+    <SiteHeader>
+      <MainNavbar />
+    </SiteHeader>
   );
 }
 
@@ -932,8 +939,7 @@ function Footer() {
 // Main HomePage Component
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#e8e4df] px-0 sm:px-6 md:px-8 lg:px-12">
-      <div className="w-full max-w-[1400px] mx-auto my-0 sm:my-8 md:my-12 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex flex-col relative">
+    <SiteShell>
         <div className="content-stretch flex flex-col items-center relative shrink-0 w-full">
           <Header />
         </div>
@@ -950,7 +956,6 @@ export default function HomePage() {
         </main>
         
         <Footer />
-      </div>
-    </div>
+    </SiteShell>
   );
 }
