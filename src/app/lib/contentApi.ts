@@ -1,5 +1,8 @@
 export type NavLink = { label: string; href: string };
 export type NavDropdown = { label: string; href: string; items: NavLink[] };
+export type NavMenuItem =
+  | { type: "link"; label: string; href: string; position: number }
+  | { type: "dropdown"; label: string; href: string; position: number; items: NavLink[] };
 
 export type ServiceSummary = {
   slug: string;
@@ -70,7 +73,7 @@ async function fetchJson<T>(url: string): Promise<T | null> {
 }
 
 export async function fetchNavigation() {
-  return fetchJson<{ dropdowns: NavDropdown[]; links: NavLink[] }>(
+  return fetchJson<{ menu?: NavMenuItem[]; dropdowns: NavDropdown[]; links: NavLink[] }>(
     '/.netlify/functions/content-navigation',
   );
 }

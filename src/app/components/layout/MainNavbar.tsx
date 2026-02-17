@@ -3,13 +3,17 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
-import { fetchNavigation, type NavDropdown, type NavLink } from "@/app/lib/contentApi";
+import { fetchNavigation, type NavMenuItem } from "@/app/lib/contentApi";
 
 type NavbarDropdownGroup = {
   label: string;
   href: string;
   items: { label: string; href: string }[];
 };
+
+type NavbarMenuEntry =
+  | { type: "link"; label: string; href: string; position: number }
+  | { type: "dropdown"; label: string; href: string; position: number; items: { label: string; href: string }[] };
 
 const navbarDropdowns: NavbarDropdownGroup[] = [
   {
@@ -68,11 +72,14 @@ const navbarDropdowns: NavbarDropdownGroup[] = [
   },
 ];
 
-const navbarLinksFallback: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+const fallbackMenu: NavbarMenuEntry[] = [
+  { type: "link", label: "Home", href: "/", position: 10 },
+  { type: "dropdown", label: "Solutions", href: "/solutions", position: 20, items: navbarDropdowns[0].items },
+  { type: "dropdown", label: "Services", href: "/services", position: 30, items: navbarDropdowns[1].items },
+  { type: "link", label: "Case Studies", href: "/case-studies", position: 40 },
+  { type: "dropdown", label: "Resources", href: "/resources", position: 50, items: navbarDropdowns[2].items },
+  { type: "link", label: "About", href: "/about", position: 60 },
+  { type: "link", label: "Contact", href: "/contact", position: 70 },
 ];
 
 function Logo() {
@@ -179,9 +186,7 @@ export function MainNavbar() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
-  const [dynamicDropdowns, setDynamicDropdowns] =
-    useState<NavbarDropdownGroup[]>(navbarDropdowns);
-  const [dynamicLinks, setDynamicLinks] = useState<NavLink[]>(navbarLinksFallback);
+  const [dynamicMenu, setDynamicMenu] = useState<NavbarMenuEntry[]>(fallbackMenu);
 
   useEffect(() => {
     let isActive = true;
@@ -192,17 +197,25 @@ export function MainNavbar() {
         return;
       }
 
-      const dropdowns: NavbarDropdownGroup[] = data.dropdowns.map((group: NavDropdown) => ({
-        label: group.label,
-        href: group.href,
-        items: group.items,
-      }));
+      const menu: NavbarMenuEntry[] = (data.menu ?? []).map((item: NavMenuItem) =>
+        item.type === "dropdown"
+          ? {
+              type: "dropdown",
+              label: item.label,
+              href: item.href,
+              position: item.position,
+              items: item.items,
+            }
+          : {
+              type: "link",
+              label: item.label,
+              href: item.href,
+              position: item.position,
+            },
+      );
 
-      if (dropdowns.length > 0) {
-        setDynamicDropdowns(dropdowns);
-      }
-      if (data.links.length > 0) {
-        setDynamicLinks(data.links);
+      if (menu.length > 0) {
+        setDynamicMenu(menu);
       }
     };
 
@@ -228,34 +241,23 @@ export function MainNavbar() {
             </button>
           </div>
           <div className="content-stretch hidden lg:flex gap-[24px] xl:gap-[32px] items-center relative shrink-0 justify-center">
-            {dynamicLinks
-              .filter((link) => link.label === "Home")
-              .map((link) => (
-                <NavbarMenuItem
-                  key={link.label}
-                  text={link.label}
-                  isActive={location.pathname === link.href}
-                  onClick={() => navigateToPath(link.href)}
+            {dynamicMenu.map((entry) =>
+              entry.type === "dropdown" ? (
+                <NavbarDropdownMenu
+                  key={entry.label}
+                  text={entry.label}
+                  items={entry.items}
+                  onNavigate={navigateToPath}
                 />
-              ))}
-            {dynamicDropdowns.map((group) => (
-              <NavbarDropdownMenu
-                key={group.label}
-                text={group.label}
-                items={group.items}
-                onNavigate={navigateToPath}
-              />
-            ))}
-            {dynamicLinks
-              .filter((link) => link.label !== "Home")
-              .map((link) => (
+              ) : (
                 <NavbarMenuItem
-                  key={link.label}
-                  text={link.label}
-                  isActive={location.pathname === link.href || location.pathname.startsWith(`${link.href}/`)}
-                  onClick={() => navigateToPath(link.href)}
+                  key={entry.label}
+                  text={entry.label}
+                  isActive={location.pathname === entry.href || location.pathname.startsWith(`${entry.href}/`)}
+                  onClick={() => navigateToPath(entry.href)}
                 />
-              ))}
+              ),
+            )}
           </div>
           <div className="justify-self-end">
             <PrimaryCTAButton
@@ -307,43 +309,30 @@ export function MainNavbar() {
               </div>
 
               <nav className="p-[24px] space-y-[8px]">
-                {dynamicLinks
-                  .filter((link) => link.label === "Home")
-                  .map((link) => (
-                    <button
-                      key={link.label}
-                      onClick={() => navigateToPath(link.href)}
-                      className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
-                    >
-                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                        {link.label}
-                      </p>
-                    </button>
-                  ))}
-
-                {dynamicDropdowns.map((group) => (
-                  <div key={group.label}>
+                {dynamicMenu.map((entry) =>
+                  entry.type === "dropdown" ? (
+                  <div key={entry.label}>
                     <button
                       onClick={() =>
                         setExpandedMobileMenu((prev) =>
-                          prev === group.label ? null : group.label,
+                          prev === entry.label ? null : entry.label,
                         )
                       }
                       className="w-full flex items-center justify-between text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
                     >
                       <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                        {group.label}
+                        {entry.label}
                       </p>
                       <ChevronDown
                         size={18}
-                        className={`text-[#9B3139] transition-transform ${expandedMobileMenu === group.label ? "rotate-180" : ""}`}
+                        className={`text-[#9B3139] transition-transform ${expandedMobileMenu === entry.label ? "rotate-180" : ""}`}
                       />
                     </button>
-                    {expandedMobileMenu === group.label && (
+                    {expandedMobileMenu === entry.label && (
                       <div className="px-[24px] pb-[8px]">
-                        {group.items.map((item) => (
+                        {entry.items.map((item) => (
                           <button
-                            key={`${group.label}-${item.label}`}
+                            key={`${entry.label}-${item.label}`}
                             onClick={() => navigateToPath(item.href)}
                             className="block w-full cursor-pointer rounded-md py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9] px-[10px]"
                           >
@@ -353,21 +342,18 @@ export function MainNavbar() {
                       </div>
                     )}
                   </div>
-                ))}
-
-                {dynamicLinks
-                  .filter((link) => link.label !== "Home")
-                  .map((link) => (
+                  ) : (
                     <button
-                      key={link.label}
-                      onClick={() => navigateToPath(link.href)}
+                      key={entry.label}
+                      onClick={() => navigateToPath(entry.href)}
                       className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
                     >
                       <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                        {link.label}
+                        {entry.label}
                       </p>
                     </button>
-                  ))}
+                  ),
+                )}
 
                 <div className="mt-[24px]">
                   <button
