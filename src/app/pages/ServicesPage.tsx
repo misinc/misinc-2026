@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
@@ -21,6 +21,7 @@ import { SiteShell } from "@/app/components/layout/SiteShell";
 import { SiteHeader } from "@/app/components/layout/SiteHeader";
 import { MainNavbar } from "@/app/components/layout/MainNavbar";
 import { SiteFooter } from "@/app/components/layout/SiteFooter";
+import { fetchServices, type ServiceSummary } from "@/app/lib/contentApi";
 
 type Service = {
   name: string;
@@ -246,6 +247,32 @@ function ServicesPageMetadata() {
 }
 
 export default function ServicesPage() {
+  const [dbServices, setDbServices] = useState<Service[]>(services);
+
+  useEffect(() => {
+    let isActive = true;
+    const loadServices = async () => {
+      const rows = await fetchServices();
+      if (!rows || !isActive || rows.length === 0) {
+        return;
+      }
+
+      const mapped = rows.map((service: ServiceSummary) => ({
+        name: service.serviceName,
+        description: service.heroDescription,
+        bestFor: "Best for: Organizations that need strategic clarity and measurable outcomes.",
+        href: `/services/${service.slug}`,
+      }));
+
+      setDbServices(mapped);
+    };
+
+    void loadServices();
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -339,7 +366,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {services.map((service) => (
+              {dbServices.map((service) => (
                 <Card
                   key={service.name}
                   className="group h-full border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"

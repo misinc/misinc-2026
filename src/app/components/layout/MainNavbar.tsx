@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
+import { fetchNavigation, type NavDropdown, type NavLink } from "@/app/lib/contentApi";
 
 type NavbarDropdownGroup = {
   label: string;
@@ -65,6 +66,13 @@ const navbarDropdowns: NavbarDropdownGroup[] = [
       { label: "AI & AEO FAQ", href: "/resources#faqs" },
     ],
   },
+];
+
+const navbarLinksFallback: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Logo() {
@@ -171,6 +179,38 @@ export function MainNavbar() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
+  const [dynamicDropdowns, setDynamicDropdowns] =
+    useState<NavbarDropdownGroup[]>(navbarDropdowns);
+  const [dynamicLinks, setDynamicLinks] = useState<NavLink[]>(navbarLinksFallback);
+
+  useEffect(() => {
+    let isActive = true;
+
+    const loadNavigation = async () => {
+      const data = await fetchNavigation();
+      if (!data || !isActive) {
+        return;
+      }
+
+      const dropdowns: NavbarDropdownGroup[] = data.dropdowns.map((group: NavDropdown) => ({
+        label: group.label,
+        href: group.href,
+        items: group.items,
+      }));
+
+      if (dropdowns.length > 0) {
+        setDynamicDropdowns(dropdowns);
+      }
+      if (data.links.length > 0) {
+        setDynamicLinks(data.links);
+      }
+    };
+
+    void loadNavigation();
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const navigateToPath = (path: string) => {
     navigate(path);
@@ -188,12 +228,17 @@ export function MainNavbar() {
             </button>
           </div>
           <div className="content-stretch hidden lg:flex gap-[24px] xl:gap-[32px] items-center relative shrink-0 justify-center">
-            <NavbarMenuItem
-              text="Home"
-              isActive={location.pathname === "/"}
-              onClick={() => navigateToPath("/")}
-            />
-            {navbarDropdowns.map((group) => (
+            {dynamicLinks
+              .filter((link) => link.label === "Home")
+              .map((link) => (
+                <NavbarMenuItem
+                  key={link.label}
+                  text={link.label}
+                  isActive={location.pathname === link.href}
+                  onClick={() => navigateToPath(link.href)}
+                />
+              ))}
+            {dynamicDropdowns.map((group) => (
               <NavbarDropdownMenu
                 key={group.label}
                 text={group.label}
@@ -201,21 +246,16 @@ export function MainNavbar() {
                 onNavigate={navigateToPath}
               />
             ))}
-            <NavbarMenuItem
-              text="Case Studies"
-              isActive={location.pathname === "/case-studies" || location.pathname.startsWith("/case-studies/")}
-              onClick={() => navigateToPath("/case-studies")}
-            />
-            <NavbarMenuItem
-              text="About"
-              isActive={location.pathname === "/about"}
-              onClick={() => navigateToPath("/about")}
-            />
-            <NavbarMenuItem
-              text="Contact"
-              isActive={location.pathname === "/contact"}
-              onClick={() => navigateToPath("/contact")}
-            />
+            {dynamicLinks
+              .filter((link) => link.label !== "Home")
+              .map((link) => (
+                <NavbarMenuItem
+                  key={link.label}
+                  text={link.label}
+                  isActive={location.pathname === link.href || location.pathname.startsWith(`${link.href}/`)}
+                  onClick={() => navigateToPath(link.href)}
+                />
+              ))}
           </div>
           <div className="justify-self-end">
             <PrimaryCTAButton
@@ -267,16 +307,21 @@ export function MainNavbar() {
               </div>
 
               <nav className="p-[24px] space-y-[8px]">
-                <button
-                  onClick={() => navigateToPath("/")}
-                  className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
-                >
-                  <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                    Home
-                  </p>
-                </button>
+                {dynamicLinks
+                  .filter((link) => link.label === "Home")
+                  .map((link) => (
+                    <button
+                      key={link.label}
+                      onClick={() => navigateToPath(link.href)}
+                      className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
+                    >
+                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
+                        {link.label}
+                      </p>
+                    </button>
+                  ))}
 
-                {navbarDropdowns.map((group) => (
+                {dynamicDropdowns.map((group) => (
                   <div key={group.label}>
                     <button
                       onClick={() =>
@@ -310,30 +355,19 @@ export function MainNavbar() {
                   </div>
                 ))}
 
-                <button
-                  onClick={() => navigateToPath("/case-studies")}
-                  className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
-                >
-                  <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                    Case Studies
-                  </p>
-                </button>
-                <button
-                  onClick={() => navigateToPath("/about")}
-                  className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
-                >
-                  <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                    About
-                  </p>
-                </button>
-                <button
-                  onClick={() => navigateToPath("/contact")}
-                  className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
-                >
-                  <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
-                    Contact
-                  </p>
-                </button>
+                {dynamicLinks
+                  .filter((link) => link.label !== "Home")
+                  .map((link) => (
+                    <button
+                      key={link.label}
+                      onClick={() => navigateToPath(link.href)}
+                      className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
+                    >
+                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
+                        {link.label}
+                      </p>
+                    </button>
+                  ))}
 
                 <div className="mt-[24px]">
                   <button

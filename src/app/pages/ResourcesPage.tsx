@@ -20,6 +20,7 @@ import blogImageOne from "@/assets/24a40fea387d6d870b36715ebf5f41ccc1196a04.png"
 import blogImageTwo from "@/assets/53cf0a9d13b54d45ba6d8faaf8dde556b80e4b8f.png";
 import blogImageThree from "@/assets/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
 import blogImageFour from "@/assets/8ed6481142f4588cada7b6b9a2dbaffa2a6b4855.png";
+import { fetchBlogPosts, type BlogPostRecord } from "@/app/lib/contentApi";
 
 type Guide = {
   title: string;
@@ -97,6 +98,13 @@ const blogPosts: BlogPost[] = [
     image: blogImageFour,
   },
 ];
+
+const fallbackBlogImageBySlug: Record<string, string> = {
+  "improve-local-search-visibility": blogImageOne,
+  "aeo-basics-structured-content": blogImageTwo,
+  "strategic-website-redesign-signals": blogImageThree,
+  "ai-for-operations-workflows": blogImageFour,
+};
 
 const faqCollections: FaqCollection[] = [
   {
@@ -189,6 +197,31 @@ export default function ResourcesPage() {
   const [activeFilter, setActiveFilter] = useState<"all" | "guides" | "blog" | "faqs">(
     "all",
   );
+  const [dbBlogPosts, setDbBlogPosts] = useState<BlogPost[]>(blogPosts);
+
+  useEffect(() => {
+    let isActive = true;
+    const loadBlogPosts = async () => {
+      const rows = await fetchBlogPosts();
+      if (!rows || !isActive || rows.length === 0) {
+        return;
+      }
+
+      const mapped = rows.map((post: BlogPostRecord) => ({
+        title: post.title,
+        excerpt: post.excerpt,
+        href: `/blog/${post.slug}`,
+        image: post.imageUrl || fallbackBlogImageBySlug[post.slug] || blogImageOne,
+      }));
+
+      setDbBlogPosts(mapped);
+    };
+
+    void loadBlogPosts();
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -200,11 +233,11 @@ export default function ResourcesPage() {
   }, [normalizedQuery]);
 
   const filteredBlogPosts = useMemo(() => {
-    if (!normalizedQuery) return blogPosts;
-    return blogPosts.filter((post) =>
+    if (!normalizedQuery) return dbBlogPosts;
+    return dbBlogPosts.filter((post) =>
       `${post.title} ${post.excerpt}`.toLowerCase().includes(normalizedQuery),
     );
-  }, [normalizedQuery]);
+  }, [dbBlogPosts, normalizedQuery]);
 
   const filteredFaqCollections = useMemo(() => {
     if (!normalizedQuery) return faqCollections;
@@ -229,7 +262,7 @@ export default function ResourcesPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "MIS Recent Blog Posts",
-    itemListElement: blogPosts.map((post, index) => ({
+    itemListElement: dbBlogPosts.map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: post.title,

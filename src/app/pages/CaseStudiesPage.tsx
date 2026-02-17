@@ -21,6 +21,22 @@ import {
   caseStudyCategories,
   type CaseStudyCategory,
 } from "@/app/data/caseStudies";
+import { fetchCaseStudies, type CaseStudyRecord } from "@/app/lib/contentApi";
+import caseStudyImageOne from "@/assets/24a40fea387d6d870b36715ebf5f41ccc1196a04.png";
+import caseStudyImageTwo from "@/assets/53cf0a9d13b54d45ba6d8faaf8dde556b80e4b8f.png";
+import caseStudyImageThree from "@/assets/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
+import caseStudyImageFour from "@/assets/8ed6481142f4588cada7b6b9a2dbaffa2a6b4855.png";
+import caseStudyImageFive from "@/assets/93bdf867d705af4cd05e62b9305f28776e6b5532.png";
+import caseStudyImageSix from "@/assets/d2c4dfe727b3001a88e016b4b1e70dadce2e07c5.png";
+
+const caseStudyImagesBySlug: Record<string, string> = {
+  "brand-x-growth-program": caseStudyImageOne,
+  "client-y-enterprise-webflow-ai": caseStudyImageTwo,
+  "client-z-aeo-visibility": caseStudyImageThree,
+  "operations-portal-modernization": caseStudyImageFour,
+  "multi-location-seo-growth": caseStudyImageFive,
+  "fintech-onboarding-rebuild": caseStudyImageSix,
+};
 
 function CaseStudiesMetadata() {
   useEffect(() => {
@@ -70,16 +86,51 @@ function CaseStudiesMetadata() {
 export default function CaseStudiesPage() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<CaseStudyCategory | "all">("all");
+  const [dbCaseStudies, setDbCaseStudies] = useState(caseStudies);
+
+  useEffect(() => {
+    let isActive = true;
+    const loadCaseStudies = async () => {
+      const rows = await fetchCaseStudies();
+      if (!rows || !isActive || rows.length === 0) {
+        return;
+      }
+
+      const mapped = rows.map((row: CaseStudyRecord) => ({
+        slug: row.slug,
+        title: row.title,
+        problem: row.problem ?? "",
+        strategy: row.strategy ?? "",
+        outcome: row.outcome ?? "",
+        metric: row.metric ?? "",
+        industry: row.industry ?? "",
+        categories:
+          Array.isArray(row.categories) && row.categories.length > 0
+            ? (row.categories as CaseStudyCategory[])
+            : (["Web Design & Redesign"] as CaseStudyCategory[]),
+        image: row.imageUrl || caseStudyImagesBySlug[row.slug] || caseStudyImageOne,
+        imageAlt: row.imageAlt || row.title,
+        featured: Boolean(row.featured),
+      }));
+
+      setDbCaseStudies(mapped);
+    };
+
+    void loadCaseStudies();
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const featuredCaseStudies = useMemo(
-    () => caseStudies.filter((caseStudy) => caseStudy.featured),
-    [],
+    () => dbCaseStudies.filter((caseStudy) => caseStudy.featured),
+    [dbCaseStudies],
   );
 
   const normalizedQuery = query.trim().toLowerCase();
 
   const visibleCaseStudies = useMemo(() => {
-    return caseStudies.filter((caseStudy) => {
+    return dbCaseStudies.filter((caseStudy) => {
       const matchesQuery =
         normalizedQuery.length === 0 ||
         `${caseStudy.title} ${caseStudy.problem} ${caseStudy.strategy} ${caseStudy.outcome} ${caseStudy.metric} ${caseStudy.industry} ${caseStudy.categories.join(" ")}`.toLowerCase().includes(
@@ -89,20 +140,20 @@ export default function CaseStudiesPage() {
         activeCategory === "all" || caseStudy.categories.includes(activeCategory);
       return matchesQuery && matchesCategory;
     });
-  }, [activeCategory, normalizedQuery]);
+  }, [activeCategory, dbCaseStudies, normalizedQuery]);
 
   const groupedByCategory = useMemo(() => {
     return caseStudyCategories.map((category) => ({
       category,
-      items: caseStudies.filter((caseStudy) => caseStudy.categories.includes(category)),
+      items: dbCaseStudies.filter((caseStudy) => caseStudy.categories.includes(category)),
     }));
-  }, []);
+  }, [dbCaseStudies]);
 
   const caseStudiesItemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "MIS Case Studies and Client Results",
-    itemListElement: caseStudies.map((caseStudy, index) => ({
+    itemListElement: dbCaseStudies.map((caseStudy, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: caseStudy.title,

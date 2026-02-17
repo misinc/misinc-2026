@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteShell } from "@/app/components/layout/SiteShell";
@@ -26,6 +26,7 @@ import {
   getServiceDetailBySlug,
   SERVICE_PROCESS,
 } from "@/app/data/serviceDetails";
+import { fetchServiceBySlug, type ServiceDetailRecord } from "@/app/lib/contentApi";
 
 function ServiceDetailMetadata({
   title,
@@ -85,7 +86,52 @@ function ServiceDetailMetadata({
 
 export default function ServiceDetailTemplatePage() {
   const { slug } = useParams();
-  const service = getServiceDetailBySlug(slug ?? "");
+  const fallbackService = getServiceDetailBySlug(slug ?? "");
+  const [service, setService] = useState(fallbackService);
+
+  useEffect(() => {
+    const requestedSlug = slug ?? "";
+    if (!requestedSlug) {
+      return;
+    }
+
+    let isActive = true;
+    const loadService = async () => {
+      const remoteService = await fetchServiceBySlug(requestedSlug);
+      if (!remoteService || !isActive) {
+        return;
+      }
+
+      const mappedService = {
+        slug: remoteService.slug,
+        serviceName: remoteService.serviceName,
+        heroTitle: remoteService.heroTitle,
+        heroDescription: remoteService.heroDescription,
+        quickAnswer: remoteService.quickAnswer,
+        challenges: (remoteService.challenges ?? []) as string[],
+        outcomes: (remoteService.outcomes ?? []) as string[],
+        deliverables: (remoteService.deliverables ?? []) as ServiceDetailRecord["deliverables"],
+        idealFor: (remoteService.idealFor ?? []) as string[],
+        proofQuote: remoteService.proofQuote,
+        proofAttribution: remoteService.proofAttribution,
+        proofMetrics: (remoteService.proofMetrics ?? []) as string[],
+        caseStudyHref: remoteService.caseStudyHref,
+        solutionHref: remoteService.solutionHref,
+        relatedServiceSlugs: (remoteService.relatedServiceSlugs ?? []) as string[],
+        faqs: (remoteService.faqs ?? []) as ServiceDetailRecord["faqs"],
+        seoTitle: remoteService.seoTitle,
+        seoDescription: remoteService.seoDescription,
+        canonicalPath: remoteService.canonicalPath,
+      };
+
+      setService(mappedService);
+    };
+
+    void loadService();
+    return () => {
+      isActive = false;
+    };
+  }, [slug]);
 
   if (!service) {
     return (
