@@ -42,6 +42,7 @@ export type CaseStudyRecord = {
   imageUrl: string | null;
   imageAlt: string | null;
   featured: boolean;
+  detail?: Record<string, unknown> | null;
 };
 
 export type BlogPostRecord = {
@@ -86,6 +87,12 @@ export async function fetchServiceBySlug(slug: string) {
 
 export async function fetchCaseStudies() {
   return fetchJson<CaseStudyRecord[]>('/.netlify/functions/content-case-studies');
+}
+
+export async function fetchCaseStudyBySlug(slug: string) {
+  return fetchJson<CaseStudyRecord>(
+    `/.netlify/functions/content-case-studies?slug=${encodeURIComponent(slug)}`,
+  );
 }
 
 export async function fetchBlogPosts() {

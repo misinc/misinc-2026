@@ -1,0 +1,1 @@
+ALTER TABLE "case_studies" ADD COLUMN "detail" jsonb DEFAULT '{}'::jsonb NOT NULL;

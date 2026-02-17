@@ -165,6 +165,7 @@ export const caseStudies = pgTable("case_studies", {
   seoTitle: text("seo_title"),
   seoDescription: text("seo_description"),
   canonicalPath: text("canonical_path"),
+  detail: jsonb("detail").notNull().default({}),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
 });
