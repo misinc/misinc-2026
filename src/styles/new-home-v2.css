@@ -1,0 +1,220 @@
+.new-home-v2 {
+  --v2-bg: #f7f1e8;
+  --v2-ink: #21160f;
+  --v2-muted: #6c5a50;
+  --v2-cream: #fffaf1;
+  --v2-panel: #efe3d3;
+  --v2-line: rgba(90, 67, 51, 0.24);
+  --v2-accent: #b0412b;
+  --v2-accent-2: #0e6a73;
+}
+
+.new-home-v2 > div {
+  background:
+    radial-gradient(1200px 580px at 90% -15%, rgba(14, 106, 115, 0.2), transparent 65%),
+    radial-gradient(900px 500px at -10% 15%, rgba(176, 65, 43, 0.2), transparent 65%),
+    linear-gradient(170deg, #f8f4ed 0%, #f5eada 48%, #f7f1e8 100%) !important;
+}
+
+.new-home-v2 > div > div {
+  background: color-mix(in srgb, var(--v2-cream) 86%, #fff) !important;
+  border-color: rgba(117, 92, 70, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 20px 32px rgba(48, 32, 22, 0.14),
+    0 46px 90px rgba(43, 28, 19, 0.2) !important;
+}
+
+.new-home-v2 [data-name="Section Hero"] {
+  padding-top: 92px !important;
+  position: relative;
+}
+
+.new-home-v2 [data-name="Section Hero"]::before {
+  animation: v2-stripes 22s linear infinite;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 14px,
+      rgba(176, 65, 43, 0.06) 14px 16px,
+      transparent 16px 30px
+    );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.new-home-v2 #hero h1,
+.new-home-v2 #services h2,
+.new-home-v2 #authority h2,
+.new-home-v2 #local h2,
+.new-home-v2 #case-studies h2,
+.new-home-v2 #solutions h2,
+.new-home-v2 #ai-aeo h2,
+.new-home-v2 #contact h2 {
+  color: var(--v2-ink) !important;
+  font-family: "Didot", "Bodoni MT", "Times New Roman", serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+}
+
+.new-home-v2 #hero h1 {
+  font-size: clamp(2.2rem, 6vw, 5.25rem) !important;
+  max-width: 14ch !important;
+  text-wrap: balance;
+}
+
+.new-home-v2 p,
+.new-home-v2 #services p,
+.new-home-v2 #authority p,
+.new-home-v2 #local p,
+.new-home-v2 #case-studies p,
+.new-home-v2 #solutions p,
+.new-home-v2 #ai-aeo p,
+.new-home-v2 #contact p,
+.new-home-v2 footer p,
+.new-home-v2 footer a {
+  color: var(--v2-muted) !important;
+}
+
+.new-home-v2 #hero button:first-of-type,
+.new-home-v2 #contact button {
+  background: linear-gradient(95deg, #a73b28, #cb6444) !important;
+  box-shadow: 0 14px 28px rgba(167, 59, 40, 0.24);
+}
+
+.new-home-v2 #hero button:first-of-type p,
+.new-home-v2 #contact button p {
+  color: #fff6f1 !important;
+}
+
+.new-home-v2 #hero button:last-of-type {
+  background: color-mix(in srgb, #fff8ee 80%, #fff) !important;
+}
+
+.new-home-v2 #hero button:last-of-type div {
+  border-color: rgba(68, 45, 30, 0.5) !important;
+}
+
+.new-home-v2 #hero button:last-of-type p {
+  color: #352317 !important;
+}
+
+.new-home-v2 #services,
+.new-home-v2 #case-studies,
+.new-home-v2 #contact {
+  background: linear-gradient(180deg, #f9f2e8 0%, #f4e8d9 100%) !important;
+}
+
+.new-home-v2 #local,
+.new-home-v2 #ai-aeo {
+  background: linear-gradient(180deg, rgba(14, 106, 115, 0.08) 0%, transparent 75%) !important;
+}
+
+.new-home-v2 #services .bg-white,
+.new-home-v2 #case-studies .bg-white,
+.new-home-v2 #authority .bg-\[\#f9f9f9\],
+.new-home-v2 #solutions .bg-\[\#f9f9f9\],
+.new-home-v2 #local .bg-\[\#f9f9f9\],
+.new-home-v2 #ai-aeo .bg-\[\#f9f9f9\] {
+  background: linear-gradient(160deg, #f6ecde, var(--v2-panel)) !important;
+  border: 1px solid var(--v2-line) !important;
+  box-shadow: 0 12px 24px rgba(76, 53, 37, 0.1);
+}
+
+.new-home-v2 #services .group,
+.new-home-v2 #case-studies .group,
+.new-home-v2 #solutions .group {
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease !important;
+}
+
+.new-home-v2 #services .group:hover,
+.new-home-v2 #case-studies .group:hover,
+.new-home-v2 #solutions .group:hover {
+  border-color: rgba(176, 65, 43, 0.5) !important;
+  box-shadow: 0 24px 34px rgba(71, 50, 36, 0.18) !important;
+  transform: translateY(-8px) !important;
+}
+
+.new-home-v2 #authority .text-\[\#9B3139\],
+.new-home-v2 #ai-aeo .text-\[\#9B3139\] {
+  color: var(--v2-accent) !important;
+}
+
+.new-home-v2 #ai-aeo .text-\[\#4FA5AE\] {
+  color: var(--v2-accent-2) !important;
+}
+
+.new-home-v2 #case-studies .bg-\[\#FFAA1D\]\/10 {
+  background: rgba(176, 65, 43, 0.12) !important;
+}
+
+.new-home-v2 #case-studies .bg-\[\#FFAA1D\]\/10 p {
+  color: var(--v2-accent) !important;
+}
+
+.new-home-v2 header > div:first-child {
+  background: linear-gradient(90deg, #8d3323, #b74e37) !important;
+}
+
+.new-home-v2 header p {
+  color: #ffe8dd !important;
+}
+
+/* Accessibility fix: keep message-bar and navbar CTA text legible */
+.new-home-v2 .w-full.bg-\[\#9B3139\] > p {
+  color: #fff4ea !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+.new-home-v2 .bg-\[\#9B3139\].content-stretch p {
+  color: #fff4ea !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+.new-home-v2 nav p,
+.new-home-v2 nav svg {
+  color: #51362a !important;
+}
+
+.new-home-v2 nav button:hover p {
+  color: #1f130d !important;
+}
+
+.new-home-v2 footer {
+  background: #f7ede1 !important;
+}
+
+.new-home-v2 footer h3 {
+  color: #2a1b11 !important;
+}
+
+.new-home-v2 footer .text-\[\#9B3139\] {
+  color: var(--v2-accent-2) !important;
+}
+
+@keyframes v2-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 90px 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .new-home-v2 #hero h1 {
+    max-width: 18ch !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .new-home-v2 *,
+  .new-home-v2 *::before,
+  .new-home-v2 *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

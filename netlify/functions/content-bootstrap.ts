@@ -1,4 +1,4 @@
-import { eq, and } from 'drizzle-orm';
+import { eq, and, isNull } from 'drizzle-orm';
 import { db } from '../../db/index';
 import {
   authors,
@@ -58,275 +58,280 @@ const CASE_STUDIES = [
 ];
 
 type NavSeedItem = {
+  key: string;
   label: string;
   url: string;
   location: string;
   position: number;
-  parentLabel?: string;
+  parentKey?: string;
 };
 
 const NAV_ITEMS: NavSeedItem[] = [
-  { label: 'Home', url: '/', location: 'header', position: 10 },
-  { label: 'Solutions', url: '/solutions', location: 'header', position: 20 },
-  { label: 'Services', url: '/services', location: 'header', position: 30 },
-  { label: 'Case Studies', url: '/case-studies', location: 'header', position: 40 },
-  { label: 'Resources', url: '/resources', location: 'header', position: 50 },
-  { label: 'About', url: '/about', location: 'header', position: 60 },
-  { label: 'Contact', url: '/contact', location: 'header', position: 70 },
+  { key: 'home', label: 'Home', url: '/', location: 'header', position: 10 },
+  { key: 'solutions', label: 'Solutions', url: '/solutions', location: 'header', position: 20 },
+  { key: 'services', label: 'Services', url: '/services', location: 'header', position: 30 },
+  { key: 'case-studies', label: 'Case Studies', url: '/case-studies', location: 'header', position: 40 },
+  { key: 'resources', label: 'Resources', url: '/resources', location: 'header', position: 50 },
+  { key: 'about', label: 'About', url: '/about', location: 'header', position: 60 },
+  { key: 'contact', label: 'Contact', url: '/contact', location: 'header', position: 70 },
   {
+    key: 'solutions-small-businesses',
     label: 'Small Businesses',
     url: '/solutions/small-businesses',
     location: 'header',
     position: 10,
-    parentLabel: 'Solutions',
+    parentKey: 'solutions',
   },
   {
-    label: 'Real Estate',
+    key: 'solutions-real-estate',
+    label: 'Real Estate (Add On IDX)',
     url: '/solutions/real-estate',
     location: 'header',
     position: 20,
-    parentLabel: 'Solutions',
+    parentKey: 'solutions',
   },
   {
+    key: 'solutions-healthcare-research',
+    label: 'Healthcare / Research',
+    url: '#',
+    location: 'header',
+    position: 30,
+    parentKey: 'solutions',
+  },
+  {
+    key: 'solutions-nonprofits',
     label: 'Nonprofits',
     url: '/solutions/nonprofits',
     location: 'header',
-    position: 30,
-    parentLabel: 'Solutions',
+    position: 40,
+    parentKey: 'solutions',
   },
   {
+    key: 'solutions-professional-services',
     label: 'Professional Services',
     url: '/solutions/professional-services',
     location: 'header',
-    position: 40,
-    parentLabel: 'Solutions',
+    position: 50,
+    parentKey: 'solutions',
   },
   {
-    label: 'Startups & SaaS',
+    key: 'solutions-startups',
+    label: 'Startups',
     url: '/solutions/startups-saas',
     location: 'header',
-    position: 50,
-    parentLabel: 'Solutions',
+    position: 60,
+    parentKey: 'solutions',
   },
   {
-    label: 'Website Design',
+    key: 'solutions-retail-ecommerce',
+    label: 'Retail / Ecommerce',
+    url: '#',
+    location: 'header',
+    position: 70,
+    parentKey: 'solutions',
+  },
+  {
+    key: 'services-web-design-development',
+    label: 'Web Design & Development',
+    url: '/services',
+    location: 'header',
+    position: 10,
+    parentKey: 'services',
+  },
+  {
+    key: 'services-new-website-design',
+    label: 'New Website Design',
     url: '/services/web-design',
     location: 'header',
     position: 10,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
+    key: 'services-website-redesign',
     label: 'Website Redesign',
     url: '/services/web-design',
     location: 'header',
     position: 20,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
-    label: 'Ecommerce Websites',
-    url: '/services/square-website-design',
+    key: 'services-webflow-development',
+    label: 'Webflow Development',
+    url: '/services/webflow-development',
     location: 'header',
     position: 30,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
-    label: 'Conversion Optimization (CRO)',
-    url: '/services/seo-strategy',
+    key: 'services-square-development',
+    label: 'Square Development',
+    url: '/services/square-website-design',
     location: 'header',
     position: 40,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
-    label: 'Webflow Website Development',
-    url: '/services/webflow-development',
+    key: 'services-ecommerce-development',
+    label: 'Ecommerce Development',
+    url: '#',
     location: 'header',
     position: 50,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
-    label: 'Webflow Migrations (WordPress -> Webflow)',
-    url: '/services/webflow-development',
+    key: 'services-platform-migrations',
+    label: 'Platform Migrations',
+    url: '#',
     location: 'header',
     position: 60,
-    parentLabel: 'Services',
+    parentKey: 'services-web-design-development',
   },
   {
-    label: 'Webflow Performance Optimization',
-    url: '/services/webflow-development',
-    location: 'header',
-    position: 70,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Square Online Website Design',
-    url: '/services/square-website-design',
-    location: 'header',
-    position: 80,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Square Ecommerce Setup',
-    url: '/services/square-website-design',
-    location: 'header',
-    position: 90,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Shopify -> Square Migrations',
-    url: '/services/square-website-design',
-    location: 'header',
-    position: 100,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Web Applications',
+    key: 'services-custom-applications',
+    label: 'Custom Applications',
     url: '/services/custom-applications',
     location: 'header',
-    position: 110,
-    parentLabel: 'Services',
+    position: 20,
+    parentKey: 'services',
   },
   {
+    key: 'services-web-apps',
+    label: 'Web Apps',
+    url: '/services/custom-applications',
+    location: 'header',
+    position: 10,
+    parentKey: 'services-custom-applications',
+  },
+  {
+    key: 'services-saas-mvp-development',
     label: 'SaaS MVP Development',
     url: '/services/custom-applications',
     location: 'header',
-    position: 120,
-    parentLabel: 'Services',
+    position: 20,
+    parentKey: 'services-custom-applications',
   },
   {
-    label: 'Internal Tools & Dashboards',
+    key: 'services-internal-tools',
+    label: 'Internal Tools',
     url: '/services/custom-applications',
     location: 'header',
-    position: 130,
-    parentLabel: 'Services',
+    position: 30,
+    parentKey: 'services-custom-applications',
   },
   {
-    label: 'API & System Integrations',
+    key: 'services-integrations',
+    label: 'Integrations',
     url: '/services/custom-applications',
     location: 'header',
-    position: 140,
-    parentLabel: 'Services',
+    position: 40,
+    parentKey: 'services-custom-applications',
   },
   {
-    label: 'AI Strategy for Small Businesses',
+    key: 'services-ai-automation',
+    label: 'AI & Automation',
+    url: '/services',
+    location: 'header',
+    position: 30,
+    parentKey: 'services',
+  },
+  {
+    key: 'services-ai-consulting',
+    label: 'AI Consulting',
     url: '/services/ai-consulting',
     location: 'header',
-    position: 150,
-    parentLabel: 'Services',
+    position: 10,
+    parentKey: 'services-ai-automation',
   },
   {
+    key: 'services-ai-chat-implementation',
     label: 'AI Chat Implementation',
     url: '/services/ai-consulting',
     location: 'header',
-    position: 160,
-    parentLabel: 'Services',
+    position: 20,
+    parentKey: 'services-ai-automation',
   },
   {
-    label: 'Workflow Automation',
-    url: '/services/ai-consulting',
-    location: 'header',
-    position: 170,
-    parentLabel: 'Services',
-  },
-  {
+    key: 'services-internal-ai-systems',
     label: 'Internal AI Systems',
     url: '/services/ai-consulting',
     location: 'header',
-    position: 180,
-    parentLabel: 'Services',
+    position: 30,
+    parentKey: 'services-ai-automation',
   },
   {
-    label: 'AI Search Optimization',
+    key: 'services-aeo-strategy',
+    label: 'AEO Strategy',
     url: '/services/aeo-services',
     location: 'header',
-    position: 190,
-    parentLabel: 'Services',
+    position: 40,
+    parentKey: 'services-ai-automation',
   },
   {
-    label: 'Structured Content Strategy',
-    url: '/services/aeo-services',
-    location: 'header',
-    position: 200,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Schema & Structured Data Implementation',
-    url: '/services/aeo-services',
-    location: 'header',
-    position: 210,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'AI Visibility Audits',
-    url: '/services/aeo-services',
-    location: 'header',
-    position: 220,
-    parentLabel: 'Services',
-  },
-  {
-    label: 'Blog Listing',
+    key: 'resources-blog',
+    label: 'Blog',
     url: '/resources#blog',
     location: 'header',
     position: 10,
-    parentLabel: 'Resources',
+    parentKey: 'resources',
   },
   {
-    label: 'Blog Post (Dynamic Template)',
-    url: '/resources#blog',
+    key: 'resources-guides',
+    label: 'Guides',
+    url: '/resources#guides',
     location: 'header',
     position: 20,
-    parentLabel: 'Resources',
+    parentKey: 'resources',
   },
   {
-    label: 'Webflow vs WordPress Guide',
-    url: '/resources#guides',
+    key: 'resources-faqs',
+    label: 'FAQs',
+    url: '/resources#faqs',
     location: 'header',
     position: 30,
-    parentLabel: 'Resources',
+    parentKey: 'resources',
   },
   {
-    label: 'Website Redesign Checklist',
-    url: '/resources#guides',
+    key: 'about-innovation',
+    label: '30 Years of Innovation',
+    url: '#',
     location: 'header',
-    position: 40,
-    parentLabel: 'Resources',
+    position: 10,
+    parentKey: 'about',
   },
   {
-    label: 'Cost of Web Design in Albuquerque',
-    url: '/resources#guides',
+    key: 'about-partnerships',
+    label: 'Partnerships & Certifications',
+    url: '#',
     location: 'header',
-    position: 50,
-    parentLabel: 'Resources',
+    position: 20,
+    parentKey: 'about',
   },
   {
-    label: 'AI for Small Businesses Guide',
-    url: '/resources#guides',
+    key: 'about-technology',
+    label: "Technology We've Built",
+    url: '#',
     location: 'header',
-    position: 60,
-    parentLabel: 'Resources',
+    position: 30,
+    parentKey: 'about',
   },
   {
-    label: 'Web Design FAQ',
-    url: '/resources#faqs',
+    key: 'contact-strategy',
+    label: 'Free Strategy Call',
+    url: '/contact#strategy',
     location: 'header',
-    position: 70,
-    parentLabel: 'Resources',
+    position: 10,
+    parentKey: 'contact',
   },
   {
-    label: 'Webflow FAQ',
-    url: '/resources#faqs',
+    key: 'contact-proposal',
+    label: 'Request a Proposal',
+    url: '/contact#proposal',
     location: 'header',
-    position: 80,
-    parentLabel: 'Resources',
+    position: 20,
+    parentKey: 'contact',
   },
-  {
-    label: 'AI & AEO FAQ',
-    url: '/resources#faqs',
-    location: 'header',
-    position: 90,
-    parentLabel: 'Resources',
-  },
-  { label: 'Privacy Policy', url: '/privacy', location: 'footer', position: 10 },
-  { label: 'Terms', url: '/terms', location: 'footer', position: 20 },
+  { key: 'footer-privacy', label: 'Privacy Policy', url: '/privacy', location: 'footer', position: 10 },
+  { key: 'footer-terms', label: 'Terms', url: '/terms', location: 'footer', position: 20 },
 ];
 
 async function upsertAuthor() {
@@ -465,76 +470,68 @@ async function seedCaseStudies() {
 }
 
 async function seedNavigation() {
-  const rootIdByLabel = new Map<string, number>();
+  const idByKey = new Map<string, number>();
+  const pendingItems = [...NAV_ITEMS];
 
-  for (const item of NAV_ITEMS.filter((entry) => !entry.parentLabel)) {
-    const [existing] = await db
-      .select()
-      .from(navigationItems)
-      .where(
-        and(
-          eq(navigationItems.location, item.location),
-          eq(navigationItems.label, item.label),
-          eq(navigationItems.url, item.url),
-        ),
-      )
-      .limit(1);
+  while (pendingItems.length > 0) {
+    let processedCount = 0;
 
-    if (existing) {
-      rootIdByLabel.set(item.label, existing.id);
-      await db
-        .update(navigationItems)
-        .set({ position: item.position, isVisible: true, updatedAt: new Date() })
-        .where(eq(navigationItems.id, existing.id));
-      continue;
+    for (let index = 0; index < pendingItems.length; ) {
+      const item = pendingItems[index];
+      const parentId = item.parentKey ? idByKey.get(item.parentKey) ?? null : null;
+
+      if (item.parentKey && !parentId) {
+        index += 1;
+        continue;
+      }
+
+      const [existing] = await db
+        .select()
+        .from(navigationItems)
+        .where(
+          and(
+            eq(navigationItems.location, item.location),
+            eq(navigationItems.label, item.label),
+            parentId === null
+              ? isNull(navigationItems.parentId)
+              : eq(navigationItems.parentId, parentId),
+          ),
+        )
+        .limit(1);
+
+      if (existing) {
+        idByKey.set(item.key, existing.id);
+        await db
+          .update(navigationItems)
+          .set({
+            url: item.url,
+            position: item.position,
+            isVisible: true,
+            updatedAt: new Date(),
+          })
+          .where(eq(navigationItems.id, existing.id));
+      } else {
+        const [created] = await db
+          .insert(navigationItems)
+          .values({
+            location: item.location,
+            label: item.label,
+            url: item.url,
+            position: item.position,
+            parentId,
+          })
+          .returning({ id: navigationItems.id });
+
+        idByKey.set(item.key, created.id);
+      }
+
+      pendingItems.splice(index, 1);
+      processedCount += 1;
     }
 
-    const [created] = await db
-      .insert(navigationItems)
-      .values({
-        location: item.location,
-        label: item.label,
-        url: item.url,
-        position: item.position,
-      })
-      .returning({ id: navigationItems.id });
-
-    rootIdByLabel.set(item.label, created.id);
-  }
-
-  for (const item of NAV_ITEMS.filter((entry) => entry.parentLabel)) {
-    const parentId = rootIdByLabel.get(item.parentLabel!);
-    if (!parentId) {
-      continue;
+    if (processedCount === 0) {
+      break;
     }
-
-    const [existing] = await db
-      .select()
-      .from(navigationItems)
-      .where(
-        and(
-          eq(navigationItems.location, item.location),
-          eq(navigationItems.label, item.label),
-          eq(navigationItems.parentId, parentId),
-        ),
-      )
-      .limit(1);
-
-    if (existing) {
-      await db
-        .update(navigationItems)
-        .set({ url: item.url, position: item.position, isVisible: true, updatedAt: new Date() })
-        .where(eq(navigationItems.id, existing.id));
-      continue;
-    }
-
-    await db.insert(navigationItems).values({
-      location: item.location,
-      label: item.label,
-      url: item.url,
-      position: item.position,
-      parentId,
-    });
   }
 }
 

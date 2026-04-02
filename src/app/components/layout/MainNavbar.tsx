@@ -3,17 +3,17 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
-import { fetchNavigation, type NavMenuItem } from "@/app/lib/contentApi";
+import { fetchNavigation, type NavLink, type NavMenuItem } from "@/app/lib/contentApi";
 
 type NavbarDropdownGroup = {
   label: string;
   href: string;
-  items: { label: string; href: string }[];
+  items: NavLink[];
 };
 
 type NavbarMenuEntry =
   | { type: "link"; label: string; href: string; position: number }
-  | { type: "dropdown"; label: string; href: string; position: number; items: { label: string; href: string }[] };
+  | { type: "dropdown"; label: string; href: string; position: number; items: NavLink[] };
 
 const navbarDropdowns: NavbarDropdownGroup[] = [
   {
@@ -21,53 +21,59 @@ const navbarDropdowns: NavbarDropdownGroup[] = [
     href: "/solutions",
     items: [
       { label: "Small Businesses", href: "/solutions/small-businesses" },
-      { label: "Real Estate", href: "/solutions/real-estate" },
+      { label: "Real Estate (Add On IDX)", href: "/solutions/real-estate" },
+      { label: "Healthcare / Research", href: "#" },
       { label: "Nonprofits", href: "/solutions/nonprofits" },
       { label: "Professional Services", href: "/solutions/professional-services" },
-      { label: "Startups & SaaS", href: "/solutions/startups-saas" },
+      { label: "Startups", href: "/solutions/startups-saas" },
+      { label: "Retail / Ecommerce", href: "#" },
     ],
   },
   {
     label: "Services",
     href: "/services",
     items: [
-      { label: "Website Design", href: "/services/web-design" },
-      { label: "Website Redesign", href: "/services/web-design" },
-      { label: "Ecommerce Websites", href: "/services/square-website-design" },
-      { label: "Conversion Optimization (CRO)", href: "/services/seo-strategy" },
-      { label: "Webflow Website Development", href: "/services/webflow-development" },
-      { label: "Webflow Migrations (WordPress -> Webflow)", href: "/services/webflow-development" },
-      { label: "Webflow Performance Optimization", href: "/services/webflow-development" },
-      { label: "Square Online Website Design", href: "/services/square-website-design" },
-      { label: "Square Ecommerce Setup", href: "/services/square-website-design" },
-      { label: "Shopify -> Square Migrations", href: "/services/square-website-design" },
-      { label: "Web Applications", href: "/services/custom-applications" },
-      { label: "SaaS MVP Development", href: "/services/custom-applications" },
-      { label: "Internal Tools & Dashboards", href: "/services/custom-applications" },
-      { label: "API & System Integrations", href: "/services/custom-applications" },
-      { label: "AI Strategy for Small Businesses", href: "/services/ai-consulting" },
-      { label: "AI Chat Implementation", href: "/services/ai-consulting" },
-      { label: "Workflow Automation", href: "/services/ai-consulting" },
-      { label: "Internal AI Systems", href: "/services/ai-consulting" },
-      { label: "AI Search Optimization", href: "/services/aeo-services" },
-      { label: "Structured Content Strategy", href: "/services/aeo-services" },
-      { label: "Schema & Structured Data Implementation", href: "/services/aeo-services" },
-      { label: "AI Visibility Audits", href: "/services/aeo-services" },
+      {
+        label: "Web Design & Development",
+        href: "/services",
+        items: [
+          { label: "New Website Design", href: "/services/web-design" },
+          { label: "Website Redesign", href: "/services/web-design" },
+          { label: "Webflow Development", href: "/services/webflow-development" },
+          { label: "Square Development", href: "/services/square-website-design" },
+          { label: "Ecommerce Development", href: "#" },
+          { label: "Platform Migrations", href: "#" },
+        ],
+      },
+      {
+        label: "Custom Applications",
+        href: "/services/custom-applications",
+        items: [
+          { label: "Web Apps", href: "/services/custom-applications" },
+          { label: "SaaS MVP Development", href: "/services/custom-applications" },
+          { label: "Internal Tools", href: "/services/custom-applications" },
+          { label: "Integrations", href: "/services/custom-applications" },
+        ],
+      },
+      {
+        label: "AI & Automation",
+        href: "/services",
+        items: [
+          { label: "AI Consulting", href: "/services/ai-consulting" },
+          { label: "AI Chat Implementation", href: "/services/ai-consulting" },
+          { label: "Internal AI Systems", href: "/services/ai-consulting" },
+          { label: "AEO Strategy", href: "/services/aeo-services" },
+        ],
+      },
     ],
   },
   {
     label: "Resources",
     href: "/resources",
     items: [
-      { label: "Blog Listing", href: "/resources#blog" },
-      { label: "Blog Post (Dynamic Template)", href: "/resources#blog" },
-      { label: "Webflow vs WordPress Guide", href: "/resources#guides" },
-      { label: "Website Redesign Checklist", href: "/resources#guides" },
-      { label: "Cost of Web Design in Albuquerque", href: "/resources#guides" },
-      { label: "AI for Small Businesses Guide", href: "/resources#guides" },
-      { label: "Web Design FAQ", href: "/resources#faqs" },
-      { label: "Webflow FAQ", href: "/resources#faqs" },
-      { label: "AI & AEO FAQ", href: "/resources#faqs" },
+      { label: "Blog", href: "/resources#blog" },
+      { label: "Guides", href: "/resources#guides" },
+      { label: "FAQs", href: "/resources#faqs" },
     ],
   },
 ];
@@ -78,8 +84,27 @@ const fallbackMenu: NavbarMenuEntry[] = [
   { type: "dropdown", label: "Services", href: "/services", position: 30, items: navbarDropdowns[1].items },
   { type: "link", label: "Case Studies", href: "/case-studies", position: 40 },
   { type: "dropdown", label: "Resources", href: "/resources", position: 50, items: navbarDropdowns[2].items },
-  { type: "link", label: "About", href: "/about", position: 60 },
-  { type: "link", label: "Contact", href: "/contact", position: 70 },
+  {
+    type: "dropdown",
+    label: "About",
+    href: "/about",
+    position: 60,
+    items: [
+      { label: "30 Years of Innovation", href: "#" },
+      { label: "Partnerships & Certifications", href: "#" },
+      { label: "Technology We’ve Built", href: "#" },
+    ],
+  },
+  {
+    type: "dropdown",
+    label: "Contact",
+    href: "/contact",
+    position: 70,
+    items: [
+      { label: "Free Strategy Call", href: "/contact#strategy" },
+      { label: "Request a Proposal", href: "/contact#proposal" },
+    ],
+  },
 ];
 
 function Logo() {
@@ -120,17 +145,21 @@ function NavbarMenuItem({
 
 function NavbarDropdownMenu({
   text,
+  href,
   items,
   onNavigate,
 }: {
   text: string;
-  items: { label: string; href: string }[];
+  href: string;
+  items: NavLink[];
   onNavigate: (href: string) => void;
 }) {
+  const hasNestedItems = items.some((item) => item.items && item.items.length > 0);
+
   return (
     <div className="group relative">
       <button
-        onClick={onNavigate}
+        onClick={() => onNavigate(href)}
         className="content-stretch flex h-[42px] items-center justify-center gap-[4px] rounded-[500px] transition-opacity hover:opacity-60"
         aria-haspopup="menu"
       >
@@ -142,18 +171,51 @@ function NavbarDropdownMenu({
           className="text-[#9B3139] transition-transform duration-200 group-hover:rotate-180"
         />
       </button>
-      <div className="invisible absolute left-1/2 top-[48px] z-30 w-[320px] -translate-x-1/2 rounded-[16px] border border-[#eadfda] bg-white p-[10px] opacity-0 shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div
+        className={`invisible absolute left-1/2 top-[48px] z-30 -translate-x-1/2 rounded-[16px] border border-[#eadfda] bg-white p-[10px] opacity-0 shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 ${hasNestedItems ? "w-[720px]" : "w-[320px]"}`}
+      >
         <div className="max-h-[320px] overflow-y-auto">
-        {items.map((item) => (
-            <button
-              key={`${text}-${item.label}`}
-              type="button"
-              onClick={() => onNavigate(item.href)}
-              className="flex w-full cursor-pointer items-center rounded-[10px] px-[12px] py-[10px] text-left text-[13px] text-[#5E3A3D] transition-colors hover:bg-[#FDF7F2]"
-            >
-              {item.label}
-            </button>
-          ))}
+          {hasNestedItems ? (
+            <div className="grid grid-cols-1 gap-[12px] md:grid-cols-3">
+              {items.map((item) => (
+                <div
+                  key={`${text}-${item.label}`}
+                  className="rounded-[12px] border border-[#f1e4db] bg-[#fffaf6] p-[14px]"
+                >
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(item.href)}
+                    className="text-left text-[12px] font-medium uppercase tracking-[1px] text-[#9B3139] transition-opacity hover:opacity-70"
+                  >
+                    {item.label}
+                  </button>
+                  <div className="mt-[10px] space-y-[4px]">
+                    {(item.items ?? []).map((child) => (
+                      <button
+                        key={`${text}-${item.label}-${child.label}`}
+                        type="button"
+                        onClick={() => onNavigate(child.href)}
+                        className="flex w-full cursor-pointer items-center rounded-[10px] px-[10px] py-[8px] text-left text-[13px] text-[#5E3A3D] transition-colors hover:bg-white"
+                      >
+                        {child.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            items.map((item) => (
+              <button
+                key={`${text}-${item.label}`}
+                type="button"
+                onClick={() => onNavigate(item.href)}
+                className="flex w-full cursor-pointer items-center rounded-[10px] px-[12px] py-[10px] text-left text-[13px] text-[#5E3A3D] transition-colors hover:bg-[#FDF7F2]"
+              >
+                {item.label}
+              </button>
+            ))
+          )}
         </div>
       </div>
     </div>
@@ -226,6 +288,11 @@ export function MainNavbar() {
   }, []);
 
   const navigateToPath = (path: string) => {
+    if (path === "#") {
+      setIsMenuOpen(false);
+      setExpandedMobileMenu(null);
+      return;
+    }
     navigate(path);
     setIsMenuOpen(false);
     setExpandedMobileMenu(null);
@@ -246,6 +313,7 @@ export function MainNavbar() {
                 <NavbarDropdownMenu
                   key={entry.label}
                   text={entry.label}
+                  href={entry.href}
                   items={entry.items}
                   onNavigate={navigateToPath}
                 />
@@ -331,13 +399,38 @@ export function MainNavbar() {
                     {expandedMobileMenu === entry.label && (
                       <div className="px-[24px] pb-[8px]">
                         {entry.items.map((item) => (
-                          <button
-                            key={`${entry.label}-${item.label}`}
-                            onClick={() => navigateToPath(item.href)}
-                            className="block w-full cursor-pointer rounded-md py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9] px-[10px]"
-                          >
-                            {item.label}
-                          </button>
+                          item.items && item.items.length > 0 ? (
+                            <div
+                              key={`${entry.label}-${item.label}`}
+                              className="mb-[10px] rounded-md border border-[#f1e4db] bg-[#fffaf6] px-[10px] py-[10px]"
+                            >
+                              <button
+                                onClick={() => navigateToPath(item.href)}
+                                className="text-left text-[12px] font-medium uppercase tracking-[1px] text-[#9B3139]"
+                              >
+                                {item.label}
+                              </button>
+                              <div className="mt-[6px]">
+                                {item.items.map((child) => (
+                                  <button
+                                    key={`${entry.label}-${item.label}-${child.label}`}
+                                    onClick={() => navigateToPath(child.href)}
+                                    className="block w-full cursor-pointer rounded-md px-[10px] py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9]"
+                                  >
+                                    {child.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <button
+                              key={`${entry.label}-${item.label}`}
+                              onClick={() => navigateToPath(item.href)}
+                              className="block w-full cursor-pointer rounded-md py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9] px-[10px]"
+                            >
+                              {item.label}
+                            </button>
+                          )
                         ))}
                       </div>
                     )}

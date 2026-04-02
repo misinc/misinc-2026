@@ -25,7 +25,6 @@ export default async function handler() {
       .where(and(eq(navigationItems.location, 'header'), eq(navigationItems.isVisible, true)))
       .orderBy(asc(navigationItems.position), asc(navigationItems.id));
 
-    const topLevel = rows.filter((row) => row.parentId === null);
     const childMap = new Map<number, NavItem[]>();
 
     for (const row of rows.filter((entry) => entry.parentId !== null)) {
@@ -35,13 +34,26 @@ export default async function handler() {
       childMap.set(parentKey, existing);
     }
 
-    const menu = topLevel.map((root) => {
-      const children = childMap.get(root.id) ?? [];
-      const mappedChildren = children.map((entry) => ({
-        label: entry.label,
-        href: entry.href,
-      }));
+    const buildItems = (parentId: number) => {
+      const children = childMap.get(parentId) ?? [];
+      return children.map((entry) => {
+        const nestedItems = buildItems(entry.id);
+        return nestedItems.length > 0
+          ? {
+              label: entry.label,
+              href: entry.href,
+              items: nestedItems,
+            }
+          : {
+              label: entry.label,
+              href: entry.href,
+            };
+      });
+    };
 
+    const topLevel = rows.filter((row) => row.parentId === null);
+    const menu = topLevel.map((root) => {
+      const mappedChildren = buildItems(root.id);
       if (mappedChildren.length > 0) {
         return {
           type: 'dropdown' as const,

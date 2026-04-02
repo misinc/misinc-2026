@@ -10,6 +10,10 @@ import CaseStudiesPage from "@/app/pages/CaseStudiesPage";
 import CaseStudyDetailPage from "@/app/pages/CaseStudyDetailPage";
 import AboutPage from "@/app/pages/AboutPage";
 import ContactPage from "@/app/pages/ContactPage";
+import NewHomePage from "@/app/pages/NewHomePage";
+import NewHomePageV2 from "@/app/pages/NewHomePageV2";
+import NewHomePageV3 from "@/app/pages/NewHomePageV3";
+import NewHomePageV4 from "@/app/pages/NewHomePageV4";
 
 export const router = createBrowserRouter([
   {
@@ -55,5 +59,21 @@ export const router = createBrowserRouter([
   {
     path: "/contact",
     Component: ContactPage,
+  },
+  {
+    path: "/new-home",
+    Component: NewHomePage,
+  },
+  {
+    path: "/new-home-v2",
+    Component: NewHomePageV2,
+  },
+  {
+    path: "/new-home-v3",
+    Component: NewHomePageV3,
+  },
+  {
+    path: "/new-home-v4",
+    Component: NewHomePageV4,
   },
 ]);

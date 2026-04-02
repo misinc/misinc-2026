@@ -1,0 +1,230 @@
+.new-home-redesign {
+  --nh-bg: #07172c;
+  --nh-surface: #0f2946;
+  --nh-surface-2: #123255;
+  --nh-text: #f5f8ff;
+  --nh-muted: #afc3da;
+  --nh-line: rgba(180, 209, 240, 0.24);
+  --nh-accent: #ff9f43;
+  --nh-accent-2: #53d2c6;
+}
+
+.new-home-redesign > div {
+  background:
+    radial-gradient(1200px 760px at 86% -16%, rgba(83, 210, 198, 0.2), transparent 64%),
+    radial-gradient(1100px 720px at -8% 14%, rgba(255, 159, 67, 0.2), transparent 60%),
+    linear-gradient(155deg, #071426 7%, #07172c 42%, #102441 100%) !important;
+}
+
+.new-home-redesign > div > div {
+  background: color-mix(in srgb, #0b1d34 82%, #0e2139) !important;
+  border-color: rgba(160, 193, 226, 0.2) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 24px 44px rgba(0, 0, 0, 0.45),
+    0 80px 140px rgba(3, 7, 16, 0.62) !important;
+}
+
+.new-home-redesign [data-name="Section Hero"] {
+  isolation: isolate;
+  padding-top: 90px !important;
+  position: relative;
+}
+
+.new-home-redesign [data-name="Section Hero"]::before {
+  animation: new-home-grid-pan 28s linear infinite;
+  background-image:
+    linear-gradient(var(--nh-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nh-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.new-home-redesign [data-name="Section Hero"]::after {
+  animation: new-home-orb 9s ease-in-out infinite;
+  background: radial-gradient(circle at center, rgba(255, 159, 67, 0.65) 0%, rgba(255, 159, 67, 0) 68%);
+  content: "";
+  filter: blur(24px);
+  height: 420px;
+  pointer-events: none;
+  position: absolute;
+  right: -110px;
+  top: -170px;
+  width: 420px;
+  z-index: -1;
+}
+
+.new-home-redesign #hero h1 {
+  color: var(--nh-text) !important;
+  font-family: "Avenir Next", "Manrope", sans-serif !important;
+  font-size: clamp(2.3rem, 6vw, 5.2rem) !important;
+  letter-spacing: -0.03em;
+  max-width: 15ch !important;
+  text-wrap: balance;
+}
+
+.new-home-redesign #hero p {
+  color: var(--nh-muted) !important;
+}
+
+.new-home-redesign #hero button {
+  border: 1px solid transparent;
+  will-change: transform;
+}
+
+.new-home-redesign #hero button:first-of-type {
+  background: linear-gradient(92deg, var(--nh-accent), #ffbc7b) !important;
+  box-shadow: 0 16px 32px rgba(255, 159, 67, 0.26);
+}
+
+.new-home-redesign #hero button:first-of-type p {
+  color: #1f1911 !important;
+}
+
+.new-home-redesign #hero button:last-of-type {
+  background: color-mix(in srgb, #0f2946 66%, transparent) !important;
+  border-color: rgba(202, 223, 245, 0.5);
+}
+
+.new-home-redesign #hero button:last-of-type p {
+  color: var(--nh-text) !important;
+}
+
+.new-home-redesign section[id]:not(#hero) {
+  background: transparent !important;
+}
+
+.new-home-redesign #services,
+.new-home-redesign #case-studies,
+.new-home-redesign #contact {
+  background: color-mix(in srgb, #0f2946 36%, transparent) !important;
+}
+
+.new-home-redesign #local,
+.new-home-redesign #ai-aeo {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #53d2c6 12%, transparent), transparent 70%) !important;
+}
+
+.new-home-redesign #services h2,
+.new-home-redesign #authority h2,
+.new-home-redesign #local h2,
+.new-home-redesign #case-studies h2,
+.new-home-redesign #solutions h2,
+.new-home-redesign #ai-aeo h2,
+.new-home-redesign #contact h2,
+.new-home-redesign #services h3,
+.new-home-redesign #case-studies h3,
+.new-home-redesign #solutions h3 {
+  color: var(--nh-text) !important;
+}
+
+.new-home-redesign #services p,
+.new-home-redesign #authority p,
+.new-home-redesign #local p,
+.new-home-redesign #case-studies p,
+.new-home-redesign #solutions p,
+.new-home-redesign #ai-aeo p,
+.new-home-redesign #contact p,
+.new-home-redesign footer p,
+.new-home-redesign footer a {
+  color: var(--nh-muted) !important;
+}
+
+.new-home-redesign #authority .bg-\[\#f9f9f9\],
+.new-home-redesign #services .bg-white,
+.new-home-redesign #case-studies .bg-white,
+.new-home-redesign #solutions .bg-\[\#f9f9f9\],
+.new-home-redesign #local .bg-\[\#f9f9f9\],
+.new-home-redesign #ai-aeo .bg-\[\#f9f9f9\],
+.new-home-redesign #contact .bg-\[\#fafafa\] {
+  background: linear-gradient(165deg, var(--nh-surface), var(--nh-surface-2)) !important;
+  border: 1px solid var(--nh-line) !important;
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
+}
+
+.new-home-redesign #case-studies .bg-\[\#FFAA1D\]\/10 {
+  background: rgba(255, 159, 67, 0.14) !important;
+}
+
+.new-home-redesign #case-studies .bg-\[\#FFAA1D\]\/10 p,
+.new-home-redesign #authority .text-\[\#9B3139\],
+.new-home-redesign #ai-aeo .text-\[\#4FA5AE\],
+.new-home-redesign #ai-aeo .text-\[\#9B3139\] {
+  color: var(--nh-accent) !important;
+}
+
+.new-home-redesign #services .group:hover,
+.new-home-redesign #case-studies .group:hover,
+.new-home-redesign #solutions .group:hover {
+  transform: translateY(-6px) !important;
+}
+
+.new-home-redesign header > div:first-child {
+  background: linear-gradient(90deg, #0b3454, #16456e) !important;
+}
+
+.new-home-redesign header p {
+  color: #cfe4ff !important;
+}
+
+.new-home-redesign nav p,
+.new-home-redesign nav svg {
+  color: #d7e8fb !important;
+}
+
+.new-home-redesign nav button:hover p {
+  color: #ffffff !important;
+}
+
+.new-home-redesign footer {
+  background: color-mix(in srgb, #081a2e 92%, transparent) !important;
+  border-top-color: var(--nh-line) !important;
+}
+
+.new-home-redesign footer h3 {
+  color: #f1f6ff !important;
+}
+
+.new-home-redesign footer .text-\[\#9B3139\] {
+  color: var(--nh-accent-2) !important;
+}
+
+@keyframes new-home-grid-pan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(44px, 44px, 0);
+  }
+}
+
+@keyframes new-home-orb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-26px, 24px, 0) scale(1.08);
+  }
+}
+
+@media (max-width: 900px) {
+  .new-home-redesign #hero h1 {
+    max-width: 20ch !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .new-home-redesign *,
+  .new-home-redesign *::before,
+  .new-home-redesign *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

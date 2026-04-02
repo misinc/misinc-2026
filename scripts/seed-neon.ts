@@ -41,15 +41,47 @@ const solutionSeeds = [
 ];
 
 const navRows = [
-  ['header', 'Home', '/', null, 10],
-  ['header', 'Solutions', '/solutions', null, 20],
-  ['header', 'Services', '/services', null, 30],
-  ['header', 'Case Studies', '/case-studies', null, 40],
-  ['header', 'Resources', '/resources', null, 50],
-  ['header', 'About', '/about', null, 60],
-  ['header', 'Contact', '/contact', null, 70],
-  ['footer', 'Privacy Policy', '/privacy', null, 10],
-  ['footer', 'Terms', '/terms', null, 20],
+  ['home', 'header', 'Home', '/', null, 10],
+  ['solutions', 'header', 'Solutions', '/solutions', null, 20],
+  ['services', 'header', 'Services', '/services', null, 30],
+  ['case-studies', 'header', 'Case Studies', '/case-studies', null, 40],
+  ['resources', 'header', 'Resources', '/resources', null, 50],
+  ['about', 'header', 'About', '/about', null, 60],
+  ['contact', 'header', 'Contact', '/contact', null, 70],
+  ['solutions-small-businesses', 'header', 'Small Businesses', '/solutions/small-businesses', 'solutions', 10],
+  ['solutions-real-estate', 'header', 'Real Estate (Add On IDX)', '/solutions/real-estate', 'solutions', 20],
+  ['solutions-healthcare-research', 'header', 'Healthcare / Research', '#', 'solutions', 30],
+  ['solutions-nonprofits', 'header', 'Nonprofits', '/solutions/nonprofits', 'solutions', 40],
+  ['solutions-professional-services', 'header', 'Professional Services', '/solutions/professional-services', 'solutions', 50],
+  ['solutions-startups', 'header', 'Startups', '/solutions/startups-saas', 'solutions', 60],
+  ['solutions-retail-ecommerce', 'header', 'Retail / Ecommerce', '#', 'solutions', 70],
+  ['services-web-design-development', 'header', 'Web Design & Development', '/services', 'services', 10],
+  ['services-new-website-design', 'header', 'New Website Design', '/services/web-design', 'services-web-design-development', 10],
+  ['services-website-redesign', 'header', 'Website Redesign', '/services/web-design', 'services-web-design-development', 20],
+  ['services-webflow-development', 'header', 'Webflow Development', '/services/webflow-development', 'services-web-design-development', 30],
+  ['services-square-development', 'header', 'Square Development', '/services/square-website-design', 'services-web-design-development', 40],
+  ['services-ecommerce-development', 'header', 'Ecommerce Development', '#', 'services-web-design-development', 50],
+  ['services-platform-migrations', 'header', 'Platform Migrations', '#', 'services-web-design-development', 60],
+  ['services-custom-applications', 'header', 'Custom Applications', '/services/custom-applications', 'services', 20],
+  ['services-web-apps', 'header', 'Web Apps', '/services/custom-applications', 'services-custom-applications', 10],
+  ['services-saas-mvp-development', 'header', 'SaaS MVP Development', '/services/custom-applications', 'services-custom-applications', 20],
+  ['services-internal-tools', 'header', 'Internal Tools', '/services/custom-applications', 'services-custom-applications', 30],
+  ['services-integrations', 'header', 'Integrations', '/services/custom-applications', 'services-custom-applications', 40],
+  ['services-ai-automation', 'header', 'AI & Automation', '/services', 'services', 30],
+  ['services-ai-consulting', 'header', 'AI Consulting', '/services/ai-consulting', 'services-ai-automation', 10],
+  ['services-ai-chat-implementation', 'header', 'AI Chat Implementation', '/services/ai-consulting', 'services-ai-automation', 20],
+  ['services-internal-ai-systems', 'header', 'Internal AI Systems', '/services/ai-consulting', 'services-ai-automation', 30],
+  ['services-aeo-strategy', 'header', 'AEO Strategy', '/services/aeo-services', 'services-ai-automation', 40],
+  ['resources-blog', 'header', 'Blog', '/resources#blog', 'resources', 10],
+  ['resources-guides', 'header', 'Guides', '/resources#guides', 'resources', 20],
+  ['resources-faqs', 'header', 'FAQs', '/resources#faqs', 'resources', 30],
+  ['about-innovation', 'header', '30 Years of Innovation', '#', 'about', 10],
+  ['about-partnerships', 'header', 'Partnerships & Certifications', '#', 'about', 20],
+  ['about-technology', 'header', "Technology We've Built", '#', 'about', 30],
+  ['contact-strategy', 'header', 'Free Strategy Call', '/contact#strategy', 'contact', 10],
+  ['contact-proposal', 'header', 'Request a Proposal', '/contact#proposal', 'contact', 20],
+  ['footer-privacy', 'footer', 'Privacy Policy', '/privacy', null, 10],
+  ['footer-terms', 'footer', 'Terms', '/terms', null, 20],
 ] as const;
 
 const seoRows = [
@@ -213,12 +245,35 @@ for (const summary of caseStudySummaries) {
     updated_at = excluded.updated_at`;
 }
 
-for (const [location, label, url, parentId, position] of navRows) {
-  await sql`insert into navigation_items (
-    location, label, url, parent_id, position, open_in_new_tab, is_visible, metadata, created_at, updated_at
-  ) values (
-    ${location}, ${label}, ${url}, ${parentId}, ${position}, false, true, ${JSON.stringify({})}::jsonb, ${now}, ${now}
-  ) on conflict do nothing`;
+const navIdByKey = new Map<string, number>();
+const pendingNavRows = [...navRows];
+
+while (pendingNavRows.length > 0) {
+  let processedCount = 0;
+
+  for (let index = 0; index < pendingNavRows.length; ) {
+    const [key, location, label, url, parentKey, position] = pendingNavRows[index];
+    const parentId = parentKey ? navIdByKey.get(parentKey) ?? null : null;
+
+    if (parentKey && !parentId) {
+      index += 1;
+      continue;
+    }
+
+    const inserted = await sql<[{ id: number }]>`insert into navigation_items (
+      location, label, url, parent_id, position, open_in_new_tab, is_visible, metadata, created_at, updated_at
+    ) values (
+      ${location}, ${label}, ${url}, ${parentId}, ${position}, false, true, ${JSON.stringify({})}::jsonb, ${now}, ${now}
+    ) returning id`;
+
+    navIdByKey.set(key, inserted[0].id);
+    pendingNavRows.splice(index, 1);
+    processedCount += 1;
+  }
+
+  if (processedCount === 0) {
+    break;
+  }
 }
 
 for (const [routePath, title, description, canonicalUrl] of seoRows) {

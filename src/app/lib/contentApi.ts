@@ -1,4 +1,4 @@
-export type NavLink = { label: string; href: string };
+export type NavLink = { label: string; href: string; items?: NavLink[] };
 export type NavDropdown = { label: string; href: string; items: NavLink[] };
 export type NavMenuItem =
   | { type: "link"; label: string; href: string; position: number }
