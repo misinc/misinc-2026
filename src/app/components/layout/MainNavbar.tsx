@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router";
@@ -145,34 +145,69 @@ function NavbarMenuItem({
 
 function NavbarDropdownMenu({
   text,
-  href,
   items,
+  isOpen,
+  onOpen,
+  onClose,
+  onToggle,
   onNavigate,
 }: {
   text: string;
-  href: string;
   items: NavLink[];
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  onToggle: () => void;
   onNavigate: (href: string) => void;
 }) {
   const hasNestedItems = items.some((item) => item.items && item.items.length > 0);
 
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={onOpen}
+      onMouseLeave={onClose}
+      onFocus={onOpen}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          onClose();
+        }
+      }}
+    >
       <button
-        onClick={() => onNavigate(href)}
+        type="button"
+        onClick={onToggle}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onOpen();
+          }
+          if (event.key === "Escape") {
+            event.preventDefault();
+            onClose();
+          }
+        }}
         className="content-stretch flex h-[42px] items-center justify-center gap-[4px] rounded-[500px] transition-opacity hover:opacity-60"
         aria-haspopup="menu"
+        aria-expanded={isOpen}
       >
         <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] text-[#9B3139] text-[14px] tracking-[1px]">
           {text}
         </p>
         <ChevronDown
           size={16}
-          className="text-[#9B3139] transition-transform duration-200 group-hover:rotate-180"
+          className={`text-[#9B3139] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
+      <div aria-hidden="true" className="absolute left-0 right-0 top-full h-[10px]" />
       <div
-        className={`invisible absolute left-1/2 top-[48px] z-30 -translate-x-1/2 rounded-[16px] border border-[#eadfda] bg-white p-[10px] opacity-0 shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 ${hasNestedItems ? "w-[720px]" : "w-[320px]"}`}
+        className={`absolute left-1/2 top-[46px] z-30 -translate-x-1/2 rounded-[16px] border border-[#eadfda] bg-white p-[10px] shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-150 ${isOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"} ${hasNestedItems ? "w-[720px]" : "w-[320px]"}`}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            onClose();
+          }
+        }}
       >
         <div className="max-h-[320px] overflow-y-auto">
           {hasNestedItems ? (
@@ -249,6 +284,8 @@ export function MainNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   const [dynamicMenu, setDynamicMenu] = useState<NavbarMenuEntry[]>(fallbackMenu);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const closeTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     let isActive = true;
@@ -287,15 +324,45 @@ export function MainNavbar() {
     };
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current !== null) {
+        window.clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
+
+  const cancelScheduledClose = () => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openDropdown = (label: string) => {
+    cancelScheduledClose();
+    setActiveDropdown(label);
+  };
+
+  const scheduleDropdownClose = (label: string) => {
+    cancelScheduledClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      setActiveDropdown((current) => (current === label ? null : current));
+      closeTimerRef.current = null;
+    }, 120);
+  };
+
   const navigateToPath = (path: string) => {
     if (path === "#") {
       setIsMenuOpen(false);
       setExpandedMobileMenu(null);
+      setActiveDropdown(null);
       return;
     }
     navigate(path);
     setIsMenuOpen(false);
     setExpandedMobileMenu(null);
+    setActiveDropdown(null);
   };
 
   return (
@@ -313,8 +380,15 @@ export function MainNavbar() {
                 <NavbarDropdownMenu
                   key={entry.label}
                   text={entry.label}
-                  href={entry.href}
                   items={entry.items}
+                  isOpen={activeDropdown === entry.label}
+                  onOpen={() => openDropdown(entry.label)}
+                  onClose={() => scheduleDropdownClose(entry.label)}
+                  onToggle={() =>
+                    activeDropdown === entry.label
+                      ? setActiveDropdown(null)
+                      : openDropdown(entry.label)
+                  }
                   onNavigate={navigateToPath}
                 />
               ) : (
