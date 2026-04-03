@@ -13,7 +13,7 @@ type NavItem = {
 
 export default async function handler() {
   try {
-    const rows = await db
+    const rows = (await db
       .select({
         id: navigationItems.id,
         label: navigationItems.label,
@@ -23,7 +23,8 @@ export default async function handler() {
       })
       .from(navigationItems)
       .where(and(eq(navigationItems.location, 'header'), eq(navigationItems.isVisible, true)))
-      .orderBy(asc(navigationItems.position), asc(navigationItems.id));
+      .orderBy(asc(navigationItems.position), asc(navigationItems.id)))
+      .filter((entry) => !(entry.label === 'Real Estate (Add On IDX)' && entry.href === '/solutions/real-estate'));
 
     const childMap = new Map<number, NavItem[]>();
 

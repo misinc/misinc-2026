@@ -49,7 +49,6 @@ const navRows = [
   ['about', 'header', 'About', '/about', null, 60],
   ['contact', 'header', 'Contact', '/contact', null, 70],
   ['solutions-small-businesses', 'header', 'Small Businesses', '/solutions/small-businesses', 'solutions', 10],
-  ['solutions-real-estate', 'header', 'Real Estate (Add On IDX)', '/solutions/real-estate', 'solutions', 20],
   ['solutions-healthcare-research', 'header', 'Healthcare / Research', '#', 'solutions', 30],
   ['solutions-nonprofits', 'header', 'Nonprofits', '/solutions/nonprofits', 'solutions', 40],
   ['solutions-professional-services', 'header', 'Professional Services', '/solutions/professional-services', 'solutions', 50],

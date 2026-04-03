@@ -83,14 +83,6 @@ const NAV_ITEMS: NavSeedItem[] = [
     parentKey: 'solutions',
   },
   {
-    key: 'solutions-real-estate',
-    label: 'Real Estate (Add On IDX)',
-    url: '/solutions/real-estate',
-    location: 'header',
-    position: 20,
-    parentKey: 'solutions',
-  },
-  {
     key: 'solutions-healthcare-research',
     label: 'Healthcare / Research',
     url: '#',

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
+import heroBackgroundVideo from "@/assets/bg-hero-video.mp4";
+import albuquerquePhoto from "@/assets/500-Marquette-Ave-NW-Albuquerque-NM.jpg";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { SiteShell } from "@/app/components/layout/SiteShell";
 import { SiteHeader } from "@/app/components/layout/SiteHeader";
@@ -472,8 +474,15 @@ function SectionHero() {
 
   return (
     <section id="hero" className="content-stretch flex flex-col items-center pb-[80px] md:pb-[120px] pt-[64px] md:pt-[100px] relative shrink-0 w-full overflow-hidden" data-name="Section Hero">
+      <div className="hero-video-layer" aria-hidden="true">
+        <video autoPlay muted loop playsInline preload="metadata">
+          <source src={heroBackgroundVideo} type="video/mp4" />
+        </video>
+      </div>
+      <div className="hero-video-scrim" aria-hidden="true" />
+
       {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[2]" 
         style={{
           backgroundImage: `linear-gradient(#9B3139 1px, transparent 1px), linear-gradient(90deg, #9B3139 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
@@ -497,7 +506,7 @@ function SectionHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              Albuquerque Web Design & AI Consulting That Drives Real Business Growth
+              Strategic Web Design & <br/>AI Solutions That Drive Business Growth
             </motion.h1>
             <motion.p 
               className="leading-[1.6] relative shrink-0 text-[16px] sm:text-[18px] md:text-[20px] max-w-[700px] text-[#4A3F37]"
@@ -505,7 +514,7 @@ function SectionHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              Strategic web design using Webflow and Square, custom application development, and cutting-edge AI & AEO optimization services for growing businesses.
+              We design websites, build custom tools, and use AI to help you attract more customers and grow your business.
             </motion.p>
           </motion.div>
           <motion.div
@@ -542,7 +551,7 @@ function SectionHero() {
 function SectionStrategicServices() {
   const services = [
     {
-      title: "Web Design That Converts",
+      title: "Websites That Convert",
       description: "Modern, conversion-optimized websites built on Webflow and Square Online that grow with your business and adapt to changing needs."
     },
     {
@@ -602,7 +611,7 @@ function SectionAuthority() {
     { year: "1995", label: "Founded" },
     { year: "30+", label: "Years Experience" },
     { year: "500+", label: "Projects Delivered" },
-    { year: "2024", label: "AI Integration" }
+    { year: "2025", label: "AI Development" }
   ];
 
   return (
@@ -616,10 +625,10 @@ function SectionAuthority() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.2] text-[#151515] text-[32px] md:text-[40px] lg:text-[48px] w-full max-w-[800px]">
-            30 Years of Innovation. Built for What's Next.
+            30 Years of Innovation.<br/>Built for What’s Next.
           </h2>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6] max-w-[700px]">
-            Since 1995, we've helped businesses navigate every major shift in web technology — from the early web to mobile-first design to AI-powered optimization.
+            Since 1995, we’ve helped businesses navigate every major shift in web technology — from the early web to mobile-first design to AI-powered optimization.
           </p>
         </motion.div>
 
@@ -663,7 +672,7 @@ function SectionLocalAlbuquerque() {
             Proudly Serving Albuquerque & New Mexico
           </h2>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
-            Based in Albuquerque since 1995, we understand the unique needs of New Mexico businesses. From local startups to established nonprofits and professional organizations, we're your neighbors and your partners in growth.
+            Based in Albuquerque since 1995, we understand the unique needs of New Mexico businesses. From local startups to established nonprofits and professional organizations, we’re your neighbors and your partners in growth.
           </p>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
             We combine the personal touch of a local agency with the technical expertise and forward-thinking approach needed to compete on a national stage.
@@ -678,8 +687,8 @@ function SectionLocalAlbuquerque() {
           transition={{ duration: 0.6 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1563302111-eab3c9c51f6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbGJ1cXVlcnF1ZSUyMG5ldyUyMG1leGljbyUyMHNreWxpbmV8ZW58MXx8fHwxNzY5Mjc5NjQwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Albuquerque New Mexico"
+            src={albuquerquePhoto}
+            alt="Downtown Albuquerque at 500 Marquette Ave NW"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </motion.div>
@@ -783,6 +792,14 @@ function SectionSolutions() {
     {
       title: "Small Business",
       description: "E-commerce solutions, local SEO optimization, and conversion-focused websites that drive growth."
+    },
+    {
+      title: "Startups",
+      description: "Launch-ready websites, MVP experiences, and flexible digital systems built to help emerging companies move quickly and scale with confidence."
+    },
+    {
+      title: "Retail / Ecommerce",
+      description: "Online storefronts, product-focused user journeys, and conversion-driven ecommerce experiences designed to increase sales and repeat customers."
     }
   ];
 
@@ -829,7 +846,7 @@ function SectionSolutions() {
 // AI & AEO Section
 function SectionAIAEO() {
   return (
-    <section id="ai-aeo" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full bg-gradient-to-b from-[#4FA5AE]/5 to-transparent">
+    {/* <section id="ai-aeo" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full bg-gradient-to-b from-[#4FA5AE]/5 to-transparent">
       <div className="content-stretch flex flex-col md:flex-row gap-[48px] md:gap-[64px] items-center relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
         <motion.div
           className="flex-1 w-full h-[300px] md:h-[400px] bg-[#f9f9f9] rounded-sm overflow-hidden relative order-2 md:order-1"
@@ -856,7 +873,7 @@ function SectionAIAEO() {
             Optimized for Search — and AI
           </h2>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
-            The future of search is changing. AI assistants like ChatGPT, Perplexity, and Google's AI Overviews are reshaping how people find information online.
+            The future of search is changing. AI assistants like ChatGPT, Perplexity, and Google’s AI Overviews are reshaping how people find information online.
           </p>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
             Our Answer Engine Optimization (AEO) services ensure your business is discoverable not just in traditional search results, but in AI-generated answers. We combine proven SEO practices with forward-thinking AI optimization to future-proof your online presence.
@@ -873,7 +890,7 @@ function SectionAIAEO() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </section> */}
   );
 }
 
@@ -889,16 +906,19 @@ function SectionFinalCTA() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
+          <p className="font-['Manrope:Medium',sans-serif] font-medium uppercase tracking-[1.5px] text-[12px] md:text-[13px] text-[#9B3139]">
+            Free Strategy Call
+          </p>
           <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.1] text-[#151515] text-[36px] md:text-[48px] lg:text-[56px] w-full">
-            Ready to Build What's Next?
+            Ready to Talk Through Your Next Project?
           </h2>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] lg:text-[20px] leading-[1.6] max-w-[700px]">
-            Let's discuss how strategic web design, custom development, and AI optimization can help your business grow. Schedule a free consultation — no pressure, just solutions.
+            Get practical guidance on web design, custom development, and AI strategy tailored to your business, goals, and stage of growth.
           </p>
         </motion.div>
         
         <motion.button 
-          className="bg-[#9B3139] content-stretch flex items-center justify-center px-[32px] py-[18px] relative rounded-[500px] shrink-0"
+          className="bg-[#9B3139] content-stretch flex items-center justify-center px-[36px] py-[18px] md:px-[42px] md:py-[20px] relative rounded-[500px] shrink-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -908,14 +928,17 @@ function SectionFinalCTA() {
         >
           <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] relative shrink-0 text-white text-[15px] md:text-[16px] tracking-[1px]">Book a Free Strategy Call</p>
         </motion.button>
+
+        <motion.p
+          className="max-w-[560px] text-[14px] md:text-[15px] leading-[1.7] text-[#777]"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.28 }}
+        >
+          No pressure. Clear recommendations.
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row gap-[12px] sm:gap-[24px] items-center text-[#777] text-[14px]">
-          <a href="mailto:contact@mis-inc.com" className="font-['Manrope:Regular',sans-serif] hover:text-[#9B3139] transition-colors">contact@mis-inc.com</a>
-          <span className="hidden sm:inline">•</span>
-          <a href="tel:+15055551234" className="font-['Manrope:Regular',sans-serif] hover:text-[#9B3139] transition-colors">(505) 555-1234</a>
-          <span className="hidden sm:inline">•</span>
-          <p className="font-['Manrope:Regular',sans-serif]">Albuquerque, NM</p>
-        </div>
       </div>
     </section>
   );
@@ -933,12 +956,12 @@ export default function HomePage() {
           <SectionHero />
           <SectionStrategicServices />
           <SectionAuthority />
-          <SectionLocalAlbuquerque />
-          <SectionCaseStudies />
-          <SectionSolutions />
-          <SectionAIAEO />
-          <SectionFinalCTA />
-        </main>
+        <SectionLocalAlbuquerque />
+        <SectionCaseStudies />
+        <SectionSolutions />
+        {/* <SectionAIAEO /> */}
+        <SectionFinalCTA />
+      </main>
         
         <SiteFooter />
     </SiteShell>
