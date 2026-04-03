@@ -133,11 +133,11 @@ function NavbarMenuItem({
       onClick={onClick}
       className="content-stretch flex gap-[2px] h-[42px] items-center justify-center relative rounded-[500px] shrink-0 transition-opacity hover:opacity-60"
     >
-      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] relative shrink-0 text-[#9B3139] text-[14px] tracking-[1px]">
+      <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] relative shrink-0 text-[14px] tracking-[1px]" style={{ color: "var(--mis-brand-red)" }}>
         {text}
       </p>
       {isActive && (
-        <div className="absolute bg-[#9B3139] h-px left-0 top-[31.5px] w-full" />
+        <div className="absolute h-px left-0 top-[31.5px] w-full" style={{ backgroundColor: "var(--mis-brand-red)" }} />
       )}
     </button>
   );
@@ -191,17 +191,19 @@ function NavbarDropdownMenu({
         aria-haspopup="menu"
         aria-expanded={isOpen}
       >
-        <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] text-[#9B3139] text-[14px] tracking-[1px]">
+        <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] text-[14px] tracking-[1px]" style={{ color: "var(--mis-brand-red)" }}>
           {text}
         </p>
         <ChevronDown
           size={16}
-          className={`text-[#9B3139] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          style={{ color: "var(--mis-brand-red)" }}
         />
       </button>
       <div aria-hidden="true" className="absolute left-0 right-0 top-full h-[10px]" />
       <div
-        className={`absolute left-1/2 top-[46px] z-30 -translate-x-1/2 rounded-[16px] border border-[#eadfda] bg-white p-[10px] shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-150 ${isOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"} ${hasNestedItems ? "w-[720px]" : "w-[320px]"}`}
+        className={`absolute left-1/2 top-[46px] z-30 -translate-x-1/2 rounded-[16px] bg-white p-[10px] shadow-[0_14px_30px_rgba(0,0,0,0.08)] transition-all duration-150 ${isOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"} ${hasNestedItems ? "w-[720px]" : "w-[320px]"}`}
+        style={{ border: "1px solid var(--mis-border)", backgroundColor: "var(--mis-panel)" }}
         onKeyDown={(event) => {
           if (event.key === "Escape") {
             event.preventDefault();
@@ -215,12 +217,14 @@ function NavbarDropdownMenu({
               {items.map((item) => (
                 <div
                   key={`${text}-${item.label}`}
-                  className="rounded-[12px] border border-[#f1e4db] bg-[#fffaf6] p-[14px]"
+                  className="rounded-[12px] p-[14px]"
+                  style={{ border: "1px solid rgba(201,146,61,0.18)", backgroundColor: "var(--mis-bg-soft)" }}
                 >
                   <button
                     type="button"
                     onClick={() => onNavigate(item.href)}
-                    className="text-left text-[12px] font-medium uppercase tracking-[1px] text-[#9B3139] transition-opacity hover:opacity-70"
+                    className="text-left text-[12px] font-medium uppercase tracking-[1px] transition-opacity hover:opacity-70"
+                    style={{ color: "var(--mis-brand-red)" }}
                   >
                     {item.label}
                   </button>
@@ -230,7 +234,8 @@ function NavbarDropdownMenu({
                         key={`${text}-${item.label}-${child.label}`}
                         type="button"
                         onClick={() => onNavigate(child.href)}
-                        className="flex w-full cursor-pointer items-center rounded-[10px] px-[10px] py-[8px] text-left text-[13px] text-[#5E3A3D] transition-colors hover:bg-white"
+                        className="flex w-full cursor-pointer items-center rounded-[10px] px-[10px] py-[8px] text-left text-[13px] transition-colors hover:bg-white"
+                        style={{ color: "var(--mis-text)" }}
                       >
                         {child.label}
                       </button>
@@ -245,7 +250,8 @@ function NavbarDropdownMenu({
                 key={`${text}-${item.label}`}
                 type="button"
                 onClick={() => onNavigate(item.href)}
-                className="flex w-full cursor-pointer items-center rounded-[10px] px-[12px] py-[10px] text-left text-[13px] text-[#5E3A3D] transition-colors hover:bg-[#FDF7F2]"
+                className="flex w-full cursor-pointer items-center rounded-[10px] px-[12px] py-[10px] text-left text-[13px] transition-colors"
+                style={{ color: "var(--mis-text)" }}
               >
                 {item.label}
               </button>
@@ -267,8 +273,9 @@ function PrimaryCTAButton({
   return (
     <motion.button
       onClick={onClick}
-      className="bg-[#9B3139] content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[500px] shrink-0"
-      whileHover={{ scale: 1.05, backgroundColor: "#7A2730" }}
+      className="content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[500px] shrink-0"
+      style={{ backgroundColor: "var(--mis-primary)" }}
+      whileHover={{ scale: 1.05, backgroundColor: "var(--mis-primary-hover)" }}
       whileTap={{ scale: 0.95 }}
     >
       <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] relative shrink-0 text-white text-[14px] tracking-[1px] whitespace-nowrap">
@@ -415,7 +422,8 @@ export function MainNavbar() {
           </button>
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-[#9B3139]"
+            className="p-2"
+            style={{ color: "var(--mis-brand-red)" }}
             whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -434,17 +442,19 @@ export function MainNavbar() {
               onClick={() => setIsMenuOpen(false)}
             />
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-white shadow-2xl z-50 lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] shadow-2xl z-50 lg:hidden overflow-y-auto"
+              style={{ backgroundColor: "var(--mis-panel)" }}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
-              <div className="flex items-center justify-between p-[20px] border-b border-[#f3f3f3]">
+              <div className="flex items-center justify-between p-[20px] border-b" style={{ borderBottomColor: "var(--mis-border)" }}>
                 <Logo />
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-2 text-[#9B3139]"
+                  className="p-2"
+                  style={{ color: "var(--mis-brand-red)" }}
                 >
                   <X size={24} />
                 </button>
@@ -460,14 +470,15 @@ export function MainNavbar() {
                           prev === entry.label ? null : entry.label,
                         )
                       }
-                      className="w-full flex items-center justify-between text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
+                      className="w-full flex items-center justify-between text-left py-[16px] px-[16px] rounded-lg transition-colors"
+                      style={{ color: "var(--mis-brand-red)" }}
                     >
-                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
+                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[16px] tracking-[0.5px]">
                         {entry.label}
                       </p>
                       <ChevronDown
                         size={18}
-                        className={`text-[#9B3139] transition-transform ${expandedMobileMenu === entry.label ? "rotate-180" : ""}`}
+                        className={`transition-transform ${expandedMobileMenu === entry.label ? "rotate-180" : ""}`}
                       />
                     </button>
                     {expandedMobileMenu === entry.label && (
@@ -476,11 +487,13 @@ export function MainNavbar() {
                           item.items && item.items.length > 0 ? (
                             <div
                               key={`${entry.label}-${item.label}`}
-                              className="mb-[10px] rounded-md border border-[#f1e4db] bg-[#fffaf6] px-[10px] py-[10px]"
+                              className="mb-[10px] rounded-md px-[10px] py-[10px]"
+                              style={{ border: "1px solid rgba(201,146,61,0.18)", backgroundColor: "var(--mis-bg-soft)" }}
                             >
                               <button
                                 onClick={() => navigateToPath(item.href)}
-                                className="text-left text-[12px] font-medium uppercase tracking-[1px] text-[#9B3139]"
+                                className="text-left text-[12px] font-medium uppercase tracking-[1px]"
+                                style={{ color: "var(--mis-brand-red)" }}
                               >
                                 {item.label}
                               </button>
@@ -489,7 +502,8 @@ export function MainNavbar() {
                                   <button
                                     key={`${entry.label}-${item.label}-${child.label}`}
                                     onClick={() => navigateToPath(child.href)}
-                                    className="block w-full cursor-pointer rounded-md px-[10px] py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9]"
+                                    className="block w-full cursor-pointer rounded-md px-[10px] py-[9px] text-left text-[14px]"
+                                    style={{ color: "var(--mis-text)" }}
                                   >
                                     {child.label}
                                   </button>
@@ -500,7 +514,8 @@ export function MainNavbar() {
                             <button
                               key={`${entry.label}-${item.label}`}
                               onClick={() => navigateToPath(item.href)}
-                              className="block w-full cursor-pointer rounded-md py-[9px] text-left text-[14px] text-[#6A4A4D] hover:bg-[#f9f9f9] px-[10px]"
+                              className="block w-full cursor-pointer rounded-md py-[9px] text-left text-[14px] px-[10px]"
+                              style={{ color: "var(--mis-text)" }}
                             >
                               {item.label}
                             </button>
@@ -513,9 +528,10 @@ export function MainNavbar() {
                     <button
                       key={entry.label}
                       onClick={() => navigateToPath(entry.href)}
-                      className="w-full text-left py-[16px] px-[16px] rounded-lg hover:bg-[#f9f9f9] transition-colors"
+                      className="w-full text-left py-[16px] px-[16px] rounded-lg transition-colors"
+                      style={{ color: "var(--mis-brand-red)" }}
                     >
-                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#9B3139] text-[16px] tracking-[0.5px]">
+                      <p className="font-['Manrope:Medium',sans-serif] font-medium text-[16px] tracking-[0.5px]">
                         {entry.label}
                       </p>
                     </button>
@@ -525,7 +541,8 @@ export function MainNavbar() {
                 <div className="mt-[24px]">
                   <button
                     onClick={() => navigateToPath("/contact#strategy")}
-                    className="w-full bg-[#9B3139] flex items-center justify-center px-[24px] py-[16px] rounded-[500px] hover:bg-[#7A2730] transition-colors"
+                    className="w-full flex items-center justify-center px-[24px] py-[16px] rounded-[500px] transition-colors"
+                    style={{ backgroundColor: "var(--mis-primary)" }}
                   >
                     <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] text-white text-[15px] tracking-[1px]">
                       Book a Free Strategy Call

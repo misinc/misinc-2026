@@ -11,13 +11,13 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   return (
     <div className="content-stretch flex flex-col items-stretch relative shrink-0 w-full z-20">
-      <div className="w-full bg-[#9B3139] px-5 md:px-6 py-[8px]">
+      <div className="w-full px-5 md:px-6 py-[8px]" style={{ backgroundColor: "var(--mis-brand-red)" }}>
         <p className="font-['Manrope:Medium',sans-serif] font-medium text-white text-[12px] md:text-[13px] tracking-[1px] uppercase text-center">
           {announcement}
         </p>
       </div>
       {children}
-      <div className="bg-[#f3f3f3] h-px shrink-0 w-full" />
+      <div className="h-px shrink-0 w-full" style={{ backgroundColor: "var(--mis-border)" }} />
     </div>
   );
 }
