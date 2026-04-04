@@ -228,6 +228,45 @@
   background: var(--home-section-base) !important;
 }
 
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight {
+  background:
+    radial-gradient(circle at top left, rgba(255, 153, 2, 0.18), transparent 18%),
+    linear-gradient(180deg, #451b17 0%, #261614 100%) !important;
+}
+
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight h2,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight p,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .authority-lab-eyebrow,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .authority-mini-label,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-card__label,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-card__detail {
+  color: #fff4e3 !important;
+}
+
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-card {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255, 248, 237, 0.1), rgba(255, 248, 237, 0.05)) !important;
+  border: 1px solid rgba(255, 244, 227, 0.14) !important;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.2) !important;
+}
+
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-card__value {
+  color: #ffffff !important;
+}
+
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-orbit {
+  background:
+    radial-gradient(circle, rgba(255, 170, 29, 0.14), transparent 58%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 68%) !important;
+  border: 1px solid rgba(255, 244, 227, 0.12) !important;
+}
+
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-orbit::before,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-orbit::after,
+.home-gradient-variant--logo-apricot-light #authority.authority-variant--midnight .midnight-orbit__core {
+  border-color: rgba(255, 244, 227, 0.14) !important;
+}
+
 .home-gradient-variant--logo-apricot-light #local {
   background: linear-gradient(180deg, var(--home-section-orange) 0%, rgba(255, 255, 255, 0) 100%) !important;
 }

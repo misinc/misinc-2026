@@ -9,6 +9,9 @@ import CaseStudiesPage from "@/app/pages/CaseStudiesPage";
 import CaseStudyDetailPage from "@/app/pages/CaseStudyDetailPage";
 import AboutPage from "@/app/pages/AboutPage";
 import ContactPage from "@/app/pages/ContactPage";
+import AuthoritySectionVariantsPage from "@/app/pages/AuthoritySectionVariantsPage";
+import ServicesSectionVariantsPage from "@/app/pages/ServicesSectionVariantsPage";
+import SolutionsSectionVariantsPage from "@/app/pages/SolutionsSectionVariantsPage";
 import NewHomePage from "@/app/pages/NewHomePage";
 import NewHomePageV2 from "@/app/pages/NewHomePageV2";
 import NewHomePageV3 from "@/app/pages/NewHomePageV3";
@@ -76,6 +79,18 @@ export const router = createBrowserRouter([
   {
     path: "/contact",
     Component: ContactPage,
+  },
+  {
+    path: "/authority-section-variants",
+    Component: AuthoritySectionVariantsPage,
+  },
+  {
+    path: "/services-section-variants",
+    Component: ServicesSectionVariantsPage,
+  },
+  {
+    path: "/solutions-section-variants",
+    Component: SolutionsSectionVariantsPage,
   },
   {
     path: "/new-home",

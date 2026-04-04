@@ -1,15 +1,17 @@
 import { Link } from "react-router";
-import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { Menu, X, ChevronDown, ArrowRight, Bot, Globe, Layers3, BriefcaseBusiness, CalendarRange, Sparkles, HandHeart, Rocket, ShoppingBag, Stethoscope, Store } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import logo from "figma:asset/7345e90366d343ada99455fe5e0c1de849dd5f34.png";
-import heroBackgroundVideo from "@/assets/bg-hero-video.mp4";
-import albuquerquePhoto from "@/assets/500-Marquette-Ave-NW-Albuquerque-NM.jpg";
+import heroBackgroundVideo from "@/assets/bg-hero-balloon-video.mp4";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { SiteShell } from "@/app/components/layout/SiteShell";
 import { SiteHeader } from "@/app/components/layout/SiteHeader";
 import { MainNavbar } from "@/app/components/layout/MainNavbar";
 import { SiteFooter } from "@/app/components/layout/SiteFooter";
+import "@/styles/authority-section-variants.css";
+import "@/styles/services-section-variants.css";
+import "@/styles/solutions-section-variants.css";
 
 type NavbarDropdownGroup = {
   label: string;
@@ -549,56 +551,114 @@ function SectionHero() {
 
 // Strategic Services Section
 function SectionStrategicServices() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    return window.innerWidth > 980;
+  });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 981px)");
+    const syncDesktopState = () => setIsDesktop(mediaQuery.matches);
+
+    syncDesktopState();
+    mediaQuery.addEventListener("change", syncDesktopState);
+
+    return () => mediaQuery.removeEventListener("change", syncDesktopState);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  const cardTwoY = useTransform(scrollYProgress, [0, 0.26, 0.46, 1], [0, 0, -126, -126]);
+  const cardThreeY = useTransform(scrollYProgress, [0, 0.56, 0.8, 1], [0, 0, -262, -262]);
+
   const services = [
     {
       title: "Websites That Convert",
-      description: "Modern, conversion-optimized websites built on Webflow and Square Online that grow with your business and adapt to changing needs."
+      description: "Modern, conversion-optimized websites built on Webflow and Square Online that grow with your business and adapt to changing needs.",
+      eyebrow: "Growth Foundation",
+      icon: Globe,
+      accent: "var(--mis-primary)",
     },
     {
       title: "Custom Applications",
-      description: "Tailored web applications and integrations designed to solve your specific business challenges and streamline operations."
+      description: "Tailored web applications and integrations designed to solve your specific business challenges and streamline operations.",
+      eyebrow: "Operational Systems",
+      icon: Layers3,
+      accent: "var(--mis-brand-red)",
     },
     {
       title: "AI & AEO Optimization",
-      description: "Forward-thinking AI integration and Answer Engine Optimization to ensure your business is found by both search engines and AI assistants."
-    }
+      description: "Forward-thinking AI integration and Answer Engine Optimization to ensure your business is found by both search engines and AI assistants.",
+      eyebrow: "Visibility Multiplier",
+      icon: Bot,
+      accent: "#c9923d",
+    },
   ];
 
   return (
-    <section id="services" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full bg-[#fafafa]">
-      <div className="content-stretch flex flex-col gap-[48px] md:gap-[64px] items-start relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
-        <motion.div
-          className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+    <section ref={sectionRef} id="services" className="ssv-section ssv-section--stacked home-services-section">
+      <div className="ssv-stacked-shell home-services-shell">
+        <motion.aside
+          className="ssv-stacked-aside home-services-aside"
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55 }}
         >
-          <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.2] text-[#151515] text-[32px] md:text-[40px] lg:text-[48px] w-full">
-            Strategic Technology for Growing Businesses
-          </h2>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] md:gap-[32px] w-full">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-[32px] md:p-[40px] flex flex-col gap-[16px] relative group cursor-pointer"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
-            >
-              <h3 className="font-['Manrope:Medium',sans-serif] font-medium text-[#151515] text-[22px] md:text-[24px] leading-[1.3]">
-                {service.title}
-              </h3>
-              <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[15px] md:text-[16px] leading-[1.6]">
-                {service.description}
-              </p>
-              <div className="bg-[#9B3139] h-[2px] shrink-0 w-0 group-hover:w-full transition-all duration-500 ease-out mt-[8px]" />
-            </motion.div>
-          ))}
+          <h2>Strategic Technology for Growing Businesses</h2>
+          <p>
+            We design, develop, and optimize digital systems that help small businesses grow, simplify operations, and stay visible as the web shifts toward AI-assisted discovery.
+          </p>
+          <button
+            type="button"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="home-services-link"
+          >
+            Book a Free Strategy Call
+            <ArrowRight size={18} />
+          </button>
+        </motion.aside>
+
+        <div className="ssv-stacked-list home-services-list">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const cardStyle =
+              !isDesktop
+                ? undefined
+                : index === 1
+                  ? { y: cardTwoY }
+                  : index === 2
+                    ? { y: cardThreeY }
+                    : undefined;
+
+            return (
+              <motion.article
+                key={service.title}
+                className={`ssv-stacked-card home-services-card home-services-card--${index + 1}`}
+                style={cardStyle}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.55, delay: index * 0.08 }}
+              >
+                <div className="ssv-icon-wrap" style={{ color: service.accent }}>
+                  <Icon />
+                </div>
+                <div>
+                  <p className="ssv-card-eyebrow">{service.eyebrow}</p>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -608,90 +668,111 @@ function SectionStrategicServices() {
 // Authority Section
 function SectionAuthority() {
   const milestones = [
-    { year: "1995", label: "Founded" },
-    { year: "30+", label: "Years Experience" },
-    { year: "500+", label: "Projects Delivered" },
-    { year: "2025", label: "AI Development" }
+    {
+      value: "1995",
+      label: "Founded",
+      detail: "Built in Albuquerque at the first big wave of the web.",
+      icon: CalendarRange,
+      accent: "#A62025",
+    },
+    {
+      value: "30+",
+      label: "Years Experience",
+      detail: "Three decades across strategy, design, systems, and delivery.",
+      icon: Sparkles,
+      accent: "#FF9902",
+    },
+    {
+      value: "500+",
+      label: "Projects Delivered",
+      detail: "Launches, rebuilds, migrations, apps, and growth-focused iterations.",
+      icon: BriefcaseBusiness,
+      accent: "#C9923D",
+    },
+    {
+      value: "2025",
+      label: "AI Development",
+      detail: "A new chapter in automation, AI search, and internal tooling.",
+      icon: Bot,
+      accent: "#6B4A1E",
+    },
   ];
 
   return (
-    <section id="authority" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col gap-[48px] md:gap-[64px] items-center relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
+    <section
+      id="authority"
+      className="authority-variant authority-variant--midnight content-stretch flex flex-col items-center relative shrink-0 w-full"
+      style={{
+        background:
+          "radial-gradient(circle at top left, rgba(255, 153, 2, 0.16), transparent 18%), linear-gradient(180deg, #451b17 0%, #261614 100%)",
+      }}
+    >
+      <div className="content-stretch flex flex-col relative shrink-0 w-full max-w-[1200px]">
         <motion.div
-          className="content-stretch flex flex-col gap-[20px] items-center relative shrink-0 w-full text-center"
+          className="authority-variant-header content-stretch flex flex-col items-center relative shrink-0 w-full text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.2] text-[#151515] text-[32px] md:text-[40px] lg:text-[48px] w-full max-w-[800px]">
+          <p className="authority-lab-eyebrow">FOUNDED IN 1995</p>
+          <h2 className="w-full max-w-[800px]">
             30 Years of Innovation.<br/>Built for What’s Next.
           </h2>
-          <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6] max-w-[700px]">
+          <p className="max-w-[700px]">
             Since 1995, we’ve helped businesses navigate every major shift in web technology — from the early web to mobile-first design to AI-powered optimization.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-[24px] md:gap-[32px] w-full">
-          {milestones.map((milestone, index) => (
-            <motion.div
-              key={index}
-              className="bg-[#f9f9f9] p-[32px] flex flex-col gap-[8px] items-center text-center"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <p className="font-['Manrope:Light',sans-serif] font-light text-[#9B3139] text-[32px] md:text-[40px] leading-[1.1]">
-                {milestone.year}
-              </p>
-              <p className="font-['Manrope:Medium',sans-serif] font-medium text-[#151515] text-[13px] md:text-[14px] tracking-[1px] uppercase">
-                {milestone.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+        <div className="midnight-shell">
+          <motion.div
+            className="midnight-orbit"
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.65 }}
+          >
+            <span className="midnight-orbit__ripple midnight-orbit__ripple--1" aria-hidden="true" />
+            <span className="midnight-orbit__ripple midnight-orbit__ripple--2" aria-hidden="true" />
+            <span className="midnight-orbit__ripple midnight-orbit__ripple--3" aria-hidden="true" />
+            <div className="midnight-orbit__core">
+              <span>30</span>
+              <p>Years of innovation</p>
+            </div>
+          </motion.div>
 
-// Local Albuquerque Section
-function SectionLocalAlbuquerque() {
-  return (
-    <section id="local" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full bg-gradient-to-b from-[#FFAA1D]/5 to-transparent">
-      <div className="content-stretch flex flex-col md:flex-row gap-[48px] md:gap-[64px] items-center relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
-        <motion.div
-          className="flex-1 content-stretch flex flex-col gap-[24px] items-start w-full"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.2] text-[#151515] text-[32px] md:text-[40px] lg:text-[48px] w-full">
-            Proudly Serving Albuquerque & New Mexico
-          </h2>
-          <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
-            Based in Albuquerque since 1995, we understand the unique needs of New Mexico businesses. From local startups to established nonprofits and professional organizations, we’re your neighbors and your partners in growth.
-          </p>
-          <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] leading-[1.6]">
-            We combine the personal touch of a local agency with the technical expertise and forward-thinking approach needed to compete on a national stage.
-          </p>
-        </motion.div>
-        
-        <motion.div
-          className="flex-1 w-full h-[300px] md:h-[400px] bg-[#f9f9f9] rounded-sm overflow-hidden relative"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <ImageWithFallback
-            src={albuquerquePhoto}
-            alt="Downtown Albuquerque at 500 Marquette Ave NW"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </motion.div>
+          <div className="midnight-grid">
+            {milestones.map((milestone, index) => {
+              const Icon = milestone.icon;
+
+              return (
+            <motion.article
+              key={milestone.label}
+              className="midnight-card"
+              style={{ ["--accent" as string]: milestone.accent }}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -10,
+                scale: 1.022,
+                boxShadow: "0 34px 72px rgba(0, 0, 0, 0.32)",
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            >
+              <div className="midnight-card__header">
+                <span className="authority-mini-label">Milestone</span>
+                <Icon size={18} />
+              </div>
+              <p className="midnight-card__value">{milestone.value}</p>
+              <p className="midnight-card__label">{milestone.label}</p>
+              <p className="midnight-card__detail">{milestone.detail}</p>
+            </motion.article>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -779,33 +860,51 @@ function SectionSolutions() {
   const industries = [
     {
       title: "Healthcare",
-      description: "HIPAA-compliant websites, patient portals, and appointment systems designed for medical practices and health organizations."
+      description: "HIPAA-compliant websites, patient portals, and appointment systems designed for medical practices and health organizations.",
+      eyebrow: "Regulated Trust",
+      icon: Stethoscope,
+      accent: "#A62025",
     },
     {
       title: "Nonprofits",
-      description: "Mission-driven websites with integrated donation systems, volunteer management, and storytelling features."
+      description: "Mission-driven websites with integrated donation systems, volunteer management, and storytelling features.",
+      eyebrow: "Mission Momentum",
+      icon: HandHeart,
+      accent: "#C9923D",
     },
     {
       title: "Professional Services",
-      description: "Sophisticated web presence for legal, consulting, and financial services with client portals and custom tools."
+      description: "Sophisticated web presence for legal, consulting, and financial services with client portals and custom tools.",
+      eyebrow: "Credibility Systems",
+      icon: BriefcaseBusiness,
+      accent: "#6B4A1E",
     },
     {
       title: "Small Business",
-      description: "E-commerce solutions, local SEO optimization, and conversion-focused websites that drive growth."
+      description: "E-commerce solutions, local SEO optimization, and conversion-focused websites that drive growth.",
+      eyebrow: "Growth Engine",
+      icon: Store,
+      accent: "#FF9902",
     },
     {
       title: "Startups",
-      description: "Launch-ready websites, MVP experiences, and flexible digital systems built to help emerging companies move quickly and scale with confidence."
+      description: "Launch-ready websites, MVP experiences, and flexible digital systems built to help emerging companies move quickly and scale with confidence.",
+      eyebrow: "Scale Fast",
+      icon: Rocket,
+      accent: "#C76438",
     },
     {
       title: "Retail / Ecommerce",
-      description: "Online storefronts, product-focused user journeys, and conversion-driven ecommerce experiences designed to increase sales and repeat customers."
-    }
+      description: "Online storefronts, product-focused user journeys, and conversion-driven ecommerce experiences designed to increase sales and repeat customers.",
+      eyebrow: "Revenue Pathways",
+      icon: ShoppingBag,
+      accent: "#7C3D33",
+    },
   ];
 
   return (
-    <section id="solutions" className="content-stretch flex flex-col items-center py-[80px] md:py-[120px] relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col gap-[48px] md:gap-[64px] items-start relative shrink-0 w-full max-w-[1200px] px-5 md:px-8 lg:px-12">
+    <section id="solutions" className="solv-section content-stretch flex flex-col items-center relative shrink-0 w-full">
+      <div className="content-stretch flex flex-col gap-[48px] md:gap-[64px] items-start relative shrink-0 w-full max-w-[1200px]">
         <motion.div
           className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full"
           initial={{ opacity: 0, y: 30 }}
@@ -817,26 +916,60 @@ function SectionSolutions() {
             Solutions Tailored to Your Industry
           </h2>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] md:gap-[32px] w-full">
-          {industries.map((industry, index) => (
-            <motion.div
-              key={index}
-              className="bg-[#f9f9f9] p-[32px] md:p-[40px] flex flex-col gap-[16px] relative group cursor-pointer border-l-[3px] border-transparent hover:border-[#9B3139] transition-all duration-300"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ backgroundColor: "#ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}
-            >
-              <h3 className="font-['Manrope:Medium',sans-serif] font-medium text-[#151515] text-[22px] md:text-[24px] leading-[1.3]">
-                {industry.title}
-              </h3>
-              <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[15px] md:text-[16px] leading-[1.6]">
-                {industry.description}
-              </p>
-            </motion.div>
-          ))}
+
+        <div className="solv-mosaic-grid w-full">
+          <motion.article
+            className="solv-mosaic-lead"
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3>Solutions designed around how each industry actually operates.</h3>
+            <p>
+              Instead of presenting every audience at the same weight, this version creates a stronger entry point and a more editorial scan path.
+            </p>
+            <div className="solv-mini-stack">
+              {industries.map((industry) => {
+                const Icon = industry.icon;
+
+                return (
+                  <Link key={`solutions-pill-${industry.title}`} to="#" className="solv-mini-pill">
+                    <Icon />
+                    <span>{industry.title}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.article>
+
+          <div className="solv-mosaic-cards">
+            {industries.map((industry, index) => {
+              const Icon = industry.icon;
+
+              return (
+                <motion.div
+                  key={industry.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                >
+                  <Link
+                    to="#"
+                    className={`solv-card solv-mosaic-card solv-mosaic-card--${index + 1}`}
+                    style={{ ["--accent" as string]: industry.accent }}
+                  >
+                    <div className="solv-mosaic-card__title">
+                      <Icon />
+                      <h3>{industry.title}</h3>
+                    </div>
+                    <p>{industry.description}</p>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
@@ -956,12 +1089,11 @@ export default function HomePage() {
           <SectionHero />
           <SectionStrategicServices />
           <SectionAuthority />
-        <SectionLocalAlbuquerque />
-        <SectionCaseStudies />
-        <SectionSolutions />
-        {/* <SectionAIAEO /> */}
-        <SectionFinalCTA />
-      </main>
+          <SectionCaseStudies />
+          <SectionSolutions />
+          {/* <SectionAIAEO /> */}
+          <SectionFinalCTA />
+        </main>
         
         <SiteFooter />
     </SiteShell>
