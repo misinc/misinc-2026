@@ -612,7 +612,7 @@ function SectionStrategicServices() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
         >
-          <h2>Strategic Technology for Growing Businesses</h2>
+          <h2>Technology Solutions for Growing Businesses</h2>
           <p>
             We design, develop, and optimize digital systems that help small businesses grow, simplify operations, and stay visible as the web shifts toward AI-assisted discovery.
           </p>
