@@ -820,7 +820,7 @@ function SectionCaseStudies() {
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
-              className="bg-white flex flex-col overflow-hidden group cursor-pointer"
+              className="bg-white flex flex-col overflow-hidden rounded-[28px] group cursor-pointer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
