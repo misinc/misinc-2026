@@ -1,15 +1,22 @@
 import { createBrowserRouter } from "react-router";
 import UIKitPage from "@/app/pages/UIKitPage";
+import BlogSectionVariantsPage from "@/app/pages/BlogSectionVariantsPage";
+import CapabilitiesBridgeVariantsPage from "@/app/pages/CapabilitiesBridgeVariantsPage";
+import FaqSectionVariantsPage from "@/app/pages/FaqSectionVariantsPage";
+import GuidesSectionVariantsPage from "@/app/pages/GuidesSectionVariantsPage";
 import SolutionsPage from "@/app/pages/SolutionsPage";
 import SolutionDetailPage from "@/app/pages/SolutionDetailPage";
 import ServicesPage from "@/app/pages/ServicesPage";
 import ServiceDetailTemplatePage from "@/app/pages/ServiceDetailTemplatePage";
 import ResourcesPage from "@/app/pages/ResourcesPage";
+import ResourcesFaqVariantsPage from "@/app/pages/ResourcesFaqVariantsPage";
 import CaseStudiesPage from "@/app/pages/CaseStudiesPage";
 import CaseStudyDetailPage from "@/app/pages/CaseStudyDetailPage";
 import AboutPage from "@/app/pages/AboutPage";
 import ContactPage from "@/app/pages/ContactPage";
 import AuthoritySectionVariantsPage from "@/app/pages/AuthoritySectionVariantsPage";
+import OurApproachSectionVariantsPage from "@/app/pages/OurApproachSectionVariantsPage";
+import ServicesOutcomesVariantsPage from "@/app/pages/ServicesOutcomesVariantsPage";
 import ServicesSectionVariantsPage from "@/app/pages/ServicesSectionVariantsPage";
 import SolutionsSectionVariantsPage from "@/app/pages/SolutionsSectionVariantsPage";
 import NewHomePage from "@/app/pages/NewHomePage";
@@ -45,6 +52,22 @@ export const router = createBrowserRouter([
     Component: UIKitPage,
   },
   {
+    path: "/blog-section-variants",
+    Component: BlogSectionVariantsPage,
+  },
+  {
+    path: "/capabilities-bridge-variants",
+    Component: CapabilitiesBridgeVariantsPage,
+  },
+  {
+    path: "/faq-section-variants",
+    Component: FaqSectionVariantsPage,
+  },
+  {
+    path: "/guides-section-variants",
+    Component: GuidesSectionVariantsPage,
+  },
+  {
     path: "/solutions",
     Component: SolutionsPage,
   },
@@ -65,6 +88,10 @@ export const router = createBrowserRouter([
     Component: ResourcesPage,
   },
   {
+    path: "/resources-faq-variants",
+    Component: ResourcesFaqVariantsPage,
+  },
+  {
     path: "/case-studies",
     Component: CaseStudiesPage,
   },
@@ -83,6 +110,14 @@ export const router = createBrowserRouter([
   {
     path: "/authority-section-variants",
     Component: AuthoritySectionVariantsPage,
+  },
+  {
+    path: "/our-approach-section-variants",
+    Component: OurApproachSectionVariantsPage,
+  },
+  {
+    path: "/services-outcomes-variants",
+    Component: ServicesOutcomesVariantsPage,
   },
   {
     path: "/services-section-variants",

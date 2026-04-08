@@ -274,6 +274,57 @@ const solutionContentMap: Record<string, SolutionContent> = {
     metricLabel: "Demo Conversion Increase",
     metricValue: "+46%",
   },
+  "retail-ecommerce": {
+    audience: "Retail / Ecommerce",
+    heroTitle: "Web & Digital Growth Solutions for Retail & Ecommerce Brands",
+    heroDescription:
+      "Increase revenue with storefront experiences built around product discovery, merchandising clarity, and lower-friction purchase paths.",
+    painTitle: "Common Retail & Ecommerce Growth Challenges",
+    pains: [
+      "Traffic reaches product pages but does not convert consistently",
+      "Storefront messaging does not clearly differentiate offers",
+      "Promotions, inventory, and campaign content are difficult to update quickly",
+      "Purchase, fulfillment, and retention systems are fragmented across tools",
+    ],
+    outcomes: [
+      "Higher conversion rates across key product and category pages",
+      "Stronger average order value through better merchandising structure",
+      "Faster campaign launches and seasonal content updates",
+      "Improved customer retention through smoother post-purchase workflows",
+    ],
+    capabilities: [
+      {
+        title: "Square Website Design",
+        description:
+          "Commerce-ready storefronts for product sales, local pickup, and service add-ons.",
+        href: "/services/square-website-design",
+      },
+      {
+        title: "Webflow Development",
+        description:
+          "Flexible landing pages, category experiences, and campaign infrastructure for growth teams.",
+        href: "/services/webflow-development",
+      },
+      {
+        title: "SEO Strategy",
+        description:
+          "Category and product discovery strategies that improve qualified organic traffic.",
+        href: "/services/seo-strategy",
+      },
+      {
+        title: "AI Consulting",
+        description:
+          "Operational automations for merchandising, service workflows, and customer support systems.",
+        href: "/services/ai-consulting",
+      },
+    ],
+    testimonialQuote:
+      "MIS helped us turn a fragmented storefront into a clearer buying journey that directly improved online sales.",
+    testimonialName: "Ecommerce Director",
+    testimonialRole: "Regional Retail Brand",
+    metricLabel: "Online Revenue Growth",
+    metricValue: "+34%",
+  },
 };
 
 function NotFoundState() {
@@ -552,4 +603,3 @@ export default function SolutionDetailPage() {
     </SiteShell>
   );
 }
-

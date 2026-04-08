@@ -7,7 +7,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({
   children,
-  announcement = "30 Years of Web Design (Since 1995) • Now offering AI & Custom App Development",
+  announcement = "30 Years of Web Design • Now offering AI & Custom App Development",
 }: SiteHeaderProps) {
   return (
     <div className="content-stretch flex flex-col items-stretch relative shrink-0 w-full z-20">

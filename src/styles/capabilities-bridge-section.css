@@ -1,0 +1,117 @@
+.cbs-section {
+  padding: 88px 20px;
+}
+
+.cbs-shell {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cbs-header,
+.cbs-editorial-card {
+  display: grid;
+  gap: 16px;
+}
+
+.cbs-eyebrow,
+.cbs-chip {
+  color: var(--mis-brand-red);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.cbs-header {
+  margin-bottom: 36px;
+  max-width: 780px;
+}
+
+.cbs-header h2,
+.cbs-section h3 {
+  color: var(--mis-text);
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.cbs-header h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 0.98;
+}
+
+.cbs-header p,
+.cbs-editorial-card p {
+  color: var(--mis-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cbs-editorial-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cbs-editorial-card {
+  background: #fffdfa;
+  border: 1px solid rgba(166, 32, 37, 0.12);
+  border-radius: 30px;
+  box-shadow: 0 18px 40px rgba(107, 74, 30, 0.08);
+  padding: 26px;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.cbs-editorial-card:hover {
+  box-shadow: 0 24px 56px rgba(107, 74, 30, 0.16);
+  transform: translateY(-8px);
+}
+
+.cbs-chip {
+  align-self: start;
+  border: 1px solid color-mix(in srgb, var(--accent, var(--mis-brand-red)) 20%, white);
+  border-radius: 999px;
+  color: var(--accent, var(--mis-brand-red));
+  padding: 8px 12px;
+}
+
+.cbs-icon-wrap {
+  align-items: center;
+  background: color-mix(in srgb, var(--accent) 10%, white);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-flex;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.cbs-inline-link {
+  align-items: center;
+  color: var(--accent);
+  display: inline-flex;
+  font-weight: 600;
+  gap: 10px;
+}
+
+@media (max-width: 1100px) {
+  .cbs-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .cbs-section {
+    padding: 72px 16px;
+  }
+
+  .cbs-editorial-card {
+    border-radius: 24px;
+    padding: 22px;
+  }
+}
