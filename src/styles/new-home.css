@@ -61,7 +61,7 @@
 
 .new-home-redesign #hero h1 {
   color: var(--nh-text) !important;
-  font-family: "Avenir Next", "Manrope", sans-serif !important;
+  font-family: var(--font-family-sans) !important;
   font-size: clamp(2.3rem, 6vw, 5.2rem) !important;
   letter-spacing: -0.03em;
   max-width: 15ch !important;

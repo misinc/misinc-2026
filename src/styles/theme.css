@@ -2,6 +2,7 @@
 
 :root {
   --font-size: 16px;
+  --font-family-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --background: #fff7ea;
   --foreground: #6b4a1e;
   --card: #fffdf9;
@@ -138,6 +139,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family-sans);
   }
 
   /**
@@ -150,24 +152,28 @@
   }
 
   h1 {
+    font-family: var(--font-family-sans);
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   h2 {
+    font-family: var(--font-family-sans);
     font-size: var(--text-xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   h3 {
+    font-family: var(--font-family-sans);
     font-size: var(--text-lg);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   h4 {
+    font-family: var(--font-family-sans);
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;

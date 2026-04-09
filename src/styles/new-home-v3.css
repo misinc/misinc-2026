@@ -165,11 +165,11 @@
 .nh3-hero h1,
 .nh3-hero p,
 .nh3-hero-cta { position: relative; z-index: 1; }
-.nh3-hero h1 { font-family: "Avenir Next", "Manrope", sans-serif; font-size: clamp(2.2rem, 6.2vw, 5.45rem); line-height: 1.02; max-width: 13.5ch; letter-spacing: -0.02em; }
+.nh3-hero h1 { font-family: var(--font-family-sans); font-size: clamp(2.2rem, 6.2vw, 5.45rem); line-height: 1.02; max-width: 13.5ch; letter-spacing: -0.02em; }
 .nh3-hero p { color: var(--muted); font-size: clamp(1rem, 1.55vw, 1.2rem); line-height: 1.72; margin-top: 22px; max-width: 62ch; }
 .nh3-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
-.nh3-section h2 { font-family: "Avenir Next", "Manrope", sans-serif; font-size: clamp(1.82rem, 3.4vw, 3.08rem); line-height: 1.1; margin-bottom: 26px; max-width: 20ch; letter-spacing: -0.01em; }
+.nh3-section h2 { font-family: var(--font-family-sans); font-size: clamp(1.82rem, 3.4vw, 3.08rem); line-height: 1.1; margin-bottom: 26px; max-width: 20ch; letter-spacing: -0.01em; }
 .nh3-section h3 { font-size: 1.22rem; line-height: 1.35; margin-bottom: 10px; }
 .nh3-section p { color: var(--muted); line-height: 1.74; }
 
