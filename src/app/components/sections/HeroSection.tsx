@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
-import heroBackgroundVideo from "@/assets/MIS 30th anniversary Video April 09, 2026 - 12_04PM.mp4";
+import heroBackgroundVideo from "@/assets/MIS 30th anniversary Video April 09, 2026 - 12_17PM.mp4";
 import { cn } from "@/app/components/ui/utils";
 
 const fadeInUp = {
