@@ -3,7 +3,7 @@ title: "Eric Spurlock"
 client: "Eric Spurlock"
 summary: "A rebuilt portfolio site for an award-winning custom home designer, where the work has to speak first."
 category: business
-image: /img/work/eric-spurlock.png
+image: /img/work/eric-spurlock.jpg
 imageAlt: "Eric Spurlock custom home design portfolio website"
 # TODO(screenshot): this image is of the previous site. Replace with a capture
 # of the current Webflow build at ericspurlock.com.

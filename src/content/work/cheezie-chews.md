@@ -3,7 +3,7 @@ title: "Cheezie Chews"
 client: "Brett Weinberg, GlobalOne Pet"
 summary: "An online store for a dog chew brand, and the third site we built with the same client."
 category: ecommerce
-image: /img/work/cheezie-chews.png
+image: /img/work/cheezie-chews.jpg
 imageAlt: "Cheezie Chews website homepage showing the dog chew product range"
 year: 2017
 archived: true

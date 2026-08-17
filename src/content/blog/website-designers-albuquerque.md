@@ -1,34 +1,97 @@
 ---
-title: "Website Designers Albuquerque"
-summary: "Contact experienced website designers in Albuquerque from MIS, Inc when you need more traffic to your site, more sales, and a bigger presence on the World Wide Web; we have what it takes to help you reach your goals. You'll find a wealth of free information on our website, as well as our contact info."
+title: "How to Choose a Web Designer in Albuquerque"
+summary: "What to look for, what to ask, and the warning signs — from a studio that has been designing websites in Albuquerque since 1995 and has cleaned up after a lot of bad projects."
 date: 2021-02-17
-guide: false
+updated: 2026-08-17
+guide: true
+seo:
+  title: "How to Choose a Web Designer in Albuquerque | MIS, Inc."
+  description: "How to hire a web designer in Albuquerque: the questions to ask, the red flags, what ownership you should insist on, and how to tell a good portfolio from a misleading one."
+faqs:
+  - q: "Should I hire a local web designer or use an online service?"
+    a: "It depends what you need. Template services are genuinely fine for a simple presence on a small budget. A local designer earns their fee when the site has a job to do — generating enquiries, taking orders, serving a specific market — and when you want someone accountable who understands that market."
+  - q: "Who owns the website when it is finished?"
+    a: "You should. Insist on owning your domain, your content, your hosting account, and your analytics. Any designer who registers your domain in their own name, or will not hand over access, is creating leverage over you rather than serving you."
+  - q: "What should I look for in a portfolio?"
+    a: "Visit the live sites, not just the screenshots. Check them on your phone. See whether they still exist and still look maintained. A designer with five sites that are still running well after five years tells you more than twenty polished mockups."
+  - q: "How much involvement will the project need from me?"
+    a: "An hour or two at the start, your content and images or a decision to have them produced for you, and prompt feedback at two or three review points. The most common cause of a stalled project is waiting on content from the client."
 ---
 
-At Multimedia Internet Services Inc., we aim to design the best digital websites while keeping things simple. As a result, we are recognized as one of the top web designers in Albuquerque, NM. From conceptualization to a full website design implementation, we have served our clients in a wide range of industries. Our web design services also come with unmatched customer support. We embrace the latest trends and technologies to meet your business needs. We have an agile team of web designers, so when you partner with us, you will feel like part of the family.
+Choosing a web designer is difficult mostly because you are being asked to judge work you are not trained to judge. Every portfolio looks good. Everyone says they build responsive, SEO-friendly, conversion-focused websites.
 
-**A Truly Experienced Digital Agency**
+Here is what actually separates them, written by a studio that has spent thirty-one years in Albuquerque and has rebuilt a lot of sites that went wrong the first time.
 
-An Albuquerque web developer's capabilities, longevity, and reliability can be of significant concern to the businesses looking for the right website designers Albuquerque to create their online presence and grow their business. We have been a full-service digital agency creating websites, marketing, and branding for satisfied clients for several years.
+## Start with the job, not the design
 
-With several years of experience, we have developed a system to identify the right ingredients that make a successful business. We incorporate these elements into our client’s websites to improve the aims of the project.
+The most common mistake is treating a website as a design purchase. It is a business purchase.
 
-**We are Marketing-Focused**
+Before you talk to anyone, get clear on what the site has to *do*: bring in phone calls, take bookings, sell products, save your team time answering the same questions. That single sentence determines everything — the platform, the structure, the budget, and how you will know whether it worked.
 
-Most Albuquerque web developers don’t care about helping you to market your business. Some of these website designers Albuquerque simply build websites (they may even design beautiful websites), and that is it. A beautiful website doesn’t mean it will generate any leads. In order to convert prospects into customers, we will help you design a website with your target audience in mind. Our focus goes beyond merely designing a beautiful website. Our aim is to help convert your website traffic into more leads and eventually more sales.
+A designer who does not ask you this in the first conversation is planning to make something attractive and hope.
 
-**Reputation**
+## How to read a portfolio properly
 
-Multimedia Internet Services Inc. brings an unbeaten track record and upstanding status. We also have many great reviews and a lot of website design project samples on our website. We have been creating high-converting website designs for several years, and we are chosen by our clients because we are a website design agency in Albuquerque you can depend on.
+Screenshots are the least useful part. Instead:
 
-**Goal-Oriented**
+**Visit the live sites.** Do they still exist? Do they still look maintained, or were they clearly abandoned after launch?
 
-The website makes it easy to measure and monitor marketing efforts. For each web design project, we ensure to work with our clients to determine their business goals and objectives, and implement tools that allow them to analyze and track their website traffic, leads generated, conversion rates, email marketing effectiveness, and much more. This also allows you to track ROI, determine what working and areas you need to improve on an ongoing basis are.
+**Open them on your phone.** This is where most of your visitors will be, and where weak work shows immediately.
 
-**Ongoing Support**
+**Check how fast they load.** On your phone, on mobile data, not on office wifi.
 
-When your website design project is complete, Multimedia Internet Services Inc can stick around for ongoing support. We provide a variety of digital marketing services that flawlessly incorporate with your site. Everything works like clockwork, so you create a steady flow of new leads that eventually become new customers.
+**Look for range.** A designer whose work all looks identical may be applying one template to every client. Yours will look like it too.
 
-**Contact the Team at Multimedia Internet Services Inc Today**
+**Look for longevity.** Sites still running well after five years say more about a designer than a wall of new mockups.
 
-With Multimedia Internet Services Inc., you have a whole team of web design and digital marketing experts at your service to create a responsive, user-friendly website that will drive traffic to your site. Contact MIS Expert Web Design & Marketing for a free consultation.
+## Questions worth asking
+
+1. **What platform would you use for me, and why?** The answer should reference *your* situation — who will maintain the site, what your budget is — not just what they prefer to build on.
+2. **Can I update it myself afterwards?** If yes, ask to be shown the editor before you commit. If no, ask what changes will cost.
+3. **Who owns the domain, the hosting, and the content?** The answer must be you. See below.
+4. **What happens after launch?** Silence after launch is common and is worth knowing about in advance.
+5. **Will you write the content, or am I writing it?** This single question causes more delayed projects than any other.
+6. **Who will actually do the work?** Some agencies sell locally and outsource entirely.
+7. **What is the total cost, including hosting and anything ongoing?** Quotes that exclude the running costs are not comparable to ones that include them.
+
+## Ownership: the one to be firm about
+
+You should own your domain name, your content, your hosting account, and your analytics.
+
+We have taken over sites where the previous designer registered the domain in their own name. When the relationship soured, the business effectively lost its web address and had to negotiate to get it back. This is not rare.
+
+Ask directly, before signing: *if we part ways, what do I keep?* The answer should be "everything", without hesitation.
+
+## Warning signs
+
+**A price before any questions.** Nobody can quote your project before understanding it.
+
+**"SEO included" with no explanation.** Ask what specifically. If the answer is vague, it means nothing was done beyond filling in a title tag.
+
+**No written scope.** What is included, what is not, how many revisions, what happens if you change direction. Verbal agreements become disputes.
+
+**Very cheap and very fast.** A functional small business website takes real hours. A quote far below everyone else usually means a template with your logo dropped in, and often means the designer disappears when support is needed.
+
+**They cannot show you anything similar.** Not necessarily disqualifying, but ask how they intend to handle what is unfamiliar.
+
+**Pressure to decide quickly.** Nothing about a website is urgent enough to justify it.
+
+## What a reasonable process looks like
+
+A short discovery conversation about the business and its goals. A written proposal with a fixed price and a clear scope. Design you review and comment on before anything is built. A build with a checkpoint or two. Testing on real devices. Training so you can manage what you should be able to manage. Then launch, and someone still available afterwards.
+
+If a designer cannot describe their process in plain language, that is itself informative.
+
+## Should you use a template service instead?
+
+Sometimes, honestly, yes.
+
+If you need a simple presence, your budget is a few hundred dollars, and the site is not expected to generate business, a template service will serve you fine. Spend the money on something with a better return.
+
+Where a designer earns their fee is when the site has a real job — bringing in enquiries, taking orders, serving a specific market — and when you want someone accountable who understands that market. If someone tells you that you need a custom site when a template would do, they are selling rather than advising.
+
+## Where we fit
+
+We are small on purpose. The person who scopes your project builds it, and is still here in two years when something needs changing. We quote a fixed price before starting, we build on platforms you could leave, and we will tell you when a cheaper option would serve you better.
+
+If that sounds right, [book a free consultation](/free-consultation) — or look at [our work](/portfolio) first and judge it the way this page suggests.

@@ -56,6 +56,15 @@
 # --- Retired case study ------------------------------------------------------
 /works/reule                                    /portfolio                          301
 
+# --- Consolidated keyword-variant posts ---------------------------------------
+# Five posts targeted variants of "albuquerque web design" with 268 impressions
+# between them, against a home page with 30,881 for the same intent. Two survive
+# with distinct angles; the rest point at the pages that should rank.
+/blog/albuquerque-seo                           /blog/albuquerque-seo-company       301
+/blog/albuquerque-web-design                    /services/web-design                301
+/blog/website-design-albuquerque                /services/web-design                301
+/blog/albuquerque-web-development               /services/website-development       301
+
 # --- Retired blog posts -------------------------------------------------------
 # 27 of the 38 migrated posts turned out to be one-line link shares pointing at
 # other people's articles via buff.ly — social posts that Webflow stored as blog

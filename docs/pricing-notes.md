@@ -47,14 +47,14 @@ where a low anchor disqualifies you.
 Starting-at prices by tier, not a single wide band. A range as broad as
 $5k–$20k tells a reader almost nothing and makes both ends look arbitrary.
 
-| Tier | What it covers | Price |
-|---|---|---|
-| Starter site | 5–8 pages, no CMS, launch-ready | from $____ |
-| Business site | CMS, blog or case studies, integrations | from $____ |
-| E-commerce | Store setup, payments, inventory | from $____ |
-| Custom software / AI | Scoped per project after a discovery call | from $____ |
-| Care & hosting | Monthly | from $____/mo |
-| SEO & marketing | Monthly retainer | from $____/mo |
+| Tier                 | What it covers                            | Price            |
+|----------------------|-------------------------------------------|------------------|
+| Starter site         | 5–8 pages, no CMS, launch-ready           | from $__3500__   |
+| Business site        | CMS, blog or case studies, integrations   | from $___5000_   |
+| E-commerce           | Store setup, payments, inventory          | from $__7500__   |
+| Custom software / AI | Scoped per project after a discovery call | from $__8500__   |
+| Care & hosting       | Monthly                                   | from $__50__/mo  |
+| SEO & marketing      | Monthly retainer                          | from $__500__/mo |
 
 Wording that keeps the door open without being evasive: *"Most projects in this
 tier land between $X and $Y. Below $X we would point you at something simpler;
