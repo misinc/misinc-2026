@@ -374,11 +374,7 @@
   max-width: 34rem;
 }
 
-.home-services-aside h2 {
-  font-family: var(--font-family-sans);
-  font-weight: 300;
-  font-size: clamp(2.4rem, 4vw, 4.4rem);
-  line-height: 0.98;
+.home-services-aside .home-section-heading {
   max-width: 11ch;
 }
 

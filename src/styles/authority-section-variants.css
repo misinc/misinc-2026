@@ -94,11 +94,6 @@
   max-width: 760px;
 }
 
-.authority-variant-header h2 {
-  font-size: clamp(2.2rem, 4.1vw, 4rem);
-  line-height: 0.98;
-}
-
 .timeline-rail {
   display: grid;
   gap: 22px;

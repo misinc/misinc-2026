@@ -84,7 +84,7 @@ export function AuthoritySection({
           transition={{ duration: 0.6 }}
         >
           <p className="authority-lab-eyebrow">{eyebrow}</p>
-          <h2 className="w-full max-w-[800px]">{title}</h2>
+          <h2 className="home-section-heading is-inverse w-full max-w-[800px]">{title}</h2>
           <p className="max-w-[700px]">{description}</p>
         </motion.div>
 

@@ -1,411 +1,319 @@
 {
   "name": "MIS, Inc. Design System",
-  "description": "A modern, minimalist design system for MIS, Inc. featuring Santa Fe-inspired warm earth tones, clean typography, and premium aesthetics. Built with Tailwind CSS v4.",
-  "version": "1.0.0",
+  "description": "Design system for the 2026 MIS, Inc. site: warm 'paper on a desk' layout, Albuquerque earth tones drawn from the MIS globe logo, an editorial serif/sans type pairing, and restrained motion. Built for Astro + Tailwind CSS v4.",
+  "version": "2.0.0",
+  "updated": "2026-08-17",
+  "changelog": [
+    "2.0.0 — Rebuilt from the approved home page prototype. Palette re-anchored to the actual logo colors (#a62025 / #ff9902) replacing the lighter #9B3139 / #D64F2A pair. Added Fraunces as the display face; headings moved from font-light 300 to bold 700 serif. Replaced the vibrant three-stop Santa Fe page background with a subtle warm gradient so the paper sheet and its shadow read properly. Added marquee, FAQ accordion, card-link, mobile nav, AI badge, map, and ribbon components. Added motion tokens with a reduced-motion contract. Dropped the unused turquoise accent."
+  ],
+
   "tailwind": {
     "version": "4.0",
+    "note": "Tailwind v4 defines theme tokens in CSS via @theme, not tailwind.config.js. The `theme` block below maps 1:1 onto @theme custom properties — see `usage.tailwindV4Setup`.",
     "theme": {
       "colors": {
         "primary": {
-          "DEFAULT": "#9B3139",
-          "dark": "#7A2730",
-          "light": "#B84650"
-        },
-        "secondary": {
-          "DEFAULT": "#D64F2A",
-          "dark": "#B84323",
-          "light": "#E6653D"
+          "DEFAULT": "#a62025",
+          "dark": "#8c1a1f",
+          "light": "#c22b30",
+          "description": "Brick red from the MIS globe logo. Headings accents, eyebrows, links, CTA band."
         },
         "accent": {
-          "gold": "#FFAA1D",
-          "turquoise": "#4FA5AE",
-          "adobe": "#E8B89A",
-          "sand": "#F4E8D8",
-          "clay": "#D4A574",
-          "sage": "#9CAF88"
+          "DEFAULT": "#ff9902",
+          "dark": "#e68900",
+          "light": "#ffb340",
+          "description": "Logo gold/orange. Buttons, list bullets, focus rings, timeline highlights."
         },
-        "white": "#ffffff",
-        "neutral": {
-          "50": "#FDFAF7",
-          "100": "#F7F1EB",
-          "150": "#F0E6DB",
-          "200": "#E8D9C8",
-          "300": "#A89080",
-          "400": "#6B564A",
-          "500": "#4A3F37",
-          "900": "#2A2420"
+        "ink": {
+          "DEFAULT": "#4a3115",
+          "soft": "#6b4a1e",
+          "muted": "#8f6a35",
+          "description": "Warm brown text ramp. `ink` for headings, `soft` for body, `muted` for labels and captions."
         },
-        "warm": {
-          "cream": "#FFF8F0",
-          "beige": "#F5EFE7",
-          "tan": "#E8DCC8",
-          "terracotta": "#D64F2A",
-          "brick": "#9B3139",
-          "adobe": "#E8B89A"
-        }
+        "paper": {
+          "DEFAULT": "#fff7ea",
+          "panel": "#fffdf9",
+          "surface": "#ffefcf",
+          "tint": "#fff3de",
+          "description": "The sheet and the surfaces on it. `panel` for cards, `surface` for chips/step markers, `tint` for banded sections."
+        },
+        "ground": {
+          "DEFAULT": "#f0e2c9",
+          "from": "#f8eed9",
+          "via": "#efe0c2",
+          "to": "#e2cb9f",
+          "description": "The desk the paper sits on. Used only by the fixed page backdrop."
+        },
+        "line": {
+          "DEFAULT": "rgba(166, 32, 37, 0.14)",
+          "soft": "rgba(107, 74, 30, 0.14)",
+          "description": "Hairlines. Red-tinted for section rules, brown-tinted for card borders."
+        },
+        "white": "#ffffff"
       },
+
       "fontFamily": {
-        "sans": ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
-        "manrope": ["Manrope", "sans-serif"]
+        "display": ["Fraunces", "Georgia", "Times New Roman", "serif"],
+        "sans": ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"]
+      },
+      "fontVariationSettings": {
+        "display": "'opsz' 96, 'SOFT' 0, 'WONK' 0",
+        "note": "Fraunces is a variable font. Keep WONK at 0 — the wonky axis reads as decorative at display sizes."
       },
       "fontWeight": {
-        "light": "300",
         "normal": "400",
-        "medium": "500"
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "extrabold": "800"
       },
       "fontSize": {
-        "xs": ["0.75rem", { "lineHeight": "1.4" }],
-        "sm": ["0.875rem", { "lineHeight": "1.4" }],
-        "base": ["1rem", { "lineHeight": "1.8" }],
-        "lg": ["1.125rem", { "lineHeight": "1.4" }],
-        "xl": ["1.5rem", { "lineHeight": "1.6" }],
-        "2xl": ["2rem", { "lineHeight": "1.4" }],
-        "3xl": ["3rem", { "lineHeight": "1.3" }],
-        "4xl": ["4rem", { "lineHeight": "1.2" }],
-        "5xl": ["6rem", { "lineHeight": "1.1" }]
-      },
-      "lineHeight": {
-        "none": "1",
-        "tight": "1.1",
-        "snug": "1.2",
-        "normal": "1.3",
-        "relaxed": "1.4",
-        "loose": "1.6",
-        "extra-loose": "1.8"
+        "xs": ["0.72rem", { "lineHeight": "1.5", "letterSpacing": "0.13em" }],
+        "sm": ["0.85rem", { "lineHeight": "1.6" }],
+        "base": ["1.0625rem", { "lineHeight": "1.65" }],
+        "lg": ["1.15rem", { "lineHeight": "1.6" }],
+        "xl": ["1.35rem", { "lineHeight": "1.4" }],
+        "2xl": ["clamp(1.6rem, 2.4vw, 1.9rem)", { "lineHeight": "1.2" }],
+        "3xl": ["clamp(1.75rem, 3.3vw, 2.4rem)", { "lineHeight": "1.14" }],
+        "4xl": ["clamp(2.4rem, 5vw, 3.6rem)", { "lineHeight": "1.08" }]
       },
       "letterSpacing": {
-        "tighter": "0.25px",
+        "display": "-0.012em",
         "normal": "0",
-        "wide": "1px"
-      },
-      "spacing": {
-        "0": "0",
-        "px": "1px",
-        "0.5": "0.125rem",
-        "1": "0.25rem",
-        "1.5": "0.375rem",
-        "2": "0.5rem",
-        "2.5": "0.625rem",
-        "3": "0.75rem",
-        "3.5": "0.875rem",
-        "4": "1rem",
-        "5": "1.25rem",
-        "6": "1.5rem",
-        "7": "1.75rem",
-        "8": "2rem",
-        "9": "2.25rem",
-        "10": "2.5rem",
-        "11": "2.75rem",
-        "12": "3rem",
-        "14": "3.5rem",
-        "16": "4rem",
-        "20": "5rem",
-        "24": "6rem",
-        "28": "7rem",
-        "32": "8rem",
-        "36": "9rem",
-        "40": "10rem"
+        "label": "0.13em",
+        "ribbon": "0.08em"
       },
       "borderRadius": {
         "none": "0",
-        "sm": "0.375rem",
-        "DEFAULT": "1rem",
-        "md": "1rem",
-        "lg": "1.5rem",
-        "xl": "2rem",
+        "sm": "0.5rem",
+        "DEFAULT": "0.875rem",
+        "lg": "1rem",
         "full": "9999px"
       },
       "boxShadow": {
-        "paper": "0px 0px 50px 0px rgba(0, 0, 0, 0.1)",
-        "card": "0px 4px 20px 0px rgba(0, 0, 0, 0.08)",
-        "hover": "0px 8px 30px 0px rgba(0, 0, 0, 0.12)",
-        "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        "DEFAULT": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
-        "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-        "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "paper": "0 2px 6px rgba(107, 74, 30, 0.12), 0 22px 44px -14px rgba(107, 74, 30, 0.30), 0 60px 140px -30px rgba(107, 74, 30, 0.50)",
+        "card": "0 1px 3px rgba(107, 74, 30, 0.06)",
+        "cardHover": "0 14px 30px -14px rgba(107, 74, 30, 0.40)",
+        "media": "0 18px 40px -18px rgba(107, 74, 30, 0.55)",
+        "button": "0 4px 14px rgba(255, 153, 2, 0.35)",
+        "panel": "-20px 0 60px -20px rgba(107, 74, 30, 0.45)",
         "none": "none"
       },
       "transitionDuration": {
         "fast": "150ms",
-        "DEFAULT": "300ms",
-        "slow": "500ms"
-      },
-      "transitionTimingFunction": {
-        "DEFAULT": "ease-in-out"
+        "DEFAULT": "180ms",
+        "reveal": "650ms",
+        "panel": "300ms"
       },
       "screens": {
         "sm": "640px",
         "md": "768px",
-        "lg": "1024px",
+        "lg": "900px",
         "xl": "1280px",
-        "2xl": "1920px"
+        "note": "lg is 900px, not the Tailwind default 1024px — it is the nav/grid breakpoint used throughout (hero, cards, eras, footer all collapse there)."
       },
       "maxWidth": {
-        "narrow": "600px",
-        "medium": "1000px",
-        "standard": "1200px",
-        "wide": "1400px",
-        "full": "1600px"
+        "prose": "62ch",
+        "content": "1080px",
+        "sheet": "1240px"
       }
     }
   },
+
   "components": {
-    "button": {
-      "primary": {
-        "description": "Primary button with dark background",
-        "classes": "bg-primary text-white px-6 py-4 rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95"
+    "pageWrapper": {
+      "backdrop": {
+        "description": "Fixed gradient layer behind everything. MUST be a fixed pseudo-element, not background-attachment: fixed — that breaks compositing on long pages and is ignored by iOS Safari.",
+        "css": "position: fixed; inset: 0; z-index: -1; background: radial-gradient(120% 60% at 50% 0%, rgba(255,246,226,.95) 0%, rgba(255,246,226,0) 58%), linear-gradient(165deg, #f8eed9 0%, #efe0c2 45%, #e2cb9f 100%);"
       },
-      "secondary": {
-        "description": "Secondary button with border",
-        "classes": "bg-transparent text-primary px-4 py-3 rounded-full border border-primary/60 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-black/5"
+      "sheet": {
+        "description": "The paper. The signature element of the design — everything else sits on it.",
+        "classes": "max-w-sheet mx-auto my-6 lg:my-7 bg-paper border border-primary/20 rounded-lg shadow-paper overflow-hidden"
       },
-      "small": {
-        "description": "Small button variant",
-        "classes": "px-4 py-3 text-sm"
-      },
-      "large": {
-        "description": "Large button variant",
-        "classes": "px-6 py-4 text-sm"
+      "wrap": {
+        "description": "Inner content column on the sheet.",
+        "classes": "max-w-content mx-auto px-6 md:px-10"
       }
     },
-    "badge": {
-      "default": {
-        "description": "Default badge/label component",
-        "classes": "bg-accent-gold text-primary px-3 py-1.5 rounded-full text-xs font-medium tracking-tighter"
+    "ribbon": {
+      "description": "Announcement bar at the very top of the sheet. Keep the copy evergreen — no countable year that goes stale.",
+      "classes": "bg-primary text-[#ffe9d2] text-center text-xs font-bold uppercase tracking-ribbon py-2.5 px-4"
+    },
+    "header": {
+      "container": {
+        "description": "Sticky, translucent, blurred header.",
+        "classes": "sticky top-0 z-[60] flex items-center justify-between gap-6 px-6 md:px-10 py-3.5 border-b border-line bg-paper/90 backdrop-blur-[10px]"
       },
-      "icon": {
-        "description": "Icon badge variant",
-        "classes": "bg-neutral-100 rounded-full p-2 size-9"
+      "brand": { "classes": "flex items-center gap-3 no-underline text-ink" },
+      "brandLogo": { "classes": "w-[42px] h-auto block" },
+      "brandName": { "classes": "font-display font-bold text-[20px] tracking-display" },
+      "menuItem": { "classes": "font-sans font-bold text-[15px] text-ink-soft no-underline hover:text-primary" },
+      "burger": {
+        "description": "Shown below lg (900px). Animates to an X via aria-expanded.",
+        "classes": "hidden max-lg:flex w-11 h-11 items-center justify-center bg-transparent border border-line rounded-sm cursor-pointer"
       },
-      "label-uppercase": {
-        "description": "Uppercase label for section headers",
-        "classes": "text-xs font-normal tracking-wide uppercase text-primary"
+      "mobilePanel": {
+        "classes": "fixed inset-y-0 right-0 w-[min(84vw,340px)] z-[70] bg-paper border-l border-line shadow-panel pt-24 px-7 pb-7 flex flex-col gap-1.5 translate-x-full transition-transform duration-panel data-[open]:translate-x-0"
+      },
+      "mobileLink": { "classes": "font-display text-[22px] font-semibold text-ink no-underline py-3 border-b border-line-soft" },
+      "scrim": { "classes": "fixed inset-0 z-[65] bg-ink/45 opacity-0 transition-opacity duration-panel data-[open]:opacity-100" }
+    },
+    "button": {
+      "primary": {
+        "description": "Gold pill. The single most important action on any page.",
+        "classes": "inline-block font-sans font-extrabold text-[15px] text-white bg-accent px-5 py-3 rounded-full shadow-button no-underline transition hover:bg-accent-dark hover:-translate-y-px"
+      },
+      "ghost": {
+        "classes": "inline-block font-sans font-extrabold text-[15px] text-primary bg-transparent px-5 py-3 rounded-full border-[1.5px] border-primary/35 no-underline transition hover:bg-primary/5"
       }
+    },
+    "eyebrow": {
+      "description": "Small red uppercase label above every section heading. Always sans, never serif.",
+      "classes": "font-sans text-xs font-bold uppercase tracking-label text-primary"
     },
     "card": {
       "service": {
-        "description": "Service card with hover effect",
-        "classes": "bg-white p-8 md:p-10 transition-all duration-300 hover:shadow-hover hover:-translate-y-2 cursor-pointer group"
+        "classes": "flex flex-col gap-3.5 bg-paper-panel border border-line-soft rounded-lg p-7 shadow-card transition hover:-translate-y-[3px] hover:shadow-cardHover"
       },
-      "values": {
-        "description": "Values/features card",
-        "classes": "p-12 size-[376px]"
+      "cardLink": {
+        "description": "Required on every service card — each card must lead somewhere.",
+        "classes": "mt-auto pt-1.5 font-sans text-[15px] font-extrabold text-primary no-underline inline-flex items-center gap-2 [&_.arrow]:transition-transform group-hover:[&_.arrow]:translate-x-1"
       },
-      "post": {
-        "description": "Portfolio/blog post card",
-        "classes": "rounded-lg overflow-hidden"
+      "work": {
+        "classes": "flex flex-col rounded-lg overflow-hidden border border-line-soft bg-paper-panel transition hover:-translate-y-[3px] hover:shadow-cardHover"
+      },
+      "note": {
+        "description": "Guide/blog teaser card.",
+        "classes": "flex flex-col gap-2.5 p-6 border border-line-soft rounded-lg bg-paper-panel no-underline text-ink transition hover:-translate-y-[3px] hover:shadow-cardHover"
       }
     },
-    "navbar": {
-      "container": {
-        "description": "Main navigation container with mobile responsiveness",
-        "classes": "h-[75px] py-8 border-b border-neutral-200"
-      },
-      "menuItem": {
-        "description": "Navigation menu item",
-        "classes": "h-[42px] px-0 text-sm font-medium tracking-wide text-primary transition-opacity hover:opacity-60"
-      },
-      "menuItemActive": {
-        "description": "Active navigation menu item",
-        "classes": "h-[42px] px-0 text-sm font-medium tracking-wide text-primary border-b border-primary"
-      },
-      "mobileMenu": {
-        "description": "Mobile slide-in menu panel",
-        "classes": "fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-white shadow-2xl z-50 overflow-y-auto"
-      }
+    "facts": {
+      "description": "Banded stat strip. Numbers animate with count-up on first view.",
+      "band": "border-y border-line bg-paper-tint",
+      "grid": "grid grid-cols-2 lg:grid-cols-4",
+      "value": "block font-display text-[32px] font-bold text-primary tabular-nums",
+      "label": "text-xs font-bold uppercase tracking-label text-ink-muted"
     },
-    "section": {
-      "hero": {
-        "description": "Hero section spacing",
-        "classes": "pt-16 md:pt-24 pb-20 md:pb-32"
-      },
-      "standard": {
-        "description": "Standard section spacing",
-        "classes": "py-20 md:py-32"
-      },
-      "cta": {
-        "description": "Call-to-action section",
-        "classes": "py-24 md:py-36"
-      }
+    "marquee": {
+      "description": "Auto-scrolling platform partner strip. CRITICAL: use overflow-x-hidden + overflow-y-visible with vertical padding — plain overflow-hidden clips the pill hover lift.",
+      "viewport": "relative overflow-x-hidden overflow-y-visible py-2 [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]",
+      "track": "flex w-max gap-3.5 py-1 animate-[slide_38s_linear_infinite] hover:[animation-play-state:paused]",
+      "pill": "flex items-center gap-2.5 py-2.5 pl-3.5 pr-5 border border-line-soft rounded-full bg-paper-panel no-underline font-bold text-[15px] text-ink-soft whitespace-nowrap transition hover:border-primary/40 hover:-translate-y-0.5 hover:text-primary",
+      "duplicateTrack": true,
+      "note": "Duplicate the track's children in JS for a seamless loop and mark the copies aria-hidden."
     },
-    "container": {
-      "full": {
-        "description": "Full width container with max-width",
-        "classes": "max-w-full px-16 mx-auto"
-      },
-      "wide": {
-        "description": "Wide container (1400px)",
-        "classes": "max-w-wide px-6 mx-auto"
-      },
-      "standard": {
-        "description": "Standard container (1200px)",
-        "classes": "max-w-standard px-5 md:px-8 lg:px-12 mx-auto"
-      },
-      "medium": {
-        "description": "Medium container (1000px)",
-        "classes": "max-w-medium px-6 mx-auto"
-      },
-      "narrow": {
-        "description": "Narrow container (600px)",
-        "classes": "max-w-narrow px-6 mx-auto"
-      }
+    "timeline": {
+      "description": "Horizontal era timeline (1995 → 2026). Collapses to a vertical rail below lg. Numbering here is meaningful — it is a real chronology, not decoration.",
+      "container": "grid grid-cols-1 lg:grid-cols-5 border-t-2 border-primary max-lg:border-t-0 max-lg:border-l-2",
+      "year": "block font-display text-[23px] font-bold text-primary tabular-nums",
+      "dot": "absolute w-3 h-3 rounded-full bg-paper border-[3px] border-primary"
     },
-    "form": {
-      "input": {
-        "description": "Form input field",
-        "classes": "bg-white border border-neutral-200 rounded-sm px-4 py-3 text-sm focus:border-primary focus:outline-none"
-      },
-      "textarea": {
-        "description": "Form textarea field",
-        "classes": "bg-white border border-neutral-200 rounded-sm px-4 py-3 text-sm min-h-[120px] focus:border-primary focus:outline-none"
-      }
+    "steps": {
+      "description": "Numbered process list. Uses CSS counters.",
+      "marker": "grid place-items-center w-[38px] h-[38px] rounded-full bg-paper-surface text-primary font-display font-bold text-base"
     },
-    "divider": {
-      "default": {
-        "description": "Horizontal divider line",
-        "classes": "h-px bg-neutral-200 w-full"
-      }
+    "faq": {
+      "description": "Native <details>/<summary> accordion — works without JS and is crawlable. Pair with FAQPage JSON-LD for AEO.",
+      "item": "border-b border-line-soft py-1",
+      "summary": "list-none cursor-pointer py-4 pr-10 relative font-display text-[19px] font-semibold text-ink hover:text-primary",
+      "chevron": "absolute right-2 top-1/2 w-[11px] h-[11px] -mt-[7px] border-r-[2.5px] border-b-[2.5px] border-primary rotate-45 transition-transform open:rotate-[-135deg]",
+      "answer": "pb-5 m-0 text-ink-soft text-base max-w-[68ch]"
     },
-    "pageWrapper": {
-      "outer": {
-        "description": "Outer container with vibrant Santa Fe gradient background",
-        "classes": "min-h-screen bg-gradient-to-br from-[#9B3139] via-[#FFAA1D] to-[#4FA5AE] px-0 sm:px-6 md:px-8 lg:px-12"
-      },
-      "inner": {
-        "description": "White paper-like container with shadow (elevated paper-on-background design)",
-        "classes": "bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] w-full max-w-[1400px] mx-auto my-0 sm:my-8 md:my-12"
-      }
+    "ctaBand": {
+      "classes": "flex flex-wrap items-center justify-between gap-7 rounded-lg px-8 md:px-12 py-10 md:py-14 bg-gradient-to-br from-primary to-primary-dark text-[#fff3de]"
+    },
+    "footer": {
+      "container": "bg-paper-tint border-t border-line",
+      "columns": "grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr_1fr] gap-10 px-6 md:px-10 pt-11 pb-8",
+      "heading": "font-sans text-xs font-extrabold uppercase tracking-label text-ink-muted mb-3",
+      "bar": "flex flex-wrap items-center justify-between gap-3.5 border-t border-line px-6 md:px-10 pt-4.5 pb-6 text-sm font-semibold text-ink-muted",
+      "legalName": "Multimedia Internet Services, Inc.",
+      "copyright": "© 1995–{currentYear} Multimedia Internet Services, Inc. All rights reserved."
+    },
+    "aiBadge": {
+      "description": "Cross-brand link to the AI practice. Always written 'MIS, Inc. AI' — never 'MIS.ai' or 'misinc.ai' as a display name. Footer only; in the header it competes with the primary logo.",
+      "classes": "inline-flex items-center gap-2.5 py-2 pl-2 pr-4 border border-line rounded-full bg-paper-panel no-underline leading-tight transition hover:border-primary/40"
+    },
+    "map": {
+      "description": "Static OpenStreetMap tiles, click-through to Google Maps. Chosen over a Google Maps iframe: no third-party cookies, no consent banner, no render-blocking script, and it costs nothing.",
+      "classes": "block relative h-[190px] rounded-md overflow-hidden border border-line-soft",
+      "attributionRequired": true
     }
   },
+
   "typography": {
+    "principle": "Fraunces (serif) for anything that is a heading or a number worth noticing. Manrope (sans) for everything a person reads or clicks: body copy, labels, buttons, nav, lists. Never set body copy in the display face.",
     "textStyles": {
-      "hero": {
-        "description": "Hero headline style",
-        "classes": "text-5xl font-light leading-tight text-primary"
-      },
-      "h1": {
-        "description": "H1 heading style",
-        "classes": "text-4xl font-light leading-snug text-primary"
-      },
-      "h2": {
-        "description": "H2 heading style",
-        "classes": "text-3xl font-light leading-normal text-primary"
-      },
-      "h3": {
-        "description": "H3 heading style",
-        "classes": "text-2xl font-light leading-relaxed text-primary"
-      },
-      "h4": {
-        "description": "H4 heading style",
-        "classes": "text-xl font-light leading-loose text-primary"
-      },
-      "h5": {
-        "description": "H5 heading style",
-        "classes": "text-lg font-light leading-relaxed text-primary"
-      },
-      "body-large": {
-        "description": "Large body text",
-        "classes": "text-xl font-light leading-extra-loose text-primary"
-      },
-      "body": {
-        "description": "Standard body text",
-        "classes": "text-base font-light leading-extra-loose text-primary"
-      },
-      "body-small": {
-        "description": "Small body text",
-        "classes": "text-sm font-light leading-extra-loose text-primary"
-      },
-      "body-muted": {
-        "description": "Muted body text",
-        "classes": "text-base font-light leading-extra-loose text-neutral-300"
-      },
-      "label": {
-        "description": "Label text",
-        "classes": "text-xs font-medium leading-relaxed tracking-tighter text-primary"
-      },
-      "label-uppercase": {
-        "description": "Uppercase label for section headers",
-        "classes": "text-xs font-normal leading-relaxed tracking-wide uppercase text-primary"
-      },
-      "button": {
-        "description": "Button text style",
-        "classes": "text-sm font-medium leading-relaxed tracking-wide"
-      },
-      "nav": {
-        "description": "Navigation text style",
-        "classes": "text-sm font-medium leading-relaxed tracking-wide"
-      }
-    }
-  },
-  "utilities": {
-    "hover": {
-      "cardLift": "transition-all duration-300 hover:shadow-hover hover:-translate-y-0.5",
-      "scaleUp": "transition-all duration-300 hover:scale-105",
-      "opacity": "transition-opacity duration-300 hover:opacity-60",
-      "bgDark": "transition-colors duration-300 hover:bg-black/5"
+      "hero": "font-display text-4xl font-bold tracking-display text-ink text-balance",
+      "h2": "font-display text-3xl font-bold tracking-display text-ink text-balance",
+      "h3": "font-display text-xl font-bold text-ink",
+      "lede": "font-sans text-lg text-ink-soft max-w-prose",
+      "body": "font-sans text-base text-ink-soft",
+      "small": "font-sans text-sm text-ink-soft",
+      "label": "font-sans text-xs font-bold uppercase tracking-label text-ink-muted",
+      "eyebrow": "font-sans text-xs font-bold uppercase tracking-label text-primary"
     },
-    "focus": {
-      "outline": "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+    "smartQuotes": {
+      "required": true,
+      "note": "All visible copy uses typographic quotes and apostrophes (&#8217; &#8220; &#8221;), never ' or \". Enforce with a remark plugin (remark-smartypants) on markdown content and by hand in components."
     }
   },
+
+  "motion": {
+    "principle": "Motion should confirm that something is alive, then get out of the way. Every effect below is disabled under prefers-reduced-motion.",
+    "effects": {
+      "heroTypewriter": {
+        "description": "Hero headline types itself with a blinking caret, then the caret disappears.",
+        "speed": "36ms per character",
+        "caretBlink": "0.85s step-end infinite"
+      },
+      "scrollReveal": {
+        "description": "Sections fade up as they enter view, staggered within a group.",
+        "from": "opacity: 0; transform: translateY(26px)",
+        "duration": "650ms",
+        "stagger": "85ms, capped at 5 items",
+        "trigger": "IntersectionObserver, threshold 0.12, unobserve after firing"
+      },
+      "countUp": {
+        "description": "Stat numbers count from 0 on first view.",
+        "duration": "1400ms",
+        "easing": "ease-out cubic",
+        "trigger": "IntersectionObserver, threshold 0.6"
+      },
+      "marquee": { "duration": "38s linear infinite", "pauseOn": "hover, focus-within" },
+      "hoverLift": { "transform": "translateY(-3px)", "shadow": "cardHover", "duration": "180ms" }
+    },
+    "reducedMotion": "Under prefers-reduced-motion: reveals render visible with no transition, the typewriter prints the full headline immediately, count-ups show final values, the marquee stops and wraps to a static centered row, hover lifts are removed, and smooth scrolling is disabled."
+  },
+
+  "accessibility": {
+    "focusVisible": "outline: 3px solid var(--color-accent); outline-offset: 3px; border-radius: 6px",
+    "rules": [
+      "Every interactive element has a visible focus state — the gold outline above.",
+      "The mobile panel closes on Escape, on scrim click, and on link activation; aria-expanded tracks state on the burger.",
+      "Decorative SVGs and duplicated marquee items are aria-hidden.",
+      "Body text sits at ink-soft (#6b4a1e) on paper (#fff7ea) — 7.4:1. Never drop body copy to ink-muted, which passes for large text and labels only.",
+      "Guard optional DOM lookups in shared scripts; one missing element must not throw and kill every other behavior on the page."
+    ]
+  },
+
   "designPrinciples": {
-    "typography": "Use Manrope Light (font-light) for body text and headings to maintain a clean, modern aesthetic. Medium weight (font-medium) for labels and buttons.",
-    "spacing": "Generous white space creates a premium, breathable feel. Use pt-40 (160px) or more for major section spacing. Use p-12 (48px) for card padding.",
-    "color": "Santa Fe-inspired warm earth tones drawn from the MIS logo. Primary brick red (#9B3139) for emphasis, warm terracotta (#D64F2A) for accents, golden yellow (#FFAA1D) for highlights. Warm neutrals (cream, beige, tan) for backgrounds. Optional turquoise accent for Southwestern flair.",
-    "motion": "Subtle hover effects with scale (hover:scale-105) and opacity (hover:opacity-60) changes. Smooth transitions with duration-300 (300ms).",
-    "layout": "Paper-like page wrapper with shadow-paper on warm neutral backgrounds. Clean, grid-based layouts with max-width containers. Adobe-inspired texture and warmth.",
-    "components": "Rounded pill buttons (rounded-full), clean cards with minimal borders, subtle hover states with transform and shadow effects. Warm, inviting aesthetic."
+    "layout": "A sheet of warm paper resting on a desk. The gradient backdrop exists so the sheet's shadow has something to fall on — keep it subtle; if the backdrop competes with the sheet, it is wrong.",
+    "typography": "An editorial serif against a clean sans. The serif carries 31 years of craft; the sans keeps it modern and readable. Headings are bold, not light — this is a company with a track record, and the type should sound certain.",
+    "color": "Taken from the MIS globe logo, not invented: brick red and gold on warm cream and brown. Spend boldness on the red and gold; keep every surface around them quiet.",
+    "motion": "Three moments carry the page — the headline typing, sections rising into view, and the numbers counting up. Everything else is a 180ms hover. Resist adding a fourth.",
+    "structure": "Structural devices must encode something true. The era timeline is a real chronology and earns its numbering; the process steps are a real sequence. Do not number things that are merely a list.",
+    "proof": "Prefer a modest true outcome over an impressive invented one. Client testimonials come from the Portfolio CMS with the client named; stats are verifiable facts (founded 1995, 31 years, 500+ projects, 20+ year client relationships)."
   },
-  "colorPalette": {
-    "description": "Santa Fe-inspired color palette based on the MIS logo featuring warm earth tones, desert colors, and Southwestern accents.",
-    "primary": {
-      "name": "Brick Red",
-      "hex": "#9B3139",
-      "usage": "Primary brand color from logo. Use for headings, CTAs, and emphasis.",
-      "pairsWith": ["white", "neutral-50", "accent-sand", "accent-gold"]
-    },
-    "secondary": {
-      "name": "Terracotta",
-      "hex": "#D64F2A",
-      "usage": "Secondary brand color from logo. Use for accents, highlights, and interactive elements.",
-      "pairsWith": ["white", "neutral-100", "accent-adobe"]
-    },
-    "accentGold": {
-      "name": "Golden Yellow",
-      "hex": "#FFAA1D",
-      "usage": "From logo letters. Use sparingly for highlights, badges, and important callouts.",
-      "pairsWith": ["primary", "neutral-900", "warm-brick"]
-    },
-    "accentTurquoise": {
-      "name": "Santa Fe Turquoise",
-      "hex": "#4FA5AE",
-      "usage": "Classic Southwestern accent. Use for links, secondary CTAs, and decorative elements.",
-      "pairsWith": ["warm-terracotta", "neutral-50", "accent-sand"]
-    },
-    "warmNeutrals": {
-      "name": "Desert Neutrals",
-      "range": ["#FFF8F0", "#F7F1EB", "#F0E6DB", "#E8D9C8"],
-      "usage": "Warm cream, beige, and tan tones for backgrounds, cards, and spacers. Creates adobe/clay feeling.",
-      "pairsWith": ["primary", "secondary", "neutral-400"]
-    },
-    "earthAccents": {
-      "name": "Adobe & Clay",
-      "colors": {
-        "adobe": "#E8B89A",
-        "sand": "#F4E8D8", 
-        "clay": "#D4A574",
-        "sage": "#9CAF88"
-      },
-      "usage": "Soft earth tones for backgrounds, badges, and subtle accents. Sage for natural/eco elements."
-    }
-  },
+
   "usage": {
-    "gettingStarted": "This design system is built for Tailwind CSS v4. Use the provided class names directly in your components.",
+    "stack": "Astro 5 + Tailwind CSS v4, static output, deployed to Cloudflare Pages.",
+    "fonts": "Self-host both faces as woff2 in /public/fonts and declare @font-face locally. Do not link Google Fonts — it costs a third-party connection and leaks visitor IPs.",
+    "tailwindV4Setup": "@import \"tailwindcss\"; @theme { --color-primary: #a62025; --color-accent: #ff9902; --color-ink: #4a3115; --color-paper: #fff7ea; --font-display: \"Fraunces\", Georgia, serif; --font-sans: \"Manrope\", ui-sans-serif, system-ui, sans-serif; --breakpoint-lg: 900px; /* …etc */ }",
     "examples": {
-      "primaryButton": "<button class=\"bg-primary text-white px-6 py-4 rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-primary-dark hover:scale-105 active:scale-95\">Click Me</button>",
-      "serviceCard": "<div class=\"bg-neutral-100 p-12 transition-all duration-300 hover:bg-neutral-150 hover:shadow-hover cursor-pointer group\">Card Content</div>",
-      "sectionHeading": "<h2 class=\"text-3xl font-light leading-normal text-primary\">Section Title</h2>",
-      "pageWrapper": "<div class=\"bg-accent-background min-h-screen p-6 md:p-12 lg:p-20\"><div class=\"bg-white shadow-paper w-full\"><!-- content --></div></div>"
+      "sheet": "<div class=\"max-w-sheet mx-auto my-6 bg-paper border border-primary/20 rounded-lg shadow-paper overflow-hidden\">…</div>",
+      "sectionHeading": "<span class=\"font-sans text-xs font-bold uppercase tracking-label text-primary\">Services</span>\n<h2 class=\"font-display text-3xl font-bold tracking-display text-ink text-balance\">Three ways we help</h2>",
+      "primaryButton": "<a class=\"inline-block font-sans font-extrabold text-[15px] text-white bg-accent px-5 py-3 rounded-full shadow-button transition hover:bg-accent-dark hover:-translate-y-px\" href=\"/contact\">Book a free strategy call</a>"
     }
   }
 }

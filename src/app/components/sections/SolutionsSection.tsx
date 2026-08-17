@@ -36,7 +36,7 @@ export function SolutionsSection({
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.2] text-[#151515] text-[32px] md:text-[40px] lg:text-[48px] w-full">
+          <h2 className="home-section-heading w-full">
             {title}
           </h2>
         </motion.div>

@@ -102,7 +102,7 @@ export function StrategicServicesSection({
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55 }}
         >
-          <h2>{title}</h2>
+          <h2 className="home-section-heading">{title}</h2>
           <p>{description}</p>
           {ctaTo ? (
             <Link to={ctaTo} className="home-services-link">

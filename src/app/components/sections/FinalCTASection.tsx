@@ -55,7 +55,7 @@ export function FinalCTASection({
           <p className="font-['Manrope:Medium',sans-serif] font-medium uppercase tracking-[1.5px] text-[12px] md:text-[13px] text-[#9B3139]">
             {eyebrow}
           </p>
-          <h2 className="font-['Manrope:Light',sans-serif] font-light leading-[1.1] text-[#151515] text-[36px] md:text-[48px] lg:text-[56px] w-full">
+          <h2 className="home-section-heading w-full">
             {title}
           </h2>
           <p className="font-['Manrope:Light',sans-serif] font-light text-[#777] text-[16px] md:text-[18px] lg:text-[20px] leading-[1.6] max-w-[700px]">
