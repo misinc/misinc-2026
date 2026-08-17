@@ -3,11 +3,11 @@ title: "Syserco Energy Solutions"
 client: "Syserco Energy Solutions"
 summary: "A sister site to Syserco for a different business — energy performance contracting — kept visibly related without being a copy."
 category: business
-image: /img/work/syserco-es.jpg
+image: /img/work/syserco-es.avif
 imageAlt: "Syserco Energy Solutions website homepage"
 projectUrl: https://www.syserco-es.com
 year: 2024
-order: 10
+order: 9
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

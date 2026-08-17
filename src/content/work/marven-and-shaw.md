@@ -3,7 +3,7 @@ title: "Marven & Shaw"
 client: "Marven & Shaw"
 summary: "Private-sector investigators working on corruption, money laundering, and fraud — a site that had to be credible without being loud."
 category: business
-image: /img/work/marven-and-shaw.jpg
+image: /img/work/marven-and-shaw.avif
 imageAlt: "Marven & Shaw investigations website homepage"
 projectUrl: https://www.marvenandshaw.com
 year: 2022

@@ -3,10 +3,10 @@ title: "3D Security Training Solutions"
 client: "3D Security Training Solutions"
 summary: "A training company with a rolling calendar of courses across two states, where the site has to answer one question: when can I get certified?"
 category: business
-image: /img/work/3d-sts.jpg
+image: /img/work/3d-sts.avif
 imageAlt: "3D Security Training Solutions website homepage"
 projectUrl: https://www.3dsts.com
-year: 2024
+year: 2025
 order: 7
 services: [web-design, website-development]
 platforms: [webflow]

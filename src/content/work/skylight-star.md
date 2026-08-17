@@ -3,7 +3,7 @@ title: "Advanced Skylight Services"
 client: "Advanced Skylight Services"
 summary: "A redesign for a 20-year client, rebuilt when the founder's daughter took over the business and needed a site that reflected where it was going."
 category: business
-image: /img/work/skylight-star.jpg
+image: /img/work/skylight-star.avif
 imageAlt: "Advanced Skylight Services skylight manufacturer website"
 projectUrl: https://www.skylightstar.com
 year: 2025

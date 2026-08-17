@@ -3,10 +3,10 @@ title: "United Voices for Newcomer Rights"
 client: "United Voices for Newcomer Rights"
 summary: "An Albuquerque nonprofit supporting refugees and immigrants, where the site has to serve the people it helps and the people who fund it."
 category: nonprofit
-image: /img/work/uvnr.jpg
+image: /img/work/uvnr.avif
 imageAlt: "United Voices for Newcomer Rights nonprofit website"
 projectUrl: https://www.uvnr.org
-year: 2023
+year: 2022
 order: 11
 services: [web-design, website-development]
 platforms: [webflow]

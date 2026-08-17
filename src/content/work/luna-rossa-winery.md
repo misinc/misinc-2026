@@ -3,11 +3,11 @@ title: "Luna Rossa Winery"
 client: "Luna Rossa Winery"
 summary: "A New Mexico winery with vineyards, two tasting rooms, a pizzeria, and an online shop that has to obey fifty different sets of shipping rules."
 category: ecommerce
-image: /img/work/luna-rossa-winery.jpg
+image: /img/work/luna-rossa-winery.avif
 imageAlt: "Luna Rossa Winery website homepage"
 projectUrl: https://www.lunarossawinery.com
-year: 2022
-order: 14
+year: 2021
+order: 15
 services: [ecommerce-website-design, web-design]
 platforms: [webflow]
 seo:

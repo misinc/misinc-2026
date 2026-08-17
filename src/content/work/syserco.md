@@ -3,11 +3,11 @@ title: "Syserco"
 client: "Syserco"
 summary: "A 200-person building automation firm in the Bay Area, with a site organised around the buildings they work in rather than the products they sell."
 category: business
-image: /img/work/syserco.jpg
+image: /img/work/syserco.avif
 imageAlt: "Syserco energy management and building automation website"
 projectUrl: https://www.syserco.com
-year: 2023
-order: 9
+year: 2021
+order: 14
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

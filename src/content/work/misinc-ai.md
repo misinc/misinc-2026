@@ -3,7 +3,7 @@ title: "MIS, Inc. AI"
 client: "MIS, Inc."
 summary: "Our own AI practice, given its own site — because the people who need an AI agent are not always the people looking for a web designer."
 category: business
-image: /img/work/misinc-ai.jpg
+image: /img/work/misinc-ai.avif
 imageAlt: "MIS, Inc. AI website homepage"
 projectUrl: https://www.misinc.ai
 year: 2025

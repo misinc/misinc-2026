@@ -3,7 +3,7 @@ title: "bAI Labs"
 client: "bAI Labs"
 summary: "An applied AI lab with two products and three service lines, and a site that had to make frontier work legible to the people who actually buy it."
 category: business
-image: /img/work/bai-labs.jpg
+image: /img/work/bai-labs.avif
 imageAlt: "bAI Labs applied AI website homepage"
 projectUrl: https://www.bailabs.ai
 year: 2026
