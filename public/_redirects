@@ -56,6 +56,39 @@
 # --- Retired case study ------------------------------------------------------
 /works/reule                                    /portfolio                          301
 
+# --- Retired blog posts -------------------------------------------------------
+# 27 of the 38 migrated posts turned out to be one-line link shares pointing at
+# other people's articles via buff.ly — social posts that Webflow stored as blog
+# entries. Publishing them would be thin content linking off-site. Each 301s to
+# the blog index rather than 404ing; all had under 110 impressions a year.
+
+/blog/15-top-tips-to-optimize-your-content-for-the-voice-search-revolution /blog                               301
+/blog/4-content-marketing-tips-to-make-your-website-great /blog                               301
+/blog/4-ways-artificial-intelligence-ai-can-transform-your-small-business /blog                               301
+/blog/5-ecommerce-secrets-the-experts-aren-t-willing-to-share-with-you /blog                               301
+/blog/5-ecommerce-seo-tactics-to-try-today-practical-ecommerce /blog                               301
+/blog/5-low-cost-visual-creation-tools-to-help-improve-your-digital-marketing-efforts /blog                               301
+/blog/5-tips-to-dominate-local-seo                 /blog                               301
+/blog/6-marketing-tips-to-make-your-e-commerce-brand-stand-out-from-the-crowd /blog                               301
+/blog/8-texting-statistics-that-will-change-the-way-you-think-about-text-marketing /blog                               301
+/blog/google-search-console-the-definitive-guide   /blog                               301
+/blog/how-best-to-position-your-company-to-rank-well-on-google /blog                               301
+/blog/how-small-businesses-can-use-social-media-to-grow-square /blog                               301
+/blog/how-to-optimize-for-google-s-featured-snippet-box-video /blog                               301
+/blog/how-to-optimize-your-mobile-website-for-google-searches /blog                               301
+/blog/how-to-research-keywords-to-improve-your-google-ranking /blog                               301
+/blog/how-to-use-social-media-to-bring-in-more-customer-reviews /blog                               301
+/blog/how-to-write-a-killer-about-me-page          /blog                               301
+/blog/how-to-write-small-business-marketing-copy-that-makes-customers-buy /blog                               301
+/blog/it-s-2018-and-some-websites-still-aren-t-mobile-responsive /blog                               301
+/blog/the-10-best-2019-resolutions-for-small-business-owners /blog                               301
+/blog/the-2018-guide-to-google-webmaster-tools-google-index-crawl-and-more /blog                               301
+/blog/the-55-best-free-seo-tools-2019-update       /blog                               301
+/blog/the-seo-factors-you-re-probably-ignoring     /blog                               301
+/blog/the-ultimate-guide-to-seo-meta-tags          /blog                               301
+/blog/these-4-things-could-be-blocking-your-business-growth-and-you-don-t-even-see-them /blog                               301
+/blog/why-seo-is-critical-for-your-business-in-2019 /blog                               301
+/blog/why-writing-for-customers-is-your-best-seo-strategy /blog                               301
 # --- Taxonomy cleanup --------------------------------------------------------
 /work-category/*                                /portfolio                          301
 /blog-tags/*                                    /blog                               301

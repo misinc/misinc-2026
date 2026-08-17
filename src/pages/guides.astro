@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import PageHero from '../components/PageHero.astro'
+import PostCard from '../components/PostCard.astro'
+import Card from '../components/Card.astro'
+import CtaBand from '../components/CtaBand.astro'
+import { yearsInBusiness } from '../lib/site'
+
+/**
+ * Guides is an INDEX, not a URL space. Posts stay at /blog/<slug> because those
+ * URLs carry the search rankings — see docs/blog-migration.md. This page
+ * curates the substantial ones and links to them where they already live.
+ */
+const guides = (await getCollection('blog'))
+  .filter((p) => p.data.guide)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+const standalone = [
+  {
+    tag: 'Pricing',
+    title: 'What a website costs in Albuquerque',
+    blurb: 'Honest ranges for small business sites, and what actually drives the number up or down.',
+    href: '/albuquerque-web-design-pricing-guide',
+  },
+]
+---
+
+<Base
+  title="Guides | Web Design, SEO & AI for New Mexico Businesses | MIS, Inc."
+  description="In-depth guides on web design pricing, local SEO, Google Search Console, and getting found by AI — written for New Mexico business owners by MIS, Inc."
+>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="Guides"
+      title="The long answers"
+      lede={`Most of these started life as a question from a client. They are the pieces we send people when a short answer will not do — accumulated over ${yearsInBusiness} years of being asked.`}
+      ctas={[
+        { label: 'Book a free consultation', href: '/free-consultation' },
+        { label: 'All blog posts', href: '/blog', variant: 'ghost' },
+      ]}
+    />
+  </div>
+
+  <Section>
+    <SectionHeader
+      eyebrow="Guides"
+      title="Worth your time"
+      class="mb-10"
+    />
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {
+        standalone.map((s) => (
+          <Card variant="note" href={s.href} tag={s.tag} title={s.title} blurb={s.blurb} cta="Read the guide" />
+        ))
+      }
+      {
+        guides.map((p) => (
+          <PostCard
+            slug={p.id}
+            title={p.data.title}
+            summary={p.data.summary}
+            date={p.data.date}
+            guide
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section divider={false}>
+    <CtaBand
+      title="Question we have not written up yet?"
+      note="Ask it. If the answer is useful, it usually ends up here."
+      ctaLabel="Ask us a question"
+      ctaHref="/contact"
+    />
+  </Section>
+</Base>

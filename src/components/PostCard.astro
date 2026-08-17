@@ -1,0 +1,58 @@
+---
+/**
+ * Blog/guide teaser. Text-first: most migrated posts have no thumbnail, and a
+ * grid where half the cards have images and half do not looks broken. The date
+ * and an optional "Guide" chip carry the hierarchy instead.
+ */
+interface Props {
+  slug: string
+  title: string
+  summary?: string
+  date: Date
+  guide?: boolean
+  class?: string
+}
+
+const { slug, title, summary, date, guide = false, class: className = '' } = Astro.props
+
+const formatted = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<a
+  href={`/blog/${slug}`}
+  class:list={[
+    'group flex flex-col gap-2.5 rounded-lg border border-line-soft bg-paper-panel p-6 no-underline shadow-card transition hover:-translate-y-[3px] hover:shadow-card-hover',
+    className,
+  ]}
+  data-reveal
+>
+  <div class="flex flex-wrap items-center gap-2.5">
+    <time
+      datetime={date.toISOString().slice(0, 10)}
+      class="text-[11.5px] font-extrabold uppercase tracking-(--tracking-label) text-ink-muted"
+    >
+      {formatted}
+    </time>
+    {
+      guide && (
+        <span class="rounded-full bg-paper-surface px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary">
+          Guide
+        </span>
+      )
+    }
+  </div>
+
+  <h3 class="font-display text-lg font-bold leading-tight text-ink">{title}</h3>
+  {summary && <p class="text-sm text-ink-soft">{summary}</p>}
+
+  <span class="mt-auto pt-3 text-sm font-extrabold text-primary">
+    Read
+    <span class="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">
+      &rarr;
+    </span>
+  </span>
+</a>

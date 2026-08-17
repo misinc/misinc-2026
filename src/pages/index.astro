@@ -68,16 +68,16 @@ const guides = [
     href: '/albuquerque-web-design-pricing-guide',
   },
   {
-    tag: 'Local SEO',
-    title: 'How to choose an Albuquerque SEO company',
-    blurb: 'What to ask, what to avoid, and how to tell real local expertise from a sales pitch.',
-    href: '/blog/albuquerque-seo-company',
+    tag: 'Real estate',
+    title: 'What Realtors need from a website',
+    blurb: 'IDX, lead capture, and the things that actually convert a browser into a client.',
+    href: '/blog/real-estate-web-designers',
   },
   {
-    tag: 'AI & search',
-    title: 'Getting found when customers ask AI',
-    blurb: 'What changes when people ask an assistant instead of typing into a search box.',
-    href: '/blog',
+    tag: 'Local SEO',
+    title: 'Choosing an SEO company in Albuquerque',
+    blurb: 'What to ask, what to avoid, and how to tell real local expertise from a sales pitch.',
+    href: '/blog/albuquerque-seo-company',
   },
 ]
 
@@ -346,6 +346,10 @@ const guides = [
           <Card variant="note" href={g.href} tag={g.tag} title={g.title} blurb={g.blurb} />
         ))
       }
+    </div>
+
+    <div class="mt-10">
+      <Button href="/guides" variant="ghost">Read all our guides</Button>
     </div>
   </Section>
 

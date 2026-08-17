@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import Section from '../../components/Section.astro'
+import SectionHeader from '../../components/SectionHeader.astro'
+import PageHero from '../../components/PageHero.astro'
+import PostCard from '../../components/PostCard.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import { yearsInBusiness } from '../../lib/site'
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+const guides = posts.filter((p) => p.data.guide)
+---
+
+<Base
+  title="Blog | Web Design, SEO & Small Business Notes | MIS, Inc."
+  description="Practical writing for New Mexico business owners on web design, SEO, e-commerce, and getting found online — from an Albuquerque studio building websites since 1995."
+>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="Blog"
+      title="Notes from the workshop"
+      lede={`Practical writing for New Mexico business owners — what things cost, what is worth doing, and what to ignore. Drawn from ${yearsInBusiness} years of answering the same questions.`}
+      ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]}
+    />
+  </div>
+
+  {
+    guides.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-16">
+          <SectionHeader
+            eyebrow="Start here"
+            title="Our guides"
+            lede="The longer, more useful pieces. If you only read a few things here, read these."
+            class="mb-10"
+          />
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {guides.slice(0, 3).map((p) => (
+              <PostCard
+                slug={p.id}
+                title={p.data.title}
+                summary={p.data.summary}
+                date={p.data.date}
+                guide
+              />
+            ))}
+          </div>
+          <p class="mt-8">
+            <a href="/guides" class="text-[15px] font-extrabold text-primary no-underline hover:underline">
+              See all guides &rarr;
+            </a>
+          </p>
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <SectionHeader
+      eyebrow="Everything"
+      title="All posts"
+      lede={`${posts.length} posts, newest first.`}
+      class="mb-10"
+    />
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((p) => (
+          <PostCard
+            slug={p.id}
+            title={p.data.title}
+            summary={p.data.summary}
+            date={p.data.date}
+            guide={p.data.guide}
+          />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section divider={false}>
+    <CtaBand
+      title="Rather just ask us?"
+      note="Most of these started as a client question. Yours is welcome too."
+      ctaLabel="Book a free consultation"
+    />
+  </Section>
+</Base>

@@ -129,4 +129,25 @@ const faqs = defineCollection({
   }),
 })
 
-export const collections = { services, platforms, work, faqs }
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string().default(''),
+    date: z.coerce.date(),
+    /** Original Webflow thumbnail, still on their CDN until images are moved. */
+    image: z.string().optional(),
+    /**
+     * Substantial evergreen pieces, surfaced on /guides. Deliberately a flag
+     * rather than a separate URL space — see docs/blog-migration.md.
+     */
+    guide: z.boolean().default(false),
+    /** Set when a post has been reviewed and refreshed for the new site. */
+    updated: z.coerce.date().optional(),
+    seo: z
+      .object({ title: z.string().optional(), description: z.string().optional() })
+      .optional(),
+  }),
+})
+
+export const collections = { services, platforms, work, faqs, blog }
