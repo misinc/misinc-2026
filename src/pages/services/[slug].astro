@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'
 import Base from '../../layouts/Base.astro'
 import Section from '../../components/Section.astro'
 import SectionHeader from '../../components/SectionHeader.astro'
+import PageHero from '../../components/PageHero.astro'
 import Prose from '../../components/Prose.astro'
 import Card from '../../components/Card.astro'
 import Button from '../../components/Button.astro'
@@ -68,25 +69,24 @@ const breadcrumbs = {
   description={service.data.seo.description}
   schema={[serviceSchema, breadcrumbs]}
 >
-  <Section>
-    <nav aria-label="Breadcrumb" class="mb-6 text-sm font-semibold text-ink-muted">
-      <a href="/services" class="text-ink-muted no-underline hover:text-primary">Services</a>
-      <span class="mx-2" aria-hidden="true">/</span>
-      <span class="text-ink-soft">{service.data.title}</span>
-    </nav>
-
-    <SectionHeader
-      as="h1"
+  <div class="border-b border-line">
+    <PageHero
       eyebrow={PILLAR_LABEL[service.data.pillar]}
       title={service.data.heading}
       lede={service.data.summary}
-    />
-
-    <div class="mt-8 flex flex-wrap items-center gap-3.5" data-reveal>
-      <Button href="/free-consultation">Book a free consultation</Button>
-      <Button href="/portfolio" variant="ghost">See our work</Button>
-    </div>
-  </Section>
+      media={service.data.hero}
+      ctas={[
+        { label: 'Book a free consultation', href: '/free-consultation' },
+        { label: 'See our work', href: '/portfolio', variant: 'ghost' },
+      ]}
+    >
+      <nav slot="after" aria-label="Breadcrumb" class="mt-6 text-sm font-semibold text-ink-muted">
+        <a href="/services" class="text-ink-muted no-underline hover:text-primary">Services</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-ink-soft">{service.data.title}</span>
+      </nav>
+    </PageHero>
+  </div>
 
   <Section>
     <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">

@@ -10,6 +10,11 @@ highlights:
   - Online ordering & pickup
   - Menus your staff can edit
   - Gift cards & catering
+hero:
+  type: image
+  src: /img/work/pars-cuisine.jpg
+  alt: Pars Cuisine website with online ordering and gift cards
+  caption: Pars Cuisine — Albuquerque
 seo:
   title: Restaurant Website Design & Online Ordering | MIS, Inc.
   description: Restaurant website design in Albuquerque, New Mexico. Online ordering, editable menus, catering requests, and gift cards, built on Square Online by a certified Square agency.

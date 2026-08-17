@@ -10,6 +10,11 @@ highlights:
   - IDX / MLS integration
   - Lead capture built in
   - Open house manager
+hero:
+  type: image
+  src: /img/work/kat-jacob.jpg
+  alt: Kat Jacob Realtor website with IDX MLS search
+  caption: Kat Jacob, Realtor® — IDX search
 seo:
   title: Real Estate Website Design & IDX for Realtors | MIS, Inc.
   description: Real estate websites with IDX MLS integration for Albuquerque and Santa Fe Realtors. Searchable listings, lead capture, and open house tools on a site built around your brand.

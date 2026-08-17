@@ -32,6 +32,18 @@ const services = defineCollection({
     seo,
     /** True for pages carried over from Webflow with existing rankings. */
     ranking: z.boolean().default(false),
+    /**
+     * Optional hero media. Omit and the hero shows a branded fallback panel,
+     * so a page is never blocked on photography that does not exist yet.
+     */
+    hero: z
+      .object({
+        type: z.enum(['video', 'image']),
+        src: z.string(),
+        alt: z.string().optional(),
+        caption: z.string().optional(),
+      })
+      .optional(),
   }),
 })
 

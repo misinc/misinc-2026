@@ -9,7 +9,12 @@ platforms: [webflow, wordpress, square-online-store, supabase]
 highlights:
   - Design & development
   - SEO + AI-search readiness
-  - Ongoing care & hosting
+  - Built on Webflow or Astro
+hero:
+  type: image
+  src: /img/work/windsor-door.jpg
+  alt: Windsor Door Sales website, designed by MIS, Inc.
+  caption: Windsor Door Sales — Albuquerque
 seo:
   title: Albuquerque Web Design & Development | MIS, Inc.
   description: Professional website design in Albuquerque, New Mexico. Fast, accessible, conversion-focused websites built by a studio that has designed for the web since 1995.

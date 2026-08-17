@@ -1,0 +1,143 @@
+---
+import Button from './Button.astro'
+
+/**
+ * The hero every page opens with: eyebrow, heading, description, optional
+ * buttons, and a piece of media beside it.
+ *
+ * Media is OPTIONAL by design. Real photography and video are still being
+ * produced, so a page with no asset yet falls back to a branded panel that
+ * looks deliberate rather than broken. Adding the real thing later is a
+ * one-line change — set `media` and nothing else moves.
+ *
+ *   media={{ type: 'video', src: '/video/x.mp4', caption: '…' }}
+ *   media={{ type: 'image', src: '/img/work/x.jpg', alt: '…' }}
+ *   (omit)  → branded fallback panel
+ */
+
+export interface HeroMedia {
+  type: 'video' | 'image'
+  src: string
+  /** Required for images; videos use `caption` for their visible label. */
+  alt?: string
+  caption?: string
+  poster?: string
+}
+
+interface Props {
+  eyebrow?: string
+  title: string
+  lede?: string
+  ctas?: { label: string; href: string; variant?: 'primary' | 'ghost' }[]
+  note?: string
+  media?: HeroMedia
+  /** `portrait` suits tall video; `landscape` suits site screenshots. */
+  shape?: 'portrait' | 'landscape'
+  /** Typewriter effect on the last word group — home page only. */
+  typed?: boolean
+}
+
+const {
+  eyebrow,
+  title,
+  lede,
+  ctas = [],
+  note,
+  media,
+  shape = 'landscape',
+  typed = false,
+} = Astro.props
+
+const aspect = shape === 'portrait' ? 'aspect-[16/10] lg:aspect-[4/5]' : 'aspect-[16/10]'
+---
+
+<div class="mx-auto max-w-(--container-content) px-6 md:px-10">
+  <section class="grid items-center gap-9 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-[76px]">
+    <div>
+      {
+        eyebrow && (
+          <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">
+            {eyebrow}
+          </span>
+        )
+      }
+
+      <h1 class="my-5 text-4xl font-bold text-ink">
+        {typed ? <slot name="title" /> : title}
+      </h1>
+
+      {lede && <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">{lede}</p>}
+
+      {
+        ctas.length > 0 && (
+          <div class="flex flex-wrap items-center gap-3.5">
+            {ctas.map((c) => (
+              <Button href={c.href} variant={c.variant ?? 'primary'}>
+                {c.label}
+              </Button>
+            ))}
+          </div>
+        )
+      }
+
+      {note && <p class="mt-4 text-sm font-semibold text-ink-muted">{note}</p>}
+
+      <slot name="after" />
+    </div>
+
+    <figure class="m-0 overflow-hidden rounded-md border border-line-soft shadow-media">
+      <div class:list={['relative', aspect]}>
+        {
+          media?.type === 'video' && (
+            <video
+              class="absolute inset-0 h-full w-full object-cover"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster={media.poster}
+              aria-label={media.caption ?? media.alt}
+            >
+              <source src={media.src} type="video/mp4" />
+            </video>
+          )
+        }
+
+        {
+          media?.type === 'image' && (
+            <img
+              class="absolute inset-0 h-full w-full object-cover object-top"
+              src={media.src}
+              alt={media.alt ?? ''}
+              loading="eager"
+            />
+          )
+        }
+
+        {
+          !media && (
+            /* Branded fallback until real media exists for this page. */
+            <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
+              <img
+                src="/img/mis-logo.png"
+                alt=""
+                width="140"
+                height="146"
+                class="w-[38%] max-w-[180px] opacity-15"
+              />
+            </div>
+          )
+        }
+
+        {
+          media?.caption && (
+            <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
+              {media.caption}
+            </figcaption>
+          )
+        }
+      </div>
+    </figure>
+  </section>
+</div>

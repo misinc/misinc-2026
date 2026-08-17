@@ -3,13 +3,18 @@ title: E-Commerce Stores
 heading: Sell your products around the clock
 summary: Online stores that are straightforward for customers to buy from and straightforward for you to run — on the platform that actually fits your business.
 pillar: websites
-order: 2
+order: 3
 ranking: true
 platforms: [square-online-store, shopify, webflow, wordpress]
 highlights:
   - Secure checkout & payments
   - Shipping and tax handled
   - Inventory you can manage yourself
+hero:
+  type: image
+  src: /img/work/peasant-pies.jpg
+  alt: Peasant Pies online store built on Square Online
+  caption: Peasant Pies — online ordering
 seo:
   title: E-Commerce Website Design in Albuquerque, NM | MIS, Inc.
   description: Custom e-commerce website design and online store setup in Albuquerque. Square Online, Shopify, Webflow, and WooCommerce stores built by a certified Square agency.

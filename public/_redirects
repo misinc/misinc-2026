@@ -7,6 +7,12 @@
 # Two pages were splitting "albuquerque web design"; the home page ranks better.
 /albuquerque-web-design                         /                                   301
 
+# --- Retired: we no longer take WordPress maintenance work -------------------
+# 5,154 impressions/yr on WP-care keywords, but it is work we do not want.
+# Send that intent to development, where a rebuild is the honest offer.
+/services/wordpress-procare-plan                /services/website-development       301
+/wordpress-procare-signup                       /services/website-development       301
+
 # --- Services: three thin marketing pages become one pillar ------------------
 /services/email-marketing                       /services/digital-marketing         301
 /services/social-media-marketing                /services/digital-marketing         301
@@ -56,11 +62,15 @@
 /sitemap                                        /                                   301
 /well-known/*                                   /                                   301
 
-# NOTE: /subscriptions/success and /subscriptions/canceled are NOT redirected.
-# The live Stripe checkout on the WordPress ProCare page uses them as its
-# successUrl and cancelUrl — redirecting them would drop paying subscribers on
-# a generic page after payment. Only the marketing page below is retired.
+# The WordPress ProCare page carried a live Stripe checkout that returned to
+# /subscriptions/success and /subscriptions/canceled. That checkout is retired
+# with the page, so these now point at /contact rather than 404 — existing
+# ProCare subscribers are unaffected (billing lives in Stripe, not here), but
+# check the return URLs on any Stripe Customer Portal config before launch.
+/subscriptions/success                          /contact                            301
+/subscriptions/canceled                         /contact                            301
 /subscriptions/national-seo-ppc-management      /services/seo                       301
+/subscriptions/*                                /services                           301
 
 # --- Convenience aliases -----------------------------------------------------
 /work                                           /portfolio                          301

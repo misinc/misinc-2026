@@ -10,6 +10,11 @@ highlights:
   - HIPAA-conscious forms
   - Accessible by design
   - Built for patient conversion
+hero:
+  type: image
+  src: /img/work/coleman-vision.jpg
+  alt: Coleman Vision LASIK practice website
+  caption: Coleman Vision — Albuquerque
 seo:
   title: Healthcare & Medical Website Design | MIS, Inc. Albuquerque
   description: Medical and healthcare website design in Albuquerque, New Mexico. Accessible, privacy-conscious websites for practices that want to be found and trusted by new patients.

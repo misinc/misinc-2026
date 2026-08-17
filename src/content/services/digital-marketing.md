@@ -10,6 +10,11 @@ highlights:
   - Email marketing & automation
   - Social media presence
   - Google & Meta advertising
+hero:
+  type: image
+  src: /img/work/nm-chile.jpg
+  alt: New Mexico Chile Association website
+  caption: New Mexico Chile Association
 seo:
   title: Digital Marketing Services in Albuquerque, NM | MIS, Inc.
   description: Email marketing, social media, and paid advertising for Albuquerque small businesses. Mailchimp partners helping New Mexico businesses reach customers and bring them back.
