@@ -6,7 +6,7 @@ category: business
 image: /img/work/syserco.jpg
 imageAlt: "Syserco energy management and building automation website"
 projectUrl: https://www.syserco.com
-year: 2024
+year: 2023
 order: 9
 services: [web-design, website-development]
 platforms: [webflow]

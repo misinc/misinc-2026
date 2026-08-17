@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import CalEmbed from '../components/CalEmbed.astro'
-import FaqList from '../components/FaqList.astro'
-import Testimonial from '../components/Testimonial.astro'
-import { site, yearsInBusiness } from '../lib/site'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import CalEmbed from '../components/CalEmbed.astro';
+import FaqList from '../components/FaqList.astro';
+import Testimonial from '../components/Testimonial.astro';
+import { site, yearsInBusiness } from '../lib/site';
 
 const work = await getCollection('work')
 const quote = work.find((w) => w.id === 'kat-jacob-realtor')
@@ -57,18 +57,12 @@ const eventSchema = {
   schema={eventSchema}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="Free consultation"
-      title="Half an hour, no obligation"
-      lede={`Pick a time that suits you. We will look at what you have, tell you honestly what would improve it, and give you a clear idea of scope and cost — drawing on ${yearsInBusiness} years of doing this in Albuquerque.`}
-      note="You will be speaking with Karim, who founded MIS in 1995."
-      media={{
+    <PageHero eyebrow="Free consultation" title="Our expertise at no cost to you" lede={`Pick a time that suits you. We will look at what you have, tell you honestly what would improve it, and give you a clear idea of scope and cost — drawing on ${yearsInBusiness} years of doing this in Albuquerque.`} note="" media={{
         type: 'image',
         src: '/img/office-marquette.jpg',
         alt: 'The MIS, Inc. office building in downtown Albuquerque',
         caption: 'Downtown Albuquerque',
-      }}
-    />
+      }} />
   </div>
 
   <!-- What to expect -->
@@ -95,12 +89,7 @@ const eventSchema = {
 
   <!-- Booking -->
   <Section>
-    <SectionHeader
-      eyebrow="Pick a time"
-      title="Book your consultation"
-      lede="Thirty minutes, by phone or video — or in person at our downtown office if you would rather."
-      class="mb-8"
-    />
+    <SectionHeader eyebrow="Pick a time" title="Book your consultation" lede="Thirty minutes, by video or preferably in person at our downtown office or yours if you're local." class="mb-8" />
 
     <CalEmbed calLink="misinc/free-consultation" namespace="free-consultation" />
 

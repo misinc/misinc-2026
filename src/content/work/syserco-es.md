@@ -6,7 +6,7 @@ category: business
 image: /img/work/syserco-es.jpg
 imageAlt: "Syserco Energy Solutions website homepage"
 projectUrl: https://www.syserco-es.com
-year: 2023
+year: 2024
 order: 10
 services: [web-design, website-development]
 platforms: [webflow]

@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import FaqList from '../components/FaqList.astro'
-import NextStep from '../components/NextStep.astro'
-import CtaBand from '../components/CtaBand.astro'
-import { FAQ_TOPICS } from '../lib/faq-topics'
-import { site, yearsInBusiness } from '../lib/site'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import FaqList from '../components/FaqList.astro';
+import NextStep from '../components/NextStep.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { FAQ_TOPICS } from '../lib/faq-topics';
+import { site, yearsInBusiness } from '../lib/site';
 
 const all = await getCollection('faqs')
 
@@ -51,15 +51,10 @@ const faqSchema = {
   schema={faqSchema}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="FAQ"
-      title="Straight answers"
-      lede={`The questions we are asked most often, answered plainly — including the ones where the honest answer is “no” or “it depends”. ${yearsInBusiness} years of having these conversations has made them easier to answer.`}
-      ctas={[
+    <PageHero eyebrow="FAQ" title="Frequently Asked Questions" lede={`The questions we are asked most often, answered plainly — including the ones where the honest answer is “no” or “it depends”. ${yearsInBusiness} years of having these conversations has made them easier to answer.`} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'Ask us something else', href: '/contact', variant: 'ghost' },
-      ]}
-    />
+      ]} />
   </div>
 
   <!-- Topic jump links -->
