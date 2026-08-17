@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'
 import Base from '../../layouts/Base.astro'
 import Section from '../../components/Section.astro'
 import SectionHeader from '../../components/SectionHeader.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
 import Prose from '../../components/Prose.astro'
 import Testimonial from '../../components/Testimonial.astro'
 import WorkCard from '../../components/WorkCard.astro'
@@ -71,11 +72,10 @@ const breadcrumbs = {
 
 <Base title={d.seo.title} description={d.seo.description} schema={[caseStudySchema, breadcrumbs]}>
   <Section>
-    <nav aria-label="Breadcrumb" class="mb-6 text-sm font-semibold text-ink-muted">
-      <a href="/portfolio" class="text-ink-muted no-underline hover:text-primary">Work</a>
-      <span class="mx-2" aria-hidden="true">/</span>
-      <span class="text-ink-soft">{d.title}</span>
-    </nav>
+    <Breadcrumbs
+      class="mb-6"
+      items={[{ label: 'Work', href: '/portfolio' }, { label: d.title }]}
+    />
 
     <SectionHeader as="h1" eyebrow={WORK_CATEGORIES[d.category]} title={d.title} lede={d.summary} />
 

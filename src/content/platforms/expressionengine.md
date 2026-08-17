@@ -34,7 +34,7 @@ We no longer work in it.
 
 **[Webflow](/platforms/webflow)** for a site you want to maintain yourself, with no server to look after.
 
-**[Astro](/platforms/astro)** where performance and control matter most.
+**A custom static build** where performance and control matter most. See [website development](/services/website-development).
 
 ## If you are still running one
 

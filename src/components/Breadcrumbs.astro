@@ -1,0 +1,35 @@
+---
+/**
+ * Breadcrumb trail. Sits above the page eyebrow so the reader knows where they
+ * are before they read the heading.
+ */
+interface Props {
+  items: { label: string; href?: string }[]
+  class?: string
+}
+const { items, class: className = '' } = Astro.props
+---
+
+<nav
+  aria-label="Breadcrumb"
+  class:list={['text-sm font-semibold text-ink-muted', className]}
+>
+  {
+    items.map((item, i) => (
+      <>
+        {i > 0 && (
+          <span class="mx-2" aria-hidden="true">
+            /
+          </span>
+        )}
+        {item.href ? (
+          <a href={item.href} class="text-ink-muted no-underline hover:text-primary">
+            {item.label}
+          </a>
+        ) : (
+          <span class="text-ink-soft">{item.label}</span>
+        )}
+      </>
+    ))
+  }
+</nav>

@@ -2,7 +2,8 @@
 name: Add On IDX
 summary: Our own IDX product — MLS listings on any real estate website, no matter who built it or where it is hosted.
 icon: /img/platforms/addonidx.svg
-stance: build
+stance: own
+credential: Built and maintained by MIS, Inc.
 verdict: We built it, we maintain it, and it works on any platform.
 category: websites
 order: 3

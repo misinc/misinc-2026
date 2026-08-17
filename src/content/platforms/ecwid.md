@@ -2,7 +2,8 @@
 name: Ecwid
 summary: An online store that drops into a website you already have, without rebuilding it.
 icon: /img/platforms/ecwid.svg
-stance: build
+stance: partner
+credential: Ecwid Partner
 verdict: Our pick when an existing site needs a store added rather than replaced.
 category: commerce
 order: 7

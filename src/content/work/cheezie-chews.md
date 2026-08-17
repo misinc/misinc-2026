@@ -9,7 +9,7 @@ year: 2017
 archived: true
 featured: true
 services: [ecommerce-website-design, web-design]
-platforms: [weebly]
+platforms: [weebly-cloud]
 testimonial:
   quote: "As the vice president of sales and marketing for a consumable pet company web development has become an essential and time consuming activity, especially since it's a function we need to outsource. Despite thorough research and referrals the first several web development companies we worked with were really a challenge. We experienced everything from exceeding budgeted costs, project running late to simply not receiving replies on immediate issues. I can't tell you how lucky we are that we found Karim and MIS. He and his corporation are honest, talented and responsive. Gone are the days of waiting a month for a response or being disappointed that the functionalities we discussed aren't working properly. I outline a project for Karim, send him my copy and design thoughts and I have a great looking, functional website for a reasonable cost in a matter of weeks. We have already developed 3 websites with Karim and look forward to doing more with him in the future. I strongly recommend Karim and MIS for anything web development based."
   attribution: "Brett Weinberg, VP Sales & Marketing, GlobalOne Pet"

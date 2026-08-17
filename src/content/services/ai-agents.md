@@ -4,7 +4,7 @@ heading: Custom agents that do the routine work
 summary: Purpose-built AI agents for the tasks that fill your inbox — answering routine questions, triaging enquiries, chasing invoices, scheduling.
 pillar: software-ai
 order: 3
-platforms: [supabase]
+platforms: [hyperagent, addonaichat]
 highlights:
   - Customer question handling
   - Enquiry triage & routing

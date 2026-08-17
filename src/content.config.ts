@@ -57,16 +57,19 @@ const platforms = defineCollection({
     summary: z.string(),
     icon: z.string(),
     /**
-     * Our actual position on the platform. `build` means we build on it;
-     * `partner` means we integrate with it; `migrate` means we generally
-     * move people off it and say so plainly.
+     * Our relationship with the platform.
+     *   partner — we are an official/certified partner, not merely a user
+     *   own     — we built and maintain the product ourselves
+     *   migrate — we no longer build on it and move clients off
      */
-    stance: z.enum(['build', 'partner', 'migrate']),
+    stance: z.enum(['partner', 'own', 'migrate']),
+    /** e.g. "Certified Webflow Partner". Shown in the stance callout. */
+    credential: z.string().optional(),
     /** The headline verdict, shown in the stance callout. */
     verdict: z.string(),
     /** Where we send people instead — slugs from this same collection. */
     insteadUse: z.array(z.string()).default([]),
-    category: z.enum(['websites', 'commerce', 'marketing', 'data']),
+    category: z.enum(['websites', 'commerce', 'marketing', 'ai']),
     order: z.number().default(100),
     nextStep: z.string(),
     seo,

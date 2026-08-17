@@ -9,17 +9,25 @@
 import { PLATFORMS_BY_SLUG } from '../lib/platforms'
 
 interface Props {
-  stance: 'build' | 'partner' | 'migrate'
+  stance: 'partner' | 'own' | 'migrate'
   verdict: string
+  /** e.g. "Certified Webflow Partner" — shown in place of the generic label. */
+  credential?: string
   insteadUse?: string[]
   class?: string
 }
 
-const { stance, verdict, insteadUse = [], class: className = '' } = Astro.props
+const {
+  stance,
+  verdict,
+  credential,
+  insteadUse = [],
+  class: className = '',
+} = Astro.props
 
 const LABEL = {
-  build: 'We build on this',
-  partner: 'We partner with this',
+  partner: 'Official partner',
+  own: 'Our own product',
   migrate: 'We generally migrate away from this',
 } as const
 
@@ -46,7 +54,7 @@ const alternatives = insteadUse
       isMigrate ? 'text-primary' : 'text-accent-dark',
     ]}
   >
-    {LABEL[stance]}
+    {credential ?? LABEL[stance]}
   </span>
 
   <p class="mt-2.5 max-w-[58ch] font-display text-lg font-semibold text-ink">

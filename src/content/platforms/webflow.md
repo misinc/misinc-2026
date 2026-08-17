@@ -2,7 +2,8 @@
 name: Webflow
 summary: Visual design, a real CMS, and hosting that works — our default for clients who want to manage their own site.
 icon: /img/platforms/webflow.svg
-stance: build
+stance: partner
+credential: Certified Webflow Partner
 verdict: Our first recommendation for most small business websites.
 category: websites
 order: 1
@@ -33,7 +34,7 @@ For a small business that wants to add a page, change a price, or publish a post
 
 **There is a learning curve for editors.** Not a steep one, and we train you — but the first hour is unfamiliar.
 
-**It has limits at the extremes.** Very large catalogs, complex application logic, or unusual integrations may be better served by [Astro](/platforms/astro) with a custom backend. We will say so if that is your situation.
+**It has limits at the extremes.** Very large catalogs, complex application logic, or unusual integrations may be better served by a [custom build](/services/website-development). We will say so if that is your situation.
 
 ## Our experience with it
 

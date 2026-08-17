@@ -3,6 +3,7 @@ name: Mailchimp
 summary: Email marketing and automation — the channel you own, unlike every social platform.
 icon: /img/platforms/mailchimp.svg
 stance: partner
+credential: Mailchimp Partner
 verdict: Our default for email marketing, and we are Mailchimp partners.
 category: marketing
 order: 4

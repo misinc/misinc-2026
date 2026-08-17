@@ -4,58 +4,52 @@ import Base from '../../layouts/Base.astro'
 import Section from '../../components/Section.astro'
 import SectionHeader from '../../components/SectionHeader.astro'
 import PageHero from '../../components/PageHero.astro'
-import Card from '../../components/Card.astro'
+import PlatformCard from '../../components/PlatformCard.astro'
 import CtaBand from '../../components/CtaBand.astro'
+import { PLATFORMS_BY_SLUG } from '../../lib/platforms'
 
 const all = await getCollection('platforms')
+const byOrder = (a: (typeof all)[number], b: (typeof all)[number]) =>
+  a.data.order - b.data.order
 
-const recommended = all
-  .filter((p) => p.data.stance !== 'migrate')
-  .sort((a, b) => a.data.order - b.data.order)
+const partners = all.filter((p) => p.data.stance === 'partner').sort(byOrder)
+const own = all.filter((p) => p.data.stance === 'own').sort(byOrder)
+const migrateFrom = all.filter((p) => p.data.stance === 'migrate').sort(byOrder)
 
-const migrateFrom = all
-  .filter((p) => p.data.stance === 'migrate')
-  .sort((a, b) => a.data.order - b.data.order)
-
-const CATEGORY_LABEL = {
-  websites: 'Website platform',
-  commerce: 'Ecommerce platform',
-  marketing: 'Marketing platform',
-  data: 'Application platform',
-} as const
+const isWide = (slug: string) => Boolean(PLATFORMS_BY_SLUG[slug]?.wide)
 ---
 
 <Base
-  title="Platforms We Build On — and the Ones We Don't | MIS, Inc."
-  description="An honest account of the platforms we build on, the ones we partner with, and the ones we recommend moving away from — with our reasoning for each."
+  title="Our Platform Partners — and What We Migrate Away From | MIS, Inc."
+  description="MIS, Inc. is a Certified Webflow Partner, a Square Online certified agency, and a Shopify, Mailchimp, and Ecwid partner. Here is what we build on, what we built ourselves, and what we move clients off."
 >
   <div class="border-b border-line">
     <PageHero
       eyebrow="Platforms"
-      title="What we build on, and why"
-      lede="We are not loyal to any platform. Here is where we actually stand on each one, including the popular ones we no longer recommend and what we suggest instead."
+      title="Partners, not just tools"
+      lede="Any agency can use these platforms. We went through their certification and partner programmes, which means direct support channels, early access, and people to escalate to when something breaks on your site. Here is where we stand on each one."
       ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]}
     />
   </div>
 
   <Section>
     <SectionHeader
-      eyebrow="Recommended"
-      title="Platforms we build on and partner with"
-      lede="Each of these earns its place for a specific kind of project. The right one depends on your budget and who will maintain the site."
+      eyebrow="Certified partners"
+      title="Platforms we have chosen to partner with"
+      lede="Each of these is a deliberate commitment rather than a tool we happen to use. We keep the list short on purpose — a partnership is only worth anything if we are genuinely expert in the platform."
       class="mb-10"
     />
 
-    <div class="grid gap-5 lg:grid-cols-3">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {
-        recommended.map((p) => (
-          <Card
-            variant="note"
-            href={`/platforms/${p.id}`}
-            tag={CATEGORY_LABEL[p.data.category]}
-            title={p.data.name}
-            blurb={p.data.summary}
-            cta="Read our take"
+        partners.map((p) => (
+          <PlatformCard
+            slug={p.id}
+            name={p.data.name}
+            icon={p.data.icon}
+            summary={p.data.summary}
+            credential={p.data.credential}
+            wide={isWide(p.id)}
           />
         ))
       }
@@ -63,28 +57,55 @@ const CATEGORY_LABEL = {
   </Section>
 
   {
-    migrateFrom.length > 0 && (
+    own.length > 0 && (
       <Section variant="tint" width="full">
         <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
           <SectionHeader
-            eyebrow="Our honest take"
-            title="Platforms we usually move people off"
-            lede="These are popular, and plenty of agencies will happily build on them. We would rather explain why we do not, and what we would do instead — including the cases where staying put is the right call."
+            eyebrow="Built by us"
+            title="Our own products"
+            lede="Two of the things we install for clients are ours. When something needs changing you are talking to the people who wrote it, not a support queue."
             class="mb-10"
           />
 
-          <div class="grid gap-5 lg:grid-cols-3">
-            {migrateFrom.map((p) => (
-              <Card
-                variant="note"
-                href={`/platforms/${p.id}`}
-                tag={CATEGORY_LABEL[p.data.category]}
-                title={p.data.name}
-                blurb={p.data.verdict}
-                cta="Why, and what instead"
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {own.map((p) => (
+              <PlatformCard
+                slug={p.id}
+                name={p.data.name}
+                icon={p.data.icon}
+                summary={p.data.summary}
+                credential={p.data.credential}
+                wide={isWide(p.id)}
+                cta="See what it does"
               />
             ))}
           </div>
+        </div>
+      </Section>
+    )
+  }
+
+  {
+    migrateFrom.length > 0 && (
+      <Section>
+        <SectionHeader
+          eyebrow="Our honest take"
+          title="Platforms we usually move people off"
+          lede="These are popular, and plenty of agencies will happily build on them. We would rather explain why we do not, and what we would do instead — including the cases where staying put is the right call."
+          class="mb-10"
+        />
+
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {migrateFrom.map((p) => (
+            <PlatformCard
+              slug={p.id}
+              name={p.data.name}
+              icon={p.data.icon}
+              summary={p.data.verdict}
+              wide={isWide(p.id)}
+              cta="Why, and what instead"
+            />
+          ))}
         </div>
       </Section>
     )

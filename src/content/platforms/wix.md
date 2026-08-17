@@ -40,7 +40,7 @@ The moment your website is expected to bring in business, the calculation change
 
 **[Webflow](/platforms/webflow)** is the natural step up. You keep the ability to edit your own site, but with real design control, much better performance, and content that is genuinely yours.
 
-**[Astro](/platforms/astro)** if you want the fastest possible site and do not need to edit the design yourself.
+**A custom static build** if you want the fastest possible site and do not need to edit the design yourself. See [website development](/services/website-development).
 
 ## Migrating off Wix
 

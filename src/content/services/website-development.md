@@ -4,7 +4,7 @@ heading: Built properly, on Webflow or Astro
 summary: The build itself — turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
 pillar: websites
 order: 2
-platforms: [webflow, astro, supabase]
+platforms: [webflow]
 highlights:
   - Webflow & Astro builds
   - Integrations & CMS setup

@@ -5,7 +5,7 @@ summary: Websites for medical, dental, dermatology, and optometry practices — 
 pillar: websites
 order: 6
 ranking: true
-platforms: [webflow, astro]
+platforms: [webflow]
 highlights:
   - HIPAA-conscious forms
   - Accessible by design

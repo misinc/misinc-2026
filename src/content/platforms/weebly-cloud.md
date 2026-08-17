@@ -1,22 +1,22 @@
 ---
-name: Weebly
+name: Weebly Cloud
 summary: A platform we built on for years, now winding down under Square's ownership.
-icon: /img/platforms/weebly.svg
+icon: /img/platforms/weebly-cloud.svg
 stance: migrate
-verdict: We no longer build new Weebly sites and are steadily migrating clients off it.
-insteadUse: [webflow, astro, square-online-store]
+verdict: We no longer build new Weebly Cloud sites and are steadily migrating clients off it.
+insteadUse: [webflow, square-online-store]
 category: websites
 order: 12
 nextStep: >-
-  If your site is still on Weebly, it is worth planning the move now rather than waiting for a deadline. We have done this migration many times and can tell you what yours involves.
+  If your site is still on Weebly Cloud, it is worth planning the move now rather than waiting for a deadline. We have done this migration many times and can tell you what yours involves.
 seo:
-  title: Migrating Off Weebly to Webflow or Astro | MIS, Inc.
-  description: Why we no longer build on Weebly, what we recommend instead, and how a Weebly migration works without losing your content or search rankings.
+  title: Migrating Off Weebly Cloud | MIS, Inc. Albuquerque
+  description: Why we no longer build on Weebly Cloud, what we recommend instead, and how a Weebly migration works without losing your content or search rankings.
 ---
 
-## We built a lot of Weebly sites
+## We built a lot of sites on Weebly Cloud
 
-For years Weebly was a genuinely good answer for small businesses: straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
+Weebly Cloud is the reseller platform Weebly offered to agencies — the same underlying builder, with account management and billing we handled on the client’s behalf. For years it was a genuinely good answer for small businesses: straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
 
 Square acquired Weebly in 2018, and development has been steadily folded into Square Online since. New investment goes there, not into Weebly itself.
 
@@ -42,9 +42,9 @@ We are flagging it so the decision is yours and made in advance, rather than som
 
 **[Webflow](/platforms/webflow)** if you want to keep editing your own site with far more design control.
 
-**[Astro](/platforms/astro)** if speed and search visibility are the priority.
+**A custom static build** if speed and search visibility are the priority. See [website development](/services/website-development).
 
-## Migrating off Weebly
+## Migrating off Weebly Cloud
 
 We have done this often enough to have it down to a routine: content comes across, URLs are preserved or redirected so rankings survive, and we crawl every old address afterwards to confirm nothing broke.
 

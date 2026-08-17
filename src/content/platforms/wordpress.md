@@ -42,7 +42,7 @@ If that is you, keep it. Just make sure someone is genuinely responsible for the
 
 **[Webflow](/platforms/webflow)** if you want to manage the site yourself. You get a visual editor, a proper CMS, hosting, forms, and security handled by the platform — no plugins to update, and nothing to be hacked through.
 
-**[Astro](/platforms/astro)** if speed and control matter most. It produces static HTML, so there is no database to attack and effectively nothing to exploit. It is also the fastest option available and costs nothing to host.
+**A custom static build** if speed and control matter most. We build these with Astro, which produces plain static HTML — no database to attack, effectively nothing to exploit, and about as fast as the web gets. See [website development](/services/website-development).
 
 ## What a migration involves
 

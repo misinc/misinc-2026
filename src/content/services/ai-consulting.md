@@ -4,7 +4,7 @@ heading: Practical AI, without the hype
 summary: Straight advice on where AI helps your business and where it does not — from a studio that has evaluated every web technology shift since 1995.
 pillar: software-ai
 order: 2
-platforms: [supabase]
+platforms: [addonaichat, hyperagent]
 highlights:
   - AI strategy for small teams
   - Tool selection & training

@@ -8,7 +8,7 @@ imageAlt: "SAM Properties website showing executive office space for lease in Al
 projectUrl: https://www.sampropertiesnm.com
 year: 2020
 services: [real-estate-website-design, web-design]
-platforms: [weebly]
+platforms: [weebly-cloud]
 seo:
   title: "SAM Properties Office Leasing Website | MIS, Inc."
   description: "How MIS, Inc. built the leasing website for SAM Properties, offering executive office space in Albuquerque, New Mexico."

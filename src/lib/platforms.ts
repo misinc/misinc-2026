@@ -1,37 +1,39 @@
 /**
- * Platform registry — the marketing-surface list.
+ * Platform registry.
  *
- * This is the set of platforms we actively promote: the home page marquee and
- * the "we build this on" chips on service pages read from here.
+ * PARTNERS is the marketing surface — platforms we are an official or certified
+ * partner with, plus our own products. These are what the home page marquee and
+ * the "we build this on" chips advertise.
  *
- * It is deliberately NOT the same as the /platforms content collection, which
- * also contains platforms we recommend migrating away from (WordPress, Wix).
- * Those deserve honest pages, but they do not belong in a marquee of partners.
+ * The distinction matters commercially: plenty of agencies use Webflow or
+ * Mailchimp. Being a certified partner is a different claim, and it is the one
+ * worth making.
+ *
+ * ALL_PLATFORMS adds the legacy platforms that older portfolio work still runs
+ * on. Those have honest pages, but they do not belong in a strip of partners.
  */
 
-export const PLATFORMS = [
+export const PARTNERS = [
   { slug: 'webflow', name: 'Webflow', icon: '/img/platforms/webflow.svg' },
-  { slug: 'astro', name: 'Astro', icon: '/img/platforms/astro.svg' },
-  { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true },
-  { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg' },
-  { slug: 'square-online-store', name: 'Square', icon: '/img/platforms/square.svg' },
-  { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg' },
-  { slug: 'supabase', name: 'Supabase', icon: '/img/platforms/supabase.svg' },
+  { slug: 'square-online-store', name: 'Square Online', icon: '/img/platforms/square.svg' },
   { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg' },
+  { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg' },
+  { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg' },
+  { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true },
+  { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.png', wide: true },
+  { slug: 'hyperagent', name: 'Hyperagent', icon: '/img/platforms/hyperagent.svg' },
 ] as const
 
-export type PlatformSlug = (typeof PLATFORMS)[number]['slug']
+/** Kept for backwards compatibility with existing imports. */
+export const PLATFORMS = PARTNERS
 
-/**
- * Every platform that has a page, including legacy ones we no longer build on
- * but that older portfolio work still runs on. Used by StanceCallout and by
- * the "built on" chips on case studies.
- */
+export type PlatformSlug = (typeof PARTNERS)[number]['slug']
+
 export const ALL_PLATFORMS = [
-  ...PLATFORMS,
+  ...PARTNERS,
   { slug: 'wordpress', name: 'WordPress', icon: '/img/platforms/wordpress.svg' },
   { slug: 'wix', name: 'Wix', icon: '/img/platforms/wix.svg' },
-  { slug: 'weebly', name: 'Weebly', icon: '/img/platforms/weebly.svg' },
+  { slug: 'weebly-cloud', name: 'Weebly Cloud', icon: '/img/platforms/weebly-cloud.svg' },
   {
     slug: 'expressionengine',
     name: 'ExpressionEngine',

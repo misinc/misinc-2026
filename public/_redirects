@@ -75,6 +75,11 @@
 /subscriptions/national-seo-ppc-management      /services/seo                       301
 /subscriptions/*                                /services                           301
 
+# Astro and Supabase are how we build, not partners — their pages were removed.
+/platforms/astro                                /services/website-development       301
+/platforms/supabase                             /services/custom-software           301
+/platforms/weebly                               /platforms/weebly-cloud             301
+
 # --- Convenience aliases -----------------------------------------------------
 /work                                           /portfolio                          301
 /case-studies                                   /portfolio                          301
