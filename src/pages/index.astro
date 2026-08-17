@@ -9,6 +9,7 @@ import Button from '../components/Button.astro'
 import CtaBand from '../components/CtaBand.astro'
 import Faq from '../components/Faq.astro'
 import WorkCard from '../components/WorkCard.astro'
+import Timeline from '../components/Timeline.astro'
 import Testimonial from '../components/Testimonial.astro'
 import { site, yearsInBusiness } from '../lib/site'
 
@@ -37,18 +38,6 @@ const quotes = allWork
   .filter((w) => w.data.testimonial)
   .sort((a, b) => b.data.year - a.data.year)
   .slice(0, 2)
-
-const eras = [
-  { year: '1995', title: 'The dial-up web', note: 'First business websites, hand-built.' },
-  { year: '2004', title: 'CMS & ecommerce', note: 'Sites owners could update themselves.' },
-  { year: '2012', title: 'Mobile-first', note: 'Responsive design becomes table stakes.' },
-  { year: '2020', title: 'Modern platforms', note: 'Webflow, headless builds, integrations.' },
-  {
-    year: '2026',
-    title: 'The AI web',
-    note: 'Agents, automation, and being found by answer engines.',
-  },
-]
 
 const steps = [
   {
@@ -244,24 +233,7 @@ const guides = [
       class="mb-10"
     />
 
-    <div
-      class="grid border-l-2 border-primary lg:grid-cols-5 lg:border-l-0 lg:border-t-2"
-    >
-      {
-        eras.map((e) => (
-          <div class="relative pb-6 pl-6 lg:pb-0 lg:pl-0 lg:pr-4 lg:pt-6" data-reveal>
-            <span class="absolute left-[-9px] top-1 h-3 w-3 rounded-full border-[3px] border-primary bg-paper lg:left-0 lg:top-[-7px]" />
-            <b class="block font-display text-[23px] font-bold tabular-nums text-primary">
-              {e.year}
-            </b>
-            <em class="my-1 block text-[15px] font-extrabold not-italic text-ink">{e.title}</em>
-            <p class="max-w-[55ch] text-sm leading-relaxed text-ink-muted lg:max-w-[24ch]">
-              {e.note}
-            </p>
-          </div>
-        ))
-      }
-    </div>
+    <Timeline />
   </Section>
 
   <!-- Process -->

@@ -1,18 +1,273 @@
 ---
+import { getCollection } from 'astro:content'
 import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import PageHero from '../components/PageHero.astro'
+import Timeline from '../components/Timeline.astro'
+import Testimonial from '../components/Testimonial.astro'
+import Button from '../components/Button.astro'
+import CtaBand from '../components/CtaBand.astro'
+import StaticMap from '../components/StaticMap.astro'
+import { site, yearsInBusiness, mapsUrl } from '../lib/site'
+
+const work = await getCollection('work')
+const quote = work.find((w) => w.id === 'cheezie-chews')
+
+const principles = [
+  {
+    title: 'We tell you when you don’t need us',
+    body: 'The fastest way to lose a client is to sell them something that does not help. If a setting in a tool you already pay for solves the problem, that is the recommendation you will get.',
+  },
+  {
+    title: 'Fixed prices, agreed up front',
+    body: 'You get a number before work starts, not an hourly meter. When a project grows mid-way, we have been known to absorb it rather than re-invoice — one of our clients wrote a review about exactly that.',
+  },
+  {
+    title: 'You talk to the people building it',
+    body: 'No account managers, no handoffs to a team you have never met. The person who scopes your project is the person who builds it.',
+  },
+  {
+    title: 'We pick platforms you could leave',
+    body: 'Every platform we recommend lets you take your content and go. We would rather keep clients because the work is good than because leaving is painful.',
+  },
+]
+
+const stats = [
+  { value: '1995', label: 'Founded in Albuquerque' },
+  { value: String(yearsInBusiness), count: yearsInBusiness, label: 'Years in continuous practice' },
+  { value: '500+', count: 500, suffix: '+', label: 'Projects delivered' },
+  { value: '20+', count: 20, suffix: '+', label: 'Years with our longest clients' },
+]
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: `About ${site.name}`,
+  description: `MIS, Inc. was founded by Karim Ardalan in Albuquerque, New Mexico in July 1995.`,
+  mainEntity: { '@id': `${site.url}/#organization` },
+}
 ---
 
 <Base
-  title="about | MIS, Inc."
-  description="Placeholder page — content is migrated from Webflow in the next build phase."
-  noindex={true}
+  title="About MIS, Inc. — Albuquerque Web Design Since 1995"
+  description="MIS, Inc. was founded by Karim Ardalan in Albuquerque, New Mexico in July 1995. A boutique web design, development, and AI studio that has built through every era of the web."
+  schema={aboutSchema}
 >
-  <div class="mx-auto max-w-(--container-content) px-6 py-20 md:px-10">
-    <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">Coming next</span>
-    <h1 class="my-4 text-3xl font-bold text-ink">about</h1>
-    <p class="max-w-(--container-prose) text-ink-soft">
-      This page is a placeholder while content is migrated from Webflow. See
-      <code>docs/site-architecture.md</code> for what belongs here.
-    </p>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="About"
+      title="Thirty-one years in one city"
+      lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since."
+      media={{
+        type: 'image',
+        src: '/img/office-marquette.jpg',
+        alt: 'The office building at 500 Marquette Avenue NW in downtown Albuquerque, where MIS, Inc. is based',
+        caption: '500 Marquette Ave NW, Downtown Albuquerque',
+      }}
+      ctas={[
+        { label: 'Book a free consultation', href: '/free-consultation' },
+        { label: 'See our work', href: '/portfolio', variant: 'ghost' },
+      ]}
+    />
   </div>
+
+  <div class="border-b border-line bg-paper-tint">
+    <div class="grid grid-cols-2 lg:grid-cols-4">
+      {
+        stats.map((s) => (
+          <div class="px-5 py-6 text-center" data-reveal>
+            <b
+              class="block font-display text-[32px] font-bold tabular-nums text-primary"
+              data-count={s.count}
+              data-suffix={s.suffix}
+            >
+              {s.value}
+            </b>
+            <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-ink-muted">
+              {s.label}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Story -->
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+      <div data-reveal>
+        <SectionHeader eyebrow="How we got here" title="We started before Google did" class="mb-6" />
+
+        <div class="max-w-[68ch] text-ink-soft">
+          <p class="mb-4">
+            In July 1995, a website was something you had to explain to people. Karim Ardalan founded
+            MIS to build them anyway, for Albuquerque businesses who could see where things were
+            going. Some of the sites we launched that decade are still running.
+          </p>
+          <p class="mb-4">
+            What has kept the studio going since is not any particular technology. It is that every
+            few years the web reinvents itself, and someone has to work out which of the changes
+            actually matter for a small business and which are noise. We have made that call through
+            the dial-up era, the CMS era, the mobile shift, the platform era, and now AI.
+          </p>
+          <p class="mb-4">
+            We have stayed deliberately small. That is a choice, not a stage we are trying to grow
+            out of. A studio this size means the person who understands your business is the person
+            writing the code, and it means we can afford to turn down work that is not a good fit.
+          </p>
+          <p>
+            Today we work mostly with New Mexico small businesses and nonprofits, alongside clients
+            further afield who have been with us long enough that distance stopped mattering.
+          </p>
+        </div>
+      </div>
+
+      <aside class="flex flex-col gap-6">
+        <div
+          class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+          data-reveal
+        >
+          <!-- TODO(photo): a portrait of Karim would strengthen this considerably.
+               Drop one at /img/karim.jpg and uncomment the <img> below. -->
+          <!--
+          <img
+            src="/img/karim.jpg"
+            alt="Karim Ardalan, founder of MIS, Inc."
+            class="mb-4 aspect-square w-full rounded-md object-cover"
+          />
+          -->
+          <span class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+            Who you will work with
+          </span>
+          <h2 class="mt-2 font-display text-xl font-bold text-ink">Karim Ardalan</h2>
+          <p class="mt-1 text-sm font-semibold text-ink-muted">Founder</p>
+          <p class="mt-3 text-sm text-ink-soft">
+            Karim founded MIS in 1995 and has led every project since. If you book a call, this is
+            who you are speaking to — and who will be doing or directing the work.
+          </p>
+          <p class="mt-4 text-sm text-ink-muted">
+            <a
+              href={site.phoneHref}
+              class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+            ><br />
+            <a
+              href={`mailto:${site.email}`}
+              class="font-bold text-ink-soft no-underline hover:text-primary">{site.email}</a
+            >
+          </p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  <!-- Timeline -->
+  <Section variant="tint" width="full">
+    <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+      <SectionHeader
+        eyebrow="Since 1995"
+        title="We’ve built through every era of the web"
+        lede="Most agencies are younger than some of our client relationships. Each of these shifts arrived with a mix of genuine change and expensive nonsense, and separating the two has been the actual job."
+        class="mb-10"
+      />
+      <Timeline />
+    </div>
+  </Section>
+
+  <!-- Principles -->
+  <Section>
+    <SectionHeader
+      eyebrow="How we work"
+      title="Four things we will not compromise on"
+      lede="Thirty-one years is long enough to have learned what causes problems. These are the rules that came out of it."
+      class="mb-10"
+    />
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        principles.map((p, i) => (
+          <div
+            class="flex gap-5 rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+            data-reveal
+          >
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-paper-surface font-display text-base font-bold text-primary tabular-nums">
+              {i + 1}
+            </span>
+            <div>
+              <h3 class="mb-2 font-display text-lg font-bold text-ink">{p.title}</h3>
+              <p class="text-[15.5px] text-ink-soft">{p.body}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      quote?.data.testimonial && (
+        <Testimonial
+          variant="inline"
+          quote={quote.data.testimonial.quote}
+          attribution={quote.data.testimonial.attribution}
+          href={`/works/${quote.id}`}
+          class="mt-10"
+        />
+      )
+    }
+  </Section>
+
+  <!-- Local -->
+  <Section variant="tint" width="full">
+    <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div data-reveal>
+          <SectionHeader
+            eyebrow="Albuquerque, New Mexico"
+            title="You can come and see us"
+            class="mb-0"
+          />
+          <div class="mt-4 max-w-[62ch] text-ink-soft">
+            <p class="mb-4">
+              We are downtown at 500 Marquette, and we mean the invitation literally — a lot of our
+              best projects have started with someone dropping in or meeting us for coffee nearby.
+            </p>
+            <p class="mb-6">
+              Working with a local studio means you can look the person building your website in the
+              eye. It also means we understand the market you are actually selling into: what people
+              here search for, which neighbourhoods matter, and why a Balloon Fiesta week is not a
+              normal week for anyone in this city.
+            </p>
+            <address class="not-italic text-ink-soft">
+              <strong class="text-ink">{site.name}</strong><br />
+              {site.address.street}<br />
+              {site.address.city}, {site.address.region} {site.address.postalCode}<br />
+              <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
+                {site.phone}
+              </a>
+            </address>
+
+            <div class="mt-7 flex flex-wrap gap-3.5">
+              <Button href="/free-consultation">Book a free consultation</Button>
+              <Button href="/contact" variant="ghost">Contact us</Button>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href={mapsUrl}
+          class="block overflow-hidden rounded-lg border border-line-soft shadow-card"
+          aria-label="Open our location in Google Maps"
+          data-reveal
+        >
+          <StaticMap height="320px" />
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <Section divider={false}>
+    <CtaBand
+      title="Let’s talk about your project."
+      note={`No pressure. Clear recommendations. ${yearsInBusiness} years of seeing what works.`}
+    />
+  </Section>
 </Base>

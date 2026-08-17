@@ -79,9 +79,14 @@ do not have one, I will leave a marked TODO rather than fill the gap plausibly.
 
 Currently unverified and worth confirming:
 
-- **"500+ projects delivered"** (home page stat) — carried over from the old
-  Webflow site, so it has a source, but confirm it still reads true.
-- **"20+ years with our longest clients"** (home page stat) — I inferred this
-  from iranian.com and Pars Cuisine link history and a line in your old FAQ
-  saying you had worked with some clients for over 20 years. Plausible, but
-  confirm.
+- **"500+ projects delivered"** vs **"Over 1,000 Clients Served"**. The live
+  About page on misinc.com claims *over 1,000 clients*; the new home page and
+  About page say *500+ projects*. Those numbers point in opposite directions —
+  you would normally expect more projects than clients, not fewer. One of them
+  is wrong, or they are counting different things. Both now appear on the new
+  site, so this needs resolving before launch.
+- **"20+ years with our longest clients"** — inferred from the iranian.com and
+  Pars Cuisine link history plus a line in your old FAQ saying you had worked
+  with some clients for over 20 years. Plausible, but confirm.
+- **Founded July 1995 by Karim Ardalan** — taken verbatim from the current
+  About page, so this one has a source and is used on the new About page.

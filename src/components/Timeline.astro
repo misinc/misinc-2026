@@ -1,0 +1,33 @@
+---
+import { ERAS } from '../lib/eras'
+
+/**
+ * The eras of the web, 1995 to now. Horizontal on desktop, a vertical rail on
+ * narrow screens.
+ *
+ * The numbering here is real chronology, not decoration — this is the one place
+ * on the site where a sequence genuinely carries meaning.
+ */
+interface Props {
+  class?: string
+}
+const { class: className = '' } = Astro.props
+---
+
+<div
+  class:list={[
+    'grid border-l-2 border-primary lg:grid-cols-5 lg:border-l-0 lg:border-t-2',
+    className,
+  ]}
+>
+  {
+    ERAS.map((e) => (
+      <div class="relative pb-6 pl-6 lg:pb-0 lg:pl-0 lg:pr-4 lg:pt-6" data-reveal>
+        <span class="absolute left-[-9px] top-1 h-3 w-3 rounded-full border-[3px] border-primary bg-paper lg:left-0 lg:top-[-7px]" />
+        <b class="block font-display text-[23px] font-bold tabular-nums text-primary">{e.year}</b>
+        <em class="my-1 block text-[15px] font-extrabold not-italic text-ink">{e.title}</em>
+        <p class="max-w-[55ch] text-sm leading-relaxed text-ink-muted lg:max-w-[24ch]">{e.note}</p>
+      </div>
+    ))
+  }
+</div>
