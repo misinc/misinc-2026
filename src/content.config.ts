@@ -92,6 +92,8 @@ const work = defineCollection({
     imageAlt: z.string(),
     /** The live site, when it is still up. */
     projectUrl: z.string().url().optional(),
+    /** True when the site is no longer online — shown instead of a dead link. */
+    archived: z.boolean().default(false),
     year: z.number(),
     /** Verbatim client quote from the Webflow CMS. Never paraphrase these. */
     testimonial: z.object({ quote: z.string(), attribution: z.string() }).optional(),

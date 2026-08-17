@@ -12,26 +12,42 @@ categories, which had drifted into describing our tooling ("Business Catalyst
 to WordPress Migration", "Webflow"). Visitors filter by who a project was for,
 not by how we built it. The old `/work-category/*` URLs 301 to `/portfolio`.
 
-## The 13 unpublished projects
+## Sites that are no longer online
+
+Checked every `projectUrl` in the collection. Two are dead — `nobhillneighborhoods.com`
+and `nmchileassociation.com` — and are now marked `archived: true`, which shows
+"No longer online" in the case study sidebar rather than linking somewhere broken.
+Re-run this check before launch:
+
+```bash
+for u in $(grep -h "^projectUrl:" src/content/work/*.md | sed 's/projectUrl: //'); do
+  printf "%-42s %s\n" "$u" "$(curl -s -o /dev/null -w '%{http_code}' -L --max-time 12 "$u")"
+done
+```
+
+`thebean.nyc` returns 403 to command-line requests. That is bot filtering, not a
+dead site, so it keeps its link.
+
+A project being offline is not a reason to drop it. Several of the strongest
+case studies are for sites that have since changed hands or wound down, and the
+work still happened.
+
+## The 11 remaining unpublished projects
 
 The Webflow Portfolio collection holds 28 items; 13 are drafts and were never
 published, so they are not migrated. Two of them matter:
 
-| Project | Why it is worth publishing |
-|---|---|
-| **You Can Lead Coaching** (Lenann McGookey Gardner) | Carries a strong testimonial: *"Karim is completely trustworthy, a joy to work with, and a great person to know."* |
-| **Cheezie Chews** (Brett Weinberg, GlobalOne Pet) | Carries the longest and most persuasive testimonial on file — describes agencies that overran budget and went silent before finding MIS, and notes three websites built together. |
+**You Can Lead Coaching** and **Cheezie Chews** have since been added back —
+both sites are offline, but both carry strong testimonials, and the site now
+has four client quotes instead of two. Cheezie Chews is the most persuasive of
+the set: it describes agencies that overran budget and went silent before the
+client found MIS, and notes three websites built together.
 
-**Both testimonials are currently invisible on the site** because they are
-attached to unpublished projects. That is the single easiest win available in
-the portfolio: publishing those two case studies would take the site from two
-client quotes to four, and the Cheezie Chews one is the best of the set.
-
-The other 11 drafts (SMI Facility Services, Fifty 'n Fit, NM Council of
+The remaining 11 drafts (SMI Facility Services, Fifty 'n Fit, NM Council of
 Outfitters, Emily Garcia, Safety Flare, LifeCrafters, ITG New Mexico, Silent
-Falcon UAS, Horizon Auto Glass, Rodd Farhadi, Emergent Business) are older and
-several of the live sites have since changed hands or gone offline. Worth a
-pass to decide which are still representative.
+Falcon UAS, Horizon Auto Glass, Rodd Farhadi, Emergent Business) are older.
+Worth a pass to decide which are still representative — the offline test above
+should not be the deciding factor.
 
 ## Testimonials
 

@@ -129,6 +129,18 @@ const breadcrumbs = {
             <dd class="mt-1 ml-0 font-semibold tabular-nums text-ink">{d.year}</dd>
           </div>
           {
+            d.archived && (
+              <div>
+                <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+                  Live site
+                </dt>
+                <dd class="mt-1 ml-0 text-sm font-semibold text-ink-soft">
+                  No longer online
+                </dd>
+              </div>
+            )
+          }
+          {
             d.projectUrl && (
               <div>
                 <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">

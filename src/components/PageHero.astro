@@ -107,7 +107,7 @@ const aspect = shape === 'portrait' ? 'aspect-[16/10] lg:aspect-[4/5]' : 'aspect
         {
           media?.type === 'image' && (
             <img
-              class="absolute inset-0 h-full w-full object-cover object-top"
+              class="absolute inset-0 h-full w-full object-cover object-left-top"
               src={media.src}
               alt={media.alt ?? ''}
               loading="eager"

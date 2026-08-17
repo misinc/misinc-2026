@@ -5,7 +5,7 @@ summary: "A redesign for the association behind New Mexico Certified Chile, incl
 category: nonprofit
 image: /img/work/nm-chile.jpg
 imageAlt: "New Mexico Chile Association website homepage"
-projectUrl: https://www.nmchileassociation.com/
+archived: true
 year: 2021
 services: [web-design]
 platforms: [webflow]

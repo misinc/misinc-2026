@@ -5,7 +5,7 @@ summary: "A neighbourhood-specific site for a Realtor who knows one part of Albu
 category: real-estate
 image: /img/work/nob-hill-neighborhoods.jpg
 imageAlt: "Nob Hill Neighborhoods website showing Albuquerque neighbourhood photography"
-projectUrl: https://www.nobhillneighborhoods.com/
+archived: true
 year: 2020
 services: [real-estate-website-design]
 platforms: [webflow]
