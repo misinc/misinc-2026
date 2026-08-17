@@ -1,0 +1,141 @@
+---
+import { site } from '../lib/site'
+
+const path = Astro.url.pathname
+const isActive = (href: string) => path === href || path.startsWith(href + '/')
+---
+
+<div
+  class="bg-primary px-4 py-2.5 text-center text-xs font-bold uppercase tracking-(--tracking-ribbon) text-[#ffe9d2]"
+>
+  Web design &amp; development since 1995 &middot; Now offering AI consulting &amp; custom app
+  development
+</div>
+
+<header
+  class="sticky top-0 z-60 flex items-center justify-between gap-6 border-b border-line bg-paper/90 px-6 py-3.5 backdrop-blur-[10px] md:px-10"
+>
+  <a href="/" class="flex items-center gap-3 no-underline">
+    <img src="/img/mis-logo.png" alt="" width="42" height="44" class="block w-[42px]" />
+    <span class="font-display text-[20px] font-bold tracking-(--tracking-display) text-ink"
+      >MIS, Inc.</span
+    >
+  </a>
+
+  <nav class="hidden items-center gap-7 lg:flex" aria-label="Main">
+    {
+      site.nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+          class:list={[
+            'text-[15px] font-bold no-underline transition-colors hover:text-primary',
+            isActive(item.href) ? 'text-primary' : 'text-ink-soft',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+    <a
+      href={site.cta.href}
+      class="inline-block rounded-full bg-accent px-5 py-3 text-[15px] font-extrabold text-white no-underline shadow-button transition hover:-translate-y-px hover:bg-accent-dark"
+    >
+      {site.cta.label}
+    </a>
+  </nav>
+
+  <button
+    id="burger"
+    type="button"
+    class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-sm border border-line bg-transparent lg:hidden"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobile-nav"
+  >
+    <span class="burger-bars relative block h-0.5 w-5 rounded-sm bg-ink"></span>
+  </button>
+</header>
+
+<div id="scrim" class="fixed inset-0 z-65 hidden bg-ink/45 opacity-0 transition-opacity duration-300">
+</div>
+
+<nav
+  id="mobile-nav"
+  aria-label="Mobile"
+  class="fixed inset-y-0 right-0 z-70 flex w-[min(84vw,340px)] translate-x-full flex-col gap-1.5 border-l border-line bg-paper px-7 pb-7 pt-24 shadow-panel transition-transform duration-300 lg:hidden"
+>
+  {
+    site.nav.map((item) => (
+      <a
+        href={item.href}
+        class="border-b border-line-soft py-3 font-display text-[22px] font-semibold text-ink no-underline last:border-b-0"
+      >
+        {item.label}
+      </a>
+    ))
+  }
+  <a
+    href={site.cta.href}
+    class="mt-4 rounded-full bg-accent px-5 py-3 text-center text-base font-extrabold text-white no-underline shadow-button"
+  >
+    {site.cta.label}
+  </a>
+</nav>
+
+<style>
+  .burger-bars::before,
+  .burger-bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1.25rem;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background: var(--color-ink);
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+  .burger-bars::before {
+    top: -6px;
+  }
+  .burger-bars::after {
+    top: 6px;
+  }
+  [aria-expanded='true'] .burger-bars {
+    background: transparent;
+  }
+  [aria-expanded='true'] .burger-bars::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+  [aria-expanded='true'] .burger-bars::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  const burger = document.getElementById('burger')
+  const panel = document.getElementById('mobile-nav')
+  const scrim = document.getElementById('scrim')
+
+  if (burger && panel && scrim) {
+    const setMenu = (open: boolean) => {
+      panel.classList.toggle('translate-x-full', !open)
+      burger.setAttribute('aria-expanded', String(open))
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+      scrim.classList.toggle('hidden', !open)
+      requestAnimationFrame(() => scrim.classList.toggle('opacity-100', open))
+      document.body.style.overflow = open ? 'hidden' : ''
+    }
+
+    burger.addEventListener('click', () =>
+      setMenu(burger.getAttribute('aria-expanded') !== 'true'),
+    )
+    scrim.addEventListener('click', () => setMenu(false))
+    panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)))
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') setMenu(false)
+    })
+  }
+</script>

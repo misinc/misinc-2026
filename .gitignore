@@ -1,6 +1,17 @@
-node_modules/
+# build output
 dist/
-.DS_Store
+.astro/
 
-# Local Netlify folder
-.netlify
+# dependencies
+node_modules/
+
+# migration scratch — assets already copied into src/ and public/
+_keep/
+
+# environment
+.env
+.env.production
+.dev.vars
+
+# macOS
+.DS_Store

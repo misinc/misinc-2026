@@ -1,0 +1,56 @@
+---
+/**
+ * Platform partner marquee.
+ *
+ * The track is duplicated at build time so the loop is seamless; the copy is
+ * aria-hidden so screen readers and search engines see each partner once.
+ *
+ * Layout note: the viewport clips on X only. Plain `overflow-hidden` also clips
+ * the Y axis, which cuts the top border off each pill as it lifts on hover.
+ */
+const platforms = [
+  { name: 'Webflow', href: '/platforms/webflow' },
+  { name: 'Mailchimp', href: '/platforms/mailchimp' },
+  { name: 'Square', href: '/platforms/square-online-store' },
+  { name: 'Supabase', href: '/platforms/supabase' },
+  { name: 'WordPress', href: '/platforms/wordpress' },
+  { name: 'Shopify', href: '/platforms/shopify' },
+]
+
+const doubled = [...platforms, ...platforms]
+---
+
+<div class="overflow-hidden border-b border-line py-8">
+  <p
+    class="mb-4 text-center text-xs font-bold uppercase tracking-(--tracking-label) text-ink-muted"
+  >
+    Platforms we build on &amp; partner with
+  </p>
+
+  <div
+    class="relative overflow-x-hidden overflow-y-visible py-2 [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]"
+  >
+    <div class="marquee-track flex w-max animate-(--animate-marquee) gap-3.5 py-1 hover:[animation-play-state:paused]">
+      {
+        doubled.map((p, i) => (
+          <a
+            href={p.href}
+            aria-hidden={i >= platforms.length ? 'true' : undefined}
+            tabindex={i >= platforms.length ? -1 : undefined}
+            class="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line-soft bg-paper-panel py-2.5 pl-3.5 pr-5 text-[15px] font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+          >
+            <img
+              src={`/img/platforms/${p.name.toLowerCase()}.svg`}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              class="h-6 w-6 shrink-0"
+            />
+            {p.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>

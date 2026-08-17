@@ -1,0 +1,76 @@
+---
+/**
+ * Static OpenStreetMap tiles positioned so the office sits dead center.
+ *
+ * Chosen over a Google Maps iframe deliberately: no third-party cookies, no
+ * consent banner, no render-blocking script, no API key, and no cost. The
+ * whole thing is six PNGs and a bit of CSS.
+ *
+ * Regenerate tiles by re-running the fetch in docs/site-architecture.md if the
+ * office ever moves.
+ */
+import map from '../lib/map-tiles.json'
+
+interface Props {
+  height?: string
+  class?: string
+}
+const { height = '190px', class: className = '' } = Astro.props
+---
+
+<div
+  class:list={['map relative overflow-hidden bg-[#e8e0d3]', className]}
+  style={`height:${height}`}
+  data-px={map.px}
+  data-py={map.py}
+>
+  <div class="map-inner absolute" style="width:768px;height:512px">
+    {
+      map.tiles.map((t) => (
+        <img
+          src={t.src}
+          alt=""
+          width="256"
+          height="256"
+          loading="lazy"
+          class="absolute block"
+          style={`left:${t.x}px;top:${t.y}px`}
+        />
+      ))
+    }
+  </div>
+
+  <span
+    class="map-pin absolute -ml-[9px] -mt-[9px] h-[18px] w-[18px] rounded-full border-[3px] border-white bg-primary shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
+  ></span>
+
+  <span
+    class="absolute bottom-0 right-0 z-2 rounded-tl-md bg-paper/85 px-1.5 py-0.5 text-[9.5px] text-ink-muted"
+  >
+    &copy; OpenStreetMap
+  </span>
+</div>
+
+<script>
+  // Center the tile sheet on the marker, and keep it centered on resize.
+  document.querySelectorAll<HTMLElement>('.map').forEach((host) => {
+    const inner = host.querySelector<HTMLElement>('.map-inner')
+    const pin = host.querySelector<HTMLElement>('.map-pin')
+    if (!inner || !pin) return
+
+    const px = Number(host.dataset.px)
+    const py = Number(host.dataset.py)
+
+    const place = () => {
+      const w = host.clientWidth
+      const h = host.clientHeight
+      inner.style.left = `${Math.round(w / 2 - px)}px`
+      inner.style.top = `${Math.round(h / 2 - py)}px`
+      pin.style.left = `${Math.round(w / 2)}px`
+      pin.style.top = `${Math.round(h / 2)}px`
+    }
+
+    place()
+    window.addEventListener('resize', place)
+  })
+</script>

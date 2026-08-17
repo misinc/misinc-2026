@@ -1,0 +1,63 @@
+# MIS, Inc. — redirect map
+# Source: docs/seo-migration-map.md (Search Console, 12 months to 2026-08-17)
+# Cloudflare Pages: max 2,100 static rules and 100 dynamic (splat) rules.
+# Order matters — the first match wins, so specific rules precede splats.
+
+# --- Head-term consolidation -------------------------------------------------
+# Two pages were splitting "albuquerque web design"; the home page ranks better.
+/albuquerque-web-design                         /                                   301
+
+# --- Services: three thin marketing pages become one pillar ------------------
+/services/email-marketing                       /services/digital-marketing         301
+/services/social-media-marketing                /services/digital-marketing         301
+/services/digital-marketing-for-online-stores   /services/digital-marketing         301
+
+# --- Platforms: keep the six partner pages, retire the rest ------------------
+/platforms/activecampaign                       /services/digital-marketing         301
+/platforms/facebook                             /services/digital-marketing         301
+/platforms/twitter                              /services/digital-marketing         301
+/platforms/ecwid                                /services/ecommerce-website-design  301
+/platforms/addon-commerce                       /services/ecommerce-website-design  301
+/platforms/webflow-e-commerce                   /services/ecommerce-website-design  301
+/platforms/elementor-builder-for-wordpress      /services/web-design                301
+/platforms/addonidx                             /services/real-estate-website-design 301
+
+# --- Retired ecommerce (Webflow store is being decommissioned) ---------------
+/checkout                                       /services                           301
+/paypal-checkout                                /services                           301
+/order-confirmation                             /services                           301
+/product/*                                      /services                           301
+/sku/*                                          /services                           301
+/category/*                                     /services                           301
+
+# --- Domain management: business continues, these pages don't ----------------
+/domains                                        /contact                            301
+/domains-ns                                     /contact                            301
+
+# --- One offer, one page -----------------------------------------------------
+/website-audit                                  /free-consultation                  301
+/free-website-audit                             /free-consultation                  301
+
+# --- Packages fold into the services they belong to --------------------------
+/packages/ongoing-search-engine-optimization    /services/seo                       301
+/packages/seo-basics-square-online              /services/seo                       301
+/packages/small-square-online-store             /services/ecommerce-website-design  301
+/packages/website-migration-to-square-online    /website-migrations                 301
+/packages/online-ordering-page                  /services/ecommerce-website-design  301
+/packages/website-with-online-ordering-square   /services/ecommerce-website-design  301
+/packages/*                                     /services                           301
+
+# --- Taxonomy cleanup --------------------------------------------------------
+/work-category/*                                /portfolio                          301
+/blog-tags/*                                    /blog                               301
+/blog-authors/*                                 /about                              301
+
+# --- Utility / legacy --------------------------------------------------------
+/sitemap                                        /                                   301
+/subscriptions/*                                /services                           301
+/well-known/*                                   /                                   301
+
+# --- Convenience aliases -----------------------------------------------------
+/work                                           /portfolio                          301
+/case-studies                                   /portfolio                          301
+/faqs                                           /faq                                301

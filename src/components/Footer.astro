@@ -1,0 +1,77 @@
+---
+import { site, mapsUrl } from '../lib/site'
+import StaticMap from './StaticMap.astro'
+
+const year = new Date().getFullYear()
+---
+
+<footer class="border-t border-line bg-paper-tint">
+  <div
+    class="grid grid-cols-1 gap-10 px-6 pb-8 pt-11 md:px-10 lg:grid-cols-[1.1fr_0.9fr_1fr]"
+  >
+    <div>
+      <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+        Visit us
+      </h2>
+      <address class="text-[15px] not-italic leading-[1.7] text-ink-soft">
+        <strong class="text-ink">{site.name}</strong><br />
+        {site.address.street}<br />
+        {site.address.city}, {site.address.region} {site.address.postalCode}<br />
+        <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
+          {site.phone}
+        </a><br />
+        <a href={`mailto:${site.email}`} class="font-bold text-ink-soft no-underline hover:text-primary">
+          {site.email}
+        </a>
+      </address>
+
+      <a
+        href={site.aiUrl}
+        class="mt-4 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper-panel py-2 pl-2 pr-4 leading-tight no-underline transition hover:border-primary/40"
+      >
+        <img src="/img/mis-ai-logo.png" alt="" width="34" height="34" class="block w-[34px]" />
+        <span class="text-[12.5px] font-semibold text-ink-muted">
+          <b class="font-extrabold text-ink">{site.aiBrand}</b><br />Our AI &amp; automation practice
+        </span>
+      </a>
+    </div>
+
+    <div>
+      <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+        Explore
+      </h2>
+      <div class="flex flex-col gap-2.5">
+        {
+          site.footerNav.map((item) => (
+            <a
+              href={item.href}
+              class="text-[15px] font-bold text-ink-soft no-underline hover:text-primary"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div>
+      <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+        Find us
+      </h2>
+      <a
+        href={mapsUrl}
+        class="block overflow-hidden rounded-md border border-line-soft"
+        aria-label="Open our location in Google Maps"
+      >
+        <StaticMap />
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-wrap items-center justify-between gap-3.5 border-t border-line px-6 pb-6 pt-4 text-sm font-semibold text-ink-muted md:px-10"
+  >
+    <div>&copy; 1995&ndash;{year} {site.legalName}. All rights reserved.</div>
+    <div>Albuquerque, New Mexico &middot; Building the web since 1995</div>
+  </div>
+</footer>

@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   MIS, Inc. design tokens — Tailwind v4
+   Source of truth: /design-system.json (v2.0.0). Keep the two in sync.
+   ========================================================================== */
+
+@theme {
+  /* Brand — taken from the MIS globe logo, not invented */
+  --color-primary: #a62025;
+  --color-primary-dark: #8c1a1f;
+  --color-primary-light: #c22b30;
+
+  --color-accent: #ff9902;
+  --color-accent-dark: #e68900;
+  --color-accent-light: #ffb340;
+
+  /* Warm brown text ramp */
+  --color-ink: #4a3115;
+  --color-ink-soft: #6b4a1e;
+  --color-ink-muted: #8f6a35;
+
+  /* The sheet and its surfaces */
+  --color-paper: #fff7ea;
+  --color-paper-panel: #fffdf9;
+  --color-paper-surface: #ffefcf;
+  --color-paper-tint: #fff3de;
+
+  /* The desk the paper rests on */
+  --color-ground: #f0e2c9;
+
+  /* Hairlines */
+  --color-line: rgba(166, 32, 37, 0.14);
+  --color-line-soft: rgba(107, 74, 30, 0.14);
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs: 0.72rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.85rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.15rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.35rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: clamp(1.6rem, 2.4vw, 1.9rem);
+  --text-2xl--line-height: 1.2;
+  --text-3xl: clamp(1.75rem, 3.3vw, 2.4rem);
+  --text-3xl--line-height: 1.14;
+  --text-4xl: clamp(2.4rem, 5vw, 3.6rem);
+  --text-4xl--line-height: 1.08;
+
+  --tracking-display: -0.012em;
+  --tracking-label: 0.13em;
+  --tracking-ribbon: 0.08em;
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1rem;
+
+  /* Shadows */
+  --shadow-paper:
+    0 2px 6px rgba(107, 74, 30, 0.12),
+    0 22px 44px -14px rgba(107, 74, 30, 0.3),
+    0 60px 140px -30px rgba(107, 74, 30, 0.5);
+  --shadow-card: 0 1px 3px rgba(107, 74, 30, 0.06);
+  --shadow-card-hover: 0 14px 30px -14px rgba(107, 74, 30, 0.4);
+  --shadow-media: 0 18px 40px -18px rgba(107, 74, 30, 0.55);
+  --shadow-button: 0 4px 14px rgba(255, 153, 2, 0.35);
+  --shadow-panel: -20px 0 60px -20px rgba(107, 74, 30, 0.45);
+
+  /* The nav/grid breakpoint used throughout — deliberately 900, not 1024 */
+  --breakpoint-lg: 900px;
+
+  /* Widths */
+  --container-prose: 62ch;
+  --container-content: 1080px;
+  --container-sheet: 1240px;
+
+  /* Motion */
+  --animate-marquee: marquee 38s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/manrope.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/fonts/fraunces.woff2") format("woff2");
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Fixed backdrop. Must be a fixed pseudo-element rather than
+     background-attachment: fixed — that breaks compositing on long pages
+     and is ignored entirely by iOS Safari. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(
+        120% 60% at 50% 0%,
+        rgba(255, 246, 226, 0.95) 0%,
+        rgba(255, 246, 226, 0) 58%
+      ),
+      linear-gradient(165deg, #f8eed9 0%, #efe0c2 45%, #e2cb9f 100%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 96, "SOFT" 0, "WONK" 0;
+    letter-spacing: var(--tracking-display);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ==========================================================================
+   Motion — every effect here is opt-out under prefers-reduced-motion
+   ========================================================================== */
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  .caret {
+    display: none;
+    width: 4px;
+    height: 0.85em;
+    background: var(--color-primary);
+    margin-left: 5px;
+    vertical-align: -0.06em;
+    animation: blink 0.85s step-end infinite;
+  }
+  .typing .caret {
+    display: inline-block;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .caret {
+    animation: none;
+  }
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
