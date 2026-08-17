@@ -16,13 +16,18 @@ faqs:
     a: "In most cases yes. Publishing starting prices lets people self-select before a sales call, which saves time on both sides, and it is increasingly how AI assistants answer cost questions about your business. If you do not publish a figure, something else will be quoted as your answer."
 ---
 
-We have built more than 500 websites since 1995. Our own sat untouched for about eighteen months while we decided what to do with it.
+We have built more than 500 websites since 1995. Our own had not been rebuilt since 2018, and for the last eighteen months of that we knew it needed doing and did not do it.
 
 That is a common enough position that it is worth writing up honestly, along with what we eventually chose and the reasoning behind each decision — including a couple that look inconsistent until you hear the reason.
 
 <figure>
+  <img src="/img/blog/misinc-2026-before.jpg" alt="The MIS, Inc. website as it looked before the 2026 rebuild" width="1600" height="1000" loading="lazy" />
+  <figcaption><strong>Before.</strong> misinc.com as it stood since the 2018 rebuild.</figcaption>
+</figure>
+
+<figure>
   <img src="/img/blog/misinc-2026-new.jpg" alt="The new MIS, Inc. website launched in 2026" width="1600" height="1000" loading="lazy" />
-  <figcaption>The new misinc.com, rebuilt in 2026.</figcaption>
+  <figcaption><strong>After.</strong> The 2026 rebuild.</figcaption>
 </figure>
 
 ## Why we stalled
@@ -33,11 +38,15 @@ We had a design from an outside designer that we never warmed to. We had an unre
 
 So it drifted. The title tag still said "30 Years of Expertise". The contact page listed an office we had left. The AI work that had grown into a real part of the business was barely represented.
 
-None of that was breaking. It was just steadily less true, which is the [sign most businesses ignore longest](/blog/new-year-new-website).
+None of that was breaking. It was just steadily less true, which is the failure mode businesses ignore longest — nothing is ever urgent enough to force the issue.
+
+There is a certain symmetry here. When we [launched the 2018 site](/blog/new-year-new-website), we opened by admitting we had last redesigned in 2011 and had spent the years since building sites for everyone but ourselves. Seven years on, we were writing the same sentence with different numbers.
 
 ## The decision that took the longest: what to build it on
 
-We are a [Certified Webflow Partner](/platforms/webflow). We build most of our client sites on Webflow. We then built our own site in [Astro](/services/website-development), which deserves an explanation rather than a shrug.
+We are a [Certified Webflow Partner](/platforms/webflow). We build most of our client sites on Webflow. We then built our own site in [Astro](/services/website-development), which deserves an explanation rather than a shrug — not least because our own 2018 post announcing the last rebuild said we strongly recommend Webflow over the alternatives.
+
+We still do, for the people that advice was written for. The explanation is who those people are.
 
 Webflow's real advantage is not that it produces better websites. It is that it lets someone who is not a developer change their own site without fear. For most of our clients that is decisive — the alternative is a site that goes stale because every edit requires an email to us, which is the failure mode we spend most of our time preventing.
 

@@ -1,100 +1,29 @@
 ---
-title: "Seven Signs It's Time for a New Website"
-summary: "How to tell the difference between a site that needs a few fixes and one that needs replacing — and why the answer is more often 'fixes' than most agencies will admit."
-date: 2018-02-07
-updated: 2026-08-17
+title: "New Year, New Website"
+summary: "We last redesigned our own website in 2011. In 2018 we finally rebuilt it — here were the goals we set ourselves before we started."
+date: 2018-12-17
 image: /img/blog/new-year-new-website.jpg
 guide: false
 seo:
-  title: "Seven Signs It's Time for a New Website | MIS, Inc."
-  description: "How to tell whether your website needs replacing or just repairing — seven practical signals, and an honest look at when a rebuild is not the answer."
-faqs:
-  - q: "How often should a website be redesigned?"
-    a: "Every three to five years is the usual guidance, but age alone is a poor signal. A well-built site that is fast, works on phones, and still describes the business accurately can run happily for longer. Judge it on the symptoms rather than the calendar."
-  - q: "Is it cheaper to fix a website or rebuild it?"
-    a: "Fixing is almost always cheaper up front. It stops being the better option when the platform is discontinued, the site is not responsive, or the accumulated problems mean you would be repairing every part of it anyway — at which point repairs cost more than a rebuild and leave you with an old site."
+  title: "New Year, New Website | MIS, Inc."
+  description: "MIS, Inc. rebuilt its own website in 2018. The goals we set before starting, and why we built it on Webflow."
 ---
 
-Rebuilding a website is one of the easier things to be talked into, and one of the more expensive things to get wrong. Plenty of sites that get replaced only needed repairing.
+We last redesigned our website in 2011 and since then we've built hundreds of sites for our clients, but hadn't taken the time to work on our own site. Well the time has come and we're thrilled to finally reveal our new website!
 
-Here are the signals that actually mean something, and the ones that do not.
+### Starting With Goals
 
-## 1. It does not work properly on a phone
+We started our website the same way we would start your website: by identifying our goals.
 
-Not "it shrinks down" — genuinely usable. Readable text without zooming, tappable buttons, forms you can complete one-handed.
+- Update the design to be more modern and up-to-date
+- Make sure the new site is 100% responsive (mobile optimized)
+- Have our main services front and center
+- Display our recent projects
+- Have a more active, informative blog that is automatically updated as we post articles to our social media accounts
+- Have a clear call to action to have clients schedule a free consultation with us
 
-Most people meet your business on a phone, often on a poor connection. If yours fails there, you are losing customers before they know anything about you. This is the one signal that on its own justifies a rebuild.
+Our new website was built on the Webflow platform which we strongly recommend over platforms such as WordPress or WIX.
 
-## 2. It is slow
+We look forward to your feedback and of course we'd love to meet with you and do the same for your business!
 
-Open your site on your phone, on mobile data, away from your office wifi. Count.
-
-If it takes more than about three seconds to become useful, you are losing a meaningful share of visitors before they see anything. Speed is both a ranking factor and a conversion factor.
-
-Sometimes this is fixable without a rebuild — oversized images and bloated plugins are common culprits. Sometimes the platform itself is the problem.
-
-## 3. You cannot update it yourself
-
-If changing a price, adding a service, or correcting holiday hours means emailing someone and waiting, the site will drift out of date. Every site whose content is hard to change eventually becomes wrong.
-
-## 4. The platform is being discontinued
-
-This one is not a judgement call. Adobe Business Catalyst was switched off. Weebly is being folded into Square Online. When a platform is winding down, you are moving on someone else's timetable.
-
-Move deliberately, early, rather than in a rush against an end-of-life date. We have done both, and planned migrations go far better.
-
-## 5. It no longer describes the business
-
-Businesses change faster than their websites. New services, dropped services, a different kind of customer, a different price point.
-
-A site describing what you did four years ago attracts enquiries for work you no longer want.
-
-## 6. You are embarrassed to send people to it
-
-An unscientific test that is a surprisingly reliable one. If you find yourself apologising for the site when you give someone the address, that is worth acting on.
-
-## 7. It is not bringing in any enquiries
-
-The one that matters most, and the one with the most possible causes. Before assuming a rebuild is the answer, check:
-
-- Are people finding it at all? (Search Console will tell you)
-- Are they arriving and leaving immediately? (usually speed or relevance)
-- Are they staying but not contacting you? (usually an unclear path to getting in touch)
-- Is your Google Business Profile complete, with reviews?
-
-A site with no traffic does not need a redesign. It needs to be found. Those are different problems with different price tags.
-
-## Signals that do not mean much
-
-**"It's five years old."** Age is a poor proxy. A well-built site that is fast, responsive, and accurate can run happily for longer.
-
-**"It looks dated."** Sometimes true, sometimes taste. Design trends move faster than customer expectations, and a clean, clear site from 2020 may still do its job perfectly.
-
-**"A competitor got a new one."** Their site's job may be nothing like yours.
-
-**Someone cold-emailed you about it.** Agencies that find business by telling strangers their website is bad are not the agencies you want.
-
-## We took our own advice
-
-This post sat on a website that was failing its own test.
-
-<figure>
-  <img src="/img/blog/misinc-2026-before.jpg" alt="The MIS, Inc. website as it looked before the 2026 rebuild" width="1600" height="1000" loading="lazy" />
-  <figcaption>misinc.com before the 2026 rebuild — the site this article was originally published on.</figcaption>
-</figure>
-
-Not on the dramatic counts. It was not broken, it worked on a phone, and it loaded fine. It failed on the quietest sign in this list, number five: it no longer described the business.
-
-The page title advertised "30 Years of Expertise", which had been true and was becoming less true every January. The contact page listed an office we had moved out of. Several pages still carried the template's stock description rather than anything about us. And the AI work that had become a real part of what we do was barely mentioned.
-
-None of that is an emergency. That is exactly why it sat there for a year and a half. Sites rarely fail suddenly — they drift, and drift is easy to keep not fixing.
-
-We eventually rebuilt it, and wrote up [what we changed and why](/blog/rebuilding-our-own-website-2026).
-
-## Fix or replace?
-
-**Repair** when the site is fundamentally sound — the structure works, the platform is supported, and the problems are specific: slow images, outdated content, a broken form, weak SEO. This is cheaper and faster, and we recommend it more often than you might expect.
-
-**Rebuild** when the site is not responsive, the platform is discontinued or unmaintainable, the structure no longer fits the business, or the list of repairs has grown long enough that you would be replacing every part while keeping an old shell.
-
-If you are unsure which category you are in, that is exactly what a [free consultation](/free-consultation) is for. We will look at your site and tell you honestly — including when the answer is that a few hours of fixes will do, which is a much smaller invoice than a rebuild.
+*Update: we rebuilt the site again in 2026 — see [what we changed and why](/blog/rebuilding-our-own-website-2026).*
