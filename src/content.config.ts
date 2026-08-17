@@ -73,4 +73,34 @@ const platforms = defineCollection({
   }),
 })
 
-export const collections = { services, platforms }
+const work = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
+  schema: z.object({
+    /** Project title. Slug must match the live /works/<slug> URL. */
+    title: z.string(),
+    client: z.string(),
+    summary: z.string(),
+    category: z.enum([
+      'restaurant',
+      'real-estate',
+      'healthcare',
+      'ecommerce',
+      'nonprofit',
+      'business',
+    ]),
+    image: z.string(),
+    imageAlt: z.string(),
+    /** The live site, when it is still up. */
+    projectUrl: z.string().url().optional(),
+    year: z.number(),
+    /** Verbatim client quote from the Webflow CMS. Never paraphrase these. */
+    testimonial: z.object({ quote: z.string(), attribution: z.string() }).optional(),
+    /** Services used, as slugs from the services collection. */
+    services: z.array(z.string()).default([]),
+    platforms: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    seo,
+  }),
+})
+
+export const collections = { services, platforms, work }

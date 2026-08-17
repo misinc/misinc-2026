@@ -69,8 +69,9 @@ services, promote it to a mega-menu rather than adding nav items.
 ```
 /                                   Home (approved prototype)
 /work                       → 301 → /portfolio        (keep the ranking URL)
-/portfolio                          Work index, filterable by category
-  /works/[slug]                     28 case studies
+/portfolio                          Work index, filterable by industry — BUILT
+  /works/[slug]                     15 case studies live; 13 Webflow drafts pending
+                                    (see docs/portfolio-notes.md)
 /services                           Services hub — three pillars
   ── Websites ──────────────────────────────────────────────
   /services/web-design                          KEEP  4,339 impr

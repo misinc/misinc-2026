@@ -8,6 +8,8 @@ import Card from '../components/Card.astro'
 import Button from '../components/Button.astro'
 import CtaBand from '../components/CtaBand.astro'
 import Faq from '../components/Faq.astro'
+import WorkCard from '../components/WorkCard.astro'
+import Testimonial from '../components/Testimonial.astro'
 import { site, yearsInBusiness } from '../lib/site'
 
 const facts = [
@@ -23,6 +25,18 @@ const allServices = await getCollection('services')
 const featured = ['web-design', 'custom-software', 'ai-consulting']
   .map((slug) => allServices.find((x) => x.id === slug))
   .filter((x) => x !== undefined)
+
+// Featured case studies and client quotes, both straight from the work
+// collection so the home page always reflects the real portfolio.
+const allWork = await getCollection('work')
+const featuredWork = allWork
+  .filter((w) => w.data.featured)
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 3)
+const quotes = allWork
+  .filter((w) => w.data.testimonial)
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 2)
 
 const eras = [
   { year: '1995', title: 'The dial-up web', note: 'First business websites, hand-built.' },
@@ -293,6 +307,64 @@ const guides = [
       </div>
     </div>
   </Section>
+
+  <!-- Work -->
+  <Section id="work">
+    <SectionHeader
+      eyebrow="Selected work"
+      title="Recent projects"
+      lede="A few things we have built lately. Every project gets the same treatment: understand the goal, build the simplest thing that achieves it, stick around to keep it working."
+      class="mb-10"
+    />
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        featuredWork.map((w) => (
+          <WorkCard
+            slug={w.id}
+            title={w.data.title}
+            client={w.data.client}
+            summary={w.data.summary}
+            category={w.data.category}
+            image={w.data.image}
+            imageAlt={w.data.imageAlt}
+            year={w.data.year}
+            hasTestimonial={Boolean(w.data.testimonial)}
+          />
+        ))
+      }
+    </div>
+
+    <div class="mt-10">
+      <Button href="/portfolio" variant="ghost">See all our work</Button>
+    </div>
+  </Section>
+
+  <!-- Testimonials -->
+  {
+    quotes.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+          <SectionHeader
+            eyebrow="In their words"
+            title="What clients say"
+            lede="Quoted exactly as they wrote it."
+            class="mb-10"
+          />
+          <div class="grid gap-6 lg:grid-cols-2">
+            {quotes.map((w) => (
+              <Testimonial
+                quote={w.data.testimonial!.quote}
+                attribution={w.data.testimonial!.attribution}
+                href={`/works/${w.id}`}
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
 
   <!-- FAQ -->
   <Section id="faq">

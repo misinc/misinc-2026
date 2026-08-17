@@ -1,18 +1,182 @@
 ---
+import { getCollection } from 'astro:content'
 import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import PageHero from '../components/PageHero.astro'
+import WorkCard from '../components/WorkCard.astro'
+import Testimonial from '../components/Testimonial.astro'
+import CtaBand from '../components/CtaBand.astro'
+import { WORK_CATEGORIES } from '../lib/work'
+import { yearsInBusiness } from '../lib/site'
+
+const all = (await getCollection('work')).sort((a, b) => b.data.year - a.data.year)
+
+// Only offer filters for categories that actually have work in them.
+const used = new Set(all.map((w) => w.data.category))
+const filters = (
+  Object.entries(WORK_CATEGORIES) as [keyof typeof WORK_CATEGORIES, string][]
+).filter(([key]) => used.has(key))
+
+const testimonials = all.filter((w) => w.data.testimonial)
 ---
 
 <Base
-  title="portfolio | MIS, Inc."
-  description="Placeholder page — content is migrated from Webflow in the next build phase."
-  noindex={true}
+  title="Albuquerque Web Design Portfolio | Our Work | MIS, Inc."
+  description="Websites, online stores, and custom software built by MIS, Inc. in Albuquerque, New Mexico — for restaurants, healthcare practices, Realtors, nonprofits, and small businesses since 1995."
 >
-  <div class="mx-auto max-w-(--container-content) px-6 py-20 md:px-10">
-    <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">Coming next</span>
-    <h1 class="my-4 text-3xl font-bold text-ink">portfolio</h1>
-    <p class="max-w-(--container-prose) text-ink-soft">
-      This page is a placeholder while content is migrated from Webflow. See
-      <code>docs/site-architecture.md</code> for what belongs here.
-    </p>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="Our work"
+      title="Work we're glad to put our name on"
+      lede={`A selection of projects from ${yearsInBusiness} years of building for New Mexico businesses and clients further afield. Every one of these is a real site we designed, built, and in most cases still look after.`}
+      media={{
+        type: 'image',
+        src: '/img/work/pars-cuisine.jpg',
+        alt: 'Pars Cuisine website, one of the projects in the MIS, Inc. portfolio',
+      }}
+      ctas={[{ label: 'Start a project', href: '/free-consultation' }]}
+    />
   </div>
+
+  <Section>
+    <div
+      class="mb-9 flex flex-wrap items-center gap-2.5"
+      role="group"
+      aria-label="Filter work by industry"
+      data-reveal
+    >
+      <button
+        type="button"
+        data-filter="all"
+        aria-pressed="true"
+        class="filter-btn rounded-full border border-line-soft px-4 py-2 text-sm font-extrabold text-ink-soft transition"
+      >
+        All work
+      </button>
+      {
+        filters.map(([key, label]) => (
+          <button
+            type="button"
+            data-filter={key}
+            aria-pressed="false"
+            class="filter-btn rounded-full border border-line-soft px-4 py-2 text-sm font-extrabold text-ink-soft transition"
+          >
+            {label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div id="work-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        all.map((w, i) => (
+          <WorkCard
+            slug={w.id}
+            title={w.data.title}
+            client={w.data.client}
+            summary={w.data.summary}
+            category={w.data.category}
+            image={w.data.image}
+            imageAlt={w.data.imageAlt}
+            year={w.data.year}
+            hasTestimonial={Boolean(w.data.testimonial)}
+            eager={i < 3}
+          />
+        ))
+      }
+    </div>
+
+    <p id="no-results" class="hidden pt-6 text-ink-soft">
+      No projects in that category yet. <button
+        type="button"
+        data-filter="all"
+        class="filter-btn font-extrabold text-primary underline">Show all work</button
+      >.
+    </p>
+  </Section>
+
+  {
+    testimonials.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+          <SectionHeader
+            eyebrow="In their words"
+            title="What clients say"
+            lede="Quoted exactly as they wrote it."
+            class="mb-10"
+          />
+          <div class="grid gap-6 lg:grid-cols-2">
+            {testimonials.map((w) => (
+              <Testimonial
+                quote={w.data.testimonial!.quote}
+                attribution={w.data.testimonial!.attribution}
+                href={`/works/${w.id}`}
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <CtaBand
+      title="Want your project on this page?"
+      note="Tell us what you need. We will tell you honestly whether we are the right studio for it."
+      ctaLabel="Start a project"
+    />
+  </Section>
 </Base>
+
+<style>
+  .filter-btn[aria-pressed='true'] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  .filter-btn[aria-pressed='false']:hover {
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    color: var(--color-primary);
+  }
+</style>
+
+<script>
+  // Filtering is progressive enhancement: without JS every project is visible,
+  // which is also what a crawler sees.
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn')
+  const grid = document.getElementById('work-grid')
+  const empty = document.getElementById('no-results')
+
+  if (buttons.length && grid) {
+    const cards = Array.from(grid.children) as HTMLElement[]
+
+    const apply = (filter: string) => {
+      let shown = 0
+      cards.forEach((card) => {
+        const match = filter === 'all' || card.dataset.category === filter
+        card.hidden = !match
+        if (match) shown++
+      })
+
+      document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.filter === filter))
+      })
+
+      empty?.classList.toggle('hidden', shown > 0)
+
+      const url = new URL(window.location.href)
+      if (filter === 'all') url.searchParams.delete('filter')
+      else url.searchParams.set('filter', filter)
+      history.replaceState(null, '', url)
+    }
+
+    document.querySelectorAll<HTMLElement>('[data-filter]').forEach((b) => {
+      b.addEventListener('click', () => apply(b.dataset.filter ?? 'all'))
+    })
+
+    // Honour ?filter= so a filtered view can be linked to directly.
+    const initial = new URL(window.location.href).searchParams.get('filter')
+    if (initial) apply(initial)
+  }
+</script>

@@ -1,0 +1,57 @@
+---
+/**
+ * A client quote. Always verbatim from the Webflow CMS — these are real people
+ * on the record, so the text is never edited for flow.
+ */
+interface Props {
+  quote: string
+  attribution: string
+  /** `panel` for a standalone block; `inline` inside a case study. */
+  variant?: 'panel' | 'inline'
+  href?: string
+  class?: string
+}
+
+const { quote, attribution, variant = 'panel', href, class: className = '' } = Astro.props
+const isPanel = variant === 'panel'
+---
+
+<figure
+  class:list={[
+    'm-0 flex flex-col gap-4 rounded-lg p-7 md:p-8',
+    isPanel
+      ? 'border border-line-soft bg-paper-panel shadow-card'
+      : 'border-l-[3px] border-accent bg-paper-tint',
+    className,
+  ]}
+  data-reveal
+>
+  <svg
+    class="h-7 w-7 shrink-0 text-accent"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      d="M9.6 5.4c-3.2 1.5-5.2 4.4-5.2 8.1 0 3.1 1.8 5.1 4.3 5.1 2.2 0 3.8-1.6 3.8-3.7 0-2-1.4-3.5-3.3-3.5-.4 0-.8.1-1 .2.4-1.7 1.8-3.2 3.6-4.1L9.6 5.4zm9.1 0c-3.2 1.5-5.2 4.4-5.2 8.1 0 3.1 1.8 5.1 4.3 5.1 2.2 0 3.8-1.6 3.8-3.7 0-2-1.4-3.5-3.3-3.5-.4 0-.8.1-1 .2.4-1.7 1.8-3.2 3.6-4.1l-2.2-2.1z"
+    ></path>
+  </svg>
+
+  <blockquote class="m-0 max-w-[58ch] font-display text-lg leading-relaxed text-ink">
+    {quote}
+  </blockquote>
+
+  <figcaption class="text-sm font-extrabold text-ink-muted">
+    {attribution}
+    {
+      href && (
+        <>
+          {' · '}
+          <a href={href} class="font-extrabold text-primary no-underline hover:underline">
+            See the project
+          </a>
+        </>
+      )
+    }
+  </figcaption>
+</figure>

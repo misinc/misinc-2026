@@ -1,0 +1,225 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import Section from '../../components/Section.astro'
+import SectionHeader from '../../components/SectionHeader.astro'
+import Prose from '../../components/Prose.astro'
+import Testimonial from '../../components/Testimonial.astro'
+import WorkCard from '../../components/WorkCard.astro'
+import Button from '../../components/Button.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import { WORK_CATEGORIES } from '../../lib/work'
+import { PLATFORMS_BY_SLUG } from '../../lib/platforms'
+import { site } from '../../lib/site'
+
+export async function getStaticPaths() {
+  const work = await getCollection('work')
+  const services = await getCollection('services')
+  return work.map((item) => ({
+    params: { slug: item.id },
+    props: { item, all: work, services },
+  }))
+}
+
+const { item, all, services } = Astro.props
+const { Content } = await render(item)
+const d = item.data
+
+// Same category first, then anything else, so there is always something next.
+const related = [
+  ...all.filter((w) => w.id !== item.id && w.data.category === d.category),
+  ...all.filter((w) => w.id !== item.id && w.data.category !== d.category),
+].slice(0, 3)
+
+const usedServices = d.services
+  .map((slug) => services.find((s) => s.id === slug))
+  .filter((s) => s !== undefined)
+
+const usedPlatforms = d.platforms
+  .map((slug) => PLATFORMS_BY_SLUG[slug])
+  .filter((p) => p !== undefined)
+
+const caseStudySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: d.title,
+  about: d.summary,
+  dateCreated: String(d.year),
+  creator: { '@id': `${site.url}/#organization` },
+  url: `${site.url}/works/${item.id}`,
+  image: new URL(d.image, site.url).href,
+  ...(d.testimonial && {
+    review: {
+      '@type': 'Review',
+      reviewBody: d.testimonial.quote,
+      author: { '@type': 'Person', name: d.testimonial.attribution },
+      itemReviewed: { '@id': `${site.url}/#organization` },
+    },
+  }),
+}
+
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: `${site.url}/portfolio` },
+    { '@type': 'ListItem', position: 3, name: d.title, item: `${site.url}/works/${item.id}` },
+  ],
+}
+---
+
+<Base title={d.seo.title} description={d.seo.description} schema={[caseStudySchema, breadcrumbs]}>
+  <Section>
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm font-semibold text-ink-muted">
+      <a href="/portfolio" class="text-ink-muted no-underline hover:text-primary">Work</a>
+      <span class="mx-2" aria-hidden="true">/</span>
+      <span class="text-ink-soft">{d.title}</span>
+    </nav>
+
+    <SectionHeader as="h1" eyebrow={WORK_CATEGORIES[d.category]} title={d.title} lede={d.summary} />
+
+    <figure
+      class="mt-9 mb-0 overflow-hidden rounded-lg border border-line-soft shadow-media"
+      data-reveal
+    >
+      <img src={d.image} alt={d.imageAlt} loading="eager" class="block w-full" />
+    </figure>
+  </Section>
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <div>
+        <div data-reveal>
+          <Prose>
+            <Content />
+          </Prose>
+        </div>
+
+        {
+          d.testimonial && (
+            <Testimonial
+              variant="inline"
+              quote={d.testimonial.quote}
+              attribution={d.testimonial.attribution}
+              class="mt-10"
+            />
+          )
+        }
+      </div>
+
+      <aside class="flex flex-col gap-7">
+        <dl class="flex flex-col gap-4 rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card" data-reveal>
+          <div>
+            <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+              Client
+            </dt>
+            <dd class="mt-1 ml-0 font-semibold text-ink">{d.client}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+              Industry
+            </dt>
+            <dd class="mt-1 ml-0 font-semibold text-ink">{WORK_CATEGORIES[d.category]}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+              Year
+            </dt>
+            <dd class="mt-1 ml-0 font-semibold tabular-nums text-ink">{d.year}</dd>
+          </div>
+          {
+            d.projectUrl && (
+              <div>
+                <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+                  Live site
+                </dt>
+                <dd class="mt-1 ml-0">
+                  <a
+                    href={d.projectUrl}
+                    rel="noopener"
+                    class="font-bold text-primary no-underline hover:underline"
+                  >
+                    Visit site &nearr;
+                  </a>
+                </dd>
+              </div>
+            )
+          }
+        </dl>
+
+        {
+          usedServices.length > 0 && (
+            <div data-reveal>
+              <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+                What we did
+              </h2>
+              <div class="flex flex-col gap-2">
+                {usedServices.map((s) => (
+                  <a
+                    href={`/services/${s.id}`}
+                    class="text-[15px] font-bold text-ink-soft no-underline hover:text-primary"
+                  >
+                    {s.data.title} &rarr;
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        {
+          usedPlatforms.length > 0 && (
+            <div data-reveal>
+              <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+                Built on
+              </h2>
+              <div class="flex flex-wrap gap-2.5">
+                {usedPlatforms.map((p) => (
+                  <a
+                    href={`/platforms/${p.slug}`}
+                    class="flex items-center gap-2 rounded-full border border-line-soft bg-paper-panel py-2 pl-3 pr-4 text-sm font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+                  >
+                    <img src={p.icon} alt="" width="20" height="20" class="h-5 w-5" />
+                    {p.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        <Button href="/free-consultation" class="text-center">Start a project</Button>
+      </aside>
+    </div>
+  </Section>
+
+  {
+    related.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+          <SectionHeader eyebrow="More work" title="Other projects" class="mb-10" />
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {related.map((w) => (
+              <WorkCard
+                slug={w.id}
+                title={w.data.title}
+                client={w.data.client}
+                summary={w.data.summary}
+                category={w.data.category}
+                image={w.data.image}
+                imageAlt={w.data.imageAlt}
+                year={w.data.year}
+                hasTestimonial={Boolean(w.data.testimonial)}
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <CtaBand />
+  </Section>
+</Base>

@@ -1,0 +1,79 @@
+---
+import { WORK_CATEGORIES } from '../lib/work'
+
+/**
+ * Portfolio card. The screenshot does most of the persuading, so it leads.
+ */
+interface Props {
+  slug: string
+  title: string
+  client: string
+  summary: string
+  category: keyof typeof WORK_CATEGORIES
+  image: string
+  imageAlt: string
+  year: number
+  hasTestimonial?: boolean
+  /** Eager-load the first row; lazy-load the rest. */
+  eager?: boolean
+  class?: string
+}
+
+const {
+  slug,
+  title,
+  summary,
+  category,
+  image,
+  imageAlt,
+  year,
+  hasTestimonial = false,
+  eager = false,
+  class: className = '',
+} = Astro.props
+---
+
+<a
+  href={`/works/${slug}`}
+  data-category={category}
+  class:list={[
+    'group flex flex-col overflow-hidden rounded-lg border border-line-soft bg-paper-panel no-underline shadow-card transition hover:-translate-y-[3px] hover:shadow-card-hover',
+    className,
+  ]}
+  data-reveal
+>
+  <div class="relative aspect-[16/10] overflow-hidden bg-paper-surface">
+    <img
+      src={image}
+      alt={imageAlt}
+      loading={eager ? 'eager' : 'lazy'}
+      class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+    />
+  </div>
+
+  <div class="flex flex-1 flex-col gap-2 p-6">
+    <div class="flex items-center gap-2 text-[11.5px] font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+      <span>{WORK_CATEGORIES[category]}</span>
+      <span aria-hidden="true">·</span>
+      <span class="tabular-nums">{year}</span>
+    </div>
+
+    <h3 class="font-display text-lg font-bold leading-tight text-ink">{title}</h3>
+    <p class="text-sm text-ink-soft">{summary}</p>
+
+    {
+      hasTestimonial && (
+        <span class="mt-1 inline-flex w-fit items-center gap-1.5 rounded-full bg-paper-surface px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary">
+          Client review
+        </span>
+      )
+    }
+
+    <span class="mt-auto pt-3 text-sm font-extrabold text-primary">
+      Read the case study
+      <span class="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">
+        &rarr;
+      </span>
+    </span>
+  </div>
+</a>
