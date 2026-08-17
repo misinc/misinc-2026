@@ -63,22 +63,16 @@ They appear in three places, all from the one source:
 Each also emits `Review` schema inside the case study's `CreativeWork` JSON-LD,
 which is what lets Google and AI assistants attribute a quote to MIS.
 
-## Hyperagent — confirm the relationship
+## Hyperagent — removed
 
-Karim confirmed the product is **hyperagent.com** (not hyperagent.ai, which is a
-parked domain). Its page is currently marked `stance: partner` with **no
-credential**, so it renders as "Official partner" without claiming a specific
-certification.
+Added briefly, then removed: MIS is not a formal Hyperagent partner, and the
+platforms page now leads with certified partnerships. Listing it there would
+have been overclaiming.
 
-Two things to confirm before launch:
-
-1. **Is there a formal partnership**, or do we simply build on it? If the
-   latter, either add a credential that is true or reconsider whether it belongs
-   in a section headed "platforms we have chosen to partner with".
-2. **The logo is a placeholder.** Their assets are served through a client-side
-   router and could not be fetched. `public/img/platforms/hyperagent.svg` is a
-   neutral geometric mark, clearly commented as such — replace it with the
-   official logo.
+If it becomes a formal partnership, the page content is recoverable from git
+(commit c7e1f09). Agent platforms we simply build with — rather than partner
+with — belong in the [AI agents service](/services/ai-agents) copy, not on the
+partners page.
 
 ## Platform attributions — still unconfirmed
 

@@ -21,7 +21,6 @@ export const PARTNERS = [
   { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg' },
   { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true },
   { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.png', wide: true },
-  { slug: 'hyperagent', name: 'Hyperagent', icon: '/img/platforms/hyperagent.svg' },
 ] as const
 
 /** Kept for backwards compatibility with existing imports. */
