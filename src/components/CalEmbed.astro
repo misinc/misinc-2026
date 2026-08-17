@@ -27,17 +27,19 @@ interface Props {
 const {
   calLink,
   namespace,
-  layout = 'week_view',
-  minHeight = '640px',
+  layout = 'month_view',
+  minHeight = '580px',
   class: className = '',
 } = Astro.props
 
 /**
  * Cal defaults to following the visitor's system theme, which drops a dark
- * calendar into a warm paper page. Pin it to light and hand it the brand red so
- * the embed reads as part of the site rather than a bolted-on widget.
+ * calendar into a warm paper page, so the theme is pinned to light here.
+ *
+ * The brand colour is NOT set here. It lives in Cal.com → Event Types →
+ * Embed → Brand color (light theme), which also covers the standalone booking
+ * link and the confirmation screens. One source of truth beats two.
  */
-const brand = '#a62025'
 
 const elementId = `cal-inline-${namespace}`
 ---
@@ -85,7 +87,7 @@ const elementId = `cal-inline-${namespace}`
 
 <script
   is:inline
-  define:vars={{ calLink, namespace, layout, elementId, brand }}
+  define:vars={{ calLink, namespace, layout, elementId }}
 >
   ;(function (C, A, L) {
     let p = function (a, ar) {
@@ -126,7 +128,6 @@ const elementId = `cal-inline-${namespace}`
     hideEventTypeDetails: false,
     layout,
     theme: 'light',
-    cssVarsPerTheme: { light: { 'cal-brand': brand } },
   })
 
   Cal.ns[namespace]('inline', {

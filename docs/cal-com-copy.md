@@ -72,6 +72,38 @@ in the page too.
 
 ---
 
+## Embed settings in Cal.com
+
+The embed generator's panel and our code have to agree. Current state:
+
+| Setting | Set it to | Why |
+|---|---|---|
+| Embed theme | **Light theme** | Matches the code. Cal otherwise follows the visitor's system theme and drops a dark calendar onto a warm paper page. |
+| **Brand color (light theme)** | **`a62025`** ← change this | Currently `292929`, Cal's default near-black. This is the one setting that still needs changing. |
+| Brand color (dark theme) | leave as `fafafa` | Never used — the embed is pinned to light. |
+| Hide meeting type details | **Off** | The duration, location options, and description are all useful to someone deciding. |
+| Layout | **Month** | See below. |
+| Window sizing | leave at 100% / 100% | Our container sets the width and a min-height; Cal resizes the iframe itself. |
+
+### Why Month rather than Week
+
+Week view rendered a **1,541px** tall iframe against Month's **569px** — nearly
+three times the height. Most of that was dead space: the week grid starts at
+12:00am, so roughly nine hours of unavailable overnight slots were shown before
+the first bookable time appeared. It also made availability look sparser than it
+is, because a handful of open slots were spread across a very tall grid.
+
+Month view shows available days at a glance with times beside them, which is
+both more compact and the pattern most people already recognise from other
+booking tools.
+
+### Brand colour
+
+Set it in **Cal.com**, not in our code. The Cal setting also applies to the
+standalone `cal.com/misinc/free-consultation` link and the confirmation screens,
+so the whole booking journey matches. Setting it in both places would mean two
+sources of truth that can silently disagree.
+
 ## Implementation note
 
 The site does **not** use `@calcom/embed-react`. That package would require
