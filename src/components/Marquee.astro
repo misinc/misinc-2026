@@ -8,14 +8,7 @@
  * Layout note: the viewport clips on X only. Plain `overflow-hidden` also clips
  * the Y axis, which cuts the top border off each pill as it lifts on hover.
  */
-const platforms = [
-  { name: 'Webflow', href: '/platforms/webflow' },
-  { name: 'Mailchimp', href: '/platforms/mailchimp' },
-  { name: 'Square', href: '/platforms/square-online-store' },
-  { name: 'Supabase', href: '/platforms/supabase' },
-  { name: 'WordPress', href: '/platforms/wordpress' },
-  { name: 'Shopify', href: '/platforms/shopify' },
-]
+import { PLATFORMS as platforms } from '../lib/platforms'
 
 const doubled = [...platforms, ...platforms]
 ---
@@ -34,13 +27,13 @@ const doubled = [...platforms, ...platforms]
       {
         doubled.map((p, i) => (
           <a
-            href={p.href}
+            href={`/platforms/${p.slug}`}
             aria-hidden={i >= platforms.length ? 'true' : undefined}
             tabindex={i >= platforms.length ? -1 : undefined}
             class="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line-soft bg-paper-panel py-2.5 pl-3.5 pr-5 text-[15px] font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
           >
             <img
-              src={`/img/platforms/${p.name.toLowerCase()}.svg`}
+              src={p.icon}
               alt=""
               width="24"
               height="24"

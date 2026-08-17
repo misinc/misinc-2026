@@ -4,7 +4,7 @@ heading: Built properly, on Webflow or Astro
 summary: The build itself — turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
 pillar: websites
 order: 2
-platforms: [webflow, supabase]
+platforms: [webflow, astro, supabase]
 highlights:
   - Webflow & Astro builds
   - Integrations & CMS setup
@@ -54,7 +54,7 @@ This site is built on Astro, which is the most honest demonstration we can offer
 
 ## Migrating from something else
 
-A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated from Wix, Weebly, Squarespace, Business Catalyst, and older WordPress installations — carrying content and, critically, the URLs that carry your search rankings.
+A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated sites from Wix, Weebly, Squarespace, Business Catalyst, and ageing self-hosted installations onto Webflow and Astro — carrying the content across and, critically, the URLs that carry your search rankings.
 
 More detail on that is on our [website migrations page](/website-migrations).
 

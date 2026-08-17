@@ -8,10 +8,10 @@
 
 export const PLATFORMS = [
   { slug: 'webflow', name: 'Webflow', icon: '/img/platforms/webflow.svg' },
+  { slug: 'astro', name: 'Astro', icon: '/img/platforms/astro.svg' },
   { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg' },
   { slug: 'square-online-store', name: 'Square', icon: '/img/platforms/square.svg' },
   { slug: 'supabase', name: 'Supabase', icon: '/img/platforms/supabase.svg' },
-  { slug: 'wordpress', name: 'WordPress', icon: '/img/platforms/wordpress.svg' },
   { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg' },
 ] as const
 

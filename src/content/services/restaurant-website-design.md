@@ -5,7 +5,7 @@ summary: Menus, online ordering, catering, and gift cards — on a site you and 
 pillar: websites
 order: 5
 ranking: true
-platforms: [square-online-store, webflow, shopify]
+platforms: [square-online-store, webflow]
 highlights:
   - Online ordering & pickup
   - Menus your staff can edit

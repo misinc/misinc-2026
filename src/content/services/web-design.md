@@ -5,7 +5,7 @@ summary: Modern, fast, accessible websites for New Mexico businesses — designe
 pillar: websites
 order: 1
 ranking: true
-platforms: [webflow, wordpress, square-online-store, supabase]
+platforms: [webflow, astro]
 highlights:
   - Design & development
   - SEO + AI-search readiness

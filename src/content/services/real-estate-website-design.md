@@ -5,7 +5,7 @@ summary: IDX-connected websites for Realtors® in Albuquerque and Santa Fe — y
 pillar: websites
 order: 4
 ranking: true
-platforms: [webflow, wordpress]
+platforms: [webflow, astro]
 highlights:
   - IDX / MLS integration
   - Lead capture built in

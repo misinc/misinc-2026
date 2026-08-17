@@ -27,6 +27,7 @@ Other pages: pass the same object as the `media` prop to `<PageHero>`.
 | Services hub | ⚠️ video | Shorter balloon cut (2.1 MB) — placeholder, see below |
 | Website Design | ✅ image | Windsor Door Sales |
 | Website Development | ✅ image | Dermatology & Skin Cancer Center of NM |
+| Platform pages (6) | ❌ n/a | placeholders — content pending |
 | E-Commerce Stores | ✅ image | Peasant Pies |
 | Real Estate | ✅ image | Kat Jacob, Realtor® |
 | Restaurant | ✅ image | Pars Cuisine |

@@ -5,7 +5,7 @@ summary: Local SEO and Answer Engine Optimization for Albuquerque businesses. Th
 pillar: growth
 order: 1
 ranking: true
-platforms: [webflow, wordpress]
+platforms: [webflow, astro]
 highlights:
   - Local SEO & Google Business
   - Technical SEO & speed

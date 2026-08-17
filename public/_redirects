@@ -12,6 +12,7 @@
 # Send that intent to development, where a rebuild is the honest offer.
 /services/wordpress-procare-plan                /services/website-development       301
 /wordpress-procare-signup                       /services/website-development       301
+/platforms/wordpress                            /platforms/webflow                  301
 
 # --- Services: three thin marketing pages become one pillar ------------------
 /services/email-marketing                       /services/digital-marketing         301
@@ -25,7 +26,7 @@
 /platforms/ecwid                                /services/ecommerce-website-design  301
 /platforms/addon-commerce                       /services/ecommerce-website-design  301
 /platforms/webflow-e-commerce                   /services/ecommerce-website-design  301
-/platforms/elementor-builder-for-wordpress      /services/web-design                301
+/platforms/elementor-builder-for-wordpress      /platforms/webflow                  301
 /platforms/addonidx                             /services/real-estate-website-design 301
 
 # --- Retired ecommerce (Webflow store is being decommissioned) ---------------
