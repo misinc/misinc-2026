@@ -8,7 +8,7 @@ imageAlt: "Dermatology and Skin Cancer Center of New Mexico website homepage"
 projectUrl: https://www.nmdermcenter.com/
 year: 2018
 services: [healthcare-website-design]
-platforms: [webflow]
+platforms: [weebly]
 seo:
   title: "NM Dermatology & Skin Cancer Center Website | MIS, Inc."
   description: "How MIS, Inc. built the website for the Dermatology & Skin Cancer Center of New Mexico, focused on patient information and access."

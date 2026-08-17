@@ -9,7 +9,7 @@ projectUrl: https://www.parscuisine.us/
 year: 2018
 featured: true
 services: [restaurant-website-design, ecommerce-website-design]
-platforms: [square-online-store]
+platforms: [ecwid]
 seo:
   title: "Pars Cuisine Restaurant Website | MIS, Inc. Portfolio"
   description: "How MIS, Inc. built online ordering, catering requests, and gift cards for Pars Cuisine, a Persian and Mediterranean restaurant in Albuquerque."

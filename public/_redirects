@@ -23,7 +23,6 @@
 /platforms/activecampaign                       /services/digital-marketing         301
 /platforms/facebook                             /services/digital-marketing         301
 /platforms/twitter                              /services/digital-marketing         301
-/platforms/ecwid                                /services/ecommerce-website-design  301
 /platforms/addon-commerce                       /services/ecommerce-website-design  301
 /platforms/webflow-e-commerce                   /services/ecommerce-website-design  301
 /platforms/elementor-builder-for-wordpress      /platforms/wordpress                301
@@ -53,6 +52,9 @@
 /packages/online-ordering-page                  /services/ecommerce-website-design  301
 /packages/website-with-online-ordering-square   /services/ecommerce-website-design  301
 /packages/*                                     /services                           301
+
+# --- Retired case study ------------------------------------------------------
+/works/reule                                    /portfolio                          301
 
 # --- Taxonomy cleanup --------------------------------------------------------
 /work-category/*                                /portfolio                          301

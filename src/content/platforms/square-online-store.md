@@ -39,4 +39,4 @@ We are a Square Online certified agency and have built stores for restaurants an
 
 ## Where we have used it
 
-Restaurants including [Pars Cuisine](/works/pars-cuisine) in Albuquerque and The Bean in New York, and retailers like [Peasant Pies](/works/peasant-pies) in San Francisco — several of them migrations from Wix or Weebly onto Square Online.
+[The Bean](/works/the-bean) in New York and [Peasant Pies](/works/peasant-pies) in San Francisco both run on Square Online, the latter migrated across from Wix.

@@ -12,8 +12,10 @@
 export const PLATFORMS = [
   { slug: 'webflow', name: 'Webflow', icon: '/img/platforms/webflow.svg' },
   { slug: 'astro', name: 'Astro', icon: '/img/platforms/astro.svg' },
+  { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true },
   { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg' },
   { slug: 'square-online-store', name: 'Square', icon: '/img/platforms/square.svg' },
+  { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg' },
   { slug: 'supabase', name: 'Supabase', icon: '/img/platforms/supabase.svg' },
   { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg' },
 ] as const
@@ -21,16 +23,23 @@ export const PLATFORMS = [
 export type PlatformSlug = (typeof PLATFORMS)[number]['slug']
 
 /**
- * Every platform that has a page, including the ones we migrate away from.
- * Used by StanceCallout to render "what we recommend instead" chips.
+ * Every platform that has a page, including legacy ones we no longer build on
+ * but that older portfolio work still runs on. Used by StanceCallout and by
+ * the "built on" chips on case studies.
  */
 export const ALL_PLATFORMS = [
   ...PLATFORMS,
   { slug: 'wordpress', name: 'WordPress', icon: '/img/platforms/wordpress.svg' },
   { slug: 'wix', name: 'Wix', icon: '/img/platforms/wix.svg' },
+  { slug: 'weebly', name: 'Weebly', icon: '/img/platforms/weebly.svg' },
+  {
+    slug: 'expressionengine',
+    name: 'ExpressionEngine',
+    icon: '/img/platforms/expressionengine.svg',
+  },
 ] as const
 
 export const PLATFORMS_BY_SLUG: Record<
   string,
-  { slug: string; name: string; icon: string }
+  { slug: string; name: string; icon: string; wide?: boolean }
 > = Object.fromEntries(ALL_PLATFORMS.map((p) => [p.slug, p]))

@@ -65,7 +65,7 @@ const alternatives = insteadUse
               href={`/platforms/${p.slug}`}
               class="flex items-center gap-2.5 rounded-full border border-line-soft bg-paper-panel py-2.5 pl-3.5 pr-5 text-[15px] font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
             >
-              <img src={p.icon} alt="" width="24" height="24" class="h-6 w-6 shrink-0" />
+              <img src={p.icon} alt="" height="24" class:list={['shrink-0', p.wide ? 'h-5 w-auto' : 'h-6 w-6']} />
               {p.name}
             </a>
           ))}

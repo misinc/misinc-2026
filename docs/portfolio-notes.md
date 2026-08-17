@@ -63,6 +63,35 @@ They appear in three places, all from the one source:
 Each also emits `Review` schema inside the case study's `CreativeWork` JSON-LD,
 which is what lets Google and AI assistants attribute a quote to MIS.
 
+## Platform attributions — still unconfirmed
+
+Karim corrected most of these directly. Three were not mentioned and are still
+my inference from the Webflow work-category field. Worth a glance:
+
+| Project | Currently attributed to | Confidence |
+|---|---|---|
+| Coleman Vision | Webflow | Webflow work-category in the CMS — probably right |
+| Nob Hill Neighborhoods | Webflow | inferred only |
+| New Mexico Chile Association | Webflow | inferred only |
+
+Confirmed by Karim: Kat Jacob (Webflow + Add On IDX), Lazaris (WordPress),
+SAM Properties (Weebly), Zaca Mesa (WordPress), Pars Cuisine (Ecwid), Windsor
+Door (Weebly), NM Dermatology (Weebly), Cheezie Chews (Weebly), Honor Flight
+(Weebly), You Can Lead Coaching (ExpressionEngine), Eric Spurlock (Webflow,
+rebuilt). The Bean and Peasant Pies are Square Online per the CMS notes.
+
+## Eric Spurlock needs a new screenshot
+
+The site has been rebuilt on Webflow. The copy and platform are updated and the
+year moved to 2025, but `public/img/work/eric-spurlock.png` is still a capture
+of the **previous** site. Replace it with the current build at
+ericspurlock.com — there is a TODO marker in the frontmatter.
+
+## Reule Stucco removed
+
+Removed at Karim's request. `/works/reule` had 236 impressions at position 10.3,
+so it 301s to `/portfolio` rather than 404ing.
+
 ## Still to do
 
 - **Confirm client permission** for named quotes, if that was never explicit.

@@ -8,7 +8,7 @@ imageAlt: "Zaca Mesa Winery website homepage"
 projectUrl: https://www.zacamesa.com
 year: 2020
 services: [ecommerce-website-design, website-development]
-platforms: [webflow]
+platforms: [wordpress]
 seo:
   title: "Zaca Mesa Winery Website Migration | MIS, Inc. Portfolio"
   description: "How MIS, Inc. redesigned Zaca Mesa Winery’s website and migrated it off Adobe Business Catalyst before the platform shut down."

@@ -1,20 +1,23 @@
 ---
 title: "Eric Spurlock"
 client: "Eric Spurlock"
-summary: "A portfolio site for an award-winning custom home designer, where the work has to speak first."
+summary: "A rebuilt portfolio site for an award-winning custom home designer, where the work has to speak first."
 category: business
 image: /img/work/eric-spurlock.png
 imageAlt: "Eric Spurlock custom home design portfolio website"
+# TODO(screenshot): this image is of the previous site. Replace with a capture
+# of the current Webflow build at ericspurlock.com.
 projectUrl: https://www.ericspurlock.com
-year: 2016
+year: 2025
 services: [web-design]
 platforms: [webflow]
 seo:
   title: "Eric Spurlock Custom Home Design Website | MIS, Inc."
   description: "How MIS, Inc. built the portfolio website for Eric Spurlock, an award-winning custom home designer in Albuquerque."
 ---
-
 Eric has been designing award-winning homes for over two decades, with work across communities including Tanoan Country Club and Winterwood Park.
+
+We have now built this site twice. The original served for years; the current version is a fresh build on [Webflow](/platforms/webflow), which gives Eric a visual editor for adding new projects himself — the thing a working designer needs most from a portfolio site.
 
 For a designer, the website is a portfolio first and everything else second. Our job was mostly to get out of the way: large imagery, minimal interface, and a structure that lets someone move through projects without friction.
 

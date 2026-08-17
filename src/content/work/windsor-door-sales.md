@@ -8,7 +8,7 @@ imageAlt: "Windsor Door Sales website for garage door service in Albuquerque"
 projectUrl: https://www.windsordoorsales.com
 year: 2018
 services: [web-design, seo]
-platforms: [webflow]
+platforms: [weebly]
 seo:
   title: "Windsor Door Sales Website | MIS, Inc. Portfolio"
   description: "How MIS, Inc. redesigned the Windsor Door Sales website to emphasise that they are a genuinely local Albuquerque garage door company."

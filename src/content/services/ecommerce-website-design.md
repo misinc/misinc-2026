@@ -5,7 +5,7 @@ summary: Online stores that are straightforward for customers to buy from and st
 pillar: websites
 order: 3
 ranking: true
-platforms: [square-online-store, shopify, webflow]
+platforms: [square-online-store, shopify, ecwid, webflow]
 highlights:
   - Secure checkout & payments
   - Shipping and tax handled

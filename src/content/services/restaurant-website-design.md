@@ -5,7 +5,7 @@ summary: Menus, online ordering, catering, and gift cards — on a site you and 
 pillar: websites
 order: 5
 ranking: true
-platforms: [square-online-store, webflow]
+platforms: [square-online-store, ecwid, webflow]
 highlights:
   - Online ordering & pickup
   - Menus your staff can edit
@@ -46,4 +46,4 @@ If you use something else, that is fine — we will work with what you have rath
 
 ## Local work
 
-We have built and maintained sites for Albuquerque restaurants for years, including [Pars Cuisine](/works/pars-cuisine), whose online ordering and gift cards run on the setup described above.
+We have built and maintained sites for Albuquerque restaurants for years, including [Pars Cuisine](/works/pars-cuisine), whose takeout ordering, catering, and gift cards run through [Ecwid](/platforms/ecwid) inside their own site.
