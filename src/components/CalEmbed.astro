@@ -1,0 +1,145 @@
+---
+import { site } from '../lib/site'
+
+/**
+ * Cal.com inline booking embed.
+ *
+ * Uses Cal's vanilla loader rather than @calcom/embed-react on purpose: the
+ * React package would mean adding React, @astrojs/react, and a hydration
+ * boundary to an otherwise framework-free static site, for one widget. The
+ * config passed below is identical.
+ *
+ * The embed is a third-party iframe. If it is blocked or fails to load, the
+ * fallback underneath keeps the page useful — a booking page that shows an
+ * empty box is worse than one that shows a phone number.
+ */
+interface Props {
+  /** Cal.com link, e.g. "misinc/free-consultation". */
+  calLink: string
+  /** Namespace for this event type — must be unique per embed on a page. */
+  namespace: string
+  layout?: 'week_view' | 'month_view' | 'column_view'
+  /** Minimum height. Cal resizes the iframe itself once loaded. */
+  minHeight?: string
+  class?: string
+}
+
+const {
+  calLink,
+  namespace,
+  layout = 'week_view',
+  minHeight = '640px',
+  class: className = '',
+} = Astro.props
+
+/**
+ * Cal defaults to following the visitor's system theme, which drops a dark
+ * calendar into a warm paper page. Pin it to light and hand it the brand red so
+ * the embed reads as part of the site rather than a bolted-on widget.
+ */
+const brand = '#a62025'
+
+const elementId = `cal-inline-${namespace}`
+---
+
+<div class:list={['relative', className]}>
+  <div
+    id={elementId}
+    class="w-full overflow-auto rounded-lg border border-line-soft bg-paper-panel"
+    style={`min-height:${minHeight}`}
+  >
+    {/* Replaced by Cal once the embed loads. */}
+    <div
+      id={`${elementId}-placeholder`}
+      class="grid place-items-center px-6 py-20 text-center"
+    >
+      <div>
+        <p class="font-display text-lg font-bold text-ink">Loading the calendar…</p>
+        <p class="mt-2 text-sm text-ink-muted">
+          If it does not appear, call
+          <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
+            {site.phone}
+          </a>
+          or email
+          <a
+            href={`mailto:${site.email}`}
+            class="font-bold text-ink-soft no-underline hover:text-primary">{site.email}</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="rounded-lg border border-line-soft bg-paper-tint p-7">
+      <h2 class="mb-2 font-display text-lg font-bold text-ink">Booking needs JavaScript</h2>
+      <p class="text-ink-soft">
+        The calendar cannot load, but we are easy to reach directly. Call
+        <a href={site.phoneHref} class="font-bold text-ink no-underline">{site.phone}</a>, email
+        <a href={`mailto:${site.email}`} class="font-bold text-ink no-underline">{site.email}</a>,
+        or use the <a href="/contact" class="font-bold text-primary no-underline">contact form</a>.
+      </p>
+    </div>
+  </noscript>
+</div>
+
+<script
+  is:inline
+  define:vars={{ calLink, namespace, layout, elementId, brand }}
+>
+  ;(function (C, A, L) {
+    let p = function (a, ar) {
+      a.q.push(ar)
+    }
+    let d = C.document
+    C.Cal =
+      C.Cal ||
+      function () {
+        let cal = C.Cal
+        let ar = arguments
+        if (!cal.loaded) {
+          cal.ns = {}
+          cal.q = cal.q || []
+          d.head.appendChild(d.createElement('script')).src = A
+          cal.loaded = true
+        }
+        if (ar[0] === L) {
+          const api = function () {
+            p(api, arguments)
+          }
+          const namespace = ar[1]
+          api.q = api.q || []
+          if (typeof namespace === 'string') {
+            cal.ns[namespace] = cal.ns[namespace] || api
+            p(cal.ns[namespace], ar)
+            p(cal, ['initNamespace', namespace])
+          } else p(cal, ar)
+          return
+        }
+        p(cal, ar)
+      }
+  })(window, 'https://app.cal.com/embed/embed.js', 'init')
+
+  Cal('init', namespace, { origin: 'https://app.cal.com' })
+
+  Cal.ns[namespace]('ui', {
+    hideEventTypeDetails: false,
+    layout,
+    theme: 'light',
+    cssVarsPerTheme: { light: { 'cal-brand': brand } },
+  })
+
+  Cal.ns[namespace]('inline', {
+    elementOrSelector: `#${elementId}`,
+    config: { layout, useSlotsViewOnSmallScreen: 'true', theme: 'light' },
+    calLink,
+  })
+
+  // Cal injects an iframe into the container; drop our placeholder once it does.
+  Cal.ns[namespace]('on', {
+    action: 'linkReady',
+    callback: () => {
+      document.getElementById(`${elementId}-placeholder`)?.remove()
+    },
+  })
+</script>
