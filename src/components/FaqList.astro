@@ -1,0 +1,82 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+
+/**
+ * FAQ accordion driven by the faqs content collection.
+ *
+ * Answers are markdown, so they can link to the pages that answer the question
+ * more fully — which is also what makes them useful to AI assistants.
+ *
+ * Built on native <details>, so it works without JavaScript and every answer is
+ * present in the HTML for crawlers even when collapsed.
+ */
+interface Props {
+  items: CollectionEntry<'faqs'>[]
+  /** Open the first item. Useful when the FAQ is the page's main content. */
+  openFirst?: boolean
+  /** Emit FAQPage JSON-LD. Turn off if another block on the page already does. */
+  schema?: boolean
+  class?: string
+}
+
+const { items, openFirst = false, schema = true, class: className = '' } = Astro.props
+
+const rendered = await Promise.all(
+  items.map(async (item) => ({ item, Content: (await render(item)).Content })),
+)
+
+/** Schema needs plain text, so strip the markdown rather than shipping syntax. */
+const plain = (body: string) =>
+  body
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`>#]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((f) => ({
+    '@type': 'Question',
+    name: f.data.question,
+    acceptedAnswer: { '@type': 'Answer', text: plain(f.body ?? '') },
+  })),
+}
+---
+
+<div class:list={['max-w-[820px]', className]}>
+  {
+    rendered.map(({ item, Content }, i) => (
+      <details class="group border-b border-line-soft py-1" open={openFirst && i === 0} data-reveal>
+        <summary class="relative cursor-pointer list-none py-4 pr-10 font-display text-[19px] font-semibold text-ink hover:text-primary">
+          {item.data.question}
+          <span class="pointer-events-none absolute right-2 top-1/2 -mt-[7px] h-[11px] w-[11px] rotate-45 border-b-[2.5px] border-r-[2.5px] border-primary transition-transform group-open:-mt-[3px] group-open:rotate-[-135deg]" />
+        </summary>
+
+        <div class="faq-answer max-w-[68ch] pb-5 text-[15.5px] text-ink-soft">
+          <Content />
+        </div>
+      </details>
+    ))
+  }
+</div>
+
+{schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+<style is:global>
+  .faq-answer > * + * {
+    margin-top: 0.9em;
+  }
+  .faq-answer a {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+  .faq-answer a:hover {
+    color: var(--color-primary-dark);
+  }
+  .faq-answer strong {
+    color: var(--color-ink);
+    font-weight: 800;
+  }
+</style>

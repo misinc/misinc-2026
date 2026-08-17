@@ -6,10 +6,14 @@ import SectionHeader from '../../components/SectionHeader.astro'
 import PageHero from '../../components/PageHero.astro'
 import Card from '../../components/Card.astro'
 import CtaBand from '../../components/CtaBand.astro'
-import Faq from '../../components/Faq.astro'
+import FaqList from '../../components/FaqList.astro'
 import { yearsInBusiness } from '../../lib/site'
 
 const all = await getCollection('services')
+
+const faqs = (await getCollection('faqs'))
+  .filter((f) => f.data.showOn.includes('services'))
+  .sort((a, b) => a.data.order - b.data.order)
 
 const PILLARS = [
   {
@@ -42,25 +46,6 @@ const byPillar = PILLARS.map((p) => ({
     .sort((a, b) => a.data.order - b.data.order),
 }))
 
-const faqs = [
-  {
-    q: 'Do I have to pick one service?',
-    a: 'No. Most projects start with a website and grow from there — search work once the site is live, then automation once the business outgrows a manual process. You are not committing to a package.',
-  },
-  {
-    q: 'What does a project typically cost?',
-    // TODO(pricing): replace with Karim's real figures — see docs/pricing-notes.md.
-    a: 'Website projects are quoted as a fixed price based on scope: page count, custom functionality, ecommerce, and how much content needs writing or migrating. Marketing and hosting are monthly. Every proposal states the number before work begins, and we would rather scope a project to your budget than quote something out of reach.',
-  },
-  {
-    q: 'How long does a website take?',
-    a: 'A straightforward small business site is usually six to ten weeks from kickoff to launch. The variable is almost never our build time — it is how quickly content, photography, and feedback come back.',
-  },
-  {
-    q: 'Do you work with nonprofits?',
-    a: 'Yes, and a good portion of our work is with New Mexico nonprofits. Tell us about your budget when you get in touch; we would rather scope a project to fit it than quote something out of reach.',
-  },
-]
 ---
 
 <Base
@@ -150,7 +135,7 @@ const faqs = [
       title="Before you get in touch"
       class="mb-10"
     />
-    <Faq items={faqs} />
+    <FaqList items={faqs} openFirst />
   </Section>
 
   <Section divider={false}>

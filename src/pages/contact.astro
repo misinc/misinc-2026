@@ -5,27 +5,14 @@ import SectionHeader from '../components/SectionHeader.astro'
 import PageHero from '../components/PageHero.astro'
 import ContactForm from '../components/ContactForm.astro'
 import StaticMap from '../components/StaticMap.astro'
-import Faq from '../components/Faq.astro'
+import FaqList from '../components/FaqList.astro'
+import { getCollection } from 'astro:content'
 import { site, mapsUrl, yearsInBusiness } from '../lib/site'
 
-const faqs = [
-  {
-    q: 'How quickly will I hear back?',
-    a: 'Within one business day, and usually the same day. Messages come to Karim directly — there is no intake team or ticket queue between you and the person who would do the work.',
-  },
-  {
-    q: 'Do I need to know what I want before I get in touch?',
-    a: 'No. Most useful first conversations start with a problem rather than a specification — the site looks dated, enquiries have dried up, something takes too long every week. Working out what to build is part of what we do.',
-  },
-  {
-    q: 'Is the consultation really free?',
-    a: 'Yes, and there is no obligation attached. You will get honest recommendations either way, including when the honest recommendation is that you do not need us.',
-  },
-  {
-    q: 'Do you work with businesses outside New Mexico?',
-    a: `Yes. We have worked with clients across the U.S. and internationally since 1995. Our focus is on Albuquerque and New Mexico, but ${yearsInBusiness} years in, distance has never been the obstacle people expect.`,
-  },
-]
+
+const faqs = (await getCollection('faqs'))
+  .filter((f) => f.data.showOn.includes('contact'))
+  .sort((a, b) => a.data.order - b.data.order)
 
 const contactSchema = {
   '@context': 'https://schema.org',
@@ -138,7 +125,7 @@ const contactSchema = {
         title="What happens after you send this"
         class="mb-10"
       />
-      <Faq items={faqs} />
+      <FaqList items={faqs} openFirst />
     </div>
   </Section>
 </Base>

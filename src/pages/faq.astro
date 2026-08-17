@@ -1,18 +1,106 @@
 ---
+import { getCollection } from 'astro:content'
 import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import PageHero from '../components/PageHero.astro'
+import FaqList from '../components/FaqList.astro'
+import NextStep from '../components/NextStep.astro'
+import CtaBand from '../components/CtaBand.astro'
+import { FAQ_TOPICS } from '../lib/faq-topics'
+import { site, yearsInBusiness } from '../lib/site'
+
+const all = await getCollection('faqs')
+
+const grouped = (
+  Object.entries(FAQ_TOPICS) as [keyof typeof FAQ_TOPICS, string][]
+)
+  .map(([key, label]) => ({
+    key,
+    label,
+    items: all
+      .filter((f) => f.data.topic === key)
+      .sort((a, b) => a.data.order - b.data.order),
+  }))
+  .filter((g) => g.items.length > 0)
+
+// One FAQPage schema for the whole page, emitted here rather than per group.
+const plain = (body: string) =>
+  body
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`>#]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: grouped.flatMap((g) =>
+    g.items.map((f) => ({
+      '@type': 'Question',
+      name: f.data.question,
+      acceptedAnswer: { '@type': 'Answer', text: plain(f.body ?? '') },
+    })),
+  ),
+}
 ---
 
 <Base
-  title="faq | MIS, Inc."
-  description="Placeholder page — content is migrated from Webflow in the next build phase."
-  noindex={true}
+  title="Frequently Asked Questions | MIS, Inc. Albuquerque Web Design"
+  description={`Straight answers about web design pricing, timelines, platforms, SEO, and AI from MIS, Inc. — an Albuquerque studio with ${yearsInBusiness} years of answering these questions.`}
+  schema={faqSchema}
 >
-  <div class="mx-auto max-w-(--container-content) px-6 py-20 md:px-10">
-    <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">Coming next</span>
-    <h1 class="my-4 text-3xl font-bold text-ink">faq</h1>
-    <p class="max-w-(--container-prose) text-ink-soft">
-      This page is a placeholder while content is migrated from Webflow. See
-      <code>docs/site-architecture.md</code> for what belongs here.
-    </p>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="FAQ"
+      title="Straight answers"
+      lede={`The questions we are asked most often, answered plainly — including the ones where the honest answer is “no” or “it depends”. ${yearsInBusiness} years of having these conversations has made them easier to answer.`}
+      ctas={[
+        { label: 'Book a free consultation', href: '/free-consultation' },
+        { label: 'Ask us something else', href: '/contact', variant: 'ghost' },
+      ]}
+    />
   </div>
+
+  <!-- Topic jump links -->
+  <Section variant="tint" width="full">
+    <div class="mx-auto max-w-(--container-content) px-6 py-8 md:px-10">
+      <h2 class="sr-only">Jump to a topic</h2>
+      <div class="flex flex-wrap gap-2.5" data-reveal>
+        {
+          grouped.map((g) => (
+            <a
+              href={`#${g.key}`}
+              class="rounded-full border border-line-soft bg-paper-panel px-4 py-2 text-sm font-extrabold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+            >
+              {g.label}
+              <span class="ml-1.5 font-bold text-ink-muted tabular-nums">{g.items.length}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+
+  {
+    grouped.map((g, i) => (
+      <Section id={g.key} class="scroll-mt-24" divider={i < grouped.length - 1}>
+        <SectionHeader eyebrow="Questions" title={g.label} class="mb-8" />
+        <FaqList items={g.items} schema={false} openFirst={i === 0} />
+      </Section>
+    ))
+  }
+
+  <Section>
+    <NextStep
+      title="Still have a question?"
+      text={`Ask us directly — there is no intake form standing between you and an answer. Call ${site.phone} or send a message and you will hear back within one business day.`}
+      ctaLabel="Ask us a question"
+      ctaHref="/contact"
+    />
+  </Section>
+
+  <Section divider={false}>
+    <CtaBand />
+  </Section>
 </Base>

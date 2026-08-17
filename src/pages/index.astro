@@ -7,7 +7,7 @@ import SectionHeader from '../components/SectionHeader.astro'
 import Card from '../components/Card.astro'
 import Button from '../components/Button.astro'
 import CtaBand from '../components/CtaBand.astro'
-import Faq from '../components/Faq.astro'
+import FaqList from '../components/FaqList.astro'
 import WorkCard from '../components/WorkCard.astro'
 import Timeline from '../components/Timeline.astro'
 import Testimonial from '../components/Testimonial.astro'
@@ -30,6 +30,12 @@ const featured = ['web-design', 'custom-software', 'ai-consulting']
 // Featured case studies and client quotes, both straight from the work
 // collection so the home page always reflects the real portfolio.
 const allWork = await getCollection('work')
+
+// FAQs come from the shared collection, filtered to the ones flagged for this
+// page — so the copy lives in exactly one place.
+const faqs = (await getCollection('faqs'))
+  .filter((f) => f.data.showOn.includes('home'))
+  .sort((a, b) => a.data.order - b.data.order)
 const featuredWork = allWork
   .filter((w) => w.data.featured)
   .sort((a, b) => b.data.year - a.data.year)
@@ -51,35 +57,6 @@ const steps = [
   {
     title: 'Launch, then keep improving',
     note: 'We stay on after launch to keep your site fast, secure, and earning its keep.',
-  },
-]
-
-const faqs = [
-  {
-    q: 'How much does a website cost in Albuquerque?',
-    // TODO(pricing): replace with Karim's real figures. This answer deliberately
-    // avoids inventing a number — see docs/pricing-notes.md.
-    a: 'It depends on page count, whether you need ecommerce or integrations, and how much content has to be written or migrated. What we can promise is that the number is fixed before work begins: we quote the whole project up front rather than billing by the hour, so the price you agree to is the price you pay. Our pricing guide walks through what moves the figure up or down.',
-  },
-  {
-    q: 'What platforms do you build on?',
-    a: 'Webflow when you want to manage the site yourself, and Astro when speed and control matter most — plus Square Online for restaurants and retailers already running Square, and Supabase for applications that need a database. We pick the platform that fits your budget and who will maintain it, not the one that locks you into us.',
-  },
-  {
-    q: 'Do you work with clients outside New Mexico?',
-    a: "Yes. We've worked with clients across the U.S. and internationally since 1995. Our focus now is on local Albuquerque and New Mexico businesses and nonprofits, but distance has never been the obstacle people expect.",
-  },
-  {
-    q: 'Can you help my site get found by AI assistants like ChatGPT?',
-    a: "Yes — it's called Answer Engine Optimization, and it's an extension of good SEO: clear structure, structured data, factual content that answers real questions, and a site fast enough to be crawled well. We build it into every project now rather than selling it separately.",
-  },
-  {
-    q: 'What does AI consulting actually mean for a small business?',
-    a: 'Usually one of three things: automating a repetitive task that eats hours each week, building a custom agent that handles routine customer questions, or simply helping you decide which AI tools are worth paying for. We start with what is slow in your business, not with the technology.',
-  },
-  {
-    q: "Do you work on sites you didn't build?",
-    a: 'Yes — most often to migrate them. We move sites off platforms that have been discontinued, outgrown, or become expensive, and rebuild them on Webflow or Astro while keeping the URLs that carry your search rankings. We will audit first and tell you honestly whether rebuilding is worth it.',
   },
 ]
 
@@ -346,7 +323,12 @@ const guides = [
       lede="The questions we are asked most often — answered plainly, so you can decide whether we are a fit before you spend a minute on the phone."
       class="mb-10"
     />
-    <Faq items={faqs} />
+    <FaqList items={faqs} openFirst />
+    <p class="mt-8">
+      <a href="/faq" class="text-[15px] font-extrabold text-primary no-underline hover:underline">
+        See all frequently asked questions &rarr;
+      </a>
+    </p>
   </Section>
 
   <!-- Guides -->

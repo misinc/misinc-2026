@@ -108,4 +108,25 @@ const work = defineCollection({
   }),
 })
 
-export const collections = { services, platforms, work }
+const faqs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/faqs' }),
+  schema: z.object({
+    question: z.string(),
+    topic: z.enum([
+      'getting-started',
+      'pricing',
+      'process',
+      'platforms',
+      'search-ai',
+      'after-launch',
+    ]),
+    order: z.number().default(100),
+    /**
+     * Which pages surface this question, so each page pulls its own subset
+     * from the single source rather than duplicating the copy.
+     */
+    showOn: z.array(z.enum(['home', 'services', 'contact'])).default([]),
+  }),
+})
+
+export const collections = { services, platforms, work, faqs }
