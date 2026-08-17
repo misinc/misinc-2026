@@ -1,0 +1,49 @@
+---
+import Button from './Button.astro'
+import { site } from '../lib/site'
+
+/**
+ * Closing "what happens next" block for article-style pages.
+ *
+ * This lives in a component rather than in markdown so every page ends with a
+ * real button instead of a sentence telling people to get in touch. Body copy
+ * comes from frontmatter; the call to action is consistent everywhere.
+ */
+interface Props {
+  title?: string
+  /** One or two sentences on what the first conversation actually involves. */
+  text: string
+  ctaLabel?: string
+  ctaHref?: string
+  class?: string
+}
+
+const {
+  title = 'What happens next',
+  text,
+  ctaLabel = 'Book a free consultation',
+  ctaHref = '/free-consultation',
+  class: className = '',
+} = Astro.props
+---
+
+<div
+  class:list={[
+    'rounded-lg border border-line-soft bg-paper-tint p-7 md:p-8',
+    className,
+  ]}
+  data-reveal
+>
+  <h2 class="mb-2.5 font-display text-xl font-bold text-ink">{title}</h2>
+  <p class="mb-6 max-w-[62ch] text-ink-soft">{text}</p>
+
+  <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+    <Button href={ctaHref}>{ctaLabel}</Button>
+    <p class="text-sm font-semibold text-ink-muted">
+      Or call
+      <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
+        {site.phone}
+      </a>
+    </p>
+  </div>
+</div>

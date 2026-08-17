@@ -15,6 +15,8 @@ hero:
   src: /img/work/coleman-vision.jpg
   alt: Coleman Vision LASIK practice website
   caption: Coleman Vision — Albuquerque
+nextStep: >-
+  We will review your current site with an eye on accessibility, speed, and how easily a new patient can actually reach you.
 seo:
   title: Healthcare & Medical Website Design | MIS, Inc. Albuquerque
   description: Medical and healthcare website design in Albuquerque, New Mexico. Accessible, privacy-conscious websites for practices that want to be found and trusted by new patients.
@@ -43,7 +45,3 @@ If your practice needs formal compliance review, we will work alongside whoever 
 ## Local work
 
 We have built and maintained sites for New Mexico practices including [Coleman Vision](/works/colemanvision) and the Dermatology & Skin Cancer Center of New Mexico.
-
-## What happens next
-
-Book a free consultation. We will review your current site with an eye on accessibility, speed, and how easily a new patient can actually reach you.

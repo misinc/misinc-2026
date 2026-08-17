@@ -15,6 +15,8 @@ hero:
   src: /img/work/nm-chile.jpg
   alt: New Mexico Chile Association website
   caption: New Mexico Chile Association
+nextStep: >-
+  Tell us what you have tried and what it cost. We will tell you honestly which channels are worth your budget.
 seo:
   title: Digital Marketing Services in Albuquerque, NM | MIS, Inc.
   description: Email marketing, social media, and paid advertising for Albuquerque small businesses. Mailchimp partners helping New Mexico businesses reach customers and bring them back.
@@ -46,7 +48,3 @@ Your customers are on social platforms, so you should be too — but posting dai
 Google and Meta ads work, with two caveats worth saying out loud. They put you in front of people quickly and let you target precisely — and the traffic stops the day you stop paying.
 
 That is why we treat advertising as a way to accelerate the things you keep: getting people onto your mailing list, into your store, and onto pages that will keep ranking after the campaign ends.
-
-## What happens next
-
-Book a free consultation. Tell us what you have tried and what it cost, and we will tell you honestly which channels are worth your budget.

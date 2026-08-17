@@ -5,6 +5,7 @@ import Section from '../../components/Section.astro'
 import SectionHeader from '../../components/SectionHeader.astro'
 import PageHero from '../../components/PageHero.astro'
 import Prose from '../../components/Prose.astro'
+import NextStep from '../../components/NextStep.astro'
 import Card from '../../components/Card.astro'
 import Button from '../../components/Button.astro'
 import CtaBand from '../../components/CtaBand.astro'
@@ -90,10 +91,13 @@ const breadcrumbs = {
 
   <Section>
     <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
-      <div data-reveal>
-        <Prose>
-          <Content />
-        </Prose>
+      <div>
+        <div data-reveal>
+          <Prose>
+            <Content />
+          </Prose>
+        </div>
+        <NextStep text={service.data.nextStep} class="mt-12" />
       </div>
 
       <aside class="flex flex-col gap-8">

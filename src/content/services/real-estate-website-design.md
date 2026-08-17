@@ -15,6 +15,8 @@ hero:
   src: /img/work/kat-jacob.jpg
   alt: Kat Jacob Realtor website with IDX MLS search
   caption: Kat Jacob, Realtor® — IDX search
+nextStep: >-
+  We will look at what your MLS provider allows, what your current site can support, and what it would take to get listings live on it.
 seo:
   title: Real Estate Website Design & IDX for Realtors | MIS, Inc.
   description: Real estate websites with IDX MLS integration for Albuquerque and Santa Fe Realtors. Searchable listings, lead capture, and open house tools on a site built around your brand.
@@ -46,7 +48,3 @@ New data is pulled from your MLS provider twice a day. Your listings stay fresh 
 ## Why agents come to us
 
 We have built and maintained real estate sites for long enough to have opinions about what works. Our IDX product, [Add On IDX](https://www.addonidx.com), came out of that work — it exists because agents kept needing listings on sites their MLS vendor would not support.
-
-## What happens next
-
-Book a free consultation. We will look at what your MLS provider allows, what your current site can support, and what it would take to get listings live on it.

@@ -43,6 +43,7 @@ export const site = {
     { label: 'Work', href: '/portfolio' },
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
+    { label: 'Platforms', href: '/platforms' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Guides', href: '/blog' },
     { label: 'Contact', href: '/contact' },

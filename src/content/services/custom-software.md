@@ -9,6 +9,8 @@ highlights:
   - Web apps & client portals
   - Integrations between systems
   - Internal tools & automation
+nextStep: >-
+  Describe the process that frustrates you most. We will tell you whether software is the right answer, and roughly what it would take — sometimes the honest answer is that a setting in a tool you already own will do it.
 seo:
   title: Custom Software & Web Application Development | MIS, Inc.
   description: Custom web applications, client portals, integrations, and internal tools for New Mexico businesses. Built in Albuquerque by a team that has shipped software since 1995.
@@ -34,7 +36,3 @@ We start with what is slow, not with what is technically interesting. The first 
 Then we build the smallest thing that fixes it. Software gets more expensive to change the more of it there is, so a tool that does one job well and ships in weeks beats a platform that does everything and never quite launches.
 
 We build on boring, well-supported technology — Supabase for data, standard web platforms for the interface — so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.
-
-## What happens next
-
-Book a free consultation and describe the process that frustrates you most. We will tell you whether software is the right answer, and roughly what it would take. Sometimes the honest answer is that a setting in a tool you already own will do it.

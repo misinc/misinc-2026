@@ -29,6 +29,8 @@ const services = defineCollection({
     platforms: z.array(z.string()).default([]),
     /** Short bullets for the hub card. */
     highlights: z.array(z.string()).default([]),
+    /** Closing call-to-action copy, rendered by <NextStep> with a real button. */
+    nextStep: z.string(),
     seo,
     /** True for pages carried over from Webflow with existing rankings. */
     ranking: z.boolean().default(false),
@@ -47,4 +49,28 @@ const services = defineCollection({
   }),
 })
 
-export const collections = { services }
+const platforms = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/platforms' }),
+  schema: z.object({
+    name: z.string(),
+    /** One-line description used on cards and chips. */
+    summary: z.string(),
+    icon: z.string(),
+    /**
+     * Our actual position on the platform. `build` means we build on it;
+     * `partner` means we integrate with it; `migrate` means we generally
+     * move people off it and say so plainly.
+     */
+    stance: z.enum(['build', 'partner', 'migrate']),
+    /** The headline verdict, shown in the stance callout. */
+    verdict: z.string(),
+    /** Where we send people instead — slugs from this same collection. */
+    insteadUse: z.array(z.string()).default([]),
+    category: z.enum(['websites', 'commerce', 'marketing', 'data']),
+    order: z.number().default(100),
+    nextStep: z.string(),
+    seo,
+  }),
+})
+
+export const collections = { services, platforms }

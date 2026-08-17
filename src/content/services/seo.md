@@ -10,6 +10,8 @@ highlights:
   - Local SEO & Google Business
   - Technical SEO & speed
   - AI / answer engine readiness
+nextStep: >-
+  We will run your site through the same audit we would run on our own, and tell you what is holding it back — whether or not you hire us to fix it.
 seo:
   title: Albuquerque SEO Services | Search & AI Optimization | MIS, Inc.
   description: SEO services in Albuquerque, New Mexico. Local search optimization, technical SEO, and Answer Engine Optimization so customers find you in Google and in AI assistants.
@@ -40,7 +42,3 @@ Most of that overlaps with good SEO, which is why we build it in rather than sel
 ## What we will not do
 
 We will not promise a number-one ranking, buy links, or lock you into a contract that renews before you have seen results. Anyone promising the first of those does not understand the second and third.
-
-## What happens next
-
-Book a free consultation. We will run your site through the same audit we would run on our own, and tell you what is holding it back — whether or not you hire us to fix it.

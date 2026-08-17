@@ -14,6 +14,8 @@ hero:
   src: /img/work/nmderm.jpg
   alt: Dermatology and Skin Cancer Center of New Mexico website
   caption: Dermatology & Skin Cancer Center of NM
+nextStep: >-
+  Bring your design if you have one, or your current site if you do not. We will tell you which platform fits and what the build would involve.
 seo:
   title: Webflow & Astro Website Development | MIS, Inc. Albuquerque
   description: Website development in Albuquerque, New Mexico. We build fast, maintainable sites on Webflow and Astro, including CMS setup, integrations, and migrations from older platforms.
@@ -57,7 +59,3 @@ This site is built on Astro, which is the most honest demonstration we can offer
 A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated sites from Wix, Weebly, Squarespace, Business Catalyst, and ageing self-hosted installations onto Webflow and Astro — carrying the content across and, critically, the URLs that carry your search rankings.
 
 More detail on that is on our [website migrations page](/website-migrations).
-
-## What happens next
-
-Book a free consultation. Bring your design if you have one, or your current site if you do not. We will tell you which platform fits and what the build would involve.

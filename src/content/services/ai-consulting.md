@@ -9,6 +9,8 @@ highlights:
   - AI strategy for small teams
   - Tool selection & training
   - Automating the slow parts
+nextStep: >-
+  Bring the part of your week you would most like to stop doing manually.
 seo:
   title: AI Consulting for Small Businesses | MIS, Inc. Albuquerque
   description: Practical AI consulting for New Mexico small businesses and nonprofits. Honest advice on which AI tools are worth paying for and where automation actually saves time.
@@ -39,7 +41,3 @@ That is an extension of the SEO work we already do, and we build it into every s
 We are not an AI company that appeared last year. We are a web studio that has been advising New Mexico businesses on technology decisions since 1995, applying the same test we always have: does this make your business measurably better, or does it just sound impressive?
 
 Our AI and automation work also runs under [MIS, Inc. AI](https://misinc.ai), where you can see the agents and tools we have built.
-
-## What happens next
-
-Book a free consultation. Bring the part of your week you would most like to stop doing manually.

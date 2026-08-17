@@ -1,0 +1,142 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import Section from '../../components/Section.astro'
+import SectionHeader from '../../components/SectionHeader.astro'
+import PageHero from '../../components/PageHero.astro'
+import Prose from '../../components/Prose.astro'
+import NextStep from '../../components/NextStep.astro'
+import StanceCallout from '../../components/StanceCallout.astro'
+import Card from '../../components/Card.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import { site } from '../../lib/site'
+
+export async function getStaticPaths() {
+  const platforms = await getCollection('platforms')
+  return platforms.map((platform) => ({
+    params: { slug: platform.id },
+    props: { platform, all: platforms },
+  }))
+}
+
+const { platform, all } = Astro.props
+const { Content } = await render(platform)
+
+const CATEGORY_LABEL = {
+  websites: 'Website platform',
+  commerce: 'Ecommerce platform',
+  marketing: 'Marketing platform',
+  data: 'Application platform',
+} as const
+
+const related = all
+  .filter((p) => p.id !== platform.id && p.data.stance !== 'migrate')
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3)
+
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Platforms', item: `${site.url}/platforms` },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: platform.data.name,
+      item: `${site.url}/platforms/${platform.id}`,
+    },
+  ],
+}
+---
+
+<Base
+  title={platform.data.seo.title}
+  description={platform.data.seo.description}
+  schema={breadcrumbs}
+>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow={CATEGORY_LABEL[platform.data.category]}
+      title={platform.data.name}
+      lede={platform.data.summary}
+      ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]}
+    >
+      <nav slot="after" aria-label="Breadcrumb" class="mt-6 text-sm font-semibold text-ink-muted">
+        <a href="/platforms" class="text-ink-muted no-underline hover:text-primary">Platforms</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-ink-soft">{platform.data.name}</span>
+      </nav>
+    </PageHero>
+  </div>
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
+      <div>
+        <StanceCallout
+          stance={platform.data.stance}
+          verdict={platform.data.verdict}
+          insteadUse={platform.data.insteadUse}
+          class="mb-10"
+        />
+
+        <div data-reveal>
+          <Prose>
+            <Content />
+          </Prose>
+        </div>
+
+        <NextStep text={platform.data.nextStep} class="mt-12" />
+      </div>
+
+      <aside class="flex flex-col gap-6">
+        <div
+          class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+          data-reveal
+        >
+          <img
+            src={platform.data.icon}
+            alt=""
+            width="40"
+            height="40"
+            class="mb-3 h-10 w-10"
+          />
+          <h2 class="mb-2 font-display text-lg font-bold text-ink">
+            Not sure what fits?
+          </h2>
+          <p class="text-sm text-ink-soft">
+            We pick the platform that suits your budget and whoever will maintain
+            the site — not the one that keeps you dependent on us. If something
+            cheaper would serve you better, we will say so.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  {
+    related.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+          <SectionHeader eyebrow="Also" title="Other platforms we build on" class="mb-10" />
+          <div class="grid gap-5 lg:grid-cols-3">
+            {related.map((p) => (
+              <Card
+                variant="note"
+                href={`/platforms/${p.id}`}
+                tag={CATEGORY_LABEL[p.data.category]}
+                title={p.data.name}
+                blurb={p.data.summary}
+                cta="Read our take"
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <CtaBand />
+  </Section>
+</Base>

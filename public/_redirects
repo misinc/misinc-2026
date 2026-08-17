@@ -8,11 +8,11 @@
 /albuquerque-web-design                         /                                   301
 
 # --- Retired: we no longer take WordPress maintenance work -------------------
-# 5,154 impressions/yr on WP-care keywords, but it is work we do not want.
-# Send that intent to development, where a rebuild is the honest offer.
+# The ProCare *service* is retired, but /platforms/wordpress stays live and
+# explains why we no longer build on it — a real page holds those 1,047 annual
+# impressions and converts some of them, which a redirect cannot do.
 /services/wordpress-procare-plan                /services/website-development       301
 /wordpress-procare-signup                       /services/website-development       301
-/platforms/wordpress                            /platforms/webflow                  301
 
 # --- Services: three thin marketing pages become one pillar ------------------
 /services/email-marketing                       /services/digital-marketing         301
@@ -26,7 +26,7 @@
 /platforms/ecwid                                /services/ecommerce-website-design  301
 /platforms/addon-commerce                       /services/ecommerce-website-design  301
 /platforms/webflow-e-commerce                   /services/ecommerce-website-design  301
-/platforms/elementor-builder-for-wordpress      /platforms/webflow                  301
+/platforms/elementor-builder-for-wordpress      /platforms/wordpress                301
 /platforms/addonidx                             /services/real-estate-website-design 301
 
 # --- Retired ecommerce (Webflow store is being decommissioned) ---------------

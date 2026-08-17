@@ -91,13 +91,21 @@ services, promote it to a mega-menu rather than adding nav items.
   /services/custom-software                     NEW
   /services/ai-consulting                       NEW
   /services/ai-agents                           NEW
-/platforms                          Partner index (marquee destinations)
-  /platforms/webflow                            KEEP  449 impr
-  /platforms/mailchimp                          KEEP  3,804 impr ← biggest platform page
-  /platforms/square-online-store                KEEP  582 impr
-  /platforms/wordpress                          KEEP  1,047 impr
-  /platforms/shopify                            KEEP  528 impr
-  /platforms/supabase                           NEW
+/platforms                          Platform index — recommended + "we migrate off these"
+  /platforms/webflow                            KEEP  449 impr    · stance: build
+  /platforms/astro                              NEW              · stance: build
+  /platforms/mailchimp                          KEEP  3,804 impr · stance: partner
+  /platforms/square-online-store                KEEP  582 impr   · stance: build
+  /platforms/shopify                            KEEP  528 impr   · stance: build
+  /platforms/supabase                           NEW              · stance: build
+  /platforms/wordpress                          KEEP  1,047 impr · stance: migrate
+  /platforms/wix                                NEW              · stance: migrate
+
+  Platform pages carry an explicit stance rather than being neutral brochures.
+  `migrate` pages state plainly why we no longer build on the platform, where it
+  IS still the right answer, and what we recommend instead — which keeps the
+  ranking, answers the query honestly, and converts better than a 301 could.
+  Candidates to add later: Squarespace, Weebly, GoDaddy, Duda.
 /albuquerque-web-design      → 301 → /           (stop splitting the head term)
 /albuquerque-web-design-pricing-guide  KEEP  1,247 impr · linkable asset
 /about                                 KEEP  1,440 impr · pos 8.5

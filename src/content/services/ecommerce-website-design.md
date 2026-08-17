@@ -15,6 +15,8 @@ hero:
   src: /img/work/peasant-pies.jpg
   alt: Peasant Pies online store built on Square Online
   caption: Peasant Pies — online ordering
+nextStep: >-
+  Tell us what you sell and how you take payments today. We will tell you which platform we would use and why.
 seo:
   title: E-Commerce Website Design in Albuquerque, NM | MIS, Inc.
   description: Custom e-commerce website design and online store setup in Albuquerque. Square Online, Shopify, Webflow, and WooCommerce stores built by a certified Square agency.
@@ -47,7 +49,3 @@ That last part matters more than people expect. A store that shows an item as av
 We keep an eye on new platforms, but we recommend proven ones. Square Online is often the right answer for restaurants and retailers already running Square. Shopify suits larger catalogs. Webflow suits stores where the design matters more than the inventory count.
 
 We will make a recommendation and explain the reasoning, including what it will cost you to run each month, before you commit to anything.
-
-## What happens next
-
-Book a free consultation and tell us what you sell. We will tell you which platform we would use and why.

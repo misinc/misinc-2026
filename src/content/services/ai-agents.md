@@ -9,6 +9,8 @@ highlights:
   - Customer question handling
   - Enquiry triage & routing
   - Scheduling & follow-up
+nextStep: >-
+  Tell us which routine question your team answers most often — that is usually the first agent worth building.
 seo:
   title: Custom AI Agents for Small Business | MIS, Inc. Albuquerque
   description: Custom AI agents built for New Mexico small businesses — handling routine customer questions, triaging enquiries, scheduling, and follow-up, with a person always in the loop.
@@ -43,7 +45,3 @@ The distinction that matters: a good agent knows what it does not know and hands
 The best first agent is boring and narrow: one task, clearly defined, that you can evaluate in a week. Broad "do everything" assistants are how these projects fail.
 
 You can see more of this work at [MIS, Inc. AI](https://misinc.ai).
-
-## What happens next
-
-Book a free consultation. Tell us which routine question your team answers most often — that is usually the first agent worth building.

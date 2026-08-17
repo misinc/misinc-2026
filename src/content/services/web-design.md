@@ -15,6 +15,8 @@ hero:
   src: /img/work/windsor-door.jpg
   alt: Windsor Door Sales website, designed by MIS, Inc.
   caption: Windsor Door Sales — Albuquerque
+nextStep: >-
+  We will look at your current site, tell you honestly whether it needs a rebuild or just some repair, and give you a plain-language plan with a real number attached before any work begins.
 seo:
   title: Albuquerque Web Design & Development | MIS, Inc.
   description: Professional website design in Albuquerque, New Mexico. Fast, accessible, conversion-focused websites built by a studio that has designed for the web since 1995.
@@ -44,7 +46,3 @@ We design and test at three sizes — phone, tablet, and desktop — and we trea
 ## Built to be found, by people and by AI
 
 Search is changing again. People increasingly ask an assistant instead of typing into a search box, and those assistants cite sites that are well structured, factually clear, and quick to crawl. That work overlaps almost entirely with good traditional SEO, so we build it into every site rather than selling it back to you later.
-
-## What happens next
-
-Book a free strategy call. We will look at your current site, tell you honestly whether it needs a rebuild or just some repair, and give you a plain-language plan with a real number attached before any work begins.

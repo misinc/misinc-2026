@@ -1,0 +1,76 @@
+---
+/**
+ * Our position on a platform, stated up front rather than buried.
+ *
+ * `migrate` is deliberately not styled as a warning or an error — it is a
+ * considered recommendation, not an alarm. Colour carries emphasis here, not
+ * alarm, and the label carries the meaning for anyone who cannot see it.
+ */
+import { PLATFORMS_BY_SLUG } from '../lib/platforms'
+
+interface Props {
+  stance: 'build' | 'partner' | 'migrate'
+  verdict: string
+  insteadUse?: string[]
+  class?: string
+}
+
+const { stance, verdict, insteadUse = [], class: className = '' } = Astro.props
+
+const LABEL = {
+  build: 'We build on this',
+  partner: 'We partner with this',
+  migrate: 'We generally migrate away from this',
+} as const
+
+const isMigrate = stance === 'migrate'
+
+const alternatives = insteadUse
+  .map((slug) => PLATFORMS_BY_SLUG[slug])
+  .filter((p) => p !== undefined)
+---
+
+<div
+  class:list={[
+    'rounded-lg border p-6 md:p-7',
+    isMigrate
+      ? 'border-primary/25 bg-[#f8eaea]'
+      : 'border-line-soft bg-paper-tint',
+    className,
+  ]}
+  data-reveal
+>
+  <span
+    class:list={[
+      'text-xs font-extrabold uppercase tracking-(--tracking-label)',
+      isMigrate ? 'text-primary' : 'text-accent-dark',
+    ]}
+  >
+    {LABEL[stance]}
+  </span>
+
+  <p class="mt-2.5 max-w-[58ch] font-display text-lg font-semibold text-ink">
+    {verdict}
+  </p>
+
+  {
+    alternatives.length > 0 && (
+      <div class="mt-5">
+        <span class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+          What we recommend instead
+        </span>
+        <div class="mt-2.5 flex flex-wrap gap-2.5">
+          {alternatives.map((p) => (
+            <a
+              href={`/platforms/${p.slug}`}
+              class="flex items-center gap-2.5 rounded-full border border-line-soft bg-paper-panel py-2.5 pl-3.5 pr-5 text-[15px] font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+            >
+              <img src={p.icon} alt="" width="24" height="24" class="h-6 w-6 shrink-0" />
+              {p.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</div>
