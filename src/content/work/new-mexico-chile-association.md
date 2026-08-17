@@ -3,7 +3,7 @@ title: "New Mexico Chile Association"
 client: "New Mexico Chile Association"
 summary: "A new site for the nonprofit behind New Mexico Certified Chile™, built to defend a crop that gets imitated more than almost any other."
 category: nonprofit
-image: /img/work/nm-chile.jpg
+image: /img/work/nm-chile.avif
 imageAlt: "New Mexico Chile Association website homepage"
 projectUrl: https://www.nmchileassociation.org
 year: 2025

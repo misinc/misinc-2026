@@ -3,7 +3,7 @@ title: "Eric Spurlock"
 client: "Eric Spurlock"
 summary: "A rebuilt portfolio site for an award-winning custom home designer, where the work has to speak first."
 category: business
-image: /img/work/eric-spurlock.jpg
+image: /img/work/eric-spurlock.avif
 imageAlt: "Eric Spurlock custom home design portfolio website"
 projectUrl: https://www.ericspurlock.com
 year: 2025

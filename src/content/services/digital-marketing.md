@@ -12,7 +12,7 @@ highlights:
   - Google & Meta advertising
 hero:
   type: image
-  src: /img/work/nm-chile.jpg
+  src: /img/work/nm-chile.avif
   alt: New Mexico Chile Association website
   caption: New Mexico Chile Association
 nextStep: >-
