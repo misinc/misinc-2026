@@ -1,0 +1,219 @@
+---
+import Button from './Button.astro'
+import { site } from '../lib/site'
+
+/**
+ * Contact form, posting to the Resend-backed Pages Function at /api/contact.
+ *
+ * Works without JavaScript: it is a real <form> with a real action, and the
+ * function redirects a non-fetch submission to /contact-thanks. JavaScript
+ * upgrades that to an inline success message with no page reload.
+ *
+ * Note for local development: /api/contact is a Cloudflare Pages Function and
+ * does not run under `astro dev`. Submitting locally will 404. Test with
+ * `npx wrangler pages dev dist` after a build.
+ */
+
+const subjects = [
+  'A new website',
+  'Redesigning an existing site',
+  'E-commerce / online store',
+  'SEO or marketing',
+  'Custom software',
+  'AI consulting or agents',
+  'Something else',
+]
+
+const field =
+  'w-full rounded-md border border-line-soft bg-paper-panel px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:border-primary focus:outline-none'
+const label = 'mb-1.5 block text-sm font-extrabold text-ink'
+---
+
+<form
+  id="contact-form"
+  method="POST"
+  action="/api/contact"
+  class="flex flex-col gap-5"
+  novalidate
+>
+  <div
+    id="form-error"
+    role="alert"
+    hidden
+    class="rounded-md border border-primary/25 bg-[#f8eaea] px-4 py-3 text-[15px] font-semibold text-primary"
+  >
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="name">Your name</label>
+      <input class={field} type="text" id="name" name="name" autocomplete="name" required />
+      <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="name" hidden></p>
+    </div>
+
+    <div>
+      <label class={label} for="email">Email</label>
+      <input class={field} type="email" id="email" name="email" autocomplete="email" required />
+      <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="email" hidden></p>
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="phone">
+        Phone <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <input class={field} type="tel" id="phone" name="phone" autocomplete="tel" />
+    </div>
+
+    <div>
+      <label class={label} for="subject">What is this about?</label>
+      <select class={field} id="subject" name="subject">
+        {subjects.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label class={label} for="message">How can we help?</label>
+    <textarea
+      class:list={[field, 'min-h-[160px] resize-y']}
+      id="message"
+      name="message"
+      required
+      placeholder="Tell us a little about your business and what you are trying to achieve. No need to have it all worked out."
+    ></textarea>
+    <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="message" hidden></p>
+  </div>
+
+  {/* Honeypot. Hidden from people, irresistible to bots. */}
+  <div class="absolute left-[-9999px]" aria-hidden="true">
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+    <button
+      type="submit"
+      id="contact-submit"
+      class="inline-block cursor-pointer rounded-full bg-accent px-6 py-3.5 text-base font-extrabold text-white shadow-button transition hover:-translate-y-px hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      Send message
+    </button>
+    <p class="text-sm font-semibold text-ink-muted">
+      Or email <a
+        href={`mailto:${site.email}`}
+        class="font-bold text-ink-soft no-underline hover:text-primary">{site.email}</a
+      >
+    </p>
+  </div>
+</form>
+
+<div
+  id="contact-success"
+  role="status"
+  hidden
+  class="rounded-lg border border-line-soft bg-paper-tint p-7 md:p-8"
+>
+  <h2 class="mb-2.5 font-display text-xl font-bold text-ink">Thanks — that came through.</h2>
+  <p class="mb-1 max-w-[58ch] text-ink-soft">
+    We read every message ourselves, and you will hear back from Karim within one business day.
+  </p>
+  <p class="text-ink-soft">
+    If it is urgent, call <a
+      href={site.phoneHref}
+      class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+    >.
+  </p>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null
+  const success = document.getElementById('contact-success')
+  const banner = document.getElementById('form-error')
+  const submit = document.getElementById('contact-submit') as HTMLButtonElement | null
+
+  const clearErrors = () => {
+    document.querySelectorAll<HTMLElement>('[data-error-for]').forEach((el) => {
+      el.textContent = ''
+      el.hidden = true
+    })
+    document.querySelectorAll<HTMLElement>('[aria-invalid]').forEach((input) => {
+      input.removeAttribute('aria-invalid')
+      input.removeAttribute('aria-describedby')
+      input.classList.remove('border-primary')
+    })
+    if (banner) banner.hidden = true
+  }
+
+  const showFieldErrors = (errors: Record<string, string>) => {
+    Object.entries(errors).forEach(([name, msg]) => {
+      const el = document.querySelector<HTMLElement>(`[data-error-for="${name}"]`)
+      const input = document.querySelector<HTMLElement>(`[name="${name}"]`)
+      if (el) {
+        el.textContent = msg
+        el.hidden = false
+        el.id = `${name}-error`
+      }
+      if (input) {
+        input.setAttribute('aria-invalid', 'true')
+        input.setAttribute('aria-describedby', `${name}-error`)
+        input.classList.add('border-primary')
+      }
+    })
+    const firstName = Object.keys(errors)[0]
+    document.querySelector<HTMLElement>(`[name="${firstName}"]`)?.focus()
+  }
+
+  const showBanner = (msg: string) => {
+    if (!banner) return
+    banner.textContent = msg
+    banner.hidden = false
+    banner.scrollIntoView({ block: 'center', behavior: 'smooth' })
+  }
+
+  if (form && success && submit) {
+    // A server round-trip left an error in the URL (the no-JavaScript path).
+    const urlError = new URL(window.location.href).searchParams.get('error')
+    if (urlError === 'send' || urlError === 'config') {
+      showBanner('We could not send that just now. Please email us directly and we will pick it up.')
+    } else if (urlError === 'validation') {
+      showBanner('Some details were missing. Please check the fields below and try again.')
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      clearErrors()
+
+      submit.disabled = true
+      const original = submit.textContent
+      submit.textContent = 'Sending…'
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        })
+        const body = await res.json().catch(() => ({}))
+
+        if (res.ok && body.ok) {
+          form.hidden = true
+          success.hidden = false
+          success.scrollIntoView({ block: 'center', behavior: 'smooth' })
+          return
+        }
+
+        if (body.errors) showFieldErrors(body.errors)
+        else showBanner(body.error ?? 'Something went wrong. Please try again, or email us.')
+      } catch {
+        showBanner(
+          'We could not reach the server. Please check your connection, or email us directly.',
+        )
+      } finally {
+        submit.disabled = false
+        submit.textContent = original
+      }
+    })
+  }
+</script>

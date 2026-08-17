@@ -25,10 +25,23 @@ const json = (status, body) =>
     headers: { 'content-type': 'application/json' },
   })
 
+const redirect = (request, path) =>
+  new Response(null, { status: 303, headers: { location: new URL(path, request.url).href } })
+
+/**
+ * A fetch() submission wants JSON back. A plain <form> POST from a browser
+ * without JavaScript wants to be sent somewhere — otherwise the visitor is
+ * left staring at raw JSON.
+ */
+const wantsJson = (request) => (request.headers.get('accept') ?? '').includes('application/json')
+
 export async function onRequestPost({ request, env }) {
   if (!env.RESEND_API_KEY || !env.CONTACT_TO || !env.CONTACT_FROM) {
     console.error('contact: missing environment configuration')
-    return json(500, { ok: false, error: 'The contact form is not configured yet.' })
+    const failure = 'The contact form is not configured yet.'
+    return wantsJson(request)
+      ? json(500, { ok: false, error: failure })
+      : redirect(request, '/contact?error=config')
   }
 
   let data
@@ -45,7 +58,9 @@ export async function onRequestPost({ request, env }) {
 
   // Honeypot: a hidden field real people never fill in. Accept silently so
   // bots get no signal that they were caught.
-  if (data.company) return json(200, { ok: true })
+  if (data.company) {
+    return wantsJson(request) ? json(200, { ok: true }) : redirect(request, '/contact-thanks')
+  }
 
   const name = String(data.name ?? '').trim()
   const email = String(data.email ?? '').trim()
@@ -61,7 +76,11 @@ export async function onRequestPost({ request, env }) {
   if (name.length > MAX_FIELD || email.length > MAX_FIELD || message.length > MAX_FIELD)
     errors.message = 'That message is too long to send. Please shorten it.'
 
-  if (Object.keys(errors).length) return json(400, { ok: false, errors })
+  if (Object.keys(errors).length) {
+    return wantsJson(request)
+      ? json(400, { ok: false, errors })
+      : redirect(request, '/contact?error=validation')
+  }
 
   const submittedAt = new Date().toISOString()
   const html = `
@@ -94,21 +113,31 @@ export async function onRequestPost({ request, env }) {
 
     if (!res.ok) {
       console.error('contact: resend responded', res.status, await res.text())
-      return json(502, {
-        ok: false,
-        error: `We could not send that just now. Please email ${env.CONTACT_TO} directly.`,
-      })
+      const failure = `We could not send that just now. Please email ${env.CONTACT_TO} directly.`
+      return wantsJson(request)
+        ? json(502, { ok: false, error: failure })
+        : redirect(request, '/contact?error=send')
     }
   } catch (err) {
     console.error('contact: request failed', err)
-    return json(502, {
-      ok: false,
-      error: `We could not send that just now. Please email ${env.CONTACT_TO} directly.`,
-    })
+    const failure = `We could not send that just now. Please email ${env.CONTACT_TO} directly.`
+    return wantsJson(request)
+      ? json(502, { ok: false, error: failure })
+      : redirect(request, '/contact?error=send')
   }
 
-  return json(200, { ok: true })
+  return wantsJson(request) ? json(200, { ok: true }) : redirect(request, '/contact-thanks')
 }
 
-// Only POST is exported: Pages answers other methods with 405 on its own.
-// Exporting a catch-all `onRequest` alongside this would override it.
+/**
+ * Without this, a GET to /api/contact falls through to the static assets and
+ * serves the home page with a 200 — which is both confusing and indexable.
+ */
+export function onRequestGet() {
+  return new Response('Method not allowed', {
+    status: 405,
+    headers: { allow: 'POST', 'x-robots-tag': 'noindex' },
+  })
+}
+
+// No catch-all `onRequest` export: it would override the method handlers above.

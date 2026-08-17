@@ -79,12 +79,10 @@ do not have one, I will leave a marked TODO rather than fill the gap plausibly.
 
 Currently unverified and worth confirming:
 
-- **"500+ projects delivered"** vs **"Over 1,000 Clients Served"**. The live
-  About page on misinc.com claims *over 1,000 clients*; the new home page and
-  About page say *500+ projects*. Those numbers point in opposite directions —
-  you would normally expect more projects than clients, not fewer. One of them
-  is wrong, or they are counting different things. Both now appear on the new
-  site, so this needs resolving before launch.
+- ~~"500+ projects delivered" vs "Over 1,000 Clients Served"~~ **Resolved.**
+  Both were true and counting different things: MIS hosted sites it did not
+  build, so client count legitimately exceeds build count. The stat now reads
+  **"500+ websites built"**, which is the more defensible of the two.
 - **"20+ years with our longest clients"** — inferred from the iranian.com and
   Pars Cuisine link history plus a line in your old FAQ saying you had worked
   with some clients for over 20 years. Plausible, but confirm.

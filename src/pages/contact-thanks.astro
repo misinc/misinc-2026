@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import Card from '../components/Card.astro'
+import Button from '../components/Button.astro'
+import { site } from '../lib/site'
+
+/**
+ * Where the contact form lands when JavaScript is unavailable. With JavaScript
+ * the success message renders inline and this page is never seen — but it has
+ * to exist and be worth landing on.
+ */
+const next = [
+  {
+    tag: 'While you wait',
+    title: 'See our work',
+    blurb: 'Case studies from restaurants, practices, Realtors, and nonprofits across New Mexico.',
+    href: '/portfolio',
+  },
+  {
+    tag: 'Guides',
+    title: 'What a website costs in Albuquerque',
+    blurb: 'What drives the number up or down, written plainly.',
+    href: '/albuquerque-web-design-pricing-guide',
+  },
+  {
+    tag: 'About',
+    title: 'Who you will be working with',
+    blurb: 'Thirty-one years in one city, and why we have stayed small on purpose.',
+    href: '/about',
+  },
+]
+---
+
+<Base
+  title="Thanks for getting in touch | MIS, Inc."
+  description="Your message reached MIS, Inc. We will get back to you within one business day."
+  noindex={true}
+>
+  <Section>
+    <SectionHeader
+      as="h1"
+      eyebrow="Message sent"
+      title="Thanks — that came through."
+      lede="We read every message ourselves. You will hear back from Karim within one business day, and usually sooner."
+    />
+
+    <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3" data-reveal>
+      <Button href="/portfolio">See our work</Button>
+      <p class="text-sm font-semibold text-ink-muted">
+        In a hurry? Call <a
+          href={site.phoneHref}
+          class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+        >
+      </p>
+    </div>
+  </Section>
+
+  <Section variant="tint" width="full" divider={false}>
+    <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+      <SectionHeader eyebrow="In the meantime" title="Worth a look" class="mb-10" />
+      <div class="grid gap-5 lg:grid-cols-3">
+        {
+          next.map((n) => (
+            <Card variant="note" href={n.href} tag={n.tag} title={n.title} blurb={n.blurb} cta="Take a look" />
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+</Base>
