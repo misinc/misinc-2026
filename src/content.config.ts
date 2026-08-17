@@ -144,6 +144,12 @@ const blog = defineCollection({
     guide: z.boolean().default(false),
     /** Set when a post has been reviewed and refreshed for the new site. */
     updated: z.coerce.date().optional(),
+    /**
+     * Questions answered by this post. Rendered at the foot of the article and
+     * emitted as FAQPage schema — the part that gets a pillar page quoted by
+     * AI assistants rather than merely indexed.
+     */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     seo: z
       .object({ title: z.string().optional(), description: z.string().optional() })
       .optional(),

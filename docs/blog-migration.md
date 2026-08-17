@@ -75,11 +75,40 @@ Four posts are flagged `guide: true`: `albuquerque-seo-company`,
 traction — but they were written in 2021 and read like it. The guides page is
 honest today and would be genuinely good after a refresh pass.
 
-## Still to do
+## The pillar page rewrite — done
 
-- **Rewrite `albuquerque-seo-company` as a proper pillar page.** It sits at
-  position 41 with 22,983 impressions — more latent value than anything else on
-  the site. It is currently a thin 2021 post.
+`/blog/albuquerque-seo-company` has been rewritten. The URL is unchanged, which
+is the entire point: it carries 22,983 annual impressions at position 41.
+
+**What was wrong with it.** The 2021 version was 600 words of agency filler —
+"Today, consumers turn to the internet to search for the goods and services they
+need" — stuffed with *leading Albuquerque SEO company*, *best SEO companies in
+Albuquerque, NM*, and claiming "25 years" (now wrong). It answered no question
+anybody actually has. Google clearly saw the topical relevance; the page simply
+did not deserve to rank.
+
+**What it is now.** Roughly 2,000 words structured around the real intent behind
+the query, which is *hiring* rather than *learning*:
+
+- What SEO actually is, in three parts
+- **The map pack** — that for local searches, Google's three-business block sits
+  above organic results and is driven by the Google Business Profile and
+  reviews, not the website. This is the strongest differentiator on the page:
+  most agencies never mention it because it points away from billable work.
+- What good SEO work looks like, and six red flags
+- Six questions to ask any company, explicitly including us
+- What it costs — framed as what *drives* cost, with no invented figures
+- **AEO**, at length: how being *cited* differs from being *ranked*, what
+  actually works, and how to test it yourself
+- An honest "should you just do it yourself?" section
+- Six FAQs emitting FAQPage schema
+
+**Why this shape should work.** The page gives away genuinely useful advice,
+including advice that reduces the need to hire anyone. That is what makes the
+closing pitch credible, and it is also what AI assistants cite — a page that
+answers the question directly rather than deflecting to a contact form.
+
+## Still to do
 - **Refresh the dated posts.** Several reference 2018/2019 in the title or lean
   on tools that no longer exist. Titles with a year should either be updated or
   have the year removed.
