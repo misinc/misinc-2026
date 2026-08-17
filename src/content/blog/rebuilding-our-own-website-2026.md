@@ -1,0 +1,112 @@
+---
+title: "We Rebuilt Our Own Website. Here Is What We Changed and Why."
+summary: "After 31 years in business and about 18 months of putting it off, we rebuilt misinc.com from scratch — new stack, published prices, no tracking. An honest account of the decisions, including the ones that look inconsistent."
+date: 2026-08-17
+image: /img/blog/misinc-2026-new.jpg
+guide: false
+seo:
+  title: "We Rebuilt Our Own Website in 2026 | MIS, Inc."
+  description: "Why MIS, Inc. rebuilt misinc.com in 2026 — why we chose Astro for ourselves and Webflow for most clients, how we protected 31 years of search rankings, and why we published our prices."
+faqs:
+  - q: "Why did MIS, Inc. build its own website in Astro instead of Webflow?"
+    a: "Because we are the client in this case, and we do not need what Webflow is best at. Webflow's decisive advantage is a visual editor that lets a non-developer publish confidently, which is why we build most client sites on it. We are developers, so that advantage is worth nothing to us, and Astro gives us a faster, fully static site with no monthly platform fee. The right platform depends on who maintains the site, not on which one is best in the abstract."
+  - q: "How do you rebuild a website without losing search rankings?"
+    a: "Keep every URL that earns traffic exactly as it is, and use permanent 301 redirects only where you deliberately consolidate pages. Before rebuilding, export your Search Console data and rank each page by impressions so you know what you are protecting. Rankings are lost through careless URL changes far more often than through redesigns."
+  - q: "Should a small business publish its prices on its website?"
+    a: "In most cases yes. Publishing starting prices lets people self-select before a sales call, which saves time on both sides, and it is increasingly how AI assistants answer cost questions about your business. If you do not publish a figure, something else will be quoted as your answer."
+---
+
+We have built more than 500 websites since 1995. Our own sat untouched for about eighteen months while we decided what to do with it.
+
+That is a common enough position that it is worth writing up honestly, along with what we eventually chose and the reasoning behind each decision — including a couple that look inconsistent until you hear the reason.
+
+<figure>
+  <img src="/img/blog/misinc-2026-new.jpg" alt="The new MIS, Inc. website launched in 2026" width="1600" height="1000" loading="lazy" />
+  <figcaption>The new misinc.com, rebuilt in 2026.</figcaption>
+</figure>
+
+## Why we stalled
+
+Not for a lack of ability, which is the awkward part.
+
+We had a design from an outside designer that we never warmed to. We had an unresolved argument with ourselves about whether to rebuild in code or stay on a visual platform. And we had the thing every agency has: paying client work is always more urgent than your own website.
+
+So it drifted. The title tag still said "30 Years of Expertise". The contact page listed an office we had left. The AI work that had grown into a real part of the business was barely represented.
+
+None of that was breaking. It was just steadily less true, which is the [sign most businesses ignore longest](/blog/new-year-new-website).
+
+## The decision that took the longest: what to build it on
+
+We are a [Certified Webflow Partner](/platforms/webflow). We build most of our client sites on Webflow. We then built our own site in [Astro](/services/website-development), which deserves an explanation rather than a shrug.
+
+Webflow's real advantage is not that it produces better websites. It is that it lets someone who is not a developer change their own site without fear. For most of our clients that is decisive — the alternative is a site that goes stale because every edit requires an email to us, which is the failure mode we spend most of our time preventing.
+
+We do not need that. We are the developers. So for us the calculation is different: a static site with no monthly platform fee, faster page loads, and full control of the markup.
+
+The principle underneath is that the best platform depends on who is going to maintain the site, not on which platform wins an argument. Recommending Webflow to a restaurant owner and using Astro ourselves is not a contradiction. It would be a contradiction to recommend Webflow to a team of developers, or Astro to someone who has never opened a terminal.
+
+If your situation is genuinely closer to ours than to a typical small business, we will say so and build you something else. We have a [page comparing the platforms we work with](/platforms), including the ones we no longer recommend.
+
+## Protecting 31 years of search history
+
+This was the part that carried real risk, and the part most redesigns get wrong.
+
+A site that has been live since the 1990s accumulates search rankings that are genuinely hard to rebuild. Before touching anything, we exported our Search Console data and ranked every URL by impressions.
+
+That exercise was clarifying. A handful of pages carried the overwhelming majority of our search visibility. One guide alone accounted for more impressions than most of the site combined. Meanwhile, 27 old blog posts turned out to be 40-to-90-word link shares pointing at other people's articles — the kind of thing everyone published in 2015 and nobody should keep.
+
+So the rules were simple:
+
+- **Every URL that earns traffic keeps its exact address.** Not a similar one. The same one.
+- **301 redirects only where we consolidated deliberately** — five near-identical posts about web design pricing became one, with permanent redirects from the four we retired.
+- **Retired pages get explicit redirects**, one by one, rather than a catch-all rule that would have swallowed the posts worth keeping.
+
+Rankings are lost through careless URL changes far more often than through redesigns. If you take one thing from this post and you are planning a rebuild: export your Search Console data first, and hand your developer the list of URLs that are not allowed to change.
+
+## We published our prices
+
+Our old site did what most agency sites do, which is decline to mention money until you are on a call.
+
+The new one lists what a project actually starts at.
+
+Two reasons. The obvious one is that it respects people's time — someone whose budget is a quarter of our starting figure finds that out in thirty seconds instead of after a scheduled call, and both of us get that hour back.
+
+The less obvious one is that AI assistants now answer a lot of "how much does a website cost in Albuquerque" questions. If you have not published a number, something gets quoted as your answer anyway, assembled from whatever is nearby. We would rather it be our figure.
+
+There is a [full pricing guide](/albuquerque-web-design-pricing-guide) covering what moves the number up and down.
+
+## We wrote it for AI answers, not just search results
+
+Ranking and being cited are becoming different problems.
+
+Search ranking has always rewarded authority and links. Being quoted by an assistant rewards *clarity* — being the source that most unambiguously states a fact. Those pull in slightly different directions, and the second one is newer than most sites are built for.
+
+In practice that meant structured data on every page describing what we are, where we are, and what we charge; real questions answered in the words people use to ask them; and specific, checkable facts instead of marketing adjectives. "We are a boutique agency delivering world-class solutions" is unquotable. "Projects start at $3,500" is a fact an assistant can repeat.
+
+We wrote about this in more detail in our [guide to choosing an SEO company](/blog/albuquerque-seo-company).
+
+## No analytics, no cookies, no consent banner
+
+The new site has no Google Analytics, no advertising pixels, and no tracking cookies. The fonts and the map on the contact page are served from our own server rather than Google's, so no third party learns you visited us.
+
+We were not making meaningful decisions from the analytics we had. We were collecting it because collecting it is what everyone does.
+
+The pleasant consequence is that there is no cookie banner, because there is nothing to consent to. Our [privacy policy](/privacy-policy) is about a page long and describes what actually happens.
+
+We are not going to pretend this is a sacrifice. For a business our size it costs nothing and it is simply better. If you are running ads, your situation is different — but it is worth asking what you would actually do differently if you knew.
+
+## What we would tell you to do
+
+If you are sitting where we were eighteen months ago:
+
+**A rebuild is not always the answer.** Many sites need repairs, not replacement, and repairs cost far less. We say this knowing it is the smaller invoice for us.
+
+**Export your Search Console data before anyone touches anything.** It is the only reliable record of what your site is worth, and it takes ten minutes.
+
+**Decide who is going to maintain the site before choosing what to build it on.** That single question settles most of the platform argument.
+
+**Publish the things you are tempted to withhold.** Prices, straight answers, the recommendation that loses you the sale. It reads as confidence because it is.
+
+**Ship it before it is perfect.** Ours was ready long before it launched. The reason it took eighteen months was not the work.
+
+If you want a second opinion on whether your own site needs replacing or just fixing, [book a free consultation](/free-consultation). We will tell you honestly, including when the answer is that you should not spend the money.

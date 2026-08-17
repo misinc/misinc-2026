@@ -1,17 +1,17 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Marquee from '../components/Marquee.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import Card from '../components/Card.astro'
-import Button from '../components/Button.astro'
-import CtaBand from '../components/CtaBand.astro'
-import FaqList from '../components/FaqList.astro'
-import WorkCard from '../components/WorkCard.astro'
-import Timeline from '../components/Timeline.astro'
-import Testimonial from '../components/Testimonial.astro'
-import { site, yearsInBusiness } from '../lib/site'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Marquee from '../components/Marquee.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import CtaBand from '../components/CtaBand.astro';
+import FaqList from '../components/FaqList.astro';
+import WorkCard from '../components/WorkCard.astro';
+import Timeline from '../components/Timeline.astro';
+import Testimonial from '../components/Testimonial.astro';
+import { site, yearsInBusiness } from '../lib/site';
 
 const facts = [
   { value: '1995', label: 'Founded in Albuquerque' },
@@ -38,7 +38,7 @@ const faqs = (await getCollection('faqs'))
   .sort((a, b) => a.data.order - b.data.order)
 const featuredWork = allWork
   .filter((w) => w.data.featured)
-  .sort((a, b) => b.data.year - a.data.year)
+  .sort((a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999))
   .slice(0, 3)
 const quotes = allWork
   .filter((w) => w.data.testimonial)
@@ -80,7 +80,6 @@ const guides = [
     href: '/blog/albuquerque-seo-company',
   },
 ]
-
 ---
 
 <Base
@@ -105,11 +104,7 @@ const guides = [
           ><span class="caret" id="caret" aria-hidden="true"></span>
         </h1>
 
-        <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">
-          MIS, Inc. is a boutique web design and development agency based in Albuquerque, New
-          Mexico. We build websites, custom software, and practical AI for small businesses and
-          nonprofits &mdash; here at home and around the world.
-        </p>
+        <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits &mdash; here at home and around the world.</p>
 
         <div class="flex flex-wrap items-center gap-3.5">
           <Button href="/free-consultation">Book a free strategy call</Button>

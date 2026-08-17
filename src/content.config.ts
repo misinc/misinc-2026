@@ -98,6 +98,12 @@ const work = defineCollection({
     /** True when the site is no longer online — shown instead of a dead link. */
     archived: z.boolean().default(false),
     year: z.number(),
+    /**
+     * Tie-breaker within a year, lower first. Several projects launched in the
+     * same year, and `year` alone would let them sort arbitrarily; this pins
+     * the running order Karim gave.
+     */
+    order: z.number().optional(),
     /** Verbatim client quote from the Webflow CMS. Never paraphrase these. */
     testimonial: z.object({ quote: z.string(), attribution: z.string() }).optional(),
     /** Services used, as slugs from the services collection. */

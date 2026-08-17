@@ -74,6 +74,23 @@ A site with no traffic does not need a redesign. It needs to be found. Those are
 
 **Someone cold-emailed you about it.** Agencies that find business by telling strangers their website is bad are not the agencies you want.
 
+## We took our own advice
+
+This post sat on a website that was failing its own test.
+
+<figure>
+  <img src="/img/blog/misinc-2026-before.jpg" alt="The MIS, Inc. website as it looked before the 2026 rebuild" width="1600" height="1000" loading="lazy" />
+  <figcaption>misinc.com before the 2026 rebuild — the site this article was originally published on.</figcaption>
+</figure>
+
+Not on the dramatic counts. It was not broken, it worked on a phone, and it loaded fine. It failed on the quietest sign in this list, number five: it no longer described the business.
+
+The page title advertised "30 Years of Expertise", which had been true and was becoming less true every January. The contact page listed an office we had moved out of. Several pages still carried the template's stock description rather than anything about us. And the AI work that had become a real part of what we do was barely mentioned.
+
+None of that is an emergency. That is exactly why it sat there for a year and a half. Sites rarely fail suddenly — they drift, and drift is easy to keep not fixing.
+
+We eventually rebuilt it, and wrote up [what we changed and why](/blog/rebuilding-our-own-website-2026).
+
 ## Fix or replace?
 
 **Repair** when the site is fundamentally sound — the structure works, the platform is supported, and the problems are specific: slow images, outdated content, a broken form, weak SEO. This is cheaper and faster, and we recommend it more often than you might expect.

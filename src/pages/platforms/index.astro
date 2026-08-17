@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../../layouts/Base.astro'
-import Section from '../../components/Section.astro'
-import SectionHeader from '../../components/SectionHeader.astro'
-import PageHero from '../../components/PageHero.astro'
-import PlatformCard from '../../components/PlatformCard.astro'
-import CtaBand from '../../components/CtaBand.astro'
-import { PLATFORMS_BY_SLUG } from '../../lib/platforms'
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PageHero from '../../components/PageHero.astro';
+import PlatformCard from '../../components/PlatformCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { PLATFORMS_BY_SLUG } from '../../lib/platforms';
 
 const all = await getCollection('platforms')
 const byOrder = (a: (typeof all)[number], b: (typeof all)[number]) =>
@@ -24,12 +24,7 @@ const isWide = (slug: string) => Boolean(PLATFORMS_BY_SLUG[slug]?.wide)
   description="MIS, Inc. is a Certified Webflow Partner, a Square Online certified agency, and a Shopify, Mailchimp, and Ecwid partner. Here is what we build on, what we built ourselves, and what we move clients off."
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="Platforms"
-      title="Partners, not just tools"
-      lede="Any agency can use these platforms. We went through their certification and partner programmes, which means direct support channels, early access, and people to escalate to when something breaks on your site. Here is where we stand on each one."
-      ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]}
-    />
+    <PageHero eyebrow="Platforms" title="Partners we rely on" lede="We thoughtfully chose these tools because they are the best and went through their certification and partner programs, which means direct support channels, early access, and people to escalate to when something breaks on your site." ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]} />
   </div>
 
   <Section>

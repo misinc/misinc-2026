@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../../layouts/Base.astro'
-import Section from '../../components/Section.astro'
-import SectionHeader from '../../components/SectionHeader.astro'
-import PageHero from '../../components/PageHero.astro'
-import PostCard from '../../components/PostCard.astro'
-import CtaBand from '../../components/CtaBand.astro'
-import { yearsInBusiness } from '../../lib/site'
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PageHero from '../../components/PageHero.astro';
+import PostCard from '../../components/PostCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { yearsInBusiness } from '../../lib/site';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -59,12 +59,7 @@ const guides = posts.filter((p) => p.data.guide)
   }
 
   <Section divider={false}>
-    <SectionHeader
-      eyebrow="Everything"
-      title="All posts"
-      lede={`${posts.length} posts, newest first.`}
-      class="mb-10"
-    />
+    <SectionHeader eyebrow="Everything" title="All posts" class="mb-10" />
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {
         posts.map((p) => (
