@@ -1,18 +1,297 @@
 ---
 import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import SectionHeader from '../components/SectionHeader.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import Prose from '../components/Prose.astro'
+import { site } from '../lib/site'
+
+/**
+ * Written to describe what this site actually does, not what a generator
+ * assumes it does. Before changing anything here, check it against the code:
+ * there is no analytics script in Base.astro, the map is self-hosted tiles
+ * (StaticMap.astro), fonts are self-hosted, and the only third-party script
+ * is the Cal.com embed on /free-consultation.
+ *
+ * If any of that changes, this page has to change with it.
+ */
+
+const updated = '2026-08-17'
+const updatedLabel = 'August 17, 2026'
+
+// What we tell people up front. Every line has to stay true of the built site.
+const summary = [
+  'This site has no analytics, no advertising pixels, and no tracking cookies. We do not use Google Analytics.',
+  'We do not sell, rent, or trade your information, and there is no arrangement under which we would.',
+  'The only information we hold is what you deliberately send us — a form, a booking, an email, or a phone call.',
+  'Fonts, images, and the map are served from our own site, so no other company learns that you were here.',
+  'Ask us what we hold about you, or ask us to delete it, and we will.',
+]
+
+const processors = [
+  {
+    name: 'Resend',
+    role: 'Delivers contact form messages to our inbox.',
+    href: 'https://resend.com/legal/privacy-policy',
+  },
+  {
+    name: 'Cal.com',
+    role: 'Runs the free consultation booking.',
+    href: 'https://cal.com/privacy',
+  },
+  {
+    name: 'Cloudflare',
+    role: 'Hosts and serves this website.',
+    href: 'https://www.cloudflare.com/privacypolicy/',
+  },
+]
+
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Privacy policy',
+      item: `${site.url}/privacy-policy`,
+    },
+  ],
+}
+
+// WebPage, not PrivacyPolicy — schema.org has no PrivacyPolicy type, and an
+// invented one is silently ignored rather than helpfully interpreted.
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy policy',
+  url: `${site.url}/privacy-policy`,
+  dateModified: updated,
+  publisher: { '@id': `${site.url}/#organization` },
+}
 ---
 
 <Base
-  title="privacy policy | MIS, Inc."
-  description="Placeholder page — content is migrated from Webflow in the next build phase."
-  noindex={true}
+  title="Privacy Policy | MIS, Inc."
+  description="What misinc.com collects, why, and what happens to it. No analytics, no tracking cookies, and nothing sold or shared — written in plain English."
+  schema={[breadcrumbs, pageSchema]}
 >
-  <div class="mx-auto max-w-(--container-content) px-6 py-20 md:px-10">
-    <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">Coming next</span>
-    <h1 class="my-4 text-3xl font-bold text-ink">privacy policy</h1>
-    <p class="max-w-(--container-prose) text-ink-soft">
-      This page is a placeholder while content is migrated from Webflow. See
-      <code>docs/site-architecture.md</code> for what belongs here.
+  <!-- Header. Deliberately lighter than PageHero: a legal page opens with the
+       document, not with a marketing panel. -->
+  <Section>
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]} class="mb-5" />
+    <span class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-primary">
+      Legal
+    </span>
+    <h1
+      class="mt-3 max-w-[18ch] font-display text-4xl font-bold leading-[1.08] tracking-(--tracking-display) text-ink md:text-5xl"
+    >
+      Privacy policy
+    </h1>
+    <p class="mt-5 max-w-(--container-prose) text-lg text-ink-soft">
+      We do not track you. This page explains what little information this site
+      collects, why, and what happens to it — in plain English rather than four
+      pages of definitions.
     </p>
-  </div>
+    <p class="mt-4 text-sm text-ink-muted">
+      Last updated {updatedLabel} · Applies to <strong class="font-extrabold text-ink-soft"
+        >www.misinc.com</strong
+      >
+    </p>
+  </Section>
+
+  <!-- The short version -->
+  <Section variant="tint" width="full">
+    <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-16">
+      <SectionHeader
+        eyebrow="The short version"
+        title="If you read nothing else"
+        class="mb-8"
+      />
+      <ul class="flex max-w-[68ch] list-none flex-col gap-3 p-0" data-reveal>
+        {
+          summary.map((s) => (
+            <li class="relative pl-7 text-[16.5px] text-ink-soft">
+              <span class="absolute left-0 top-[3px] font-bold text-accent">&check;</span>
+              {s}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <!-- The policy itself -->
+  <Section>
+    <Prose>
+      <h2>Who we are</h2>
+      <p>
+        This site is run by {site.legalName}, trading as MIS, Inc. — a web design and
+        development company in Albuquerque, New Mexico, in business since {site.founded}. You
+        can reach us at <a href={`mailto:${site.email}`}>{site.email}</a> or
+        <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+      <p>
+        This policy covers <strong>www.misinc.com</strong> and nothing else. Websites we
+        build and host for our clients are the client&rsquo;s own, with their own policies,
+        and our AI consulting site at <a href={site.aiUrl}>misinc.ai</a> is separate.
+      </p>
+
+      <h2>What we collect, and when</h2>
+
+      <h3>When you fill in the contact form</h3>
+      <p>
+        We receive your name, your email address, your phone number if you choose to give
+        one, the subject you select, and your message. It is delivered to our inbox as an
+        email. It is not written to a database, because this site does not have one.
+      </p>
+
+      <h3>When you book a free consultation</h3>
+      <p>
+        Booking runs on Cal.com, embedded on the
+        <a href="/free-consultation">free consultation</a> page. When you book, Cal.com collects
+        your name, email address, time zone, and anything you type into the notes, then places
+        the appointment on our calendar and emails the details to both of us. This is the only
+        third-party script anywhere on the site, and it loads only on that page.
+      </p>
+
+      <h3>When you email or call us</h3>
+      <p>
+        We keep the correspondence, the way any business keeps its email and its notes from
+        a phone call.
+      </p>
+
+      <h3>Automatically, in the server log</h3>
+      <p>
+        Our host records the standard details of every request: IP address, browser and
+        device type, the page requested, and the time. Every website on the internet does
+        this — it is how a server answers a request at all. It is used for security, for
+        blocking abuse, and for working out whether something is broken. We do not join it
+        to anything else, and we do not use it to build a profile of you.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        This site sets no cookies of its own. There is no analytics cookie, no advertising
+        cookie, and no preference cookie. Two things are worth naming honestly:
+      </p>
+      <ul>
+        <li>Cloudflare may set a security cookie to tell real visitors apart from bots.</li>
+        <li>
+          The Cal.com booking embed may set its own cookies, on the free consultation page
+          only.
+        </li>
+      </ul>
+      <p>
+        Neither is used by us for tracking or advertising. That is also why this site does
+        not interrupt you with a cookie banner: there is nothing to consent to.
+      </p>
+
+      <h2>Who else sees your information</h2>
+      <p>Three companies, each doing exactly one job:</p>
+    </Prose>
+
+    <div class="mt-6 flex max-w-[68ch] flex-col gap-3">
+      {
+        processors.map((p) => (
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-lg border border-line-soft bg-paper-panel px-5 py-4">
+            <a
+              href={p.href}
+              rel="noopener nofollow"
+              target="_blank"
+              class="font-display text-base font-bold text-primary no-underline hover:underline"
+            >
+              {p.name}
+            </a>
+            <span class="text-[15px] text-ink-soft">{p.role}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <Prose class="mt-8">
+      <p>
+        That is the entire list. We do not share your information with anyone else, and we
+        do not sell it. We would hand something over if a court required it, and we would
+        tell you unless we were legally prevented from doing so.
+      </p>
+
+      <h2>How long we keep it</h2>
+      <p>
+        Enquiries stay in our email as ordinary business correspondence. Records for work we
+        actually do together we keep while we are working together and for a reasonable
+        period afterwards, for tax and for reference when you come back to us years later —
+        which, in our experience, people do. Server logs belong to our host and expire on
+        their schedule.
+      </p>
+      <p>
+        If you would rather we did not keep your enquiry, say so and we will delete it.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>You can ask us to:</p>
+      <ul>
+        <li>Tell you what we hold about you</li>
+        <li>Correct anything that is wrong</li>
+        <li>Delete it</li>
+        <li>Stop contacting you</li>
+      </ul>
+      <p>
+        Email <a href={`mailto:${site.email}`}>{site.email}</a> or call
+        <a href={site.phoneHref}>{site.phone}</a>. There is no form and no process — a person
+        reads it and deals with it.
+      </p>
+      <p>
+        Depending on where you live, you may have further rights under laws such as the
+        GDPR or California&rsquo;s privacy laws. If you want to exercise one of those, just
+        ask. We would rather honor the request than argue about whether it technically
+        applies to a company our size.
+      </p>
+
+      <h2>Links to other websites</h2>
+      <p>
+        Our <a href="/portfolio">portfolio</a> links to client websites, and our
+        <a href="/platforms">platforms</a> pages link to the companies whose software we use.
+        Once you follow one of those links you are on someone else&rsquo;s site, under their
+        privacy policy rather than ours.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This site is not directed at children, and we do not knowingly collect information
+        from anyone under 13.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If we change how we handle information in a way that matters, we will update this
+        page and change the date at the top. We are not going to quietly rewrite it and hope
+        nobody notices.
+      </p>
+    </Prose>
+  </Section>
+
+  <!-- Contact -->
+  <Section variant="tint" width="full" divider={false}>
+    <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-16">
+      <SectionHeader
+        eyebrow="Questions about any of this"
+        title="Ask us directly"
+        lede="Privacy questions go to the same place everything else does. There is no separate department."
+        class="mb-8"
+      />
+      <address class="not-italic text-[16.5px] leading-relaxed text-ink-soft" data-reveal>
+        <strong class="block font-display text-lg font-bold text-ink">{site.legalName}</strong>
+        {site.address.street}<br />
+        {site.address.city}, {site.address.region} {site.address.postalCode}<br />
+        <a href={site.phoneHref} class="font-bold text-primary no-underline hover:underline"
+          >{site.phone}</a
+        ><br />
+        <a href={`mailto:${site.email}`} class="font-bold text-primary no-underline hover:underline"
+          >{site.email}</a
+        >
+      </address>
+    </div>
+  </Section>
 </Base>

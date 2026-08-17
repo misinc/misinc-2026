@@ -42,6 +42,11 @@ cross-referenced with 12 months of Search Console data. Companion doc: [seo-migr
    the old address. Live and wrong today.
 2. `/privacy-policy` and `/contact-thanks` still carry the **Webflow template's boilerplate**
    description: *"Marco is a beautifully designed UI kit template for digital agencies…"*
+   — **fixed.** `/privacy-policy` was rewritten from scratch on 2026-08-17 to describe what
+   the Astro site actually does. It is deliberately a factual document, not boilerplate:
+   there is no analytics script, fonts and map tiles are self-hosted, and the Cal.com embed
+   on `/free-consultation` is the only third-party script on the site. **If any of that
+   changes, the policy has to change with it** — the page carries a comment saying so.
 3. Home page title says **"30 Years of Expertise"** — will be stale again next year. Make it evergreen:
    *"Since 1995"* rather than a countable number.
 4. Several pages have empty `seo` objects entirely (checkout flow, ecommerce templates).
@@ -116,7 +121,7 @@ services, promote it to a mega-menu rather than adding nav items.
   /blog-categories/[slug]              ~5 Albuquerque-keyword categories only
 /contact                               KEEP  1,601 impr  ← fix the stale address
 /free-consultation                     KEEP  303 impr · pos 8.8
-/privacy-policy                        KEEP  ← rewrite the boilerplate description
+/privacy-policy                        KEEP  ← done: rewritten from scratch 2026-08-17
 /404, /401
 ```
 
