@@ -1,0 +1,40 @@
+---
+import { PLATFORMS, type PlatformSlug } from '../lib/platforms'
+
+/**
+ * "We build this on…" chips. Shares the platform registry with the home page
+ * marquee so a platform is only ever defined once.
+ */
+interface Props {
+  platforms: string[]
+  label?: string
+  class?: string
+}
+
+const { platforms, label = 'Platforms we use for this', class: className = '' } = Astro.props
+
+const resolved = platforms
+  .map((slug) => PLATFORMS.find((p) => p.slug === (slug as PlatformSlug)))
+  .filter((p): p is (typeof PLATFORMS)[number] => Boolean(p))
+---
+
+{
+  resolved.length > 0 && (
+    <div class:list={[className]} data-reveal>
+      <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+        {label}
+      </h2>
+      <div class="flex flex-wrap gap-2.5">
+        {resolved.map((p) => (
+          <a
+            href={`/platforms/${p.slug}`}
+            class="flex items-center gap-2.5 rounded-full border border-line-soft bg-paper-panel py-2.5 pl-3.5 pr-5 text-[15px] font-bold text-ink-soft no-underline transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+          >
+            <img src={p.icon} alt="" width="24" height="24" loading="lazy" class="h-6 w-6 shrink-0" />
+            {p.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}

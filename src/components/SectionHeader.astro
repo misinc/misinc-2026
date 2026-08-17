@@ -1,0 +1,58 @@
+---
+/**
+ * Eyebrow + heading + lede. Used at the top of nearly every section, so the
+ * type scale and spacing only have to be right in one place.
+ */
+interface Props {
+  eyebrow?: string
+  title: string
+  lede?: string
+  /** `h1` only on the page's single top-level heading. */
+  as?: 'h1' | 'h2'
+  align?: 'left' | 'center'
+  class?: string
+}
+
+const {
+  eyebrow,
+  title,
+  lede,
+  as: Tag = 'h2',
+  align = 'left',
+  class: className = '',
+} = Astro.props
+---
+
+<div
+  class:list={[
+    'max-w-[640px]',
+    align === 'center' && 'mx-auto text-center',
+    className,
+  ]}
+  data-reveal
+>
+  {
+    eyebrow && (
+      <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">
+        {eyebrow}
+      </span>
+    )
+  }
+
+  <Tag class:list={['my-3.5 font-bold text-ink', Tag === 'h1' ? 'text-4xl' : 'text-3xl']}>
+    {title}
+  </Tag>
+
+  {
+    lede && (
+      <p
+        class:list={[
+          'max-w-(--container-prose) text-ink-soft',
+          align === 'center' && 'mx-auto',
+        ]}
+      >
+        {lede}
+      </p>
+    )
+  }
+</div>

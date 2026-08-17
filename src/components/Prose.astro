@@ -1,0 +1,122 @@
+---
+/**
+ * Typographic wrapper for CMS/markdown body content.
+ *
+ * Migrated Webflow rich text arrives as plain HTML with no classes, so all of
+ * its styling has to come from here. Tailwind's Typography plugin is not used
+ * — this is a short, brand-specific set of rules and keeping it local avoids a
+ * dependency whose defaults would need overriding anyway.
+ */
+interface Props {
+  class?: string
+}
+const { class: className = '' } = Astro.props
+---
+
+<div class:list={['prose-mis', className]}>
+  <slot />
+</div>
+
+<style is:global>
+  .prose-mis {
+    max-width: 68ch;
+    color: var(--color-ink-soft);
+  }
+
+  .prose-mis > * + * {
+    margin-top: 1.15em;
+  }
+
+  .prose-mis h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-ink);
+    margin-top: 2.2em;
+    letter-spacing: var(--tracking-display);
+  }
+
+  .prose-mis h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-top: 1.9em;
+  }
+
+  .prose-mis h2:first-child,
+  .prose-mis h3:first-child {
+    margin-top: 0;
+  }
+
+  .prose-mis a {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-underline-offset: 3px;
+  }
+  .prose-mis a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .prose-mis strong {
+    color: var(--color-ink);
+    font-weight: 800;
+  }
+
+  .prose-mis ul,
+  .prose-mis ol {
+    padding-left: 1.35em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .prose-mis ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose-mis ul > li {
+    position: relative;
+    padding-left: 1.35em;
+  }
+  .prose-mis ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .prose-mis blockquote {
+    margin: 1.6em 0;
+    padding-left: 1.2em;
+    border-left: 3px solid var(--color-accent);
+    font-style: normal;
+    color: var(--color-ink);
+  }
+
+  .prose-mis img {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-line-soft);
+  }
+
+  .prose-mis figure {
+    margin: 1.8em 0;
+  }
+  .prose-mis figcaption {
+    margin-top: 0.7em;
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+  }
+
+  /* Wide content must scroll inside itself, never widen the page. */
+  .prose-mis table,
+  .prose-mis pre {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+</style>

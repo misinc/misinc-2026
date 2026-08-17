@@ -1,0 +1,38 @@
+---
+import Button from './Button.astro'
+import { yearsInBusiness } from '../lib/site'
+
+/**
+ * The red call-to-action band that closes most pages. Defaults are the home
+ * page wording; pass `title`/`note` to tailor it per page.
+ */
+interface Props {
+  title?: string
+  note?: string
+  ctaLabel?: string
+  ctaHref?: string
+  class?: string
+}
+
+const {
+  title = 'Let’s talk about your website.',
+  note = `No pressure. Clear recommendations. ${yearsInBusiness} years of seeing what works.`,
+  ctaLabel = 'Book a free strategy call',
+  ctaHref = '/free-consultation',
+  class: className = '',
+} = Astro.props
+---
+
+<div
+  class:list={[
+    'flex flex-wrap items-center justify-between gap-7 rounded-lg bg-linear-to-br from-primary to-primary-dark px-7 py-10 text-[#fff3de] md:px-12 md:py-14',
+    className,
+  ]}
+  data-reveal
+>
+  <div>
+    <h2 class="mb-2 text-2xl font-bold text-paper-panel">{title}</h2>
+    <p class="text-[15.5px] font-semibold text-[#f3cfa4]">{note}</p>
+  </div>
+  <Button href={ctaHref} variant="onDark">{ctaLabel}</Button>
+</div>

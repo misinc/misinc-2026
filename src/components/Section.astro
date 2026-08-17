@@ -1,0 +1,46 @@
+---
+/**
+ * Standard page section. Handles the content column, vertical rhythm, the
+ * dividing rule between sections, and the optional tinted band — so pages
+ * never hand-roll padding and drift out of sync.
+ */
+interface Props {
+  id?: string
+  /** `default` sits on the paper; `tint` is a full-bleed banded background. */
+  variant?: 'default' | 'tint'
+  /** Set false on the last section before the footer. */
+  divider?: boolean
+  /** `full` skips the content column (for edge-to-edge children). */
+  width?: 'content' | 'full'
+  class?: string
+}
+
+const {
+  id,
+  variant = 'default',
+  divider = true,
+  width = 'content',
+  class: className = '',
+} = Astro.props
+
+const isTint = variant === 'tint'
+---
+
+<section
+  id={id}
+  class:list={[
+    isTint ? 'bg-paper-tint border-y border-line' : '',
+    divider && !isTint ? 'border-b border-line' : '',
+    className,
+  ]}
+>
+  {
+    width === 'content' ? (
+      <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+        <slot />
+      </div>
+    ) : (
+      <slot />
+    )
+  }
+</section>

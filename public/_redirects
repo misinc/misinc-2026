@@ -54,8 +54,13 @@
 
 # --- Utility / legacy --------------------------------------------------------
 /sitemap                                        /                                   301
-/subscriptions/*                                /services                           301
 /well-known/*                                   /                                   301
+
+# NOTE: /subscriptions/success and /subscriptions/canceled are NOT redirected.
+# The live Stripe checkout on the WordPress ProCare page uses them as its
+# successUrl and cancelUrl — redirecting them would drop paying subscribers on
+# a generic page after payment. Only the marketing page below is retired.
+/subscriptions/national-seo-ppc-management      /services/seo                       301
 
 # --- Convenience aliases -----------------------------------------------------
 /work                                           /portfolio                          301

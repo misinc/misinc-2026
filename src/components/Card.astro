@@ -1,0 +1,108 @@
+---
+/**
+ * One card, three jobs.
+ *
+ *   service — tag, title, blurb, bullet list, and a link out
+ *   note    — the whole card is the link (guides, blog teasers)
+ *   plain   — a bordered container for anything else
+ *
+ * When `href` is set the card renders as an anchor, so the entire surface is
+ * clickable rather than just the text inside it.
+ */
+interface Props {
+  variant?: 'service' | 'note' | 'plain'
+  href?: string
+  tag?: string
+  title?: string
+  blurb?: string
+  bullets?: string[]
+  /** Link label for `service`; ignored by `note`, which links the whole card. */
+  cta?: string
+  class?: string
+}
+
+const {
+  variant = 'plain',
+  href,
+  tag,
+  title,
+  blurb,
+  bullets = [],
+  cta,
+  class: className = '',
+} = Astro.props
+
+const wrapsInLink = variant === 'note' && href
+const Tag = wrapsInLink ? 'a' : 'div'
+
+const base =
+  'group flex flex-col gap-2.5 rounded-lg border border-line-soft bg-paper-panel shadow-card transition hover:-translate-y-[3px] hover:shadow-card-hover'
+const padding = variant === 'service' ? 'p-7 gap-3.5' : 'p-6'
+const tagTone = variant === 'service' ? 'text-accent-dark' : 'text-ink-muted'
+---
+
+<Tag
+  href={wrapsInLink ? href : undefined}
+  class:list={[base, padding, wrapsInLink && 'no-underline', className]}
+  data-reveal
+>
+  {
+    tag && (
+      <span
+        class:list={[
+          'text-[11.5px] font-extrabold uppercase tracking-(--tracking-label)',
+          tagTone,
+        ]}
+      >
+        {tag}
+      </span>
+    )
+  }
+
+  {
+    title && (
+      <h3 class:list={['font-bold text-ink', variant === 'service' ? 'text-xl' : 'text-lg leading-tight']}>
+        {title}
+      </h3>
+    )
+  }
+
+  {blurb && <p class="text-[15.5px] text-ink-soft">{blurb}</p>}
+
+  <slot />
+
+  {
+    bullets.length > 0 && (
+      <ul class="flex list-none flex-col gap-2 p-0">
+        {bullets.map((b) => (
+          <li class="relative pl-5 text-sm font-semibold text-ink-soft">
+            <span class="absolute left-0 top-2 h-2 w-2 rounded-full bg-accent" />
+            {b}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    variant === 'service' && href && cta && (
+      <a
+        href={href}
+        class="mt-auto inline-flex items-center gap-2 pt-1.5 text-[15px] font-extrabold text-primary no-underline"
+      >
+        {cta}
+        <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">
+          &rarr;
+        </span>
+      </a>
+    )
+  }
+
+  {
+    variant === 'note' && (
+      <span class="mt-auto pt-2 text-sm font-extrabold text-primary">
+        {cta ?? 'Read the guide'} &rarr;
+      </span>
+    )
+  }
+</Tag>
