@@ -21,6 +21,8 @@ interface Props {
   layout?: 'week_view' | 'month_view' | 'column_view'
   /** Minimum height. Cal resizes the iframe itself once loaded. */
   minHeight?: string
+  /** Accent colour for the embed, from Cal's embed settings. */
+  brandColor?: string
   class?: string
 }
 
@@ -29,16 +31,18 @@ const {
   namespace,
   layout = 'month_view',
   minHeight = '580px',
+  brandColor = '#a62025',
   class: className = '',
 } = Astro.props
 
 /**
- * Cal defaults to following the visitor's system theme, which drops a dark
- * calendar into a warm paper page, so the theme is pinned to light here.
+ * Config below mirrors the snippet Cal's embed generator produces, with one
+ * deliberate addition: `theme: 'light'`.
  *
- * The brand colour is NOT set here. It lives in Cal.com → Event Types →
- * Embed → Brand color (light theme), which also covers the standalone booking
- * link and the confirmation screens. One source of truth beats two.
+ * Cal's generator omits the theme, which means the embed follows the visitor's
+ * system preference. This site has no dark mode, so a visitor with a dark OS
+ * would get a black calendar dropped into the middle of a cream page. Pinning
+ * it to light is correct here — revisit only if the site gains a dark theme.
  */
 
 const elementId = `cal-inline-${namespace}`
@@ -87,7 +91,7 @@ const elementId = `cal-inline-${namespace}`
 
 <script
   is:inline
-  define:vars={{ calLink, namespace, layout, elementId }}
+  define:vars={{ calLink, namespace, layout, elementId, brandColor }}
 >
   ;(function (C, A, L) {
     let p = function (a, ar) {
@@ -124,7 +128,13 @@ const elementId = `cal-inline-${namespace}`
 
   Cal('init', namespace, { origin: 'https://app.cal.com' })
 
+  // Carries UTM and other query params through to the booking, so campaign
+  // attribution survives the handoff to Cal.
+  Cal.config = Cal.config || {}
+  Cal.config.forwardQueryParams = true
+
   Cal.ns[namespace]('ui', {
+    cssVarsPerTheme: { light: { 'cal-brand': brandColor } },
     hideEventTypeDetails: false,
     layout,
     theme: 'light',

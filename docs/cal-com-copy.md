@@ -99,10 +99,36 @@ booking tools.
 
 ### Brand colour
 
-Set it in **Cal.com**, not in our code. The Cal setting also applies to the
-standalone `cal.com/misinc/free-consultation` link and the confirmation screens,
-so the whole booking journey matches. Setting it in both places would mean two
-sources of truth that can silently disagree.
+**Correction to an earlier note in this doc:** the brand colour is *embed-level*
+config, not a server-side account setting. Cal's generator bakes it into the
+snippet as `cssVarsPerTheme`, and removing it from the code reverted the embed
+to Cal's default near-black even with the colour set in the panel.
+
+So it lives in **both** places, and that is correct rather than duplication: the
+panel value drives what the generator emits, and the emitted value is what the
+embed actually uses. `CalEmbed.astro` takes it as a `brandColor` prop defaulting
+to `#a62025`.
+
+## Keeping the component in sync with Cal's generator
+
+The component mirrors the generated snippet, with one deliberate difference.
+
+| Setting | Generator | Component | Note |
+|---|---|---|---|
+| `layout` | `month_view` | `month_view` | matches |
+| `useSlotsViewOnSmallScreen` | `"true"` | `'true'` | matches |
+| `cssVarsPerTheme` → `cal-brand` | `#a62025` | `#a62025` | matches |
+| `hideEventTypeDetails` | `false` | `false` | matches |
+| `forwardQueryParams` | `true` | `true` | matches — carries UTM params into the booking so campaign attribution survives |
+| `theme` | *omitted* | `'light'` | **deliberate addition** |
+
+Cal's generator omits `theme`, which makes the embed follow the visitor's system
+preference. This site has no dark mode, so a visitor with a dark OS would get a
+black calendar in the middle of a cream page. Pinning it to light is correct
+here — revisit only if the site ever gains a dark theme.
+
+Note also that the `ui` call must run **before** the `inline` call, or theme and
+brand colour are both ignored.
 
 ## Implementation note
 
@@ -110,11 +136,6 @@ The site does **not** use `@calcom/embed-react`. That package would require
 adding React, `@astrojs/react`, and a hydration boundary to an otherwise
 framework-free static site, for a single widget. Cal's vanilla loader takes the
 same configuration and ships no framework.
-
-The embed is themed to light with the brand red (`#a62025`) as its accent —
-Cal otherwise follows the visitor's system theme, which drops a dark calendar
-onto a warm paper page. The `ui` call must run **before** the `inline` call or
-the theme is ignored.
 
 `CalEmbed.astro` takes `calLink` and `namespace` props, so the same component
 can power the other booking pages (`/schedule`, `/website-meeting`,
