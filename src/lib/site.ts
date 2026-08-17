@@ -45,6 +45,7 @@ export const site = {
     { label: 'About', href: '/about' },
     { label: 'Platforms', href: '/platforms' },
     { label: 'FAQ', href: '/faq' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Guides', href: '/guides' },
     { label: 'Contact', href: '/contact' },
     { label: 'Privacy policy', href: '/privacy-policy' },
