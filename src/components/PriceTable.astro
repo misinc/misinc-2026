@@ -1,0 +1,64 @@
+---
+import { PRICE_TIERS, money } from '../lib/pricing'
+
+/**
+ * Pricing tiers. Reads from lib/pricing.ts so a rate change is one edit.
+ *
+ * Deliberately a real table on wide screens and stacked cards on narrow ones:
+ * people compare prices by scanning down a column, and a card grid makes that
+ * harder than it needs to be.
+ */
+interface Props {
+  /** Limit to specific tier ids, e.g. on a service page. */
+  only?: string[]
+  class?: string
+}
+
+const { only, class: className = '' } = Astro.props
+const tiers = only ? PRICE_TIERS.filter((t) => only.includes(t.id)) : PRICE_TIERS
+---
+
+<div class:list={['flex flex-col gap-5', className]}>
+  {
+    tiers.map((t) => (
+      <div
+        class="grid gap-5 rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-8 md:p-7"
+        data-reveal
+      >
+        <div>
+          <h3 class="font-display text-xl font-bold text-ink">{t.name}</h3>
+          <p class="mt-1.5 max-w-[52ch] text-[15.5px] text-ink-soft">{t.summary}</p>
+
+          <ul class="mt-4 flex list-none flex-col gap-2 p-0">
+            {t.includes.map((i) => (
+              <li class="relative pl-5 text-sm text-ink-soft">
+                <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-accent" />
+                {i}
+              </li>
+            ))}
+          </ul>
+
+          <p class="mt-4 max-w-[52ch] text-sm text-ink-muted">
+            <strong class="font-extrabold text-ink-soft">Good for:</strong> {t.goodFor}
+          </p>
+        </div>
+
+        <div class="md:min-w-[170px] md:text-right">
+          <span class="block text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+            Starting at
+          </span>
+          <span class="mt-1 block font-display text-[32px] font-bold tabular-nums text-primary">
+            {money(t.from)}
+            {t.unit === 'month' && <span class="text-lg font-bold text-ink-muted">/mo</span>}
+          </span>
+          <a
+            href={t.href}
+            class="mt-3 inline-block text-sm font-extrabold text-primary no-underline hover:underline"
+          >
+            What this covers &rarr;
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</div>
