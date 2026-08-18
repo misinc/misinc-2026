@@ -1,16 +1,16 @@
 ---
-import { getCollection, render } from 'astro:content'
-import Base from '../../layouts/Base.astro'
-import Section from '../../components/Section.astro'
-import SectionHeader from '../../components/SectionHeader.astro'
-import PageHero from '../../components/PageHero.astro'
-import Breadcrumbs from '../../components/Breadcrumbs.astro'
-import Prose from '../../components/Prose.astro'
-import NextStep from '../../components/NextStep.astro'
-import StanceCallout from '../../components/StanceCallout.astro'
-import Card from '../../components/Card.astro'
-import CtaBand from '../../components/CtaBand.astro'
-import { site } from '../../lib/site'
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PageHero from '../../components/PageHero.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prose from '../../components/Prose.astro';
+import NextStep from '../../components/NextStep.astro';
+import StanceCallout from '../../components/StanceCallout.astro';
+import Card from '../../components/Card.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { site } from '../../lib/site';
 
 export async function getStaticPaths() {
   const platforms = await getCollection('platforms')
@@ -99,13 +99,7 @@ const breadcrumbs = {
           class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
           data-reveal
         >
-          <img
-            src={platform.data.icon}
-            alt=""
-            width="40"
-            height="40"
-            class="mb-3 h-10 w-10"
-          />
+          <img src={platform.data.icon} alt={platform.data.name} height="40" class="mb-3 h-10" />
           <h2 class="mb-2 font-display text-lg font-bold text-ink">
             Not sure what fits?
           </h2>
@@ -114,6 +108,11 @@ const breadcrumbs = {
             the site, not the one that keeps you dependent on us. If something
             cheaper would serve you better, we will say so.
           </p>
+          <br/>
+          <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+            Learn more
+          </dt>
+          <dd class="mt-1 ml-0"><a href={platform.data.url} rel="noopener" class="font-bold text-primary no-underline hover:underline" target="_blank"> Visit site &nearr; </a></dd>
         </div>
       </aside>
     </div>

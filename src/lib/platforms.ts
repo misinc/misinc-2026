@@ -14,13 +14,13 @@
  */
 
 export const PARTNERS = [
-  { slug: 'webflow', name: 'Webflow', icon: '/img/platforms/webflow.svg' },
-  { slug: 'square-online-store', name: 'Square Online', icon: '/img/platforms/square.svg' },
-  { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg' },
-  { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg' },
-  { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg' },
-  { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true },
-  { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.png', wide: true },
+  { slug: 'webflow', name: 'Webflow', icon: '/img/platforms/webflow.svg', url:'https://www.webflow.com' },
+  { slug: 'square-online-store', name: 'Square Online', icon: '/img/platforms/square.svg', url:'https://www.squareup.com' },
+  { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg', url:'https://www.shopify.com' },
+  { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg', url:'https://www.mailchimp.com' },
+  { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg', url:'https://www.ecwid.com' },
+  { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true, url:'https://www.addonidx.com' },
+  { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.png', wide: true, url:'https://www.addonaichat.com' },
 ] as const
 
 /** Kept for backwards compatibility with existing imports. */
