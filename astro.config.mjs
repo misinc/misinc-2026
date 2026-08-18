@@ -14,7 +14,7 @@ export default defineConfig({
       // Utility/booking pages are client-facing links we send directly; they
       // should resolve but never compete in search.
       filter: (page) =>
-        !/\/(schedule|website-meeting|meeting-at-misinc|proposal-review|website-training|project-profiler|square-online-store-kickoff|square-online-store-free-consultation|real-estate-web-designer-consultation|contact-thanks)$/.test(
+        !/\/(font-lab|schedule|website-meeting|meeting-at-misinc|proposal-review|website-training|project-profiler|square-online-store-kickoff|square-online-store-free-consultation|real-estate-web-designer-consultation|contact-thanks)$/.test(
           page,
         ),
     }),

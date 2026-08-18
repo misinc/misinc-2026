@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro'
+
+/**
+ * TEMPORARY — heading font comparison. Delete before launch, along with
+ * public/fonts/lab/. Not linked from anywhere, noindexed, and excluded from
+ * the sitemap in astro.config.mjs.
+ *
+ * Every candidate is rendered with the real hero headline, at the real hero
+ * size (--text-4xl, clamped 2.4rem–3.6rem), on the real paper background, with
+ * the accent colour on the same words. A specimen sheet in isolation flatters
+ * everything; the only useful comparison is the one in context.
+ *
+ * Fonts are self-hosted here for the same reason they are on the rest of the
+ * site — no third-party requests, and it renders identically offline.
+ */
+
+const HEADLINE_A = 'The web keeps changing.'
+const HEADLINE_B = 'We’ve been building it '
+const HEADLINE_C = 'since 1995.'
+
+const LEDE =
+  'MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits — here at home and around the world.'
+
+const candidates = [
+  {
+    id: 'fraunces',
+    name: 'Fraunces',
+    tag: 'Current',
+    note: 'Soft, wonky, slightly old-style. Warm and distinctive; the wonk reads as character at large sizes and as noise at small ones.',
+    stack: '"Fraunces", Georgia, serif',
+    settings: '"opsz" 96, "SOFT" 0, "WONK" 0',
+    weight: 700,
+  },
+  {
+    id: 'newsreader',
+    name: 'Newsreader',
+    tag: 'Editorial serif',
+    note: 'Built for reading. Sturdier and more sober than Fraunces — closer to a newspaper than a boutique. Ages well and never shouts.',
+    stack: '"Newsreader", Georgia, serif',
+    settings: '"opsz" 72',
+    weight: 600,
+  },
+  {
+    id: 'instrument',
+    name: 'Instrument Serif',
+    tag: 'High contrast',
+    note: 'Thin hairlines against heavy stems. Elegant and current, but it is a display face only — it would need Manrope doing all the small work.',
+    stack: '"Instrument Serif", Georgia, serif',
+    settings: 'normal',
+    weight: 400,
+  },
+  {
+    id: 'playfair',
+    name: 'Playfair Display',
+    tag: 'Classic',
+    note: 'The familiar high-contrast Didone. Handsome and safe. Also everywhere, so it says less about you than the others do.',
+    stack: '"Playfair Display", Georgia, serif',
+    settings: 'normal',
+    weight: 700,
+  },
+  {
+    id: 'bricolage',
+    name: 'Bricolage Grotesque',
+    tag: 'Modern sans',
+    note: 'A grotesque with deliberate irregularities. Contemporary and a little playful — the biggest departure here, and the one that reads least like a legacy firm.',
+    stack: '"Bricolage Grotesque", ui-sans-serif, sans-serif',
+    settings: '"opsz" 96',
+    weight: 700,
+  },
+  {
+    id: 'space',
+    name: 'Space Grotesk',
+    tag: 'Technical sans',
+    note: 'Precise and slightly mechanical. Leans toward the software and AI half of the practice, away from the 1995 heritage half.',
+    stack: '"Space Grotesk", ui-sans-serif, sans-serif',
+    settings: 'normal',
+    weight: 700,
+  },
+]
+---
+
+<Base
+  title="Heading font comparison (temporary)"
+  description="Internal page for comparing heading typefaces. Not part of the site."
+  noindex
+>
+  <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10">
+    <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">
+      Temporary &middot; not linked, not indexed
+    </span>
+    <h1 class="my-4 text-3xl font-bold text-ink" style="font-family: var(--font-sans)">
+      Heading font comparison
+    </h1>
+    <p class="max-w-(--container-prose) text-ink-soft">
+      The real hero headline at the real hero size, on the real background. Body copy stays
+      Manrope in every case &mdash; only the heading face changes. Scroll and squint; the one
+      you keep coming back to is usually the answer.
+    </p>
+  </div>
+
+  {
+    candidates.map((f, i) => (
+      <section
+        class:list={[
+          'border-t border-line',
+          i % 2 === 1 ? 'bg-paper-tint' : '',
+        ]}
+      >
+        <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10 lg:py-16">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span class="font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+              {i + 1}. {f.name}
+            </span>
+            <span class="rounded-full border border-line-soft px-2.5 py-0.5 font-sans text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary">
+              {f.tag}
+            </span>
+          </div>
+
+          <h2
+            class="my-5 font-bold text-ink"
+            style={`font-family:${f.stack}; font-variation-settings:${f.settings}; font-weight:${f.weight}; font-size:var(--text-4xl); line-height:var(--text-4xl--line-height); letter-spacing:var(--tracking-display); text-wrap:balance`}
+          >
+            {HEADLINE_A}
+            <br />
+            {HEADLINE_B}
+            <span class="text-primary">{HEADLINE_C}</span>
+          </h2>
+
+          <p class="mb-6 max-w-(--container-prose) text-lg text-ink-soft">{LEDE}</p>
+
+          {/* A second, shorter heading — the long headline flatters faces that
+              a two-word section title exposes. */}
+          <p
+            class="mb-2 font-bold text-ink"
+            style={`font-family:${f.stack}; font-variation-settings:${f.settings}; font-weight:${f.weight}; font-size:var(--text-2xl); line-height:1.15; letter-spacing:var(--tracking-display)`}
+          >
+            Projects we&rsquo;re proud to put our name on
+          </p>
+          <p
+            class="mb-6 font-bold text-ink"
+            style={`font-family:${f.stack}; font-variation-settings:${f.settings}; font-weight:${f.weight}; font-size:var(--text-lg); line-height:1.3; letter-spacing:var(--tracking-display)`}
+          >
+            Three ways we can help &middot; 500 Marquette Ave NW &middot; (505) 341-3060
+          </p>
+
+          <p class="max-w-(--container-prose) font-sans text-sm text-ink-muted">{f.note}</p>
+        </div>
+      </section>
+    ))
+  }
+
+  <div class="border-t border-line">
+    <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10">
+      <p class="max-w-(--container-prose) text-sm text-ink-muted">
+        To adopt one, <code class="font-mono text-ink-soft">--font-display</code> in
+        <code class="font-mono text-ink-soft">src/styles/global.css</code> is the only line that
+        changes, plus its <code class="font-mono text-ink-soft">@font-face</code>. The
+        <code class="font-mono text-ink-soft">font-variation-settings</code> on h1/h2/h3 are
+        Fraunces-specific and would need adjusting or removing.
+      </p>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  /* Candidate faces, self-hosted in public/fonts/lab/. Delete with the page. */
+  @font-face {
+    font-family: 'Newsreader';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/lab/newsreader.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Instrument Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/lab/instrument-serif.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('/fonts/lab/playfair.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('/fonts/lab/bricolage.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/lab/space-grotesk.woff2') format('woff2');
+  }
+</style>
