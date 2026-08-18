@@ -113,6 +113,7 @@ const work = defineCollection({
       'ecommerce',
       'nonprofit',
       'business',
+      'startup',
     ]),
     image: z.string(),
     imageAlt: z.string(),

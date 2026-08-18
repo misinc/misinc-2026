@@ -129,7 +129,7 @@ seo:
 title: "3D Security Training Solutions"
 client: "3D Security Training Solutions"
 summary: "One or two sentences for the card."
-category: business    # restaurant | real-estate | healthcare | ecommerce | nonprofit | business — see src/lib/work.ts
+category: business    # restaurant | real-estate | healthcare | ecommerce | nonprofit | business | startup — enum lives in content.config.ts, labels in src/lib/work.ts
 image: /img/work/3d-sts.avif
 imageAlt: "..."
 projectUrl: https://www.3dsts.com   # optional — omit or drop if the site is offline
@@ -151,6 +151,13 @@ seo:
 - Project images go in `public/img/work/` (referenced by path, not imported as an Astro asset) — add the image file there first, then point `image` at `/img/work/<filename>`.
 - There is no separate "testimonials" collection — client quotes live inline on the relevant work item via the `testimonial` field, and get pulled onto other pages from there.
 - Appears automatically on [`/works`](../src/pages/works) (filterable by `category`) and its own `/works/<slug>` page.
+
+**Adding a new `category` value is a two-file change, and missing either half breaks something differently:**
+
+1. The enum in [`src/content.config.ts`](../src/content.config.ts) validates it — skip this and the **build fails outright** (`Invalid enum value`, `astro check`/`astro build` both catch it, so does the deploy). This is the one that bit us: a new category was added to the label map but not here.
+2. The label in `WORK_CATEGORIES` in [`src/lib/work.ts`](../src/lib/work.ts) is what the filter chips and category badges actually display — skip this instead and the build *succeeds*, but the item's category prints as its raw slug and there's no filter chip for it, because the portfolio page derives its chip list from `WORK_CATEGORIES`, not from the schema.
+
+Add the new value to both in the same change.
 
 ## FAQs (`src/content/faqs/*.md`)
 
@@ -202,3 +209,4 @@ Setting `guide: true` is what puts a post on [`/guides`](../src/pages/guides.ast
 - [ ] Cross-referenced slugs (`platforms:`, `services:`, `fromPlatform:`, `insteadUse:`, etc.) match real slugs in the target collection — these aren't validated, a typo just silently fails to link
 - [ ] Any referenced images exist under `public/img/<collection>/`
 - [ ] For a new **partner** platform: also add it to `PARTNERS` in `src/lib/platforms.ts` if it should appear in the homepage marquee / "we build this on" chips
+- [ ] For a new **work `category`**: add it to the enum in `content.config.ts` *and* the label in `WORK_CATEGORIES` in `src/lib/work.ts` — either alone breaks something (build failure vs. missing label/filter)
