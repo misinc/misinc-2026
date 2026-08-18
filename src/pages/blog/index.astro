@@ -17,7 +17,7 @@ const schema = [
   collectionPage({
     name: 'Blog',
     description:
-      'Practical writing for New Mexico business owners on web design, SEO, e-commerce, and getting found online.',
+      'Practical writing for business owners on web design, SEO, e-commerce, and getting found online.',
     path: '/blog',
     items: posts.map((p) => ({ name: p.data.title, href: `/blog/${p.id}` })),
   }),
@@ -31,7 +31,7 @@ const schema = [
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Blog" title="Our Insights" lede={`Practical writing for New Mexico business owners: what things cost, what is worth doing, and what to ignore. Drawn from ${yearsInBusiness} years of answering the same questions.`} ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]} layout="full" showMedia={false} />
+    <PageHero eyebrow="Blog" title="Our Insights" lede={`Practical writing for business owners: what things cost, what is worth doing, and what to ignore. Drawn from years of answering the same questions.`} ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]} layout="full" showMedia={false} />
   </div>
 
   {

@@ -5,7 +5,7 @@ to: Webflow
 summary: Weebly has been in maintenance mode for years. Moving is mostly about speed and a future.
 fromPlatform: weebly-cloud
 toPlatform: webflow
-verdict: Worth doing. Weebly is no longer being meaningfully developed.
+verdict: Worth doing as Weebly is no longer being actively developed.
 timeline: three to five weeks
 order: 30
 nextStep: >-
@@ -15,7 +15,7 @@ seo:
   description: Why Weebly sites are worth moving, what a Weebly to Webflow migration involves, how long it takes, and how search rankings are carried across intact.
 ---
 
-## Weebly is not going anywhere, and that is the problem
+## Weebly is not being actively developed, and that is the problem
 
 Square acquired Weebly in 2018, and the platform has had little meaningful development since. It still works. Sites still load. Support still answers. But nothing is being built, and a website platform that has stopped moving falls behind the web around it a little more each year.
 

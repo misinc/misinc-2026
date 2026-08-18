@@ -58,7 +58,6 @@ const schema = [
         partners.map((p) => (
           <PlatformCard
             slug={p.id}
-            name={p.data.name}
             icon={p.data.icon}
             summary={p.data.summary}
             credential={p.data.credential}
@@ -84,7 +83,6 @@ const schema = [
             {own.map((p) => (
               <PlatformCard
                 slug={p.id}
-                name={p.data.name}
                 icon={p.data.icon}
                 summary={p.data.summary}
                 credential={p.data.credential}
@@ -112,7 +110,6 @@ const schema = [
           {migrateFrom.map((p) => (
             <PlatformCard
               slug={p.id}
-              name={p.data.name}
               icon={p.data.icon}
               summary={p.data.verdict}
               wide={isWide(p.id)}

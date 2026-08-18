@@ -1,7 +1,7 @@
 ---
 title: Website Design
 heading: Websites that earn their keep
-summary: Modern, fast, accessible websites for New Mexico businesses, designed to bring you customers, not just to look good in a portfolio.
+summary: Modern, fast, accessible websites for businesses, designed to bring you customers, not just to look good in a portfolio.
 pillar: websites
 order: 10
 ranking: true

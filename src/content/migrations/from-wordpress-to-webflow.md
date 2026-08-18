@@ -5,7 +5,7 @@ to: Webflow
 summary: Leave the plugin updates, the security patching, and the monthly subscriptions behind.
 fromPlatform: wordpress
 toPlatform: webflow
-verdict: Worth doing if your site is a marketing site. Stay put if it is a genuine application.
+verdict: Worth doing if your site is a marketing site or you often have trouble with your plugins.
 timeline: four to eight weeks
 order: 10
 nextStep: >-

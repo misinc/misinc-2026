@@ -1,6 +1,6 @@
 ---
 title: Custom Software
-heading: Software shaped like your business
+heading: Software built for you
 summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot, built by the same people who build our websites.
 pillar: software-ai
 order: 10

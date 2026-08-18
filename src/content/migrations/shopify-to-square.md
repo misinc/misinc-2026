@@ -5,7 +5,7 @@ to: Square Online
 summary: For sellers already taking payments through Square, one system instead of two.
 fromPlatform: shopify
 toPlatform: square-online-store
-verdict: Right for Square sellers with a modest catalogue. Stay on Shopify if commerce is the whole business.
+verdict: Right for Square sellers with a modest catalog. Stay on Shopify if commerce is the whole business.
 timeline: two to four weeks
 order: 40
 nextStep: >-
