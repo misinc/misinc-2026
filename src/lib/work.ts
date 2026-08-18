@@ -14,6 +14,7 @@ export const WORK_CATEGORIES = {
   ecommerce: 'E-Commerce',
   nonprofit: 'Nonprofit',
   business: 'Business',
+  startup: 'Startup',
 } as const
 
 export type WorkCategory = keyof typeof WORK_CATEGORIES
