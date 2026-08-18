@@ -64,13 +64,22 @@ interface Props {
    * split layout's ~520px column, since that column forces a long headline to
    * break mid-phrase. It also lets a 16:9 source show uncropped.
    *
-   * `full` is for pages with no media at all. The heading runs the full content
-   * width and no figure is rendered, not even the branded fallback panel, so
-   * the hero does not leave a hole where an image was never going to be. The
-   * lede keeps its 62ch measure, because a readable line length matters more
-   * than filling the width.
+   * `full` is shorthand for `split` with `showMedia={false}`, kept because
+   * several pages already use it.
    */
   layout?: 'split' | 'centered' | 'full'
+  /**
+   * Set false for a page with no image or video. No figure is rendered, not
+   * even the branded fallback panel, so the hero does not leave a hole where
+   * an image was never going to be, and `split` collapses to a single
+   * full-width column.
+   *
+   * This is deliberately independent of `layout`: a centred hero with no media
+   * is a different thing from a full-width one, and both are wanted. The lede
+   * keeps its 62ch measure either way, because a readable line length matters
+   * more than filling the width.
+   */
+  showMedia?: boolean
   /**
    * Typewriter effect on a second headline line — home page only. The text
    * types out after `title`, with `highlight` in the accent colour.
@@ -87,12 +96,12 @@ const {
   media,
   shape = 'landscape',
   layout = 'split',
+  showMedia = true,
   typed,
 } = Astro.props
 
 const centered = layout === 'centered'
-const full = layout === 'full'
-const showMedia = !full
+const withMedia = showMedia && layout !== 'full'
 
 // Centred puts the media at the full content width, so a portrait frame would
 // become a tower — it is capped and centred instead. Landscape gets 16:9,
@@ -111,7 +120,7 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
   <section
     class:list={[
       'py-14 lg:py-[76px]',
-      !centered && !full && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
+      !centered && withMedia && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
     ]}
   >
     <div class:list={[centered && 'mx-auto max-w-[900px] text-center']}>
@@ -139,14 +148,16 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
       </h1>
 
       {
-        lede && (
+        (lede || Astro.slots.has('lede')) && (
           <p
             class:list={[
               'mb-7 max-w-(--container-prose) text-lg text-ink-soft',
               centered && 'mx-auto',
             ]}
           >
-            {lede}
+            {/* The `lede` slot is for copy that needs a link or emphasis, which
+                a string prop cannot carry. It replaces `lede` when both exist. */}
+            {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
           </p>
         )
       }
@@ -171,7 +182,7 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
     </div>
 
     {
-      showMedia && (
+      withMedia && (
       <figure
         class:list={[
           'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',

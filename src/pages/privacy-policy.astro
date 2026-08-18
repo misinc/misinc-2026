@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro'
 import Section from '../components/Section.astro'
 import SectionHeader from '../components/SectionHeader.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
+import PageHero from '../components/PageHero.astro'
 import Prose from '../components/Prose.astro'
 import { site } from '../lib/site'
 
@@ -77,29 +78,27 @@ const pageSchema = {
   description="What misinc.com collects, why, and what happens to it. No analytics, no tracking cookies, and nothing sold or shared. Written in plain English."
   schema={[breadcrumbs, pageSchema]}
 >
-  <!-- Header. Deliberately lighter than PageHero: a legal page opens with the
-       document, not with a marketing panel. -->
-  <Section>
-    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]} class="mb-5" />
-    <span class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-primary">
-      Legal
-    </span>
-    <h1
-      class="mt-3 max-w-[18ch] font-display text-4xl font-bold leading-[1.08] tracking-(--tracking-display) text-ink md:text-5xl"
+  <!-- A legal page opens with the document rather than a marketing panel, so
+       the hero runs with no media at all. -->
+  <div class="border-b border-line">
+    <PageHero
+      layout="full"
+      eyebrow="Legal"
+      title="Privacy policy"
+      lede="We do not track you. This page explains what little information this site collects, why, and what happens to it, in plain English rather than four pages of definitions."
     >
-      Privacy policy
-    </h1>
-    <p class="mt-5 max-w-(--container-prose) text-lg text-ink-soft">
-      We do not track you. This page explains what little information this site
-      collects, why, and what happens to it, in plain English rather than four
-      pages of definitions.
-    </p>
-    <p class="mt-4 text-sm text-ink-muted">
-      Last updated {updatedLabel} · Applies to <strong class="font-extrabold text-ink-soft"
-        >www.misinc.com</strong
-      >
-    </p>
-  </Section>
+      <Breadcrumbs
+        slot="before"
+        items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]}
+        class="mb-5"
+      />
+      <p slot="after" class="mt-4 text-sm text-ink-muted">
+        Last updated {updatedLabel} · Applies to <strong class="font-extrabold text-ink-soft"
+          >www.misinc.com</strong
+        >
+      </p>
+    </PageHero>
+  </div>
 
   <!-- The short version -->
   <Section variant="tint" width="full">

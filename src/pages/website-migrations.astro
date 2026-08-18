@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import Card from '../components/Card.astro'
-import CtaBand from '../components/CtaBand.astro'
-import { yearsInBusiness } from '../lib/site'
-import { breadcrumbs, collectionPage } from '../lib/schema'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import Card from '../components/Card.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { yearsInBusiness } from '../lib/site';
+import { breadcrumbs, collectionPage } from '../lib/schema';
 
 /**
  * The migrations hub. The URL is deliberately `/website-migrations` rather than
@@ -55,12 +55,7 @@ const schema = [
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="Website migrations"
-      title="Moving platforms, without losing what you have earned"
-      lede={`We have moved a lot of websites between platforms over ${yearsInBusiness} years. The part that matters is not the rebuild. It is the hundreds of small decisions that keep your search rankings, your content, and your customers' bookmarks working the day after the switch.`}
-      ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]}
-    />
+    <PageHero eyebrow="Website migrations" title="Moving platforms, without losing what you have earned" lede={`We have moved a lot of websites between platforms over ${yearsInBusiness} years. The part that matters is not the rebuild. It is the hundreds of small decisions that keep your search rankings, your content, and your customers' bookmarks working the day after the switch.`} ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]} layout="full" />
   </div>
 
   <Section>

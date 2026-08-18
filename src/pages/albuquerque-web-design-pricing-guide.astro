@@ -1,15 +1,15 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import PriceTable from '../components/PriceTable.astro'
-import NextStep from '../components/NextStep.astro'
-import CtaBand from '../components/CtaBand.astro'
-import Testimonial from '../components/Testimonial.astro'
-import { getCollection } from 'astro:content'
-import { PRICE_TIERS, money, tier, PROJECT_FLOOR } from '../lib/pricing'
-import { site, yearsInBusiness } from '../lib/site'
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import PriceTable from '../components/PriceTable.astro';
+import NextStep from '../components/NextStep.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Testimonial from '../components/Testimonial.astro';
+import { getCollection } from 'astro:content';
+import { PRICE_TIERS, money, tier, PROJECT_FLOOR } from '../lib/pricing';
+import { site, yearsInBusiness } from '../lib/site';
 
 const work = await getCollection('work')
 const quote = work.find((w) => w.id === 'peasant-pies')
@@ -120,15 +120,10 @@ const offerSchema = {
   schema={[faqSchema, offerSchema]}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="Pricing guide"
-      title="What a website actually costs"
-      lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included, so you can work out whether we are in your range before spending an hour finding out.`}
-      ctas={[
+    <PageHero eyebrow="Pricing guide" title="What a website actually costs" lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included, so you can work out whether we are in your range before spending an hour finding out.`} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-      ]}
-    />
+      ]} layout="full" />
   </div>
 
   <!-- The numbers -->

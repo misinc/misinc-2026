@@ -300,6 +300,36 @@ const variations = [
     />
   </section>
 
+  <section class="border-t border-line" data-variation>
+    <div class="mx-auto max-w-(--container-content) px-6 pt-10 md:px-10">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span class="font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+          Shipped &mdash; layout="centered" showMedia={false}
+        </span>
+        <span
+          class="font-sans text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary"
+          data-readout
+        />
+      </div>
+      <p class="mt-2 max-w-(--container-prose) font-sans text-sm text-ink-soft">
+        Media is independent of layout, so a centred hero can drop the figure entirely.
+        No branded fallback panel either.
+      </p>
+    </div>
+    <PageHero
+      eyebrow={EYEBROW}
+      title="The web keeps changing."
+      lede={LEDE}
+      note={NOTE}
+      layout="centered"
+      showMedia={false}
+      ctas={[
+        { label: 'Book a free strategy call', href: '#' },
+        { label: 'See our projects', href: '#', variant: 'ghost' },
+      ]}
+    />
+  </section>
+
   <div class="border-t border-line">
     <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10">
       <p class="max-w-(--container-prose) text-sm text-ink-muted">

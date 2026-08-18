@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
-import Button from '../components/Button.astro'
+import PageHero from '../components/PageHero.astro'
 import { site } from '../lib/site'
 
 /**
@@ -26,31 +26,28 @@ const destinations = [
   description="That page does not exist. Here is where everything else lives on misinc.com."
   noindex
 >
-  <div class="mx-auto max-w-(--container-content) px-6 py-16 md:px-10 lg:py-24">
-    <span
-      class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary"
+  <div class="border-b border-line">
+    <PageHero
+      layout="full"
+      eyebrow="Error 404"
+      title="That page is not here anymore"
+      ctas={[
+        { label: 'Back to the home page', href: '/' },
+        { label: 'Get in touch', href: '/contact', variant: 'ghost' },
+      ]}
     >
-      Error 404
-    </span>
+      <Fragment slot="lede">
+        We rebuilt this website in 2026 and redirected every old address we could find.
+        This one slipped through, or it never existed. Either way it is our fault rather
+        than yours, and if you followed a link to get here, <a
+          href="/contact"
+          class="font-bold text-primary no-underline hover:underline">tell us</a
+        > and we will fix it.
+      </Fragment>
+    </PageHero>
+  </div>
 
-    <h1 class="my-5 max-w-(--container-prose) text-4xl font-bold text-ink">
-      That page is not here anymore
-    </h1>
-
-    <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">
-      We rebuilt this website in 2026 and redirected every old address we could find.
-      This one slipped through, or it never existed. Either way it is our fault rather
-      than yours, and if you followed a link to get here, <a
-        href="/contact"
-        class="font-bold text-primary no-underline hover:underline">tell us</a
-      > and we will fix it.
-    </p>
-
-    <div class="mb-14 flex flex-wrap items-center gap-3.5">
-      <Button href="/">Back to the home page</Button>
-      <Button href="/contact" variant="ghost">Get in touch</Button>
-    </div>
-
+  <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10 lg:py-16">
     <h2
       class="mb-5 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted"
     >
