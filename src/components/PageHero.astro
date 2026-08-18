@@ -22,8 +22,8 @@ import Button from './Button.astro'
  * less. The source file also has to be faststart (moov atom before mdat) or
  * Safari cannot begin until the whole file has arrived.
  *
- * `layout` chooses the composition — `split` (default) or `centered`. See the
- * prop for when each applies.
+ * `layout` chooses the composition — `split` (default), `centered`, `full`,
+ * or `background`. See the prop for when each applies.
  *
  * `shape` controls the frame, not the file: both shapes accept either media
  * type, and the asset is cropped with object-fit. A 16:9 video shown in a
@@ -66,8 +66,26 @@ interface Props {
    *
    * `full` is shorthand for `split` with `showMedia={false}`, kept because
    * several pages already use it.
+   *
+   * `background` full-bleeds the media behind the text instead of framing it
+   * beside or beneath — a dark scrim (see `overlayColor`/`overlayOpacity`)
+   * keeps the text legible. There is no separate figure, so `shape` is
+   * ignored; the media always fills the hero. Reaches for this when the
+   * media is meant to set a mood rather than illustrate a point.
    */
-  layout?: 'split' | 'centered' | 'full'
+  layout?: 'split' | 'centered' | 'full' | 'background'
+  /**
+   * `background` layout only. The scrim colour over the media, as a hex
+   * string. Defaults to the ink token so it stays on-brand rather than a
+   * generic black.
+   */
+  overlayColor?: string
+  /**
+   * `background` layout only. Scrim strength at its darkest point, 0–100.
+   * Higher protects text legibility on busy/bright media; lower shows more
+   * of the media through. Defaults to 70.
+   */
+  overlayOpacity?: number
   /**
    * Set false for a page with no image or video. No figure is rendered, not
    * even the branded fallback panel, so the hero does not leave a hole where
@@ -98,14 +116,18 @@ const {
   layout = 'split',
   showMedia = true,
   typed,
+  overlayColor = '#4a3115', // --color-ink
+  overlayOpacity = 70,
 } = Astro.props
 
 const centered = layout === 'centered'
+const isBackground = layout === 'background'
 const withMedia = showMedia && layout !== 'full'
 
 // Centred puts the media at the full content width, so a portrait frame would
 // become a tower — it is capped and centred instead. Landscape gets 16:9,
-// which is what the source video actually is.
+// which is what the source video actually is. Background ignores this
+// entirely — the media fills the hero, there's no separate frame.
 const aspect = centered
   ? shape === 'portrait'
     ? 'aspect-[16/10] sm:aspect-[4/5]'
@@ -113,142 +135,269 @@ const aspect = centered
   : shape === 'portrait'
     ? 'aspect-[16/10] lg:aspect-[4/5]'
     : 'aspect-[16/10]'
-const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'center')
+const position =
+  media?.position ?? (isBackground ? 'center' : media?.type === 'image' ? 'left top' : 'center')
+
+// Overlay is built as an inline style, not Tailwind classes, because
+// overlayColor/overlayOpacity are arbitrary runtime values Tailwind's build-time
+// scanner can't see. Two stacked gradients — bottom-up and left-to-right — keep
+// left-aligned text legible without flattening the whole image to one flat tint.
+const hexToRgb = (hex: string) => {
+  const clean = hex.replace('#', '')
+  const full = clean.length === 3 ? clean.replace(/(.)/g, '$1$1') : clean
+  const n = parseInt(full, 16)
+  return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`
+}
+const overlayRgb = hexToRgb(overlayColor)
+const o = overlayOpacity / 100
+const overlayStyle = isBackground
+  ? `background-image: linear-gradient(to top, rgba(${overlayRgb}, ${o}) 10%, rgba(${overlayRgb}, ${o * 0.65}) 45%, rgba(${overlayRgb}, 0) 100%), linear-gradient(to right, rgba(${overlayRgb}, ${o * 0.9}) 0%, rgba(${overlayRgb}, ${o * 0.2}) 40%, rgba(${overlayRgb}, 0) 100%)`
+  : undefined
 ---
 
-<div class="mx-auto max-w-(--container-content) px-6 md:px-10">
-  <section
-    class:list={[
-      'py-14 lg:py-[76px]',
-      !centered && withMedia && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
-    ]}
-  >
-    <div class:list={[centered && 'mx-auto max-w-[900px] text-center']}>
-      <slot name="before" />
-      {
-        eyebrow && (
-          <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">
-            {eyebrow}
-          </span>
-        )
-      }
-
-      <h1 class="my-5 text-4xl font-bold text-ink" data-hero-title>
-        {title}
+{
+  isBackground ? (
+    /* Media fills the hero as a background layer instead of sitting in a
+       framed figure. Kept as its own branch (rather than threading
+       conditionals through the split/centered markup below) because the
+       structure — full-bleed section, absolute media + scrim, text pinned to
+       the bottom — is genuinely different, not just a style variant. Keep the
+       eyebrow/title/lede/ctas/note/slots in sync with the block below if you
+       change one. */
+    <section class="relative isolate overflow-hidden">
+      <div class="absolute inset-0 -z-20">
         {
-          typed && (
-            <>
-              <br />
-              {/* prettier-ignore */}
-              <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-primary">{typed.highlight}</span>}
-              <span class="caret" data-typed-caret aria-hidden="true" />
-            </>
+          media?.type === 'video' && (
+            <video
+              class="h-full w-full object-cover"
+              style={`object-position:${position}`}
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster={media.poster}
+              aria-label={media.caption ?? media.alt}
+            >
+              <source src={media.src} type="video/mp4" />
+            </video>
           )
         }
-      </h1>
+        {
+          media?.type === 'image' && (
+            <img
+              class="h-full w-full object-cover"
+              style={`object-position:${position}`}
+              src={media.src}
+              alt={media.alt ?? ''}
+              loading="eager"
+            />
+          )
+        }
+        {
+          !media && (
+            /* Branded fallback until real media exists for this page. */
+            <div class="h-full w-full bg-ink" />
+          )
+        }
+      </div>
 
-      {
-        (lede || Astro.slots.has('lede')) && (
-          <p
-            class:list={[
-              'mb-7 max-w-(--container-prose) text-lg text-ink-soft',
-              centered && 'mx-auto',
-            ]}
-          >
-            {/* The `lede` slot is for copy that needs a link or emphasis, which
-                a string prop cannot carry. It replaces `lede` when both exist. */}
-            {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
-          </p>
-        )
-      }
+      {overlayStyle && <div class="absolute inset-0 -z-10" style={overlayStyle} />}
 
-      {
-        ctas.length > 0 && (
-          <div
-            class:list={['flex flex-wrap items-center gap-3.5', centered && 'justify-center']}
-          >
-            {ctas.map((c) => (
-              <Button href={c.href} variant={c.variant ?? 'primary'}>
-                {c.label}
-              </Button>
-            ))}
-          </div>
-        )
-      }
-
-      {note && <p class="mt-4 text-sm font-semibold text-ink-muted">{note}</p>}
-
-      <slot name="after" />
-    </div>
-
-    {
-      withMedia && (
-      <figure
-        class:list={[
-          'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',
-          centered && 'mt-11',
-          centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
-        ]}
-      >
-        <div class:list={['relative', aspect]}>
+      <div class="relative mx-auto max-w-(--container-content) px-6 md:px-10">
+        <div class="flex min-h-[520px] flex-col justify-end py-14 md:min-h-[600px] md:py-20">
+          <slot name="before" />
           {
-            media?.type === 'video' && (
-              <video
-                class="absolute inset-0 h-full w-full object-cover"
-                style={`object-position:${position}`}
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                poster={media.poster}
-                aria-label={media.caption ?? media.alt}
-              >
-                <source src={media.src} type="video/mp4" />
-              </video>
+            eyebrow && (
+              <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-accent-light">
+                {eyebrow}
+              </span>
+            )
+          }
+
+          <h1 class="my-5 text-4xl font-bold text-white" data-hero-title>
+            {title}
+            {
+              typed && (
+                <>
+                  <br />
+                  {/* prettier-ignore */}
+                  <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-accent-light">{typed.highlight}</span>}
+                  <span class="caret" data-typed-caret aria-hidden="true" />
+                </>
+              )
+            }
+          </h1>
+
+          {
+            (lede || Astro.slots.has('lede')) && (
+              <p class="mb-7 max-w-(--container-prose) text-lg text-white/85">
+                {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
+              </p>
             )
           }
 
           {
-            media?.type === 'image' && (
-              <img
-                class="absolute inset-0 h-full w-full object-cover"
-                style={`object-position:${position}`}
-                src={media.src}
-                alt={media.alt ?? ''}
-                loading="eager"
-              />
-            )
-          }
-
-          {
-            !media && (
-              /* Branded fallback until real media exists for this page. */
-              <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
-                <img
-                  src="/img/mis-logo.png"
-                  alt=""
-                  width="140"
-                  height="146"
-                  class="w-[38%] max-w-[180px] opacity-15"
-                />
+            ctas.length > 0 && (
+              <div class="flex flex-wrap items-center gap-3.5">
+                {ctas.map((c) => (
+                  <Button href={c.href} variant={c.variant === 'ghost' ? 'ghostOnDark' : 'primary'}>
+                    {c.label}
+                  </Button>
+                ))}
               </div>
             )
           }
 
+          {note && <p class="mt-4 text-sm font-semibold text-white/70">{note}</p>}
           {
             media?.caption && (
-              <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
+              <p class="mt-4 text-xs font-bold uppercase tracking-(--tracking-label) text-white/55">
                 {media.caption}
-              </figcaption>
+              </p>
             )
           }
+
+          <slot name="after" />
         </div>
-      </figure>
-      )
-    }
-  </section>
-</div>
+      </div>
+    </section>
+  ) : (
+    <div class="mx-auto max-w-(--container-content) px-6 md:px-10">
+      <section
+        class:list={[
+          'py-14 lg:py-[76px]',
+          !centered && withMedia && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
+        ]}
+      >
+        <div class:list={[centered && 'mx-auto max-w-[900px] text-center']}>
+          <slot name="before" />
+          {
+            eyebrow && (
+              <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary">
+                {eyebrow}
+              </span>
+            )
+          }
+
+          <h1 class="my-5 text-4xl font-bold text-ink" data-hero-title>
+            {title}
+            {
+              typed && (
+                <>
+                  <br />
+                  {/* prettier-ignore */}
+                  <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-primary">{typed.highlight}</span>}
+                  <span class="caret" data-typed-caret aria-hidden="true" />
+                </>
+              )
+            }
+          </h1>
+
+          {
+            (lede || Astro.slots.has('lede')) && (
+              <p
+                class:list={[
+                  'mb-7 max-w-(--container-prose) text-lg text-ink-soft',
+                  centered && 'mx-auto',
+                ]}
+              >
+                {/* The `lede` slot is for copy that needs a link or emphasis, which
+                    a string prop cannot carry. It replaces `lede` when both exist. */}
+                {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
+              </p>
+            )
+          }
+
+          {
+            ctas.length > 0 && (
+              <div
+                class:list={['flex flex-wrap items-center gap-3.5', centered && 'justify-center']}
+              >
+                {ctas.map((c) => (
+                  <Button href={c.href} variant={c.variant ?? 'primary'}>
+                    {c.label}
+                  </Button>
+                ))}
+              </div>
+            )
+          }
+
+          {note && <p class="mt-4 text-sm font-semibold text-ink-muted">{note}</p>}
+
+          <slot name="after" />
+        </div>
+
+        {
+          withMedia && (
+          <figure
+            class:list={[
+              'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',
+              centered && 'mt-11',
+              centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
+            ]}
+          >
+            <div class:list={['relative', aspect]}>
+              {
+                media?.type === 'video' && (
+                  <video
+                    class="absolute inset-0 h-full w-full object-cover"
+                    style={`object-position:${position}`}
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    poster={media.poster}
+                    aria-label={media.caption ?? media.alt}
+                  >
+                    <source src={media.src} type="video/mp4" />
+                  </video>
+                )
+              }
+
+              {
+                media?.type === 'image' && (
+                  <img
+                    class="absolute inset-0 h-full w-full object-cover"
+                    style={`object-position:${position}`}
+                    src={media.src}
+                    alt={media.alt ?? ''}
+                    loading="eager"
+                  />
+                )
+              }
+
+              {
+                !media && (
+                  /* Branded fallback until real media exists for this page. */
+                  <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
+                    <img
+                      src="/img/mis-logo.png"
+                      alt=""
+                      width="140"
+                      height="146"
+                      class="w-[38%] max-w-[180px] opacity-15"
+                    />
+                  </div>
+                )
+              }
+
+              {
+                media?.caption && (
+                  <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
+                    {media.caption}
+                  </figcaption>
+                )
+              }
+            </div>
+          </figure>
+          )
+        }
+      </section>
+    </div>
+  )
+}
 
 <script>
   // Hero typewriter, only on pages that pass `typed`. Skipped entirely under

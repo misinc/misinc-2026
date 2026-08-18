@@ -67,6 +67,13 @@ const variations = [
     change: 'Full size in a 2fr / 1fr column, but the sentence breaks after “building it”.',
     why: 'Three lines that are each a phrase, rather than two that need 906px. Every line break lands where you would pause reading it aloud.',
   },
+  {
+    n: 6,
+    name: 'Media as full-bleed background',
+    change:
+      'The poster fills the whole hero as a background layer, a dark scrim sits over it, and the text is set on top instead of beside a framed figure.',
+    why: 'A different axis, not a fix for the measure problem — the column is gone, so the headline gets the full width regardless of type size. The trade is legibility control (now dependent on the scrim, not just the type) for a more immersive, editorial feel.',
+  },
 ]
 ---
 
@@ -265,6 +272,38 @@ const variations = [
             </div>
           </div>
         )}
+
+        {v.n === 6 && (
+          <div class="isolate relative mt-8 overflow-hidden">
+            <div class="absolute inset-0 -z-20">
+              <img src={POSTER} alt="" class="h-full w-full object-cover" />
+            </div>
+            {/* Two scrims: one for bottom-up legibility behind the text block,
+                one for left-to-right since the text is left-aligned. */}
+            <div class="absolute inset-0 -z-10 bg-linear-to-t from-ink from-10% via-ink/55 via-45% to-transparent" />
+            <div class="absolute inset-0 -z-10 bg-linear-to-r from-ink/75 via-ink/15 via-40% to-transparent" />
+            <div class="relative mx-auto flex min-h-[560px] max-w-(--container-content) flex-col justify-end px-6 py-14 md:min-h-[640px] md:px-10 md:py-20">
+              <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-accent-light">
+                {EYEBROW}
+              </span>
+              <h2 class="my-6 max-w-3xl text-4xl font-bold text-white" data-headline>
+                The web keeps changing. We’ve been building it{' '}
+                <span class="text-accent-light">since&nbsp;1995.</span>
+              </h2>
+              <p class="mb-7 max-w-(--container-prose) text-lg text-white/85">{LEDE}</p>
+              <div class="flex flex-wrap items-center gap-3.5">
+                <Button href="#">Book a free strategy call</Button>
+                <Button href="#" variant="ghost" class="border-white/40! text-white! hover:bg-white/10!">
+                  See our projects
+                </Button>
+              </div>
+              <p class="mt-4 text-sm font-semibold text-white/70">{NOTE}</p>
+              <p class="mt-8 text-xs font-bold uppercase tracking-(--tracking-label) text-white/55">
+                {CAPTION}
+              </p>
+            </div>
+          </div>
+        )}
       </section>
     ))
   }
@@ -330,12 +369,78 @@ const variations = [
     />
   </section>
 
+  <section class="border-t border-line" data-variation>
+    <div class="mx-auto max-w-(--container-content) px-6 pt-10 md:px-10">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span class="font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+          Shipped &mdash; PageHero layout="background"
+        </span>
+        <span
+          class="font-sans text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary"
+          data-readout
+        />
+      </div>
+      <p class="mt-2 max-w-(--container-prose) font-sans text-sm text-ink-soft">
+        The real component rendering variation 6, at the default scrim (ink at 70% opacity).
+        Add <code class="font-mono">layout="background"</code> to any PageHero to get this.
+      </p>
+    </div>
+    <PageHero
+      eyebrow={EYEBROW}
+      title="The web keeps changing."
+      typed={{ text: 'We’ve been building it ', highlight: 'since 1995.' }}
+      lede={LEDE}
+      note={NOTE}
+      layout="background"
+      media={{ type: 'image', src: POSTER, alt: '', caption: CAPTION }}
+      ctas={[
+        { label: 'Book a free strategy call', href: '#' },
+        { label: 'See our projects', href: '#', variant: 'ghost' },
+      ]}
+    />
+  </section>
+
+  <section class="border-t border-line" data-variation>
+    <div class="mx-auto max-w-(--container-content) px-6 pt-10 md:px-10">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span class="font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+          Shipped &mdash; layout="background" with a lighter, tinted scrim
+        </span>
+        <span
+          class="font-sans text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary"
+          data-readout
+        />
+      </div>
+      <p class="mt-2 max-w-(--container-prose) font-sans text-sm text-ink-soft">
+        Same media, <code class="font-mono">overlayColor="#8c1a1f"</code> (primary-dark) and{' '}
+        <code class="font-mono">overlayOpacity={45}</code> instead of the ink default at 70. More
+        of the photo shows through; tune per-page depending on how busy the source is.
+      </p>
+    </div>
+    <PageHero
+      eyebrow={EYEBROW}
+      title="The web keeps changing."
+      typed={{ text: 'We’ve been building it ', highlight: 'since 1995.' }}
+      lede={LEDE}
+      note={NOTE}
+      layout="background"
+      overlayColor="#8c1a1f"
+      overlayOpacity={45}
+      media={{ type: 'image', src: POSTER, alt: '', caption: CAPTION }}
+      ctas={[
+        { label: 'Book a free strategy call', href: '#' },
+        { label: 'See our projects', href: '#', variant: 'ghost' },
+      ]}
+    />
+  </section>
+
   <div class="border-t border-line">
     <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10">
       <p class="max-w-(--container-prose) text-sm text-ink-muted">
         3, 4 and 5 are changes to <code class="font-mono text-ink-soft">PageHero.astro</code> and
-        would apply to every page&rsquo;s hero. 1 and 2 are different structures and would need a
-        home-page-only variant of the component.
+        would apply to every page&rsquo;s hero. 1, 2 and 6 are different structures and would need
+        a home-page-only variant of the component &mdash; 6 most of all, since the media stops
+        being a separate element entirely.
       </p>
     </div>
   </div>

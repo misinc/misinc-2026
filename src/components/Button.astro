@@ -10,7 +10,7 @@
  */
 interface Props {
   href: string
-  variant?: 'primary' | 'ghost' | 'onDark'
+  variant?: 'primary' | 'ghost' | 'onDark' | 'ghostOnDark'
   size?: 'md' | 'lg'
   class?: string
   [key: string]: unknown
@@ -39,6 +39,10 @@ const variants = {
     'border-[1.5px] border-primary/35 text-primary hover:bg-primary/5',
   onDark:
     'bg-accent text-ink shadow-button hover:-translate-y-px hover:bg-accent-dark',
+  /** The `ghost` treatment for a hero (or any section) where the button sits
+   * over dark/photographic media instead of the paper background. */
+  ghostOnDark:
+    'border-[1.5px] border-white/40 text-white hover:bg-white/10',
 }
 ---
 
