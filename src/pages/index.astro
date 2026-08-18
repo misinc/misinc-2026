@@ -96,11 +96,10 @@ const guides = [
     shape="portrait"
     media={{
       type: 'video',
-      // TODO(video): still 4.8 MB, the heaviest asset on the page, and not
-      // faststart — its moov atom sits at the end, so Safari cannot begin
-      // playback until the whole file lands. Any re-encode needs
-      // -movflags +faststart. The poster covers the gap meanwhile, and is
-      // frame 0 so there is no jump when playback starts.
+      // TODO(video): still 4.8 MB, the heaviest asset on the page. It is now
+      // faststart, so Safari can start on the first bytes rather than waiting
+      // for the whole file — any re-encode must keep -movflags +faststart.
+      // The poster is frame 0, so there is no jump when playback starts.
       src: '/video/anniversary-balloon.mp4',
       poster: '/img/anniversary-balloon-poster.jpg',
       caption: 'Our 30th anniversary balloon over Albuquerque',
