@@ -6,7 +6,7 @@ stance: own
 credential: Built and maintained by MIS, Inc.
 verdict: We built it, we run it, and we set it up for you.
 category: ai
-order: 4
+order: 20
 nextStep: >-
   If your team answers the same handful of questions every week, or enquiries arrive after hours and sit until morning, this is usually the quickest thing to fix. We handle the setup.
 seo:

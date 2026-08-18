@@ -7,6 +7,7 @@ image: /img/work/pars-cuisine.jpg
 imageAlt: "Pars Cuisine website homepage showing the restaurant’s branding and menu navigation"
 projectUrl: https://www.parscuisine.us/
 year: 2018
+order: 10
 featured: true
 services: [restaurant-website-design, ecommerce-website-design]
 platforms: [ecwid]

@@ -6,7 +6,7 @@ stance: partner
 credential: Square Online Certified Agency
 verdict: The right answer for businesses already running Square at the counter.
 category: commerce
-order: 3
+order: 20
 nextStep: >-
   If you take payments through Square and your website does not talk to it, getting the two in step is usually quicker and cheaper than people expect.
 seo:

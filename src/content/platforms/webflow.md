@@ -6,7 +6,7 @@ stance: partner
 credential: Certified Webflow Partner
 verdict: Our first recommendation for most small business websites.
 category: websites
-order: 1
+order: 10
 nextStep: >-
   If you want a site you can update yourself without calling a developer every time, we will show you what Webflow makes possible.
 seo:

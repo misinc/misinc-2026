@@ -6,7 +6,7 @@ stance: migrate
 verdict: Fine for a first site. We usually move growing businesses off it.
 insteadUse: [webflow, astro]
 category: websites
-order: 11
+order: 20
 nextStep: >-
   If your Wix site is holding you back, whether it is slow, hard to rank, or simply not growing with the business, we have moved a lot of sites off Wix and can tell you what yours would involve.
 seo:

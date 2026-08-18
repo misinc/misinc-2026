@@ -3,7 +3,7 @@ title: Digital Marketing
 heading: Marketing that brings customers back
 summary: Email, social, and paid advertising for small businesses. The channels that actually pay for themselves, run by people who will tell you when one does not.
 pillar: growth
-order: 2
+order: 20
 ranking: true
 platforms: [mailchimp, square-online-store, webflow]
 highlights:

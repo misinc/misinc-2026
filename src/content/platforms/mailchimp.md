@@ -6,7 +6,7 @@ stance: partner
 credential: Mailchimp Partner
 verdict: Our default for email marketing, and we are Mailchimp partners.
 category: marketing
-order: 4
+order: 30
 nextStep: >-
   If you have a mailing list you are not using, or no list at all, email is usually the cheapest marketing win available to a small business.
 seo:

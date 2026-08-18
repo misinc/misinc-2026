@@ -7,6 +7,7 @@ image: /img/work/the-bean.jpg
 imageAlt: "The Bean NYC coffee shop website homepage"
 projectUrl: https://www.thebean.nyc
 year: 2021
+order: 50
 services: [restaurant-website-design, ecommerce-website-design]
 platforms: [square-online-store]
 seo:

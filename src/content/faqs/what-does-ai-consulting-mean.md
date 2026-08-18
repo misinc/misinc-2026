@@ -1,7 +1,7 @@
 ---
 question: What does AI consulting actually mean for a small business?
 topic: search-ai
-order: 4
+order: 190
 showOn: [home]
 ---
 

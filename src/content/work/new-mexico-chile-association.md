@@ -7,7 +7,7 @@ image: /img/work/nm-chile.avif
 imageAlt: "New Mexico Chile Association website homepage"
 projectUrl: https://www.nmchileassociation.org
 year: 2025
-order: 3
+order: 10
 featured: true
 services: [web-design, website-development]
 platforms: [webflow]

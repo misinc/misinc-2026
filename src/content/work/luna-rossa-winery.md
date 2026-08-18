@@ -7,7 +7,7 @@ image: /img/work/luna-rossa-winery.avif
 imageAlt: "Luna Rossa Winery website homepage"
 projectUrl: https://www.lunarossawinery.com
 year: 2021
-order: 15
+order: 20
 services: [ecommerce-website-design, web-design]
 platforms: [webflow]
 seo:

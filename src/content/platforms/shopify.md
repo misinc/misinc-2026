@@ -6,7 +6,7 @@ stance: partner
 credential: Shopify Partner
 verdict: Our recommendation when ecommerce is the business, not a feature of it.
 category: commerce
-order: 5
+order: 40
 nextStep: >-
   If you are selling online at any scale and your current store is fighting you, we will tell you honestly whether Shopify is worth the move.
 seo:

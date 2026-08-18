@@ -7,7 +7,7 @@ image: /img/work/vista-encantada.avif
 imageAlt: "Vista Encantada Realtors website homepage"
 projectUrl: https://www.vistaencantada.com
 year: 2022
-order: 12
+order: 20
 services: [real-estate-website-design, web-design]
 platforms: [webflow, addonidx]
 seo:

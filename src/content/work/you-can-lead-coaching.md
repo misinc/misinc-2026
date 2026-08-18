@@ -6,6 +6,7 @@ category: business
 image: /img/work/you-can-lead-coaching.jpg
 imageAlt: "You Can Lead Coaching website for executive coach Lenann McGookey Gardner"
 year: 2016
+order: 10
 archived: true
 services: [web-design]
 platforms: [expressionengine]

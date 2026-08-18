@@ -3,7 +3,7 @@ title: Real Estate Web Design
 heading: Every MLS listing, right on your website
 summary: IDX-connected websites for Realtors® in Albuquerque and Santa Fe. Your listings and your market's listings, updated automatically, on a site that looks like you.
 pillar: websites
-order: 4
+order: 40
 ranking: true
 platforms: [webflow, addonidx]
 highlights:

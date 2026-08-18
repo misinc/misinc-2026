@@ -7,7 +7,7 @@ image: /img/work/bai-labs.avif
 imageAlt: "bAI Labs applied AI website homepage"
 projectUrl: https://www.bailabs.ai
 year: 2026
-order: 1
+order: 10
 featured: true
 services: [web-design, website-development]
 platforms: [webflow]

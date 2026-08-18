@@ -7,6 +7,7 @@ image: /img/work/the-lazaris-material.jpg
 imageAlt: "The Lazaris Material website and online store"
 projectUrl: http://www.lazaris.com
 year: 2017
+order: 40
 services: [ecommerce-website-design, custom-software]
 platforms: [wordpress]
 seo:

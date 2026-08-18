@@ -1,7 +1,7 @@
 ---
 question: Do I need to know what I want before getting in touch?
 topic: getting-started
-order: 3
+order: 30
 showOn: [contact]
 ---
 

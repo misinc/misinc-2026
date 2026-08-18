@@ -6,7 +6,7 @@ stance: partner
 credential: Ecwid Partner
 verdict: Our pick when an existing site needs a store added rather than replaced.
 category: commerce
-order: 7
+order: 50
 nextStep: >-
   If you have a site you are happy with and need to start selling from it, this is usually the least disruptive way to do it. Tell us what you want to sell.
 seo:

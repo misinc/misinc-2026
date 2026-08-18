@@ -7,7 +7,7 @@ fromPlatform: weebly-cloud
 toPlatform: webflow
 verdict: Worth doing. Weebly is no longer being meaningfully developed.
 timeline: three to five weeks
-order: 3
+order: 30
 nextStep: >-
   Tell us where your Weebly site lives and we will tell you what moving it would involve and what it would cost.
 seo:

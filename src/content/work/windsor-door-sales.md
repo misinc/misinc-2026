@@ -7,6 +7,7 @@ image: /img/work/windsor-door.jpg
 imageAlt: "Windsor Door Sales website for garage door service in Albuquerque"
 projectUrl: https://www.windsordoorsales.com
 year: 2018
+order: 30
 services: [web-design, seo]
 platforms: [weebly-cloud]
 seo:

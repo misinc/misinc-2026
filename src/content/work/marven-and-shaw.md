@@ -7,7 +7,7 @@ image: /img/work/marven-and-shaw.avif
 imageAlt: "Marven & Shaw investigations website homepage"
 projectUrl: https://www.marvenandshaw.com
 year: 2022
-order: 13
+order: 30
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

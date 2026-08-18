@@ -7,6 +7,7 @@ image: /img/work/sam-properties.jpg
 imageAlt: "SAM Properties website showing executive office space for lease in Albuquerque"
 projectUrl: https://www.sampropertiesnm.com
 year: 2020
+order: 20
 services: [real-estate-website-design, web-design]
 platforms: [weebly-cloud]
 seo:

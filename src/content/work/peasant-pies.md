@@ -7,6 +7,7 @@ image: /img/work/peasant-pies.jpg
 imageAlt: "Peasant Pies online store built on Square Online"
 projectUrl: https://www.peasantpies.com
 year: 2021
+order: 40
 featured: true
 services: [ecommerce-website-design]
 platforms: [square-online-store]

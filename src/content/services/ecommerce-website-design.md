@@ -3,7 +3,7 @@ title: E-Commerce Stores
 heading: Sell your products around the clock
 summary: Online stores that are straightforward for customers to buy from and straightforward for you to run, on the platform that actually fits your business.
 pillar: websites
-order: 3
+order: 30
 ranking: true
 platforms: [square-online-store, shopify, ecwid, webflow]
 highlights:

@@ -7,6 +7,7 @@ image: /img/work/coleman-vision.jpg
 imageAlt: "Coleman Vision website homepage for the Albuquerque LASIK practice"
 projectUrl: https://www.colemanvision.com
 year: 2017
+order: 20
 featured: true
 services: [healthcare-website-design, web-design]
 platforms: [webflow]

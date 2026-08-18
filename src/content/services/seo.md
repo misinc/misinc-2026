@@ -3,7 +3,7 @@ title: Search Engine Optimization
 heading: Get found by search engines and by AI
 summary: Local SEO and Answer Engine Optimization for Albuquerque businesses. The work that gets you onto page one, and into the answers assistants give.
 pillar: growth
-order: 1
+order: 10
 ranking: true
 platforms: [webflow]
 highlights:

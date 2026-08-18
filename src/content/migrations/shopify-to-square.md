@@ -7,7 +7,7 @@ fromPlatform: shopify
 toPlatform: square-online-store
 verdict: Right for Square sellers with a modest catalogue. Stay on Shopify if commerce is the whole business.
 timeline: two to four weeks
-order: 4
+order: 40
 nextStep: >-
   Tell us what you sell and how you take payments today, and we will tell you honestly which of the two platforms fits, including when that is Shopify.
 seo:

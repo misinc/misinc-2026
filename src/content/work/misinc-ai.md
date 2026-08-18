@@ -7,7 +7,7 @@ image: /img/work/misinc-ai.avif
 imageAlt: "MIS, Inc. AI website homepage"
 projectUrl: https://www.misinc.ai
 year: 2025
-order: 5
+order: 40
 services: [ai-agents, ai-consulting, custom-software]
 platforms: [webflow]
 seo:

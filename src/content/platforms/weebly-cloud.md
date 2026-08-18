@@ -6,7 +6,7 @@ stance: migrate
 verdict: We no longer build new Weebly Cloud sites and are steadily migrating clients off it.
 insteadUse: [webflow, square-online-store]
 category: websites
-order: 12
+order: 30
 nextStep: >-
   If your site is still on Weebly Cloud, it is worth planning the move now rather than waiting for a deadline. We have done this migration many times and can tell you what yours involves.
 seo:

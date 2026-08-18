@@ -7,7 +7,7 @@ fromPlatform: wordpress
 toPlatform: webflow
 verdict: Worth doing if your site is a marketing site. Stay put if it is a genuine application.
 timeline: four to eight weeks
-order: 1
+order: 10
 nextStep: >-
   Send us your WordPress site and we will tell you what moving it would involve, including whether the honest answer is that you should stay where you are.
 seo:

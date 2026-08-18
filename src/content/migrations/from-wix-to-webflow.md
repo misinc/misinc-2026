@@ -7,7 +7,7 @@ fromPlatform: wix
 toPlatform: webflow
 verdict: Worth doing once the site is expected to bring in business rather than just exist.
 timeline: three to five weeks
-order: 2
+order: 20
 nextStep: >-
   Send us your Wix URL and we will tell you what rebuilding it properly would take, and whether it is worth doing yet.
 seo:

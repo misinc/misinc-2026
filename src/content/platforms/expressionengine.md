@@ -6,7 +6,7 @@ stance: migrate
 verdict: We no longer support ExpressionEngine and would migrate any site still on it.
 insteadUse: [webflow, astro]
 category: websites
-order: 13
+order: 40
 nextStep: >-
   If you are still on ExpressionEngine and struggling to find anyone to maintain it, that difficulty is itself the argument for moving. We can look at what a migration would involve.
 seo:

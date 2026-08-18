@@ -7,7 +7,7 @@ image: /img/work/uvnr.avif
 imageAlt: "United Voices for Newcomer Rights nonprofit website"
 projectUrl: https://www.uvnr.org
 year: 2022
-order: 11
+order: 10
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

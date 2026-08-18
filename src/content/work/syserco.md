@@ -7,7 +7,7 @@ image: /img/work/syserco.avif
 imageAlt: "Syserco energy management and building automation website"
 projectUrl: https://www.syserco.com
 year: 2021
-order: 14
+order: 10
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

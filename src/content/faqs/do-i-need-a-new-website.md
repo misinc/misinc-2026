@@ -1,7 +1,7 @@
 ---
 question: Do I need a new website, or just a refresh?
 topic: getting-started
-order: 1
+order: 10
 ---
 
 A website should be kept current in both content and design, because its job is to bring you leads and build credibility, and an outdated one does neither.

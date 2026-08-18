@@ -6,7 +6,7 @@ stance: own
 credential: Built and maintained by MIS, Inc.
 verdict: We built it, we maintain it, and it works on any platform.
 category: websites
-order: 3
+order: 10
 nextStep: >-
   If you are a Realtor and your site cannot show MLS listings, or your current IDX provider is charging too much for too little, we will look at what your MLS allows and what it would take.
 seo:

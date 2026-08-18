@@ -7,7 +7,7 @@ image: /img/work/syserco-es.avif
 imageAlt: "Syserco Energy Solutions website homepage"
 projectUrl: https://www.syserco-es.com
 year: 2024
-order: 9
+order: 20
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

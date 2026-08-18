@@ -7,6 +7,7 @@ image: /img/work/honor-flight.jpg
 imageAlt: "Honor Flight of Northern New Mexico website homepage"
 projectUrl: http://www.honorflightnorthernnm.org/
 year: 2017
+order: 30
 featured: true
 services: [web-design]
 platforms: [weebly-cloud]

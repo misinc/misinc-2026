@@ -1,7 +1,7 @@
 ---
 question: Can you help my site get found by AI assistants like ChatGPT?
 topic: search-ai
-order: 3
+order: 180
 showOn: [home]
 ---
 

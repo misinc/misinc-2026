@@ -1,7 +1,7 @@
 ---
 question: How involved do I need to be?
 topic: process
-order: 3
+order: 100
 ---
 
 Less than you might expect, but not nothing.

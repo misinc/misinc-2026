@@ -7,6 +7,7 @@ image: /img/work/zaca-mesa-winery.jpg
 imageAlt: "Zaca Mesa Winery website homepage"
 projectUrl: https://www.zacamesa.com
 year: 2020
+order: 30
 services: [ecommerce-website-design, website-development]
 platforms: [wordpress]
 seo:

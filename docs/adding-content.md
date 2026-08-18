@@ -19,7 +19,7 @@ Every hub/index page calls `getCollection()` at build time and lists whatever's 
 | Collection | Hub page | How it's built |
 |---|---|---|
 | `services` | [`/services`](../src/pages/services/index.astro) | `getCollection('services')`, grouped by `pillar`, sorted by `order` |
-| `platforms` | [`/platforms`](../src/pages/platforms/index.astro) | `getCollection('platforms')`, sorted by `order` within `category` |
+| `platforms` | [`/platforms`](../src/pages/platforms/index.astro) | `getCollection('platforms')`, sorted by `order` within `stance` |
 | `work` | [`/portfolio`](../src/pages/portfolio.astro) | `getCollection('work')`, sorted by `year` then `order`; filter chips are derived from whichever categories are actually in use |
 | `blog` | [`/blog`](../src/pages/blog/index.astro) and [`/guides`](../src/pages/guides.astro) | `getCollection('blog')`; `/guides` further filters to `guide: true` |
 | `migrations` | no page of its own — listed inside [`/platforms`](../src/pages/platforms/index.astro) | `getCollection('migrations')` |
@@ -28,6 +28,18 @@ Every hub/index page calls `getCollection()` at build time and lists whatever's 
 **The one exception is platforms, and it's bigger than it first looks.** Adding a new `src/content/platforms/<slug>.md` file gets you a working `/platforms/<slug>` detail page, full stop — it does **not** register the platform anywhere else. Every platform *chip* on the site (the "we build this on" chips on work and service pages, the "instead use" callout on other platform pages, the homepage marquee, and even the icon-sizing on the `/platforms` hub) is rendered by looking a slug up in `PLATFORMS_BY_SLUG`, a completely separate hand-maintained registry in [`src/lib/platforms.ts`](../src/lib/platforms.ts) built from its `PARTNERS` array plus a small hardcoded legacy list. If a slug isn't in that file, referencing it from `work.platforms`, `services.platforms`, etc. fails silently — no chip renders, no error.
 >
 > **So whenever you add a new platform, also add it to `PARTNERS` (or the legacy list) in `src/lib/platforms.ts`**, with a `slug`, `name`, and `icon` matching the content page — or the platform page will exist but be unreachable from anywhere that links to it by slug.
+
+## The `order` field: leave gaps
+
+Every collection with an `order` field uses multiples of 10 (10, 20, 30…) rather than tight sequential integers, so a new item can usually be slotted in — e.g. `order: 15` between two existing 10 and 20 — without renumbering everything else. Each collection resets the sequence within whatever group it sorts by:
+
+- `work` — resets per `year` (order is only ever compared within the same year)
+- `services` — resets per `pillar`
+- `platforms` — resets per `stance`
+- `migrations` — one flat sequence, no grouping
+- `faqs` — one flat sequence across the whole collection (not per `topic`), because `order` is also used to sort `showOn`-filtered subsets on the home/services/contact pages that mix items from different topics — a per-topic reset would create ties there
+
+When adding a new item, don't just reuse "next contiguous integer" — pick a value that fits your intended position, defaulting to +10 past the group's current last item unless you're deliberately inserting between two existing ones. If a group gets tight enough that there's no room left between two neighbors, that's the signal to renumber that one group back out to a clean 10/20/30 spacing — not a reason to fall back to consecutive integers.
 
 ---
 
@@ -85,7 +97,7 @@ seo:
 ---
 ```
 
-Appears automatically on [`/platforms`](../src/pages/platforms/index.astro), sorted by `order` within `category`.
+Appears automatically on [`/platforms`](../src/pages/platforms/index.astro), sorted by `order` within `stance` (partner / own / migrate — `category` is only used as a display label on the detail page, it doesn't drive grouping anywhere).
 
 **Required extra step, every time:** also add the platform to `PARTNERS` (or `ALL_PLATFORMS`'s legacy list, for a `migrate`-stance platform) in [`src/lib/platforms.ts`](../src/lib/platforms.ts) — `{ slug, name, icon }`, matching the content page. Without it, the `/platforms/<slug>` page works fine on its own, but referencing that slug from `work.platforms`, `services.platforms`, or `insteadUse` anywhere else on the site renders nothing — see [Where new items show up automatically](#where-new-items-show-up-automatically) above for why.
 

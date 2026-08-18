@@ -3,7 +3,7 @@ title: Restaurant Web Design
 heading: Websites for restaurants, cafés, and food trucks
 summary: Menus, online ordering, catering, and gift cards, on a site you and your staff can update between services, without calling anyone.
 pillar: websites
-order: 5
+order: 50
 ranking: true
 platforms: [square-online-store, ecwid, webflow]
 highlights:

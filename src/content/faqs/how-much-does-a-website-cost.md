@@ -1,7 +1,7 @@
 ---
 question: How much does a website cost in Albuquerque?
 topic: pricing
-order: 1
+order: 50
 showOn: [home, services]
 ---
 

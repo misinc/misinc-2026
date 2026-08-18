@@ -6,6 +6,7 @@ category: ecommerce
 image: /img/work/cheezie-chews.jpg
 imageAlt: "Cheezie Chews website homepage showing the dog chew product range"
 year: 2017
+order: 10
 archived: true
 featured: true
 services: [ecommerce-website-design, web-design]

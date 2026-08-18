@@ -7,7 +7,7 @@ image: /img/work/urartandculture.avif
 imageAlt: "UR Art & Culture nonprofit website"
 projectUrl: https://www.urartandculture.org
 year: 2026
-order: 2
+order: 20
 services: [web-design, website-development]
 platforms: []
 seo:

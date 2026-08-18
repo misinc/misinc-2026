@@ -7,7 +7,7 @@ image: /img/work/3d-sts.avif
 imageAlt: "3D Security Training Solutions website homepage"
 projectUrl: https://www.3dsts.com
 year: 2025
-order: 7
+order: 60
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

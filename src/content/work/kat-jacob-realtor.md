@@ -7,6 +7,7 @@ image: /img/work/kat-jacob.jpg
 imageAlt: "Kat Jacob Realtor website showing property search and listings"
 projectUrl: https://www.katjacobcribs.com
 year: 2021
+order: 30
 featured: true
 services: [real-estate-website-design]
 platforms: [webflow, addonidx]
