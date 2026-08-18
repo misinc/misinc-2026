@@ -59,12 +59,18 @@ interface Props {
   /**
    * `split` is the default: text left, media beside it.
    *
-   * `centered` stacks instead — text centred at a 900px measure with the media
+   * `centered` stacks instead: text centred at a 900px measure with the media
    * full width beneath. Worth reaching for when a headline is too long for the
    * split layout's ~520px column, since that column forces a long headline to
    * break mid-phrase. It also lets a 16:9 source show uncropped.
+   *
+   * `full` is for pages with no media at all. The heading runs the full content
+   * width and no figure is rendered, not even the branded fallback panel, so
+   * the hero does not leave a hole where an image was never going to be. The
+   * lede keeps its 62ch measure, because a readable line length matters more
+   * than filling the width.
    */
-  layout?: 'split' | 'centered'
+  layout?: 'split' | 'centered' | 'full'
   /**
    * Typewriter effect on a second headline line — home page only. The text
    * types out after `title`, with `highlight` in the accent colour.
@@ -85,6 +91,8 @@ const {
 } = Astro.props
 
 const centered = layout === 'centered'
+const full = layout === 'full'
+const showMedia = !full
 
 // Centred puts the media at the full content width, so a portrait frame would
 // become a tower — it is capped and centred instead. Landscape gets 16:9,
@@ -103,7 +111,7 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
   <section
     class:list={[
       'py-14 lg:py-[76px]',
-      !centered && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
+      !centered && !full && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
     ]}
   >
     <div class:list={[centered && 'mx-auto max-w-[900px] text-center']}>
@@ -162,68 +170,72 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
       <slot name="after" />
     </div>
 
-    <figure
-      class:list={[
-        'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',
-        centered && 'mt-11',
-        centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
-      ]}
-    >
-      <div class:list={['relative', aspect]}>
-        {
-          media?.type === 'video' && (
-            <video
-              class="absolute inset-0 h-full w-full object-cover"
-              style={`object-position:${position}`}
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-              poster={media.poster}
-              aria-label={media.caption ?? media.alt}
-            >
-              <source src={media.src} type="video/mp4" />
-            </video>
-          )
-        }
+    {
+      showMedia && (
+      <figure
+        class:list={[
+          'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',
+          centered && 'mt-11',
+          centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
+        ]}
+      >
+        <div class:list={['relative', aspect]}>
+          {
+            media?.type === 'video' && (
+              <video
+                class="absolute inset-0 h-full w-full object-cover"
+                style={`object-position:${position}`}
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster={media.poster}
+                aria-label={media.caption ?? media.alt}
+              >
+                <source src={media.src} type="video/mp4" />
+              </video>
+            )
+          }
 
-        {
-          media?.type === 'image' && (
-            <img
-              class="absolute inset-0 h-full w-full object-cover"
-              style={`object-position:${position}`}
-              src={media.src}
-              alt={media.alt ?? ''}
-              loading="eager"
-            />
-          )
-        }
-
-        {
-          !media && (
-            /* Branded fallback until real media exists for this page. */
-            <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
+          {
+            media?.type === 'image' && (
               <img
-                src="/img/mis-logo.png"
-                alt=""
-                width="140"
-                height="146"
-                class="w-[38%] max-w-[180px] opacity-15"
+                class="absolute inset-0 h-full w-full object-cover"
+                style={`object-position:${position}`}
+                src={media.src}
+                alt={media.alt ?? ''}
+                loading="eager"
               />
-            </div>
-          )
-        }
+            )
+          }
 
-        {
-          media?.caption && (
-            <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
-              {media.caption}
-            </figcaption>
-          )
-        }
-      </div>
-    </figure>
+          {
+            !media && (
+              /* Branded fallback until real media exists for this page. */
+              <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
+                <img
+                  src="/img/mis-logo.png"
+                  alt=""
+                  width="140"
+                  height="146"
+                  class="w-[38%] max-w-[180px] opacity-15"
+                />
+              </div>
+            )
+          }
+
+          {
+            media?.caption && (
+              <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
+                {media.caption}
+              </figcaption>
+            )
+          }
+        </div>
+      </figure>
+      )
+    }
   </section>
 </div>
 

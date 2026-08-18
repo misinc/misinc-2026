@@ -9,10 +9,10 @@ verdict: Worth doing if your site is a marketing site. Stay put if it is a genui
 timeline: four to eight weeks
 order: 1
 nextStep: >-
-  Send us your WordPress site and we will tell you what moving it would involve — including whether the honest answer is that you should stay where you are.
+  Send us your WordPress site and we will tell you what moving it would involve, including whether the honest answer is that you should stay where you are.
 seo:
   title: WordPress to Webflow Migration | MIS, Inc. Albuquerque
-  description: Moving a WordPress site to Webflow — what gets migrated, what it costs you in plugins and maintenance, how rankings are protected, and when staying on WordPress is the better call.
+  description: "Moving a WordPress site to Webflow: what gets migrated, what it costs you in plugins and maintenance, how rankings are protected, and when staying on WordPress is the better call."
 ---
 
 ## Why people leave
@@ -23,7 +23,7 @@ Almost nobody moves off WordPress because they dislike the editor. They move bec
 
 **"Free" stopped being free a while ago.** A typical small business WordPress site runs a page builder, a forms plugin, an SEO plugin, a backup plugin, a security plugin, and a caching plugin. Most of those now carry annual subscriptions. Add hosting that can actually cope, and the yearly figure is rarely small.
 
-**Security is your problem.** WordPress powers a huge share of the web, which makes it the most attractive target on the web. The vulnerability is almost never in WordPress itself — it is in a plugin that has not been updated since 2019.
+**Security is your problem.** WordPress powers a huge share of the web, which makes it the most attractive target on the web. The vulnerability is almost never in WordPress itself. It is in a plugin that has not been updated since 2019.
 
 **Speed takes real work.** A WordPress site can be fast. Getting there means caching layers, image optimisation, and pruning plugins, and it drifts back the moment someone installs something new.
 
@@ -33,7 +33,7 @@ We have done enough of these that the process is settled:
 
 - **Design** is rebuilt in Webflow rather than converted. Themes do not translate, and a straight port would carry over the compromises you made to fit the theme in the first place.
 - **Pages and posts**, including categories and tags, with the formatting intact.
-- **Media** — images, PDFs, and downloads — moved to the new host, not left pointing at the old one.
+- **Media**, meaning images, PDFs, and downloads, moved to the new host, not left pointing at the old one.
 - **Custom post types** become Webflow CMS collections, which is usually a cleaner fit than the original.
 - **Forms**, rebuilt and tested against real submissions.
 - **Every URL**, mapped one to one. This is the part that protects your rankings, and it is the part most migrations get wrong.
@@ -42,7 +42,7 @@ We have done enough of these that the process is settled:
 
 Being straight about this matters more than winning the project.
 
-WordPress has an enormous plugin ecosystem, and some of it has no Webflow equivalent. If your site runs membership tiers, a complex booking engine, a learning platform, or WooCommerce with hundreds of SKUs and deep inventory rules, moving to Webflow means rebuilding that functionality — sometimes as custom work, sometimes not at all.
+WordPress has an enormous plugin ecosystem, and some of it has no Webflow equivalent. If your site runs membership tiers, a complex booking engine, a learning platform, or WooCommerce with hundreds of SKUs and deep inventory rules, moving to Webflow means rebuilding that functionality, sometimes as custom work and sometimes not at all.
 
 **In those cases we tell you to stay.** A well-maintained WordPress install running software that genuinely does the job is a better outcome than a migration that loses half of it. What we would suggest instead is fixing the maintenance story: fewer plugins, better hosting, and someone accountable for updates.
 
@@ -54,9 +54,9 @@ No plugin updates and no security patching. Hosting, CDN, and SSL included rathe
 
 Every migration risks search traffic, and the risk is entirely manageable.
 
-We export the full URL list from your current site, map each one to its new home, and put the redirects live at the moment of the switch — not the week after. Titles, meta descriptions, and structured data come across with the content. We keep the old site reachable until DNS has fully propagated, then watch Search Console for four weeks and fix anything that surfaces.
+We export the full URL list from your current site, map each one to its new home, and put the redirects live at the moment of the switch, not the week after. Titles, meta descriptions, and structured data come across with the content. We keep the old site reachable until DNS has fully propagated, then watch Search Console for four weeks and fix anything that surfaces.
 
-Done properly, the usual pattern is a small dip for a fortnight, then recovery — and often improvement, because the new site is faster.
+Done properly, the usual pattern is a small dip for a fortnight, then recovery, and often improvement, because the new site is faster.
 
 ## What it costs and how long it takes
 

@@ -18,7 +18,7 @@ seo:
 
 For years WordPress was the sensible default. It was free, it could do anything, and it had a plugin for every requirement. We built and maintained a lot of WordPress sites, and we ran a managed care plan to keep them healthy.
 
-We stopped. Not because WordPress is bad software — it powers a huge share of the web and does so competently — but because the total cost of owning one had quietly grown past what it returns for a small business.
+We stopped. Not because WordPress is bad software, which powers a huge share of the web and does so competently, but because the total cost of owning one had quietly grown past what it returns for a small business.
 
 ## What actually goes wrong
 
@@ -26,7 +26,7 @@ We stopped. Not because WordPress is bad software — it powers a huge share of 
 
 **Popularity attracts attackers.** Because WordPress runs so much of the web, automated attacks scan for known vulnerabilities continuously. A site with an out-of-date plugin is found within hours, not months.
 
-**Plugins become dependencies you did not choose.** A typical small business site accumulates fifteen to thirty plugins. Each one is code written by a stranger, running on your site, with the ability to break it. When one is abandoned by its author — which happens constantly — you inherit the problem.
+**Plugins become dependencies you did not choose.** A typical small business site accumulates fifteen to thirty plugins. Each one is code written by a stranger, running on your site, with the ability to break it. When one is abandoned by its author, which happens constantly, you inherit the problem.
 
 **It gets slow.** The plugin stack, the database queries, and the page builders that make WordPress easy to edit are the same things that make it load slowly. Speed is a ranking factor and a conversion factor, and WordPress makes it a fight.
 
@@ -40,14 +40,14 @@ If that is you, keep it. Just make sure someone is genuinely responsible for the
 
 ## What we recommend instead
 
-**[Webflow](/platforms/webflow)** if you want to manage the site yourself. You get a visual editor, a proper CMS, hosting, forms, and security handled by the platform — no plugins to update, and nothing to be hacked through.
+**[Webflow](/platforms/webflow)** if you want to manage the site yourself. You get a visual editor, a proper CMS, hosting, forms, and security handled by the platform. No plugins to update, and nothing to be hacked through.
 
-**A custom static build** if speed and control matter most. We build these with Astro, which produces plain static HTML — no database to attack, effectively nothing to exploit, and about as fast as the web gets. See [website development](/services/website-development).
+**A custom static build** if speed and control matter most. We build these with Astro, which produces plain static HTML: no database to attack, effectively nothing to exploit, and about as fast as the web gets. See [website development](/services/website-development).
 
 ## What a migration involves
 
 The concern people raise first is search rankings, and it is the right concern. Done carelessly, a migration loses everything you have built up.
 
-We handle it by keeping your URLs identical wherever possible, redirecting any that must change, carrying titles and meta descriptions across, and crawling every old address afterwards to confirm nothing 404s. Content comes over with it — posts, pages, images, and forms.
+We handle it by keeping your URLs identical wherever possible, redirecting any that must change, carrying titles and meta descriptions across, and crawling every old address afterwards to confirm nothing 404s. Content comes over with it: posts, pages, images, and forms.
 
 For most small business sites this takes two to four weeks.

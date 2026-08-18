@@ -52,7 +52,7 @@ export const PRICE_TIERS: PriceTier[] = [
       'Everything in the starter site',
       'A proper CMS for pages you update often',
       'Blog, guides, or case studies',
-      'Integrations — booking, CRM, email marketing',
+      'Integrations for booking, CRM, and email marketing',
       'Deeper SEO and AI-search readiness',
     ],
     goodFor:
@@ -81,7 +81,7 @@ export const PRICE_TIERS: PriceTier[] = [
     name: 'Custom software & AI',
     from: 8500,
     unit: 'project',
-    summary: 'Portals, integrations, internal tools, and AI agents — scoped per project.',
+    summary: 'Portals, integrations, internal tools, and AI agents, scoped per project.',
     includes: [
       'Discovery to define exactly what gets built',
       'Custom application or agent development',

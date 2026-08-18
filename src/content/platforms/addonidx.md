@@ -1,6 +1,6 @@
 ---
 name: Add On IDX
-summary: Our own IDX product — MLS listings on any real estate website, no matter who built it or where it is hosted.
+summary: Our own IDX product, putting MLS listings on any real estate website, no matter who built it or where it is hosted.
 icon: /img/platforms/addonidx.svg
 stance: own
 credential: Built and maintained by MIS, Inc.
@@ -8,9 +8,9 @@ verdict: We built it, we maintain it, and it works on any platform.
 category: websites
 order: 3
 nextStep: >-
-  If you are a Realtor and your site cannot show MLS listings — or your current IDX provider is charging too much for too little — we will look at what your MLS allows and what it would take.
+  If you are a Realtor and your site cannot show MLS listings, or your current IDX provider is charging too much for too little, we will look at what your MLS allows and what it would take.
 seo:
-  title: Add On IDX — MLS Listings for Any Real Estate Website | MIS, Inc.
+  title: "Add On IDX: MLS Listings for Any Real Estate Website | MIS, Inc."
   description: Add On IDX puts searchable MLS listings on any real estate website, regardless of platform or host. Built and maintained by MIS, Inc. in Albuquerque, New Mexico.
 ---
 
@@ -46,4 +46,4 @@ It is also the reason our [real estate work](/services/real-estate-website-desig
 
 ## What to know
 
-Your MLS provider decides what data can be displayed and how, and those rules differ by board. We check that first — before quoting anything — so nobody is surprised later.
+Your MLS provider decides what data can be displayed and how, and those rules differ by board. We check that first, before quoting anything, so nobody is surprised later.

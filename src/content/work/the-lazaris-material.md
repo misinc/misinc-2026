@@ -16,6 +16,6 @@ seo:
 
 We worked with Artisan Creative on this one, and it remains among the more technically involved builds we have done.
 
-The store had to handle pay-per-view items, streaming audio, recurring subscriptions, and physical goods — four different fulfilment models — while consolidating several separate tools and multiple sets of user accounts into one.
+The store had to handle pay-per-view items, streaming audio, recurring subscriptions, and physical goods (four different fulfilment models) while consolidating several separate tools and multiple sets of user accounts into one.
 
 Merging user accounts is the part that sounds trivial and is not. People had purchases and subscriptions spread across systems, and every one of them had to survive the move intact.

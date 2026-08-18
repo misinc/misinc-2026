@@ -1,6 +1,6 @@
 ---
 name: Square Online
-summary: Online ordering and ecommerce that stays in step with the register — ideal for restaurants and retailers already on Square.
+summary: Online ordering and ecommerce that stays in step with the register, ideal for restaurants and retailers already on Square.
 icon: /img/platforms/square.svg
 stance: partner
 credential: Square Online Certified Agency

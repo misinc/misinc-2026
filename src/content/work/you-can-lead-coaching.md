@@ -17,7 +17,7 @@ seo:
   description: "How MIS, Inc. built the website for executive coach Lenann McGookey Gardner, an award-winning sales and leadership coach."
 ---
 
-Lenann coaches senior executives — people who are, by definition, used to being the most capable person in the room and are now considering asking for help.
+Lenann coaches senior executives, people who are, by definition, used to being the most capable person in the room and are now considering asking for help.
 
 That audience does not respond to the usual coaching website vocabulary. They want evidence of judgment, a clear sense of who she works with, and no hard sell. The site was built to establish credibility quickly and then get out of the way.
 

@@ -1,6 +1,6 @@
 ---
 name: Add On AI Chat
-summary: Our own AI chat widget — answers customer questions and captures leads on a website you already have.
+summary: Our own AI chat widget. It answers customer questions and captures leads on a website you already have.
 icon: /img/platforms/addonaichat.png
 stance: own
 credential: Built and maintained by MIS, Inc.
@@ -10,7 +10,7 @@ order: 4
 nextStep: >-
   If your team answers the same handful of questions every week, or enquiries arrive after hours and sit until morning, this is usually the quickest thing to fix. We handle the setup.
 seo:
-  title: Add On AI Chat — AI Chat Widget for Small Business | MIS, Inc.
+  title: "Add On AI Chat: AI Chat Widget for Small Business | MIS, Inc."
   description: Add On AI Chat is a done-for-you AI chat widget that answers customer questions and captures leads on your existing website. Built by MIS, Inc. in Albuquerque.
 ---
 
@@ -22,13 +22,13 @@ Every service business has them. What are your hours, do you cover my area, how 
 
 ## How it works
 
-**It learns from your site.** The widget crawls your existing pages and answers from what is actually there — not from a general model guessing about your business.
+**It learns from your site.** The widget crawls your existing pages and answers from what is actually there, not from a general model guessing about your business.
 
 **It works around the clock.** Someone comparing three companies at 9pm gets an answer from you and silence from the other two.
 
 **It captures leads.** A conversation that reaches the limits of what it can answer turns into a lead with the context attached, rather than a visitor who leaves.
 
-**It works on any platform.** WordPress, Webflow, Squarespace, Framer, Weebly — it drops into the site you already have. No rebuild.
+**It works on any platform.** WordPress, Webflow, Squarespace, Framer, Weebly: it drops into the site you already have. No rebuild.
 
 **We set it up.** This is a done-for-you service, not a subscription you have to configure yourself. We install it, train it on your content, and tune the answers.
 

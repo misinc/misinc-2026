@@ -23,7 +23,7 @@ The signals that you have outgrown a simpler store: a catalog in the hundreds ra
 ## What it does well
 
 - **Inventory and variants** handled properly at scale
-- **Checkout that converts** — Shopify has optimized this more than anyone
+- **Checkout that converts**. Shopify has optimized this more than anyone
 - **Multi-channel selling** across your site, social, and marketplaces
 - **A large app ecosystem** for genuinely specialized needs
 - **Reliability at volume**, including during the sales that break lesser platforms

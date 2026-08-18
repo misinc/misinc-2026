@@ -17,6 +17,6 @@ seo:
 
 Dr. Stephen Coleman’s practice is dedicated exclusively to laser vision correction, and works with referring doctors across the country.
 
-That focus shaped the site. A prospective patient arriving here is weighing an elective procedure on their eyes — the questions are about safety, experience, and cost, and they want them answered without having to phone anyone. Referring physicians need something different again: credentials and clinical detail, quickly.
+That focus shaped the site. A prospective patient arriving here is weighing an elective procedure on their eyes. The questions are about safety, experience, and cost, and they want them answered without having to phone anyone. Referring physicians need something different again: credentials and clinical detail, quickly.
 
 We structured the site so both audiences find their path within a click or two, and kept the tone calm rather than promotional. Medical marketing that oversells undermines the trust it is trying to build.

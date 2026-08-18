@@ -21,13 +21,13 @@ The National Brain Injury Institute diagnoses and treats traumatic brain injury,
 
 A specialist medical site like this one has a split audience, and the split runs deep.
 
-One reader is a patient or a family member. They may be exhausted, and by the nature of the injury they may be having difficulty with reading, concentration, or screens. The other is a professional making a referral — a physician, an attorney, a life care planner — who wants clinical specifics quickly and is not helped by simplification.
+One reader is a patient or a family member. They may be exhausted, and by the nature of the injury they may be having difficulty with reading, concentration, or screens. The other is a professional making a referral, whether a physician, an attorney, or a life care planner, who wants clinical specifics quickly and is not helped by simplification.
 
 Writing for the average of those two people produces a site that serves neither. So the structure separates them early: a patient route and a referral route, each written in its own register.
 
 ## The service list is the clinical evidence
 
-The range of assessments and therapies is what actually distinguishes this practice — oculomotor and vestibular therapy, diffusion tensor imaging, comprehensive TBI evaluation, cognitive functional capacity evaluation, neuropsychological assessment, neurocognitive rehabilitation, life care plans, and psychotherapy.
+The range of assessments and therapies is what actually distinguishes this practice: oculomotor and vestibular therapy, diffusion tensor imaging, comprehensive TBI evaluation, cognitive functional capacity evaluation, neuropsychological assessment, neurocognitive rehabilitation, life care plans, and psychotherapy.
 
 Those names mean a great deal to a referrer and very little to a patient, so each carries a plain explanation alongside the clinical term rather than instead of it.
 

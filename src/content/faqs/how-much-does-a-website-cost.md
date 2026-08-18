@@ -9,4 +9,4 @@ Our projects start at **$3,500** for a straightforward five to eight page site, 
 
 What moves the figure is page count, whether we write the content or you supply it, and any custom functionality. Hosting and care is separate, from $50 a month.
 
-Every project is quoted as a fixed price before work begins — no hourly meter, no surprise invoices. Our [pricing guide](/albuquerque-web-design-pricing-guide) breaks down what drives the number up or down.
+Every project is quoted as a fixed price before work begins. No hourly meter, no surprise invoices. Our [pricing guide](/albuquerque-web-design-pricing-guide) breaks down what drives the number up or down.

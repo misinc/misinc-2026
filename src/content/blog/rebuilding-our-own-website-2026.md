@@ -1,12 +1,12 @@
 ---
 title: "We Rebuilt Our Own Website. Here Is What We Changed and Why."
-summary: "After 31 years in business and about 18 months of putting it off, we rebuilt misinc.com from scratch — new stack, published prices, no tracking. An honest account of the decisions, including the ones that look inconsistent."
+summary: "After 31 years in business and about 18 months of putting it off, we rebuilt misinc.com from scratch: new stack, published prices, no tracking. An honest account of the decisions, including the ones that look inconsistent."
 date: 2026-08-17
 image: /img/blog/misinc-2026-new.jpg
 guide: false
 seo:
   title: "We Rebuilt Our Own Website in 2026 | MIS, Inc."
-  description: "Why MIS, Inc. rebuilt misinc.com in 2026 — why we chose Astro for ourselves and Webflow for most clients, how we protected 31 years of search rankings, and why we published our prices."
+  description: "Why MIS, Inc. rebuilt misinc.com in 2026, why we chose Astro for ourselves and Webflow for most clients, how we protected 31 years of search rankings, and why we published our prices."
 faqs:
   - q: "Why did MIS, Inc. build its own website in Astro instead of Webflow?"
     a: "Because we are the client in this case, and we do not need what Webflow is best at. Webflow's decisive advantage is a visual editor that lets a non-developer publish confidently, which is why we build most client sites on it. We are developers, so that advantage is worth nothing to us, and Astro gives us a faster, fully static site with no monthly platform fee. The right platform depends on who maintains the site, not on which one is best in the abstract."
@@ -18,7 +18,7 @@ faqs:
 
 We have built more than 500 websites since 1995. Our own had not been rebuilt since 2018, and for the last eighteen months of that we knew it needed doing and did not do it.
 
-That is a common enough position that it is worth writing up honestly, along with what we eventually chose and the reasoning behind each decision — including a couple that look inconsistent until you hear the reason.
+That is a common enough position that it is worth writing up honestly, along with what we eventually chose and the reasoning behind each decision, including a couple that look inconsistent until you hear the reason.
 
 <figure>
   <img src="/img/blog/misinc-2026-before.jpg" alt="The MIS, Inc. website as it looked before the 2026 rebuild" width="1600" height="1000" loading="lazy" />
@@ -38,17 +38,17 @@ We had a design from an outside designer that we never warmed to. We had an unre
 
 So it drifted. The title tag still said "30 Years of Expertise". The contact page listed an office we had left. The AI work that had grown into a real part of the business was barely represented.
 
-None of that was breaking. It was just steadily less true, which is the failure mode businesses ignore longest — nothing is ever urgent enough to force the issue.
+None of that was breaking. It was just steadily less true, which is the failure mode businesses ignore longest. Nothing is ever urgent enough to force the issue.
 
 There is a certain symmetry here. When we [launched the 2018 site](/blog/new-year-new-website), we opened by admitting we had last redesigned in 2011 and had spent the years since building sites for everyone but ourselves. Seven years on, we were writing the same sentence with different numbers.
 
 ## The decision that took the longest: what to build it on
 
-We are a [Certified Webflow Partner](/platforms/webflow). We build most of our client sites on Webflow. We then built our own site in [Astro](/services/website-development), which deserves an explanation rather than a shrug — not least because our own 2018 post announcing the last rebuild said we strongly recommend Webflow over the alternatives.
+We are a [Certified Webflow Partner](/platforms/webflow). We build most of our client sites on Webflow. We then built our own site in [Astro](/services/website-development), which deserves an explanation rather than a shrug, not least because our own 2018 post announcing the last rebuild said we strongly recommend Webflow over the alternatives.
 
 We still do, for the people that advice was written for. The explanation is who those people are.
 
-Webflow's real advantage is not that it produces better websites. It is that it lets someone who is not a developer change their own site without fear. For most of our clients that is decisive — the alternative is a site that goes stale because every edit requires an email to us, which is the failure mode we spend most of our time preventing.
+Webflow's real advantage is not that it produces better websites. It is that it lets someone who is not a developer change their own site without fear. For most of our clients that is decisive. The alternative is a site that goes stale because every edit requires an email to us, which is the failure mode we spend most of our time preventing.
 
 We do not need that. We are the developers. So for us the calculation is different: a static site with no monthly platform fee, faster page loads, and full control of the markup.
 
@@ -62,12 +62,12 @@ This was the part that carried real risk, and the part most redesigns get wrong.
 
 A site that has been live since the 1990s accumulates search rankings that are genuinely hard to rebuild. Before touching anything, we exported our Search Console data and ranked every URL by impressions.
 
-That exercise was clarifying. A handful of pages carried the overwhelming majority of our search visibility. One guide alone accounted for more impressions than most of the site combined. Meanwhile, 27 old blog posts turned out to be 40-to-90-word link shares pointing at other people's articles — the kind of thing everyone published in 2015 and nobody should keep.
+That exercise was clarifying. A handful of pages carried the overwhelming majority of our search visibility. One guide alone accounted for more impressions than most of the site combined. Meanwhile, 27 old blog posts turned out to be 40-to-90-word link shares pointing at other people's articles, the kind of thing everyone published in 2015 and nobody should keep.
 
 So the rules were simple:
 
 - **Every URL that earns traffic keeps its exact address.** Not a similar one. The same one.
-- **301 redirects only where we consolidated deliberately** — five near-identical posts about web design pricing became one, with permanent redirects from the four we retired.
+- **301 redirects only where we consolidated deliberately**. Five near-identical posts about web design pricing became one, with permanent redirects from the four we retired.
 - **Retired pages get explicit redirects**, one by one, rather than a catch-all rule that would have swallowed the posts worth keeping.
 
 Rankings are lost through careless URL changes far more often than through redesigns. If you take one thing from this post and you are planning a rebuild: export your Search Console data first, and hand your developer the list of URLs that are not allowed to change.
@@ -78,7 +78,7 @@ Our old site did what most agency sites do, which is decline to mention money un
 
 The new one lists what a project actually starts at.
 
-Two reasons. The obvious one is that it respects people's time — someone whose budget is a quarter of our starting figure finds that out in thirty seconds instead of after a scheduled call, and both of us get that hour back.
+Two reasons. The obvious one is that it respects people's time. Someone whose budget is a quarter of our starting figure finds that out in thirty seconds instead of after a scheduled call, and both of us get that hour back.
 
 The less obvious one is that AI assistants now answer a lot of "how much does a website cost in Albuquerque" questions. If you have not published a number, something gets quoted as your answer anyway, assembled from whatever is nearby. We would rather it be our figure.
 
@@ -88,7 +88,7 @@ There is a [full pricing guide](/albuquerque-web-design-pricing-guide) covering 
 
 Ranking and being cited are becoming different problems.
 
-Search ranking has always rewarded authority and links. Being quoted by an assistant rewards *clarity* — being the source that most unambiguously states a fact. Those pull in slightly different directions, and the second one is newer than most sites are built for.
+Search ranking has always rewarded authority and links. Being quoted by an assistant rewards *clarity*, being the source that most unambiguously states a fact. Those pull in slightly different directions, and the second one is newer than most sites are built for.
 
 In practice that meant structured data on every page describing what we are, where we are, and what we charge; real questions answered in the words people use to ask them; and specific, checkable facts instead of marketing adjectives. "We are a boutique agency delivering world-class solutions" is unquotable. "Projects start at $3,500" is a fact an assistant can repeat.
 
@@ -102,7 +102,7 @@ We were not making meaningful decisions from the analytics we had. We were colle
 
 The pleasant consequence is that there is no cookie banner, because there is nothing to consent to. Our [privacy policy](/privacy-policy) is about a page long and describes what actually happens.
 
-We are not going to pretend this is a sacrifice. For a business our size it costs nothing and it is simply better. If you are running ads, your situation is different — but it is worth asking what you would actually do differently if you knew.
+We are not going to pretend this is a sacrifice. For a business our size it costs nothing and it is simply better. If you are running ads, your situation is different, but it is worth asking what you would actually do differently if you knew.
 
 ## What we would tell you to do
 

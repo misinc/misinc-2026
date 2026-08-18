@@ -18,7 +18,7 @@ seo:
   description: "How MIS, Inc. built a real estate website with full Albuquerque MLS IDX search for Realtor Kat Jacob."
 ---
 
-Kat specialises in first-time home buyers, luxury properties, and relocation — three audiences at very different stages of confidence.
+Kat specialises in first-time home buyers, luxury properties, and relocation, three audiences at very different stages of confidence.
 
 This was her first website, so a large part of the work was decisions rather than pixels: what to lead with, how much to explain, and where a nervous first-time buyer should land versus someone relocating from out of state.
 

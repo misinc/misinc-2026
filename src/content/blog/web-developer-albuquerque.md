@@ -5,11 +5,11 @@ date: 2021-02-17
 updated: 2026-08-17
 guide: false
 seo:
-  title: "Web Designer vs Web Developer — Which Do You Need? | MIS, Inc."
+  title: "Web Designer vs Web Developer: Which Do You Need? | MIS, Inc."
   description: "The difference between a web designer and a web developer, which your project actually needs, and why hiring the wrong one costs more than hiring the right one."
 faqs:
   - q: "Do I need both a web designer and a web developer?"
-    a: "For a typical small business website, usually not — most studios cover both, and for a marketing site the same person often does design and build. You need genuinely separate specialists when the project involves substantial custom functionality: user accounts, complex integrations, or an application rather than a website."
+    a: "For a typical small business website, usually not. Most studios cover both, and for a marketing site the same person often does design and build. You need genuinely separate specialists when the project involves substantial custom functionality: user accounts, complex integrations, or an application rather than a website."
   - q: "Is a web developer more expensive than a web designer?"
     a: "Development time is generally billed higher, but that is not the useful comparison. What drives cost is whether your project needs custom functionality at all. A well-designed marketing site built on a good platform can cost far less than a custom-developed one and serve you better."
 ---
@@ -26,12 +26,12 @@ A useful analogy: the designer is the architect, the developer is the builder. O
 
 ## What a designer actually does
 
-- Works out the structure — what pages exist and how someone moves between them
+- Works out the structure, meaning what pages exist and how someone moves between them
 - Decides visual hierarchy, so the important thing is the thing you notice
 - Chooses type and colour, usually within an existing brand
 - Designs for phone, tablet, and desktop, treating the phone as the primary case
 - Considers accessibility: contrast, tap targets, keyboard navigation
-- Thinks about conversion — the path from arriving to taking action
+- Thinks about conversion, the path from arriving to taking action
 
 Good design is mostly decisions about what to leave out. That is why it looks easy.
 
@@ -40,14 +40,14 @@ Good design is mostly decisions about what to leave out. That is why it looks ea
 - Turns the design into working pages that behave correctly on real devices
 - Sets up the CMS so you can edit what you should be able to edit
 - Connects things: booking systems, payment processors, CRMs, email platforms
-- Builds custom functionality — portals, calculators, dashboards, anything with a login
+- Builds custom functionality: portals, calculators, dashboards, anything with a login
 - Handles performance, security, and the parts that break at 2am
 
 ## Which do you need?
 
 **Mostly a designer** if you need a marketing website: pages describing what you do, a contact form, maybe a blog. On a modern platform, this needs relatively little development. Most small business websites are this.
 
-**Both** if you need a marketing site *plus* real functionality — an online store, a booking system, integrations with software you already run.
+**Both** if you need a marketing site *plus* real functionality, such as an online store, a booking system, integrations with software you already run.
 
 **Mostly a developer** if you need something that is really an application: client portals, internal tools, anything with user accounts and data. Here the interface matters but the hard part is what happens behind it.
 
@@ -55,7 +55,7 @@ Good design is mostly decisions about what to leave out. That is why it looks ea
 
 ## Why hiring the wrong one is expensive
 
-Hire a developer for a marketing site and you may get something technically sound that nobody wants to use, built with custom code where a platform would have done — more expensive to build and more expensive to change.
+Hire a developer for a marketing site and you may get something technically sound that nobody wants to use, built with custom code where a platform would have done, which is more expensive to build and more expensive to change.
 
 Hire a designer for an application and you get something that looks right and does not hold together under real use.
 
@@ -63,8 +63,8 @@ The more common error, by a distance, is over-engineering. Businesses get talked
 
 ## Where we sit
 
-We do both, which is normal for a studio our size — and it means we are not incentivised to push you toward the one we happen to sell.
+We do both, which is normal for a studio our size, and it means we are not incentivised to push you toward the one we happen to sell.
 
 The honest recommendation is usually: build the marketing site on a platform you can manage, and only develop custom functionality where nothing off-the-shelf fits. That is how we scope nearly every project.
 
-If you are not sure which side your project falls on, describe it to us on a [free consultation](/free-consultation) and we will tell you — including if the answer is that you need less than you thought. Otherwise, our [web design](/services/web-design), [development](/services/website-development), and [custom software](/services/custom-software) pages cover each in more detail.
+If you are not sure which side your project falls on, describe it to us on a [free consultation](/free-consultation) and we will tell you, including if the answer is that you need less than you thought. Otherwise, our [web design](/services/web-design), [development](/services/website-development), and [custom software](/services/custom-software) pages cover each in more detail.

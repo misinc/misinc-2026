@@ -16,6 +16,6 @@ seo:
 
 Windsor Door Sales had a specific problem, and it is one a lot of local businesses share: national companies with no presence in New Mexico were advertising against them locally, and customers could not tell the difference.
 
-The redesign made that distinction unmissable. Real local presence, real service area, real people — stated plainly rather than buried in an About page.
+The redesign made that distinction unmissable. Real local presence, real service area, real people, stated plainly rather than buried in an About page.
 
 We also tightened the local SEO around Albuquerque, Rio Rancho, and Santa Fe, which is where the searches that matter to them actually happen.

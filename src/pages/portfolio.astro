@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import WorkCard from '../components/WorkCard.astro'
-import Testimonial from '../components/Testimonial.astro'
-import CtaBand from '../components/CtaBand.astro'
-import { WORK_CATEGORIES } from '../lib/work'
-import { yearsInBusiness } from '../lib/site'
-import { breadcrumbs, collectionPage } from '../lib/schema'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import WorkCard from '../components/WorkCard.astro';
+import Testimonial from '../components/Testimonial.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { WORK_CATEGORIES } from '../lib/work';
+import { yearsInBusiness } from '../lib/site';
+import { breadcrumbs, collectionPage } from '../lib/schema';
 
 const all = (await getCollection('work')).sort(
   (a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999),
@@ -32,28 +32,21 @@ const schema = [
   }),
   breadcrumbs([{ name: 'Portfolio' }]),
 ]
-
 ---
 
 <Base
   title="Albuquerque Web Design Portfolio | Our Projects | MIS, Inc."
-  description="Websites, online stores, and custom software built by MIS, Inc. in Albuquerque, New Mexico — for restaurants, healthcare practices, Realtors, nonprofits, and small businesses since 1995."
+  description="Websites, online stores, and custom software built by MIS, Inc. in Albuquerque, New Mexico, for restaurants, healthcare practices, Realtors, nonprofits, and small businesses since 1995."
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="Portfolio"
-      title="Projects we’re proud to put our name on"
-      lede={`A selection of projects from ${yearsInBusiness} years of building for New Mexico businesses and clients further afield. Every one of these is a real site we designed, built, and in most cases still look after.`}
-      media={{
+    <PageHero eyebrow="Portfolio" title="Projects we’re proud to put our name on" lede={`A selection of projects from ${yearsInBusiness} years of building for New Mexico businesses and clients further afield. Every one of these is a real site we designed, built, and in most cases still look after.`} media={{
         type: 'video',
         src: '/video/portfolio-reel.mp4',
         poster: '/img/portfolio-reel-poster.jpg',
         caption: 'A few of the sites we have built',
         alt: 'A reel of websites designed and built by MIS, Inc.',
-      }}
-      ctas={[{ label: 'Start a project', href: '/free-consultation' }]}
-    />
+      }} ctas={[{ label: 'Start a project', href: '/free-consultation' }]} layout="centered" />
   </div>
 
   <Section>
@@ -105,11 +98,13 @@ const schema = [
     </div>
 
     <p id="no-results" class="hidden pt-6 text-ink-soft">
-      No projects in that category yet. <button
+      No projects in that category yet.
+      <button
         type="button"
         data-filter="all"
         class="filter-btn font-extrabold text-primary underline">Show all projects</button
-      >.
+      >
+      .
     </p>
   </Section>
 

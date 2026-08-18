@@ -40,7 +40,7 @@ export const GET: APIRoute = async () => {
 
   const body = `# ${site.legalName} (MIS, Inc.)
 
-> ${site.description} Founded in ${site.founded} and independently run ever since — ${yearsInBusiness} years in the same city.
+> ${site.description} Founded in ${site.founded} and independently run ever since, ${yearsInBusiness} years in the same city.
 
 MIS, Inc. is a boutique studio in downtown Albuquerque, New Mexico. We do three
 things: websites, custom software, and practical AI. We are a Certified Webflow

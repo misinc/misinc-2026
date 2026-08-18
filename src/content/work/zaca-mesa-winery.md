@@ -14,7 +14,7 @@ seo:
   description: "How MIS, Inc. redesigned Zaca Mesa Winery’s website and migrated it off Adobe Business Catalyst before the platform shut down."
 ---
 
-Zaca Mesa was on Adobe Business Catalyst, a platform Adobe discontinued — which meant the migration was not optional and had a deadline attached.
+Zaca Mesa was on Adobe Business Catalyst, a platform Adobe discontinued, which meant the migration was not optional and had a deadline attached.
 
 This is a situation we have handled repeatedly. Platforms get shut down, and the businesses on them discover that their site, their content, and sometimes their store have to move on someone else’s timetable.
 

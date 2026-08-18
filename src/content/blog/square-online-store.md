@@ -1,17 +1,17 @@
 ---
 title: "Is Square Online Right for Your Business?"
-summary: "Where Square Online genuinely beats the alternatives, where it does not, and how to decide — from a certified Square agency that has migrated a lot of stores onto it and a few off it."
+summary: "Where Square Online genuinely beats the alternatives, where it does not, and how to decide, from a certified Square agency that has migrated a lot of stores onto it and a few off it."
 date: 2021-02-17
 updated: 2026-08-17
 guide: true
 seo:
   title: "Is Square Online Right for Your Business? | MIS, Inc."
-  description: "An honest look at Square Online: where it beats Shopify and Ecwid, where it falls short, and how to decide — from a Square Online certified agency in Albuquerque."
+  description: "An honest look at Square Online: where it beats Shopify and Ecwid, where it falls short, and how to decide, from a Square Online certified agency in Albuquerque."
 faqs:
   - q: "Is Square Online free?"
     a: "There is a free tier, and it is genuinely usable for a simple store. You still pay card processing fees on every transaction, and paid plans remove the Square branding and add features like abandoned cart recovery. The free tier is a real starting point rather than a trial."
   - q: "Should I use Square Online or Shopify?"
-    a: "If you already take payments through Square in person, start with Square Online — one system means your menu, inventory, and orders cannot disagree with each other. Choose Shopify when selling online is the core of the business rather than an extension of it: larger catalogues, complex variants, multiple sales channels."
+    a: "If you already take payments through Square in person, start with Square Online. One system means your menu, inventory, and orders cannot disagree with each other. Choose Shopify when selling online is the core of the business rather than an extension of it: larger catalogues, complex variants, multiple sales channels."
   - q: "Can I move my existing website to Square Online?"
     a: "Yes, and it is a migration we have done many times, usually from Wix or Weebly. Content comes across and URLs can be preserved or redirected so search rankings survive. The main constraint to check first is whether Square Online supports everything your current site does."
 ---
@@ -44,7 +44,7 @@ Every other platform requires you to either sync two systems or accept that they
 
 **Advanced marketing features.** Segmentation, complex automations, and detailed merchandising are thinner than dedicated e-commerce platforms.
 
-**If you are not already on Square.** The main advantage evaporates. Judged purely as an e-commerce platform against Shopify, it is the weaker product — its strength is the integration, not the store.
+**If you are not already on Square.** The main advantage evaporates. Judged purely as an e-commerce platform against Shopify, it is the weaker product. Its strength is the integration, not the store.
 
 ## How to decide
 
@@ -72,4 +72,4 @@ Square Online has a genuinely usable free tier, with card processing fees on tra
 
 For a small business testing whether online ordering is worth pursuing, starting on the free tier is a reasonable and honest first step. We will say so rather than quoting a build you may not need yet.
 
-If you want help deciding, [book a free consultation](/free-consultation). Tell us what you sell and what you use at the counter, and we will tell you which platform fits — including when the answer is the cheaper one.
+If you want help deciding, [book a free consultation](/free-consultation). Tell us what you sell and what you use at the counter, and we will tell you which platform fits, including when the answer is the cheaper one.

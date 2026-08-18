@@ -4,7 +4,7 @@ topic: platforms
 order: 3
 ---
 
-Yes, if that is what you want — and we will pick the platform accordingly.
+Yes, if that is what you want, and we will pick the platform accordingly.
 
 On Webflow you get a visual editor for text, images, and content like blog posts or case studies, and we train you on it before launch. On a custom static build, content lives in files and changes go through us, which suits sites that rarely change.
 

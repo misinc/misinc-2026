@@ -21,7 +21,7 @@ const drivers = [
   },
   {
     title: 'Who writes the content',
-    body: 'If you supply the words and images, the project is faster and cheaper. If we write them, that is real work and it is priced in. Either is fine — deciding early is what matters.',
+    body: 'If you supply the words and images, the project is faster and cheaper. If we write them, that is real work and it is priced in. Either is fine. Deciding early is what matters.',
   },
   {
     title: 'Custom functionality',
@@ -60,15 +60,15 @@ const faqs = [
   },
   {
     q: 'Do you charge hourly or a fixed price?',
-    a: 'Fixed price, agreed before work starts. You get a written proposal with a number, and that is the number you pay. We would rather absorb an occasional overrun than send a surprise invoice — one of our clients wrote a review specifically about that.',
+    a: 'Fixed price, agreed before work starts. You get a written proposal with a number, and that is the number you pay. We would rather absorb an occasional overrun than send a surprise invoice, and one of our clients wrote a review specifically about that.',
   },
   {
     q: 'Are there ongoing costs?',
-    a: `Hosting and care starts at ${money(tier('care').from)} a month, which covers hosting, monitoring, backups, and small content changes. Marketing and SEO work is separate, starting at ${money(tier('marketing').from)} a month. Neither is compulsory — you can host elsewhere and manage the site yourself if you prefer.`,
+    a: `Hosting and care starts at ${money(tier('care').from)} a month, which covers hosting, monitoring, backups, and small content changes. Marketing and SEO work is separate, starting at ${money(tier('marketing').from)} a month. Neither is compulsory, and you can host elsewhere and manage the site yourself if you prefer.`,
   },
   {
     q: 'What if my budget is below your starting price?',
-    a: 'Tell us anyway. Sometimes the right answer is a smaller first phase, and sometimes it is that a template service will genuinely serve you better for now — we will say so. What we will not do is quietly cut corners to hit a number.',
+    a: 'Tell us anyway. Sometimes the right answer is a smaller first phase, and sometimes it is that a template service will genuinely serve you better for now, and we will say so. What we will not do is quietly cut corners to hit a number.',
   },
   {
     q: 'Do you offer payment plans?',
@@ -115,7 +115,7 @@ const offerSchema = {
 ---
 
 <Base
-  title="Web Design Pricing in Albuquerque — What It Actually Costs | MIS, Inc."
+  title="Web Design Pricing in Albuquerque: What It Actually Costs | MIS, Inc."
   description={`What a website actually costs in Albuquerque. Our projects start at ${money(PROJECT_FLOOR)}, with clear ranges by type and an honest explanation of what moves the price up or down.`}
   schema={[faqSchema, offerSchema]}
 >
@@ -123,7 +123,7 @@ const offerSchema = {
     <PageHero
       eyebrow="Pricing guide"
       title="What a website actually costs"
-      lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included — so you can work out whether we are in your range before spending an hour finding out.`}
+      lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included, so you can work out whether we are in your range before spending an hour finding out.`}
       ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
@@ -143,7 +143,7 @@ const offerSchema = {
 
     <p class="mt-8 max-w-(--container-prose) text-sm text-ink-muted">
       Prices are in US dollars and exclude third-party costs you would pay
-      regardless — domain registration, platform subscriptions, stock photography,
+      regardless: domain registration, platform subscriptions, stock photography,
       and payment processing fees. We will list those separately in your proposal
       so you can see the full running cost, not just ours.
     </p>
@@ -286,7 +286,7 @@ const offerSchema = {
   <Section>
     <NextStep
       title="Get a real number for your project"
-      text="Tell us what you need and we will give you a fixed price, not a range. The consultation is free and you will get honest recommendations either way — including if the answer is that you need less than you thought."
+      text="Tell us what you need and we will give you a fixed price, not a range. The consultation is free and you will get honest recommendations either way, including if the answer is that you need less than you thought."
     />
   </Section>
 

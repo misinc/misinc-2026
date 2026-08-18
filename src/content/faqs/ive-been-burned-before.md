@@ -11,4 +11,4 @@ The honest answer is that our reputation is the only reason this studio has last
 
 What that looks like in practice: a fixed price agreed before work starts, direct access to the person building your site, and a platform you could leave if you ever wanted to.
 
-One of our clients put it better than we can — he had been through several agencies that overran budgets and stopped replying before he found us. [His review is on the Cheezie Chews project](/works/cheezie-chews).
+One of our clients put it better than we can. He had been through several agencies that overran budgets and stopped replying before he found us. [His review is on the Cheezie Chews project](/works/cheezie-chews).

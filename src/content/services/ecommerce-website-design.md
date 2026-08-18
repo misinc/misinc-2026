@@ -1,7 +1,7 @@
 ---
 title: E-Commerce Stores
 heading: Sell your products around the clock
-summary: Online stores that are straightforward for customers to buy from and straightforward for you to run — on the platform that actually fits your business.
+summary: Online stores that are straightforward for customers to buy from and straightforward for you to run, on the platform that actually fits your business.
 pillar: websites
 order: 3
 ranking: true
@@ -14,7 +14,7 @@ hero:
   type: image
   src: /img/work/peasant-pies.jpg
   alt: Peasant Pies online store built on Square Online
-  caption: Peasant Pies — online ordering
+  caption: Peasant Pies, online ordering
 nextStep: >-
   Tell us what you sell and how you take payments today. We will tell you which platform we would use and why.
 seo:
@@ -35,7 +35,7 @@ We have built stores on most of the major platforms, and we are a Square Online 
 - Automatic sales tax calculation
 - Unlimited products and categories
 - Retail and wholesale pricing
-- Digital products — e-books, audio, downloads
+- Digital products such as e-books, audio, and downloads
 - Sales reporting you will actually look at
 
 ## Already have a website?

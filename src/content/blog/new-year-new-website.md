@@ -1,6 +1,6 @@
 ---
 title: "New Year, New Website"
-summary: "We last redesigned our own website in 2011. In 2018 we finally rebuilt it — here were the goals we set ourselves before we started."
+summary: "We last redesigned our own website in 2011. In 2018 we finally rebuilt it, and here were the goals we set ourselves before we started."
 date: 2018-12-17
 image: /img/blog/new-year-new-website.jpg
 guide: false
@@ -26,4 +26,4 @@ Our new website was built on the Webflow platform which we strongly recommend ov
 
 We look forward to your feedback and of course we'd love to meet with you and do the same for your business!
 
-*Update: we rebuilt the site again in 2026 — see [what we changed and why](/blog/rebuilding-our-own-website-2026).*
+*Update: we rebuilt the site again in 2026. See [what we changed and why](/blog/rebuilding-our-own-website-2026).*

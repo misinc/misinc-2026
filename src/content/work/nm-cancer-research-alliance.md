@@ -18,13 +18,13 @@ seo:
 
 The New Mexico Cancer Research Alliance exists to close a gap that is easy to state and hard to fix: cutting-edge cancer research tends to happen in a handful of large cities, and New Mexico is a large, rural state.
 
-Their goal is access — prevention, screening, detection, diagnosis, and treatment trials available to people in their own communities rather than several hours away.
+Their goal is access: prevention, screening, detection, diagnosis, and treatment trials available to people in their own communities rather than several hours away.
 
 ## The search is the site
 
 Most of this project was the clinical trials search. A trials directory is a genuinely difficult interface problem, because the person using it is rarely in a good state to use it. They have often had a diagnosis in the last few weeks. They are not fluent in oncology vocabulary, and they should not have to be.
 
-So the search is organised the way a patient thinks — by what stage of the process they are in — rather than the way a research database is structured.
+So the search is organised the way a patient thinks, by what stage of the process they are in, rather than the way a research database is structured.
 
 ## Three audiences, one site
 

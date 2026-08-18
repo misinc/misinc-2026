@@ -1,7 +1,7 @@
 ---
 title: Custom Software
 heading: Software shaped like your business
-summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot — built by the same people who build our websites.
+summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot, built by the same people who build our websites.
 pillar: software-ai
 order: 1
 platforms: []
@@ -10,7 +10,7 @@ highlights:
   - Integrations between systems
   - Internal tools & automation
 nextStep: >-
-  Describe the process that frustrates you most. We will tell you whether software is the right answer, and roughly what it would take — sometimes the honest answer is that a setting in a tool you already own will do it.
+  Describe the process that frustrates you most. We will tell you whether software is the right answer, and roughly what it would take. Sometimes the honest answer is that a setting in a tool you already own will do it.
 seo:
   title: Custom Software & Web Application Development | MIS, Inc.
   description: Custom web applications, client portals, integrations, and internal tools for New Mexico businesses. Built in Albuquerque by a team that has shipped software since 1995.
@@ -25,7 +25,7 @@ That person is expensive, and the spreadsheet is a single point of failure. Cust
 ## What we build
 
 - **Client and member portals.** A place for the people you serve to log in, see their information, submit what you need from them, and stop emailing you for status updates.
-- **Integrations.** Connecting the systems you already pay for so information moves between them automatically — your store to your accounting, your forms to your CRM, your bookings to your calendar.
+- **Integrations.** Connecting the systems you already pay for so information moves between them automatically: your store to your accounting, your forms to your CRM, your bookings to your calendar.
 - **Internal tools.** The small, unglamorous applications that replace a fragile spreadsheet: scheduling, intake, inventory, reporting.
 - **Automations.** The recurring task that eats two hours every Monday, done in seconds without anyone remembering to do it.
 
@@ -35,4 +35,4 @@ We start with what is slow, not with what is technically interesting. The first 
 
 Then we build the smallest thing that fixes it. Software gets more expensive to change the more of it there is, so a tool that does one job well and ships in weeks beats a platform that does everything and never quite launches.
 
-We build on boring, well-supported technology — Supabase for data, standard web platforms for the interface — so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.
+We build on boring, well-supported technology, Supabase for data and standard web platforms for the interface, so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.

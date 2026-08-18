@@ -26,7 +26,7 @@ We no longer work in it.
 
 **It carries a licence cost** for capability that hosted platforms now include.
 
-**It requires server maintenance.** PHP versions, database upgrades, and security patching are all your responsibility — the same burden that made us stop building on [WordPress](/platforms/wordpress), without WordPress's ecosystem to soften it.
+**It requires server maintenance.** PHP versions, database upgrades, and security patching are all your responsibility, the same burden that made us stop building on [WordPress](/platforms/wordpress), without WordPress's ecosystem to soften it.
 
 **Most sites still on it are well past a rebuild anyway.** If a site has not been substantially updated since it was built on ExpressionEngine, the platform is rarely the only thing that needs attention.
 

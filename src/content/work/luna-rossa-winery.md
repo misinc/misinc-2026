@@ -17,7 +17,7 @@ seo:
 
 Luna Rossa was founded in 2001 by Paolo and Sylvia D'Andrea, with vineyards in the Mimbres Valley. Paolo grew up in Friuli in north-east Italy, in the fourth generation of a family of wine growers, which is a more direct line to New Mexico winemaking than most people expect.
 
-The business is now a winery, two tasting rooms — the second in Mesilla — a wine club, a pizzeria, and a national online shop.
+The business is now a winery, two tasting rooms (the second in Mesilla), a wine club, a pizzeria, and a national online shop.
 
 ## Selling wine online is a compliance problem
 
@@ -37,6 +37,6 @@ The navigation separates them rather than filing everything under a single "visi
 
 Wine sites tend toward heavy ornament. This one stays quiet: generous space, a serif for the storytelling, and photography of the bottles doing the selling.
 
-The product listings carry what a wine buyer actually wants — varietal, appellation, vintage, alcohol content, and bottle size — because for this customer those are not specifications, they are the description.
+The product listings carry what a wine buyer actually wants: varietal, appellation, vintage, alcohol content, and bottle size. For this customer those are not specifications, they are the description.
 
 Built on [Webflow](/platforms/webflow).

@@ -1,6 +1,6 @@
 ---
 name: Mailchimp
-summary: Email marketing and automation — the channel you own, unlike every social platform.
+summary: Email marketing and automation, the channel you own, unlike every social platform.
 icon: /img/platforms/mailchimp.svg
 stance: partner
 credential: Mailchimp Partner
@@ -26,13 +26,13 @@ We are Mailchimp partners and have run campaigns and automations for clients for
 
 - **List building** from your website, your counter, and your existing customers
 - **Campaign design** that looks right on a phone, which is where most email is read
-- **Automations** — welcome sequences, lapsed-customer nudges, post-purchase follow-ups
+- **Automations** for welcome sequences, lapsed-customer nudges, and post-purchase follow-ups
 - **Deliverability work**: authentication, list hygiene, and the unglamorous details that decide whether you land in an inbox or a promotions tab
 - **Reporting** on what people actually open and click
 
 ## What to know
 
-**The free tier is genuinely useful** for small lists, and pricing scales with subscriber count. Prune inactive subscribers regularly — you are paying for them, and they hurt your deliverability.
+**The free tier is genuinely useful** for small lists, and pricing scales with subscriber count. Prune inactive subscribers regularly, because you are paying for them, and they hurt your deliverability.
 
 **It is not the only option.** For simple newsletters, cheaper tools do the job. For complex sales pipelines, a full CRM may fit better. Mailchimp sits in a sensible middle, and if your needs sit outside it we will say so.
 

@@ -16,6 +16,6 @@ seo:
 
 The practice has specialised in medical dermatology since 2007, and a meaningful share of their patients arrive worried about something they have found on their skin.
 
-That changes how a website should read. Someone in that position is not browsing — they want to know whether the practice treats their concern, whether it takes their insurance, and how soon they can be seen.
+That changes how a website should read. Someone in that position is not browsing. They want to know whether the practice treats their concern, whether it takes their insurance, and how soon they can be seen.
 
 We built the site around a patient centre that answers those questions directly, with clinical information written to inform rather than alarm.

@@ -1,7 +1,7 @@
 ---
 title: AI Consulting
 heading: Practical AI, without the hype
-summary: Straight advice on where AI helps your business and where it does not — from a studio that has evaluated every web technology shift since 1995.
+summary: Straight advice on where AI helps your business and where it does not, from a studio that has evaluated every web technology shift since 1995.
 pillar: software-ai
 order: 2
 platforms: [addonaichat]
@@ -20,13 +20,13 @@ seo:
 
 Every piece of software you already pay for has added an AI feature and raised its price. Meanwhile the advice available ranges from breathless to apocalyptic, and very little of it is aimed at a business with a handful of employees.
 
-We have watched this pattern before. The web in 1995, e-commerce in the 2000s, mobile in the 2010s — each arrived with the same mixture of genuine transformation and expensive nonsense. The job is to separate them, and that is a job that rewards experience more than enthusiasm.
+We have watched this pattern before. The web in 1995, e-commerce in the 2000s, mobile in the 2010s. Each arrived with the same mixture of genuine transformation and expensive nonsense. The job is to separate them, and that is a job that rewards experience more than enthusiasm.
 
 ## What AI consulting means here
 
 Not a strategy deck. Usually one of three concrete things:
 
-- **Automating something repetitive.** A task that eats hours weekly — sorting enquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
+- **Automating something repetitive.** A task that eats hours weekly: sorting enquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
 - **Choosing tools.** Which AI subscriptions are worth paying for in your specific business, which are duplicating something you already own, and which are charging you for a feature you will never open.
 - **Working out where it does not belong.** Sometimes the answer is that a task needs a person, or a simple script, or a fixed process. We would rather tell you that than sell you something.
 

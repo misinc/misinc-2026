@@ -23,7 +23,7 @@ const updatedLabel = 'August 17, 2026'
 const summary = [
   'This site has no analytics, no advertising pixels, and no tracking cookies. We do not use Google Analytics.',
   'We do not sell, rent, or trade your information, and there is no arrangement under which we would.',
-  'The only information we hold is what you deliberately send us — a form, a booking, an email, or a phone call.',
+  'The only information we hold is what you deliberately send us: a form, a booking, an email, or a phone call.',
   'Fonts, images, and the map are served from our own site, so no other company learns that you were here.',
   'Ask us what we hold about you, or ask us to delete it, and we will.',
 ]
@@ -74,7 +74,7 @@ const pageSchema = {
 
 <Base
   title="Privacy Policy | MIS, Inc."
-  description="What misinc.com collects, why, and what happens to it. No analytics, no tracking cookies, and nothing sold or shared — written in plain English."
+  description="What misinc.com collects, why, and what happens to it. No analytics, no tracking cookies, and nothing sold or shared. Written in plain English."
   schema={[breadcrumbs, pageSchema]}
 >
   <!-- Header. Deliberately lighter than PageHero: a legal page opens with the
@@ -91,7 +91,7 @@ const pageSchema = {
     </h1>
     <p class="mt-5 max-w-(--container-prose) text-lg text-ink-soft">
       We do not track you. This page explains what little information this site
-      collects, why, and what happens to it — in plain English rather than four
+      collects, why, and what happens to it, in plain English rather than four
       pages of definitions.
     </p>
     <p class="mt-4 text-sm text-ink-muted">
@@ -127,7 +127,7 @@ const pageSchema = {
     <Prose>
       <h2>Who we are</h2>
       <p>
-        This site is run by {site.legalName}, trading as MIS, Inc. — a web design and
+        This site is run by {site.legalName}, trading as MIS, Inc., a web design and
         development company in Albuquerque, New Mexico, in business since {site.founded}. You
         can reach us at <a href={`mailto:${site.email}`}>{site.email}</a> or
         <a href={site.phoneHref}>{site.phone}</a>.
@@ -166,7 +166,7 @@ const pageSchema = {
       <p>
         Our host records the standard details of every request: IP address, browser and
         device type, the page requested, and the time. Every website on the internet does
-        this — it is how a server answers a request at all. It is used for security, for
+        this, because it is how a server answers a request at all. It is used for security, for
         blocking abuse, and for working out whether something is broken. We do not join it
         to anything else, and we do not use it to build a profile of you.
       </p>
@@ -221,7 +221,7 @@ const pageSchema = {
       <p>
         Enquiries stay in our email as ordinary business correspondence. Records for work we
         actually do together we keep while we are working together and for a reasonable
-        period afterwards, for tax and for reference when you come back to us years later —
+        period afterwards, for tax and for reference when you come back to us years later,
         which, in our experience, people do. Server logs belong to our host and expire on
         their schedule.
       </p>
@@ -239,7 +239,7 @@ const pageSchema = {
       </ul>
       <p>
         Email <a href={`mailto:${site.email}`}>{site.email}</a> or call
-        <a href={site.phoneHref}>{site.phone}</a>. There is no form and no process — a person
+        <a href={site.phoneHref}>{site.phone}</a>. There is no form and no process. A person
         reads it and deals with it.
       </p>
       <p>

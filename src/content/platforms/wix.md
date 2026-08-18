@@ -8,7 +8,7 @@ insteadUse: [webflow, astro]
 category: websites
 order: 11
 nextStep: >-
-  If your Wix site is holding you back — slow, hard to rank, or simply not growing with the business — we have moved a lot of sites off Wix and can tell you what yours would involve.
+  If your Wix site is holding you back, whether it is slow, hard to rank, or simply not growing with the business, we have moved a lot of sites off Wix and can tell you what yours would involve.
 seo:
   title: Moving from Wix to Webflow or Astro | MIS, Inc. Albuquerque
   description: Why growing businesses outgrow Wix, what we recommend instead, and how a Wix to Webflow migration works without losing your search rankings.
@@ -22,7 +22,7 @@ The problems show up later, when the site needs to do more than exist.
 
 ## Where it starts to hurt
 
-**Performance.** Wix sites are heavy. The platform loads a large amount of JavaScript before your content appears, and there is limited scope to fix it because you do not control the output. On a phone with a weak signal — which is where a lot of local customers meet you — that gap is felt.
+**Performance.** Wix sites are heavy. The platform loads a large amount of JavaScript before your content appears, and there is limited scope to fix it because you do not control the output. On a phone with a weak signal, which is where a lot of local customers meet you, that gap is felt.
 
 **SEO ceilings.** Wix has improved here and basic SEO controls exist. But you are working within what the platform exposes, and when you need finer control over structure, redirects, or markup, you eventually hit a wall you cannot climb.
 
@@ -32,7 +32,7 @@ The problems show up later, when the site needs to do more than exist.
 
 ## When Wix is fine
 
-If you are a sole trader who needs a presence rather than a lead source, if your budget is genuinely a few hundred dollars, or if the site is a placeholder while the business finds its feet — stay on Wix. Spend the money on something with a better return.
+If you are a sole trader who needs a presence rather than a lead source, if your budget is genuinely a few hundred dollars, or if the site is a placeholder while the business finds its feet, stay on Wix. Spend the money on something with a better return.
 
 The moment your website is expected to bring in business, the calculation changes.
 
@@ -44,7 +44,7 @@ The moment your website is expected to bring in business, the calculation change
 
 ## Migrating off Wix
 
-Because Wix has no real export, migration means rebuilding rather than importing — but that is less painful than it sounds, and it is an opportunity to fix the things that were never right.
+Because Wix has no real export, migration means rebuilding rather than importing, but that is less painful than it sounds, and it is an opportunity to fix the things that were never right.
 
 We recreate the site properly, carry the content across, map every existing URL to its new home so search rankings survive, and verify afterwards that nothing is broken. We have done this often enough that it is routine.
 

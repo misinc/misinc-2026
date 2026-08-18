@@ -16,6 +16,6 @@ seo:
 
 Most agent websites try to cover an entire metro area and end up saying nothing specific about any of it.
 
-Chris Lucas went the other way: a site dedicated to Nob Hill, the Albuquerque neighbourhood he knows best. His own photography and genuine local knowledge carry it, and the specificity is the point — someone searching for Nob Hill wants someone who knows Nob Hill.
+Chris Lucas went the other way: a site dedicated to Nob Hill, the Albuquerque neighbourhood he knows best. His own photography and genuine local knowledge carry it, and the specificity is the point. Someone searching for Nob Hill wants someone who knows Nob Hill.
 
 It is a strategy more agents should consider. Narrow and deep beats broad and generic, both for buyers and for search.

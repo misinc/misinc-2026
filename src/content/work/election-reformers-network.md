@@ -15,7 +15,7 @@ seo:
   description: "How MIS, Inc. built the website for Election Reformers Network, a national nonprofit working on impartial election administration."
 ---
 
-Election Reformers Network is a 501(c)(3) nonprofit working on how elections are administered in the United States. Their own description of their position is that they favour neither the left nor the right, and their focus is the machinery rather than the contests — who runs elections, and under what rules.
+Election Reformers Network is a 501(c)(3) nonprofit working on how elections are administered in the United States. Their own description of their position is that they favour neither the left nor the right, and their focus is the machinery rather than the contests: who runs elections, and under what rules.
 
 ## Problems first, organisation second
 
@@ -23,7 +23,7 @@ The main navigation opens with **Key Problems**, then **Solutions**. The organis
 
 That ordering was the central decision on this project, and it runs against the instinct of most nonprofit sites, which lead with who they are and work outward to what they do.
 
-It is the right way round here. A policy organisation is competing for the attention of people who arrived caring about an issue, not about an institution — journalists, legislative staff, funders, and academics. Somebody who lands on the site because they are worried about how election results get certified wants to see that problem named before they are asked to care about the organisation naming it.
+It is the right way round here. A policy organisation is competing for the attention of people who arrived caring about an issue, not about an institution: journalists, legislative staff, funders, and academics. Somebody who lands on the site because they are worried about how election results get certified wants to see that problem named before they are asked to care about the organisation naming it.
 
 The work is grouped into four areas: protected election results, fair districts, impartial election administration, and additional reforms. Each is a route from the homepage, so a visitor with a specific concern is one click from the material rather than searching for it.
 
@@ -31,7 +31,7 @@ The work is grouped into four areas: protected election results, fair districts,
 
 In this field the site is largely an argument about seriousness. Nothing else it does matters if a reader concludes the organisation is a pressure group with a website.
 
-So the structure gives real space to the things that carry that weight: the board, the advisory council, the staff, a documented record of achievements, and outside endorsements presented with attribution rather than trimmed into pull quotes. Policy wins — a partnership with a Secretary of State, a first-in-the-nation election ethics law — are stated with the specifics that let a reader check them.
+So the structure gives real space to the things that carry that weight: the board, the advisory council, the staff, a documented record of achievements, and outside endorsements presented with attribution rather than trimmed into pull quotes. Policy wins, such as a partnership with a Secretary of State and a first-in-the-nation election ethics law, are stated with the specifics that let a reader check them.
 
 Design-wise this means restraint. Institutional typography, documentary photography, and none of the urgency devices that campaign sites use, all of which would read here as the wrong kind of organisation.
 

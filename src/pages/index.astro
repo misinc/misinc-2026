@@ -53,7 +53,7 @@ const steps = [
   },
   {
     title: 'Get a clear plan and price',
-    note: "A plain-language proposal — what we'll build, what it costs, when it ships.",
+    note: "A plain-language proposal: what we'll build, what it costs, when it ships.",
   },
   {
     title: 'Launch, then keep improving',
@@ -84,17 +84,11 @@ const guides = [
 ---
 
 <Base
-  title="Albuquerque Web Design, Custom Software & AI | MIS, Inc. — Since 1995"
+  title="Albuquerque Web Design, Custom Software & AI | MIS, Inc. Since 1995"
   description={site.description}
 >
   <!-- Hero -->
-  <PageHero
-    eyebrow="Web design · Custom software · Practical AI"
-    title="The web keeps changing."
-    typed={{ text: 'We’ve been building it ', highlight: 'since\u00A01995.' }}
-    lede="MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits — here at home and around the world."
-    shape="portrait"
-    media={{
+  <PageHero eyebrow="Web design · Custom software · Practical AI" title="The web keeps changing." typed={{ text: 'We’ve been building it ', highlight: 'since\u00A01995.' }} lede="MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits, here at home and around the world." media={{
       type: 'video',
       // TODO(video): still 4.8 MB, the heaviest asset on the page. It is now
       // faststart, so Safari can start on the first bytes rather than waiting
@@ -104,13 +98,10 @@ const guides = [
       poster: '/img/anniversary-balloon-poster.jpg',
       caption: 'Our 30th anniversary balloon over Albuquerque',
       alt: 'The MIS, Inc. hot air balloon rising over the Albuquerque International Balloon Fiesta',
-    }}
-    ctas={[
+    }} ctas={[
       { label: 'Book a free strategy call', href: '/free-consultation' },
       { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-    ]}
-    note="A real conversation with the people who’ll actually do the work."
-  />
+    ]} note="A real conversation with the people who’ll actually do the work." layout="centered" />
 
   <!-- Facts -->
   <div class="border-y border-line bg-paper-tint">

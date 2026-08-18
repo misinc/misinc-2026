@@ -1,7 +1,7 @@
 ---
 title: Healthcare Web Design
 heading: Grow your practice with a website patients trust
-summary: Websites for medical, dental, dermatology, and optometry practices — clear, accessible, and built with patient privacy in mind.
+summary: Websites for medical, dental, dermatology, and optometry practices. Clear, accessible, and built with patient privacy in mind.
 pillar: websites
 order: 6
 ranking: true
@@ -14,7 +14,7 @@ hero:
   type: image
   src: /img/work/coleman-vision.jpg
   alt: Coleman Vision LASIK practice website
-  caption: Coleman Vision — Albuquerque
+  caption: Coleman Vision, Albuquerque
 nextStep: >-
   We will review your current site with an eye on accessibility, speed, and how easily a new patient can actually reach you.
 seo:
@@ -24,7 +24,7 @@ seo:
 
 ## Having a website is no longer enough
 
-Patients research practices the way they research everything else — on a phone, quickly, comparing two or three options. Whether you are a physician, dentist, dermatologist, or optometrist, your site has about ten seconds to answer three questions: are you taking new patients, do you take their insurance, and can they get an appointment soon.
+Patients research practices the way they research everything else: on a phone, quickly, comparing two or three options. Whether you are a physician, dentist, dermatologist, or optometrist, your site has about ten seconds to answer three questions: are you taking new patients, do you take their insurance, and can they get an appointment soon.
 
 Most practice websites bury all three.
 

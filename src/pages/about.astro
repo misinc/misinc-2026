@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content'
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import PageHero from '../components/PageHero.astro'
-import Timeline from '../components/Timeline.astro'
-import Testimonial from '../components/Testimonial.astro'
-import Button from '../components/Button.astro'
-import CtaBand from '../components/CtaBand.astro'
-import StaticMap from '../components/StaticMap.astro'
-import { site, yearsInBusiness, mapsUrl } from '../lib/site'
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import Timeline from '../components/Timeline.astro';
+import Testimonial from '../components/Testimonial.astro';
+import Button from '../components/Button.astro';
+import CtaBand from '../components/CtaBand.astro';
+import StaticMap from '../components/StaticMap.astro';
+import { site, yearsInBusiness, mapsUrl } from '../lib/site';
 
 const work = await getCollection('work')
 const quote = work.find((w) => w.id === 'cheezie-chews')
@@ -21,7 +21,7 @@ const principles = [
   },
   {
     title: 'Fixed prices, agreed up front',
-    body: 'You get a number before work starts, not an hourly meter. When a project grows mid-way, we have been known to absorb it rather than re-invoice — one of our clients wrote a review about exactly that.',
+    body: 'You get a number before work starts, not an hourly meter. When a project grows mid-way, we have been known to absorb it rather than re-invoice, and one of our clients wrote a review about exactly that.',
   },
   {
     title: 'You talk to the people building it',
@@ -50,26 +50,20 @@ const aboutSchema = {
 ---
 
 <Base
-  title="About MIS, Inc. — Albuquerque Web Design Since 1995"
+  title="About MIS, Inc. | Albuquerque Web Design Since 1995"
   description="MIS, Inc. was founded by Karim Ardalan in Albuquerque, New Mexico in July 1995. A boutique web design, development, and AI studio that has built through every era of the web."
   schema={aboutSchema}
 >
   <div class="border-b border-line">
-    <PageHero
-      eyebrow="About"
-      title="Thirty-one years in one city"
-      lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since."
-      media={{
+    <PageHero eyebrow="About" title="Thirty-one years in one city" lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since." media={{
         type: 'image',
         src: '/img/office-marquette.jpg',
         alt: 'The office building at 500 Marquette Avenue NW in downtown Albuquerque, where MIS, Inc. is based',
         caption: '500 Marquette Ave NW, Downtown Albuquerque',
-      }}
-      ctas={[
+      }} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-      ]}
-    />
+      ]} layout="centered" />
   </div>
 
   <div class="border-b border-line bg-paper-tint">
@@ -144,7 +138,7 @@ const aboutSchema = {
           <p class="mt-1 text-sm font-semibold text-ink-muted">Founder</p>
           <p class="mt-3 text-sm text-ink-soft">
             Karim founded MIS in 1995 and has led every project since. If you book a call, this is
-            who you are speaking to — and who will be doing or directing the work.
+            who you are speaking to, and who will be doing or directing the work.
           </p>
           <p class="mt-4 text-sm text-ink-muted">
             <a
@@ -227,7 +221,7 @@ const aboutSchema = {
           />
           <div class="mt-4 max-w-[62ch] text-ink-soft">
             <p class="mb-4">
-              We are downtown at 500 Marquette, and we mean the invitation literally — a lot of our
+              We are downtown at 500 Marquette, and we mean the invitation literally. A lot of our
               best projects have started with someone dropping in or meeting us for coffee nearby.
             </p>
             <p class="mb-6">

@@ -19,4 +19,4 @@ Pars Cuisine has been serving Persian and Mediterranean food in Albuquerque for 
 
 We rebuilt it around the things that actually generate revenue between visits: takeout ordering, catering enquiries, and gift cards. All three now run through the same system as the register, so the menu online and the menu at the counter cannot disagree with each other.
 
-The result is a site the staff can update themselves — marking a dish sold out, changing a price, or adjusting holiday hours takes under a minute from a phone.
+The result is a site the staff can update themselves. Marking a dish sold out, changing a price, or adjusting holiday hours takes under a minute from a phone.

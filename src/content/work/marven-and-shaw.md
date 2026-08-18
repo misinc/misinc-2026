@@ -1,7 +1,7 @@
 ---
 title: "Marven & Shaw"
 client: "Marven & Shaw"
-summary: "Private-sector investigators working on corruption, money laundering, and fraud — a site that had to be credible without being loud."
+summary: "Private-sector investigators working on corruption, money laundering, and fraud, on a site that had to be credible without being loud."
 category: business
 image: /img/work/marven-and-shaw.avif
 imageAlt: "Marven & Shaw investigations website homepage"
@@ -19,11 +19,11 @@ Marven & Shaw run complex investigations into corruption, money laundering, and 
 
 ## Confidence without theatrics
 
-Almost every visual convention available to this category is wrong for it. Investigations work has an established aesthetic — dark backgrounds, surveillance imagery, a general air of the thriller — and all of it reads as performance.
+Almost every visual convention available to this category is wrong for it. Investigations work has an established aesthetic of dark backgrounds, surveillance imagery, and a general air of the thriller, and all of it reads as performance.
 
 The people who hire this firm are lawyers, agencies, and whistleblowers, and every one of them is assessing seriousness. A site that looks like a film poster suggests a firm that thinks about how the work looks rather than whether it stands up in court.
 
-So the design is restrained and typographic, and the case is made in the writing. Their three stated pillars — experience, service, and values — are given as plain claims a reader can weigh, not decorated.
+So the design is restrained and typographic, and the case is made in the writing. Their three stated pillars of experience, service, and values are given as plain claims a reader can weigh, not decorated.
 
 ## The history section earns its place
 

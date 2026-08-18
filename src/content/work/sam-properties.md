@@ -16,6 +16,6 @@ seo:
 
 SAM Properties leases executive office space in a genuinely attractive Albuquerque building, and for commercial leasing the website does a specific job: it decides whether someone books a tour.
 
-That makes photography the most important element on the page, not the copy. We built the site around it, with space details that answer the practical questions — size, configuration, what is included — and a straightforward path to arranging a visit.
+That makes photography the most important element on the page, not the copy. We built the site around it, with space details that answer the practical questions of size, configuration, and what is included, and a straightforward path to arranging a visit.
 
 Working with Phil and Sue on this one was a pleasure.

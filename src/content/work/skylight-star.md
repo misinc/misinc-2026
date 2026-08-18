@@ -20,7 +20,7 @@ Advanced Skylight Services has been a client of ours for more than twenty years.
 
 In 2025 the business passed to Rheanna, the owner's daughter, and the site was rebuilt.
 
-That context mattered more than it might sound. A generational handover is one of the few moments when a business genuinely reconsiders how it presents itself — not because the old site had failed, but because the person running it now has a different view of where it is going. Those are good projects to be asked into, and after two decades we knew the business well enough to be useful quickly.
+That context mattered more than it might sound. A generational handover is one of the few moments when a business genuinely reconsiders how it presents itself, not because the old site had failed, but because the person running it now has a different view of where it is going. Those are good projects to be asked into, and after two decades we knew the business well enough to be useful quickly.
 
 ## Three audiences who buy differently
 
@@ -30,6 +30,6 @@ The site addresses all three directly rather than making each work out which par
 
 ## A real product catalogue
 
-The range is genuinely wide — barrel vaults, clustered skylights, curb mount, insulated curb, operable, pyramidal, ridge vaults, self-flashing, and special shapes. That is a catalogue, not a services list, and it is structured as one, with specifications and options where a specifier expects them and a gallery for everyone else.
+The range is genuinely wide: barrel vaults, clustered skylights, curb mount, insulated curb, operable, pyramidal, ridge vaults, self-flashing, and special shapes. That is a catalogue, not a services list, and it is structured as one, with specifications and options where a specifier expects them and a gallery for everyone else.
 
 Built on [Webflow](/platforms/webflow), so adding a product or a new project photograph does not require us.

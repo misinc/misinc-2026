@@ -1,7 +1,7 @@
 ---
 title: "Syserco Energy Solutions"
 client: "Syserco Energy Solutions"
-summary: "A sister site to Syserco for a different business — energy performance contracting — kept visibly related without being a copy."
+summary: "A sister site to Syserco for a different business, energy performance contracting, kept visibly related without being a copy."
 category: business
 image: /img/work/syserco-es.avif
 imageAlt: "Syserco Energy Solutions website homepage"
@@ -27,10 +27,10 @@ So the two sites share their structural logic and visual family while the conten
 
 ## A financing model that needs explaining
 
-The substance here is energy performance contracting — a model where the improvements are funded from the savings they generate. It is genuinely attractive to a public agency with no capital budget, and genuinely unfamiliar to most of the people who would benefit.
+The substance here is energy performance contracting, a model where the improvements are funded from the savings they generate. It is genuinely attractive to a public agency with no capital budget, and genuinely unfamiliar to most of the people who would benefit.
 
 An unfamiliar model is a content problem before it is a design one. The site walks through it in three steps rather than assuming the reader arrives knowing what performance contracting means, because the ones who most need it are exactly the ones who do not.
 
-Offices across California — headquarters plus Sacramento, Petaluma, Fresno, and Los Angeles — are laid out so a visitor can find the nearest team without hunting.
+The offices across California (headquarters plus Sacramento, Petaluma, Fresno, and Los Angeles) are laid out so a visitor can find the nearest team without hunting.
 
 Built on [Webflow](/platforms/webflow).

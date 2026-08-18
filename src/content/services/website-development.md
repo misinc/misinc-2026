@@ -1,7 +1,7 @@
 ---
 title: Website Development
 heading: Built properly, on Webflow or Astro
-summary: The build itself — turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
+summary: The build itself, turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
 pillar: websites
 order: 2
 platforms: [webflow]
@@ -39,7 +39,7 @@ We are Webflow partners and have built and maintained client sites on it for yea
 
 Astro is what we reach for when performance and control matter more than in-browser editing. It produces genuinely static HTML, which means near-instant page loads, excellent Core Web Vitals, and a site that search engines and AI crawlers can read effortlessly.
 
-It also has no monthly platform fee, and content lives in files under version control — so your site's history is recoverable and nothing is trapped in a proprietary editor.
+It also has no monthly platform fee, and content lives in files under version control, so your site's history is recoverable and nothing is trapped in a proprietary editor.
 
 This site is built on Astro, which is the most honest demonstration we can offer.
 
@@ -49,13 +49,13 @@ This site is built on Astro, which is the most honest demonstration we can offer
 
 - **Front-end build** to match the design, tested across real devices rather than just a desktop browser
 - **CMS setup** so the content you update often is editable without touching code
-- **Integrations** — booking, payments, CRM, email platform, analytics
-- **Performance work** — image optimization, font loading, and the details that decide whether a page feels instant
-- **Accessibility** — semantic markup, keyboard navigation, and screen reader support built in rather than retrofitted
+- **Integrations** for booking, payments, CRM, email platform, and analytics
+- **Performance work**, including image optimization, font loading, and the details that decide whether a page feels instant
+- **Accessibility**, with semantic markup, keyboard navigation, and screen reader support built in rather than retrofitted
 - **Launch and handover**, including training and documentation for whoever maintains it
 
 ## Migrating from something else
 
-A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated sites from Wix, Weebly, Squarespace, Business Catalyst, and ageing self-hosted installations onto Webflow and Astro — carrying the content across and, critically, the URLs that carry your search rankings.
+A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated sites from Wix, Weebly, Squarespace, Business Catalyst, and ageing self-hosted installations onto Webflow and Astro, carrying the content across and, critically, the URLs that carry your search rankings.
 
 More detail on that is on our [website migrations page](/website-migrations).

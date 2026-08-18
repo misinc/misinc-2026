@@ -1,6 +1,6 @@
 ---
 name: Webflow
-summary: Visual design, a real CMS, and hosting that works — our default for clients who want to manage their own site.
+summary: Visual design, a real CMS, and hosting that works. Our default for clients who want to manage their own site.
 icon: /img/platforms/webflow.svg
 stance: partner
 credential: Certified Webflow Partner
@@ -32,7 +32,7 @@ For a small business that wants to add a page, change a price, or publish a post
 
 **There is a monthly cost.** Hosting and CMS plans are ongoing. It is competitive against WordPress once you count hosting, plugins, and maintenance, but unlike a static site it is never zero.
 
-**There is a learning curve for editors.** Not a steep one, and we train you — but the first hour is unfamiliar.
+**There is a learning curve for editors.** Not a steep one, and we train you, but the first hour is unfamiliar.
 
 **It has limits at the extremes.** Very large catalogs, complex application logic, or unusual integrations may be better served by a [custom build](/services/website-development). We will say so if that is your situation.
 

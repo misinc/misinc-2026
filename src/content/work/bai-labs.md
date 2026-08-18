@@ -20,7 +20,7 @@ bAI Labs is an applied AI innovation lab in Annapolis, Maryland, backed by four 
 
 The difficulty with an AI company's website is that almost everyone in the category writes the same page. Abstract nouns, a gradient, and no way for a reader to work out what would actually be delivered. The brief here was the opposite: make it concrete.
 
-So the structure carries the weight. Two named platforms — Geo-bAI, for talking to geospatial data, and CNOVA, which turns field observation into organisational knowledge — get their own space rather than being folded into a features list. The three service lines are separated so a reader can tell consulting from education without reading closely.
+So the structure carries the weight. Two named platforms get their own space rather than being folded into a features list: Geo-bAI, for talking to geospatial data, and CNOVA, which turns field observation into organisational knowledge. The three service lines are separated so a reader can tell consulting from education without reading closely.
 
 The visual direction is deliberately dark and image-led, which gives the interface room to be quiet. When the subject is already complex, the design's job is to reduce the number of things competing for attention.
 

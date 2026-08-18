@@ -16,13 +16,13 @@ seo:
 
 ## We built a lot of sites on Weebly Cloud
 
-Weebly Cloud is the reseller platform Weebly offered to agencies — the same underlying builder, with account management and billing we handled on the client’s behalf. For years it was a genuinely good answer for small businesses: straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
+Weebly Cloud is the reseller platform Weebly offered to agencies: the same underlying builder, with account management and billing we handled on the client’s behalf. For years it was a genuinely good answer for small businesses: straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
 
 Square acquired Weebly in 2018, and development has been steadily folded into Square Online since. New investment goes there, not into Weebly itself.
 
 ## Why we are moving clients off it
 
-**The platform is not being developed.** A site on a platform nobody is improving falls further behind every year — in performance, in SEO capability, and in what it can integrate with.
+**The platform is not being developed.** A site on a platform nobody is improving falls further behind every year in performance, in SEO capability, and in what it can integrate with.
 
 **Performance is dated.** Weebly sites are heavier and slower than what current platforms produce, and page speed matters more now than when these sites were built.
 
@@ -38,7 +38,7 @@ We are flagging it so the decision is yours and made in advance, rather than som
 
 ## What we recommend instead
 
-**[Square Online](/platforms/square-online-store)** is the natural move if you use Square at the counter — it is effectively where Weebly went.
+**[Square Online](/platforms/square-online-store)** is the natural move if you use Square at the counter. It is effectively where Weebly went.
 
 **[Webflow](/platforms/webflow)** if you want to keep editing your own site with far more design control.
 
