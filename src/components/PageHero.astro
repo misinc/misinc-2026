@@ -15,6 +15,13 @@ import Button from './Button.astro'
  *   media={{ type: 'image', src: '/img/work/x.jpg', alt: '…' }}
  *   (omit)  → branded fallback panel
  *
+ * Autoplay videos use preload="auto", not "metadata". WebKit takes
+ * preload="metadata" literally and will not promote it to a playback fetch on
+ * its own, so Safari showed a still frame while Chrome played. Autoplay means
+ * we are fetching the file regardless, so there is nothing saved by asking for
+ * less. The source file also has to be faststart (moov atom before mdat) or
+ * Safari cannot begin until the whole file has arrived.
+ *
  * `shape` controls the frame, not the file: both shapes accept either media
  * type, and the asset is cropped with object-fit. A 16:9 video shown in a
  * `portrait` frame reads as a vertical clip on desktop — which is what the
@@ -124,7 +131,7 @@ const position = media?.position ?? (media?.type === 'image' ? 'left top' : 'cen
               muted
               loop
               playsinline
-              preload="metadata"
+              preload="auto"
               poster={media.poster}
               aria-label={media.caption ?? media.alt}
             >
