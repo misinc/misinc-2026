@@ -2,6 +2,7 @@
 name: Add On AI Chat
 summary: Our own AI chat widget. It answers customer questions and captures leads on a website you already have.
 icon: /img/platforms/addonaichat.png
+url: https://www.addonaichat.com
 stance: own
 credential: Built and maintained by MIS, Inc.
 verdict: We built it, we run it, and we set it up for you.

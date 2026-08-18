@@ -56,7 +56,8 @@ const platforms = defineCollection({
     /** One-line description used on cards and chips. */
     summary: z.string(),
     icon: z.string(),
-    url: z.string(),
+    /** Omit for platforms we no longer recommend — no outbound link is shown. */
+    url: z.string().optional(),
     /**
      * Our relationship with the platform.
      *   partner — we are an official/certified partner, not merely a user

@@ -2,6 +2,7 @@
 name: Webflow
 summary: Visual design, a real CMS, and hosting that works. Our default for clients who want to manage their own site.
 icon: /img/platforms/webflow.svg
+url: https://www.webflow.com
 stance: partner
 credential: Certified Webflow Partner
 verdict: Our first recommendation for most small business websites.

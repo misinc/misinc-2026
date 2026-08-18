@@ -103,11 +103,19 @@ const breadcrumbs = {
             the site, not the one that keeps you dependent on us. If something
             cheaper would serve you better, we will say so.
           </p>
-          <br/>
-          <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
-            Learn more
-          </dt>
-          <dd class="mt-1 ml-0"><a href={platform.data.url} rel="noopener" class="font-bold text-primary no-underline hover:underline" target="_blank"> Visit site &nearr; </a></dd>
+          {
+            platform.data.url && (
+              <>
+                <br />
+                <dt class="text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+                  Learn more
+                </dt>
+                <dd class="mt-1 ml-0">
+                  <a href={platform.data.url} rel="noopener" class="font-bold text-primary no-underline hover:underline" target="_blank"> Visit site &nearr; </a>
+                </dd>
+              </>
+            )
+          }
         </div>
       </aside>
     </div>
