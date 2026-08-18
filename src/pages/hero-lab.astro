@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
 import Button from '../components/Button.astro'
+import PageHero from '../components/PageHero.astro'
 
 /**
  * TEMPORARY — hero layout comparison. Delete before launch.
@@ -268,6 +269,37 @@ const variations = [
     ))
   }
 
+  <section class="border-t border-line" data-variation>
+    <div class="mx-auto max-w-(--container-content) px-6 pt-10 md:px-10">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <span class="font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+          Shipped &mdash; PageHero layout="centered"
+        </span>
+        <span
+          class="font-sans text-[11px] font-extrabold uppercase tracking-(--tracking-label) text-primary"
+          data-readout
+        />
+      </div>
+      <p class="mt-2 max-w-(--container-prose) font-sans text-sm text-ink-soft">
+        The real component rendering variation 2, to confirm it matches the mockup above.
+        Add <code class="font-mono">layout="centered"</code> to any PageHero to get this.
+      </p>
+    </div>
+    <PageHero
+      eyebrow={EYEBROW}
+      title="The web keeps changing."
+      typed={{ text: 'We’ve been building it ', highlight: 'since\u00A01995.' }}
+      lede={LEDE}
+      note={NOTE}
+      layout="centered"
+      media={{ type: 'image', src: POSTER, alt: '', caption: CAPTION, position: 'center' }}
+      ctas={[
+        { label: 'Book a free strategy call', href: '#' },
+        { label: 'See our projects', href: '#', variant: 'ghost' },
+      ]}
+    />
+  </section>
+
   <div class="border-t border-line">
     <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10">
       <p class="max-w-(--container-prose) text-sm text-ink-muted">
@@ -283,7 +315,7 @@ const variations = [
     // numbers rather than on how it happens to look at one window size.
     const measure = () => {
       document.querySelectorAll<HTMLElement>('[data-variation]').forEach((section) => {
-        const h = section.querySelector<HTMLElement>('[data-headline]')
+        const h = section.querySelector<HTMLElement>('[data-headline], [data-hero-title]')
         const out = section.querySelector<HTMLElement>('[data-readout]')
         if (!h || !out) return
         const cs = getComputedStyle(h)
