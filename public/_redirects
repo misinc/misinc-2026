@@ -5,65 +5,61 @@
 
 # --- Head-term consolidation -------------------------------------------------
 # Two pages were splitting "albuquerque web design"; the home page ranks better.
-/albuquerque-web-design                         /                                    301
 
+/albuquerque-web-design                         /                                    301
 # --- Retired: we no longer take WordPress maintenance work -------------------
 # The ProCare *service* is retired, but /platforms/wordpress stays live and
 # explains why we no longer build on it — a real page holds those 1,047 annual
 # impressions and converts some of them, which a redirect cannot do.
+
 /services/wordpress-procare-plan                /platforms/wordpress                 301
 /wordpress-procare-signup                       /platforms/wordpress                 301
-
 # --- Services: three thin marketing pages become one pillar ------------------
+
 /services/email-marketing                       /services/digital-marketing          301
 /services/social-media-marketing                /services/digital-marketing          301
 /services/digital-marketing-for-online-stores   /services/digital-marketing          301
-
 # --- Platforms: keep the six partner pages, retire the rest ------------------
+
 /platforms/activecampaign                       /services/digital-marketing          301
 /platforms/facebook                             /services/digital-marketing          301
 /platforms/twitter                              /services/digital-marketing          301
 /platforms/addon-commerce                       /services/ecommerce-website-design   301
 /platforms/webflow-e-commerce                   /services/ecommerce-website-design   301
 /platforms/elementor-builder-for-wordpress      /platforms/wordpress                 301
-
 # --- Retired ecommerce (Webflow store is being decommissioned) ---------------
+
 /checkout                                       /services                            301
 /paypal-checkout                                /services                            301
 /order-confirmation                             /services                            301
-/product/*                                      /services                            301
-/sku/*                                          /services                            301
-/category/*                                     /services                            301
-
 # --- Domain management: business continues, these pages don't ----------------
+
 /domains                                        /contact                             301
 /domains-ns                                     /contact                             301
-
 # --- One offer, one page -----------------------------------------------------
+
 /website-audit                                  /free-consultation                   301
 /free-website-audit                             /free-consultation                   301
-
 # --- Packages fold into the services they belong to --------------------------
+
 /packages/ongoing-search-engine-optimization    /services/seo                        301
 /packages/seo-basics-square-online              /services/seo                        301
 /packages/small-square-online-store             /services/ecommerce-website-design   301
 /packages/website-migration-to-square-online    /website-migrations                  301
 /packages/online-ordering-page                  /services/ecommerce-website-design   301
 /packages/website-with-online-ordering-square   /services/ecommerce-website-design   301
-/packages/*                                     /services                            301
-
 # --- Retired case study ------------------------------------------------------
-/works/reule                                    /portfolio                           301
 
+/works/reule                                    /portfolio                           301
 # --- Consolidated keyword-variant posts ---------------------------------------
 # Five posts targeted variants of "albuquerque web design" with 268 impressions
 # between them, against a home page with 30,881 for the same intent. Two survive
 # with distinct angles; the rest point at the pages that should rank.
+
 /blog/albuquerque-seo                           /blog/albuquerque-seo-company        301
 /blog/albuquerque-web-design                    /services/web-design                 301
 /blog/website-design-albuquerque                /services/web-design                 301
 /blog/albuquerque-web-development               /services/website-development        301
-
 # --- Retired blog posts -------------------------------------------------------
 # 27 of the 38 migrated posts turned out to be one-line link shares pointing at
 # other people's articles via buff.ly — social posts that Webflow stored as blog
@@ -97,34 +93,28 @@
 /blog/these-4-things-could-be-blocking-your-business-growth-and-you-don-t-even-see-them /blog                                301
 /blog/why-seo-is-critical-for-your-business-in-2019 /blog                                301
 /blog/why-writing-for-customers-is-your-best-seo-strategy /blog                                301
-# --- Taxonomy cleanup --------------------------------------------------------
-/work-category/*                                /portfolio                           301
-/blog-tags/*                                    /blog                                301
-/blog-authors/*                                 /about                               301
-
 # --- Utility / legacy --------------------------------------------------------
-/sitemap                                        /                                    301
-/well-known/*                                   /                                    301
 
 # The WordPress ProCare page carried a live Stripe checkout that returned to
 # /subscriptions/success and /subscriptions/canceled. That checkout is retired
 # with the page, so these now point at /contact rather than 404 — existing
 # ProCare subscribers are unaffected (billing lives in Stripe, not here), but
 # check the return URLs on any Stripe Customer Portal config before launch.
+
+# Astro and Supabase are how we build, not partners — their pages were removed.
+
+/sitemap                                        /                                    301
 /subscriptions/success                          /contact                             301
 /subscriptions/canceled                         /contact                             301
 /subscriptions/national-seo-ppc-management      /services/seo                        301
-/subscriptions/*                                /services                            301
-
-# Astro and Supabase are how we build, not partners — their pages were removed.
 /platforms/astro                                /services/website-development        301
 /platforms/supabase                             /services/custom-software            301
 /platforms/weebly                               /platforms/weebly-cloud              301
-
 # --- Retired blog posts — the 79 never exported ------------------------------
 # The reposts identified in docs/blog-migration.md: aggregated link shares with
 # five or fewer impressions each. Listed explicitly rather than as a /blog/*
 # splat, which would swallow the eight real posts we kept.
+
 /blog/10-social-media-marketing-tips-to-grow-your-small-business /blog                                301
 /blog/10-steps-to-launch-a-successful-social-media-marketing-campaign /blog                                301
 /blog/18-things-to-be-thankful-for-at-work      /blog                                301
@@ -204,11 +194,11 @@
 /blog/want-7-figure-podcast-downloads-try-these-5-strategies /blog                                301
 /blog/want-to-win-write-stuff-down              /blog                                301
 /blog/why-branding-is-so-important-and-3-tips-to-get-it-right /blog                                301
-
 # --- Blog categories ---------------------------------------------------------
 # Webflow rendered a page per category. The Albuquerque keyword categories carried
 # real impressions (albuquerque-seo-company alone had 530), so each points at the
 # post or service page that now owns that intent rather than all landing on /blog.
+
 /blog-categories/albuquerque-seo                /blog/albuquerque-seo-company        301
 /blog-categories/albuquerque-seo-company        /blog/albuquerque-seo-company        301
 /blog-categories/albuquerque-seo-services       /blog/albuquerque-seo-services       301
@@ -224,10 +214,10 @@
 /blog-categories/social-media                   /services/digital-marketing          301
 /blog-categories/design                         /services/web-design                 301
 /blog-categories/small-business                 /blog                                301
-
 # --- Booking and scheduling pages --------------------------------------------
 # Nine Cal.com booking pages we sent clients directly. One consultation page
 # replaces all of them.
+
 /schedule                                       /free-consultation                   301
 /website-meeting                                /free-consultation                   301
 /meeting-at-misinc                              /free-consultation                   301
@@ -237,26 +227,22 @@
 /square-online-store-kickoff                    /free-consultation                   301
 /square-online-store-free-consultation          /free-consultation                   301
 /real-estate-web-designer-consultation          /free-consultation                   301
-
 # --- Legacy platform page missed in the first pass ---------------------------
-/platforms/woocommerce                          /services/ecommerce-website-design   301
 
+/platforms/woocommerce                          /services/ecommerce-website-design   301
 # --- Pre-2017 PHP site -------------------------------------------------------
 # Two of these are live rules carried over from the Webflow migration:
 # /services/search-engine-optimization and /support were the only legacy rules
 # still configured. The rest of that PHP site 404s on Webflow today — mapping it
 # here costs nothing and recovers anything still linking to the old structure.
+
 /services/search-engine-optimization            /services/seo                        301
 /support                                        /contact                             301
 /support/payment                                /contact                             301
 /about_us                                       /about                               301
-/about_us/*                                     /about                               301
 /contact_us                                     /contact                             301
-/contact_us/*                                   /contact                             301
 /client_support                                 /contact                             301
-/client_support/*                               /contact                             301
 /estimates                                      /free-consultation                   301
-/estimates/*                                    /free-consultation                   301
 /services/design.php                            /services/web-design                 301
 /services/development.php                       /services/website-development        301
 /services/promotion.php                         /services/digital-marketing          301
@@ -264,14 +250,11 @@
 /services/multimedia.php                        /services                            301
 /services/neurodynamics.html                    /services/custom-software            301
 /services/hosting                               /services/website-development        301
-/services/hosting/*                             /services/website-development        301
 /services/index.php                             /services                            301
 /portfolio/index.php                            /portfolio                           301
 /hosting/index.php                              /services/website-development        301
 /renew_domain.htm                               /contact                             301
 /index.php                                      /                                    301
-/index.php/*                                    /                                    301
-
 # --- Carried over from Webflow's own 301 table ---------------------------------
 # Exported 2026-08-18. Two of these (/services/search-engine-optimization
 # and /support) were already here; the rest are Webflow-era paths that no
@@ -284,6 +267,10 @@
 # goes straight there. /services/jewelry-store-website-design was the one
 # target with no page in the new site, so both jewelry rules land on
 # e-commerce, which is what that page sold.
+
+# The old /news-1 blog. Named posts go to their surviving URL; everything
+# else lands on the index, because a second hop would not be followed.
+
 /home-pages/home-3                              /                                    301
 /home-3                                         /                                    301
 /style-guide                                    /                                    301
@@ -307,9 +294,6 @@
 /about/front-end-web-developer                  /contact                             301
 /about/web-support-specialist                   /contact                             301
 /platforms/realtyengine                         /platforms/addonidx                  301
-
-# The old /news-1 blog. Named posts go to their surviving URL; everything
-# else lands on the index, because a second hop would not be followed.
 /news-1                                         /blog                                301
 /news-1/albuquerque-seo-company                 /blog/albuquerque-seo-company        301
 /news-1/albuquerque-seo-services                /blog/albuquerque-seo-services       301
@@ -319,9 +303,48 @@
 /news-1/square-online-store                     /blog/square-online-store            301
 /news-1/web-developer-albuquerque               /blog/web-developer-albuquerque      301
 /news-1/website-designers-albuquerque           /blog/website-designers-albuquerque  301
-/news-1/*                                       /blog                                301
-
 # --- Convenience aliases -----------------------------------------------------
+
 /work                                           /portfolio                           301
 /case-studies                                   /portfolio                           301
 /faqs                                           /faq                                 301
+
+# =============================================================================
+# DYNAMIC RULES — these must come last, after every static rule.
+#
+# Cloudflare counts every rule at or after the first wildcard as dynamic, and
+# caps dynamic rules at 100. With splats mixed into the sections above, 223 of
+# our 238 rules fell after the first one and the deploy was rejected. Keeping
+# every wildcard down here leaves 222 static and 16 dynamic.
+#
+# First match still wins, so the specific rules above continue to beat these.
+# Nothing here may be moved back up.
+# =============================================================================
+
+# Retired ecommerce (Webflow store is being decommissioned)
+/product/*                                      /services                            301
+/sku/*                                          /services                            301
+/category/*                                     /services                            301
+
+# Packages fold into the services they belong to
+/packages/*                                     /services                            301
+
+# Taxonomy cleanup
+/work-category/*                                /portfolio                           301
+/blog-tags/*                                    /blog                                301
+/blog-authors/*                                 /about                               301
+
+# Utility / legacy
+/well-known/*                                   /                                    301
+/subscriptions/*                                /services                            301
+
+# Pre-2017 PHP site
+/about_us/*                                     /about                               301
+/contact_us/*                                   /contact                             301
+/client_support/*                               /contact                             301
+/estimates/*                                    /free-consultation                   301
+/services/hosting/*                             /services/website-development        301
+/index.php/*                                    /                                    301
+
+# Carried over from Webflow's own 301 table
+/news-1/*                                       /blog                                301
