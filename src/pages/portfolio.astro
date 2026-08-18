@@ -9,6 +9,7 @@ import Testimonial from '../components/Testimonial.astro'
 import CtaBand from '../components/CtaBand.astro'
 import { WORK_CATEGORIES } from '../lib/work'
 import { yearsInBusiness } from '../lib/site'
+import { breadcrumbs, collectionPage } from '../lib/schema'
 
 const all = (await getCollection('work')).sort(
   (a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999),
@@ -21,11 +22,23 @@ const filters = (
 ).filter(([key]) => used.has(key))
 
 const testimonials = all.filter((w) => w.data.testimonial)
+const schema = [
+  collectionPage({
+    name: 'Our work',
+    description:
+      'Websites, online stores, and custom software built by MIS, Inc. in Albuquerque, New Mexico.',
+    path: '/portfolio',
+    items: all.map((w) => ({ name: w.data.title, href: `/works/${w.id}` })),
+  }),
+  breadcrumbs([{ name: 'Our work' }]),
+]
+
 ---
 
 <Base
   title="Albuquerque Web Design Portfolio | Our Work | MIS, Inc."
   description="Websites, online stores, and custom software built by MIS, Inc. in Albuquerque, New Mexico — for restaurants, healthcare practices, Realtors, nonprofits, and small businesses since 1995."
+  schema={schema}
 >
   <div class="border-b border-line">
     <PageHero

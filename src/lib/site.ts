@@ -31,6 +31,23 @@ export const site = {
   phoneHref: 'tel:+15053413060',
   email: 'hello@misinc.com',
 
+  /**
+   * Profiles we actually maintain, emitted as schema.org `sameAs` so search
+   * engines can tie them to the same business. Facebook and X are deliberately
+   * absent — they exist but are not active, and pointing search engines at a
+   * dormant profile is worse than pointing them nowhere.
+   *
+   * The Google entry is the Knowledge Graph id behind the Business Profile
+   * (kgmid /g/1tp2_vc3), which is stable; the share.google short link it came
+   * from is not.
+   */
+  profiles: [
+    'https://www.linkedin.com/company/multimedia-internet-services-inc./',
+    'https://www.instagram.com/misinc_com/',
+    'https://www.youtube.com/channel/UC2y263fRn6-vSq4m94JGlJQ',
+    'https://www.google.com/search?kgmid=/g/1tp2_vc3',
+  ],
+
   nav: [
     { label: 'Work', href: '/portfolio' },
     { label: 'Services', href: '/services' },

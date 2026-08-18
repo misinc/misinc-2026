@@ -5,65 +5,64 @@
 
 # --- Head-term consolidation -------------------------------------------------
 # Two pages were splitting "albuquerque web design"; the home page ranks better.
-/albuquerque-web-design                         /                                   301
+/albuquerque-web-design                         /                                    301
 
 # --- Retired: we no longer take WordPress maintenance work -------------------
 # The ProCare *service* is retired, but /platforms/wordpress stays live and
 # explains why we no longer build on it — a real page holds those 1,047 annual
 # impressions and converts some of them, which a redirect cannot do.
-/services/wordpress-procare-plan                /services/website-development       301
-/wordpress-procare-signup                       /services/website-development       301
+/services/wordpress-procare-plan                /platforms/wordpress                 301
+/wordpress-procare-signup                       /platforms/wordpress                 301
 
 # --- Services: three thin marketing pages become one pillar ------------------
-/services/email-marketing                       /services/digital-marketing         301
-/services/social-media-marketing                /services/digital-marketing         301
-/services/digital-marketing-for-online-stores   /services/digital-marketing         301
+/services/email-marketing                       /services/digital-marketing          301
+/services/social-media-marketing                /services/digital-marketing          301
+/services/digital-marketing-for-online-stores   /services/digital-marketing          301
 
 # --- Platforms: keep the six partner pages, retire the rest ------------------
-/platforms/activecampaign                       /services/digital-marketing         301
-/platforms/facebook                             /services/digital-marketing         301
-/platforms/twitter                              /services/digital-marketing         301
-/platforms/addon-commerce                       /services/ecommerce-website-design  301
-/platforms/webflow-e-commerce                   /services/ecommerce-website-design  301
-/platforms/elementor-builder-for-wordpress      /platforms/wordpress                301
-/platforms/addonidx                             /services/real-estate-website-design 301
+/platforms/activecampaign                       /services/digital-marketing          301
+/platforms/facebook                             /services/digital-marketing          301
+/platforms/twitter                              /services/digital-marketing          301
+/platforms/addon-commerce                       /services/ecommerce-website-design   301
+/platforms/webflow-e-commerce                   /services/ecommerce-website-design   301
+/platforms/elementor-builder-for-wordpress      /platforms/wordpress                 301
 
 # --- Retired ecommerce (Webflow store is being decommissioned) ---------------
-/checkout                                       /services                           301
-/paypal-checkout                                /services                           301
-/order-confirmation                             /services                           301
-/product/*                                      /services                           301
-/sku/*                                          /services                           301
-/category/*                                     /services                           301
+/checkout                                       /services                            301
+/paypal-checkout                                /services                            301
+/order-confirmation                             /services                            301
+/product/*                                      /services                            301
+/sku/*                                          /services                            301
+/category/*                                     /services                            301
 
 # --- Domain management: business continues, these pages don't ----------------
-/domains                                        /contact                            301
-/domains-ns                                     /contact                            301
+/domains                                        /contact                             301
+/domains-ns                                     /contact                             301
 
 # --- One offer, one page -----------------------------------------------------
-/website-audit                                  /free-consultation                  301
-/free-website-audit                             /free-consultation                  301
+/website-audit                                  /free-consultation                   301
+/free-website-audit                             /free-consultation                   301
 
 # --- Packages fold into the services they belong to --------------------------
-/packages/ongoing-search-engine-optimization    /services/seo                       301
-/packages/seo-basics-square-online              /services/seo                       301
-/packages/small-square-online-store             /services/ecommerce-website-design  301
-/packages/website-migration-to-square-online    /website-migrations                 301
-/packages/online-ordering-page                  /services/ecommerce-website-design  301
-/packages/website-with-online-ordering-square   /services/ecommerce-website-design  301
-/packages/*                                     /services                           301
+/packages/ongoing-search-engine-optimization    /services/seo                        301
+/packages/seo-basics-square-online              /services/seo                        301
+/packages/small-square-online-store             /services/ecommerce-website-design   301
+/packages/website-migration-to-square-online    /website-migrations                  301
+/packages/online-ordering-page                  /services/ecommerce-website-design   301
+/packages/website-with-online-ordering-square   /services/ecommerce-website-design   301
+/packages/*                                     /services                            301
 
 # --- Retired case study ------------------------------------------------------
-/works/reule                                    /portfolio                          301
+/works/reule                                    /portfolio                           301
 
 # --- Consolidated keyword-variant posts ---------------------------------------
 # Five posts targeted variants of "albuquerque web design" with 268 impressions
 # between them, against a home page with 30,881 for the same intent. Two survive
 # with distinct angles; the rest point at the pages that should rank.
-/blog/albuquerque-seo                           /blog/albuquerque-seo-company       301
-/blog/albuquerque-web-design                    /services/web-design                301
-/blog/website-design-albuquerque                /services/web-design                301
-/blog/albuquerque-web-development               /services/website-development       301
+/blog/albuquerque-seo                           /blog/albuquerque-seo-company        301
+/blog/albuquerque-web-design                    /services/web-design                 301
+/blog/website-design-albuquerque                /services/web-design                 301
+/blog/albuquerque-web-development               /services/website-development        301
 
 # --- Retired blog posts -------------------------------------------------------
 # 27 of the 38 migrated posts turned out to be one-line link shares pointing at
@@ -71,58 +70,209 @@
 # entries. Publishing them would be thin content linking off-site. Each 301s to
 # the blog index rather than 404ing; all had under 110 impressions a year.
 
-/blog/15-top-tips-to-optimize-your-content-for-the-voice-search-revolution /blog                               301
-/blog/4-content-marketing-tips-to-make-your-website-great /blog                               301
-/blog/4-ways-artificial-intelligence-ai-can-transform-your-small-business /blog                               301
-/blog/5-ecommerce-secrets-the-experts-aren-t-willing-to-share-with-you /blog                               301
-/blog/5-ecommerce-seo-tactics-to-try-today-practical-ecommerce /blog                               301
-/blog/5-low-cost-visual-creation-tools-to-help-improve-your-digital-marketing-efforts /blog                               301
-/blog/5-tips-to-dominate-local-seo                 /blog                               301
-/blog/6-marketing-tips-to-make-your-e-commerce-brand-stand-out-from-the-crowd /blog                               301
-/blog/8-texting-statistics-that-will-change-the-way-you-think-about-text-marketing /blog                               301
-/blog/google-search-console-the-definitive-guide   /blog                               301
-/blog/how-best-to-position-your-company-to-rank-well-on-google /blog                               301
-/blog/how-small-businesses-can-use-social-media-to-grow-square /blog                               301
-/blog/how-to-optimize-for-google-s-featured-snippet-box-video /blog                               301
-/blog/how-to-optimize-your-mobile-website-for-google-searches /blog                               301
-/blog/how-to-research-keywords-to-improve-your-google-ranking /blog                               301
-/blog/how-to-use-social-media-to-bring-in-more-customer-reviews /blog                               301
-/blog/how-to-write-a-killer-about-me-page          /blog                               301
-/blog/how-to-write-small-business-marketing-copy-that-makes-customers-buy /blog                               301
-/blog/it-s-2018-and-some-websites-still-aren-t-mobile-responsive /blog                               301
-/blog/the-10-best-2019-resolutions-for-small-business-owners /blog                               301
-/blog/the-2018-guide-to-google-webmaster-tools-google-index-crawl-and-more /blog                               301
-/blog/the-55-best-free-seo-tools-2019-update       /blog                               301
-/blog/the-seo-factors-you-re-probably-ignoring     /blog                               301
-/blog/the-ultimate-guide-to-seo-meta-tags          /blog                               301
-/blog/these-4-things-could-be-blocking-your-business-growth-and-you-don-t-even-see-them /blog                               301
-/blog/why-seo-is-critical-for-your-business-in-2019 /blog                               301
-/blog/why-writing-for-customers-is-your-best-seo-strategy /blog                               301
+/blog/15-top-tips-to-optimize-your-content-for-the-voice-search-revolution /blog                                301
+/blog/4-content-marketing-tips-to-make-your-website-great /blog                                301
+/blog/4-ways-artificial-intelligence-ai-can-transform-your-small-business /blog                                301
+/blog/5-ecommerce-secrets-the-experts-aren-t-willing-to-share-with-you /blog                                301
+/blog/5-ecommerce-seo-tactics-to-try-today-practical-ecommerce /blog                                301
+/blog/5-low-cost-visual-creation-tools-to-help-improve-your-digital-marketing-efforts /blog                                301
+/blog/5-tips-to-dominate-local-seo              /blog                                301
+/blog/6-marketing-tips-to-make-your-e-commerce-brand-stand-out-from-the-crowd /blog                                301
+/blog/8-texting-statistics-that-will-change-the-way-you-think-about-text-marketing /blog                                301
+/blog/google-search-console-the-definitive-guide /blog                                301
+/blog/how-best-to-position-your-company-to-rank-well-on-google /blog                                301
+/blog/how-small-businesses-can-use-social-media-to-grow-square /blog                                301
+/blog/how-to-optimize-for-google-s-featured-snippet-box-video /blog                                301
+/blog/how-to-optimize-your-mobile-website-for-google-searches /blog                                301
+/blog/how-to-research-keywords-to-improve-your-google-ranking /blog                                301
+/blog/how-to-use-social-media-to-bring-in-more-customer-reviews /blog                                301
+/blog/how-to-write-a-killer-about-me-page       /blog                                301
+/blog/how-to-write-small-business-marketing-copy-that-makes-customers-buy /blog                                301
+/blog/it-s-2018-and-some-websites-still-aren-t-mobile-responsive /blog                                301
+/blog/the-10-best-2019-resolutions-for-small-business-owners /blog                                301
+/blog/the-2018-guide-to-google-webmaster-tools-google-index-crawl-and-more /blog                                301
+/blog/the-55-best-free-seo-tools-2019-update    /blog                                301
+/blog/the-seo-factors-you-re-probably-ignoring  /blog                                301
+/blog/the-ultimate-guide-to-seo-meta-tags       /blog                                301
+/blog/these-4-things-could-be-blocking-your-business-growth-and-you-don-t-even-see-them /blog                                301
+/blog/why-seo-is-critical-for-your-business-in-2019 /blog                                301
+/blog/why-writing-for-customers-is-your-best-seo-strategy /blog                                301
 # --- Taxonomy cleanup --------------------------------------------------------
-/work-category/*                                /portfolio                          301
-/blog-tags/*                                    /blog                               301
-/blog-authors/*                                 /about                              301
+/work-category/*                                /portfolio                           301
+/blog-tags/*                                    /blog                                301
+/blog-authors/*                                 /about                               301
 
 # --- Utility / legacy --------------------------------------------------------
-/sitemap                                        /                                   301
-/well-known/*                                   /                                   301
+/sitemap                                        /                                    301
+/well-known/*                                   /                                    301
 
 # The WordPress ProCare page carried a live Stripe checkout that returned to
 # /subscriptions/success and /subscriptions/canceled. That checkout is retired
 # with the page, so these now point at /contact rather than 404 — existing
 # ProCare subscribers are unaffected (billing lives in Stripe, not here), but
 # check the return URLs on any Stripe Customer Portal config before launch.
-/subscriptions/success                          /contact                            301
-/subscriptions/canceled                         /contact                            301
-/subscriptions/national-seo-ppc-management      /services/seo                       301
-/subscriptions/*                                /services                           301
+/subscriptions/success                          /contact                             301
+/subscriptions/canceled                         /contact                             301
+/subscriptions/national-seo-ppc-management      /services/seo                        301
+/subscriptions/*                                /services                            301
 
 # Astro and Supabase are how we build, not partners — their pages were removed.
-/platforms/astro                                /services/website-development       301
-/platforms/supabase                             /services/custom-software           301
-/platforms/weebly                               /platforms/weebly-cloud             301
+/platforms/astro                                /services/website-development        301
+/platforms/supabase                             /services/custom-software            301
+/platforms/weebly                               /platforms/weebly-cloud              301
+
+# --- Retired blog posts — the 79 never exported ------------------------------
+# The reposts identified in docs/blog-migration.md: aggregated link shares with
+# five or fewer impressions each. Listed explicitly rather than as a /blog/*
+# splat, which would swallow the eight real posts we kept.
+/blog/10-social-media-marketing-tips-to-grow-your-small-business /blog                                301
+/blog/10-steps-to-launch-a-successful-social-media-marketing-campaign /blog                                301
+/blog/18-things-to-be-thankful-for-at-work      /blog                                301
+/blog/2-new-tools-from-vimeo-help-businesses-share-content-with-more-viewers-small-business-trends /blog                                301
+/blog/2018-content-trends-you-need-to-know-right-now /blog                                301
+/blog/2018-taxes-here-s-how-small-businesses-can-save-big /blog                                301
+/blog/23-seo-search-takeaways-from-google-s-gary-illyes-search-engine-journal /blog                                301
+/blog/3-hacks-to-help-you-run-a-business-from-your-smartphone-moo-blog /blog                                301
+/blog/4-tech-trends-in-store-for-small-businesses-in-2019 /blog                                301
+/blog/4-ways-technology-can-make-your-small-business-look-big-cox-blue /blog                                301
+/blog/5-seo-factors-to-monitor-in-2019-search-engine-journal /blog                                301
+/blog/5-surprising-elements-that-boost-your-productivity-one-of-them-is-color /blog                                301
+/blog/5-things-you-can-do-in-apple-maps-that-you-can-t-in-google-maps-cnet /blog                                301
+/blog/5-tips-to-get-your-law-firm-website-featured-in-google-s-answer-box /blog                                301
+/blog/5-ways-to-build-powerful-relationships    /blog                                301
+/blog/6-things-business-school-won-t-teach-you-about-entrepreneurship /blog                                301
+/blog/6-things-smart-people-do-to-have-really-interesting-conversations /blog                                301
+/blog/6-ways-to-grow-your-business-with-facebook-videos /blog                                301
+/blog/7-ways-to-use-alexa-around-the-office     /blog                                301
+/blog/a-grocery-store-with-free-food-just-opened-to-help-workers-during-the-shutdown /blog                                301
+/blog/an-introduction-to-google-tag-manager-7   /blog                                301
+/blog/apple-homepod-every-tip-and-trick-you-need-to-know /blog                                301
+/blog/beginner-s-guide-to-instagram-marketing   /blog                                301
+/blog/boost-your-company-s-productivity-with-the-best-tablets-for-small-businesses /blog                                301
+/blog/business-get-some-bad-press-try-these-12-tips-to-bounce-back /blog                                301
+/blog/cloud-computing-for-small-businesses-what-you-need-to-know /blog                                301
+/blog/consider-these-10-different-avenues-to-shape-your-marketing-strategy-small-business-trends /blog                                301
+/blog/create-your-own-personal-archive-of-web-pages-with-this-chrome-extension /blog                                301
+/blog/don-t-leave-a-job-interview-without-asking-these-6-questions /blog                                301
+/blog/e-book-small-business-essentials-12-things-to-know-before-starting-a-small-business-cox-blue /blog                                301
+/blog/find-and-eat-the-best-local-food-in-the-world-with-tasteatlas /blog                                301
+/blog/for-the-average-hacker-your-small-business-is-an-ideal-target /blog                                301
+/blog/google-says-mobile-first-indexing-is-now-used-for-over-half-the-web-pages-in-its-search-results /blog                                301
+/blog/holiday-shipping-deadlines-markets-insider /blog                                301
+/blog/homecamp                                  /blog                                301
+/blog/host-a-successful-podcast-with-these-4-tools /blog                                301
+/blog/how-can-a-ppc-seo-company-help-your-business-the-frisky /blog                                301
+/blog/how-these-experienced-female-entrepreneurs-build-their-list-when-they-start-over /blog                                301
+/blog/how-to-bootstrap-your-small-business-from-the-ground-up /blog                                301
+/blog/how-to-create-a-content-marketing-plan-using-linkedin /blog                                301
+/blog/how-to-create-and-send-amazing-email-newsletters-designmodo /blog                                301
+/blog/how-to-use-instagram-to-market-your-small-business /blog                                301
+/blog/how-to-use-video-content-to-raise-brand-awareness-and-sell-your-product /blog                                301
+/blog/i-m-a-neurosurgeon-and-the-best-morning-routine-i-ve-found-only-consists-of-3-simple-steps-business-insider /blog                                301
+/blog/infographic-how-to-achieve-seo-success-in-2019-pr-daily /blog                                301
+/blog/infographic-how-to-write-copy-that-compels-action /blog                                301
+/blog/infographic-the-best-times-to-schedule-your-social-media-post /blog                                301
+/blog/infographic-the-best-times-to-schedule-your-social-media-post-articles-home /blog                                301
+/blog/is-it-best-for-your-business-to-grow-or-stay-small /blog                                301
+/blog/is-the-mall-dead-in-massachusetts-it-s-survival-of-the-fittest-as-shopping-centers-evolve /blog                                301
+/blog/keep-your-night-vision-sharp-with-the-iphone-s-hidden-red-screen /blog                                301
+/blog/luke-skywalker-and-leia-organa-lessons-of-light-from-twin-beacons-of-hope-starwars-com /blog                                301
+/blog/monday-masterclass-using-storytelling-in-web-design-elementor /blog                                301
+/blog/newsletter-cheat-sheet-how-to-get-them-opened-and-read /blog                                301
+/blog/nusenda-expands-micro-lending-program-albuquerque-journal-8 /blog                                301
+/blog/ohio-becomes-first-state-to-accept-bitcoin-for-tax-payments-siliconangle /blog                                301
+/blog/perfect-icebreakers-8-smart-phrases-that-will-make-you-better-at-networking /blog                                301
+/blog/posting-to-facebook-without-paying-is-a-waste-of-time /blog                                301
+/blog/science-says-the-most-grateful-kids-have-parents-who-do-these-7-things /blog                                301
+/blog/sensai-s-2018-small-business-social-media-confidence-survey-sensai /blog                                301
+/blog/six-simple-steps-that-make-social-media-marketing-less-overwhelming /blog                                301
+/blog/small-business-ideas-and-resources-for-entrepreneurs /blog                                301
+/blog/small-business-ideas-and-resources-for-entrepreneurs-9 /blog                                301
+/blog/small-business-marketing-brands-on-a-budget-marketing-insider-group /blog                                301
+/blog/the-easiest-way-to-share-iphone-photos-and-videos /blog                                301
+/blog/the-no-b-s-guide-to-seo-the-right-way-in-2018-infographic /blog                                301
+/blog/the-stress-free-process-of-publishing-an-amazon-ebook /blog                                301
+/blog/the-three-most-overlooked-digital-marketing-hacks-small-businesses-forget-to-utilize-smallbiztechnology-com /blog                                301
+/blog/the-top-four-marketing-trends-for-2019-podcast /blog                                301
+/blog/the-world-wide-web-not-the-internet-turns-30-years-old-vox /blog                                301
+/blog/there-s-a-scientific-reason-you-should-deal-with-your-most-stressful-tasks-at-this-time-of-day /blog                                301
+/blog/these-christmas-foods-will-leave-your-heart-full-your-brain-happy-so-go-for-seconds /blog                                301
+/blog/this-founder-combined-influencer-marketing-and-subscription-boxes-into-one-really-cool-startup-mixergy /blog                                301
+/blog/to-make-money-online-do-these-3-things-first /blog                                301
+/blog/top-10-things-to-measure-in-google-analytics-in-2018-cmswire /blog                                301
+/blog/traditional-marketing-vs-digital-marketing-which-triumphs-in-today-s-market /blog                                301
+/blog/want-7-figure-podcast-downloads-try-these-5-strategies /blog                                301
+/blog/want-to-win-write-stuff-down              /blog                                301
+/blog/why-branding-is-so-important-and-3-tips-to-get-it-right /blog                                301
+
+# --- Blog categories ---------------------------------------------------------
+# Webflow rendered a page per category. The Albuquerque keyword categories carried
+# real impressions (albuquerque-seo-company alone had 530), so each points at the
+# post or service page that now owns that intent rather than all landing on /blog.
+/blog-categories/albuquerque-seo                /blog/albuquerque-seo-company        301
+/blog-categories/albuquerque-seo-company        /blog/albuquerque-seo-company        301
+/blog-categories/albuquerque-seo-services       /blog/albuquerque-seo-services       301
+/blog-categories/albuquerque-web-design         /services/web-design                 301
+/blog-categories/albuquerque-web-development    /services/website-development        301
+/blog-categories/website-design-albuquerque     /services/web-design                 301
+/blog-categories/website-designers-albuquerque  /blog/website-designers-albuquerque  301
+/blog-categories/web-developer-albuquerque      /blog/web-developer-albuquerque      301
+/blog-categories/real-estate-web-designers      /blog/real-estate-web-designers      301
+/blog-categories/square-online-store            /blog/square-online-store            301
+/blog-categories/e-commerce                     /services/ecommerce-website-design   301
+/blog-categories/marketing                      /services/digital-marketing          301
+/blog-categories/social-media                   /services/digital-marketing          301
+/blog-categories/design                         /services/web-design                 301
+/blog-categories/small-business                 /blog                                301
+
+# --- Booking and scheduling pages --------------------------------------------
+# Nine Cal.com booking pages we sent clients directly. One consultation page
+# replaces all of them.
+/schedule                                       /free-consultation                   301
+/website-meeting                                /free-consultation                   301
+/meeting-at-misinc                              /free-consultation                   301
+/proposal-review                                /free-consultation                   301
+/website-training                               /free-consultation                   301
+/project-profiler                               /free-consultation                   301
+/square-online-store-kickoff                    /free-consultation                   301
+/square-online-store-free-consultation          /free-consultation                   301
+/real-estate-web-designer-consultation          /free-consultation                   301
+
+# --- Legacy platform page missed in the first pass ---------------------------
+/platforms/woocommerce                          /services/ecommerce-website-design   301
+
+# --- Pre-2017 PHP site -------------------------------------------------------
+# Two of these are live rules carried over from the Webflow migration:
+# /services/search-engine-optimization and /support were the only legacy rules
+# still configured. The rest of that PHP site 404s on Webflow today — mapping it
+# here costs nothing and recovers anything still linking to the old structure.
+/services/search-engine-optimization            /services/seo                        301
+/support                                        /contact                             301
+/support/payment                                /contact                             301
+/about_us                                       /about                               301
+/about_us/*                                     /about                               301
+/contact_us                                     /contact                             301
+/contact_us/*                                   /contact                             301
+/client_support                                 /contact                             301
+/client_support/*                               /contact                             301
+/estimates                                      /free-consultation                   301
+/estimates/*                                    /free-consultation                   301
+/services/design.php                            /services/web-design                 301
+/services/development.php                       /services/website-development        301
+/services/promotion.php                         /services/digital-marketing          301
+/services/realestate.php                        /services/real-estate-website-design 301
+/services/multimedia.php                        /services                            301
+/services/neurodynamics.html                    /services/custom-software            301
+/services/hosting                               /services/website-development        301
+/services/hosting/*                             /services/website-development        301
+/services/index.php                             /services                            301
+/portfolio/index.php                            /portfolio                           301
+/hosting/index.php                              /services/website-development        301
+/renew_domain.htm                               /contact                             301
+/index.php                                      /                                    301
+/index.php/*                                    /                                    301
 
 # --- Convenience aliases -----------------------------------------------------
-/work                                           /portfolio                          301
-/case-studies                                   /portfolio                          301
-/faqs                                           /faq                                301
+/work                                           /portfolio                           301
+/case-studies                                   /portfolio                           301
+/faqs                                           /faq                                 301

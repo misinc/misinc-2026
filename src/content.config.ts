@@ -76,6 +76,29 @@ const platforms = defineCollection({
   }),
 })
 
+const migrations = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/migrations' }),
+  schema: z.object({
+    /** Card and hero title, e.g. "WordPress to Webflow". */
+    title: z.string(),
+    /** The platform being left, and the one being moved to. */
+    from: z.string(),
+    to: z.string(),
+    /** One-line description used on cards and the hub page. */
+    summary: z.string(),
+    /** Slug in the platforms collection, so the two pages cross-link. */
+    fromPlatform: z.string().optional(),
+    toPlatform: z.string().optional(),
+    /** Honest answer to "should I actually do this?", shown in the callout. */
+    verdict: z.string(),
+    /** Typical elapsed time, e.g. "three to five weeks". */
+    timeline: z.string(),
+    order: z.number().default(100),
+    nextStep: z.string(),
+    seo,
+  }),
+})
+
 const work = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
   schema: z.object({
@@ -162,4 +185,4 @@ const blog = defineCollection({
   }),
 })
 
-export const collections = { services, platforms, work, faqs, blog }
+export const collections = { services, platforms, migrations, work, faqs, blog }

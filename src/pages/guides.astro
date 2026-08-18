@@ -8,6 +8,7 @@ import PostCard from '../components/PostCard.astro';
 import Card from '../components/Card.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { yearsInBusiness } from '../lib/site';
+import { breadcrumbs, collectionPage } from '../lib/schema';
 
 /**
  * Guides is an INDEX, not a URL space. Posts stay at /blog/<slug> because those
@@ -26,11 +27,26 @@ const standalone = [
     href: '/albuquerque-web-design-pricing-guide',
   },
 ]
+const schema = [
+  collectionPage({
+    name: 'Guides',
+    description:
+      'In-depth guides on web design pricing, local SEO, and getting found by AI, written for New Mexico business owners.',
+    path: '/guides',
+    items: [
+      ...guides.map((p) => ({ name: p.data.title, href: `/blog/${p.id}` })),
+      ...standalone.map((s) => ({ name: s.title, href: s.href })),
+    ],
+  }),
+  breadcrumbs([{ name: 'Guides' }]),
+]
+
 ---
 
 <Base
   title="Guides | Web Design, SEO & AI for New Mexico Businesses | MIS, Inc."
   description="In-depth guides on web design pricing, local SEO, Google Search Console, and getting found by AI — written for New Mexico business owners by MIS, Inc."
+  schema={schema}
 >
   <div class="border-b border-line">
     <PageHero eyebrow="Guides" title="The detailed answers" lede={`Most of these started life as a question from a client. They are the pieces we send people when a short answer will not do — accumulated over ${yearsInBusiness} years of being asked.`} ctas={[

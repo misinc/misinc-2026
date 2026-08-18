@@ -1,0 +1,14 @@
+# misinc.com
+#
+# Everything is crawlable. The utility and booking pages that should not
+# compete in search carry a noindex meta tag instead of a Disallow, because
+# a blocked page cannot be read well enough to know it is meant to be skipped.
+
+User-agent: *
+Allow: /
+
+# The contact form endpoint. It answers 405 to GET, but there is no reason
+# to spend crawl budget finding that out.
+Disallow: /api/
+
+Sitemap: https://www.misinc.com/sitemap-index.xml

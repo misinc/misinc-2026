@@ -7,16 +7,29 @@ import PageHero from '../../components/PageHero.astro';
 import PostCard from '../../components/PostCard.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { yearsInBusiness } from '../../lib/site';
+import { breadcrumbs, collectionPage } from '../../lib/schema';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )
 const guides = posts.filter((p) => p.data.guide)
+const schema = [
+  collectionPage({
+    name: 'Blog',
+    description:
+      'Practical writing for New Mexico business owners on web design, SEO, e-commerce, and getting found online.',
+    path: '/blog',
+    items: posts.map((p) => ({ name: p.data.title, href: `/blog/${p.id}` })),
+  }),
+  breadcrumbs([{ name: 'Blog' }]),
+]
+
 ---
 
 <Base
   title="Blog | Web Design, SEO & Small Business Notes | MIS, Inc."
   description="Practical writing for New Mexico business owners on web design, SEO, e-commerce, and getting found online — from an Albuquerque studio building websites since 1995."
+  schema={schema}
 >
   <div class="border-b border-line">
     <PageHero eyebrow="Blog" title="Our Insights" lede={`Practical writing for New Mexico business owners — what things cost, what is worth doing, and what to ignore. Drawn from ${yearsInBusiness} years of answering the same questions.`} ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]} />

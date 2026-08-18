@@ -1,0 +1,196 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import Section from '../../components/Section.astro'
+import SectionHeader from '../../components/SectionHeader.astro'
+import PageHero from '../../components/PageHero.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import Prose from '../../components/Prose.astro'
+import NextStep from '../../components/NextStep.astro'
+import Card from '../../components/Card.astro'
+import Button from '../../components/Button.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import { site } from '../../lib/site'
+import { breadcrumbs } from '../../lib/schema'
+
+export async function getStaticPaths() {
+  const migrations = await getCollection('migrations')
+  return migrations.map((migration) => ({
+    params: { slug: migration.id },
+    props: { migration, all: migrations },
+  }))
+}
+
+const { migration, all } = Astro.props
+const { Content } = await render(migration)
+const { data } = migration
+
+const others = all
+  .filter((m) => m.id !== migration.id)
+  .sort((a, b) => a.data.order - b.data.order)
+
+const url = `${site.url}/migrate/${migration.id}`
+
+// A migration is a service we sell, so it is described as one — with the
+// platforms named, because "WordPress to Webflow" is the query people type.
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${data.from} to ${data.to} migration`,
+  description: data.summary,
+  serviceType: 'Website migration',
+  provider: { '@id': `${site.url}/#organization` },
+  areaServed: [
+    { '@type': 'City', name: 'Albuquerque' },
+    { '@type': 'State', name: 'New Mexico' },
+  ],
+  url,
+}
+
+const trail = breadcrumbs([
+  { name: 'Website migrations', href: '/website-migrations' },
+  { name: data.title },
+])
+---
+
+<Base
+  title={data.seo.title}
+  description={data.seo.description}
+  schema={[serviceSchema, trail]}
+>
+  <div class="border-b border-line">
+    <PageHero
+      eyebrow="Website migration"
+      title={data.title}
+      lede={data.summary}
+      ctas={[
+        { label: 'Book a free consultation', href: '/free-consultation' },
+        { label: 'All migrations', href: '/website-migrations', variant: 'ghost' },
+      ]}
+    >
+      <Breadcrumbs
+        slot="before"
+        class="mb-5"
+        items={[
+          { label: 'Website migrations', href: '/website-migrations' },
+          { label: data.title },
+        ]}
+      />
+    </PageHero>
+  </div>
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <div>
+        <div data-reveal>
+          <Prose>
+            <Content />
+          </Prose>
+        </div>
+        <NextStep text={data.nextStep} class="mt-12" />
+      </div>
+
+      <aside class="flex flex-col gap-8">
+        <div
+          class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+          data-reveal
+        >
+          <h2
+            class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted"
+          >
+            Our honest take
+          </h2>
+          <p class="mb-5 text-[15px] font-semibold leading-relaxed text-ink">{data.verdict}</p>
+
+          <dl class="flex flex-col gap-3 border-t border-line-soft pt-4 text-sm">
+            <div>
+              <dt class="font-extrabold text-ink-muted">Typical timeline</dt>
+              <dd class="m-0 text-ink-soft">{data.timeline}</dd>
+            </div>
+            <div>
+              <dt class="font-extrabold text-ink-muted">Moving from</dt>
+              <dd class="m-0 text-ink-soft">
+                {
+                  data.fromPlatform ? (
+                    <a
+                      href={`/platforms/${data.fromPlatform}`}
+                      class="font-bold text-ink-soft no-underline hover:text-primary"
+                    >
+                      {data.from}
+                    </a>
+                  ) : (
+                    data.from
+                  )
+                }
+              </dd>
+            </div>
+            <div>
+              <dt class="font-extrabold text-ink-muted">Moving to</dt>
+              <dd class="m-0 text-ink-soft">
+                {
+                  data.toPlatform ? (
+                    <a
+                      href={`/platforms/${data.toPlatform}`}
+                      class="font-bold text-ink-soft no-underline hover:text-primary"
+                    >
+                      {data.to}
+                    </a>
+                  ) : (
+                    data.to
+                  )
+                }
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div
+          class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+          data-reveal
+        >
+          <h2 class="mb-2 font-display text-lg font-bold text-ink">Talk it through</h2>
+          <p class="mb-4 text-sm text-ink-soft">
+            We will look at your current site and tell you what moving it would actually
+            involve — including when it is not worth doing.
+          </p>
+          <Button href="/free-consultation" class="w-full text-center">Book a free call</Button>
+          <p class="mt-4 text-sm text-ink-muted">
+            Or call <a
+              href={site.phoneHref}
+              class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+            >
+          </p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  {
+    others.length > 0 && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
+          <SectionHeader eyebrow="Other migrations" title="Moving from something else?" class="mb-10" />
+          <div class="grid gap-5 lg:grid-cols-3">
+            {others.map((m) => (
+              <Card
+                variant="service"
+                tag={m.data.from}
+                title={m.data.title}
+                blurb={m.data.summary}
+                href={`/migrate/${m.id}`}
+                cta="How it works"
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <CtaBand
+      title="Thinking about moving?"
+      note="We will tell you what it would take, what it would cost, and whether it is worth doing at all."
+    />
+  </Section>
+</Base>

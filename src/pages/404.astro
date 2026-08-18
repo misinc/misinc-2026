@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro'
+import Button from '../components/Button.astro'
+import { site } from '../lib/site'
+
+/**
+ * Cloudflare Pages serves /404.html automatically for any unmatched path.
+ *
+ * This page matters more than usual right now: the site moved off Webflow with
+ * roughly 250 old URLs behind it, and while every one we know about is
+ * redirected in public/_redirects, the ones we missed land here. So it offers
+ * real routes out rather than an apology.
+ */
+const destinations = [
+  { label: 'Our work', href: '/portfolio', note: 'Websites and software we have built' },
+  { label: 'Services', href: '/services', note: 'Web design, SEO, software, and AI' },
+  { label: 'Blog', href: '/blog', note: 'Practical writing for local businesses' },
+  { label: 'Platforms', href: '/platforms', note: 'What we build on, and what we move you off' },
+  { label: 'About', href: '/about', note: `Who we are, ${new Date().getFullYear() - site.founded} years in` },
+  { label: 'Contact', href: '/contact', note: 'Tell us what you need' },
+]
+---
+
+<Base
+  title="Page Not Found | MIS, Inc."
+  description="That page does not exist. Here is where everything else lives on misinc.com."
+  noindex
+>
+  <div class="mx-auto max-w-(--container-content) px-6 py-16 md:px-10 lg:py-24">
+    <span
+      class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary"
+    >
+      Error 404
+    </span>
+
+    <h1 class="my-5 max-w-(--container-prose) text-4xl font-bold text-ink">
+      That page is not here anymore
+    </h1>
+
+    <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">
+      We rebuilt this website in 2026 and redirected every old address we could find.
+      This one slipped through, or it never existed. Either way it is our fault rather
+      than yours &mdash; and if you followed a link to get here, <a
+        href="/contact"
+        class="font-bold text-primary no-underline hover:underline">tell us</a
+      > and we will fix it.
+    </p>
+
+    <div class="mb-14 flex flex-wrap items-center gap-3.5">
+      <Button href="/">Back to the home page</Button>
+      <Button href="/contact" variant="ghost">Get in touch</Button>
+    </div>
+
+    <h2
+      class="mb-5 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted"
+    >
+      Everything else
+    </h2>
+
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        destinations.map((d) => (
+          <a
+            href={d.href}
+            class="rounded-md border border-line-soft bg-paper-panel px-5 py-4 no-underline shadow-card transition hover:border-primary/40"
+          >
+            <b class="block text-[16.5px] font-extrabold text-ink">{d.label}</b>
+            <span class="text-sm text-ink-soft">{d.note}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <p class="mt-10 text-sm text-ink-muted">
+      Or call us on <a
+        href={site.phoneHref}
+        class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+      >. Someone here will answer.
+    </p>
+  </div>
+</Base>

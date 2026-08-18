@@ -2,6 +2,11 @@
 /**
  * The only button/CTA in the system. Everything that looks like a button
  * should come from here so hover, focus, and shadow stay identical sitewide.
+ *
+ * Labels on the accent orange are `text-ink`, not white. White on #ff9902 is
+ * 2.14:1 — below the 4.5:1 WCAG AA needs for normal text, and below even the
+ * 3:1 large-text floor. Ink on the same orange is 5.63:1, so the brand colour
+ * is untouched and the label is readable.
  */
 interface Props {
   href: string
@@ -29,11 +34,11 @@ const sizes = {
 
 const variants = {
   primary:
-    'bg-accent text-white shadow-button hover:-translate-y-px hover:bg-accent-dark',
+    'bg-accent text-ink shadow-button hover:-translate-y-px hover:bg-accent-dark',
   ghost:
     'border-[1.5px] border-primary/35 text-primary hover:bg-primary/5',
   onDark:
-    'bg-accent text-white shadow-button hover:-translate-y-px hover:bg-accent-dark',
+    'bg-accent text-ink shadow-button hover:-translate-y-px hover:bg-accent-dark',
 }
 ---
 
