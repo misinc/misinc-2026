@@ -49,7 +49,7 @@ export const site = {
   ],
 
   nav: [
-    { label: 'Work', href: '/portfolio' },
+    { label: 'Portfolio', href: '/portfolio' },
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
     { label: 'FAQ', href: '/faq' },
@@ -57,7 +57,7 @@ export const site = {
   ],
 
   footerNav: [
-    { label: 'Work', href: '/portfolio' },
+    { label: 'Portfolio', href: '/portfolio' },
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
     { label: 'Platforms', href: '/platforms' },

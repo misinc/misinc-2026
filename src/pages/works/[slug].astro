@@ -64,7 +64,7 @@ const breadcrumbs = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
-    { '@type': 'ListItem', position: 2, name: 'Work', item: `${site.url}/portfolio` },
+    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${site.url}/portfolio` },
     { '@type': 'ListItem', position: 3, name: d.title, item: `${site.url}/works/${item.id}` },
   ],
 }
@@ -74,7 +74,7 @@ const breadcrumbs = {
   <Section>
     <Breadcrumbs
       class="mb-6"
-      items={[{ label: 'Work', href: '/portfolio' }, { label: d.title }]}
+      items={[{ label: 'Portfolio', href: '/portfolio' }, { label: d.title }]}
     />
 
     <SectionHeader as="h1" eyebrow={WORK_CATEGORIES[d.category]} title={d.title} lede={d.summary} />
@@ -210,7 +210,7 @@ const breadcrumbs = {
     related.length > 0 && (
       <Section variant="tint" width="full">
         <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
-          <SectionHeader eyebrow="More work" title="Other projects" class="mb-10" />
+          <SectionHeader eyebrow="More projects" title="Other projects" class="mb-10" />
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {related.map((w) => (
               <WorkCard
