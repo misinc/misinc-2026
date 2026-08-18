@@ -272,6 +272,55 @@
 /index.php                                      /                                    301
 /index.php/*                                    /                                    301
 
+# --- Carried over from Webflow's own 301 table ---------------------------------
+# Exported 2026-08-18. Two of these (/services/search-engine-optimization
+# and /support) were already here; the rest are Webflow-era paths that no
+# crawl of the old site would have surfaced.
+#
+# Webflow resolved redirect chains itself. Cloudflare applies exactly one
+# rule and does not follow a second, so every chain below is flattened to
+# its final destination — e.g. /services/online-stores went to
+# /services/ecommerce and on to /services/ecommerce-website-design; it now
+# goes straight there. /services/jewelry-store-website-design was the one
+# target with no page in the new site, so both jewelry rules land on
+# e-commerce, which is what that page sold.
+/home-pages/home-3                              /                                    301
+/home-3                                         /                                    301
+/style-guide                                    /                                    301
+/portfolio-pages/works-3                        /portfolio                           301
+/contact-1                                      /contact                             301
+/contact/contact-1                              /contact                             301
+/blog-1                                         /blog                                301
+/services/services-3                            /services                            301
+/services/healthcare-websites                   /services/healthcare-website-design  301
+/services/restaurant-websites                   /services/restaurant-website-design  301
+/services/real-estate-websites                  /services/real-estate-website-design 301
+/services/real-estate-idx                       /services/real-estate-website-design 301
+/services/ecommerce                             /services/ecommerce-website-design   301
+/services/online-stores                         /services/ecommerce-website-design   301
+/services/responsive-web-design                 /services/web-design                 301
+/services/iphone-smartphone-web-design          /services/web-design                 301
+/services/jewelry-store-websites                /services/ecommerce-website-design   301
+/services/jewelry-store-website-design          /services/ecommerce-website-design   301
+/services/cms                                   /services                            301
+/services/website-maintenance                   /services                            301
+/about/front-end-web-developer                  /contact                             301
+/about/web-support-specialist                   /contact                             301
+/platforms/realtyengine                         /platforms/addonidx                  301
+
+# The old /news-1 blog. Named posts go to their surviving URL; everything
+# else lands on the index, because a second hop would not be followed.
+/news-1                                         /blog                                301
+/news-1/albuquerque-seo-company                 /blog/albuquerque-seo-company        301
+/news-1/albuquerque-seo-services                /blog/albuquerque-seo-services       301
+/news-1/new-year-new-website                    /blog/new-year-new-website           301
+/news-1/real-estate-web-designers               /blog/real-estate-web-designers      301
+/news-1/rebuilding-our-own-website-2026         /blog/rebuilding-our-own-website-2026 301
+/news-1/square-online-store                     /blog/square-online-store            301
+/news-1/web-developer-albuquerque               /blog/web-developer-albuquerque      301
+/news-1/website-designers-albuquerque           /blog/website-designers-albuquerque  301
+/news-1/*                                       /blog                                301
+
 # --- Convenience aliases -----------------------------------------------------
 /work                                           /portfolio                           301
 /case-studies                                   /portfolio                           301
