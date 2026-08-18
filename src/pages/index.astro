@@ -9,6 +9,7 @@ import Button from '../components/Button.astro';
 import CtaBand from '../components/CtaBand.astro';
 import FaqList from '../components/FaqList.astro';
 import WorkCard from '../components/WorkCard.astro';
+import PageHero from '../components/PageHero.astro';
 import Timeline from '../components/Timeline.astro';
 import Testimonial from '../components/Testimonial.astro';
 import { site, yearsInBusiness } from '../lib/site';
@@ -87,60 +88,28 @@ const guides = [
   description={site.description}
 >
   <!-- Hero -->
-  <div class="mx-auto max-w-(--container-content) px-6 md:px-10">
-    <section class="grid items-center gap-9 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-[76px]">
-      <div>
-        <span
-          class="text-xs font-bold uppercase tracking-(--tracking-label) text-primary"
-        >
-          Web design &middot; Custom software &middot; Practical AI
-        </span>
-
-        <h1 class="my-5 text-4xl font-bold text-ink">
-          The web keeps changing.<br />
-          <span id="type-a">We&rsquo;ve been building it </span><span
-            id="type-b"
-            class="text-primary">since&nbsp;1995.</span
-          ><span class="caret" id="caret" aria-hidden="true"></span>
-        </h1>
-
-        <p class="mb-7 max-w-(--container-prose) text-lg text-ink-soft">MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits &mdash; here at home and around the world.</p>
-
-        <div class="flex flex-wrap items-center gap-3.5">
-          <Button href="/free-consultation">Book a free strategy call</Button>
-          <Button href="/portfolio" variant="ghost">See our work</Button>
-        </div>
-
-        <p class="mt-4 text-sm font-semibold text-ink-muted">
-          A real conversation with the people who&rsquo;ll actually do the work.
-        </p>
-      </div>
-
-      <figure class="m-0 overflow-hidden rounded-md border border-line-soft shadow-media">
-        <div class="relative aspect-[16/10] lg:aspect-[4/5]">
-          <!-- TODO(video): when compressing this to ~1.5 MB with ffmpeg, export a
-               first-frame poster at the same time and add poster="/img/anniversary-balloon-poster.jpg".
-               Currently 4.8 MB, which is the heaviest asset on the page. -->
-          <video
-            class="absolute inset-0 h-full w-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="The MIS, Inc. hot air balloon rising over the Albuquerque International Balloon Fiesta"
-          >
-            <source src="/video/anniversary-balloon.mp4" type="video/mp4" />
-          </video>
-          <figcaption
-            class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]"
-          >
-            Our 30th anniversary balloon over Albuquerque
-          </figcaption>
-        </div>
-      </figure>
-    </section>
-  </div>
+  <PageHero
+    eyebrow="Web design · Custom software · Practical AI"
+    title="The web keeps changing."
+    typed={{ text: 'We’ve been building it ', highlight: 'since\u00A01995.' }}
+    lede="MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We build websites, custom software, and practical AI for small businesses and nonprofits — here at home and around the world."
+    shape="portrait"
+    media={{
+      type: 'video',
+      // TODO(video): when compressing this to ~1.5 MB with ffmpeg, export a
+      // first-frame poster at the same time and add
+      // poster: '/img/anniversary-balloon-poster.jpg'. Currently 4.8 MB, which
+      // is the heaviest asset on the page.
+      src: '/video/anniversary-balloon.mp4',
+      caption: 'Our 30th anniversary balloon over Albuquerque',
+      alt: 'The MIS, Inc. hot air balloon rising over the Albuquerque International Balloon Fiesta',
+    }}
+    ctas={[
+      { label: 'Book a free strategy call', href: '/free-consultation' },
+      { label: 'See our work', href: '/portfolio', variant: 'ghost' },
+    ]}
+    note="A real conversation with the people who’ll actually do the work."
+  />
 
   <!-- Facts -->
   <div class="border-y border-line bg-paper-tint">
@@ -320,38 +289,4 @@ const guides = [
     <CtaBand />
   </Section>
 
-  <script>
-    // Hero typewriter. Skipped entirely under reduced motion — the headline is
-    // already in the DOM, so it simply renders complete.
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const a = document.getElementById('type-a')
-    const b = document.getElementById('type-b')
-    const caret = document.getElementById('caret')
-    const h1 = a?.closest('h1')
-
-    if (!reduced && a && b && caret && h1) {
-      const textA = a.textContent ?? ''
-      const textB = b.textContent ?? ''
-      a.textContent = ''
-      b.textContent = ''
-      h1.classList.add('typing')
-
-      let i = 0
-      const total = textA.length + textB.length
-      const tick = () => {
-        i++
-        if (i <= textA.length) {
-          a.textContent = textA.slice(0, i)
-          a.parentNode?.insertBefore(caret, b)
-        } else {
-          a.textContent = textA
-          b.textContent = textB.slice(0, i - textA.length)
-          b.parentNode?.appendChild(caret)
-        }
-        if (i < total) setTimeout(tick, 36)
-        else setTimeout(() => h1.classList.remove('typing'), 1800)
-      }
-      tick()
-    }
-  </script>
 </Base>
