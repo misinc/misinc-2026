@@ -7,7 +7,7 @@ import ContactForm from '../components/ContactForm.astro';
 import StaticMap from '../components/StaticMap.astro';
 import FaqList from '../components/FaqList.astro';
 import { getCollection } from 'astro:content';
-import { site, mapsUrl, yearsInBusiness } from '../lib/site';
+import { site, mapsUrl } from '../lib/site';
 
 const faqs = (await getCollection('faqs'))
   .filter((f) => f.data.showOn.includes('contact'))

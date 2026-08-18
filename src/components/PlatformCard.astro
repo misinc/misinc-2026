@@ -1,11 +1,11 @@
 ---
 /**
- * Platform card. Leads with the logo rather than the name — the marks are more
- * recognisable than the words, and a wall of logos reads as credentials at a
- * glance in a way a wall of headings does not.
+ * Platform card. Shows only the logo mark — the marks are more recognisable
+ * than the words, and a wall of logos reads as credentials at a glance in a
+ * way a wall of headings does not.
  *
- * The name still renders as the card's heading for screen readers and search,
- * visually below the mark.
+ * The name still exists as the card's heading (for screen readers and search)
+ * and as the mark's alt/title text, but is visually hidden.
  */
 interface Props {
   slug: string
@@ -50,7 +50,7 @@ const {
     />
   </div>
 
-  <h3 class="font-display text-lg font-bold text-ink">{name}</h3>
+  <h3 class="sr-only">{name}</h3>
 
   {
     credential && (
