@@ -40,12 +40,14 @@ const year = new Date().getFullYear()
       <h2 class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
         Explore
       </h2>
-      <div class="flex flex-col gap-2.5">
+      {/* Two balanced columns, so the list stays short as it grows. CSS
+          columns fill top-to-bottom, keeping the nav order readable. */}
+      <div class="columns-2 gap-x-6">
         {
           site.footerNav.map((item) => (
             <a
               href={item.href}
-              class="text-[15px] font-bold text-ink-soft no-underline hover:text-primary"
+              class="mb-2.5 block break-inside-avoid text-[15px] font-bold text-ink-soft no-underline hover:text-primary"
             >
               {item.label}
             </a>
