@@ -1,7 +1,7 @@
 ---
-import Base from '../layouts/Base.astro'
-import PageHero from '../components/PageHero.astro'
-import { site } from '../lib/site'
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../lib/site';
 
 /**
  * Cloudflare Pages serves /404.html automatically for any unmatched path.
@@ -27,15 +27,10 @@ const destinations = [
   noindex
 >
   <div class="border-b border-line">
-    <PageHero
-      layout="full"
-      eyebrow="Error 404"
-      title="That page is not here anymore"
-      ctas={[
+    <PageHero layout="full" eyebrow="Error 404" title="That page is not here anymore" ctas={[
         { label: 'Back to the home page', href: '/' },
         { label: 'Get in touch', href: '/contact', variant: 'ghost' },
-      ]}
-    >
+      ]} showMedia={false}>
       <Fragment slot="lede">
         We rebuilt this website in 2026 and redirected every old address we could find.
         This one slipped through, or it never existed. Either way it is our fault rather

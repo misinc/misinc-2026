@@ -40,7 +40,6 @@ const schema = [
   }),
   breadcrumbs([{ name: 'Guides' }]),
 ]
-
 ---
 
 <Base
@@ -52,7 +51,7 @@ const schema = [
     <PageHero eyebrow="Guides" title="The detailed answers" lede={`Most of these started life as a question from a client. They are the pieces we send people when a short answer will not do, accumulated over ${yearsInBusiness} years of being asked.`} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'All blog posts', href: '/blog', variant: 'ghost' },
-      ]} />
+      ]} showMedia={false} layout="centered" />
   </div>
 
   <Section>

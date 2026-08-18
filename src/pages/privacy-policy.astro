@@ -1,11 +1,11 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import SectionHeader from '../components/SectionHeader.astro'
-import Breadcrumbs from '../components/Breadcrumbs.astro'
-import PageHero from '../components/PageHero.astro'
-import Prose from '../components/Prose.astro'
-import { site } from '../lib/site'
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import Prose from '../components/Prose.astro';
+import { site } from '../lib/site';
 
 /**
  * Written to describe what this site actually does, not what a generator
@@ -81,12 +81,7 @@ const pageSchema = {
   <!-- A legal page opens with the document rather than a marketing panel, so
        the hero runs with no media at all. -->
   <div class="border-b border-line">
-    <PageHero
-      layout="full"
-      eyebrow="Legal"
-      title="Privacy policy"
-      lede="We do not track you. This page explains what little information this site collects, why, and what happens to it, in plain English rather than four pages of definitions."
-    >
+    <PageHero layout="full" eyebrow="Legal" title="Privacy policy" lede="We do not track you. This page explains what little information this site collects, why, and what happens to it, in plain English rather than four pages of definitions." showMedia={false}>
       <Breadcrumbs
         slot="before"
         items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]}
