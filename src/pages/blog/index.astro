@@ -45,15 +45,17 @@ const schema = [
             class="mb-10"
           />
           <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {guides.slice(0, 3).map((p) => (
-              <PostCard
+            {
+              guides.map((p) => (
+                <PostCard
                 slug={p.id}
                 title={p.data.title}
                 summary={p.data.summary}
                 date={p.data.date}
                 guide
               />
-            ))}
+              ))
+            }
           </div>
           <p class="mt-8">
             <a href="/guides" class="text-[15px] font-extrabold text-primary no-underline hover:underline">
