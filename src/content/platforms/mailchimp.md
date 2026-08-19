@@ -2,6 +2,7 @@
 name: Mailchimp
 summary: Email marketing and automation, the channel you own, unlike every social platform.
 icon: /img/platforms/mailchimp.svg
+wordmark: /img/platforms/Mailchimp-wordmark-light.svg
 url: https://www.mailchimp.com
 stance: partner
 credential: Mailchimp Partner

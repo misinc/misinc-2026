@@ -2,6 +2,7 @@
 name: Weebly Cloud
 summary: A platform we built on for years, now winding down under Square's ownership.
 icon: /img/platforms/weebly-cloud.svg
+wordmark: /img/platforms/Weebly-wordmark-light.svg
 stance: migrate
 verdict: We no longer build new Weebly Cloud sites and are steadily migrating clients off it.
 insteadUse: [webflow, square-online-store]

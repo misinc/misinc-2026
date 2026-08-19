@@ -94,7 +94,12 @@ const breadcrumbs = {
           class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
           data-reveal
         >
-          <img src={platform.data.icon} alt={platform.data.name} height="40" class="mb-3 h-10" />
+          <img
+            src={platform.data.wordmark ?? platform.data.icon}
+            alt={platform.data.name}
+            height="40"
+            class="mb-3 h-8 w-auto max-w-full"
+          />
           <h2 class="mb-2 font-display text-lg font-bold text-ink">
             Not sure what fits?
           </h2>

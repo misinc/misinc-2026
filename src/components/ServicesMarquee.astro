@@ -1,0 +1,39 @@
+---
+/**
+ * Auto-scrolling row of service pills, meant to sit full-bleed across the
+ * bottom of the home hero (see `PageHero`'s `edge` slot). Same
+ * duplicate-track + fade-mask + `marquee-track` mechanism as `Marquee.astro`
+ * — reduced motion is handled for free via the shared `.marquee-track`
+ * override in global.css — but styled for a dark hero backdrop (glassy
+ * white-on-ink) instead of the paper page background.
+ */
+import { getCollection } from 'astro:content'
+
+const services = (await getCollection('services'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((s) => ({ slug: s.id, title: s.data.title }))
+
+const doubled = [...services, ...services]
+---
+
+<div
+  class="relative overflow-x-hidden overflow-y-visible py-2 [mask-image:linear-gradient(90deg,transparent,#000_4%,#000_94%,transparent)]"
+>
+  <div
+    class="marquee-track flex w-max animate-(--animate-marquee) gap-3 py-1 hover:[animation-play-state:paused]"
+  >
+    {
+      doubled.map((s, i) => (
+        <a
+          href={`/services/${s.slug}`}
+          aria-hidden={i >= services.length ? 'true' : undefined}
+          tabindex={i >= services.length ? -1 : undefined}
+          class="flex items-center gap-2.5 whitespace-nowrap rounded-full border border-white/25 bg-white/10 py-2.5 pl-4 pr-3.5 text-[15px] font-bold text-white no-underline backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-accent/60 hover:bg-white/15"
+        >
+          {s.title}
+          <span aria-hidden="true" class="text-accent-light">+</span>
+        </a>
+      ))
+    }
+  </div>
+</div>

@@ -10,6 +10,7 @@ import CtaBand from '../components/CtaBand.astro';
 import FaqList from '../components/FaqList.astro';
 import WorkCard from '../components/WorkCard.astro';
 import PageHero from '../components/PageHero.astro';
+import ServicesMarquee from '../components/ServicesMarquee.astro';
 import Timeline from '../components/Timeline.astro';
 import Testimonial from '../components/Testimonial.astro';
 import { site, yearsInBusiness } from '../lib/site';
@@ -101,7 +102,9 @@ const guides = [
     }} ctas={[
       { label: 'Book a free strategy call', href: '/free-consultation' },
       { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-    ]} layout="background" overlayOpacity={90} />
+    ]} layout="background" overlayOpacity={90}>
+    <ServicesMarquee slot="edge" />
+  </PageHero>
 
   <!-- Facts -->
   <div class="border-y border-line bg-paper-tint">

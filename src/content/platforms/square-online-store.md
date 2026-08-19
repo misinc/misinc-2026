@@ -2,6 +2,7 @@
 name: Square Online
 summary: Online ordering and ecommerce that stays in step with the register, ideal for restaurants and retailers already on Square.
 icon: /img/platforms/square.svg
+wordmark: /img/platforms/Square-wordmark-light.svg
 url: https://www.squareup.com
 stance: partner
 credential: Square Online Certified Agency

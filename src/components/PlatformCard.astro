@@ -1,18 +1,23 @@
 ---
 /**
- * Platform card. Shows only the logo mark — the marks are more recognisable
- * than the words, and a wall of logos reads as credentials at a glance in a
- * way a wall of headings does not.
+ * Platform card. Shows only the logo — no separate heading — so a wall of
+ * cards reads as credentials at a glance rather than a wall of headings.
+ *
+ * Prefers the full wide wordmark when one exists, since there's room here to
+ * show the name, not just the mark; falls back to the square `icon` (the
+ * home-hero marquee's mark) for platforms that don't have one yet.
  *
  * The name still exists as the card's heading (for screen readers and search)
- * and as the mark's alt/title text, but is visually hidden.
+ * and as the logo's alt/title text, but is visually hidden.
  */
 interface Props {
   slug: string
   name: string
   icon: string
+  /** Full wide wordmark — preferred over `icon` when present. */
+  wordmark?: string
   summary: string
-  /** Wide wordmarks must not be squashed into a square box. */
+  /** Wide logos must not be squashed into a square box. */
   wide?: boolean
   /** e.g. "Certified Webflow Partner" — the differentiating claim. */
   credential?: string
@@ -24,12 +29,18 @@ const {
   slug,
   name,
   icon,
+  wordmark,
   summary,
   wide = false,
   credential,
   cta = 'Read our take',
   class: className = '',
 } = Astro.props
+
+// A wordmark is inherently landscape, so it gets the same wide treatment as
+// an `icon` that's already wordmark-shaped (e.g. our own Add On products).
+const logo = wordmark ?? icon
+const isWide = wide || Boolean(wordmark)
 ---
 
 <a
@@ -42,11 +53,11 @@ const {
 >
   <div class="flex h-12 items-center">
     <img
-      src={icon}
+      src={logo}
       title={name}
       alt={name}
       loading="lazy"
-      class:list={['block', wide ? 'h-8 w-auto max-w-[80%]' : 'h-10 w-10']}
+      class:list={['block', isWide ? 'h-8 w-auto max-w-[80%]' : 'h-10 w-10']}
     />
   </div>
 

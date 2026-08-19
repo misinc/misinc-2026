@@ -2,6 +2,7 @@
 name: Shopify
 summary: Serious ecommerce infrastructure for catalogs that have outgrown a simple store.
 icon: /img/platforms/shopify.svg
+wordmark: /img/platforms/Shopify-wordmark-light.svg
 url: https://www.shopify.com
 stance: partner
 credential: Shopify Partner

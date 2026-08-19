@@ -20,7 +20,7 @@ export const PARTNERS = [
   { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg', url:'https://www.mailchimp.com' },
   { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg', url:'https://www.ecwid.com' },
   { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true, url:'https://www.addonidx.com' },
-  { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.png', wide: true, url:'https://www.addonaichat.com' },
+  { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.svg', wide: true, url:'https://www.addonaichat.com' },
 ] as const
 
 /** Kept for backwards compatibility with existing imports. */

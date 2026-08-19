@@ -72,6 +72,10 @@ interface Props {
    * keeps the text legible. There is no separate figure, so `shape` is
    * ignored; the media always fills the hero. Reaches for this when the
    * media is meant to set a mood rather than illustrate a point.
+   *
+   * `background` layout only also exposes an `edge` slot, rendered full-width
+   * beneath the text column rather than inside its padded/max-width column —
+   * for content meant to bleed to the section's edges, like a marquee.
    */
   layout?: 'split' | 'centered' | 'full' | 'background'
   /**
@@ -261,6 +265,14 @@ const overlayStyle = isBackground
           <slot name="after" />
         </div>
       </div>
+
+      {
+        Astro.slots.has('edge') && (
+          <div class="relative pb-8 md:pb-10">
+            <slot name="edge" />
+          </div>
+        )
+      }
     </section>
   ) : (
     <div class="mx-auto max-w-(--container-content) px-6 md:px-10">

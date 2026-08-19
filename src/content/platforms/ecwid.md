@@ -2,6 +2,7 @@
 name: Ecwid
 summary: An online store that drops into a website you already have, without rebuilding it.
 icon: /img/platforms/ecwid.svg
+wordmark: /img/platforms/Ecwid-wordmark-light.svg
 url: https://www.ecwid.com
 stance: partner
 credential: Ecwid Partner

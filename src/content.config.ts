@@ -55,7 +55,14 @@ const platforms = defineCollection({
     name: z.string(),
     /** One-line description used on cards and chips. */
     summary: z.string(),
+    /** Square-ish mark, used in the compact home-hero marquee. */
     icon: z.string(),
+    /**
+     * Full wide wordmark, used on the platforms hub and detail pages where
+     * there is room to show the name, not just the mark. Falls back to
+     * `icon` when a platform has no wordmark asset yet.
+     */
+    wordmark: z.string().optional(),
     /** Omit for platforms we no longer recommend — no outbound link is shown. */
     url: z.string().optional(),
     /**
