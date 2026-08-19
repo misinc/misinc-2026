@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import RetroExtras from '../components/RetroExtras.astro'
 import { site } from '../lib/site'
 
 interface Props {
@@ -73,6 +74,20 @@ const schemas = [localBusiness, ...(schema ? (Array.isArray(schema) ? schema : [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script is:inline>
+      // 1995 mode, applied before first paint so there's no flash of the
+      // modern theme. Kept as a standalone inline script (not the shared
+      // block at the bottom of body) specifically so it runs this early.
+      try {
+        if (localStorage.getItem('retro-mode') === 'on') {
+          document.documentElement.classList.add('retro')
+        }
+      } catch {
+        /* private browsing, etc. — falls back to the modern theme */
+      }
+    </script>
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -108,10 +123,12 @@ const schemas = [localBusiness, ...(schema ? (Array.isArray(schema) ? schema : [
       class="mx-auto my-3 max-w-(--container-sheet) overflow-hidden rounded-md border border-primary/20 bg-paper shadow-paper sm:my-6 sm:rounded-lg"
     >
       <Header />
+      <RetroExtras variant="banner" />
       <main id="main">
         <slot />
       </main>
       <Footer />
+      <RetroExtras variant="footer" />
     </div>
 
     <script>
@@ -170,6 +187,29 @@ const schemas = [localBusiness, ...(schema ? (Array.isArray(schema) ? schema : [
           { threshold: 0.6 },
         )
         counters.forEach((el) => cio.observe(el))
+      }
+
+      // A page can load with retro mode already on (it's restored pre-paint
+      // from localStorage — see the inline script in <head>), in which case
+      // the hero's autoplay video never gets a click to pause it.
+      if (document.documentElement.classList.contains('retro')) {
+        document
+          .querySelector<HTMLVideoElement>('[data-hero-layout="background"] video')
+          ?.pause()
+      }
+
+      // 1995 mode's hit counter. Runs unconditionally (it's cheap, and the
+      // widget is hidden by CSS outside retro mode) so the number keeps
+      // creeping up across visits rather than resetting.
+      const hitCounter = document.getElementById('retro-hit-counter')
+      if (hitCounter) {
+        try {
+          const next = Number(localStorage.getItem('retro-hits') ?? 41) + 1
+          localStorage.setItem('retro-hits', String(next))
+          hitCounter.textContent = String(next).padStart(6, '0')
+        } catch {
+          /* private browsing, etc. — the counter just won't persist */
+        }
       }
     </script>
   </body>

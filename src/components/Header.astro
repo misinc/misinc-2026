@@ -6,17 +6,27 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/')
 ---
 
 <div
-  class="bg-primary px-4 py-2.5 text-center text-xs font-bold uppercase tracking-(--tracking-ribbon) text-[#ffe9d2]"
+  class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 bg-primary px-4 py-2.5 text-center text-xs font-bold uppercase tracking-(--tracking-ribbon) text-[#ffe9d2]"
 >
-  Experts in Web design &amp; development, AI consulting &amp; custom app
-  development
+  <span>
+    Experts in Web design &amp; development, AI consulting &amp; custom app
+    development
+  </span>
+  <button
+    type="button"
+    id="retro-toggle"
+    class="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] normal-case tracking-normal text-[#ffe9d2] transition hover:bg-white/20"
+  >
+    <span data-retro-label>🕰️ 1995 mode</span>
+  </button>
 </div>
 
 <header
   class="sticky top-0 z-60 flex items-center justify-between gap-6 border-b border-line bg-paper/90 px-6 py-3.5 backdrop-blur-[10px] md:px-10"
 >
   <a href="/" class="flex items-center gap-3 no-underline">
-    <img src="/img/mis-logo.png" alt="" width="42" height="44" class="block w-[42px]" />
+    <img src="/img/mis-logo.png" alt="" width="42" height="44" class="retro-hide block w-[42px]" />
+    <img src="/img/1995-logo.png" alt="" width="42" height="42" class="retro-only block w-[42px]" />
     <span class="font-display text-[20px] font-bold tracking-(--tracking-display) text-ink"
       >MIS, Inc.</span>
   </a>
@@ -137,4 +147,36 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/')
       if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') setMenu(false)
     })
   }
+
+  // 1995 mode toggle. The class itself is applied pre-paint (see the inline
+  // script in Base.astro's <head>) so there's no flash on load — this just
+  // handles the click and keeps the button label in sync.
+  const retroToggle = document.getElementById('retro-toggle')
+  const retroLabel = retroToggle?.querySelector<HTMLElement>('[data-retro-label]')
+  const syncRetroLabel = () => {
+    if (!retroLabel) return
+    retroLabel.textContent = document.documentElement.classList.contains('retro')
+      ? '🚀 Back to 2026'
+      : '🕰️ 1995 mode'
+  }
+  syncRetroLabel()
+  retroToggle?.addEventListener('click', () => {
+    const isRetro = document.documentElement.classList.toggle('retro')
+    try {
+      localStorage.setItem('retro-mode', isRetro ? 'on' : 'off')
+    } catch {
+      /* private browsing, etc. — the toggle still works for this page view */
+    }
+    syncRetroLabel()
+
+    // The hero's autoplay video is only hidden by CSS in retro mode — it
+    // would otherwise keep decoding off-screen for nothing.
+    const heroVideo = document.querySelector<HTMLVideoElement>(
+      '[data-hero-layout="background"] video',
+    )
+    if (heroVideo) {
+      if (isRetro) heroVideo.pause()
+      else heroVideo.play().catch(() => {})
+    }
+  })
 </script>
