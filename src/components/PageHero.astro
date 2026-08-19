@@ -168,8 +168,8 @@ const overlayStyle = isBackground
        the bottom — is genuinely different, not just a style variant. Keep the
        eyebrow/title/lede/ctas/note/slots in sync with the block below if you
        change one. */
-    <section class="relative isolate overflow-hidden">
-      <div class="absolute inset-0 -z-20">
+    <section class="relative isolate overflow-hidden" data-hero-layout="background">
+      <div class="hero-bg-media absolute inset-0 -z-20">
         {
           media?.type === 'video' && (
             <video
@@ -206,20 +206,20 @@ const overlayStyle = isBackground
         }
       </div>
 
-      {overlayStyle && <div class="absolute inset-0 -z-10" style={overlayStyle} />}
+      {overlayStyle && <div class="hero-bg-overlay absolute inset-0 -z-10" style={overlayStyle} />}
 
       <div class="relative mx-auto max-w-(--container-content) px-6 md:px-10">
         <div class="flex min-h-[520px] flex-col justify-end py-14 md:min-h-[600px] md:py-20">
           <slot name="before" />
           {
             eyebrow && (
-              <span class="text-xs font-bold uppercase tracking-(--tracking-label) text-accent-light">
+              <span class="hero-bg-eyebrow text-xs font-bold uppercase tracking-(--tracking-label) text-accent-light">
                 {eyebrow}
               </span>
             )
           }
 
-          <h1 class="my-5 text-4xl font-bold text-white" data-hero-title>
+          <h1 class="hero-bg-title my-5 text-4xl font-bold text-white" data-hero-title>
             {title}
             {
               typed && (
@@ -235,7 +235,7 @@ const overlayStyle = isBackground
 
           {
             (lede || Astro.slots.has('lede')) && (
-              <p class="mb-7 max-w-(--container-prose) text-lg text-white/85">
+              <p class="hero-bg-lede mb-7 max-w-(--container-prose) text-lg text-white/85">
                 {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
               </p>
             )
@@ -253,10 +253,10 @@ const overlayStyle = isBackground
             )
           }
 
-          {note && <p class="mt-4 text-sm font-semibold text-white/70">{note}</p>}
+          {note && <p class="hero-bg-note mt-4 text-sm font-semibold text-white/70">{note}</p>}
           {
             media?.caption && (
-              <p class="mt-4 text-xs font-bold uppercase tracking-(--tracking-label) text-white/55">
+              <p class="hero-bg-caption mt-4 text-xs font-bold uppercase tracking-(--tracking-label) text-white/55">
                 {media.caption}
               </p>
             )
@@ -277,6 +277,7 @@ const overlayStyle = isBackground
   ) : (
     <div class="mx-auto max-w-(--container-content) px-6 md:px-10">
       <section
+        data-hero-layout={layout}
         class:list={[
           'py-14 lg:py-[76px]',
           !centered && withMedia && 'grid items-center gap-9 lg:grid-cols-[1.08fr_0.92fr]',
@@ -344,7 +345,7 @@ const overlayStyle = isBackground
           withMedia && (
           <figure
             class:list={[
-              'm-0 overflow-hidden rounded-md border border-line-soft shadow-media',
+              'hero-figure m-0 overflow-hidden rounded-md border border-line-soft shadow-media',
               centered && 'mt-11',
               centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
             ]}

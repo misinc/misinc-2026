@@ -220,3 +220,146 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   1995 mode — a fun, fully reversible "what would this look like in 1995"
+   skin, toggled by the ribbon button in Header.astro. Deliberately left
+   unlayered (not inside @layer): Tailwind's own generated CSS and this
+   file's `base`/`components` layers all lose to unlayered rules regardless
+   of source order or specificity, so redefining the design tokens here is
+   enough to reskin every component automatically — nothing else in the
+   codebase needs to know this mode exists.
+   ========================================================================== */
+
+html.retro {
+  --color-primary: #800000;
+  --color-primary-dark: #660000;
+  --color-primary-light: #a30000;
+  --color-accent: #ff6600;
+  --color-accent-dark: #cc5200;
+  --color-accent-light: #ff9933;
+  --color-ink: #660000;
+  --color-ink-soft: #660000;
+  --color-ink-muted: #7a3300;
+  --color-paper: #ffffcc;
+  --color-paper-panel: #ffffe0;
+  --color-paper-surface: #ffff99;
+  --color-paper-tint: #ffffcc;
+  --color-ground: #ffff99;
+  --color-line: #999966;
+  --color-line-soft: #cccc99;
+  --font-display: "Times New Roman", Times, serif;
+  --font-sans: "Times New Roman", Times, serif;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --shadow-paper: none;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+  --shadow-media: none;
+  --shadow-button: none;
+  --shadow-panel: none;
+
+  /* A fixed-width "page" reads more period-accurate than the modern fluid
+     sheet — old sites were designed for 800×600 and didn't stretch. */
+  --container-sheet: 1024px;
+}
+
+/* The fixed backdrop (body::before) paints a literal gradient rather than
+   reading the tokens above, so it needs its own override. */
+html.retro body::before {
+  background: #ffff99;
+}
+
+/* PageHero's `background` layout (autoplay video behind white text) reads as
+   the most 2026 thing on the page — drop the media/scrim entirely and fall
+   back to plain dark-on-paper text, closer to `layout="full"`. Scoped to the
+   handful of class hooks PageHero.astro sets on this branch specifically. */
+html.retro [data-hero-layout='background'] {
+  background: var(--color-paper);
+}
+html.retro [data-hero-layout='background'] .hero-bg-media,
+html.retro [data-hero-layout='background'] .hero-bg-overlay {
+  display: none;
+}
+html.retro [data-hero-layout='background'] .hero-bg-eyebrow {
+  color: var(--color-primary);
+}
+html.retro [data-hero-layout='background'] .hero-bg-title,
+html.retro [data-hero-layout='background'] .hero-bg-lede,
+html.retro [data-hero-layout='background'] .hero-bg-note,
+html.retro [data-hero-layout='background'] .hero-bg-caption {
+  color: var(--color-ink);
+}
+/* The "ghost" CTA's `ghostOnDark` variant is styled in literal white for a
+   dark/photographic backdrop — which retro mode just removed. */
+html.retro [data-hero-layout='background'] .text-white {
+  color: var(--color-ink);
+}
+html.retro [data-hero-layout='background'] [class*='border-white'] {
+  border-color: var(--color-primary);
+}
+
+/* PageHero's other layouts (split/centered/full) frame media in a separate
+   figure rather than a full-bleed background — same "no video/photo, plain
+   text" treatment applies, plus collapsing the two-column grid back to one
+   column now that the figure it was reserving space for is gone. */
+html.retro .hero-figure {
+  display: none;
+}
+html.retro [data-hero-layout]:not([data-hero-layout='background']) {
+  grid-template-columns: 1fr;
+}
+
+/* Flatten every rounded corner and drop shadow site-wide — the one part of
+   the look the token swap above can't reach, since `rounded-full` and
+   Tailwind's default shadow utilities aren't driven by the theme tokens. */
+html.retro *,
+html.retro *::before,
+html.retro *::after {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Plain text links go classic blue-underline; anchors styled as filled
+   buttons (they all carry a `bg-*` class in this codebase) keep reading as
+   buttons, just square and in the retro palette from the tokens above. */
+html.retro a:not([class*="bg-"]) {
+  color: #0000ee;
+  text-decoration: underline;
+}
+html.retro a:not([class*="bg-"]):visited {
+  color: #551a8b;
+}
+
+/* Toggled logo/widgets. `.retro-hide` elements (the modern logo) are visible
+   by default and hidden in retro mode; `.retro-only` elements (the 1995
+   logo, the construction banner, the hit counter) are the reverse. */
+.retro-only {
+  display: none;
+}
+html.retro .retro-hide {
+  display: none;
+}
+html.retro .retro-only {
+  display: block;
+}
+
+@keyframes retro-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.retro-blink {
+  animation: retro-blink 1s step-start infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .retro-blink {
+    animation: none;
+  }
+}
