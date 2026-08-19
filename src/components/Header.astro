@@ -170,10 +170,9 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/')
     syncRetroLabel()
 
     // The hero's autoplay video is only hidden by CSS in retro mode — it
-    // would otherwise keep decoding off-screen for nothing.
-    const heroVideo = document.querySelector<HTMLVideoElement>(
-      '[data-hero-layout="background"] video',
-    )
+    // would otherwise keep decoding off-screen for nothing. `[data-hero-layout]`
+    // covers every PageHero variant, not just the full-bleed `background` one.
+    const heroVideo = document.querySelector<HTMLVideoElement>('[data-hero-layout] video')
     if (heroVideo) {
       if (isRetro) heroVideo.pause()
       else heroVideo.play().catch(() => {})

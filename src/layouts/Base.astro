@@ -193,9 +193,7 @@ const schemas = [localBusiness, ...(schema ? (Array.isArray(schema) ? schema : [
       // from localStorage — see the inline script in <head>), in which case
       // the hero's autoplay video never gets a click to pause it.
       if (document.documentElement.classList.contains('retro')) {
-        document
-          .querySelector<HTMLVideoElement>('[data-hero-layout="background"] video')
-          ?.pause()
+        document.querySelector<HTMLVideoElement>('[data-hero-layout] video')?.pause()
       }
 
       // 1995 mode's hit counter. Runs unconditionally (it's cheap, and the

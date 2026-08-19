@@ -300,6 +300,17 @@ html.retro [data-hero-layout='background'] [class*='border-white'] {
   border-color: var(--color-primary);
 }
 
+/* PageHero's other layouts (split/centered/full) frame media in a separate
+   figure rather than a full-bleed background — same "no video/photo, plain
+   text" treatment applies, plus collapsing the two-column grid back to one
+   column now that the figure it was reserving space for is gone. */
+html.retro .hero-figure {
+  display: none;
+}
+html.retro [data-hero-layout]:not([data-hero-layout='background']) {
+  grid-template-columns: 1fr;
+}
+
 /* Flatten every rounded corner and drop shadow site-wide — the one part of
    the look the token swap above can't reach, since `rounded-full` and
    Tailwind's default shadow utilities aren't driven by the theme tokens. */
