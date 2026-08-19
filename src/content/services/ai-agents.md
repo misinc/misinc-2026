@@ -16,6 +16,16 @@ seo:
   description: Custom AI agents built for New Mexico small businesses, handling routine customer questions, triaging enquiries, scheduling, and follow-up, with a person always in the loop.
 ---
 
+## Anatomy of an AI Agent
+![Anatomy of an AI Agent](/img/services/anatomy-of-an-ai-agent.png)
+
+An AI agent is a typically includes these features:
+* **Brain** — The reasoning engine — the LLM at the core.
+* **Prompt** — Carefully crafted instructions for how it behaves.
+* **Memory** — Remembers context across tasks and conversations.
+* **Knowledge** — Trained on your business — docs, policies, products.
+* **Tools** — Takes real action — sends, books, updates. Not just chat.
+
 ## What an agent actually is
 
 An AI agent is a small piece of software with a specific job, access to your information, and permission to take a narrow set of actions. Not a chatbot that guesses, and not a replacement for your team, but a tool that handles the routine so people can handle the rest.
