@@ -32,7 +32,7 @@ const faqs = (await getCollection('faqs'))
 
 const steps = [
   {
-    title: 'You tell us about the project',
+    title: 'You tell us about your project',
     body: 'What the business is, what you want the site or software to do, and what is frustrating about how things work now. No need to have it all worked out.',
   },
   {
@@ -59,7 +59,7 @@ const contactSchema = {
   schema={[contactSchema, breadcrumbs([{ name: 'Start a project' }])]}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Start a project with MIS, Inc." title="Tell us what you’re trying to build" lede={`Skip the calendar. Describe the project and we will reply within one business day with a straight read on scope and cost, drawing on ${yearsInBusiness} years of doing this in Albuquerque.`} showMedia={false} layout="full" />
+    <PageHero eyebrow="Start a project with MIS, Inc." title="Tell us what you’re wanting us to build" lede={`Describe your project and we will reply within one business day with a quote or with questions if we need more clarification. Either way, you will hear from us.`} showMedia={false} layout="full" />
   </div>
 
   <Section variant="tint" width="full">
@@ -84,17 +84,14 @@ const contactSchema = {
   </Section>
 
   <Section>
-    <SectionHeader eyebrow="Project details" title="Get in touch" lede="The more you tell us up front, the more useful our first reply can be." class="mb-8" />
+    <SectionHeader eyebrow="Project details" title="Your Project" lede="The more details you provide, the more accurate our quote will be." class="mb-8" />
 
     <ProjectForm />
 
     <p class="mt-6 text-sm text-ink-muted">
       Would rather talk it through live?
       <a href="/free-consultation" class="font-bold text-primary no-underline hover:underline">Book a free consultation</a>
-      instead, or call
-      <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
-        {site.phone}
-      </a>.
+      instead.
     </p>
   </Section>
 

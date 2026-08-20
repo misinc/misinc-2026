@@ -77,7 +77,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
     </div>
 
     <div>
-      <label class={label} for="project-subject">What are you looking to build?</label>
+      <label class={label} for="project-subject">What are we building?</label>
       <select class={field} id="project-subject" name="subject">
         {projectTypes.map((t) => <option value={t}>{t}</option>)}
       </select>
@@ -87,7 +87,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
   <div class="grid gap-5 sm:grid-cols-2">
     <div>
       <label class={label} for="project-budget">
-        Budget <span class="font-semibold text-ink-muted">(optional)</span>
+        Your Budget <span class="font-semibold text-ink-muted">(optional)</span>
       </label>
       <select class={field} id="project-budget" name="budget">
         <option value="">Prefer not to say</option>
@@ -97,7 +97,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
 
     <div>
       <label class={label} for="project-timeline">
-        Timeline <span class="font-semibold text-ink-muted">(optional)</span>
+        Your Timeline <span class="font-semibold text-ink-muted">(optional)</span>
       </label>
       <select class={field} id="project-timeline" name="timeline">
         <option value="">Prefer not to say</option>
@@ -107,7 +107,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
   </div>
 
   <div>
-    <label class={label} for="project-message">Tell us about the project</label>
+    <label class={label} for="project-message">Tell us about your project</label>
     <textarea
       class:list={[field, 'min-h-[160px] resize-y']}
       id="project-message"
