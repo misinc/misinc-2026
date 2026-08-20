@@ -1,6 +1,5 @@
 ---
 import Button from './Button.astro'
-import { site } from '../lib/site'
 
 /**
  * Closing "what happens next" block for article-style pages.
@@ -22,7 +21,7 @@ const {
   title = 'What happens next',
   text,
   ctaLabel = 'Book a free consultation',
-  ctaHref = '/free-consultation',
+  ctaHref = '/start-a-project',
   class: className = '',
 } = Astro.props
 ---
@@ -39,11 +38,5 @@ const {
 
   <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
     <Button href={ctaHref}>{ctaLabel}</Button>
-    <p class="text-sm font-semibold text-ink-muted">
-      Or call
-      <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
-        {site.phone}
-      </a>
-    </p>
   </div>
 </div>
