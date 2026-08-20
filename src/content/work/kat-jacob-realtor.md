@@ -16,7 +16,7 @@ testimonial:
   attribution: "Kat Jacob, Realtor®"
 seo:
   title: "Kat Jacob Realtor Website with IDX | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built a real estate website with full Albuquerque MLS IDX search for Realtor Kat Jacob."
+  description: "How MIS, Inc. designed and built a real estate website with full Albuquerque MLS IDX search for Realtor Kat Jacob."
 ---
 
 Kat specialises in first-time home buyers, luxury properties, and relocation, three audiences at very different stages of confidence.

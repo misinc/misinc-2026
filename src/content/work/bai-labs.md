@@ -13,7 +13,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "bAI Labs Applied AI Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for bAI Labs, an applied AI innovation lab in Annapolis, Maryland, on Webflow."
+  description: "How MIS, Inc. designed and built the website for bAI Labs, an applied AI innovation lab in Annapolis, Maryland, on Webflow."
 ---
 
 bAI Labs is an applied AI innovation lab in Annapolis, Maryland, backed by four decades of engineering leadership at BAI Group. They build AI platforms, custom solutions, executive education, and applied research.

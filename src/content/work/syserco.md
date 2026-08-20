@@ -12,7 +12,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Syserco Building Automation Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for Syserco, a Bay Area energy management and intelligent building automation company."
+  description: "How MIS, Inc. designed and built the website for Syserco, a Bay Area energy management and intelligent building automation company."
 ---
 
 Syserco makes buildings intelligent with energy management systems, controls, and integration across the San Francisco Bay Area, with more than two hundred energy management professionals.

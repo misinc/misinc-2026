@@ -13,7 +13,7 @@ nextStep: >-
   If your team answers the same handful of questions every week, or enquiries arrive after hours and sit until morning, this is usually the quickest thing to fix. We handle the setup.
 seo:
   title: "Add On AI Chat: AI Chat Widget for Small Business | MIS, Inc."
-  description: Add On AI Chat is a done-for-you AI chat widget that answers customer questions and captures leads on your existing website. Built by MIS, Inc. in Albuquerque.
+  description: Add On AI Chat is a custom AI chat widget that answers customer questions based on your website content and captures leads. Built by MIS, Inc. in Albuquerque.
 ---
 
 ## The same questions, over and over

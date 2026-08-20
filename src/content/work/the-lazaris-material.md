@@ -12,7 +12,7 @@ services: [ecommerce-website-design, custom-software]
 platforms: [wordpress]
 seo:
   title: "The Lazaris Material E-Commerce Build | MIS, Inc."
-  description: "How MIS, Inc. built a complex e-commerce system combining pay-per-view, streaming audio, subscriptions, and physical products."
+  description: "How MIS, Inc. designed and built a complex e-commerce system combining pay-per-view, streaming audio, subscriptions, and physical products."
 ---
 
 We worked with Artisan Creative on this one, and it remains among the more technically involved builds we have done.

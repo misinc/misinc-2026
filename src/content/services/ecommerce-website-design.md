@@ -1,11 +1,11 @@
 ---
 title: E-Commerce Stores
-heading: Sell your products around the clock
+heading: Sell your products 24/7
 summary: Online stores that are straightforward for customers to buy from and straightforward for you to run, on the platform that actually fits your business.
 pillar: websites
 order: 30
 ranking: true
-platforms: [square-online-store, shopify, ecwid, webflow]
+platforms: [square-online-store, shopify, ecwid]
 highlights:
   - Secure checkout & payments
   - Shipping and tax handled
@@ -30,7 +30,7 @@ We have built stores on most of the major platforms, and we are a Square Online 
 
 ## What comes standard
 
-- Secure card processing
+- Secure credit card processing
 - Automatic shipping rate calculation
 - Automatic sales tax calculation
 - Unlimited products and categories
@@ -40,12 +40,12 @@ We have built stores on most of the major platforms, and we are a Square Online 
 
 ## Already have a website?
 
-You do not always need to start over. If your existing site is solid, we can often add a store to it, or connect it to the point-of-sale system you already use so that your online and in-person inventory stay in step.
+You do not always need to start over. If your existing site is solid, we can often add a store to it using [Ecwid](/platforms/ecwid), or connect it to the point-of-sale system you already use so that your online and in-person inventory stay in step.
 
 That last part matters more than people expect. A store that shows an item as available after it sold out in the shop this morning creates a refund, an apology, and a customer who does not come back.
 
 ## Picking the right platform
 
-We keep an eye on new platforms, but we recommend proven ones. Square Online is often the right answer for restaurants and retailers already running Square. Shopify suits larger catalogs. Webflow suits stores where the design matters more than the inventory count.
+We keep an eye on new platforms, but we recommend proven ones. [Square Online](/platforms/square-online-store) is often the right answer for restaurants and retailers already running Square. [Shopify](/platforms/shopify) suits larger catalogs.
 
 We will make a recommendation and explain the reasoning, including what it will cost you to run each month, before you commit to anything.

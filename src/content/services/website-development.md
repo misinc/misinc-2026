@@ -1,6 +1,6 @@
 ---
 title: Website Development
-heading: Built properly, on Webflow or Astro
+heading: Built properly, on Webflow
 summary: The build itself, turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
 pillar: websites
 order: 20
@@ -31,7 +31,7 @@ We build on two platforms, and we will tell you plainly which one fits.
 
 Webflow is usually the right answer when you want to manage the site yourself. You get a visual editor for content, a proper CMS for things like blog posts and case studies, hosting that just works, and forms and basic ecommerce without extra plugins.
 
-We are Webflow partners and have built and maintained client sites on it for years. If your team wants to add a page without calling us, this is where we start.
+We are Certified Webflow partners and have built and maintained client sites on it for years. If your team wants to add a page without calling us, this is where we start.
 
 **Good fit for:** marketing sites, content-driven sites, teams who want autonomy, projects that need to launch quickly.
 
@@ -51,7 +51,6 @@ This site is built on Astro, which is the most honest demonstration we can offer
 - **CMS setup** so the content you update often is editable without touching code
 - **Integrations** for booking, payments, CRM, email platform, and analytics
 - **Performance work**, including image optimization, font loading, and the details that decide whether a page feels instant
-- **Accessibility**, with semantic markup, keyboard navigation, and screen reader support built in rather than retrofitted
 - **Launch and handover**, including training and documentation for whoever maintains it
 
 ## Migrating from something else

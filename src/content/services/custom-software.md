@@ -1,7 +1,7 @@
 ---
 title: Custom Software
 heading: Software built for you
-summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot, built by the same people who build our websites.
+summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot, built by the same people who built your websites.
 pillar: software-ai
 order: 10
 platforms: []
@@ -31,8 +31,8 @@ That person is expensive, and the spreadsheet is a single point of failure. Cust
 
 ## How we approach it
 
-We start with what is slow, not with what is technically interesting. The first conversation is usually about where time goes, and the answer is often something small and repetitive that nobody thought to mention.
+We start with what is repetitive, not with what is technically interesting. The first conversation is usually about where time goes, and the answer is often something small and repetitive that nobody thought to mention.
 
 Then we build the smallest thing that fixes it. Software gets more expensive to change the more of it there is, so a tool that does one job well and ships in weeks beats a platform that does everything and never quite launches.
 
-We build on boring, well-supported technology, Supabase for data and standard web platforms for the interface, so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.
+We build on trusted and proven, well-supported technology, and document everything we do so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.

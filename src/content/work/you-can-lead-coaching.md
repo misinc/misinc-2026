@@ -15,7 +15,7 @@ testimonial:
   attribution: "Lenann McGookey Gardner, You Can Lead Coaching"
 seo:
   title: "You Can Lead Coaching Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for executive coach Lenann McGookey Gardner, an award-winning sales and leadership coach."
+  description: "How MIS, Inc. designed and built the website for executive coach Lenann McGookey Gardner, an award-winning sales and leadership coach."
 ---
 
 Lenann coaches senior executives, people who are, by definition, used to being the most capable person in the room and are now considering asking for help.

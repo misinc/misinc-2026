@@ -12,7 +12,7 @@ services: [healthcare-website-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "National Brain Injury Institute Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for the National Brain Injury Institute, a specialist practice in the diagnosis and treatment of traumatic brain injury."
+  description: "How MIS, Inc. designed and built the website for the National Brain Injury Institute, a specialist practice in the diagnosis and treatment of traumatic brain injury."
 ---
 
 The National Brain Injury Institute diagnoses and treats traumatic brain injury, led by medical director Dr. Huma Haider, a TBI specialist and published contributor to the Handbook of Medical Aspects of Disability and Rehabilitation for Life Care Planning.

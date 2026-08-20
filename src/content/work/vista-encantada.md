@@ -12,7 +12,7 @@ services: [real-estate-website-design, web-design]
 platforms: [webflow, addonidx]
 seo:
   title: "Vista Encantada Realtors Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the Vista Encantada Realtors website in Albuquerque, with property search powered by Add On IDX."
+  description: "How MIS, Inc. designed and built the Vista Encantada Realtors website in Albuquerque, with property search powered by Add On IDX."
 ---
 
 Vista Encantada translates roughly as enchanting view, which is both the company's name and its stated view of New Mexico. It was founded in 1999 by qualified broker Kurstin Johnson and has stayed deliberately small, a boutique brokerage where the point is that you are dealing with people who know you.

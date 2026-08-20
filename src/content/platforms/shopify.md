@@ -13,7 +13,7 @@ nextStep: >-
   If you are selling online at any scale and your current store is fighting you, we will tell you honestly whether Shopify is worth the move.
 seo:
   title: Shopify Store Design & Development | MIS, Inc. Albuquerque
-  description: Shopify store design and development in Albuquerque, New Mexico. For businesses whose catalog and order volume have outgrown a simple online store.
+  description: Shopify store design and development from a Shopify partner in Albuquerque, NM. For businesses whose catalog and order volume have outgrown a simple online store.
 ---
 
 ## When Shopify is the right call

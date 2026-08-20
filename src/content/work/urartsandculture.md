@@ -12,7 +12,7 @@ services: [nonprofit-web-design, web-design, website-development]
 platforms: []
 seo:
   title: "UR Art & Culture Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for UR Art & Culture, the Albuquerque nonprofit behind the Rahim AlHaj Scholarship for Art & Culture."
+  description: "How MIS, Inc. designed and built the website for UR Art & Culture, the Albuquerque nonprofit behind the Rahim AlHaj Scholarship for Art & Culture."
 ---
 
 UR Art & Culture is an Albuquerque nonprofit founded by the composer and oud player Rahim AlHaj to fund and run the Rahim AlHaj Scholarship for Art & Culture, an award for emerging composers whose talent has outpaced what they can otherwise afford to pursue.

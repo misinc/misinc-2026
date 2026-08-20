@@ -12,7 +12,7 @@ services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "United Voices for Newcomer Rights Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for United Voices for Newcomer Rights, an Albuquerque nonprofit supporting refugee and immigrant communities."
+  description: "How MIS, Inc. designed and built the website for United Voices for Newcomer Rights, an Albuquerque nonprofit supporting refugee and immigrant communities."
 ---
 
 United Voices for Newcomer Rights is a community-led organisation founded in Albuquerque in 2019. It works on the immediate needs of newcomer communities and on the longer project of systemic change: educational, economic, cultural, and health initiatives, run in partnership with the communities themselves rather than on their behalf.

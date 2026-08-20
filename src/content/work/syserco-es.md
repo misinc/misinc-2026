@@ -12,7 +12,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Syserco Energy Solutions Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the Syserco Energy Solutions website for the energy performance contracting arm of Syserco."
+  description: "How MIS, Inc. designed and built the Syserco Energy Solutions website for the energy performance contracting arm of Syserco."
 ---
 
 Syserco Energy Solutions is the energy performance contracting arm of [Syserco](/works/syserco). They work with public entities and private organisations to improve building infrastructure, cut energy consumption, and lower annual utility costs.

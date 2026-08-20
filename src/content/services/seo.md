@@ -1,14 +1,14 @@
 ---
 title: Search Engine Optimization
 heading: Get found by search engines, and stay found
-summary: Local SEO for Albuquerque businesses. The work that gets you onto page one and keeps you there.
+summary: Local or National SEO. The work that gets you onto page one and keeps you there.
 pillar: growth
 order: 10
 ranking: true
 platforms: [webflow]
 highlights:
   - Local SEO & Google Business
-  - Technical SEO & speed
+  - National SEO
   - Content & on-page SEO
 nextStep: >-
   We will run your site through the same audit we would run on our own, and tell you what is holding it back, whether or not you hire us to fix it.

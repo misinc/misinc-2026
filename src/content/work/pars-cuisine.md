@@ -13,7 +13,7 @@ services: [ecommerce-website-design]
 platforms: [ecwid]
 seo:
   title: "Pars Cuisine Restaurant Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built online ordering, catering requests, and gift cards for Pars Cuisine, a Persian and Mediterranean restaurant in Albuquerque."
+  description: "How MIS, Inc. designed and built the website, online ordering, catering requests, and gift cards for Pars Cuisine, a Persian and Mediterranean restaurant in Albuquerque."
 ---
 
 Pars Cuisine has been serving Persian and Mediterranean food in Albuquerque for years, and their website needed to do considerably more than show a menu.

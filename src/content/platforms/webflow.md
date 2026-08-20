@@ -12,8 +12,8 @@ order: 10
 nextStep: >-
   If you want a site you can update yourself without calling a developer every time, we will show you what Webflow makes possible.
 seo:
-  title: Webflow Web Design & Development in Albuquerque | MIS, Inc.
-  description: Webflow websites designed and built in Albuquerque, New Mexico. Visual editing, a real CMS, fast hosting, and no plugins to maintain.
+  title: Webflow Partner, Web Design & Development in Albuquerque | MIS, Inc.
+  description: Webflow websites designed and built by a Certified Webflow partner in Albuquerque, NM. Visual editing, a real CMS, fast hosting, and no plugins to maintain.
 ---
 
 ## Why we build on Webflow

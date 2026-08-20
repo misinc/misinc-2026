@@ -12,7 +12,7 @@ services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Election Reformers Network Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for Election Reformers Network, a national nonprofit working on impartial election administration."
+  description: "How MIS, Inc. designed and built the website for Election Reformers Network, a national nonprofit working on impartial election administration."
 ---
 
 Election Reformers Network is a 501(c)(3) nonprofit working on how elections are administered in the United States. Their own description of their position is that they favour neither the left nor the right, and their focus is the machinery rather than the contests: who runs elections, and under what rules.

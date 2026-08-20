@@ -12,7 +12,7 @@ services: [real-estate-website-design, web-design]
 platforms: [weebly-cloud]
 seo:
   title: "SAM Properties Office Leasing Website | MIS, Inc."
-  description: "How MIS, Inc. built the leasing website for SAM Properties, offering executive office space in Albuquerque, New Mexico."
+  description: "How MIS, Inc. designed and built the leasing website for SAM Properties, offering executive office space in Albuquerque, New Mexico."
 ---
 
 SAM Properties leases executive office space in a genuinely attractive Albuquerque building, and for commercial leasing the website does a specific job: it decides whether someone books a tour.

@@ -14,11 +14,15 @@
 
 /services/wordpress-procare-plan                /platforms/wordpress                 301
 /wordpress-procare-signup                       /platforms/wordpress                 301
-# --- Services: three thin marketing pages become one pillar ------------------
+# --- Services: thin marketing pages fold into one pillar ---------------------
+# /services/email-marketing is intentionally not redirected here; it's slated
+# to become its own live page again.
 
-/services/email-marketing                       /services/digital-marketing          301
-/services/social-media-marketing                /services/digital-marketing          301
-/services/digital-marketing-for-online-stores   /services/digital-marketing          301
+/services/digital-marketing                       /services/email-marketing                 301
+
+
+/services/social-media-marketing                /services/email-marketing          301
+/services/digital-marketing-for-online-stores   /services/email-marketing          301
 # --- Retired: restaurant work has dropped since 2020; the slot in the -------
 # websites pillar goes to nonprofit web design instead, which is now a
 # larger share of the client roster. The old page had real search demand
@@ -29,9 +33,9 @@
 /services/restaurant-website-design             /services/ecommerce-website-design    301
 # --- Platforms: keep the six partner pages, retire the rest ------------------
 
-/platforms/activecampaign                       /services/digital-marketing          301
-/platforms/facebook                             /services/digital-marketing          301
-/platforms/twitter                              /services/digital-marketing          301
+/platforms/activecampaign                       /services/email-marketing          301
+/platforms/facebook                             /services/email-marketing          301
+/platforms/twitter                              /services/email-marketing          301
 /platforms/addon-commerce                       /services/ecommerce-website-design   301
 /platforms/webflow-e-commerce                   /services/ecommerce-website-design   301
 /platforms/elementor-builder-for-wordpress      /platforms/wordpress                 301

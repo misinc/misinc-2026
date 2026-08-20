@@ -1,14 +1,14 @@
 ---
 title: Healthcare Web Design
 heading: Grow your practice with a website patients trust
-summary: Websites for medical, dental, dermatology, and optometry practices. Clear, accessible, and built with patient privacy in mind.
+summary: Websites for medical, dental, dermatology, and optometry practices and more.
 pillar: websites
 order: 60
 ranking: true
 platforms: [webflow]
 highlights:
   - HIPAA-conscious forms
-  - Accessible by design
+  - Beautiful designs
   - Built for patient conversion
 hero:
   type: image
@@ -32,16 +32,10 @@ Most practice websites bury all three.
 
 - **Clear paths to booking.** Appointment requests and patient portal links where people look for them, not three clicks down.
 - **Privacy handled properly.** Any form that could collect protected health information is built to keep it out of insecure email and analytics.
-- **Genuine accessibility.** Healthcare sites serve people with visual, motor, and cognitive impairments more than most. Contrast, keyboard navigation, and screen reader support are requirements here, not nice-to-haves.
+- **Genuine accessibility.** Healthcare sites serve people with visual, motor, and cognitive impairments more than most. Contrast, keyboard navigation, and screen reader support are requirements here, not nice-to-haves (requires a third party add-on).
 - **Provider and service pages that rank.** Patients search for a condition or a procedure, not your practice name. Those pages are how they find you.
 - **Fast on a phone in a waiting room**, on a bad connection.
 
-## On HIPAA
-
-We are not a law firm and we do not sell compliance certification. What we do is build so that the technical side does not create exposure: secure form handling, no protected information flowing into third-party analytics, appropriate hosting, and a signed agreement with vendors where one is required.
-
-If your practice needs formal compliance review, we will work alongside whoever provides it.
-
 ## Local work
 
-We have built and maintained sites for New Mexico practices including [Coleman Vision](/works/colemanvision) and the Dermatology & Skin Cancer Center of New Mexico.
+We have built and maintained sites many healthcare related websites including [Coleman Vision](/works/colemanvision), [NM Cancer Research Alliance](/works/nm-cancer-research-alliance), Dermatology & Skin Cancer Center of New Mexico and more.

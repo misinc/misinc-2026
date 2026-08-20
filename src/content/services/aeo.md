@@ -1,7 +1,7 @@
 ---
 title: Answer Engine Optimization
 heading: Get named when people ask AI instead of Google
-summary: AEO for Albuquerque businesses. We make sure ChatGPT, Perplexity, Google AI Overviews, and voice assistants name you when a local customer asks.
+summary: AEO for local businesses. We make sure ChatGPT, Perplexity, Google AI Overviews, and voice assistants name you when a local customer asks.
 pillar: growth
 order: 15
 ranking: false
@@ -41,8 +41,8 @@ For a local business, that raises the stakes. People asking an assistant "near m
 
 ## How this fits with SEO
 
-We do not sell AEO as a separate line item bolted onto a proposal. It shares a foundation with [SEO](/services/seo): a fast, well-structured, accurately described site earns both a ranking and a citation. The difference is in the finishing work — data structured cleanly enough for a machine to lift out and repeat, and enough consistency across the web that an assistant trusts what it finds.
+AEO shares a foundation with [SEO](/services/seo): a fast, well-structured, accurately described site earns both a ranking and a citation. The difference is in the finishing work — data structured cleanly enough for a machine to lift out and repeat, and enough consistency across the web that an assistant trusts what it finds.
 
 ## What we will not do
 
-We will not promise you will be named in every AI answer, because nobody controls what a model decides to say. We will not pad your site with fake reviews or manufactured "As seen in AI" claims to game a citation. What we will do is fix what is genuinely holding you back and tell you honestly when we have.
+We will not promise you will be named in every AI answer, because nobody controls what a model decides to say. We will not pad your site with fake reviews or manufactured “As seen in AI” claims to game a citation. What we will do is fix what is genuinely holding you back and tell you honestly when we have.

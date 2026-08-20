@@ -9,7 +9,7 @@ platforms: [webflow, addonidx]
 highlights:
   - IDX / MLS integration
   - Lead capture built in
-  - Open house manager
+  - Works with any website
 hero:
   type: image
   src: /img/work/kat-jacob.jpg
@@ -39,7 +39,7 @@ New data is pulled from your MLS provider twice a day. Your listings stay fresh 
 - **Featured listings** you choose and control
 - **Works with new or existing sites**, so we can add IDX to a site we did not build
 - **Contact forms on every listing**, so interest becomes a lead
-- **Open house manager**
+- **Lead Capture forms**
 - **Social sharing**, so buyers spread your listings for you
 - **Advanced search** with the filters that matter in your market
 - **Virtual tour support**

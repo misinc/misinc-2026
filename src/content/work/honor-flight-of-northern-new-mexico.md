@@ -13,7 +13,7 @@ services: [nonprofit-web-design, web-design]
 platforms: [weebly-cloud]
 seo:
   title: "Honor Flight of Northern New Mexico | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for Honor Flight of Northern New Mexico, a nonprofit taking veterans to their memorials in Washington, D.C."
+  description: "How MIS, Inc. designed and built the website for Honor Flight of Northern New Mexico, a nonprofit taking veterans to their memorials in Washington, D.C."
 ---
 
 Honor Flight of Northern New Mexico is a 501(c)(3) that takes veterans to Washington, D.C. free of charge to visit the memorials built in their honor, with priority given to World War II and Korean War veterans and to those who are terminally ill.

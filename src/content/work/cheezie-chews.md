@@ -16,7 +16,7 @@ testimonial:
   attribution: "Brett Weinberg, VP Sales & Marketing, GlobalOne Pet"
 seo:
   title: "Cheezie Chews E-Commerce Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the Cheezie Chews online store for GlobalOne Pet, one of three websites built with the same client."
+  description: "How MIS, Inc. designed and built the Cheezie Chews online store for GlobalOne Pet, one of three websites built with the same client."
 ---
 
 Cheezie Chews were edible dog chews made from Himalayan cheese: protein-rich, lactose-free, and a genuine step up from the corn-and-starch chews that dominate the category.

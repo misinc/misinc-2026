@@ -12,7 +12,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "3D Security Training Solutions Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for 3D Security Training Solutions, a security guard and firearms training provider in New Mexico and Arizona."
+  description: "How MIS, Inc. designed and built the website for 3D Security Training Solutions, a security guard and firearms training provider in New Mexico and Arizona."
 ---
 
 3D Security Training Solutions trains security guards, firearms carriers, and corporate teams across New Mexico and Arizona. Their own line puts it well: people do not rise to the occasion, they fall to their training.

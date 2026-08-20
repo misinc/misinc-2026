@@ -8,7 +8,7 @@ platforms: [addonaichat]
 highlights:
   - AI strategy for small teams
   - Tool selection & training
-  - Automating the slow parts
+  - Automating the repetitive parts
 nextStep: >-
   Bring the part of your week you would most like to stop doing manually.
 seo:
@@ -16,7 +16,7 @@ seo:
   description: Practical AI consulting for New Mexico small businesses and nonprofits. Honest advice on which AI tools are worth paying for and where automation actually saves time.
 ---
 
-## Everyone is selling you AI
+## Everyone is trying to sell you AI
 
 Every piece of software you already pay for has added an AI feature and raised its price. Meanwhile the advice available ranges from breathless to apocalyptic, and very little of it is aimed at a business with a handful of employees.
 
@@ -26,7 +26,7 @@ We have watched this pattern before. The web in 1995, e-commerce in the 2000s, m
 
 Not a strategy deck. Usually one of three concrete things:
 
-- **Automating something repetitive.** A task that eats hours weekly: sorting enquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
+- **Automating something repetitive.** A task that eats hours weekly: sorting inquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
 - **Choosing tools.** Which AI subscriptions are worth paying for in your specific business, which are duplicating something you already own, and which are charging you for a feature you will never open.
 - **Working out where it does not belong.** Sometimes the answer is that a task needs a person, or a simple script, or a fixed process. We would rather tell you that than sell you something.
 

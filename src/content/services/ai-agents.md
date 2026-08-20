@@ -1,13 +1,13 @@
 ---
 title: AI Agents
 heading: Custom agents that do the routine work
-summary: "Purpose-built AI agents for the tasks that fill your inbox: answering routine questions, triaging enquiries, chasing invoices, and scheduling."
+summary: "Purpose-built AI agents for the tasks that fill your inbox: answering routine questions, triaging inquiries, chasing invoices, and scheduling."
 pillar: software-ai
 order: 30
 platforms: [addonaichat]
 highlights:
   - Customer question handling
-  - Enquiry triage & routing
+  - Inquiry triage & routing
   - Scheduling & follow-up
 nextStep: >-
   Tell us which routine question your team answers most often. That is usually the first agent worth building.

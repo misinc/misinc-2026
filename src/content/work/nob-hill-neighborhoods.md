@@ -12,7 +12,7 @@ services: [real-estate-website-design]
 platforms: [webflow]
 seo:
   title: "Nob Hill Neighborhoods Real Estate Site | MIS, Inc."
-  description: "How MIS, Inc. built a neighbourhood-focused real estate website for Albuquerque Realtor Chris Lucas."
+  description: "How MIS, Inc. designed and built a neighbourhood-focused real estate website for Albuquerque Realtor Chris Lucas."
 ---
 
 Most agent websites try to cover an entire metro area and end up saying nothing specific about any of it.

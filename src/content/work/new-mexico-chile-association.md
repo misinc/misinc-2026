@@ -13,7 +13,7 @@ services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "New Mexico Chile Association Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the New Mexico Chile Association website, covering the New Mexico Certified Chile programme, membership, and advocacy."
+  description: "How MIS, Inc. built the New Mexico Chile Association website, covering the New Mexico Certified Chile program, membership, and advocacy."
 ---
 
 We were genuinely pleased to be selected for this one. New Mexico chile is not a small thing here, and the association exists in part to protect it.

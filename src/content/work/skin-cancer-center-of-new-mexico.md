@@ -12,7 +12,7 @@ services: [healthcare-website-design]
 platforms: [weebly-cloud]
 seo:
   title: "NM Dermatology & Skin Cancer Center Website | MIS, Inc."
-  description: "How MIS, Inc. built the website for the Dermatology & Skin Cancer Center of New Mexico, focused on patient information and access."
+  description: "How MIS, Inc. designed and built the website for the Dermatology & Skin Cancer Center of New Mexico, focused on patient information and access."
 ---
 
 The practice has specialised in medical dermatology since 2007, and a meaningful share of their patients arrive worried about something they have found on their skin.

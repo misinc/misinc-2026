@@ -12,7 +12,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Eric Spurlock Custom Home Design Website | MIS, Inc."
-  description: "How MIS, Inc. built the portfolio website for Eric Spurlock, an award-winning custom home designer in Albuquerque and Santa Fe."
+  description: "How MIS, Inc. built the new website for Eric Spurlock, an award-winning custom home designer in Albuquerque and Santa Fe."
 ---
 
 Eric has been designing award-winning homes since 1985, with work across communities including Tanoan Country Club and Winterwood Park, and studios in Albuquerque and Santa Fe.

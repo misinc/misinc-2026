@@ -12,7 +12,7 @@ services: [web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Marven & Shaw Investigations Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the website for Marven & Shaw, a private-sector investigations firm working on corruption, money laundering, and fraud."
+  description: "How MIS, Inc. designed and built the website for Marven & Shaw, a private-sector investigations firm working on corruption, money laundering, and fraud."
 ---
 
 Marven & Shaw run complex investigations into corruption, money laundering, and fraud. They file civil complaints alongside leading law firms and support law enforcement agencies and civil society partners.

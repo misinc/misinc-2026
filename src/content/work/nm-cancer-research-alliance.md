@@ -13,7 +13,7 @@ services: [healthcare-website-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "New Mexico Cancer Research Alliance Website | MIS, Inc."
-  description: "How MIS, Inc. built the New Mexico Cancer Research Alliance website, including a clinical trials search connecting New Mexicans to cancer research close to home."
+  description: "How MIS, Inc. designed and built the New Mexico Cancer Research Alliance website, including a clinical trials search connecting New Mexicans to cancer research close to home."
 ---
 
 The New Mexico Cancer Research Alliance exists to close a gap that is easy to state and hard to fix: cutting-edge cancer research tends to happen in a handful of large cities, and New Mexico is a large, rural state.
