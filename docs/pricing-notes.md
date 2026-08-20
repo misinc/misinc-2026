@@ -49,10 +49,10 @@ $5k–$20k tells a reader almost nothing and makes both ends look arbitrary.
 
 | Tier                 | What it covers                            | Price            |
 |----------------------|-------------------------------------------|------------------|
-| Starter site         | 5–8 pages, no CMS, launch-ready           | from $__3500__   |
-| Business site        | CMS, blog or case studies, integrations   | from $___5000_   |
-| E-commerce           | Store setup, payments, inventory          | from $__7500__   |
-| Custom software / AI | Scoped per project after a discovery call | from $__8500__   |
+| Starter site         | 5–8 pages, no CMS, launch-ready           | from $__5000__   |
+| Business site        | CMS, blog or case studies, integrations   | from $__7500__   |
+| E-commerce           | Store setup, payments, inventory          | from $__8500__   |
+| Custom software / AI | Scoped per project after a discovery call | from $__9500__   |
 | Care & hosting       | Monthly                                   | from $__50__/mo  |
 | SEO & marketing      | Monthly retainer                          | from $__500__/mo |
 

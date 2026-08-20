@@ -28,7 +28,7 @@ export const PRICE_TIERS: PriceTier[] = [
   {
     id: 'starter',
     name: 'Starter site',
-    from: 3500,
+    from: 5000,
     unit: 'project',
     summary: 'A clean, fast site of five to eight pages, ready to launch.',
     includes: [
@@ -45,7 +45,7 @@ export const PRICE_TIERS: PriceTier[] = [
   {
     id: 'business',
     name: 'Business site',
-    from: 5000,
+    from: 7500,
     unit: 'project',
     summary: 'A site with a CMS, so you can publish and update without calling us.',
     includes: [
@@ -62,7 +62,7 @@ export const PRICE_TIERS: PriceTier[] = [
   {
     id: 'ecommerce',
     name: 'E-commerce',
-    from: 7500,
+    from: 8500,
     unit: 'project',
     summary: 'An online store connected to how you actually take payments.',
     includes: [
@@ -79,7 +79,7 @@ export const PRICE_TIERS: PriceTier[] = [
   {
     id: 'software',
     name: 'Custom software & AI',
-    from: 8500,
+    from: 9500,
     unit: 'project',
     summary: 'Portals, integrations, internal tools, and AI agents, scoped per project.',
     includes: [

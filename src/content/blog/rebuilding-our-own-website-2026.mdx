@@ -16,6 +16,8 @@ faqs:
     a: "In most cases yes. Publishing starting prices lets people self-select before a sales call, which saves time on both sides, and it is increasingly how AI assistants answer cost questions about your business. If you do not publish a figure, something else will be quoted as your answer."
 ---
 
+import { money, PROJECT_FLOOR } from '../../lib/pricing'
+
 We have built more than 500 websites since 1995. Our own had not been rebuilt since 2018, and for the last eighteen months of that we knew it needed doing and did not do it.
 
 That is a common enough position that it is worth writing up honestly, along with what we eventually chose and the reasoning behind each decision, including a couple that look inconsistent until you hear the reason.
@@ -90,7 +92,7 @@ Ranking and being cited are becoming different problems.
 
 Search ranking has always rewarded authority and links. Being quoted by an assistant rewards *clarity*, being the source that most unambiguously states a fact. Those pull in slightly different directions, and the second one is newer than most sites are built for.
 
-In practice that meant structured data on every page describing what we are, where we are, and what we charge; real questions answered in the words people use to ask them; and specific, checkable facts instead of marketing adjectives. "We are a boutique agency delivering world-class solutions" is unquotable. "Projects start at $3,500" is a fact an assistant can repeat.
+In practice that meant structured data on every page describing what we are, where we are, and what we charge; real questions answered in the words people use to ask them; and specific, checkable facts instead of marketing adjectives. "We are a boutique agency delivering world-class solutions" is unquotable. "Projects start at {money(PROJECT_FLOOR)}" is a fact an assistant can repeat.
 
 We wrote about this in more detail in our [guide to choosing an SEO company](/blog/albuquerque-seo-company).
 

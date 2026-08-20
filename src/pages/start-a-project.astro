@@ -1,0 +1,119 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PageHero from '../components/PageHero.astro';
+import ProjectForm from '../components/ProjectForm.astro';
+import FaqList from '../components/FaqList.astro';
+import Testimonial from '../components/Testimonial.astro';
+import { site, yearsInBusiness } from '../lib/site';
+import { breadcrumbs } from '../lib/schema';
+
+/**
+ * Where every "Start a project" button on the site lands, instead of the
+ * old /free-consultation booking embed. Someone clicking this from a
+ * portfolio piece is already sold enough to describe their project, not
+ * necessarily ready to put a specific half hour on a calendar — so this asks
+ * for the project instead of an appointment, and offers the call as an
+ * alternative rather than the only door in.
+ */
+
+const work = await getCollection('work')
+const quote = work.find((w) => w.id === 'kat-jacob-realtor')
+
+const faqs = (await getCollection('faqs'))
+  .filter((f) =>
+    ['do-i-need-to-know-what-i-want', 'how-much-does-a-website-cost', 'how-quickly-will-i-hear-back'].includes(
+      f.id,
+    ),
+  )
+  .sort((a, b) => a.data.order - b.data.order)
+
+const steps = [
+  {
+    title: 'You tell us about the project',
+    body: 'What the business is, what you want the site or software to do, and what is frustrating about how things work now. No need to have it all worked out.',
+  },
+  {
+    title: 'We give you a straight read',
+    body: 'What we would do, what we would not bother with, and roughly what it involves, including when the honest answer is that you do not need us.',
+  },
+  {
+    title: 'You get a written proposal',
+    body: 'A fixed price and a scope, so you know exactly what you are agreeing to before anything starts.',
+  },
+]
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: `Start a project with ${site.name}`,
+  mainEntity: { '@id': `${site.url}/#organization` },
+}
+---
+
+<Base
+  title="Start a Project | MIS, Inc. Albuquerque"
+  description="Tell us about your website, e-commerce, custom software, or AI project. MIS, Inc. in Albuquerque replies within one business day with a straight read and a fixed price."
+  schema={[contactSchema, breadcrumbs([{ name: 'Start a project' }])]}
+>
+  <div class="border-b border-line">
+    <PageHero eyebrow="Start a project with MIS, Inc." title="Tell us what you’re trying to build" lede={`Skip the calendar. Describe the project and we will reply within one business day with a straight read on scope and cost, drawing on ${yearsInBusiness} years of doing this in Albuquerque.`} showMedia={false} layout="full" />
+  </div>
+
+  <Section variant="tint" width="full">
+    <div class="mx-auto max-w-(--container-content) px-6 py-12 md:px-10 lg:py-14">
+      <h2 class="sr-only">What happens next</h2>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {
+          steps.map((s, i) => (
+            <div class="flex gap-4" data-reveal>
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper-panel font-display text-[15px] font-bold text-primary tabular-nums">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="mb-1 font-display text-base font-bold text-ink">{s.title}</h3>
+                <p class="text-sm text-ink-soft">{s.body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeader eyebrow="Project details" title="Get in touch" lede="The more you tell us up front, the more useful our first reply can be." class="mb-8" />
+
+    <ProjectForm />
+
+    <p class="mt-6 text-sm text-ink-muted">
+      Would rather talk it through live?
+      <a href="/free-consultation" class="font-bold text-primary no-underline hover:underline">Book a free consultation</a>
+      instead, or call
+      <a href={site.phoneHref} class="font-bold text-ink-soft no-underline hover:text-primary">
+        {site.phone}
+      </a>.
+    </p>
+  </Section>
+
+  {
+    quote?.data.testimonial && (
+      <Section variant="tint" width="full">
+        <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-16">
+          <Testimonial
+            quote={quote.data.testimonial.quote}
+            attribution={quote.data.testimonial.attribution}
+            href={`/works/${quote.id}`}
+          />
+        </div>
+      </Section>
+    )
+  }
+
+  <Section divider={false}>
+    <SectionHeader eyebrow="Before you send this" title="Common questions" class="mb-8" />
+    <FaqList items={faqs} openFirst />
+  </Section>
+</Base>

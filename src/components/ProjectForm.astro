@@ -1,0 +1,252 @@
+---
+import { site } from '../lib/site'
+import { PRICE_TIERS } from '../lib/pricing'
+
+/**
+ * Project-intake form for /start-a-project, posting to the same Resend-backed
+ * Pages Function as ContactForm (/api/contact). Same progressive-enhancement
+ * pattern: a real <form> that works with no JavaScript, upgraded to an inline
+ * success message when JavaScript is available.
+ *
+ * Deliberately a separate component rather than ContactForm with extra props:
+ * the fields answer a different question ("what do you want built, and what
+ * are the constraints") rather than "what's on your mind," so it earns its
+ * own layout instead of bolting qualifying fields onto the general form.
+ *
+ * Project type reuses PRICE_TIERS names rather than a hand-typed list, so a
+ * renamed or added tier in lib/pricing.ts shows up here automatically.
+ */
+
+const projectTypes = [...PRICE_TIERS.map((t) => t.name), 'Not sure yet']
+
+const budgets = [
+  'Under $5,000',
+  '$5,000 – $10,000',
+  '$10,000 – $25,000',
+  '$25,000+',
+  'Not sure yet',
+]
+
+const timelines = [
+  'As soon as possible',
+  'Within a month or two',
+  'This quarter',
+  'Just exploring, no timeline yet',
+]
+
+const field =
+  'w-full rounded-md border border-line-soft bg-paper-panel px-4 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:border-primary focus:outline-none'
+const label = 'mb-1.5 block text-sm font-extrabold text-ink'
+---
+
+<form
+  id="project-form"
+  method="POST"
+  action="/api/contact"
+  class="flex flex-col gap-5"
+  novalidate
+>
+  <div
+    id="project-form-error"
+    role="alert"
+    hidden
+    class="rounded-md border border-primary/25 bg-[#f8eaea] px-4 py-3 text-[15px] font-semibold text-primary"
+  >
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="project-name">Your name</label>
+      <input class={field} type="text" id="project-name" name="name" autocomplete="name" required />
+      <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="name" hidden></p>
+    </div>
+
+    <div>
+      <label class={label} for="project-email">Email</label>
+      <input class={field} type="email" id="project-email" name="email" autocomplete="email" required />
+      <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="email" hidden></p>
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="project-phone">
+        Phone <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <input class={field} type="tel" id="project-phone" name="phone" autocomplete="tel" />
+    </div>
+
+    <div>
+      <label class={label} for="project-subject">What are you looking to build?</label>
+      <select class={field} id="project-subject" name="subject">
+        {projectTypes.map((t) => <option value={t}>{t}</option>)}
+      </select>
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label class={label} for="project-budget">
+        Budget <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <select class={field} id="project-budget" name="budget">
+        <option value="">Prefer not to say</option>
+        {budgets.map((b) => <option value={b}>{b}</option>)}
+      </select>
+    </div>
+
+    <div>
+      <label class={label} for="project-timeline">
+        Timeline <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <select class={field} id="project-timeline" name="timeline">
+        <option value="">Prefer not to say</option>
+        {timelines.map((t) => <option value={t}>{t}</option>)}
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label class={label} for="project-message">Tell us about the project</label>
+    <textarea
+      class:list={[field, 'min-h-[160px] resize-y']}
+      id="project-message"
+      name="message"
+      required
+      placeholder="What is the business, what is the site or software supposed to do, and what is not working about how things are now? No need to have it all worked out."
+    ></textarea>
+    <p class="mt-1.5 text-sm font-semibold text-primary" data-error-for="message" hidden></p>
+  </div>
+
+  {/* Honeypot. Hidden from people, irresistible to bots. */}
+  <div class="absolute left-[-9999px]" aria-hidden="true">
+    <label for="project-company">Company</label>
+    <input type="text" id="project-company" name="company" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
+    <button
+      type="submit"
+      id="project-submit"
+      class="inline-block cursor-pointer rounded-full bg-accent px-6 py-3.5 text-base font-extrabold text-ink shadow-button transition hover:-translate-y-px hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      Send project details
+    </button>
+    <p class="text-sm font-semibold text-ink-muted">
+      Or email <a
+        href={`mailto:${site.email}`}
+        class="font-bold text-ink-soft no-underline hover:text-primary">{site.email}</a
+      >
+    </p>
+  </div>
+</form>
+
+<div
+  id="project-success"
+  role="status"
+  hidden
+  class="rounded-lg border border-line-soft bg-paper-tint p-7 md:p-8"
+>
+  <h2 class="mb-2.5 font-display text-xl font-bold text-ink">Thanks, that came through.</h2>
+  <p class="mb-1 max-w-[58ch] text-ink-soft">
+    We read every project brief ourselves, and you will hear back from Karim within one business
+    day with a straight read on scope and cost.
+  </p>
+  <p class="text-ink-soft">
+    If it is urgent, call <a
+      href={site.phoneHref}
+      class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
+    >.
+  </p>
+</div>
+
+<script>
+  const form = document.getElementById('project-form') as HTMLFormElement | null
+  const success = document.getElementById('project-success')
+  const banner = document.getElementById('project-form-error')
+  const submit = document.getElementById('project-submit') as HTMLButtonElement | null
+
+  const clearErrors = () => {
+    document.querySelectorAll<HTMLElement>('[data-error-for]').forEach((el) => {
+      el.textContent = ''
+      el.hidden = true
+    })
+    document.querySelectorAll<HTMLElement>('[aria-invalid]').forEach((input) => {
+      input.removeAttribute('aria-invalid')
+      input.removeAttribute('aria-describedby')
+      input.classList.remove('border-primary')
+    })
+    if (banner) banner.hidden = true
+  }
+
+  const showFieldErrors = (errors: Record<string, string>) => {
+    Object.entries(errors).forEach(([name, msg]) => {
+      const el = document.querySelector<HTMLElement>(`[data-error-for="${name}"]`)
+      const input = document.querySelector<HTMLElement>(`#project-form [name="${name}"]`)
+      if (el) {
+        el.textContent = msg
+        el.hidden = false
+        el.id = `project-${name}-error`
+      }
+      if (input) {
+        input.setAttribute('aria-invalid', 'true')
+        input.setAttribute('aria-describedby', `project-${name}-error`)
+        input.classList.add('border-primary')
+      }
+    })
+    const firstName = Object.keys(errors)[0]
+    document.querySelector<HTMLElement>(`#project-form [name="${firstName}"]`)?.focus()
+  }
+
+  const showBanner = (msg: string) => {
+    if (!banner) return
+    banner.textContent = msg
+    banner.hidden = false
+    banner.scrollIntoView({ block: 'center', behavior: 'smooth' })
+  }
+
+  if (form && success && submit) {
+    // A server round-trip left an error in the URL (the no-JavaScript path).
+    const urlError = new URL(window.location.href).searchParams.get('error')
+    if (urlError === 'send' || urlError === 'config') {
+      showBanner('We could not send that just now. Please email us directly and we will pick it up.')
+    } else if (urlError === 'validation') {
+      showBanner('Some details were missing. Please check the fields below and try again.')
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      clearErrors()
+
+      submit.disabled = true
+      const original = submit.textContent
+      submit.textContent = 'Sending…'
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        })
+        const body = await res.json().catch(() => ({}))
+
+        if (res.ok && body.ok) {
+          form.hidden = true
+          success.hidden = false
+          success.scrollIntoView({ block: 'center', behavior: 'smooth' })
+          return
+        }
+
+        if (body.errors) showFieldErrors(body.errors)
+        else showBanner(body.error ?? 'Something went wrong. Please try again, or email us.')
+      } catch {
+        showBanner(
+          'We could not reach the server. Please check your connection, or email us directly.',
+        )
+      } finally {
+        submit.disabled = false
+        submit.textContent = original
+      }
+    })
+  }
+</script>

@@ -12,7 +12,7 @@ interface Props {
   category: keyof typeof WORK_CATEGORIES
   image: string
   imageAlt: string
-  year: number
+  year?: number
   hasTestimonial?: boolean
   /** Eager-load the first row; lazy-load the rest. */
   eager?: boolean
@@ -54,8 +54,14 @@ const {
   <div class="flex flex-1 flex-col gap-2 p-6">
     <div class="flex items-center gap-2 text-[11.5px] font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
       <span>{WORK_CATEGORIES[category]}</span>
-      <span aria-hidden="true">·</span>
-      <span class="tabular-nums">{year}</span>
+      {
+        year && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span class="tabular-nums">{year}</span>
+          </>
+        )
+      }
     </div>
 
     <h3 class="font-display text-lg font-bold leading-tight text-ink">{title}</h3>

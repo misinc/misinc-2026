@@ -41,7 +41,7 @@ const faqs = (await getCollection('faqs'))
 const featuredWork = allWork
   .filter((w) => w.data.featured)
   .sort((a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999))
-  .slice(0, 3)
+  .slice(0, 100)
 const quotes = allWork
   .filter((w) => w.data.testimonial)
   .sort((a, b) => b.data.year - a.data.year)
@@ -218,7 +218,6 @@ const guides = [
             category={w.data.category}
             image={w.data.image}
             imageAlt={w.data.imageAlt}
-            year={w.data.year}
             hasTestimonial={Boolean(w.data.testimonial)}
           />
         ))

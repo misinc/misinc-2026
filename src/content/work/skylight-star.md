@@ -8,7 +8,7 @@ imageAlt: "Advanced Skylight Services skylight manufacturer website"
 projectUrl: https://www.skylightstar.com
 year: 2025
 order: 50
-featured: true
+featured: false
 services: [web-design, website-development]
 platforms: [webflow]
 seo:

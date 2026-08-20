@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
+import { z } from 'astro/zod'
 
 /**
  * Content migrated from the Webflow CMS.
@@ -127,7 +128,7 @@ const work = defineCollection({
     image: z.string(),
     imageAlt: z.string(),
     /** The live site, when it is still up. */
-    projectUrl: z.string().url().optional(),
+    projectUrl: z.url().optional(),
     /** True when the site is no longer online — shown instead of a dead link. */
     archived: z.boolean().default(false),
     year: z.number(),
@@ -169,7 +170,11 @@ const faqs = defineCollection({
 })
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  // .mdx alongside .md: most posts stay plain markdown, but a post that needs
+  // to quote a live figure (e.g. from lib/pricing.ts) can import and compute
+  // it instead of hand-typing a number that goes stale the next time pricing
+  // changes. See rebuilding-our-own-website-2026.mdx for the pattern.
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     summary: z.string().default(''),

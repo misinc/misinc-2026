@@ -46,7 +46,7 @@ const schema = [
         poster: '/img/portfolio-reel-poster.jpg',
         caption: 'A few of the sites we have built',
         alt: 'A reel of websites designed and built by MIS, Inc.',
-      }} ctas={[{ label: 'Start a project', href: '/free-consultation' }]} layout="centered" />
+      }} ctas={[{ label: 'Start a project', href: '/start-a-project' }]} layout="centered" />
   </div>
 
   <Section>
@@ -89,7 +89,6 @@ const schema = [
             category={w.data.category}
             image={w.data.image}
             imageAlt={w.data.imageAlt}
-            year={w.data.year}
             hasTestimonial={Boolean(w.data.testimonial)}
             eager={i < 3}
           />
@@ -137,6 +136,7 @@ const schema = [
       title="Want your project on this page?"
       note="Tell us what you need. We will tell you honestly whether we are the right studio for it."
       ctaLabel="Start a project"
+      ctaHref="/start-a-project"
     />
   </Section>
 </Base>

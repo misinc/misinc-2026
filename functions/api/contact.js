@@ -2,7 +2,10 @@
  * Contact form handler — Cloudflare Pages Function.
  *
  * Replaces Netlify Forms. The site stays fully static; this is the only
- * server-side code in the project.
+ * server-side code in the project. Shared by both /contact (ContactForm) and
+ * /start-a-project (ProjectForm) — the two post the same core fields
+ * (name/email/phone/subject/message) plus budget/timeline, which this handler
+ * treats as optional so either form works against it unchanged.
  *
  * Required environment variables (Cloudflare Pages → Settings → Environment):
  *   RESEND_API_KEY   Resend API key
@@ -29,6 +32,21 @@ const redirect = (request, path) =>
   new Response(null, { status: 303, headers: { location: new URL(path, request.url).href } })
 
 /**
+ * A non-JS submission's error redirect should land back on whichever page
+ * sent it, not always /contact. There is no hidden "source page" field, so
+ * this reads it off the Referer instead — good enough for a fallback path
+ * that real (JavaScript) submissions never take.
+ */
+const formPage = (request) => {
+  try {
+    const path = new URL(request.headers.get('referer') ?? '', request.url).pathname
+    return path === '/start-a-project' ? path : '/contact'
+  } catch {
+    return '/contact'
+  }
+}
+
+/**
  * A fetch() submission wants JSON back. A plain <form> POST from a browser
  * without JavaScript wants to be sent somewhere — otherwise the visitor is
  * left staring at raw JSON.
@@ -41,7 +59,7 @@ export async function onRequestPost({ request, env }) {
     const failure = 'The contact form is not configured yet.'
     return wantsJson(request)
       ? json(500, { ok: false, error: failure })
-      : redirect(request, '/contact?error=config')
+      : redirect(request, `${formPage(request)}?error=config`)
   }
 
   let data
@@ -67,19 +85,25 @@ export async function onRequestPost({ request, env }) {
   const message = String(data.message ?? '').trim()
   const phone = String(data.phone ?? '').trim()
   const subject = String(data.subject ?? 'Website enquiry').trim()
+  // Project-intake extras. Optional: the plain /contact form never sends
+  // them, so a missing value here is normal, not an error.
+  const budget = String(data.budget ?? '').trim()
+  const timeline = String(data.timeline ?? '').trim()
 
   const errors = {}
   if (!name) errors.name = 'Please tell us your name.'
   if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))
     errors.email = 'Please enter an email address we can reply to.'
   if (!message) errors.message = 'Please tell us a little about your project.'
-  if (name.length > MAX_FIELD || email.length > MAX_FIELD || message.length > MAX_FIELD)
+  if (
+    [name, email, message, budget, timeline].some((v) => v.length > MAX_FIELD)
+  )
     errors.message = 'That message is too long to send. Please shorten it.'
 
   if (Object.keys(errors).length) {
     return wantsJson(request)
       ? json(400, { ok: false, errors })
-      : redirect(request, '/contact?error=validation')
+      : redirect(request, `${formPage(request)}?error=validation`)
   }
 
   const submittedAt = new Date().toISOString()
@@ -89,6 +113,8 @@ export async function onRequestPost({ request, env }) {
     <p><strong>Email:</strong> <a href="mailto:${esc(email)}">${esc(email)}</a></p>
     ${phone ? `<p><strong>Phone:</strong> ${esc(phone)}</p>` : ''}
     <p><strong>Subject:</strong> ${esc(subject)}</p>
+    ${budget ? `<p><strong>Budget:</strong> ${esc(budget)}</p>` : ''}
+    ${timeline ? `<p><strong>Timeline:</strong> ${esc(timeline)}</p>` : ''}
     <p><strong>Message:</strong></p>
     <p style="white-space:pre-wrap">${esc(message)}</p>
     <hr>
@@ -116,14 +142,14 @@ export async function onRequestPost({ request, env }) {
       const failure = `We could not send that just now. Please email ${env.CONTACT_TO} directly.`
       return wantsJson(request)
         ? json(502, { ok: false, error: failure })
-        : redirect(request, '/contact?error=send')
+        : redirect(request, `${formPage(request)}?error=send`)
     }
   } catch (err) {
     console.error('contact: request failed', err)
     const failure = `We could not send that just now. Please email ${env.CONTACT_TO} directly.`
     return wantsJson(request)
       ? json(502, { ok: false, error: failure })
-      : redirect(request, '/contact?error=send')
+      : redirect(request, `${formPage(request)}?error=send`)
   }
 
   return wantsJson(request) ? json(200, { ok: true }) : redirect(request, '/contact-thanks')

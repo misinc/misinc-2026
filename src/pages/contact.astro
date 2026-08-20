@@ -30,7 +30,7 @@ const contactSchema = {
     <PageHero eyebrow="Contact" title="How can we help?" lede="Describe the problem and we will tell you honestly what would solve it and whether we are the right studio for it." media={{
         type: 'image',
         src: '/img/office-marquette.jpg',
-        alt: 'The office building at 500 Marquette Avenue NW in downtown Albuquerque',
+        alt: 'MIS, Inc. office building at 500 Marquette Avenue NW in downtown Albuquerque',
         caption: 'Downtown Albuquerque',
       }} layout="background" overlayOpacity={95} />
   </div>
@@ -38,7 +38,22 @@ const contactSchema = {
   <Section>
     <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px]">
       <div>
-        <SectionHeader eyebrow="Send a message" title="Start a conversation" lede="You will hear back within one business day." class="mb-8" />
+        <div
+          class="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-line-soft bg-paper-tint px-5 py-4"
+          data-reveal
+        >
+          <p class="text-[15px] font-semibold text-ink-soft">
+            Already know you want to start a project? Skip this form and tell us the details directly.
+          </p>
+          <a
+            href="/start-a-project"
+            class="shrink-0 text-sm font-extrabold text-primary no-underline hover:underline"
+          >
+            Start a project &rarr;
+          </a>
+        </div>
+
+        <SectionHeader eyebrow="Send us a message" title="Start a conversation" lede="You will hear back within one business day." class="mb-8" />
         <ContactForm />
       </div>
 
