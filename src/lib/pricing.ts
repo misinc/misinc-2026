@@ -36,7 +36,6 @@ export const PRICE_TIERS: PriceTier[] = [
       'Mobile-first build and testing',
       'Contact form and Google Business Profile setup',
       'Basic SEO: titles, descriptions, structured data',
-      'Training so you can handle text and image changes',
     ],
     goodFor:
       'A new business, or an established one whose current site is dated and does not need to be complicated.',
@@ -47,13 +46,14 @@ export const PRICE_TIERS: PriceTier[] = [
     name: 'Business site',
     from: 7500,
     unit: 'project',
-    summary: 'A site with a CMS, so you can publish and update without calling us.',
+    summary: 'A site with up to ten pages and a CMS so you can easily publish and update your website.',
     includes: [
-      'Everything in the starter site',
+      'Everything in the starter site up to ten pages',
       'A proper CMS for pages you update often',
       'Blog, guides, or case studies',
       'Integrations for booking, CRM, and email marketing',
       'Deeper SEO and AI-search readiness',
+      'Training so you can handle text and image changes',
     ],
     goodFor:
       'Businesses that publish regularly, have several services to explain, or need the site connected to other software.',
@@ -125,7 +125,7 @@ export const PRICE_TIERS: PriceTier[] = [
   },
 ]
 
-/** $3,500 — no trailing cents, since every figure here is a whole dollar. */
+/** $5,000 — no trailing cents, since every figure here is a whole dollar. */
 export const money = (n: number) => `$${n.toLocaleString('en-US')}`
 
 export const tier = (id: string) => PRICE_TIERS.find((t) => t.id === id)!
