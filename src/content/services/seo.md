@@ -35,9 +35,7 @@ Ranking is rarely about one thing. It is usually a combination of a site that lo
 
 An increasing share of searches never reach a results page. Someone asks an assistant, gets an answer, and acts on it, and the businesses named in that answer get the customer.
 
-Being one of those businesses comes down to structured data that machines can read, factual content that answers real questions directly, a fast and crawlable site, and consistent information about your business everywhere it appears online.
-
-Most of that overlaps with good SEO, which is why we build it in rather than selling it as a separate product with a new acronym.
+Most of what earns that citation overlaps with good SEO, which is why we build it into every project rather than selling it as a separate product. See our dedicated [Answer Engine Optimization page](/services/aeo) for how we approach it.
 
 ## What we will not do
 
