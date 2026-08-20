@@ -1,7 +1,7 @@
 ---
 title: Search Engine Optimization
-heading: Get found by search engines and by AI
-summary: Local SEO and Answer Engine Optimization for Albuquerque businesses. The work that gets you onto page one, and into the answers assistants give.
+heading: Get found by search engines, and stay found
+summary: Local SEO for Albuquerque businesses. The work that gets you onto page one and keeps you there.
 pillar: growth
 order: 10
 ranking: true
@@ -9,12 +9,12 @@ platforms: [webflow]
 highlights:
   - Local SEO & Google Business
   - Technical SEO & speed
-  - AI / answer engine readiness
+  - Content & on-page SEO
 nextStep: >-
   We will run your site through the same audit we would run on our own, and tell you what is holding it back, whether or not you hire us to fix it.
 seo:
-  title: Albuquerque SEO Services | Search & AI Optimization | MIS, Inc.
-  description: SEO services in Albuquerque, New Mexico. Local search optimization, technical SEO, and Answer Engine Optimization so customers find you in Google and in AI assistants.
+  title: Albuquerque SEO Services | Search Engine Optimization | MIS, Inc.
+  description: SEO services in Albuquerque, New Mexico. Local search optimization, technical SEO, and content that earns rankings, so customers find you on Google.
 ---
 
 ## Frustrated that your competitors rank above you?
@@ -31,11 +31,9 @@ Ranking is rarely about one thing. It is usually a combination of a site that lo
 - **Own the local results.** For "[service] in Albuquerque" searches, the map pack sits above everything else, and it is driven by your Google Business Profile and your reviews, not by your website. We work on both.
 - **Report honestly.** Rankings, traffic, and enquiries, with plain-language explanations of what moved and why.
 
-## Answer Engine Optimization
+## What about AI assistants like ChatGPT?
 
-An increasing share of searches never reach a results page. Someone asks an assistant, gets an answer, and acts on it, and the businesses named in that answer get the customer.
-
-Most of what earns that citation overlaps with good SEO, which is why we build it into every project rather than selling it as a separate product. See our dedicated [Answer Engine Optimization page](/services/aeo) for how we approach it.
+Good SEO is most of the foundation AI assistants need to cite you too, and we build that foundation into every project. If getting named in ChatGPT or Perplexity answers matters as much to you as ranking on Google, see [Answer Engine Optimization](/services/aeo), the dedicated service for that work.
 
 ## What we will not do
 
