@@ -11,6 +11,17 @@
   "name": "misinc-2026",
   "compatibility_date": "2026-08-20",
   "main": "worker/entry.js",
+  // Plaintext vars for functions/api/contact.js. These are committed here on
+  // purpose: `wrangler deploy` (which Cloudflare's dashboard build runs on
+  // every push) treats this file as the source of truth for plain vars and
+  // wipes anything set by hand in the dashboard that isn't declared here.
+  // RESEND_API_KEY is NOT here because it's a secret, not a var — it must
+  // stay set via `wrangler secret put RESEND_API_KEY` or the dashboard's
+  // "Secret" type, which `wrangler deploy` does not touch.
+  "vars": {
+    "CONTACT_TO": "hello@misinc.com",
+    "CONTACT_FROM": "website@misinc.com"
+  },
   "assets": {
     // Astro's static build output. `not_found_handling: single-page-application`
     // would swallow real 404s into index.html, which is wrong for a
