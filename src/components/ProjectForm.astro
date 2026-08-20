@@ -205,6 +205,23 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
     banner.scrollIntoView({ block: 'center', behavior: 'smooth' })
   }
 
+  /** Mirrors the server's rules, so an empty/invalid submission is caught
+   * instantly instead of round-tripping to /api/contact to find out. The
+   * server keeps validating too, both for the no-JS fallback and because a
+   * client can never be trusted. */
+  const validate = (form: HTMLFormElement) => {
+    const errors: Record<string, string> = {}
+    const value = (name: string) =>
+      (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? ''
+
+    if (!value('name')) errors.name = 'Please tell us your name.'
+    const email = value('email')
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))
+      errors.email = 'Please enter an email address we can reply to.'
+    if (!value('message')) errors.message = 'Please tell us a little about your project.'
+    return errors
+  }
+
   if (form && success && submit) {
     // A server round-trip left an error in the URL (the no-JavaScript path).
     const urlError = new URL(window.location.href).searchParams.get('error')
@@ -217,6 +234,12 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
       clearErrors()
+
+      const errors = validate(form)
+      if (Object.keys(errors).length) {
+        showFieldErrors(errors)
+        return
+      }
 
       submit.disabled = true
       const original = submit.textContent

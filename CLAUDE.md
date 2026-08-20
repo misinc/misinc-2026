@@ -12,11 +12,11 @@ npm run preview        # serve the built dist/ locally
 npx astro check        # typecheck only, without a full build
 ```
 
-The contact form (`functions/api/contact.js`) is a Cloudflare Pages Function and does not run under plain `astro dev` — it needs Cloudflare's Functions runtime (`npx wrangler pages dev`). `.dev.vars` holds its local env vars (`RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`).
+The contact form logic (`functions/api/contact.js`) does not run under plain `astro dev` — it needs Cloudflare's Workers runtime. Build first (`npm run build`), then run `npx wrangler dev` to test it locally. `.dev.vars` holds its local env vars (`RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`).
 
 ## Architecture
 
-Static Astro 5 site (`output: 'static'`), Tailwind v4 via `@tailwindcss/vite`, deployed to Cloudflare Pages. No client framework — a handful of inline `<script>` tags handle the mobile nav and the retro-mode toggle.
+Static Astro 7 site (`output: 'static'`), Tailwind v4 via `@tailwindcss/vite`, deployed to Cloudflare as a **Worker with static assets** (`wrangler.jsonc`), not Cloudflare Pages — Cloudflare's dashboard now creates new Git-connected static sites as Workers by default, Pages is maintenance-only for new projects. No client framework — a handful of inline `<script>` tags handle the mobile nav and the retro-mode toggle.
 
 **Content model.** Nearly everything editorial lives in `src/content/<collection>/*.md`, schemas defined in `src/content.config.ts`. The filename is the URL slug. Detail pages (`src/pages/services/[slug].astro`, etc.) call `getStaticPaths` + `getCollection` and render whatever is in the folder — there's no separate registration step. Full guide, including the one real exception (platforms — see below): [docs/adding-content.md](docs/adding-content.md).
 
@@ -32,9 +32,9 @@ Every collection with an `order` field uses gaps of 10 (10, 20, 30…), reset pe
 - `src/lib/schema.ts` — shared JSON-LD builders (breadcrumbs, list relationships). Detail pages still build their own type-specific schema (`Service`, `CreativeWork`, etc.) inline.
 - `src/pages/llms.txt.ts` generates `/llms.txt` at build time from the content collections — never hand-edit an llms.txt file, edit the content instead.
 
-**Redirects.** `public/_redirects` is a Netlify-syntax file served by Cloudflare Pages. First match wins, and Cloudflare does not follow redirect chains, so every rule must point straight at its final destination — if a retired page's target is itself later retired, every rule that used to point at it needs updating too, not just the newest one. Static rules must precede any dynamic/splat rule (Cloudflare caps: 2,100 static / 100 dynamic). [docs/seo-migration-map.md](docs/seo-migration-map.md) is the Search-Console-sourced rationale behind the existing rules — check it before renaming or retiring a URL that might carry rankings.
+**Redirects.** `public/_redirects` is a Netlify-syntax file honored automatically by Cloudflare's static-assets serving (same mechanism Pages used). First match wins, and Cloudflare does not follow redirect chains, so every rule must point straight at its final destination — if a retired page's target is itself later retired, every rule that used to point at it needs updating too, not just the newest one. Static rules must precede any dynamic/splat rule (Cloudflare caps: 2,100 static / 100 dynamic). [docs/seo-migration-map.md](docs/seo-migration-map.md) is the Search-Console-sourced rationale behind the existing rules — check it before renaming or retiring a URL that might carry rankings.
 
-`functions/api/contact.js` is the only server-side code in the project, a single Pages Function that emails form submissions via Resend. Everything else is prerendered static HTML.
+`functions/api/contact.js` is the only server-side *logic* in the project, it emails form submissions via Resend. It's invoked through `worker/entry.js`, a thin Worker entry point that routes `/api/contact` to it and everything else straight to the static build via the `ASSETS` binding (`wrangler.jsonc`); this routing exists only because Cloudflare's Worker-with-assets model needs an explicit script; the actual contact-form logic still lives in one place. Everything else is prerendered static HTML.
 
 `docs/` has several point-in-time planning docs (`site-architecture.md`, `webflow-build-plan.md`, `blog-migration.md`, etc.) written during the Webflow → Astro migration — useful for the "why," but `src/content.config.ts` and the live content are the source of truth if one of them disagrees with what's actually in the repo.
 

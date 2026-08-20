@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  // Cloudflare's dashboard for this project (Workers & Pages -> misinc-2026)
+  // already runs `npm run build` then `npx wrangler deploy` — this file is
+  // what was missing to tell that deploy about anything beyond static files.
+  // Without it the project is "a Worker with only static assets": every page
+  // Astro builds serves fine, but there is no Worker script, so a path like
+  // /api/contact 404s exactly like a missing image would, and the Variables
+  // and secrets that functions/api/contact.js needs (RESEND_API_KEY etc.)
+  // can't even be set in the dashboard while the project stays assets-only.
+  "name": "misinc-2026",
+  "compatibility_date": "2026-08-20",
+  "main": "worker/entry.js",
+  "assets": {
+    // Astro's static build output. `not_found_handling: single-page-application`
+    // would swallow real 404s into index.html, which is wrong for a
+    // content site — a missing page should 404, so this is left at
+    // Cloudflare's default (serve the matching file, or Astro's own
+    // dist/404.html for anything unmatched).
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
