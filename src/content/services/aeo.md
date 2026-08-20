@@ -32,6 +32,7 @@ For a local business, that raises the stakes. People asking an assistant "near m
 ## What we actually do
 
 - **Structured data.** Schema markup for your organization, services, location, hours, and reviews, so a machine does not have to guess what your page means — it can read it directly.
+- **FAQs, written properly.** A page of real questions your customers actually ask, answered directly and marked up as FAQ schema. It is one of the most reliable formats for getting lifted whole into an assistant's answer, because the question-and-answer structure is already exactly what it is looking for.
 - **Content written to be quoted.** Pages that answer real questions in plain, extractable sentences near the top, not buried under three paragraphs of preamble an assistant will skip.
 - **Consistent facts everywhere.** Your name, address, phone number, and services need to match across your website, Google Business Profile, directories, and social profiles. Assistants cross-check sources, and contradictions cost you the citation.
 - **A fast, crawlable site.** Assistants and the crawlers that feed them still have to reach your pages and parse them quickly. Slow or broken pages get skipped in favor of a competitor's.
