@@ -8,7 +8,7 @@ imageAlt: "The Bean NYC coffee shop website homepage"
 projectUrl: https://www.thebean.nyc
 year: 2021
 order: 50
-services: [restaurant-website-design, ecommerce-website-design]
+services: [ecommerce-website-design]
 platforms: [square-online-store]
 seo:
   title: "The Bean NYC Online Store | MIS, Inc. Portfolio"

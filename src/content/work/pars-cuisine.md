@@ -9,7 +9,7 @@ projectUrl: https://www.parscuisine.us/
 year: 2018
 order: 10
 featured: true
-services: [restaurant-website-design, ecommerce-website-design]
+services: [ecommerce-website-design]
 platforms: [ecwid]
 seo:
   title: "Pars Cuisine Restaurant Website | MIS, Inc. Portfolio"

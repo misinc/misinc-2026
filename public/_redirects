@@ -19,6 +19,14 @@
 /services/email-marketing                       /services/digital-marketing          301
 /services/social-media-marketing                /services/digital-marketing          301
 /services/digital-marketing-for-online-stores   /services/digital-marketing          301
+# --- Retired: restaurant work has dropped since 2020; the slot in the -------
+# websites pillar goes to nonprofit web design instead, which is now a
+# larger share of the client roster. The old page had real search demand
+# (3,949 impressions/yr, position ~38 per seo-migration-map.md), so it 301s
+# to e-commerce rather than 404ing — restaurant sites were sold as online
+# ordering/catering stores, which is what that page still covers.
+
+/services/restaurant-website-design             /services/ecommerce-website-design    301
 # --- Platforms: keep the six partner pages, retire the rest ------------------
 
 /platforms/activecampaign                       /services/digital-marketing          301
@@ -280,7 +288,7 @@
 /blog-1                                         /blog                                301
 /services/services-3                            /services                            301
 /services/healthcare-websites                   /services/healthcare-website-design  301
-/services/restaurant-websites                   /services/restaurant-website-design  301
+/services/restaurant-websites                   /services/ecommerce-website-design   301
 /services/real-estate-websites                  /services/real-estate-website-design 301
 /services/real-estate-idx                       /services/real-estate-website-design 301
 /services/ecommerce                             /services/ecommerce-website-design   301

@@ -9,7 +9,7 @@ projectUrl: https://www.nmchileassociation.org
 year: 2025
 order: 10
 featured: true
-services: [web-design, website-development]
+services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "New Mexico Chile Association Website | MIS, Inc. Portfolio"

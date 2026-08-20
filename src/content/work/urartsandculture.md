@@ -8,7 +8,7 @@ imageAlt: "UR Art & Culture nonprofit website"
 projectUrl: https://www.urartandculture.org
 year: 2026
 order: 20
-services: [web-design, website-development]
+services: [nonprofit-web-design, web-design, website-development]
 platforms: []
 seo:
   title: "UR Art & Culture Website | MIS, Inc. Portfolio"

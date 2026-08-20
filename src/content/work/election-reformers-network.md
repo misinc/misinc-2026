@@ -8,7 +8,7 @@ imageAlt: "Election Reformers Network website homepage"
 projectUrl: https://electionreformers.org
 year: 2023
 order: 10
-services: [web-design, website-development]
+services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "Election Reformers Network Website | MIS, Inc. Portfolio"

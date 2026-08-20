@@ -9,7 +9,7 @@ projectUrl: http://www.honorflightnorthernnm.org/
 year: 2017
 order: 30
 featured: true
-services: [web-design]
+services: [nonprofit-web-design, web-design]
 platforms: [weebly-cloud]
 seo:
   title: "Honor Flight of Northern New Mexico | MIS, Inc. Portfolio"

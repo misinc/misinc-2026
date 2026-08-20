@@ -8,7 +8,7 @@ imageAlt: "United Voices for Newcomer Rights nonprofit website"
 projectUrl: https://www.uvnr.org
 year: 2022
 order: 10
-services: [web-design, website-development]
+services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
   title: "United Voices for Newcomer Rights Website | MIS, Inc. Portfolio"
