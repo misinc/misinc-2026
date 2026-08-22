@@ -2,12 +2,12 @@
 title: "Coleman Vision"
 client: "Coleman Vision"
 summary: "A clear, trustworthy presence for a LASIK practice whose patients are making a genuinely daunting decision."
-category: healthcare
+category: [healthcare]
 image: /img/work/coleman-vision.jpg
 imageAlt: "Coleman Vision website homepage for the Albuquerque LASIK practice"
 projectUrl: https://www.colemanvision.com
 year: 2017
-order: 20
+order: 70
 featured: true
 services: [healthcare-website-design, web-design]
 platforms: [webflow]

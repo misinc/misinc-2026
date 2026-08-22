@@ -2,12 +2,12 @@
 title: "Zaca Mesa Winery"
 client: "Zaca Mesa Winery"
 summary: "A redesign and platform migration for a California winery, off a platform that was being discontinued."
-category: ecommerce
+category: [ecommerce]
 image: /img/work/zaca-mesa-winery.jpg
 imageAlt: "Zaca Mesa Winery website homepage"
 projectUrl: https://www.zacamesa.com
 year: 2020
-order: 30
+order: 80
 services: [ecommerce-website-design, website-development]
 platforms: [wordpress]
 seo:

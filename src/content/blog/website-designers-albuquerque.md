@@ -9,7 +9,7 @@ seo:
   description: "How to hire a web designer in Albuquerque: the questions to ask, the red flags, what ownership you should insist on, and how to tell a good portfolio from a misleading one."
 faqs:
   - q: "Should I hire a local web designer or use an online service?"
-    a: "It depends what you need. Template services are genuinely fine for a simple presence on a small budget. A local designer earns their fee when the site has a job to do, whether that is generating enquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market."
+    a: "It depends what you need. Template services are genuinely fine for a simple presence on a small budget. A local designer earns their fee when the site has a job to do, whether that is generating inquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market."
   - q: "Who owns the website when it is finished?"
     a: "You should. Insist on owning your domain, your content, your hosting account, and your analytics. Any designer who registers your domain in their own name, or will not hand over access, is creating leverage over you rather than serving you."
   - q: "What should I look for in a portfolio?"
@@ -88,7 +88,7 @@ Sometimes, honestly, yes.
 
 If you need a simple presence, your budget is a few hundred dollars, and the site is not expected to generate business, a template service will serve you fine. Spend the money on something with a better return.
 
-Where a designer earns their fee is when the site has a real job, bringing in enquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market. If someone tells you that you need a custom site when a template would do, they are selling rather than advising.
+Where a designer earns their fee is when the site has a real job, bringing in inquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market. If someone tells you that you need a custom site when a template would do, they are selling rather than advising.
 
 ## Where we fit
 

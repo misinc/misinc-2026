@@ -2,12 +2,12 @@
 title: "National Brain Injury Institute"
 client: "National Brain Injury Institute"
 summary: "A specialist TBI practice whose site has to speak to injured patients and referring professionals at once, without failing either."
-category: healthcare
+category: [healthcare]
 image: /img/work/nbii.avif
 imageAlt: "National Brain Injury Institute website homepage"
 projectUrl: https://www.nbii.com
 year: 2024
-order: 10
+order: 90
 services: [healthcare-website-design, web-design, website-development]
 platforms: [webflow]
 seo:

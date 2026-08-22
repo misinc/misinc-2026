@@ -24,7 +24,7 @@ We have watched this pattern before. The web in 1995, e-commerce in the 2000s, m
 
 ## What AI consulting means here
 
-Not a strategy deck. Usually one of three concrete things:
+AI Consulting usually includes one of three concrete things:
 
 - **Automating something repetitive.** A task that eats hours weekly: sorting inquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
 - **Choosing tools.** Which AI subscriptions are worth paying for in your specific business, which are duplicating something you already own, and which are charging you for a feature you will never open.
@@ -34,7 +34,7 @@ Not a strategy deck. Usually one of three concrete things:
 
 There is a second, quieter shift: your customers are starting to ask assistants instead of searching. When someone asks for a web designer in Albuquerque, the businesses that get named are the ones with structured, factual, well-organized information online.
 
-That is an extension of the SEO work we already do, and we build it into every site. It is covered on our [SEO page](/services/seo).
+That is an extension of the [SEO](/services/seo) work we already do. It is covered on our [AEO page](/services/aeo).
 
 ## Why us
 

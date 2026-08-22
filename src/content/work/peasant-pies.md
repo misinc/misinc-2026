@@ -2,12 +2,12 @@
 title: "Peasant Pies"
 client: "Ali Keshavarz, Peasant Pies"
 summary: "A Wix to Square Online migration that put the website and the point-of-sale system on the same platform."
-category: ecommerce
+category: [ecommerce, restaurant]
 image: /img/work/peasant-pies.jpg
 imageAlt: "Peasant Pies online store built on Square Online"
 projectUrl: https://www.peasantpies.com
 year: 2021
-order: 40
+order: 140
 featured: true
 services: [ecommerce-website-design]
 platforms: [square-online-store]

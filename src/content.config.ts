@@ -116,15 +116,24 @@ const work = defineCollection({
     title: z.string(),
     client: z.string(),
     summary: z.string(),
-    category: z.enum([
-      'restaurant',
-      'real-estate',
-      'healthcare',
-      'ecommerce',
-      'nonprofit',
-      'business',
-      'startup',
-    ]),
+    /**
+     * Almost always a single-element array. Most projects fit one industry,
+     * but a few genuinely span two (e.g. an e-commerce restaurant) and should
+     * appear under both portfolio filters.
+     */
+    category: z
+      .array(
+        z.enum([
+          'restaurant',
+          'real-estate',
+          'healthcare',
+          'ecommerce',
+          'nonprofit',
+          'business',
+          'startup',
+        ]),
+      )
+      .min(1),
     image: z.string(),
     imageAlt: z.string(),
     /** The live site, when it is still up. */

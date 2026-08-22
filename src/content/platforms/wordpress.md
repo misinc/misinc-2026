@@ -30,7 +30,7 @@ We stopped. Not because WordPress is bad software, which powers a huge share of 
 
 **It gets slow.** The plugin stack, the database queries, and the page builders that make WordPress easy to edit are the same things that make it load slowly. Speed is a ranking factor and a conversion factor, and WordPress makes it a fight.
 
-**The real cost is not the software.** WordPress is free. Hosting, premium plugins, a page builder licence, a security service, backups, and either your time or a maintenance retainer are not. Add it up honestly and it usually exceeds what a hosted platform costs, with more of your attention consumed.
+**The real cost is not the software.** WordPress is free. Hosting, premium plugins, a page builder license, a security service, backups, and either your time or a maintenance retainer are not. Add it up honestly and it usually exceeds what a hosted platform costs, with more of your attention consumed.
 
 ## Where WordPress is still the right answer
 

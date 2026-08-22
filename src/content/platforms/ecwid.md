@@ -25,10 +25,10 @@ Ecwid takes the other approach: the store is embedded into the site you already 
 ## What it does well
 
 - **Drops into an existing site** on effectively any platform
-- **One catalogue, many places**, so the same products can sell on your site, on social channels, and in person
+- **One catalog, many places**, so the same products can sell on your site, on social channels, and in person
 - **Handles the hard parts**: payments, tax, shipping rates, and inventory
 - **Genuinely quick to launch**, often in days rather than weeks
-- **Scales down affordably**, which matters for a small catalogue
+- **Scales down affordably**, which matters for a small catalog
 
 ## Where we have used it
 
@@ -38,6 +38,6 @@ Ecwid takes the other approach: the store is embedded into the site you already 
 
 **It is a store inside a site, not a store platform.** For a business whose entire operation is ecommerce, [Shopify](/platforms/shopify) gives more depth.
 
-**Design control is limited** to what the widget exposes. It inherits your site's look reasonably well, but it is not fully customisable.
+**Design control is limited** to what the widget exposes. It inherits your site's look reasonably well, but it is not fully customizable.
 
 **If you already run Square in person**, [Square Online](/platforms/square-online-store) will usually serve you better, because inventory then stays in step with your register automatically.

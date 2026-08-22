@@ -2,12 +2,12 @@
 title: "Vista Encantada Realtors"
 client: "Vista Encantada Realtors, LLC"
 summary: "A boutique Albuquerque brokerage with full property search, powered by our own Add On IDX platform."
-category: real-estate
+category: [real-estate]
 image: /img/work/vista-encantada.avif
 imageAlt: "Vista Encantada Realtors website homepage"
 projectUrl: https://www.vistaencantada.com
 year: 2022
-order: 20
+order: 54
 services: [real-estate-website-design, web-design]
 platforms: [webflow, addonidx]
 seo:

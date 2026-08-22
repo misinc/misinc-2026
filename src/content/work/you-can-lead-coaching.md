@@ -2,11 +2,11 @@
 title: "You Can Lead Coaching"
 client: "Lenann McGookey Gardner"
 summary: "A site for an executive coach whose clients are senior leaders deciding whether to trust her with a difficult problem."
-category: business
+category: [business]
 image: /img/work/you-can-lead-coaching.jpg
 imageAlt: "You Can Lead Coaching website for executive coach Lenann McGookey Gardner"
 year: 2016
-order: 10
+order: 250
 archived: true
 services: [web-design]
 platforms: [expressionengine]

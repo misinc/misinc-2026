@@ -2,12 +2,12 @@
 title: "UR Art & Culture"
 client: "Rahim Alhaj"
 summary: "A new nonprofit built around a single scholarship, where the site's job is to turn a musician's reputation into a fundable, credible program."
-category: nonprofit
+category: [nonprofit]
 image: /img/work/urartandculture.avif
 imageAlt: "UR Art & Culture nonprofit website"
 projectUrl: https://www.urartandculture.org
 year: 2026
-order: 20
+order: 55
 services: [nonprofit-web-design, web-design, website-development]
 platforms: []
 seo:
@@ -25,6 +25,6 @@ The site has one real job: make the case for the scholarship in Rahim's own word
 
 The scholarship's credibility rests on more than Rahim's own reputation. The site lists its review committee in full, ethnomusicologists, music theorists, conductors, and working musicians, because a scholarship that names its judges is one that can be trusted to actually judge.
 
-The organisation is new and still building its history of programs and events, so the site is built to fill in as that happens rather than promising a backlog that does not exist yet.
+The organization is new and still building its history of programs and events, so the site is built to fill in as that happens rather than promising a backlog that does not exist yet.
 
 Built on Astro, for a small, young nonprofit that needed something fast and fully custom rather than a template it would grow out of.

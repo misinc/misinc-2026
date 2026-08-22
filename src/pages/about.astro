@@ -5,6 +5,7 @@ import Section from '../components/Section.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import PageHero from '../components/PageHero.astro';
 import Timeline from '../components/Timeline.astro';
+import OldDesignGallery from '../components/OldDesignGallery.astro';
 import Testimonial from '../components/Testimonial.astro';
 import Button from '../components/Button.astro';
 import CtaBand from '../components/CtaBand.astro';
@@ -16,20 +17,20 @@ const quote = work.find((w) => w.id === 'cheezie-chews')
 
 const principles = [
   {
-    title: 'We tell you when you don’t need us',
-    body: 'The fastest way to lose a client is to sell them something that does not help. If a setting in a tool you already pay for solves the problem, that is the recommendation you will get.',
+    title: 'We won’t oversell you',
+    body: 'Every project we take on has to genuinely help your business, and we are honest about what you need and don’t need.',
   },
   {
-    title: 'Fixed prices, agreed up front',
-    body: 'You get a number before work starts, not an hourly meter. When a project grows mid-way, we have been known to absorb it rather than re-invoice, and one of our clients wrote a review about exactly that.',
+    title: 'We price projects as fixed-price',
+    body: 'You get a number before work starts, not a moving target. We’ve priced projects like yours for decades, so our estimates are accurate.',
   },
   {
-    title: 'You talk to the people building it',
-    body: 'No account managers, no handoffs to a team you have never met. The person who scopes your project is the person who builds it.',
+    title: 'We build relationships that last',
+    body: 'Some of the clients we built websites for in the 1990s are still clients today.',
   },
   {
-    title: 'We pick platforms you could leave',
-    body: 'Every platform we recommend lets you take your content and go. We would rather keep clients because the work is good than because leaving is painful.',
+    title: 'We use tools we’ve already proven',
+    body: 'Every platform we use for your projects have been tested for reliability and security for years.',
   },
 ]
 
@@ -153,6 +154,13 @@ const aboutSchema = {
         </div>
       </aside>
     </div>
+
+    <div class="mt-12" data-reveal>
+      <span class="mb-4 block text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
+        Thirty years of what we actually shipped
+      </span>
+      <OldDesignGallery />
+    </div>
   </Section>
 
   <!-- Timeline -->
@@ -173,7 +181,7 @@ const aboutSchema = {
     <SectionHeader
       eyebrow="How we work"
       title="Four things we will not compromise on"
-      lede="Thirty-one years is long enough to have learned what causes problems. These are the rules that came out of it."
+      lede="These are the standards every client gets, whether it’s your first project with us or your twentieth."
       class="mb-10"
     />
 
@@ -216,18 +224,16 @@ const aboutSchema = {
         <div data-reveal>
           <SectionHeader
             eyebrow="Albuquerque, New Mexico"
-            title="You can come and see us"
+            title="Let’s meet in person"
             class="mb-0"
           />
           <div class="mt-4 max-w-[62ch] text-ink-soft">
             <p class="mb-4">
-              We are downtown at 500 Marquette, and we mean the invitation literally. A lot of our
-              best projects have started with someone dropping in or meeting us for coffee nearby.
+              We are in downtown Albuquerque at 500 Marquette NW. We prefer meeting with local clients in person. Either at your office or ours or at one of Albuquerque’s many excellent coffee shops. Just make sure to schedule an appointment with us ahead of time.
             </p>
             <p class="mb-6">
-              Working with a local studio means you can look the person building your website in the
-              eye. It also means we understand the market you are actually selling into: what people
-              here search for, which neighbourhoods matter, and why a Balloon Fiesta week is not a
+              Working with a local studio means we understand the market you are actually selling into: what people
+              here search for, which neighborhoods matter, and why a Balloon Fiesta week is not a
               normal week for anyone in this city.
             </p>
             <address class="not-italic text-ink-soft">

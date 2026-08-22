@@ -42,7 +42,7 @@ export interface HeroMedia {
   /**
    * object-position for the crop, e.g. 'center', 'left top', '50% 20%'.
    * Defaults to the top-left for images (screenshots read from there) and
-   * the centre for video.
+   * the center for video.
    */
   position?: string
 }
@@ -59,7 +59,7 @@ interface Props {
   /**
    * `split` is the default: text left, media beside it.
    *
-   * `centered` stacks instead: text centred at a 900px measure with the media
+   * `centered` stacks instead: text centered at a 900px measure with the media
    * full width beneath. Worth reaching for when a headline is too long for the
    * split layout's ~520px column, since that column forces a long headline to
    * break mid-phrase. It also lets a 16:9 source show uncropped.
@@ -79,7 +79,7 @@ interface Props {
    */
   layout?: 'split' | 'centered' | 'full' | 'background'
   /**
-   * `background` layout only. The scrim colour over the media, as a hex
+   * `background` layout only. The scrim color over the media, as a hex
    * string. Defaults to the ink token so it stays on-brand rather than a
    * generic black.
    */
@@ -96,7 +96,7 @@ interface Props {
    * an image was never going to be, and `split` collapses to a single
    * full-width column.
    *
-   * This is deliberately independent of `layout`: a centred hero with no media
+   * This is deliberately independent of `layout`: a centered hero with no media
    * is a different thing from a full-width one, and both are wanted. The lede
    * keeps its 62ch measure either way, because a readable line length matters
    * more than filling the width.
@@ -104,7 +104,7 @@ interface Props {
   showMedia?: boolean
   /**
    * Typewriter effect on a second headline line — home page only. The text
-   * types out after `title`, with `highlight` in the accent colour.
+   * types out after `title`, with `highlight` in the accent color.
    */
   typed?: { text: string; highlight?: string }
 }
@@ -128,8 +128,8 @@ const centered = layout === 'centered'
 const isBackground = layout === 'background'
 const withMedia = showMedia && layout !== 'full'
 
-// Centred puts the media at the full content width, so a portrait frame would
-// become a tower — it is capped and centred instead. Landscape gets 16:9,
+// Centered puts the media at the full content width, so a portrait frame would
+// become a tower — it is capped and centered instead. Landscape gets 16:9,
 // which is what the source video actually is. Background ignores this
 // entirely — the media fills the hero, there's no separate frame.
 const aspect = centered

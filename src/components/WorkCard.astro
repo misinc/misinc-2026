@@ -1,5 +1,5 @@
 ---
-import { WORK_CATEGORIES } from '../lib/work'
+import { WORK_CATEGORIES, type WorkCategory } from '../lib/work'
 
 /**
  * Portfolio card. The screenshot does most of the persuading, so it leads.
@@ -9,7 +9,8 @@ interface Props {
   title: string
   client: string
   summary: string
-  category: keyof typeof WORK_CATEGORIES
+  /** Almost always one entry; a project spanning two industries lists both. */
+  category: WorkCategory[]
   image: string
   imageAlt: string
   year?: number
@@ -35,7 +36,7 @@ const {
 
 <a
   href={`/works/${slug}`}
-  data-category={category}
+  data-category={category.join(' ')}
   class:list={[
     'group flex flex-col overflow-hidden rounded-lg border border-line-soft bg-paper-panel no-underline shadow-card transition hover:-translate-y-[3px] hover:shadow-card-hover',
     className,
@@ -53,7 +54,7 @@ const {
 
   <div class="flex flex-1 flex-col gap-2 p-6">
     <div class="flex items-center gap-2 text-[11.5px] font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
-      <span>{WORK_CATEGORIES[category]}</span>
+      <span>{category.map((c) => WORK_CATEGORIES[c]).join(' / ')}</span>
       {
         year && (
           <>

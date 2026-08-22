@@ -18,7 +18,7 @@ People use these two titles interchangeably, and most of the time it does not ma
 
 ## The short version
 
-**A web designer** decides what the site looks like and how it works for the person using it. Layout, typography, colour, hierarchy, the path from landing on a page to picking up the phone.
+**A web designer** decides what the site looks like and how it works for the person using it. Layout, typography, color, hierarchy, the path from landing on a page to picking up the phone.
 
 **A web developer** builds the thing that makes it work. Code, databases, integrations, logins, payments, anything that has to *do* something rather than *show* something.
 
@@ -28,7 +28,7 @@ A useful analogy: the designer is the architect, the developer is the builder. O
 
 - Works out the structure, meaning what pages exist and how someone moves between them
 - Decides visual hierarchy, so the important thing is the thing you notice
-- Chooses type and colour, usually within an existing brand
+- Chooses type and color, usually within an existing brand
 - Designs for phone, tablet, and desktop, treating the phone as the primary case
 - Considers accessibility: contrast, tap targets, keyboard navigation
 - Thinks about conversion, the path from arriving to taking action

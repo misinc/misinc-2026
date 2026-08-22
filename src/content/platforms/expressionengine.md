@@ -24,7 +24,7 @@ We no longer work in it.
 
 **The community has largely moved on.** Finding developers, plugins, or current documentation is materially harder than it was, and that difficulty compounds every year.
 
-**It carries a licence cost** for capability that hosted platforms now include.
+**It carries a license cost** for capability that hosted platforms now include.
 
 **It requires server maintenance.** PHP versions, database upgrades, and security patching are all your responsibility, the same burden that made us stop building on [WordPress](/platforms/wordpress), without WordPress's ecosystem to soften it.
 

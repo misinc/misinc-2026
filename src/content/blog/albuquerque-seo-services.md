@@ -49,7 +49,7 @@ Content work usually covers:
 
 For a business serving Albuquerque and New Mexico, this is the part with the highest return, and it barely involves your website.
 
-- **Google Business Profile**, claimed, complete, categorised correctly, with services, hours, and real photographs.
+- **Google Business Profile**, claimed, complete, categorized correctly, with services, hours, and real photographs.
 - **Reviews**, gathered steadily rather than in bursts, and replied to.
 - **Consistency**, with your name, address, and phone number identical everywhere they appear online. Discrepancies genuinely cost you.
 - **Other directories** that matter in your industry.
@@ -66,9 +66,9 @@ What to avoid: anyone offering to *buy* links or place you in "high DA blog netw
 
 ## 5. Reporting
 
-You should receive, in plain language: what was done, what moved, and the only number that ultimately matters, which is how many enquiries arrived.
+You should receive, in plain language: what was done, what moved, and the only number that ultimately matters, which is how many inquiries arrived.
 
-Be wary of reports heavy on impressions and "engagement" while the phone stays quiet. Ask directly and repeatedly: how many enquiries came from this last month?
+Be wary of reports heavy on impressions and "engagement" while the phone stays quiet. Ask directly and repeatedly: how many inquiries came from this last month?
 
 ## 6. Answer Engine Optimization
 

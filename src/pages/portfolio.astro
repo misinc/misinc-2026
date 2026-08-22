@@ -12,11 +12,11 @@ import { yearsInBusiness } from '../lib/site';
 import { breadcrumbs, collectionPage } from '../lib/schema';
 
 const all = (await getCollection('work')).sort(
-  (a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999),
+  (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999),
 )
 
 // Only offer filters for categories that actually have projects in them.
-const used = new Set(all.map((w) => w.data.category))
+const used = new Set(all.flatMap((w) => w.data.category))
 const filters = (
   Object.entries(WORK_CATEGORIES) as [keyof typeof WORK_CATEGORIES, string][]
 ).filter(([key]) => used.has(key))
@@ -40,7 +40,7 @@ const schema = [
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Portfolio" title="Projects we’re proud to put our name on" lede={`A selection of projects from ${yearsInBusiness} years of building for New Mexico businesses and clients further afield. Every one of these is a real site we designed, built, and in most cases still look after.`} media={{
+    <PageHero eyebrow="Portfolio" title="Projects we’re proud to put our name on" lede={`A selection of recent web design and development projects. Every one of these is a real site we designed, built, and in most cases still look after.`} media={{
         type: 'video',
         src: '/video/portfolio-reel.mp4',
         poster: '/img/portfolio-reel-poster.jpg',
@@ -166,7 +166,7 @@ const schema = [
     const apply = (filter: string) => {
       let shown = 0
       cards.forEach((card) => {
-        const match = filter === 'all' || card.dataset.category === filter
+        const match = filter === 'all' || (card.dataset.category ?? '').split(' ').includes(filter)
         card.hidden = !match
         if (match) shown++
       })
@@ -187,7 +187,7 @@ const schema = [
       b.addEventListener('click', () => apply(b.dataset.filter ?? 'all'))
     })
 
-    // Honour ?filter= so a filtered view can be linked to directly.
+    // Honor ?filter= so a filtered view can be linked to directly.
     const initial = new URL(window.location.href).searchParams.get('filter')
     if (initial) apply(initial)
   }

@@ -61,6 +61,7 @@ export const site = {
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
     { label: 'Platforms', href: '/platforms' },
+    { label: 'Website Migrations', href: '/website-migrations' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Blog', href: '/blog' },
     { label: 'Guides', href: '/guides' },

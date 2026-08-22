@@ -11,7 +11,7 @@ faqs:
   - q: "Is Square Online free?"
     a: "There is a free tier, and it is genuinely usable for a simple store. You still pay card processing fees on every transaction, and paid plans remove the Square branding and add features like abandoned cart recovery. The free tier is a real starting point rather than a trial."
   - q: "Should I use Square Online or Shopify?"
-    a: "If you already take payments through Square in person, start with Square Online. One system means your menu, inventory, and orders cannot disagree with each other. Choose Shopify when selling online is the core of the business rather than an extension of it: larger catalogues, complex variants, multiple sales channels."
+    a: "If you already take payments through Square in person, start with Square Online. One system means your menu, inventory, and orders cannot disagree with each other. Choose Shopify when selling online is the core of the business rather than an extension of it: larger catalogs, complex variants, multiple sales channels."
   - q: "Can I move my existing website to Square Online?"
     a: "Yes, and it is a migration we have done many times, usually from Wix or Weebly. Content comes across and URLs can be preserved or redirected so search rankings survive. The main constraint to check first is whether Square Online supports everything your current site does."
 ---
@@ -30,7 +30,7 @@ Every other platform requires you to either sync two systems or accept that they
 
 **Restaurants already on Square.** Online ordering, pickup, delivery, and gift cards, all connected to the register. This is the strongest case and the reason we have built so many of these. [Pars Cuisine](/works/pars-cuisine) here in Albuquerque runs this way.
 
-**Small retailers with straightforward catalogues.** Dozens of products rather than thousands, without complex variant matrices.
+**Small retailers with straightforward catalogs.** Dozens of products rather than thousands, without complex variant matrices.
 
 **Businesses that need to launch quickly.** A functional store can be live in days.
 
@@ -40,7 +40,7 @@ Every other platform requires you to either sync two systems or accept that they
 
 **Design flexibility.** You are working within Square's templates. They are clean and perfectly professional, but if the look is central to your brand, you will feel the constraints. [Webflow](/platforms/webflow) gives far more room.
 
-**Large or complex catalogues.** Hundreds of products with detailed variants, or sophisticated inventory rules, are where [Shopify](/platforms/shopify) pulls ahead decisively.
+**Large or complex catalogs.** Hundreds of products with detailed variants, or sophisticated inventory rules, are where [Shopify](/platforms/shopify) pulls ahead decisively.
 
 **Advanced marketing features.** Segmentation, complex automations, and detailed merchandising are thinner than dedicated e-commerce platforms.
 
@@ -48,13 +48,13 @@ Every other platform requires you to either sync two systems or accept that they
 
 ## How to decide
 
-**Choose Square Online if:** you already use Square in person, your catalogue is modest, you want to be selling quickly, and your staff will manage it day to day.
+**Choose Square Online if:** you already use Square in person, your catalog is modest, you want to be selling quickly, and your staff will manage it day to day.
 
-**Choose [Shopify](/platforms/shopify) if:** e-commerce *is* the business, your catalogue is large or complex, or you sell across several channels at scale.
+**Choose [Shopify](/platforms/shopify) if:** e-commerce *is* the business, your catalog is large or complex, or you sell across several channels at scale.
 
 **Choose [Ecwid](/platforms/ecwid) if:** you already have a website you are happy with and want to add a store without rebuilding.
 
-**Choose [Webflow](/platforms/webflow) if:** design matters more than catalogue depth and you are selling a handful of products alongside a marketing site.
+**Choose [Webflow](/platforms/webflow) if:** design matters more than catalog depth and you are selling a handful of products alongside a marketing site.
 
 ## What migrating actually involves
 

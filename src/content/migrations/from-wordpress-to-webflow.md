@@ -17,7 +17,9 @@ seo:
 
 ## Why people leave
 
-Almost nobody moves off WordPress because they dislike the editor. They move because of what surrounds it.
+![A WordPress admin dashboard crowded with plugin upsells and update notices, above the fold where the content editor should be](/img/migrations/wordpress-admin-dashboard.png)
+
+Log in to update a page and this is what is waiting first: an autoupdate prompt, a plugin's own ad for its premium tier, a PHP version warning. The actual editor is further down, past all of it.
 
 **The maintenance never ends.** Core updates, theme updates, plugin updates, and the periodic morning where an update breaks the site and you find out from a customer. Someone has to own that. Usually it is the business owner, at the worst possible time.
 
@@ -25,7 +27,7 @@ Almost nobody moves off WordPress because they dislike the editor. They move bec
 
 **Security is your problem.** WordPress powers a huge share of the web, which makes it the most attractive target on the web. The vulnerability is almost never in WordPress itself. It is in a plugin that has not been updated since 2019.
 
-**Speed takes real work.** A WordPress site can be fast. Getting there means caching layers, image optimisation, and pruning plugins, and it drifts back the moment someone installs something new.
+**Speed takes real work.** A WordPress site can be fast. Getting there means caching layers, image optimization, and pruning plugins, and it drifts back the moment someone installs something new.
 
 ## What actually moves
 

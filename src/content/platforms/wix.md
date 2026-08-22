@@ -3,7 +3,7 @@ name: Wix
 summary: Easy to start on, hard to grow on, and difficult to leave.
 icon: /img/platforms/wix.svg
 stance: migrate
-verdict: Fine for a first site. We usually move growing businesses off it.
+verdict: Too simple for custom designed sites and too complex for simple sites.
 insteadUse: [webflow, astro]
 category: websites
 order: 20

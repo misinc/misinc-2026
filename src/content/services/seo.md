@@ -29,7 +29,7 @@ Ranking is rarely about one thing. It is usually a combination of a site that lo
 - **Fix the technical foundation.** Speed, mobile rendering, crawlability, structured data, and the errors quietly accumulating in Search Console.
 - **Write pages worth ranking.** A page that genuinely answers the question outperforms a page stuffed with the keyword. This has been true for a decade and it is more true every year.
 - **Own the local results.** For "[service] in Albuquerque" searches, the map pack sits above everything else, and it is driven by your Google Business Profile and your reviews, not by your website. We work on both.
-- **Report honestly.** Rankings, traffic, and enquiries, with plain-language explanations of what moved and why.
+- **Report honestly.** Rankings, traffic, and inquiries, with plain-language explanations of what moved and why.
 
 ## What about AI assistants like ChatGPT?
 

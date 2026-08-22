@@ -13,8 +13,14 @@ nextStep: >-
   Tell us which routine question your team answers most often. That is usually the first agent worth building.
 seo:
   title: Custom AI Agents for Small Business | MIS, Inc. Albuquerque
-  description: Custom AI agents built for New Mexico small businesses, handling routine customer questions, triaging enquiries, scheduling, and follow-up, with a person always in the loop.
+  description: Custom AI agents built for New Mexico small businesses, handling routine customer questions, triaging inquiries, scheduling, and follow-up, with a person always in the loop.
 ---
+
+## What an agent actually is
+
+An AI agent is a small piece of software with a specific job, access to your information, and permission to take a narrow set of actions. Not a chatbot that guesses, and not a replacement for your team, but a tool that handles the routine so people can handle the rest.
+
+The distinction that matters: a good agent knows what it does not know and hands off cleanly.
 
 ## Anatomy of an AI Agent
 ![Anatomy of an AI Agent](/img/services/anatomy-of-an-ai-agent.png)
@@ -26,16 +32,10 @@ An AI agent is a typically includes these features:
 * **Knowledge** — Trained on your business — docs, policies, products.
 * **Tools** — Takes real action — sends, books, updates. Not just chat.
 
-## What an agent actually is
-
-An AI agent is a small piece of software with a specific job, access to your information, and permission to take a narrow set of actions. Not a chatbot that guesses, and not a replacement for your team, but a tool that handles the routine so people can handle the rest.
-
-The distinction that matters: a good agent knows what it does not know and hands off cleanly.
-
 ## Agents we build
 
 - **Customer question handling.** Answering the same fifteen questions your team answers every week, covering hours, policies, availability, and what you do and do not offer, from your actual information rather than a guess.
-- **Enquiry triage.** Reading incoming messages, working out what they are about and how urgent they are, and routing them to the right person with the context already attached.
+- **Inquiry triage.** Reading incoming messages, working out what they are about and how urgent they are, and routing them to the right person with the context already attached.
 - **Scheduling and follow-up.** Booking, confirming, reminding, and rescheduling without a chain of emails.
 - **Invoice and payment follow-up.** The polite, persistent chasing that most owners find uncomfortable and therefore postpone.
 - **Document and knowledge lookup.** Answering questions from your own manuals, policies, and records instead of the open internet.

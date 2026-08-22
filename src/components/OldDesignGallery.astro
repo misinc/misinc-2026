@@ -1,0 +1,224 @@
+---
+import { OLD_DESIGNS } from '../lib/old-designs'
+
+/**
+ * Horizontal-scrolling strip of archive screenshots (see src/lib/old-designs.ts),
+ * opening into a keyboard-navigable lightbox. No external deps — a <dialog>
+ * plus vanilla JS, consistent with the rest of the site's inline scripts.
+ */
+interface Props {
+  class?: string
+}
+const { class: className = '' } = Astro.props
+---
+
+<div class:list={['old-design-gallery', className]} data-reveal>
+  <div class="relative">
+    <div
+      class="flex gap-4 overflow-x-auto pb-3 [scrollbar-width:thin] [-webkit-overflow-scrolling:touch]"
+      role="list"
+      data-old-design-track
+    >
+      {
+        OLD_DESIGNS.map((d, i) => (
+          <button
+            type="button"
+            role="listitem"
+            class="group w-[190px] shrink-0 overflow-hidden rounded-lg border border-line-soft bg-paper-panel text-left shadow-card transition hover:-translate-y-[2px] hover:shadow-card-hover"
+            data-old-design-trigger
+            data-index={i}
+          >
+            <span class="relative block aspect-[4/3] overflow-hidden bg-paper-surface">
+              <img
+                src={`/img/old-screenshots/thumbs/${d.slug}.jpg`}
+                alt={`Archive screenshot of the ${d.client} website as built by MIS, circa ${d.year}`}
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+              />
+            </span>
+            <span class="block px-3 py-2.5">
+              <span class="block font-display text-sm font-bold tabular-nums text-primary">{d.year}</span>
+              <span class="block truncate text-xs font-semibold text-ink-muted">{d.client}</span>
+            </span>
+          </button>
+        ))
+      }
+    </div>
+
+    <!-- Scroll cues: a fade + arrow at each edge, shown only while there is
+         more to scroll in that direction. -->
+    <div
+      class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-paper to-transparent opacity-0 transition-opacity duration-200"
+      data-old-design-fade="prev"
+      aria-hidden="true"
+    />
+    <div
+      class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-paper to-transparent opacity-0 transition-opacity duration-200"
+      data-old-design-fade="next"
+      aria-hidden="true"
+    />
+    <button
+      type="button"
+      class="absolute left-1 top-[71px] z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-line-soft bg-paper-panel text-ink opacity-0 shadow-card transition-opacity duration-200 hover:text-primary"
+      data-old-design-scroll="prev"
+      aria-label="Scroll to earlier screenshots"
+      tabindex="-1"
+    >
+      &#8592;
+    </button>
+    <button
+      type="button"
+      class="absolute right-1 top-[71px] z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-line-soft bg-paper-panel text-ink shadow-card transition-opacity duration-200 hover:text-primary"
+      data-old-design-scroll="next"
+      aria-label="Scroll to more screenshots"
+    >
+      &#8594;
+    </button>
+  </div>
+
+  <dialog
+    id="old-design-lightbox"
+    class="m-auto max-h-[90vh] w-[min(92vw,900px)] overflow-hidden rounded-lg border border-line-soft bg-paper-panel p-0 shadow-card-hover backdrop:bg-ink/80"
+  >
+    <div class="flex items-center justify-between border-b border-line-soft px-4 py-3">
+      <div>
+        <span class="block font-display text-base font-bold tabular-nums text-primary" data-lightbox-year />
+        <span class="block text-sm font-semibold text-ink-muted" data-lightbox-client />
+      </div>
+      <button
+        type="button"
+        class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink-muted transition hover:bg-paper-surface hover:text-ink"
+        data-old-design-close
+        aria-label="Close"
+      >
+        &#10005;
+      </button>
+    </div>
+
+    <div class="relative bg-paper-tint">
+      <div
+        class="flex max-h-[calc(90vh-64px)] items-start justify-center overflow-auto"
+        data-lightbox-scroller
+      >
+        <img data-lightbox-image src="" alt="" class="max-w-full" />
+      </div>
+      <button
+        type="button"
+        class="absolute left-2 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line-soft bg-paper-panel text-ink shadow-card transition hover:text-primary"
+        data-old-design-prev
+        aria-label="Previous screenshot"
+      >
+        &#8592;
+      </button>
+      <button
+        type="button"
+        class="absolute right-2 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line-soft bg-paper-panel text-ink shadow-card transition hover:text-primary"
+        data-old-design-next
+        aria-label="Next screenshot"
+      >
+        &#8594;
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  interface OldDesign {
+    slug: string
+    year: number
+    client: string
+  }
+
+  const root = document.querySelector<HTMLElement>('.old-design-gallery')
+  const dialog = document.querySelector<HTMLDialogElement>('#old-design-lightbox')
+
+  // Thumbnail strip: fade + arrow cues that track how much is left to scroll.
+  const track = root?.querySelector<HTMLElement>('[data-old-design-track]')
+  if (root && track) {
+    const prevFade = root.querySelector<HTMLElement>('[data-old-design-fade="prev"]')
+    const nextFade = root.querySelector<HTMLElement>('[data-old-design-fade="next"]')
+    const prevScroll = root.querySelector<HTMLButtonElement>('[data-old-design-scroll="prev"]')
+    const nextScroll = root.querySelector<HTMLButtonElement>('[data-old-design-scroll="next"]')
+
+    const updateCues = () => {
+      const atStart = track.scrollLeft <= 4
+      const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4
+      prevFade?.classList.toggle('opacity-0', atStart)
+      nextFade?.classList.toggle('opacity-0', atEnd)
+      prevScroll?.classList.toggle('opacity-0', atStart)
+      prevScroll?.setAttribute('tabindex', atStart ? '-1' : '0')
+      nextScroll?.classList.toggle('opacity-0', atEnd)
+      nextScroll?.setAttribute('tabindex', atEnd ? '-1' : '0')
+    }
+
+    const scrollBy = (dir: 1 | -1) => {
+      track.scrollBy({ left: dir * track.clientWidth * 0.85, behavior: 'smooth' })
+    }
+
+    prevScroll?.addEventListener('click', () => scrollBy(-1))
+    nextScroll?.addEventListener('click', () => scrollBy(1))
+    track.addEventListener('scroll', updateCues, { passive: true })
+    window.addEventListener('resize', updateCues)
+    updateCues()
+  }
+
+  if (root && dialog) {
+    const triggers = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-old-design-trigger]'))
+    const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]')
+    const scroller = dialog.querySelector<HTMLElement>('[data-lightbox-scroller]')
+    const yearEl = dialog.querySelector<HTMLElement>('[data-lightbox-year]')
+    const clientEl = dialog.querySelector<HTMLElement>('[data-lightbox-client]')
+    const prevBtn = dialog.querySelector<HTMLButtonElement>('[data-old-design-prev]')
+    const nextBtn = dialog.querySelector<HTMLButtonElement>('[data-old-design-next]')
+    const closeBtn = dialog.querySelector<HTMLButtonElement>('[data-old-design-close]')
+
+    // Read the design list back out of each thumbnail rather than duplicating
+    // it in a data attribute — the alt text and label already carry it.
+    const designs: OldDesign[] = triggers.map((btn) => {
+      const img = btn.querySelector('img')
+      const yearText = btn.querySelector('.text-primary')?.textContent ?? ''
+      const clientText = btn.querySelector('.text-ink-muted')?.textContent ?? ''
+      const slugMatch = img?.getAttribute('src')?.match(/thumbs\/(.+)\.jpg$/)
+      return { slug: slugMatch?.[1] ?? '', year: Number(yearText), client: clientText }
+    })
+
+    let current = 0
+
+    const show = (index: number) => {
+      current = (index + designs.length) % designs.length
+      const d = designs[current]
+      if (!d || !image || !yearEl || !clientEl) return
+      image.src = `/img/old-screenshots/full/${d.slug}.jpg`
+      image.alt = `Archive screenshot of the ${d.client} website as built by MIS, circa ${d.year}`
+      yearEl.textContent = String(d.year)
+      clientEl.textContent = d.client
+      // Full-page captures are tall; always start scrolled to the top so the
+      // site's own header is the first thing shown, not cropped off-screen.
+      if (scroller) scroller.scrollTop = 0
+    }
+
+    const open = (index: number) => {
+      show(index)
+      if (typeof dialog.showModal === 'function') dialog.showModal()
+    }
+
+    triggers.forEach((btn, i) => {
+      btn.addEventListener('click', () => open(i))
+    })
+
+    prevBtn?.addEventListener('click', () => show(current - 1))
+    nextBtn?.addEventListener('click', () => show(current + 1))
+    closeBtn?.addEventListener('click', () => dialog.close())
+
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(current - 1)
+      if (e.key === 'ArrowRight') show(current + 1)
+    })
+
+    // Click on the dialog backdrop (the dialog element itself, outside its
+    // content box) closes it.
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close()
+    })
+  }
+</script>

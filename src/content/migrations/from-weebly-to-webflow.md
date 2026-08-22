@@ -23,7 +23,7 @@ If you are on Weebly today, nothing is on fire. The question is whether you want
 
 ## What actually improves
 
-**Speed.** This is the one clients notice. We moved a client's site from Weebly Cloud to Webflow and the PageSpeed scores changed substantially, not through any clever optimisation but simply because the new platform does not carry the old one's weight. Faster pages rank better and convert better, and on mobile the difference is not subtle.
+**Speed.** This is the one clients notice. We moved a client's site from Weebly Cloud to Webflow and the PageSpeed scores changed substantially, not through any clever optimization but simply because the new platform does not carry the old one's weight. Faster pages rank better and convert better, and on mobile the difference is not subtle.
 
 **Design control.** Weebly's drag-and-drop is genuinely easy, which is why people choose it. The cost is a ceiling on what the site can look like and how well it adapts to different screens. Webflow keeps the visual editing and removes most of the ceiling.
 
@@ -31,7 +31,7 @@ If you are on Weebly today, nothing is on fire. The question is whether you want
 
 ## The Square question
 
-If you sell through Square and use [Square Online](/platforms/square-online-store), the calculation is different. Square Online is the successor to Weebly's commerce side, it is actively developed, and moving there keeps your store, catalogue, and payments in one system.
+If you sell through Square and use [Square Online](/platforms/square-online-store), the calculation is different. Square Online is the successor to Weebly's commerce side, it is actively developed, and moving there keeps your store, catalog, and payments in one system.
 
 We are a certified Square agency, and for a business already running on Square, that is often the honest recommendation over Webflow. It depends on whether your site is mainly a store or mainly a site.
 

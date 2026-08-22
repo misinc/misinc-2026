@@ -117,7 +117,7 @@ export const PRICE_TIERS: PriceTier[] = [
       'Google Business Profile and local search work',
       'Technical SEO and content',
       'AI-search readiness',
-      'Email marketing and reporting on enquiries, not just traffic',
+      'Email marketing and reporting on inquiries, not just traffic',
     ],
     goodFor:
       'Businesses whose website is built and now needs to be found. Usually worth starting after launch, not before.',

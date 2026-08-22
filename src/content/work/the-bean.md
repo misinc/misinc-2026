@@ -2,12 +2,12 @@
 title: "The Bean"
 client: "The Bean, NYC"
 summary: "A Square Online store for a New York coffee shop, with in-store pickup and on-demand delivery."
-category: restaurant
+category: [restaurant, ecommerce]
 image: /img/work/the-bean.jpg
 imageAlt: "The Bean NYC coffee shop website homepage"
 projectUrl: https://www.thebean.nyc
 year: 2021
-order: 50
+order: 200
 services: [ecommerce-website-design]
 platforms: [square-online-store]
 seo:

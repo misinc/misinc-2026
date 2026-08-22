@@ -10,7 +10,7 @@ verdict: We built it, we run it, and we set it up for you.
 category: ai
 order: 20
 nextStep: >-
-  If your team answers the same handful of questions every week, or enquiries arrive after hours and sit until morning, this is usually the quickest thing to fix. We handle the setup.
+  If your team answers the same handful of questions every week, or inquiries arrive after hours and sit until morning, this is usually the quickest thing to fix. We handle the setup.
 seo:
   title: "Add On AI Chat: AI Chat Widget for Small Business | MIS, Inc."
   description: Add On AI Chat is a custom AI chat widget that answers customer questions based on your website content and captures leads. Built by MIS, Inc. in Albuquerque.
@@ -40,4 +40,4 @@ An agent that invents an answer is worse than no agent. Add On AI Chat answers f
 
 ## Where it fits
 
-Best for service businesses, multi-location teams, and anyone with steady support volume. If your enquiries are complex and low-volume, a chat widget is not the answer and we will tell you so.
+Best for service businesses, multi-location teams, and anyone with steady support volume. If your inquiries are complex and low-volume, a chat widget is not the answer and we will tell you so.

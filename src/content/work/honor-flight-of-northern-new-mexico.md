@@ -2,12 +2,12 @@
 title: "Honor Flight of Northern New Mexico"
 client: "Honor Flight of Northern New Mexico"
 summary: "A mission-first site for the nonprofit that flies New Mexico veterans to see their memorials in Washington, D.C."
-category: nonprofit
+category: [nonprofit]
 image: /img/work/honor-flight.jpg
 imageAlt: "Honor Flight of Northern New Mexico website homepage"
 projectUrl: http://www.honorflightnorthernnm.org/
 year: 2017
-order: 30
+order: 100
 featured: true
 services: [nonprofit-web-design, web-design]
 platforms: [weebly-cloud]

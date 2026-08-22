@@ -68,7 +68,7 @@ None of that costs money. All of it outranks a lot of paid work.
 
 **It targets what people actually search for.** There is often a wide gap between how a business describes itself and the words its customers use. Finding that gap is most of keyword research.
 
-**It measures honestly.** Rankings, traffic, and the one that matters, enquiries. A report full of impressions and "engagement" while the phone stays quiet is a report designed to look busy.
+**It measures honestly.** Rankings, traffic, and the one that matters, inquiries. A report full of impressions and "engagement" while the phone stays quiet is a report designed to look busy.
 
 **It compounds.** Good SEO work keeps paying after you stop, because the pages and the authority remain. That is the fundamental difference from advertising, which stops the day you stop paying.
 
@@ -80,7 +80,7 @@ None of that costs money. All of it outranks a lot of paid work.
 
 **No explanation of the work.** If they cannot describe what they will do in plain language, either they do not know or they are hiding something. Usually it is link buying.
 
-**Reports without enquiries.** Traffic that never becomes a phone call is a vanity metric. Ask directly: how many enquiries came from this last month?
+**Reports without inquiries.** Traffic that never becomes a phone call is a vanity metric. Ask directly: how many inquiries came from this last month?
 
 **Cheap monthly packages with no audit.** SEO priced like a subscription, sold before anyone has looked at your site, is almost always automated directory submissions and spun content. It can actively harm you.
 
@@ -93,7 +93,7 @@ Take these to any company you are considering, including us:
 1. **What would you do first, and why?** A good answer is specific to your site. A bad one is a description of their process.
 2. **Who will actually do the work?** Some agencies sell locally and outsource offshore. That is not automatically bad, but you should know.
 3. **How do you build links?** If the answer is vague, assume they buy them. Bought links carry real risk of a penalty.
-4. **What does success look like in six months?** It should be phrased in enquiries or revenue, not rankings.
+4. **What does success look like in six months?** It should be phrased in inquiries or revenue, not rankings.
 5. **What have you done for a business like mine?** Ask for specifics you can verify.
 6. **What happens if I leave?** Do you keep the content, the analytics, the Google Business Profile access? The answer should be yes to all three.
 

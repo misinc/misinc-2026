@@ -15,6 +15,8 @@ seo:
   description: Moving off Wix means rebuilding, because Wix has no meaningful export. What that involves, how long it takes, how rankings are protected, and when staying on Wix is the right answer.
 ---
 
+Wix sits in an odd middle: too simple for a site that needs real, custom design, and too complex for a site that only needs a handful of simple pages.
+
 ## The thing nobody mentions when you sign up
 
 Wix has no meaningful export. Your content is not portable, your design cannot move, and your URLs are structured the Wix way. Leaving means rebuilding.

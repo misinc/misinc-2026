@@ -2,12 +2,12 @@
 title: "New Mexico Chile Association"
 client: "New Mexico Chile Association"
 summary: "A new site for the nonprofit behind New Mexico Certified Chile™, built to defend a crop that gets imitated more than almost any other."
-category: nonprofit
+category: [nonprofit]
 image: /img/work/nm-chile.avif
 imageAlt: "New Mexico Chile Association website homepage"
 projectUrl: https://www.nmchileassociation.org
 year: 2025
-order: 10
+order: 110
 featured: false
 services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
@@ -24,7 +24,7 @@ Founded in 2005, the New Mexico Chile Association is the nonprofit voice for the
 
 A great deal of what is sold as New Mexico chile is not grown in New Mexico. The name carries a premium, the premium invites imitation, and the growers who actually farm it carry the cost.
 
-New Mexico Certified Chile™ is the association's answer: a programme that lets a buyer know the chile in front of them was grown here. So the certification is not filed under a subpage. It is a primary route from the homepage, for buyers checking a label and for producers wanting to join.
+New Mexico Certified Chile™ is the association's answer: a program that lets a buyer know the chile in front of them was grown here. So the certification is not filed under a subpage. It is a primary route from the homepage, for buyers checking a label and for producers wanting to join.
 
 The association's own framing, the battle for authenticity, is the honest description of what the site is for.
 

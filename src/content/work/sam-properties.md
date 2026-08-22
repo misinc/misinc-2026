@@ -2,12 +2,12 @@
 title: "SAM Properties"
 client: "SAM Properties"
 summary: "A leasing site for executive office space, built around high-quality photography and easy tour requests."
-category: real-estate
+category: [real-estate]
 image: /img/work/sam-properties.jpg
 imageAlt: "SAM Properties website showing executive office space for lease in Albuquerque"
 projectUrl: https://www.sampropertiesnm.com
 year: 2020
-order: 20
+order: 150
 services: [real-estate-website-design, web-design]
 platforms: [weebly-cloud]
 seo:
