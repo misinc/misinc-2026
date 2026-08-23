@@ -1,47 +1,52 @@
 ---
 title: Website Design
-heading: Websites you can be proud of
-summary: Modern, fast, attractive websites for businesses, designed to bring you customers, not just to look good in a portfolio.
+heading: Websites you can be proud of and people can use
+summary: Complete website engagements shaped around your audience, content, business goals, and the people who will maintain the site after launch.
 pillar: websites
 order: 10
 ranking: true
 platforms: [webflow]
 highlights:
-  - Design & development
-  - SEO + AI-search readiness
-  - Built on Webflow or Astro
+  - Strategy, content, and visual design
+  - Accessible, responsive page systems
+  - Search-ready structure and development
 hero:
   type: image
   src: /img/work/windsor-door.jpg
   alt: Windsor Door Sales website, designed by MIS, Inc.
   caption: Windsor Door Sales, Albuquerque
 nextStep: >-
-  We will look at your current site, tell you honestly whether it needs a rebuild or just some repair, and give you a plain-language plan with a real number attached before any work begins.
+  We will review your current site, explain whether it needs a redesign or a more focused repair, and provide a clear scope and price before work begins.
 seo:
   title: Albuquerque Web Design & Development | MIS, Inc.
-  description: Professional website design in Albuquerque, New Mexico. Fast, accessible, conversion-focused websites built by a studio that has designed for the web since 1995.
+  description: Website design in Albuquerque, New Mexico, including strategy, content planning, accessible responsive design, development, and launch support.
 ---
 
-## Is your website working for you?
+## Start with what the website needs to accomplish
 
-If your site was built more than five years ago, it is probably costing you customers. Browsers, phones, and search engines have all moved on, and a site that felt current a few years ago now loads slowly, ranks poorly, and looks dated on the device most of your visitors actually use.
+A redesign is worthwhile when it solves a real problem. The current site may be difficult to use on a phone, hard for staff to update, unclear about what the business offers, inaccessible to some visitors, or poorly matched to how customers make decisions.
 
-We have been designing and building websites in Albuquerque since 1995. That is long enough to have rebuilt sites through every platform shift the web has been through, and long enough to know which changes matter and which are noise.
+Age alone does not determine whether a website needs to be replaced. We review what is working before recommending what should change.
 
-## What you actually get
+## A complete website engagement
 
-A website from us is not a template with your logo dropped into it. Every project starts with what your business needs to happen, whether that is more phone calls, more bookings, or more donations, and works backward from there.
+Website design at MIS covers the decisions that shape the whole site, not only its appearance.
 
-- **Designed around your goal.** Every page has a job. If a section is not helping a visitor take the next step, it does not ship.
-- **Fast by default.** We build attractive, optimized sites. Speed is a ranking factor, and more importantly it is the difference between a visitor waiting and a visitor leaving.
-- **Yours to update.** We build on platforms you can maintain, and we train you on them. We want to make it easy for you to keep your website updated.
+- **Goals and audience.** We identify who the site serves, what they need to understand, and which actions matter.
+- **Content structure.** Pages, navigation, headings, and calls to action are organized around real questions rather than an internal company chart.
+- **Visual direction.** Typography, color, imagery, layout, and interaction should feel specific to the organization while remaining clear and usable.
+- **Responsive design.** We design a flexible system that works across screen sizes instead of treating phone, tablet, and desktop as three unrelated layouts.
+- **Accessibility.** Contrast, structure, keyboard behavior, alternative text, forms, and interaction states are addressed throughout the project.
+- **Search foundations.** Useful page topics, crawlable content, metadata, structured information, and performance are part of the build.
 
-## It has to work on the phone in their hand
+## Design and development belong together
 
-Most people will meet your business for the first time on a phone, often somewhere with poor reception. A site that requires pinching and zooming to find a phone number is a site that loses that customer to whichever competitor's site worked.
+The design has to survive contact with real content, real devices, and the platform that will run it. Keeping design and [website development](/services/website-development) together lets us resolve those questions before they become launch problems.
 
-We design and test at three sizes, phone, tablet, and desktop, and we treat the phone as the primary case rather than an afterthought.
+Most client-managed marketing sites are built on [Webflow](/platforms/webflow). We also develop custom sites with the Astro framework when portability, performance, or application requirements justify a code-based approach.
 
-## Built to be found, by people and by AI
+## After launch
 
-Search is changing again. People increasingly [ask an assistant](/services/aeo) instead of typing into a search box, and those assistants cite sites that are well structured, factually clear, and quick to crawl. That work overlaps almost entirely with good traditional [SEO](/services/seo), so we build it into every site rather than selling it back to you later.
+We provide training for the people who will maintain the site and can continue with support, content, [SEO](/services/seo), or integrations when needed. The site should remain useful without making every routine change dependent on us.
+
+We have been designing for the web in Albuquerque since 1995. That history matters because platforms change, but the need for clear information and sound judgment does not.

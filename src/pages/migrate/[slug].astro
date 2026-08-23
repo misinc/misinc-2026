@@ -31,8 +31,8 @@ const others = all
 
 const url = `${site.url}/migrate/${migration.id}`
 
-// A migration is a service we sell, so it is described as one — with the
-// platforms named, because "WordPress to Webflow" is the query people type.
+// A migration is a service we sell, with both platforms named because that is
+// how people commonly describe the work they need.
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -93,7 +93,7 @@ const trail = breadcrumbs([
           <h2
             class="mb-3 font-sans text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted"
           >
-            Our honest take
+            Our assessment
           </h2>
           <p class="mb-5 text-[15px] font-semibold leading-relaxed text-ink">{data.verdict}</p>
 
@@ -143,12 +143,12 @@ const trail = breadcrumbs([
           class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
           data-reveal
         >
-          <h2 class="mb-2 font-display text-lg font-bold text-ink">Talk it through</h2>
+          <h2 class="mb-2 font-display text-lg font-bold text-ink">Review the options</h2>
           <p class="mb-4 text-sm text-ink-soft">
-            We will look at your current site and tell you what moving it would actually
-            involve, including when it is not worth doing.
+            We will review the current site and explain the scope, tradeoffs, and whether
+            staying would be the better decision.
           </p>
-          <Button href="/free-consultation" class="w-full text-center">Book a free call</Button>
+          <Button href="/free-consultation" class="w-full text-center">Book a free consultation</Button>
           <p class="mt-4 text-sm text-ink-muted">
             Or call <a
               href={site.phoneHref}
@@ -185,7 +185,7 @@ const trail = breadcrumbs([
   <Section divider={false}>
     <CtaBand
       title="Thinking about moving?"
-      note="We will tell you what it would take, what it would cost, and whether it is worth doing at all."
+      note="We will explain the likely scope, cost, tradeoffs, and whether the move is justified."
     />
   </Section>
 </Base>

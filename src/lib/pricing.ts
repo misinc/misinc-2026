@@ -1,5 +1,5 @@
 /**
- * Pricing — the single source of truth.
+ * Pricing is the single source of truth.
  *
  * These figures appear on the pricing guide, in FAQ answers, and on service
  * pages. Changing a number here changes it everywhere; nothing else should
@@ -52,7 +52,7 @@ export const PRICE_TIERS: PriceTier[] = [
       'A proper CMS for pages you update often',
       'Blog, guides, or case studies',
       'Integrations for booking, CRM, and email marketing',
-      'Deeper SEO and AI-search readiness',
+      'Deeper SEO foundations and clear business information',
       'Training so you can handle text and image changes',
     ],
     goodFor:
@@ -116,7 +116,7 @@ export const PRICE_TIERS: PriceTier[] = [
     includes: [
       'Google Business Profile and local search work',
       'Technical SEO and content',
-      'AI-search readiness',
+      'AEO review for crawl access, clear facts, and consistency',
       'Email marketing and reporting on inquiries, not just traffic',
     ],
     goodFor:
@@ -125,12 +125,12 @@ export const PRICE_TIERS: PriceTier[] = [
   },
 ]
 
-/** $5,000 — no trailing cents, since every figure here is a whole dollar. */
+/** $5,000 with no trailing cents, since every figure here is a whole dollar. */
 export const money = (n: number) => `$${n.toLocaleString('en-US')}`
 
 export const tier = (id: string) => PRICE_TIERS.find((t) => t.id === id)!
 
-/** The lowest project figure — used in FAQ answers and summary copy. */
+/** The lowest project figure used in FAQ answers and summary copy. */
 export const PROJECT_FLOOR = Math.min(
   ...PRICE_TIERS.filter((t) => t.unit === 'project').map((t) => t.from),
 )

@@ -43,13 +43,10 @@ Tested against the real function under Wrangler:
 | Honeypot filled | 200, silently discarded, no email sent |
 | Valid submission, bad API key | 502 with "email us directly" message |
 | Valid submission, no JS, failure | 303 → `/contact?error=send` |
+| Valid submission with live Resend configuration | Delivery confirmed by the site owner |
 | `GET /api/contact` | 405 |
 
-The only untested path is a genuinely successful send, which needs a real
-Resend key. Everything up to and including the Resend API call is exercised —
-the failing case above proves the request is actually made.
-
-**Before launch:** send one real message end to end and confirm it arrives.
+Successful delivery through the current Resend configuration has been confirmed.
 
 ## Behaviour without JavaScript
 

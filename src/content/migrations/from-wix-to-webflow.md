@@ -2,51 +2,51 @@
 title: Wix to Webflow
 from: Wix
 to: Webflow
-summary: There is no export from Wix, so moving means rebuilding, which is less painful than it sounds.
+summary: Rebuilding a Wix site in Webflow when portability, design workflow, integrations, or long-term maintenance justify the move.
 fromPlatform: wix
 toPlatform: webflow
-verdict: Worth doing once the site is expected to bring in business rather than just exist.
+verdict: Move when the rebuild solves a specific business or maintenance problem. If the Wix site works well, staying may be the better decision.
 timeline: three to five weeks
 order: 20
 nextStep: >-
-  Send us your Wix URL and we will tell you what rebuilding it properly would take, and whether it is worth doing yet.
+  Send us the Wix site and explain what you need it to do next. We will assess whether rebuilding in Webflow is worth the cost and disruption.
 seo:
   title: Wix to Webflow Migration | MIS, Inc. Albuquerque
-  description: Moving off Wix means rebuilding, because Wix has no meaningful export. What that involves, how long it takes, how rankings are protected, and when staying on Wix is the right answer.
+  description: Wix to Webflow migration services, including content inventory, redesign, data review, URL mapping, redirects, testing, and search monitoring.
 ---
 
-Wix sits in an odd middle: too simple for a site that needs real, custom design, and too complex for a site that only needs a handful of simple pages.
+## Wix is capable, but the working site stays on Wix
 
-## The thing nobody mentions when you sign up
+Wix can support polished marketing sites, ecommerce, bookings, memberships, and advanced SEO settings. A business does not need to leave simply because the site was built there.
 
-Wix has no meaningful export. Your content is not portable, your design cannot move, and your URLs are structured the Wix way. Leaving means rebuilding.
+The lasting constraint is portability. Wix confirms that a working Wix site depends on its proprietary infrastructure and cannot be exported to run on another host. Leaving Wix therefore means rebuilding the website, even though some content and business data may be exported separately.
 
-That is not a reason to stay. It is a reason to know what you are agreeing to, and to understand that the cost of leaving only grows the longer you wait.
+## Reasons to consider a rebuild
 
-## Why businesses outgrow it
+A Wix-to-Webflow move may be worthwhile when:
 
-**Speed.** Wix ships a lot of JavaScript before your content appears, and you do not control the output, so there is a floor you cannot get under. On a phone with two bars, which is where a lot of Albuquerque customers first meet you, that floor is noticeable.
+- The organization needs a design system better matched to MIS’s workflow
+- The current structure has become difficult to extend or maintain
+- Required integrations fit more cleanly outside the Wix ecosystem
+- The site needs enough redesign and reorganization that preserving the current build offers little advantage
+- The organization wants MIS to provide ongoing development in the tools we support
 
-**SEO ceilings.** The basics are there and have improved. But you work within what the platform exposes, and when you need real control over structure, redirects, or markup, the wall arrives and does not move.
+SEO alone is not a reason to leave. Wix provides redirects, canonical settings, structured-data controls, and other advanced SEO features. The migration should solve a problem the current site cannot solve economically.
 
-**Design constraints.** The editor's absolute positioning makes genuinely responsive design hard. Sites tend to look right on the screen they were built on and awkward on everything else.
+## What can be carried forward
 
-## When staying on Wix is right
+The visual site is rebuilt rather than converted. Copy, images, downloads, metadata, and page relationships are inventoried and reused where appropriate. Wix apps may provide separate exports for products, contacts, orders, bookings, blog content, or CMS data, but availability and field coverage vary.
 
-If the site is a presence rather than a lead source, if your budget is genuinely a few hundred dollars, or if the business is still finding its shape, stay. Spend the money where it returns more. A Wix site that exists beats a Webflow site you cannot afford to finish.
+We review those exports before promising what will transfer. A spreadsheet of contacts is not the same thing as a migrated member account, and exported product data does not reproduce every store setting or connected app.
 
-The calculation changes when the website is expected to bring in work.
+Forms and outside services are recreated and tested. Established URLs remain unchanged where practical. When a URL changes, it receives a permanent redirect to the closest relevant page.
 
-## How a rebuild actually goes
+## Why Webflow may fit better
 
-Because there is nothing to import, we rebuild, and that turns out to be the advantage. You are not carrying across the compromises the Wix editor imposed.
+[Webflow](/platforms/webflow) gives MIS the design and CMS workflow we use for most client-managed marketing sites. Clients retain a visual editing experience, while our team works in a system we build and support every day.
 
-We start from your existing content, not a blank page: copy, images, and structure come over, reorganised where the original was fighting the template. The design is built properly responsive from the beginning. Forms are rebuilt and tested. Then every existing Wix URL is mapped to its new home before launch, so the rankings you have earned survive the move.
+Webflow is still a hosted service with its own conventions and limitations. Moving from one hosted platform to another should be a considered choice, not a claim that one product is universally better.
 
-Most Wix rebuilds take three to five weeks.
+A custom build using the Astro framework is another option when a portable codebase, static publishing, or specialized functionality matters more than visual editing. See [website development](/services/website-development).
 
-## Where you land
-
-[Webflow](/platforms/webflow) is the usual answer. You keep the ability to edit your own site, which is why you chose Wix, but with real design control, much better performance, and content that is genuinely portable if you ever leave again.
-
-If you do not need to edit the design yourself and want the fastest site available, a custom static build is the alternative. See [website development](/services/website-development).
+Most Wix-to-Webflow projects take three to five weeks. The timeline depends on page count, data exports, integrations, and how much the design and content change.

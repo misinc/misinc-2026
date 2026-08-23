@@ -1,51 +1,59 @@
 ---
 title: E-Commerce Stores
-heading: Sell your products 24/7
-summary: Online stores that are straightforward for customers to buy from and straightforward for you to run, on the platform that actually fits your business.
+heading: Make buying straightforward
+summary: Online stores designed around what you sell, how you fulfill orders, and which platform your team can manage after launch.
 pillar: websites
 order: 30
 ranking: true
 platforms: [square-online-store, shopify, ecwid]
 highlights:
-  - Secure checkout & payments
-  - Shipping and tax handled
-  - Inventory you can manage yourself
+  - Store and checkout setup
+  - Catalog, tax, and shipping configuration
+  - Inventory and point-of-sale integration
 hero:
   type: image
   src: /img/work/peasant-pies.jpg
   alt: Peasant Pies online store built on Square Online
   caption: Peasant Pies, online ordering
 nextStep: >-
-  Tell us what you sell and how you take payments today. We will tell you which platform we would use and why.
+  Tell us what you sell, how customers receive it, and how you take payments today. We will recommend a platform and explain its operating costs and limitations.
 seo:
   title: E-Commerce Website Design in Albuquerque, NM | MIS, Inc.
-  description: Custom e-commerce website design and online store setup in Albuquerque. Square Online, Shopify, Webflow, and WooCommerce stores built by a certified Square agency.
+  description: E-commerce website design and online store setup in Albuquerque using Square Online, Shopify, and Ecwid, with platform selection based on how the business operates.
 ---
 
-## An online store should be the easy part
+## The store has to fit the operation behind it
 
-Whether you need a simple storefront or a store handling hundreds of products, the goal is the same: customers should be able to find what they want and pay for it without thinking about the software, and you should be able to run it without needing a developer for every price change.
+A good online store is easy for a customer to browse and buy from. It also has to work for the people managing products, inventory, pickup, shipping, taxes, refunds, and reporting after the order arrives.
 
-We have built stores on most of the major platforms, and we are a Square Online certified agency. That means we can tell you honestly which platform fits your catalog, your budget, and the amount of time you want to spend managing it.
+Those operational details determine the right platform more reliably than a feature comparison does.
 
-## What comes standard
+## What we can set up
 
-- Secure credit card processing
-- Automatic shipping rate calculation
-- Automatic sales tax calculation
-- Unlimited products and categories
-- Retail and wholesale pricing
-- Digital products such as e-books, audio, and downloads
-- Sales reporting you will actually look at
+Depending on the platform and plan, an engagement may include:
 
-## Already have a website?
+- Product, category, option, and variant organization
+- Secure payment processing and checkout configuration
+- Pickup, local delivery, or shipping rules
+- Tax settings and connections to appropriate tax services
+- Digital or physical product delivery
+- Inventory and point-of-sale coordination
+- Customer notifications, reporting, and staff training
 
-You do not always need to start over. If your existing site is solid, we can often add a store to it using [Ecwid](/platforms/ecwid), or connect it to the point-of-sale system you already use so that your online and in-person inventory stay in step.
+Not every platform supports these features in the same way. We identify what is included, what requires another service, and what it will cost before recommending a system.
 
-That last part matters more than people expect. A store that shows an item as available after it sold out in the shop this morning creates a refund, an apology, and a customer who does not come back.
+## Choosing the platform
 
-## Picking the right platform
+**[Square Online](/platforms/square-online-store)** is often the best fit for restaurants and retailers already using Square at the counter. Its main advantage is keeping online orders and in-person operations in the same system.
 
-We keep an eye on new platforms, but we recommend proven ones. [Square Online](/platforms/square-online-store) is often the right answer for restaurants and retailers already running Square. [Shopify](/platforms/shopify) suits larger catalogs.
+**[Shopify](/platforms/shopify)** is built for businesses where ecommerce is central, especially when the catalog, fulfillment rules, sales channels, or order volume demand more depth.
 
-We will make a recommendation and explain the reasoning, including what it will cost you to run each month, before you commit to anything.
+**[Ecwid](/platforms/ecwid)** can add a store to an existing website without rebuilding the rest of it. That makes it useful when the current site is sound and ecommerce is one part of the business.
+
+## Existing websites and migrations
+
+Starting to sell online does not always require a new marketing site. We can sometimes integrate a store into what you already have or connect the site to a separate commerce system.
+
+When a migration is justified, we plan for product data, customer-facing URLs, search visibility, order operations, and the changeover itself. The goal is not simply to reproduce the old store on a new platform. It is to remove the problems that made the move worthwhile.
+
+Our ecommerce work includes [Peasant Pies](/works/peasant-pies), [The Bean](/works/the-bean), and [Pars Cuisine](/works/pars-cuisine).

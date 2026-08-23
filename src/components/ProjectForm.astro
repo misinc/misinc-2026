@@ -1,6 +1,5 @@
 ---
 import { site } from '../lib/site'
-import { PRICE_TIERS } from '../lib/pricing'
 
 /**
  * Project-intake form for /start-a-project, posting to the same Resend-backed
@@ -13,11 +12,21 @@ import { PRICE_TIERS } from '../lib/pricing'
  * are the constraints") rather than "what's on your mind," so it earns its
  * own layout instead of bolting qualifying fields onto the general form.
  *
- * Project type reuses PRICE_TIERS names rather than a hand-typed list, so a
- * renamed or added tier in lib/pricing.ts shows up here automatically.
+ * The service list is written for intake rather than copied from pricing,
+ * because monthly services and build tiers answer different questions.
  */
 
-const projectTypes = [...PRICE_TIERS.map((t) => t.name), 'Not sure yet']
+const projectTypes = [
+  'A new website',
+  'A website redesign',
+  'E-commerce / online store',
+  'A website migration',
+  'Custom software',
+  'AI consulting or a custom agent',
+  'SEO or AEO',
+  'Ongoing website care',
+  'Not sure yet',
+]
 
 const budgets = [
   'Under $5,000',
@@ -70,6 +79,22 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
 
   <div class="grid gap-5 sm:grid-cols-2">
     <div>
+      <label class={label} for="project-organization">
+        Organization <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <input class={field} type="text" id="project-organization" name="organization" autocomplete="organization" />
+    </div>
+
+    <div>
+      <label class={label} for="project-website">
+        Current website <span class="font-semibold text-ink-muted">(optional)</span>
+      </label>
+      <input class={field} type="url" id="project-website" name="website" autocomplete="url" placeholder="https://" />
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
       <label class={label} for="project-phone">
         Phone <span class="font-semibold text-ink-muted">(optional)</span>
       </label>
@@ -77,7 +102,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
     </div>
 
     <div>
-      <label class={label} for="project-subject">What are we building?</label>
+      <label class={label} for="project-subject">What do you need help with?</label>
       <select class={field} id="project-subject" name="subject">
         {projectTypes.map((t) => <option value={t}>{t}</option>)}
       </select>
@@ -87,7 +112,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
   <div class="grid gap-5 sm:grid-cols-2">
     <div>
       <label class={label} for="project-budget">
-        Your Budget <span class="font-semibold text-ink-muted">(optional)</span>
+        Your budget <span class="font-semibold text-ink-muted">(optional)</span>
       </label>
       <select class={field} id="project-budget" name="budget">
         <option value="">Prefer not to say</option>
@@ -97,7 +122,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
 
     <div>
       <label class={label} for="project-timeline">
-        Your Timeline <span class="font-semibold text-ink-muted">(optional)</span>
+        Your timeline <span class="font-semibold text-ink-muted">(optional)</span>
       </label>
       <select class={field} id="project-timeline" name="timeline">
         <option value="">Prefer not to say</option>
@@ -139,6 +164,10 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
       >
     </p>
   </div>
+  <p class="text-sm text-ink-muted">
+    We use the information you send to respond to your project inquiry. See our
+    <a href="/privacy-policy" class="font-bold text-primary no-underline hover:underline">privacy policy</a>.
+  </p>
 </form>
 
 <div
@@ -150,7 +179,7 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
   <h2 class="mb-2.5 font-display text-xl font-bold text-ink">Thanks, that came through.</h2>
   <p class="mb-1 max-w-[58ch] text-ink-soft">
     We read every project brief, and you will hear back from us within one business
-    day with a straight read on scope and cost.
+    day. If we need more detail before preparing a scope and price, we will tell you what is missing.
   </p>
   <p class="text-ink-soft">
     If it is urgent, call <a

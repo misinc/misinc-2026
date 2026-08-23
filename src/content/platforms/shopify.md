@@ -25,14 +25,14 @@ The signals that you have outgrown a simpler store: a catalog in the hundreds ra
 ## What it does well
 
 - **Inventory and variants** handled properly at scale
-- **Checkout that converts**. Shopify has optimized this more than anyone
+- **A mature checkout** backed by years of ecommerce development
 - **Multi-channel selling** across your site, social, and marketplaces
-- **A large app ecosystem** for genuinely specialized needs
-- **Reliability at volume**, including during the sales that break lesser platforms
+- **A large app ecosystem** for specialized needs
+- **Infrastructure designed for high order volume**
 
 ## What to know before choosing it
 
-**It costs more.** Monthly fees plus transaction costs plus apps, which add up quickly. Worth it at volume, oversized for a shop with twelve products.
+**The costs have layers.** There is a monthly plan, payment processing, and often paid apps. Shopify also charges additional transaction fees when a third-party payment provider is used, while eligible orders processed through Shopify Payments are not subject to that extra fee. The total can add up quickly.
 
 **Apps become dependencies.** The same trap as WordPress plugins, if you are undisciplined about it. We keep the stack small.
 
@@ -42,4 +42,4 @@ The signals that you have outgrown a simpler store: a catalog in the hundreds ra
 
 For a modest catalog, especially if you already use Square in person, [Square Online](/platforms/square-online-store) will serve you better and cost less. For a handful of products alongside a marketing site, [Webflow](/platforms/webflow) has ecommerce built in.
 
-We would rather point you at the cheaper option that fits.
+The right choice depends on the catalog, operations, and expected sales volume, not simply the longest feature list.

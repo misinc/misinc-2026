@@ -1,38 +1,47 @@
 ---
 title: Custom Software
-heading: Software built for you
-summary: Portals, integrations, and internal tools that remove the busywork your off-the-shelf apps cannot, built by the same people who built your websites.
+heading: Build the tool your process is missing
+summary: Portals, integrations, internal tools, and automation for work that off-the-shelf software cannot handle cleanly.
 pillar: software-ai
 order: 10
 platforms: []
 highlights:
-  - Web apps & client portals
+  - Web applications and client portals
   - Integrations between systems
-  - Internal tools & automation
+  - Internal tools and automation
 nextStep: >-
-  Describe the process that frustrates you most. We will tell you whether software is the right answer, and roughly what it would take. Sometimes the honest answer is that a setting in a tool you already own will do it.
+  Describe the process that causes the most repeated work or errors. We will tell you whether custom software is justified or whether a tool you already have can solve it.
 seo:
   title: Custom Software & Web Application Development | MIS, Inc.
-  description: Custom web applications, client portals, integrations, and internal tools for New Mexico businesses. Built in Albuquerque by a team that has shipped software since 1995.
+  description: Custom web applications, portals, integrations, internal tools, and automation for New Mexico businesses and organizations.
 ---
 
-## When the off-the-shelf answer stops fitting
+## When custom software becomes reasonable
 
-Most businesses run on a stack of subscriptions that each solve part of the problem. The gaps between them get filled by a person with a spreadsheet, re-typing the same information from one system into another.
+Most businesses use several subscriptions that each solve part of a process. The gaps are often filled by a person copying information, maintaining a spreadsheet, sending reminders, or checking two systems against each other.
 
-That person is expensive, and the spreadsheet is a single point of failure. Custom software is worth building at exactly the point where the manual workaround costs more each month than the tool would cost once.
+Custom software is worth considering when that workaround consumes meaningful time, creates avoidable errors, limits service, or prevents the business from doing something important.
+
+It is not automatically the answer. Configuration, a better process, or a focused integration may solve the problem with less cost and risk.
 
 ## What we build
 
-- **Client and member portals.** A place for the people you serve to log in, see their information, submit what you need from them, and stop emailing you for status updates.
-- **Integrations.** Connecting the systems you already pay for so information moves between them automatically: your store to your accounting, your forms to your CRM, your bookings to your calendar.
-- **Internal tools.** The small, unglamorous applications that replace a fragile spreadsheet: scheduling, intake, inventory, reporting.
-- **Automations.** The recurring task that eats two hours every Monday, done in seconds without anyone remembering to do it.
+- **Client and member portals.** Secure places for people to view information, submit material, or check status.
+- **Integrations.** Connections that move approved data between stores, accounting systems, forms, CRMs, calendars, and other services.
+- **Internal tools.** Purpose-built applications for scheduling, intake, inventory, reporting, content, or other recurring work.
+- **Automation.** Reliable handling of repetitive steps that follow known rules.
+- **Specialized web applications.** Public or private software built around a workflow that existing products do not support well.
 
-## How we approach it
+## Start with the smallest useful version
 
-We start with what is repetitive, not with what is technically interesting. The first conversation is usually about where time goes, and the answer is often something small and repetitive that nobody thought to mention.
+We begin with the process, its exceptions, the people involved, and the cost of the current workaround. From there we define the smallest release that can prove the tool is useful.
 
-Then we build the smallest thing that fixes it. Software gets more expensive to change the more of it there is, so a tool that does one job well and ships in weeks beats a platform that does everything and never quite launches.
+That first version may be one integration or one narrow workflow. Starting there makes the assumptions visible before the project grows around them.
 
-We build on trusted and proven, well-supported technology, and document everything we do so that you are not dependent on us to keep it running, and so another developer could pick it up if you ever needed one to.
+## Ownership and ongoing costs
+
+Custom software has a life after launch. Hosting, monitoring, security updates, outside services, backups, support, and future changes should be part of the decision from the beginning.
+
+We use established, supported technologies and provide documentation appropriate to the project. The goal is to make the system understandable and maintainable, including if another qualified developer needs to work on it later.
+
+Our own [Add On IDX](/platforms/addonidx) and [Add On AI Chat](/platforms/addonaichat) products began with the same decision: the available software did not fit the job closely enough.

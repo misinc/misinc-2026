@@ -1,7 +1,7 @@
 ---
 title: "United Voices for Newcomer Rights"
 client: "United Voices for Newcomer Rights"
-summary: "An Albuquerque nonprofit supporting refugees and immigrants, where the site has to serve the people it helps and the people who fund it."
+summary: "A community-led nonprofit site that keeps practical newcomer resources distinct from the information needed by donors and funders."
 category: [nonprofit]
 image: /img/work/uvnr.avif
 imageAlt: "United Voices for Newcomer Rights nonprofit website"
@@ -11,24 +11,22 @@ order: 35
 services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "United Voices for Newcomer Rights Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for United Voices for Newcomer Rights, an Albuquerque nonprofit supporting refugee and immigrant communities."
+  title: "United Voices for Newcomer Rights Website | MIS, Inc."
+  description: "MIS built a clear, multilingual-ready Webflow site for UVNR, an Albuquerque nonprofit serving refugee and immigrant communities."
 ---
 
-United Voices for Newcomer Rights is a community-led organization founded in Albuquerque in 2019. It works on the immediate needs of newcomer communities and on the longer project of systemic change: educational, economic, cultural, and health initiatives, run in partnership with the communities themselves rather than on their behalf.
+United Voices for Newcomer Rights is a community-led organization founded in Albuquerque in 2019. Its work covers immediate needs as well as longer-term systemic change through educational, economic, cultural, and health initiatives. Programs are developed with newcomer communities, not merely for them.
 
-## Two audiences with nothing in common
+## Help first
 
-Nonprofit sites usually carry a split, and this one is wider than most.
+A newcomer may arrive looking for housing, employment, schools, interpretation, or information about their rights. That need is immediate. A donor, funder, or volunteer arrives with a different set of questions about the mission, leadership, and use of support.
 
-A newcomer arriving at the site needs practical help now: housing, employment, schools, and knowing what their rights are. A donor, funder, or volunteer needs to understand the mission and see that the organization is credible.
-
-Those two readers want different things, arrive through different routes, and in many cases read in different languages. The site keeps the resources route short and unmistakable, since someone looking for housing information should never have to read the case for support to find it, while the mission and giving material has its own space rather than being wrapped around everything else.
+We kept the resources route short and unmistakable. Nobody looking for practical help should have to read a fundraising argument first. Mission and giving material has its own space, and the structure is prepared for readers who may use different languages.
 
 ## Programs, named as they are
 
-The program names are specific and worth preserving: Tea Circle, the Refugee and Immigrant Well-Being Project, Pathways Mentoring, Youth Empowerment, Interpretation and Translation, and Systemic Change.
+The program names are specific: Tea Circle, the Refugee and Immigrant Well-Being Project, Pathways Mentoring, Youth Empowerment, Interpretation and Translation, and Systemic Change.
 
-There is always a temptation to rename this kind of thing into something more legible to funders. We left them, because the communities using them know them by these names, and legibility to a grant officer is a poor trade for legibility to the people the organization exists for.
+It would have been easy to replace them with more polished labels aimed at funders. We kept the names because the communities using the programs already know them. Familiarity to those communities matters more than tidiness in a grant presentation.
 
-Built on [Webflow](/platforms/webflow), so a small team can post news, newsletters, job openings, and updated resources without a developer in the loop.
+The small UVNR team can publish news, newsletters, job openings, and changing resources directly through [Webflow](/platforms/webflow).

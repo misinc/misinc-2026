@@ -1,7 +1,7 @@
 ---
 title: "SAM Properties"
 client: "SAM Properties"
-summary: "A leasing site for executive office space, built around high-quality photography and easy tour requests."
+summary: "An executive-office leasing site designed to answer practical questions, show the building honestly, and turn interest into tour requests."
 category: [real-estate]
 image: /img/work/sam-properties.jpg
 imageAlt: "SAM Properties website showing executive office space for lease in Albuquerque"
@@ -11,12 +11,14 @@ order: 150
 services: [real-estate-website-design, web-design]
 platforms: [weebly-cloud]
 seo:
-  title: "SAM Properties Office Leasing Website | MIS, Inc."
-  description: "How MIS, Inc. designed and built the leasing website for SAM Properties, offering executive office space in Albuquerque, New Mexico."
+  title: "SAM Properties Albuquerque Leasing Site | MIS, Inc."
+  description: "MIS designed an Albuquerque office-leasing website for SAM Properties around photography, practical space details, and tour requests."
 ---
 
-SAM Properties leases executive office space in a genuinely attractive Albuquerque building, and for commercial leasing the website does a specific job: it decides whether someone books a tour.
+SAM Properties leases executive office space in an attractive Albuquerque building. For commercial leasing, the website has a focused role: help a prospective tenant decide whether the property deserves a tour.
 
-That makes photography the most important element on the page, not the copy. We built the site around it, with space details that answer the practical questions of size, configuration, and what is included, and a straightforward path to arranging a visit.
+Photography carries much of that decision. We gave it room to show the property clearly, then supported it with the practical details people need before making contact: available sizes, configurations, included services, and location.
 
-Working with Phil and Sue on this one was a pleasure.
+The path to arranging a visit stays simple throughout the site. The copy does not try to close a lease on the page. It gives qualified visitors enough information and confidence to take the next useful step.
+
+Phil and Sue were a pleasure to work with, and the finished site reflects the same straightforward quality they brought to the project.

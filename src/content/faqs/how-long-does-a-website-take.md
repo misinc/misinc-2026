@@ -5,8 +5,8 @@ order: 20
 showOn: [services]
 ---
 
-A straightforward small business site is usually six to ten weeks from kickoff to launch. Larger builds with e-commerce, integrations, or a big content migration run longer.
+A straightforward small business website usually takes six to ten weeks from kickoff to launch. Ecommerce, custom integrations, extensive content, or a complex migration can require more time.
 
-The variable is almost never our build time. It is how quickly content, photography, and feedback come back. Projects that stall almost always stall waiting for copy.
+The schedule depends on both the build and the decisions around it. Content, photography, access to existing systems, review cycles, third-party integrations, and changes in scope can all affect the launch date. We agree on responsibilities and review points at the start so those dependencies are visible.
 
-If you have a hard deadline, whether that is a store opening, a campaign, or a platform being switched off, tell us at the start. We will say honestly whether it is achievable rather than agreeing and hoping.
+If you have a fixed deadline, such as an opening, campaign, event, or platform shutdown, tell us before the scope is set. We will explain what can reasonably be completed by that date.

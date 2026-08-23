@@ -29,7 +29,7 @@ const drivers = [
   },
   {
     title: 'Migrating existing content',
-    body: 'Moving a hundred blog posts across, preserving URLs so rankings survive, is significant work. Starting fresh with ten pages is not.',
+    body: 'Moving a hundred blog posts, preserving important URLs, mapping redirects, and checking the result is significant work. Starting fresh with ten pages is not.',
   },
   {
     title: 'E-commerce complexity',
@@ -44,11 +44,11 @@ const drivers = [
 const included = [
   'A fixed price agreed before any work starts',
   'Design and build, tested on real phones and tablets',
-  'Mobile-first, because that is where most of your visitors are',
+  'Responsive layouts designed for phones, tablets, and desktop screens',
   'Accessibility built in, not retrofitted',
   'SEO foundations: titles, descriptions, structured data, speed',
-  'AI-search readiness, at no extra charge',
-  'Google Business Profile setup or review',
+  'Clear, crawlable content and accurate business information',
+  'Google Business Profile setup or review when relevant',
   'Training so you can manage what you should manage',
   'Ownership of your domain, content, and accounts',
 ]
@@ -60,11 +60,11 @@ const faqs = [
   },
   {
     q: 'Do you charge hourly or a fixed price?',
-    a: 'Fixed price, agreed before work starts. You get a written proposal with a number, and that is the number you pay. We would rather absorb an occasional overrun than send a surprise invoice, and one of our clients wrote a review specifically about that.',
+    a: 'We use a fixed price for the agreed scope. If we underestimate the work already included, that is our responsibility. If you ask to add something outside the scope, we explain the additional cost and get approval before doing it. There should be no surprise invoice.',
   },
   {
     q: 'Are there ongoing costs?',
-    a: `Hosting and care starts at ${money(tier('care').from)} a month, which covers hosting, monitoring, backups, and small content changes. Marketing and SEO work is separate, starting at ${money(tier('marketing').from)} a month. Neither is compulsory, and you can host elsewhere and manage the site yourself if you prefer.`,
+    a: `Hosting and care starts at ${money(tier('care').from)} a month, which covers hosting, monitoring, backups, and small content changes. Marketing and SEO work is separate, starting at ${money(tier('marketing').from)} a month. Our care plan is optional, although platform subscriptions and third-party services may still be required depending on how the site is built.`,
   },
   {
     q: 'What if my budget is below your starting price?',
@@ -120,7 +120,7 @@ const offerSchema = {
   schema={[faqSchema, offerSchema]}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Pricing guide" title="What a website actually costs" lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included, so you can work out whether we are in your range before spending an hour finding out.`} ctas={[
+    <PageHero eyebrow="Pricing guide" title="What a website actually costs" lede={`Most agencies will not tell you until you are on a call. Here are our real starting prices, what moves them, and what is included, so you can decide whether a conversation makes sense before booking one.`} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
       ]} layout="full" showMedia={false} />
@@ -131,7 +131,7 @@ const offerSchema = {
     <SectionHeader
       eyebrow="Starting prices"
       title="Our prices, plainly"
-      lede="Every project is quoted individually, but these are the floors. If your project is simpler than a tier suggests, we will say so and quote less."
+      lede="Every project is quoted individually, but these are the starting prices for the project types described below. We will not push a straightforward project into a larger tier it does not need."
       class="mb-10"
     />
     <PriceTable />
@@ -191,14 +191,22 @@ const offerSchema = {
             ))
           }
         </ul>
+        <p class="mt-6 max-w-[68ch] text-sm text-ink-muted">
+          These foundations support ordinary search visibility. Ongoing
+          <a href="/services/seo" class="font-bold text-primary no-underline hover:underline">SEO</a>
+          and separate
+          <a href="/services/aeo" class="font-bold text-primary no-underline hover:underline">Answer Engine Optimization</a>
+          are scoped according to the business rather than presented as automatic launch outcomes.
+        </p>
       </div>
 
       <aside>
         <div class="rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card" data-reveal>
           <h2 class="mb-2 font-display text-lg font-bold text-ink">No surprise invoices</h2>
           <p class="text-sm text-ink-soft">
-            The price is agreed before work starts. If a project grows mid-way, we have been
-            known to absorb it rather than re-invoice.
+            The price covers the written scope agreed before work starts. If we underestimate
+            that work, the overrun is ours. If you add something new, we explain the cost and
+            get approval first.
           </p>
           <p class="mt-3 text-sm text-ink-soft">
             {yearsInBusiness} years in, we would rather keep the relationship than win the
@@ -232,9 +240,9 @@ const offerSchema = {
     />
     <div class="max-w-[68ch] text-ink-soft">
       <p class="mb-4">
-        <strong class="text-ink">Write your own content.</strong> This is the single biggest
-        lever. Nobody knows your business better, and a rough draft we edit costs far less than
-        us starting from nothing.
+        <strong class="text-ink">Write your own content.</strong> This is one of the clearest
+        ways to reduce cost. Nobody knows your business better, and a rough draft we edit costs
+        far less than us starting from nothing.
       </p>
       <p class="mb-4">
         <strong class="text-ink">Start smaller.</strong> Launch the five pages that matter and
@@ -243,7 +251,7 @@ const offerSchema = {
       </p>
       <p class="mb-4">
         <strong class="text-ink">Use your own photographs.</strong> Real photographs of your
-        premises, team, and work outperform stock imagery anyway.
+        premises, team, and work are often more useful and specific than stock imagery.
       </p>
       <p class="mb-4">
         <strong class="text-ink">Skip functionality you are not sure about.</strong> Booking

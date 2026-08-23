@@ -1,7 +1,7 @@
 ---
 title: "Eric Spurlock"
 client: "Eric Spurlock"
-summary: "A rebuilt portfolio site for an award-winning custom home designer, where the work has to speak first."
+summary: "A second website for a longtime client, rebuilt to put decades of custom-home work first and make new projects easy to publish."
 category: [business]
 image: /img/work/eric-spurlock.avif
 imageAlt: "Eric Spurlock custom home design portfolio website"
@@ -11,16 +11,14 @@ order: 45
 services: [web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "Eric Spurlock Custom Home Design Website | MIS, Inc."
-  description: "How MIS, Inc. built the new website for Eric Spurlock, an award-winning custom home designer in Albuquerque and Santa Fe."
+  title: "Eric Spurlock Custom Home Website | MIS, Inc."
+  description: "MIS rebuilt Eric Spurlock’s portfolio in Webflow, giving the Albuquerque and Santa Fe custom-home designer direct control over new projects."
 ---
 
-Eric has been designing award-winning homes since 1985, with work across communities including Tanoan Country Club and Winterwood Park, and studios in Albuquerque and Santa Fe.
+Eric Spurlock has designed award-winning homes since 1985, with work in communities including Tanoan Country Club and Winterwood Park and studios in Albuquerque and Santa Fe.
 
-We have now built this site twice. The original served for years; this is a fresh build on [Webflow](/platforms/webflow), which gives Eric a visual editor for adding new projects himself, the thing a working designer needs most from a portfolio site.
+This is the second site we have built for Eric. The original served for years, but his body of work continued to grow and deserved a new presentation. For the rebuild, we worked closely with Eric’s design team, following the visual direction they established and translating it into a responsive [Webflow](/platforms/webflow) site. The new system also gives Eric a visual editor for adding projects without asking a developer to update the portfolio.
 
-For a designer, the website is a portfolio first and everything else second. Our job was mostly to get out of the way: large imagery, minimal interface, and a structure that lets someone move through projects without friction.
+For a custom-home designer, the work should speak before the interface. Large images, restrained typography, and simple movement between projects keep attention on the houses rather than on the website around them.
 
-The restraint is the design decision. Anything we added would have competed with the work it exists to show.
-
-The one place the site does assert itself is the positioning: no templates, no repeats. For a designer whose entire proposition is that every house is drawn from scratch, that line has to be visible before a visitor has scrolled anywhere.
+The site becomes more assertive only where it states Eric’s position: no templates, no repeats. Every house begins from scratch, and that distinction appears before a visitor scrolls.

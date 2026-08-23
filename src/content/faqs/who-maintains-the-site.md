@@ -4,8 +4,8 @@ topic: after-launch
 order: 200
 ---
 
-We can, and most clients choose that, but it is not a condition of working with us.
+MIS can provide ongoing care, but it is not a condition of working with us.
 
-The platforms we build on handle their own security and updates, which removes most of what site maintenance used to mean. What remains is hosting, content changes, monitoring, and being available when something needs doing.
+The maintenance depends on the build. Hosted platforms manage their core infrastructure, while custom sites may require dependency updates, hosting oversight, deployment work, or monitoring. Domains, forms, integrations, analytics, content, accessibility, and third-party services still need an owner in either case.
 
-If you would rather handle it in-house, we will train you and hand it over properly.
+If your team will maintain the site, we organize the handover and provide training appropriate to the platform. If MIS will maintain it, the proposal explains what the ongoing service includes and what remains outside it.

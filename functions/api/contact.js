@@ -4,7 +4,7 @@
  * Replaces Netlify Forms. The site stays fully static; this is the only
  * server-side code in the project. Shared by both /contact (ContactForm) and
  * /start-a-project (ProjectForm) — the two post the same core fields
- * (name/email/phone/subject/message) plus budget/timeline, which this handler
+ * (name/email/phone/subject/message) plus organization, website, budget, and timeline, which this handler
  * treats as optional so either form works against it unchanged.
  *
  * Required environment variables (Cloudflare Pages → Settings → Environment):
@@ -89,6 +89,8 @@ export async function onRequestPost({ request, env }) {
   // them, so a missing value here is normal, not an error.
   const budget = String(data.budget ?? '').trim()
   const timeline = String(data.timeline ?? '').trim()
+  const organization = String(data.organization ?? '').trim()
+  const website = String(data.website ?? '').trim()
 
   const errors = {}
   if (!name) errors.name = 'Please tell us your name.'
@@ -96,7 +98,9 @@ export async function onRequestPost({ request, env }) {
     errors.email = 'Please enter an email address we can reply to.'
   if (!message) errors.message = 'Please tell us a little about your project.'
   if (
-    [name, email, message, budget, timeline].some((v) => v.length > MAX_FIELD)
+    [name, email, message, phone, subject, budget, timeline, organization, website].some(
+      (v) => v.length > MAX_FIELD,
+    )
   )
     errors.message = 'That message is too long to send. Please shorten it.'
 
@@ -112,6 +116,8 @@ export async function onRequestPost({ request, env }) {
     <p><strong>Name:</strong> ${esc(name)}</p>
     <p><strong>Email:</strong> <a href="mailto:${esc(email)}">${esc(email)}</a></p>
     ${phone ? `<p><strong>Phone:</strong> ${esc(phone)}</p>` : ''}
+    ${organization ? `<p><strong>Organization:</strong> ${esc(organization)}</p>` : ''}
+    ${website ? `<p><strong>Current website:</strong> ${esc(website)}</p>` : ''}
     <p><strong>Subject:</strong> ${esc(subject)}</p>
     ${budget ? `<p><strong>Budget:</strong> ${esc(budget)}</p>` : ''}
     ${timeline ? `<p><strong>Timeline:</strong> ${esc(timeline)}</p>` : ''}
@@ -132,7 +138,7 @@ export async function onRequestPost({ request, env }) {
         from: `MIS, Inc. Website <${env.CONTACT_FROM}>`,
         to: [env.CONTACT_TO],
         reply_to: email,
-        subject: `${subject} — ${name}`,
+        subject: `${subject}: ${name}`,
         html,
       }),
     })

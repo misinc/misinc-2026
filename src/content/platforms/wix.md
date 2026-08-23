@@ -1,51 +1,49 @@
 ---
 name: Wix
-summary: Easy to start on, hard to grow on, and difficult to leave.
+summary: "A capable all-in-one website builder with one major constraint: the site cannot leave Wix without being rebuilt."
 icon: /img/platforms/wix.svg
 stance: migrate
-verdict: Too simple for custom designed sites and too complex for simple sites.
-insteadUse: [webflow, astro]
+verdict: Wix remains a capable hosted builder. MIS does not use it for new projects because its workflow and lack of site export do not fit how we build.
+insteadUse: [webflow]
 category: websites
 order: 20
 nextStep: >-
-  If your Wix site is holding you back, whether it is slow, hard to rank, or simply not growing with the business, we have moved a lot of sites off Wix and can tell you what yours would involve.
+  If your Wix site is no longer serving the business, we can assess what a rebuild would involve. If it is working well, staying on it may be the better use of your budget.
 seo:
-  title: Moving from Wix to Webflow or Astro | MIS, Inc. Albuquerque
-  description: Why growing businesses outgrow Wix, what we recommend instead, and how a Wix to Webflow migration works without losing your search rankings.
+  title: Wix Website Migration and Alternatives | MIS, Inc.
+  description: An honest assessment of Wix, why MIS does not use it for new custom websites, and when rebuilding on Webflow or a custom framework makes sense.
 ---
 
-## Wix is good at exactly one thing
+## Wix is more capable than its reputation suggests
 
-Getting a business online quickly, cheaply, and without help. That is genuinely valuable, and a Wix site is far better than no site. If you built one yourself to get started, that was a reasonable decision.
+Wix can take a business from no website to a polished online presence without requiring a designer or developer. It now includes substantial business, ecommerce, and SEO tools. If you built a Wix site to get started and it still serves the business well, that was a reasonable decision and may remain one.
 
-The problems show up later, when the site needs to do more than exist.
+MIS does not use Wix for new projects, but not because the platform is unusable.
 
-## Where it starts to hurt
+## Why it does not fit our work
 
-**Performance.** Wix sites are heavy. The platform loads a large amount of JavaScript before your content appears, and there is limited scope to fix it because you do not control the output. On a phone with a weak signal, which is where a lot of local customers meet you, that gap is felt.
+**The site is not portable.** Wix confirms that a Wix website must remain hosted on its infrastructure. You own your content, but the finished site cannot be exported and operated elsewhere. Leaving means rebuilding.
 
-**SEO ceilings.** Wix has improved here and basic SEO controls exist. But you are working within what the platform exposes, and when you need finer control over structure, redirects, or markup, you eventually hit a wall you cannot climb.
+**Its design workflow is not ours.** Wix Studio offers more responsive control than earlier Wix editors, but our design and development process is built around Webflow and custom frameworks. We can produce and support better work in the tools we use every day.
 
-**You cannot take it with you.** This is the one that catches people out. There is no meaningful export from Wix. Your content is not portable, your design cannot move, and leaving means rebuilding. The longer you stay, the more expensive leaving becomes.
+**Advanced work stays inside Wix’s conventions.** Custom functionality is possible through Wix’s own development tools, but it remains tied to that ecosystem. For clients asking MIS to build unusual integrations or software, a more portable foundation is a better fit.
 
-**Design limits.** Templates constrain you, and the editor's absolute positioning makes genuinely responsive design difficult. Sites often look right on the screen they were built on and awkward everywhere else.
+SEO alone is not a reason to leave. Wix now provides redirects, canonical controls, structured data, and other advanced settings. A migration should solve a real business, design, performance, or maintenance problem.
 
 ## When Wix is fine
 
-If you are a sole trader who needs a presence rather than a lead source, if your budget is genuinely a few hundred dollars, or if the site is a placeholder while the business finds its feet, stay on Wix. Spend the money on something with a better return.
+If the site looks right, performs acceptably, ranks for the searches that matter, and is easy for your team to manage, stay on Wix. Spend the migration budget on something with a better return.
 
-The moment your website is expected to bring in business, the calculation changes.
+Rebuilding makes sense when the current design is holding the business back, required integrations no longer fit, or the site needs enough structural change that staying offers little advantage.
 
 ## What we recommend instead
 
-**[Webflow](/platforms/webflow)** is the natural step up. You keep the ability to edit your own site, but with real design control, much better performance, and content that is genuinely yours.
+**[Webflow](/platforms/webflow)** when the client wants visual editing and MIS is responsible for the design and build.
 
-**A custom static build** if you want the fastest possible site and do not need to edit the design yourself. See [website development](/services/website-development).
+**A custom static build** when speed, portability, and development control matter most. See [website development](/services/website-development).
 
 ## Migrating off Wix
 
-Because Wix has no real export, migration means rebuilding rather than importing, but that is less painful than it sounds, and it is an opportunity to fix the things that were never right.
+Because Wix does not export a working site, migration means rebuilding. Content, images, page titles, and search metadata can still be carried across. Existing URLs are preserved where possible and redirected where necessary.
 
-We recreate the site properly, carry the content across, map every existing URL to its new home so search rankings survive, and verify afterwards that nothing is broken. We have done this often enough that it is routine.
-
-Most Wix migrations take three to five weeks.
+Our [Wix to Webflow migration guide](/migrate/from-wix-to-webflow) covers the process, tradeoffs, and timing in detail.

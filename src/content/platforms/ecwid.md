@@ -27,17 +27,17 @@ Ecwid takes the other approach: the store is embedded into the site you already 
 - **Drops into an existing site** on effectively any platform
 - **One catalog, many places**, so the same products can sell on your site, on social channels, and in person
 - **Handles the hard parts**: payments, tax, shipping rates, and inventory
-- **Genuinely quick to launch**, often in days rather than weeks
+- **A relatively quick path to launch** because the existing site can remain in place
 - **Scales down affordably**, which matters for a small catalog
 
 ## Where we have used it
 
-[Pars Cuisine](/works/pars-cuisine) in Albuquerque runs on Ecwid for takeout ordering, catering, and gift cards, all inside the restaurant's own site rather than on a separate storefront customers would have to be sent to.
+[Pars To Go](/works/pars-cuisine), the online ordering portion of Pars Cuisine’s website, is handled by Ecwid within the restaurant’s main Weebly Cloud site.
 
 ## What to know before choosing it
 
 **It is a store inside a site, not a store platform.** For a business whose entire operation is ecommerce, [Shopify](/platforms/shopify) gives more depth.
 
-**Design control is limited** to what the widget exposes. It inherits your site's look reasonably well, but it is not fully customizable.
+**Design control is limited** to what the widget exposes. It can be adapted to the site’s look, but it is not fully customizable.
 
 **If you already run Square in person**, [Square Online](/platforms/square-online-store) will usually serve you better, because inventory then stays in step with your register automatically.

@@ -1,7 +1,7 @@
 ---
 title: "MIS, Inc. AI"
 client: "MIS, Inc."
-summary: "Our own AI practice, given its own site, because the people who need an AI agent are not always the people looking for a web designer."
+summary: "A separate home for MIS’s AI practice, written around the time small businesses recover rather than the technology behind it."
 category: [business]
 image: /img/work/misinc-ai.avif
 imageAlt: "MIS, Inc. AI website homepage"
@@ -11,16 +11,22 @@ order: 85
 services: [ai-agents, ai-consulting, custom-software]
 platforms: [webflow]
 seo:
-  title: "MIS, Inc. AI Website | MIS, Inc. Portfolio"
-  description: "Why MIS, Inc. built a separate site at misinc.ai for its AI agent and custom software practice, and how it is structured."
+  title: "MIS, Inc. AI Website and Positioning | MIS, Inc."
+  description: "Why MIS created a separate Webflow site for its AI agents and custom software, with services framed around time saved for small businesses."
 ---
 
 This one is ours.
 
-We had been doing AI work for a while before we gave it a home, building agents that handle lead follow-up, scheduling, and email triage for small businesses that cannot justify another hire.
+We had been doing AI work before giving it a home of its own. The practice builds agents for lead follow-up, scheduling, email triage, and other recurring work that consumes a small team’s time.
 
-The decision worth explaining is why it is a separate site rather than a section of this one. A business owner searching for help automating their intake is not usually the same person searching for a web designer, and folding both into one site would have meant compromising the language for both. Separating them let each be written for the person actually reading it.
+## A separate audience deserves a separate site
 
-The framing throughout is time rather than technology. Small businesses do not want an AI strategy; they want their evenings back. So the services lead with the busywork being removed (follow-up, scheduling, triage) and leave the model architecture for the conversation where it belongs.
+A business owner looking to automate intake is not always the same person searching for a web designer. Combining both practices on one site would force the language to serve two different conversations. A separate site lets each audience begin with the problem that brought them there.
 
-Built on [Webflow](/platforms/webflow), like most of what we ship, because the field moves fast enough that waiting on a deploy to change a sentence would be absurd.
+## Time, not technology
+
+Small businesses rarely want AI for its own sake. They want routine inquiries answered, leads followed up, appointments scheduled, and their evenings back. The site leads with that recovered time and keeps model architecture out of the sales language until it becomes relevant.
+
+This is our own project, so it also demonstrates the advice we give clients: define the audience before choosing the structure, and describe the practical change before the underlying tool.
+
+We use [Webflow](/platforms/webflow) because the services and language in this field change quickly, and the team responsible for the practice needs to revise them directly.

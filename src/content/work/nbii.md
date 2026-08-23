@@ -1,7 +1,7 @@
 ---
 title: "National Brain Injury Institute"
 client: "National Brain Injury Institute"
-summary: "A specialist TBI practice whose site has to speak to injured patients and referring professionals at once, without failing either."
+summary: "A specialist brain-injury site with separate paths for patients who need clarity and professionals who need clinical depth."
 category: [healthcare]
 image: /img/work/nbii.avif
 imageAlt: "National Brain Injury Institute website homepage"
@@ -11,28 +11,26 @@ order: 90
 services: [healthcare-website-design, web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "National Brain Injury Institute Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for the National Brain Injury Institute, a specialist practice in the diagnosis and treatment of traumatic brain injury."
+  title: "National Brain Injury Institute Website | MIS, Inc."
+  description: "MIS designed an accessible Webflow site for the National Brain Injury Institute, serving patients with TBI and referring professionals."
 ---
 
-The National Brain Injury Institute diagnoses and treats traumatic brain injury, led by medical director Dr. Huma Haider, a TBI specialist and published contributor to the Handbook of Medical Aspects of Disability and Rehabilitation for Life Care Planning.
+The National Brain Injury Institute diagnoses and treats traumatic brain injury under the direction of Dr. Huma Haider, a TBI specialist and published contributor to the *Handbook of Medical Aspects of Disability and Rehabilitation for Life Care Planning*.
 
 ## Two readers with opposite needs
 
-A specialist medical site like this one has a split audience, and the split runs deep.
+A patient or family member may be exhausted and, because of the injury itself, may find reading, concentration, or screens difficult. A physician, attorney, or life care planner making a referral needs clinical specifics quickly and is not helped by broad simplification.
 
-One reader is a patient or a family member. They may be exhausted, and by the nature of the injury they may be having difficulty with reading, concentration, or screens. The other is a professional making a referral, whether a physician, an attorney, or a life care planner, who wants clinical specifics quickly and is not helped by simplification.
-
-Writing for the average of those two people produces a site that serves neither. So the structure separates them early: a patient route and a referral route, each written in its own register.
+Writing for an imaginary average between those readers would serve neither. We separated the patient and referral routes early, then wrote each in the register its reader needs.
 
 ## The service list is the clinical evidence
 
-The range of assessments and therapies is what actually distinguishes this practice: oculomotor and vestibular therapy, diffusion tensor imaging, comprehensive TBI evaluation, cognitive functional capacity evaluation, neuropsychological assessment, neurocognitive rehabilitation, life care plans, and psychotherapy.
+The range of assessments and therapies is important evidence of the practice’s depth: oculomotor and vestibular therapy, diffusion tensor imaging, comprehensive TBI evaluation, cognitive functional capacity evaluation, neuropsychological assessment, neurocognitive rehabilitation, life care plans, and psychotherapy.
 
-Those names mean a great deal to a referrer and very little to a patient, so each carries a plain explanation alongside the clinical term rather than instead of it.
+Those terms mean a great deal to a referrer and very little to many patients. Each service therefore keeps its clinical name while providing a plain explanation beside it.
 
 ## Accessibility is not a checkbox here
 
-On most projects, accessible design is something we do because it is right and because it is the standard we hold ourselves to. On a site about brain injury, it is closer to the point of the exercise. Clear type, generous spacing, predictable navigation, and a screening questionnaire that can be completed without holding much in working memory.
+Accessibility shaped the work from the beginning. Clear type, generous spacing, predictable navigation, and a screening questionnaire with limited demands on working memory are not finishing touches on a brain-injury site. They are part of whether the site succeeds.
 
-Built on [Webflow](/platforms/webflow).
+The site was built in [Webflow](/platforms/webflow) so the practice can maintain its clinical information without compromising the structure created for its readers.

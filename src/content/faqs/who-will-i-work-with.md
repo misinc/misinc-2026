@@ -4,8 +4,8 @@ topic: process
 order: 90
 ---
 
-Karim, who founded MIS in 1995, plus whoever else is needed for your specific project.
+Karim, who founded MIS in 1995, is your primary contact and remains involved from the first conversation through delivery and support.
 
-There are no account managers and no handoffs to a team you have never met. The person who scopes your project is the person who builds it, and the person who answers the phone in two years when something needs changing.
+Other specialists may contribute when a project requires particular design, development, content, or technical expertise. We explain who is involved and what each person is responsible for rather than handing the relationship to an account-management layer.
 
-That is the main practical benefit of hiring a studio this size.
+The practical benefit of a studio this size is continuity. The person discussing the goals and tradeoffs with you remains connected to the work after the proposal is signed.

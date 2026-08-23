@@ -4,8 +4,10 @@ topic: platforms
 order: 140
 ---
 
-Yes, if that is what you want, and we will pick the platform accordingly.
+Yes, when that is part of the requirement.
 
-On Webflow you get a visual editor for text, images, and content like blog posts or case studies, and we train you on it before launch. On a custom static build, content lives in files and changes go through us, which suits sites that rarely change.
+On Webflow, approved editors can update text, images, blog posts, case studies, team members, and other structured content through a visual interface. We organize the editable content and provide training before launch.
 
-Tell us at the start how much you expect to edit. It is one of the main things that decides which platform we recommend.
+On a custom Astro build, content may live in version-controlled files or connect to a separate CMS, depending on who needs to publish and how often. Changes can be handled by MIS, an internal technical person, or another qualified developer.
+
+Tell us what you expect to update and who will do it. That decision helps determine the right foundation.

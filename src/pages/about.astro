@@ -21,16 +21,16 @@ const principles = [
     body: 'Every project we take on has to genuinely help your business, and we are honest about what you need and don’t need.',
   },
   {
-    title: 'We price projects as fixed-price',
-    body: 'You get a number before work starts, not a moving target. We’ve priced projects like yours for decades, so our estimates are accurate.',
+    title: 'We agree on the price before work begins',
+    body: 'Once the scope is clear, you get a written proposal and a fixed price. If the scope needs to change later, we discuss it with you first.',
   },
   {
     title: 'We build relationships that last',
-    body: 'Some of the clients we built websites for in the 1990s are still clients today.',
+    body: 'We want to remain useful after launch. Several of our client relationships have lasted for decades and through multiple generations of their websites.',
   },
   {
-    title: 'We use tools we’ve already proven',
-    body: 'Every platform we use for your projects have been tested for reliability and security for years.',
+    title: 'We choose tools deliberately',
+    body: 'We select platforms, frameworks, and services for the work they need to do. We explain the tradeoffs instead of forcing every project onto the same technology.',
   },
 ]
 
@@ -52,11 +52,11 @@ const aboutSchema = {
 
 <Base
   title="About MIS, Inc. | Albuquerque Web Design Since 1995"
-  description="MIS, Inc. was founded by Karim Ardalan in Albuquerque, New Mexico in July 1995. A boutique web design, development, and AI studio that has built through every era of the web."
+  description="MIS, Inc. is an Albuquerque web design, software, and AI studio founded by Karim Ardalan in July 1995. Learn how we work and why we have stayed small."
   schema={aboutSchema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="About" title="Thirty-one years in one city" lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since." media={{
+    <PageHero eyebrow="About" title={`${yearsInBusiness} years in one city`} lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since." media={{
         type: 'image',
         src: '/img/office-marquette.jpg',
         alt: 'The office building at 500 Marquette Avenue NW in downtown Albuquerque, where MIS, Inc. is based',
@@ -97,8 +97,9 @@ const aboutSchema = {
         <div class="max-w-[68ch] text-ink-soft">
           <p class="mb-4">
             In July 1995, a website was something you had to explain to people. Karim Ardalan founded
-            MIS to build them anyway, for Albuquerque businesses who could see where things were
-            going. Some of the sites we launched that decade are still running.
+            MIS to build them for Albuquerque businesses that could see where things were going.
+            The tools and expectations have changed many times since, but the work still begins by
+            understanding what a client actually needs.
           </p>
           <p class="mb-4">
             What has kept the studio going since is not any particular technology. It is that every
@@ -138,8 +139,8 @@ const aboutSchema = {
           <h2 class="mt-2 font-display text-xl font-bold text-ink">Karim Ardalan</h2>
           <p class="mt-1 text-sm font-semibold text-ink-muted">Founder</p>
           <p class="mt-3 text-sm text-ink-soft">
-            Karim founded MIS in 1995 and has led every project since. If you book a call, this is
-            who you are speaking to, and who will be doing or directing the work.
+            Karim founded MIS in 1995 and leads the studio’s client work. If you book a consultation,
+            this is who you will speak with and who will be doing or directing the work.
           </p>
           <p class="mt-4 text-sm text-ink-muted">
             <a
@@ -157,7 +158,7 @@ const aboutSchema = {
 
     <div class="mt-12" data-reveal>
       <span class="mb-4 block text-xs font-extrabold uppercase tracking-(--tracking-label) text-ink-muted">
-        Thirty years of what we actually shipped
+        What we’ve built since 1995
       </span>
       <OldDesignGallery />
     </div>
@@ -169,7 +170,7 @@ const aboutSchema = {
       <SectionHeader
         eyebrow="Since 1995"
         title="We’ve built through every era of the web"
-        lede="Most agencies are younger than some of our client relationships. Each of these shifts arrived with a mix of genuine change and expensive nonsense, and separating the two has been the actual job."
+        lede="Some of our client relationships are older than many web studios. Each shift arrived with a mix of genuine change and expensive nonsense, and separating the two has been the actual job."
         class="mb-10"
       />
       <Timeline />
@@ -181,7 +182,7 @@ const aboutSchema = {
     <SectionHeader
       eyebrow="How we work"
       title="Four things we will not compromise on"
-      lede="These are the standards every client gets, whether it’s your first project with us or your twentieth."
+      lede="These are the standards every client gets, whether it’s your first project with us or we have worked together for years."
       class="mb-10"
     />
 
@@ -229,12 +230,10 @@ const aboutSchema = {
           />
           <div class="mt-4 max-w-[62ch] text-ink-soft">
             <p class="mb-4">
-              We are in downtown Albuquerque at 500 Marquette NW. We prefer meeting with local clients in person. Either at your office or ours or at one of Albuquerque’s many excellent coffee shops. Just make sure to schedule an appointment with us ahead of time.
+              We are in downtown Albuquerque at 500 Marquette NW. We prefer meeting local clients in person, whether that is at your office, ours, or one of Albuquerque’s many excellent coffee shops. Visits to our office are by appointment.
             </p>
             <p class="mb-6">
-              Working with a local studio means we understand the market you are actually selling into: what people
-              here search for, which neighborhoods matter, and why a Balloon Fiesta week is not a
-              normal week for anyone in this city.
+              Working downtown keeps us close to the businesses and organizations we serve. We know the city, we understand the value of being able to meet face to face, and we know that Balloon Fiesta week is not a normal week for anyone in Albuquerque.
             </p>
             <address class="not-italic text-ink-soft">
               <strong class="text-ink">{site.name}</strong><br />

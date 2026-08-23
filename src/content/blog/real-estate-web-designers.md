@@ -1,79 +1,101 @@
 ---
 title: "What Realtors Actually Need From a Website"
-summary: "IDX listings, lead capture, and the handful of things that decide whether a buyer contacts you or the next agent, written from building real estate sites in Albuquerque and Santa Fe."
+summary: "A practical guide to IDX listings, lead capture, neighborhood content, and the decisions that make an independent real estate website useful."
 date: 2021-02-17
-updated: 2026-08-17
+updated: 2026-08-23
 guide: true
 seo:
   title: "What Realtors Need From a Website | IDX & Lead Capture | MIS, Inc."
-  description: "What actually matters on a real estate website: IDX MLS search, lead capture, neighborhood content, and speed, from a studio building Realtor sites in Albuquerque and Santa Fe."
+  description: "What matters on a real estate website: IDX MLS search, useful lead capture, neighborhood expertise, speed, and ownership of your online presence."
 faqs:
   - q: "Do I need IDX on my website?"
-    a: "If you want buyers to start their search with you rather than on Zillow, yes. IDX puts searchable MLS listings on your own site, which is what keeps someone on your pages long enough to become a lead. Without it your site is a brochure competing with portals that have the inventory."
+    a: "Not every real estate website needs IDX, but it is valuable when property search is part of the experience you want to provide. IDX lets visitors browse current MLS listings without leaving your site. It does not generate leads by itself, so it should be paired with useful local content and sensible ways to ask for help or save a search."
   - q: "Can I add IDX to the website I already have?"
-    a: "Usually. Our Add On IDX product exists specifically for this. It works on Webflow, WordPress, Squarespace, and hand-built sites, so you do not have to rebuild or move to a vendor's template just to show listings."
-  - q: "Should I use my brokerage's website instead?"
-    a: "Use it as well, not instead. A brokerage site rarely lets you build a personal brand, target a specific neighborhood, or keep your own leads and data. Agents who invest in their own site are building something that follows them if they ever change brokerage."
+    a: "Usually. Add On IDX was built for designers who want to integrate MLS listings without moving the rest of the website. It works across WordPress, Weebly, Weebly Cloud, Webflow, Framer, Squarespace, and other platforms, subject to the rules and data available from the local MLS provider."
+  - q: "Should I use my brokerage’s website instead?"
+    a: "A brokerage website can be useful, but it may offer limited control over branding, content, lead handling, and what happens if you change brokerages. An independent site gives an agent a place to develop a personal specialty and a durable online presence. The exact ownership and data terms of the brokerage system should be checked rather than assumed."
 ---
 
-Most real estate websites fail in the same way. They look professional, they list the agent's credentials, and they give a buyer no reason to stay for more than fifteen seconds, because the listings are somewhere else.
+Many real estate websites are polished brochures. They introduce the agent, list credentials, and provide a contact form. That may be enough for referrals who already intend to call, but it gives an early-stage buyer or seller little reason to spend time there.
 
-Here is what actually matters, based on building these sites for agents in Albuquerque and Santa Fe.
+The useful question is not whether every real estate site needs the same feature list. It is what role the site should play before someone is ready to contact an agent.
 
-## 1. Listings on your own site
+Here are the areas we examine when building real estate websites in Albuquerque, Santa Fe, and other markets.
 
-House hunting starts online, usually on a phone, often long before anyone contacts an agent. Whoever helps a buyer find the property they want is the agent they call.
+## 1. Decide whether property search belongs on the site
 
-If your site has no listings, you are asking someone to leave, search a portal, and remember your name. Most will not.
+IDX brings MLS listings into an agent’s or brokerage’s website. Depending on the provider and local MLS rules, visitors may be able to search by price, location, property type, features, and listing status.
 
-IDX puts searchable MLS listings on your own website, updated automatically from your MLS provider. The listings stay current without you touching anything, and the buyer stays on your pages.
+This can make the site more useful to buyers who are still exploring. It also keeps the property-search experience connected to the agent’s brand rather than sending every visitor immediately to a large portal.
 
-This is the single biggest difference between a real estate site that generates leads and one that does not.
+IDX is not a lead strategy by itself. A listing search still needs clear contact options, useful follow-up features, and a reason for someone to work with this particular agent.
 
-**A practical note:** you do not have to rebuild to get it. We built [Add On IDX](/platforms/addonidx) precisely because agents kept being told they had to abandon a site they liked and move onto a vendor's template. It works on whatever your site is already built with.
+You may not need to rebuild the site to add it. We built [Add On IDX](/platforms/addonidx) for designers who want to integrate MLS search into the platform they already use. The local MLS provider determines which listings and fields can be displayed, so we check those rules before recommending an implementation.
 
-## 2. Lead capture that is not annoying
+## 2. Ask for contact information at the right time
 
-There is a spectrum here, and both ends are wrong.
+Forcing registration before someone can view a listing may send visitors elsewhere. Never asking for contact information leaves no path from browsing to a conversation.
 
-Force registration before anyone can see a single listing and most visitors leave. They will simply use a portal instead. Ask for nothing and you get traffic and no leads.
+A better approach is to connect the request to something useful:
 
-What works in the middle: let people search and browse freely, then offer something worth an email address. Saved searches. Alerts when a matching property is listed. A neighborhood report. Asking a question about a specific property.
+- Saving a search.
+- Receiving alerts for new matching properties.
+- Asking about a specific listing.
+- Requesting a showing.
+- Getting a neighborhood or market update.
 
-The ask should feel like a service, not a toll gate.
+The form should make clear what the visitor receives and what will happen next. Lead capture works better when it feels like assistance rather than an entrance fee.
 
-## 3. Speed, because buyers are on phones with bad signal
+## 3. Treat mobile performance as part of the service
 
-Real estate browsing happens in cars, at open houses, standing outside a property. A site that takes six seconds on mobile data loses people who would otherwise have inquired.
+People browse listings on phones in many circumstances, including while traveling between properties. Large photographs, maps, and listing feeds can make real estate pages heavy.
 
-This is unglamorous and it matters more than the design.
+Test the actual search, listing details, forms, and maps on real phones and ordinary mobile connections. A fast home page does not help if the property pages are difficult to use.
 
-## 4. Neighborhood knowledge
+## 4. Publish knowledge the portals do not have
 
-This is where independent agents beat portals, and it is badly underused.
+Large listing portals are good at presenting inventory. An experienced local agent can explain the context around that inventory.
 
-Zillow can show inventory. It cannot tell someone what it is actually like to live in Nob Hill, which streets flood, where the good schools sit relative to the price bands, or why the North Valley feels different from the Northeast Heights.
+Useful neighborhood content might cover housing types, commute patterns, parks, schools using appropriately sourced information, market conditions, and the practical differences between nearby areas. It should reflect what the agent genuinely knows rather than repeat generic city descriptions.
 
-Genuine neighborhood content does two things: it ranks for searches portals do not target well, and it demonstrates the expertise a buyer is actually hiring. One of our clients built an entire site around a single Albuquerque neighborhood, [Nob Hill Neighborhoods](/works/nob-hill-neighborhoods), and that specificity is the point.
+That material can also support [search visibility](/services/seo) for specific local questions, but it has to be written for prospective clients first. A thin page for every neighborhood is less useful than a smaller number of substantial guides.
 
-## 5. Proof you have done this before
+One of our clients built an entire project around a single area, [Nob Hill Neighborhoods](/works/nob-hill-neighborhoods). The value came from specificity, not simply having more location pages.
 
-Sold listings, with real numbers where you are permitted to show them. Testimonials from actual clients, named. Photographs of you, not stock imagery of a couple receiving keys.
+## 5. Show relevant evidence
 
-Buyers and sellers are choosing a person. Make it easy to believe in the person.
+Potential clients are choosing a person and a working relationship.
 
-## 6. Your own site, not just the brokerage's
+Depending on brokerage and MLS rules, useful evidence may include:
 
-Use the brokerage site as well, but understand its limits: you rarely control the branding, you often cannot target a specific niche, and the leads and data are not fully yours.
+- Recent transactions or selected sold properties.
+- Testimonials from identifiable clients when permission allows.
+- Experience in a particular property type or area.
+- Clear explanations of how the agent works with buyers or sellers.
+- Real photographs of the agent and community.
 
-An agent's own site is an asset that follows them between brokerages. That is worth building properly.
+The point is not to make the site look busy. It is to answer the questions someone needs resolved before making contact.
 
-## What we would do first
+## 6. Understand the brokerage website’s limits
 
-If you have no site: build a straightforward one with IDX and a clear way to get in touch, and resist adding anything else until it has been running for a few months.
+A brokerage profile or supplied website can be part of an agent’s presence. It may also limit design, content, integrations, search strategy, and access to leads or data.
 
-If you have a site with no listings: add IDX before anything else. It is usually the highest-return single change available to you.
+Those conditions vary. Before relying on the brokerage site alone, ask:
 
-If you have a site with listings but no leads: look at speed and at what you are asking for and when.
+- Can I publish substantial local content?
+- Can I connect my own tools?
+- Who receives and controls the leads?
+- Can I export my content or data?
+- What remains if I change brokerages?
 
-We have built these for agents including [Kat Jacob](/works/kat-jacob-realtor) here in Albuquerque. If you want someone to look at where yours stands, [book a free consultation](/free-consultation). We will check what your MLS provider allows before anything else, since those rules vary by board and shape what is possible. More on our [real estate web design page](/services/real-estate-website-design).
+An independent website is most valuable when it supports a specialty and remains useful across changes in the agent’s business.
+
+## What we would address first
+
+If you have no website, start with a clear introduction, your areas of expertise, useful contact paths, and a decision about whether IDX is central to the experience.
+
+If the site has no property search, do not assume a rebuild is necessary. First determine whether IDX would help the intended audience and whether it can be integrated into the existing platform.
+
+If the site receives visits but few inquiries, examine the listing experience, mobile usability, contact requests, and whether the content establishes a reason to choose the agent.
+
+Our [real estate website design service](/services/real-estate-website-design) covers both the marketing site and the MLS integration. We have built projects for agents including [Kat Jacob](/works/kat-jacob-realtor) in Albuquerque. If you want us to assess the current site and local MLS requirements, [book a free consultation](/free-consultation).

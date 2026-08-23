@@ -1,29 +1,43 @@
 ---
 title: "New Year, New Website"
-summary: "We last redesigned our own website in 2011. In 2018 we finally rebuilt it, and here were the goals we set ourselves before we started."
+summary: "A short look back at the website MIS launched in 2018, the goals behind it, and what the project still teaches us."
 date: 2018-12-17
 image: /img/blog/new-year-new-website.jpg
 guide: false
 seo:
   title: "New Year, New Website | MIS, Inc."
-  description: "MIS, Inc. rebuilt its own website in 2018. The goals we set before starting, and why we built it on Webflow."
+  description: "A look back at the MIS, Inc. website launched in 2018, why we chose Webflow at the time, and what changed in the 2026 rebuild."
 ---
 
-We last redesigned our website in 2011 and since then we've built hundreds of sites for our clients, but hadn't taken the time to work on our own site. Well the time has come and we're thrilled to finally reveal our new website!
+In 2018, we redesigned our website for the first time since 2011.
 
-### Starting With Goals
+During those seven years, we had built websites for clients while repeatedly putting off our own. The old site still functioned, but it no longer represented the work we were doing or the way people used the web.
 
-We started our website the same way we would start your website: by identifying our goals.
+This post originally announced that launch. It now serves as a short record of what we were trying to accomplish at the time.
 
-- Update the design to be more modern and up-to-date
-- Make sure the new site is 100% responsive (mobile optimized)
-- Have our main services front and center
-- Display our recent projects
-- Have a more active, informative blog that is automatically updated as we post articles to our social media accounts
-- Have a clear call to action to have clients schedule a free consultation with us
+## The goals we set
 
-Our new website was built on the Webflow platform which we strongly recommend over platforms such as WordPress or WIX.
+Before choosing a design or platform, we wrote down what the new site needed to do:
 
-We look forward to your feedback and of course we'd love to meet with you and do the same for your business!
+- Present our main services clearly.
+- Work properly across phones, tablets, and desktop screens.
+- Make recent projects easier to find.
+- Give us a better place to publish useful articles.
+- Provide a clear path to a free consultation.
+- Be manageable without rebuilding the site for ordinary content changes.
 
-*Update: we rebuilt the site again in 2026. See [what we changed and why](/blog/rebuilding-our-own-website-2026).*
+Those goals were more important than the visual direction. They also gave us something concrete to evaluate when the work was finished.
+
+## Why we chose Webflow
+
+We built the 2018 site on Webflow because it gave us strong design control, dependable hosting, and a visual editor for ongoing updates.
+
+At the time, the original version of this post recommended Webflow too broadly. Our current view is more specific: Webflow is often an excellent choice for a small business that wants a professionally designed site it can update without relying on a developer. It is not automatically the right choice for every organization or every project.
+
+Platform decisions should follow the needs of the people maintaining the site. Our current [platform guide](/platforms) explains how we evaluate that choice today.
+
+## What happened next
+
+The 2018 website served MIS for several years. Eventually, the business changed again, the content fell behind, and we repeated the familiar agency mistake of prioritizing client work over our own site.
+
+We rebuilt it again in 2026, this time in Astro. The newer article explains [what we changed and why](/blog/rebuilding-our-own-website-2026), including why choosing Astro for ourselves did not change our recommendation of Webflow for many clients.

@@ -4,8 +4,8 @@ topic: process
 order: 100
 ---
 
-Less than you might expect, but not nothing.
+You do not need to manage the project, but we do need access to the people who understand the organization and can approve decisions.
 
-We need an hour or two at the start to understand the business and its goals, your content and images (or a decision to have us write and source them), and prompt feedback at two or three review points.
+At the beginning, we agree on goals, audiences, content responsibilities, required systems, and who has final approval. During the work, we ask for feedback at defined review points rather than sending a constant stream of small questions.
 
-The most common cause of a delayed project is waiting on content. If writing is not something you want to do, say so early and we will price it in rather than letting the project stall.
+If you want MIS to write content, organize photography, or migrate existing material, include that in the scope from the start. Clear ownership of those tasks keeps the schedule realistic.

@@ -1,7 +1,7 @@
 ---
 title: "Windsor Door Sales"
 client: "Windsor Door Sales"
-summary: "A refresh that made it obvious this garage door company is genuinely local, unlike the out-of-state competitors advertising here."
+summary: "A locally focused redesign and continuing SEO program for an Albuquerque garage-door company competing with national advertisers."
 category: [business]
 image: /img/work/windsor-door.jpg
 imageAlt: "Windsor Door Sales website for garage door service in Albuquerque"
@@ -11,12 +11,14 @@ order: 75
 services: [web-design, seo]
 platforms: [weebly-cloud]
 seo:
-  title: "Windsor Door Sales Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. redesigned the Windsor Door Sales website to emphasize that they are a genuinely local Albuquerque garage door company."
+  title: "Windsor Door Sales Website and SEO | MIS, Inc."
+  description: "MIS redesigned Windsor Door Sales’ website and provides continuing monthly SEO for its Albuquerque, Rio Rancho, and Santa Fe markets."
 ---
 
-Windsor Door Sales had a specific problem, and it is one a lot of local businesses share: national companies with no presence in New Mexico were advertising against them locally, and customers could not tell the difference.
+Windsor Door Sales faced a problem shared by many local service businesses. National companies with no physical presence in New Mexico were advertising in the same searches, and customers could not always tell the difference.
 
-The redesign made that distinction unmissable. Real local presence, real service area, real people, stated plainly rather than buried in an About page.
+The redesign made local presence part of the main argument. Service areas, people, and roots in the community appear where a visitor is making a decision, not only on an About page.
 
-We also tightened the local SEO around Albuquerque, Rio Rancho, and Santa Fe, which is where the searches that matter to them actually happen.
+We also focused the site’s search language on Albuquerque, Rio Rancho, and Santa Fe. That work did not end at launch. MIS continues to provide monthly SEO services, adjusting and maintaining the local search program as the market changes.
+
+The combination matters. The website explains why Windsor is local, while the ongoing SEO work helps nearby customers find that explanation when they need garage-door service.

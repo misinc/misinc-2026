@@ -4,8 +4,8 @@ topic: search-ai
 order: 170
 ---
 
-No, and you should be wary of anyone who does.
+No. Search engines control their results, competitors continue working, and local visibility changes with the searcher’s location.
 
-Nobody controls Google's results. What we can do is fix the things that demonstrably hold a site back, such as speed, structure, mobile rendering, thin content, or a neglected Google Business Profile, and report honestly on what moves.
+We can identify technical barriers, unclear or missing content, weak site structure, incomplete local information, and other issues within your control. We then measure rankings, search traffic, important actions, and qualified inquiries where the required tracking is available.
 
-We also will not buy links or lock you into a contract that renews before you have seen results.
+We do not buy questionable links or promise a position that no agency controls. Our proposal explains the work, reporting, and commitment before the engagement begins.

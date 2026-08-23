@@ -4,7 +4,7 @@ import { yearsInBusiness } from '../lib/site'
 
 /**
  * The red call-to-action band that closes most pages. Defaults are the home
- * page wording; pass `title`/`note` to tailor it per page.
+ * general wording; pass `title`/`note` to tailor it per page.
  */
 interface Props {
   title?: string
@@ -15,9 +15,9 @@ interface Props {
 }
 
 const {
-  title = 'Let’s talk about your website.',
+  title = 'Let’s talk about your project.',
   note = `No pressure. Clear recommendations. ${yearsInBusiness} years of seeing what works.`,
-  ctaLabel = 'Book a free strategy call',
+  ctaLabel = 'Book a free consultation',
   ctaHref = '/free-consultation',
   class: className = '',
 } = Astro.props

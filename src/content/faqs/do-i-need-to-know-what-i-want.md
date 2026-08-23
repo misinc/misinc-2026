@@ -5,6 +5,6 @@ order: 30
 showOn: [contact]
 ---
 
-No. Most useful first conversations start with a problem rather than a specification: the site looks dated, inquiries have dried up, something takes too long every week.
+No. A useful first conversation can begin with a problem: the site no longer represents the business, inquiries have slowed, customers cannot find something, or a repeated task consumes too much time.
 
-Working out what to build is part of what we do. If you arrive with a detailed brief that is fine too, and we will tell you if we think part of it is a bad idea.
+Defining the right response is part of our work. You can also arrive with a detailed brief. We will review it against the goal, budget, maintenance needs, and any technical constraints before recommending a scope.

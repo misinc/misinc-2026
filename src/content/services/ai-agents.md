@@ -1,57 +1,59 @@
 ---
 title: AI Agents
-heading: Custom agents that do the routine work
-summary: "Purpose-built AI agents for the tasks that fill your inbox: answering routine questions, triaging inquiries, chasing invoices, and scheduling."
+heading: Give one repetitive task to a carefully limited agent
+summary: Purpose-built agents that use approved information and limited tools to handle routine questions, triage, scheduling, follow-up, and other defined work.
 pillar: software-ai
 order: 30
-platforms: [addonaichat]
+platforms: []
 highlights:
-  - Customer question handling
-  - Inquiry triage & routing
-  - Scheduling & follow-up
+  - Narrow tasks and permissions
+  - Approved knowledge and clean handoff
+  - Review, monitoring, and improvement
 nextStep: >-
-  Tell us which routine question your team answers most often. That is usually the first agent worth building.
+  Tell us which repeated task takes time from your team. We will assess whether an agent, a standard automation, or a simpler process is the better answer.
 seo:
   title: Custom AI Agents for Small Business | MIS, Inc. Albuquerque
-  description: Custom AI agents built for New Mexico small businesses, handling routine customer questions, triaging inquiries, scheduling, and follow-up, with a person always in the loop.
+  description: Custom AI agents for New Mexico small businesses and nonprofits, built around narrow tasks, approved information, limited permissions, and human review.
 ---
 
-## What an agent actually is
+## What we mean by an AI agent
 
-An AI agent is a small piece of software with a specific job, access to your information, and permission to take a narrow set of actions. Not a chatbot that guesses, and not a replacement for your team, but a tool that handles the routine so people can handle the rest.
+An AI agent is software designed to pursue a defined task using a model, instructions, approved information, and a limited set of tools. Depending on the job, a tool might search internal material, classify an inquiry, prepare a response, update a record, or request approval from a person.
 
-The distinction that matters: a good agent knows what it does not know and hands off cleanly.
+Not every automation needs AI. Agents are most useful when the work involves interpreting varied language or context, while the goal and boundaries remain clear.
 
-## Anatomy of an AI Agent
+## Anatomy of an AI agent
+
 ![Anatomy of an AI Agent](/img/services/anatomy-of-an-ai-agent.png)
 
-An AI agent is a typically includes these features:
-* **Brain** — The reasoning engine — the LLM at the core.
-* **Prompt** — Carefully crafted instructions for how it behaves.
-* **Memory** — Remembers context across tasks and conversations.
-* **Knowledge** — Trained on your business — docs, policies, products.
-* **Tools** — Takes real action — sends, books, updates. Not just chat.
+A typical agent may include:
 
-## Agents we build
+- **Model:** The reasoning and language component.
+- **Instructions:** Rules describing the task, boundaries, and expected behavior.
+- **Approved knowledge:** Website content, documents, policies, products, or records the agent is allowed to use.
+- **Context:** Information retained for the current task or conversation when needed.
+- **Tools:** Narrow actions such as searching, booking, drafting, routing, or updating an approved system.
+- **Handoff:** A clear path to a person when the request falls outside the agent’s role.
 
-- **Customer question handling.** Answering the same fifteen questions your team answers every week, covering hours, policies, availability, and what you do and do not offer, from your actual information rather than a guess.
-- **Inquiry triage.** Reading incoming messages, working out what they are about and how urgent they are, and routing them to the right person with the context already attached.
-- **Scheduling and follow-up.** Booking, confirming, reminding, and rescheduling without a chain of emails.
-- **Invoice and payment follow-up.** The polite, persistent chasing that most owners find uncomfortable and therefore postpone.
-- **Document and knowledge lookup.** Answering questions from your own manuals, policies, and records instead of the open internet.
+## Work an agent may support
+
+- Answering routine questions from documented information
+- Classifying and routing incoming inquiries
+- Preparing scheduling or follow-up actions
+- Looking up information in approved documents
+- Drafting routine communication for review
+- Collecting context before a person takes over
+
+The exact action and approval model depends on the consequences of a mistake. Sensitive, unusual, financial, or difficult-to-reverse actions require stronger controls and human review.
 
 ## How we build them
 
-**Grounded in your information.** An agent that invents an answer is worse than no agent. Ours answer from your documented content, and say they do not know when they do not.
+**Narrow scope.** The first version handles one job with a result that can be reviewed. Broad assistants are difficult to evaluate and easy to trust beyond their ability.
 
-**Narrow permissions.** Each agent can do specific things and nothing else. It cannot spend money, delete records, or send on your behalf unless that is explicitly what it is for and you have approved it.
+**Grounded responses.** When an agent answers a business question, it should rely on approved sources and identify when those sources do not contain the answer.
 
-**A person in the loop where it counts.** Routine questions are handled directly. Anything sensitive, unusual, or expensive goes to a human with the groundwork already done.
+**Limited permissions.** Access is restricted to what the task requires. Sending, changing records, spending money, or deleting information should never be assumed.
 
-**Measured.** We track what the agent handled, what it escalated, and what it got wrong, and we tune it. An agent nobody reviews is a liability.
+**Testing and monitoring.** We test expected requests, edge cases, handoffs, and failures before launch, then review real use and adjust the system.
 
-## Start small
-
-The best first agent is boring and narrow: one task, clearly defined, that you can evaluate in a week. Broad "do everything" assistants are how these projects fail.
-
-You can see more of this work at [MIS, Inc. AI](https://misinc.ai).
+For organizations that need a focused website assistant rather than a custom agent, [Add On AI Chat](/platforms/addonaichat) provides a managed option built for small businesses and nonprofits. More of our implementation work is available at [MIS, Inc. AI](https://misinc.ai).

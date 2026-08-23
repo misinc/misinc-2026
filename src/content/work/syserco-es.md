@@ -1,7 +1,7 @@
 ---
 title: "Syserco Energy Solutions"
 client: "Syserco Energy Solutions"
-summary: "A sister site to Syserco for a different business, energy performance contracting, kept visibly related without being a copy."
+summary: "A related but independent site for Syserco Energy Solutions, built to explain performance contracting to a different kind of buyer."
 category: [business]
 image: /img/work/syserco-es.avif
 imageAlt: "Syserco Energy Solutions website homepage"
@@ -11,26 +11,24 @@ order: 190
 services: [web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "Syserco Energy Solutions Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the Syserco Energy Solutions website for the energy performance contracting arm of Syserco."
+  title: "Syserco Energy Solutions Website | MIS, Inc."
+  description: "MIS designed a distinct Webflow site for Syserco Energy Solutions and made energy performance contracting easier to understand."
 ---
 
-Syserco Energy Solutions is the energy performance contracting arm of [Syserco](/works/syserco). They work with public entities and private organizations to improve building infrastructure, cut energy consumption, and lower annual utility costs.
+Syserco Energy Solutions is the energy performance contracting arm of [Syserco](/works/syserco). It helps public entities and private organizations improve building infrastructure, reduce energy use, and lower annual utility costs.
 
 ## Related, not identical
 
-Building a second site for a company you already build for looks like an easy job and is not. Two failure modes sit on either side.
+Building a second site for a company we already knew presented a careful balance.
 
-Make it a copy of the parent site and the distinct business disappears; visitors assume it is a department rather than a company that can be hired on its own terms. Make it entirely unrelated and you throw away the parent's reputation, which is one of the strongest assets the new business has.
-
-So the two sites share their structural logic and visual family while the content is written for a different buyer. Someone who knows Syserco recognizes the relationship immediately. Someone who arrives cold gets a complete company.
+A close copy of the parent site would make the distinct business disappear. A completely unrelated design would discard Syserco’s established reputation. We kept the structural logic and visual family recognizable while writing the content for a different buyer. Existing Syserco customers can see the connection immediately, while new visitors still encounter a complete company with its own proposition.
 
 ## A financing model that needs explaining
 
-The substance here is energy performance contracting, a model where the improvements are funded from the savings they generate. It is genuinely attractive to a public agency with no capital budget, and genuinely unfamiliar to most of the people who would benefit.
+Energy performance contracting funds infrastructure improvements through the savings they generate. That model can be valuable to a public agency with little capital budget, but many of the people who could benefit from it do not know how it works.
 
-An unfamiliar model is a content problem before it is a design one. The site walks through it in three steps rather than assuming the reader arrives knowing what performance contracting means, because the ones who most need it are exactly the ones who do not.
+We treated that unfamiliarity as a content problem first. The site explains the model in three steps and gives readers enough context to decide whether it deserves a closer conversation.
 
-The offices across California (headquarters plus Sacramento, Petaluma, Fresno, and Los Angeles) are laid out so a visitor can find the nearest team without hunting.
+The headquarters and offices in Sacramento, Petaluma, Fresno, and Los Angeles are presented clearly so visitors can find the nearest team without hunting through contact pages.
 
-Built on [Webflow](/platforms/webflow).
+Both Syserco sites run on [Webflow](/platforms/webflow), which helps preserve the family relationship while allowing each business to maintain its own content.

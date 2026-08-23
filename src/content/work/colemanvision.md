@@ -1,7 +1,7 @@
 ---
 title: "Coleman Vision"
 client: "Coleman Vision"
-summary: "A clear, trustworthy presence for a LASIK practice whose patients are making a genuinely daunting decision."
+summary: "A calm, patient-centered website for a LASIK practice, with clear paths for prospective patients and referring physicians."
 category: [healthcare]
 image: /img/work/coleman-vision.jpg
 imageAlt: "Coleman Vision website homepage for the Albuquerque LASIK practice"
@@ -12,12 +12,12 @@ featured: true
 services: [healthcare-website-design, web-design]
 platforms: [webflow]
 seo:
-  title: "Coleman Vision LASIK Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for Coleman Vision, a LASIK practice in Albuquerque, New Mexico."
+  title: "Coleman Vision LASIK Website | MIS, Inc."
+  description: "MIS designed a clear, reassuring Webflow website for Coleman Vision, an Albuquerque LASIK practice serving patients and referring physicians."
 ---
 
-Dr. Stephen Coleman’s practice is dedicated exclusively to laser vision correction, and works with referring doctors across the country.
+Dr. Stephen Coleman’s practice is devoted exclusively to laser vision correction and works with referring doctors across the country.
 
-That focus shaped the site. A prospective patient arriving here is weighing an elective procedure on their eyes. The questions are about safety, experience, and cost, and they want them answered without having to phone anyone. Referring physicians need something different again: credentials and clinical detail, quickly.
+That specialization shaped the website. A prospective patient is considering an elective procedure involving their eyesight. Before making contact, they want understandable answers about safety, experience, candidacy, and cost. Referring physicians arrive looking for credentials and clinical detail with very little patience for promotional language.
 
-We structured the site so both audiences find their path within a click or two, and kept the tone calm rather than promotional. Medical marketing that oversells undermines the trust it is trying to build.
+We gave both readers a clear route from the beginning and kept the visual and written tone calm. Medical marketing can weaken trust when it oversells, particularly when a patient is already weighing a serious decision. The site supports confidence through useful information, measured language, and easy access to the next step.

@@ -2,53 +2,57 @@
 title: Shopify to Square Online
 from: Shopify
 to: Square Online
-summary: For sellers already taking payments through Square, one system instead of two.
+summary: Consolidating online and in-person commerce when a Square seller no longer needs Shopify’s additional depth.
 fromPlatform: shopify
 toPlatform: square-online-store
-verdict: Right for Square sellers with a modest catalog. Stay on Shopify if commerce is the whole business.
+verdict: A good fit for Square sellers whose operations fit Square Online. Stay on Shopify when its ecommerce features, apps, or international capabilities remain important.
 timeline: two to four weeks
 order: 40
 nextStep: >-
-  Tell us what you sell and how you take payments today, and we will tell you honestly which of the two platforms fits, including when that is Shopify.
+  Tell us how the business sells in person and online, which Shopify apps it relies on, and what is difficult about the current setup. We will compare both options before recommending a move.
 seo:
   title: Shopify to Square Online Migration | Certified Square Agency | MIS, Inc.
-  description: "Moving an online store from Shopify to Square Online: when it makes sense for Square sellers, what migrates, what you give up, and when Shopify is still the better platform."
+  description: Shopify to Square Online migration services for Square sellers, including catalog and customer review, storefront rebuilding, URL redirects, testing, and launch planning.
 ---
 
-## This one is not an upgrade, it is a fit question
+## This migration is about operational fit
 
-The other migrations we do are usually about leaving something behind. This one is not. Shopify is an excellent platform, and plenty of businesses should stay on it.
+Shopify is a mature ecommerce platform, and many businesses should remain on it. The case for moving becomes stronger when a business already uses Square in person and wants online orders, inventory, catalog management, and payments to operate in the same system.
 
-The case for moving is specific: **you already take payments through Square in person.** If you do, running Shopify online and Square at the counter means two catalogs, two inventory counts, two sets of fees, and a reconciliation job that somebody does every month. Consolidating removes all of that.
+Consolidation can reduce duplicate entry and reconciliation work, but it does not automatically eliminate every subscription, integration, or reporting task. We review the complete setup before comparing costs.
 
-If you do not use Square in person, most of the reason to move disappears.
+## When Square Online may fit better
 
-## When Square Online is the better fit
+[Square Online](/platforms/square-online-store) deserves consideration when:
 
-- You run a **restaurant, café, or bar**, where online ordering, curbside pickup, and local delivery are built in, and they connect to the same Square hardware taking counter orders.
-- You have a **modest catalog** of tens or low hundreds of items rather than thousands.
-- **In-person sales matter** as much as online, and one inventory across both is worth real money in saved time.
-- You want **lower fixed costs**. There is a genuinely usable free tier, with card processing fees on transactions as with any processor.
+- Square already handles in-person sales
+- Pickup, local delivery, restaurant ordering, or straightforward shipping are central
+- Shared inventory across the counter and website would simplify daily work
+- The catalog and variant rules fit Square’s item model
+- The business does not depend on Shopify-specific apps or checkout behavior
 
-We are a certified Square Online agency and have moved a number of Square sellers across.
+Catalog size alone is not the deciding factor. Square supports large item libraries, but complexity in subscriptions, bundles, international selling, fulfillment, reporting, or integrations may still favor Shopify.
 
-## When to stay on Shopify
+## When Shopify remains the better platform
 
-We would rather say this plainly than win the work:
+Stay on [Shopify](/platforms/shopify) when ecommerce is the primary operation and the business depends on its deeper app ecosystem, complex merchandising, multiple currencies or markets, advanced shipping rules, subscriptions, or specialized reporting.
 
-- **Commerce is the whole business.** If the store is your primary channel, Shopify's depth is worth paying for.
-- **Large or complex catalogs** of thousands of SKUs, deep variant structures, or complicated inventory rules.
-- **You depend on specific apps.** Shopify's app ecosystem is much larger. If your subscriptions, bundles, or shipping logic run through an app, check for an equivalent before committing to anything.
-- **You sell internationally** with multiple currencies and tax regimes.
+The cost of replacing essential functionality can outweigh the benefit of consolidating with Square.
 
-## What migrates
+## What transfers and what does not
 
-**Products** come across with their titles, descriptions, images, variants, and prices, along with **collections**, mapped to Square's category structure. **Customer records** transfer, though customers set new passwords, and **order history** comes across as records for reference rather than as live orders. **Content pages** are rebuilt in the new site, and **every product and collection URL** is redirected, because product pages are frequently the ones carrying search traffic.
+The migration begins with exports and a field-by-field review, not an assumption that the two systems use the same data model.
 
-## What you should expect to lose
+- **Products and variants** can be prepared for Square’s item import, but categories, options, modifiers, inventory, images, and other fields need mapping and verification.
+- **Customer contacts** can be imported into Square Customer Directory when the available fields and permissions allow it. Shopify passwords, customer account history, saved payment details, and marketing consent do not become equivalent Square account data automatically.
+- **Historical orders** remain available through Shopify exports or another agreed archive. They do not become native historical Square transactions through a standard catalog or customer import.
+- **Content pages** and the storefront design are rebuilt in Square Online.
+- **Apps, discounts, gift cards, subscriptions, loyalty, shipping logic, and outside integrations** are reviewed individually for a Square equivalent or a new process.
 
-Any Shopify app without a Square equivalent, some checkout customization, and some of the reporting depth. Themes do not convert, so the storefront is rebuilt.
+## URLs and launch planning
 
-We go through your specific setup before you commit, so the list of what does not survive is known in advance rather than discovered afterwards.
+Product, collection, and content URLs are inventoried before the new storefront is structured. Existing addresses are retained when Square permits it. Changed URLs receive permanent redirects to relevant destinations, with special attention to product and category pages that already earn traffic or links.
 
-Most Shopify to Square migrations take two to four weeks, depending on catalog size.
+Checkout, taxes, shipping, pickup, delivery, notifications, inventory, analytics, domains, and payment flows are tested before launch. The old Shopify data is exported and retained according to the agreed handover plan.
+
+Most Shopify-to-Square migrations take two to four weeks. Catalog quality, app dependencies, customer data, fulfillment rules, and storefront changes can extend the work.

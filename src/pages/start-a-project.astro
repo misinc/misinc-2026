@@ -7,7 +7,7 @@ import PageHero from '../components/PageHero.astro';
 import ProjectForm from '../components/ProjectForm.astro';
 import FaqList from '../components/FaqList.astro';
 import Testimonial from '../components/Testimonial.astro';
-import { site, yearsInBusiness } from '../lib/site';
+import { site } from '../lib/site';
 import { breadcrumbs } from '../lib/schema';
 
 /**
@@ -55,11 +55,11 @@ const contactSchema = {
 
 <Base
   title="Start a Project | MIS, Inc. Albuquerque"
-  description="Tell us about your website, e-commerce, custom software, or AI project. MIS, Inc. in Albuquerque replies within one business day with a straight read and a fixed price."
+  description="Tell MIS, Inc. about your website, e-commerce, software, SEO, AEO, or AI project. We will respond within one business day and explain what comes next."
   schema={[contactSchema, breadcrumbs([{ name: 'Start a project' }])]}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Start a project with MIS, Inc." title="Tell us what you’re wanting us to build" lede={`Describe your project and we will reply within one business day with a quote or with questions if we need more clarification. Either way, you will hear from us.`} showMedia={false} layout="full" />
+    <PageHero eyebrow="Start a project with MIS, Inc." title="Tell us about your project" lede="Describe what you need and we will reply within one business day. We may ask a few questions before preparing a scope and fixed price." showMedia={false} layout="full" />
   </div>
 
   <Section variant="tint" width="full">
@@ -84,7 +84,7 @@ const contactSchema = {
   </Section>
 
   <Section>
-    <SectionHeader eyebrow="Project details" title="Your Project" lede="The more details you provide, the more accurate our quote will be." class="mb-8" />
+    <SectionHeader eyebrow="Tell us what you know" title="Project details" lede="The more context you provide, the easier it is for us to give you a useful first response." class="mb-8" />
 
     <ProjectForm />
 

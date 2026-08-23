@@ -20,21 +20,21 @@ seo:
 
 If you already run Square at the counter, this is usually the right choice, and the reason is simple: your menu, inventory, and orders live in one system.
 
-That sounds like a technical detail. In practice it is the difference between a customer ordering something you sold out of this morning and a customer ordering something you actually have.
+That sounds like a technical detail. In practice it helps prevent a customer from ordering something that sold out at the counter that morning.
 
 We are a Square Online certified agency and have built stores for restaurants and retailers across New Mexico and beyond.
 
 ## What it does well
 
 - **Online ordering, pickup, and local delivery**, connected to the register
-- **Menus and inventory your staff can edit** from a phone, in under a minute
-- **Gift cards**, which sell better online than most owners expect
+- **Menus and inventory your staff can edit** without maintaining a separate catalog
+- **Gift card support** within the same commerce system
 - **One payment system** for in-person and online, so reconciliation is not a monthly chore
-- **Genuinely quick to launch** compared to a fully custom store
+- **A shorter path to launch** than a fully custom store in many cases
 
 ## What to know before choosing it
 
-**Design flexibility is limited.** You are working within Square's templates. They are clean and perfectly professional, but if the look is the whole point, [Webflow](/platforms/webflow) gives more room.
+**Design flexibility is limited.** You are working within Square’s templates. They are clean and professional, but if the look is the whole point, [Webflow](/platforms/webflow) gives more room.
 
 **It works best if you are already on Square.** If you use a different point-of-sale system, the main advantage disappears and [Shopify](/platforms/shopify) or Webflow may fit better.
 

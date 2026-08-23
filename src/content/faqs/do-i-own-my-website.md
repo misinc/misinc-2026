@@ -4,8 +4,8 @@ topic: platforms
 order: 150
 ---
 
-Yes. Your domain, your content, your site.
+You should own the domain, your content and uploaded assets, and the client accounts created for the project. We prefer to register important services in the client’s name or provide a clear transfer at handover.
 
-We also deliberately choose platforms you could leave. Every platform we recommend lets you export your content and go elsewhere, and we will hand over whatever a new developer would need.
+Ownership of the underlying website depends on how it is built. A hosted platform such as Webflow, Shopify, Square, or Ecwid licenses its software and may not provide a portable working copy of every feature. A custom codebase has different handover terms, along with any third-party licenses or services it uses.
 
-We would rather keep clients because the work is good than because leaving is painful. That is not a courtesy. It is the reason some of these relationships have lasted twenty years.
+We explain those distinctions before choosing the platform and provide the files, exports, access, and documentation included in the project scope.

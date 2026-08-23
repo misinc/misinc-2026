@@ -12,12 +12,16 @@ import { breadcrumbs, collectionPage } from '../lib/schema';
 
 /**
  * Guides is an INDEX, not a URL space. Posts stay at /blog/<slug> because those
- * URLs carry the search rankings — see docs/blog-migration.md. This page
+ * URLs carry the search rankings. See docs/blog-migration.md. This page
  * curates the substantial ones and links to them where they already live.
  */
 const guides = (await getCollection('blog'))
   .filter((p) => p.data.guide)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .sort(
+    (a, b) =>
+      (b.data.updated ?? b.data.date).valueOf() -
+      (a.data.updated ?? a.data.date).valueOf(),
+  )
 
 const standalone = [
   {
@@ -31,7 +35,7 @@ const schema = [
   collectionPage({
     name: 'Guides',
     description:
-      'In-depth guides on web design pricing, local SEO, and getting found by AI, written for New Mexico business owners.',
+      'In-depth guides on web design pricing, SEO, ecommerce, real estate websites, and AI-assisted search.',
     path: '/guides',
     items: [
       ...guides.map((p) => ({ name: p.data.title, href: `/blog/${p.id}` })),
@@ -44,11 +48,11 @@ const schema = [
 
 <Base
   title="Guides | Web Design, SEO & AI for New Mexico Businesses | MIS, Inc."
-  description="In-depth guides on web design pricing, local SEO, Google Search Console, and getting found by AI, written for New Mexico business owners by MIS, Inc."
+  description="In-depth guides on web design pricing, local SEO, ecommerce, real estate websites, and AI-assisted search, written by MIS, Inc."
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Guides" title="The detailed answers" lede={`Most of these started life as a question from a client. They are the pieces we send people when a short answer will not do, accumulated over ${yearsInBusiness} years of being asked.`} ctas={[
+    <PageHero eyebrow="Guides" title="Practical guides" lede={`Most of these began with a client question that needed more than a short answer. They draw on ${yearsInBusiness} years of making these decisions with businesses and nonprofits.`} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'All blog posts', href: '/blog', variant: 'ghost' },
       ]} showMedia={false} layout="centered" />
@@ -72,7 +76,8 @@ const schema = [
             slug={p.id}
             title={p.data.title}
             summary={p.data.summary}
-            date={p.data.date}
+            date={p.data.updated ?? p.data.date}
+            updated={Boolean(p.data.updated)}
             guide
           />
         ))

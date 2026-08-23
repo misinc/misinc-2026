@@ -1,50 +1,50 @@
 ---
 name: Add On IDX
-summary: Our own IDX product, putting MLS listings on any real estate website, no matter who built it or where it is hosted.
+summary: Our IDX product for designers who need to add MLS listings to a real estate website on nearly any platform.
 icon: /img/platforms/addonidx.svg
 wordmark: /img/platforms/addonidx-wordmark-light.svg
 url: https://www.addonidx.com
 stance: own
 credential: Built and maintained by MIS, Inc.
-verdict: We built it, we maintain it, and it works on any platform.
+verdict: We built it for flexible MLS integration without forcing designers or agents into a particular website builder.
 category: websites
 order: 10
 nextStep: >-
-  If you are a Realtor and your site cannot show MLS listings, or your current IDX provider is charging too much for too little, we will look at what your MLS allows and what it would take.
+  If you design real estate websites or have an existing site that needs MLS listings, we can review what the local MLS permits and explain how Add On IDX would fit.
 seo:
   title: "Add On IDX: MLS Listings for Any Real Estate Website | MIS, Inc."
-  description: Add On IDX puts searchable MLS listings on any real estate website, regardless of platform or host. Built and maintained by MIS, Inc. in Albuquerque, New Mexico.
+  description: Add On IDX helps website designers add searchable MLS listings to real estate sites on Webflow, WordPress, Framer, Squarespace, Weebly, and more.
 ---
 
-## We built this because agents kept needing it
+## Built for designers who need a flexible IDX
 
-Most IDX solutions come with a condition attached: use our website builder, host with us, or accept whatever design we give you. Agents who already had a site they liked were told to throw it away.
+Add On IDX is the successor to RealtyEngine, an all-in-one real estate website system we originally built on Adobe Business Catalyst. When that platform closed, we reconsidered what designers and their clients needed most.
 
-[Add On IDX](https://www.addonidx.com) exists to remove that condition. It puts searchable MLS listings on a real estate website regardless of what the site is built with or where it is hosted.
+The answer was not another closed website builder. [Add On IDX](https://www.addonidx.com) separates the MLS search from the site itself, giving designers a way to add listings without surrendering their preferred design platform.
 
 ## What it does
 
-- **Full MLS search** with the filters buyers actually use in your market
+- **Full MLS search** with filters suited to the local market
 - **Featured listings** you control
 - **Listing detail pages** with contact forms, so interest becomes a lead
 - **Open house manager**
 - **Virtual tour support**
 - **Social sharing**, so buyers circulate your listings for you
-- **Analytics** on what people are actually viewing
+- **Analytics** on the listings people view
 
-Listing data refreshes twice daily from your MLS provider. Nothing is manual.
+Listing data refreshes twice daily from the MLS provider.
 
 ## Works with the site you have
 
-This is the part that matters most. Add On IDX runs on Webflow, WordPress, Squarespace, and hand-built sites alike. If you have a site you are happy with, you keep it.
+Add On IDX is used on WordPress, Weebly, Weebly Cloud, Webflow, Framer, Squarespace, and other platforms. Designers can choose the tool that suits the website while Add On IDX handles the listing experience.
 
 We have connected it to MLS providers across the United States, not only in New Mexico.
 
 ## Why buying from us is different
 
-We are not reselling somebody else's product. We built it, we maintain it, and when something breaks you are talking to the people who wrote it rather than a support tier that has to escalate.
+We are not reselling somebody else’s product. We built and maintain the system, so support comes from the team responsible for it.
 
-It is also the reason our [real estate work](/services/real-estate-website-design) does not depend on a vendor's roadmap. If an agent needs something the product does not do yet, that is a conversation rather than a support ticket.
+It also means our [real estate work](/services/real-estate-website-design) is not tied to a website vendor’s roadmap. The [Add On IDX portfolio note](/works/addonidx) explains how the product grew out of our earlier RealtyEngine platform.
 
 ## What to know
 

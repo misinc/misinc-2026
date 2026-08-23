@@ -1,7 +1,7 @@
 ---
 title: "Kat Jacob, Realtor®"
 client: "Kat Jacob, Realtor®"
-summary: "A first website with full Albuquerque MLS search, built for a broker specializing in first-time buyers and relocation."
+summary: "A first website for an Albuquerque broker, combining approachable guidance with MLS search that updates automatically."
 category: [real-estate]
 image: /img/work/kat-jacob.jpg
 imageAlt: "Kat Jacob Realtor website showing property search and listings"
@@ -15,12 +15,12 @@ testimonial:
   quote: "Karim exceeded my expectations and I love the end result! He was attentive to my vision and patient with me as I worked through the details. He is creative and most importantly knows how to build an appealing, user friendly website. He delivers on time, responds promptly and is available to answer questions and provide expert input. I highly recommend MIS!"
   attribution: "Kat Jacob, Realtor®"
 seo:
-  title: "Kat Jacob Realtor Website with IDX | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built a real estate website with full Albuquerque MLS IDX search for Realtor Kat Jacob."
+  title: "Kat Jacob Realtor Website with IDX | MIS, Inc."
+  description: "MIS designed Kat Jacob’s first website with Albuquerque MLS search, sold listings, and guidance for first-time and relocating buyers."
 ---
 
-Kat specializes in first-time home buyers, luxury properties, and relocation, three audiences at very different stages of confidence.
+Kat Jacob works with first-time buyers, luxury clients, and people relocating to New Mexico. Those clients may all be looking at the same market, but they arrive with very different levels of local knowledge and confidence.
 
-This was her first website, so a large part of the work was decisions rather than pixels: what to lead with, how much to explain, and where a nervous first-time buyer should land versus someone relocating from out of state.
+Because this was Kat’s first website, much of our work came before the visual design. We decided what deserved the first screen, how much guidance a new buyer needed, and where someone arriving from another state should begin.
 
-The site includes IDX search across every Albuquerque MLS listing, her own sold listings as proof of track record, and a blog covering New Mexico neighborhoods. Listing data refreshes twice daily, so it is current without her touching it.
+The finished site includes IDX search across the Albuquerque MLS, Kat’s sold listings as evidence of experience, and a blog for neighborhood knowledge that cannot be conveyed through listing data alone. The MLS feed refreshes twice each day, keeping the search current without requiring her to maintain it manually.

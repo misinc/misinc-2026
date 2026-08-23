@@ -13,9 +13,10 @@ export const site = {
   aiUrl: 'https://misinc.ai',
   url: 'https://www.misinc.com',
   founded: 1995,
+  foundedMonth: 7,
   tagline: 'Albuquerque web design, custom software, and practical AI since 1995.',
   description:
-    'MIS, Inc. is a boutique web design and development agency in Albuquerque, New Mexico. Websites, custom software, and practical AI for small businesses and nonprofits since 1995.',
+    'MIS, Inc. is an Albuquerque studio building websites, custom software, and practical AI for small businesses and nonprofits since 1995.',
 
   address: {
     street: '500 Marquette Ave NW, Suite 1200',
@@ -69,11 +70,15 @@ export const site = {
     { label: 'Privacy policy', href: '/privacy-policy' },
   ],
 
-  cta: { label: 'Book a free call', href: '/free-consultation' },
+  cta: { label: 'Book a free consultation', href: '/free-consultation' },
 } as const
 
-/** Years in business, computed so it never goes stale the way "30 Years" did. */
-export const yearsInBusiness = new Date().getFullYear() - site.founded
+/** Years in business, changing on the July anniversary rather than January 1. */
+const today = new Date()
+export const yearsInBusiness =
+  today.getFullYear() -
+  site.founded -
+  (today.getMonth() + 1 < site.foundedMonth ? 1 : 0)
 
 export const mapsUrl =
   'https://www.google.com/maps/search/?api=1&query=' +

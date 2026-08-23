@@ -4,10 +4,8 @@ topic: getting-started
 order: 10
 ---
 
-A website should be kept current in both content and design, because its job is to bring you leads and build credibility, and an outdated one does neither.
+Not necessarily. A website’s age is less important than whether it still supports the business and the people using it.
 
-As a rough rule: every three to five years a site benefits from a facelift, and past five years it usually needs a proper rebuild. The clearer signals are practical ones. It is slow, it looks wrong on a phone, you cannot update it yourself, or the business has changed and the site has not kept up.
+A rebuild may be justified when the site is difficult to use on a phone, inaccessible, slow, hard to update, unclear about what the business offers, or dependent on a platform that no longer fits. A refresh may be enough when the underlying structure works and the problems are limited to content, imagery, navigation, or a few page layouts.
 
-If your site is not mobile-friendly, that is not a judgement call. You are losing more than half your visitors and it is actively hurting your Google rankings.
-
-We will tell you honestly which category you are in. Sometimes the answer is that a few fixes will do, and that is a cheaper piece of advice than a rebuild.
+We review what is working before recommending what should change. Sometimes the right answer is a focused repair, content update, or performance pass rather than a new website.

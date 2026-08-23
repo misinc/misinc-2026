@@ -1,7 +1,7 @@
 ---
 title: "The Lazaris Material"
 client: "Artisan Creative"
-summary: "A complex store combining pay-per-view, streaming audio, subscriptions, and physical products in one account system."
+summary: "A technically complex store that brought streaming media, subscriptions, physical products, and customer accounts into one system."
 category: [ecommerce]
 image: /img/work/the-lazaris-material.jpg
 imageAlt: "The Lazaris Material website and online store"
@@ -11,12 +11,12 @@ order: 40
 services: [ecommerce-website-design, custom-software]
 platforms: [wordpress]
 seo:
-  title: "The Lazaris Material E-Commerce Build | MIS, Inc."
-  description: "How MIS, Inc. designed and built a complex e-commerce system combining pay-per-view, streaming audio, subscriptions, and physical products."
+  title: "The Lazaris Material E-Commerce System | MIS, Inc."
+  description: "MIS built a WordPress commerce system for The Lazaris Material combining pay-per-view, audio, subscriptions, physical goods, and migrated accounts."
 ---
 
-We worked with Artisan Creative on this one, and it remains among the more technically involved builds we have done.
+We worked with Artisan Creative on The Lazaris Material, one of the more technically involved commerce projects in the MIS portfolio.
 
-The store had to handle pay-per-view items, streaming audio, recurring subscriptions, and physical goods (four different fulfillment models) while consolidating several separate tools and multiple sets of user accounts into one.
+The store combined pay-per-view material, streaming audio, recurring subscriptions, and physical goods. Those four fulfillment models had previously been spread across separate tools and account systems.
 
-Merging user accounts is the part that sounds trivial and is not. People had purchases and subscriptions spread across systems, and every one of them had to survive the move intact.
+We brought the experience together in [WordPress](/platforms/wordpress), including the customer records behind it. Account migration was the most sensitive part. Existing purchases and subscriptions had to remain attached to the right people so customers did not lose access to material they had already paid for.

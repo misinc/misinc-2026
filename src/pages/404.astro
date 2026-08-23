@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
-import { site } from '../lib/site';
+import { site, yearsInBusiness } from '../lib/site';
 
 /**
  * Cloudflare Pages serves /404.html automatically for any unmatched path.
@@ -16,7 +16,7 @@ const destinations = [
   { label: 'Services', href: '/services', note: 'Web design, SEO, software, and AI' },
   { label: 'Blog', href: '/blog', note: 'Practical writing for local businesses' },
   { label: 'Platforms', href: '/platforms', note: 'What we build on, and what we move you off' },
-  { label: 'About', href: '/about', note: `Who we are, ${new Date().getFullYear() - site.founded} years in` },
+  { label: 'About', href: '/about', note: `Who we are, ${yearsInBusiness} years in` },
   { label: 'Contact', href: '/contact', note: 'Tell us what you need' },
 ]
 ---
@@ -33,11 +33,10 @@ const destinations = [
       ]} showMedia={false}>
       <Fragment slot="lede">
         We rebuilt this website in 2026 and redirected every old address we could find.
-        This one slipped through, or it never existed. Either way it is our fault rather
-        than yours, and if you followed a link to get here, <a
+        This one may have moved, or it may never have existed. If you followed a link to get here, <a
           href="/contact"
           class="font-bold text-primary no-underline hover:underline">tell us</a
-        > and we will fix it.
+        > so we can check it.
       </Fragment>
     </PageHero>
   </div>
@@ -67,7 +66,7 @@ const destinations = [
       Or call us on <a
         href={site.phoneHref}
         class="font-bold text-ink-soft no-underline hover:text-primary">{site.phone}</a
-      >. Someone here will answer.
+      >. If we miss you, leave a message and we will respond within one business day.
     </p>
   </div>
 </Base>

@@ -1,7 +1,7 @@
 ---
 title: "Honor Flight of Northern New Mexico"
 client: "Honor Flight of Northern New Mexico"
-summary: "A mission-first site for the nonprofit that flies New Mexico veterans to see their memorials in Washington, D.C."
+summary: "A mission-first nonprofit site with direct paths for veterans, their families, volunteers, and donors."
 category: [nonprofit]
 image: /img/work/honor-flight.jpg
 imageAlt: "Honor Flight of Northern New Mexico website homepage"
@@ -12,12 +12,12 @@ featured: true
 services: [nonprofit-web-design, web-design]
 platforms: [weebly-cloud]
 seo:
-  title: "Honor Flight of Northern New Mexico | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for Honor Flight of Northern New Mexico, a nonprofit taking veterans to their memorials in Washington, D.C."
+  title: "Honor Flight of Northern New Mexico Website | MIS, Inc."
+  description: "MIS designed the Honor Flight of Northern New Mexico website with clear routes for veteran applications, volunteering, and donations."
 ---
 
-Honor Flight of Northern New Mexico is a 501(c)(3) that takes veterans to Washington, D.C. free of charge to visit the memorials built in their honor, with priority given to World War II and Korean War veterans and to those who are terminally ill.
+Honor Flight of Northern New Mexico is a 501(c)(3) that takes veterans to Washington, D.C., free of charge, to visit the memorials built in their honor. Priority goes to World War II and Korean War veterans and to those who are terminally ill.
 
-A nonprofit website has to do three jobs at once: explain the mission to someone who has never heard of it, help a veteran or their family apply, and make donating straightforward. Those audiences want very different things from the same handful of pages.
+The website explains the mission to people encountering it for the first time, helps veterans and families apply, and makes volunteering or donating straightforward. We gave each task a direct route from the homepage rather than asking every visitor to read through the organization’s full story first.
 
-We built it so each one has a clear route from the homepage, and kept the writing plain. The mission does not need embellishment.
+The language stays plain and the design gives the photographs room. The mission does not need embellishment.

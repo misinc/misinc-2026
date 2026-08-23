@@ -4,10 +4,10 @@ topic: platforms
 order: 130
 ---
 
-Not any more, and we will explain why rather than just declining.
+We no longer choose WordPress for new MIS website builds.
 
-WordPress is capable software, but for a small business the total cost of owning one has grown past what it returns: constant updates, plugin conflicts, security exposure, and either your time or a maintenance retainer to keep on top of it. Most of the emergency calls we used to take were WordPress sites that had missed an update published weeks earlier.
+WordPress remains capable, actively maintained software, and a well-managed installation can be secure and reliable. It is still a good fit for organizations that depend on its publishing model, plugin ecosystem, or an experienced internal team.
 
-We now build on [Webflow](/platforms/webflow) or as custom static sites, where there is nothing to patch and nothing to be hacked through.
+For most of our small business and nonprofit clients, [Webflow](/platforms/webflow) provides the editing tools they need without requiring them to manage hosting, themes, and plugins. We also build custom sites with the Astro framework when a code-based approach fits better.
 
-The full reasoning, including where WordPress is still the right answer, is on our [WordPress page](/platforms/wordpress).
+Our [WordPress platform page](/platforms/wordpress) explains the tradeoffs, including when staying on WordPress is the right decision.

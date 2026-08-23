@@ -1,43 +1,43 @@
 ---
 name: ExpressionEngine
-summary: A capable CMS from an earlier era of the web, which we no longer work in.
+summary: An actively maintained CMS that MIS no longer specializes in, particularly when older installations need substantial work.
 icon: /img/platforms/expressionengine.svg
 stance: migrate
-verdict: We no longer support ExpressionEngine and would migrate any site still on it.
-insteadUse: [webflow, astro]
+verdict: ExpressionEngine is still maintained. MIS no longer builds or provides ongoing support for it, and we usually migrate older installations.
+insteadUse: [webflow]
 category: websites
 order: 40
 nextStep: >-
-  If you are still on ExpressionEngine and struggling to find anyone to maintain it, that difficulty is itself the argument for moving. We can look at what a migration would involve.
+  If your ExpressionEngine site is on an older release or has become difficult to maintain, we can assess whether an upgrade or migration makes more sense.
 seo:
-  title: Migrating Off ExpressionEngine | MIS, Inc. Albuquerque
-  description: Why MIS, Inc. no longer supports ExpressionEngine, and how we migrate legacy ExpressionEngine sites onto Webflow or Astro.
+  title: ExpressionEngine Support and Migration | MIS, Inc.
+  description: MIS no longer builds on ExpressionEngine. Here is when an older installation should be upgraded, maintained by a specialist, or migrated to a new platform.
 ---
 
-## A good CMS, at the time
+## A capable CMS we no longer specialize in
 
-ExpressionEngine was a serious content management system, and for a period it was a reasonable choice for sites that needed more structure than the alternatives offered. We built on it, including [You Can Lead Coaching](/works/you-can-lead-coaching).
+ExpressionEngine remains actively maintained, and current installations receive bug fixes and security updates. It is a capable content management system with a long history and a professional user base.
 
-We no longer work in it.
+MIS built on ExpressionEngine for years, including [You Can Lead Coaching](/works/you-can-lead-coaching). We no longer specialize in it. That is a decision about our current practice, not a claim against the platform.
 
-## Why we stopped
+## Where older installations become difficult
 
-**The community has largely moved on.** Finding developers, plugins, or current documentation is materially harder than it was, and that difficulty compounds every year.
+Many ExpressionEngine calls we receive involve sites built on releases that are no longer supported. The original developer may be unavailable, custom add-ons may depend on old PHP versions, and years of undocumented decisions can make a routine change expensive.
 
-**It carries a license cost** for capability that hosted platforms now include.
+Those are risks attached to an ageing installation, not to every current ExpressionEngine site.
 
-**It requires server maintenance.** PHP versions, database upgrades, and security patching are all your responsibility, the same burden that made us stop building on [WordPress](/platforms/wordpress), without WordPress's ecosystem to soften it.
+ExpressionEngine also places hosting, PHP compatibility, database upgrades, add-ons, and security maintenance in the owner’s hands. That can be perfectly reasonable for an organization with the right technical support. It is more responsibility than most of our small-business clients want.
 
-**Most sites still on it are well past a rebuild anyway.** If a site has not been substantially updated since it was built on ExpressionEngine, the platform is rarely the only thing that needs attention.
+## When staying makes sense
 
-## What we recommend instead
+If the site is current, secure, performing well, and supported by an ExpressionEngine developer, there is no reason to migrate simply because MIS uses different tools today. An upgrade within ExpressionEngine may be the least disruptive choice.
+
+Migration becomes more attractive when the installation is several major versions behind, important add-ons are unsupported, or the website itself needs a full redesign.
+
+## What MIS recommends
 
 **[Webflow](/platforms/webflow)** for a site you want to maintain yourself, with no server to look after.
 
 **A custom static build** where performance and control matter most. See [website development](/services/website-development).
 
-## If you are still running one
-
-The most common reason people call us about an ExpressionEngine site is that whoever built it is no longer available and nobody else will touch it. That is a real risk: an unmaintained CMS on an ageing PHP version is a security incident waiting to happen.
-
-We can migrate the content out, preserve the URLs that carry your search rankings, and rebuild on something you will still be able to get help with in five years.
+When we migrate an older installation, we carry the content forward, preserve or redirect established URLs, and verify the rebuilt site before launch. If staying on ExpressionEngine is the better answer, we will recommend finding a current ExpressionEngine specialist instead.

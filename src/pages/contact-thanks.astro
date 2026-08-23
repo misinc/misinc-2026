@@ -4,7 +4,7 @@ import Section from '../components/Section.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import PageHero from '../components/PageHero.astro';
 import Card from '../components/Card.astro';
-import { site } from '../lib/site';
+import { site, yearsInBusiness } from '../lib/site';
 
 /**
  * Where the contact form lands when JavaScript is unavailable. With JavaScript
@@ -15,7 +15,7 @@ const next = [
   {
     tag: 'While you wait',
     title: 'See our projects',
-    blurb: 'Case studies from restaurants, practices, Realtors, and nonprofits across New Mexico.',
+    blurb: 'Case notes from restaurants, practices, Realtors, nonprofits, and other clients.',
     href: '/portfolio',
   },
   {
@@ -27,7 +27,7 @@ const next = [
   {
     tag: 'About',
     title: 'Who you will be working with',
-    blurb: 'Thirty-one years in one city, and why we have stayed small on purpose.',
+    blurb: `${yearsInBusiness} years in one city, and why we have stayed small on purpose.`,
     href: '/about',
   },
 ]

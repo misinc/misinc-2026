@@ -5,6 +5,6 @@ order: 220
 showOn: [home, contact]
 ---
 
-Yes. We have worked with clients across the United States and internationally since 1995. [The Bean](/works/the-bean) is in New York, [Peasant Pies](/works/peasant-pies) in San Francisco, and [Zaca Mesa Winery](/works/zaca-mesa-winery) in California among them.
+Yes. We have worked with clients across the United States and internationally since 1995. [The Bean](/works/the-bean) is in New York, [Peasant Pies](/works/peasant-pies) is in San Francisco, and [Zaca Mesa Winery](/works/zaca-mesa-winery) is in California.
 
-Our focus now is Albuquerque and New Mexico, but thirty-one years in, distance has never been the obstacle people expect.
+Albuquerque and New Mexico remain our home market, but discovery, reviews, training, and ongoing communication can all be handled remotely. When a project benefits from being on site, we discuss travel or local coordination before setting the scope.

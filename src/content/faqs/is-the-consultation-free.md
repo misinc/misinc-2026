@@ -5,6 +5,6 @@ order: 60
 showOn: [contact]
 ---
 
-Yes, and there is no obligation attached.
+Yes. The consultation is a free 30-minute conversation with no obligation to hire us.
 
-You will get honest recommendations either way, including when the honest recommendation is that you do not need us. We would rather spend an hour telling you that than take on work that will not help you.
+We use the time to understand the problem, review what you already have when possible, and explain the next step we would recommend. That may be a project with MIS, a smaller repair, a tool you already own, or no immediate work at all.

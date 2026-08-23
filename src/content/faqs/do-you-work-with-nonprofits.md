@@ -5,6 +5,8 @@ order: 70
 showOn: [services]
 ---
 
-Yes — see [nonprofit web design](/services/nonprofit-web-design). A good portion of our work is with New Mexico nonprofits, [Honor Flight of Northern New Mexico](/works/honor-flight-of-northern-new-mexico) and the [New Mexico Chile Association](/works/new-mexico-chile-association) among them.
+Yes. Our [nonprofit web design service](/services/nonprofit-web-design) covers websites, donations, memberships, program information, events, and volunteer signups.
 
-Tell us about your budget when you get in touch. We would rather scope a project to fit it than quote something out of reach.
+Our nonprofit work includes [Honor Flight of Northern New Mexico](/works/honor-flight-of-northern-new-mexico), the [New Mexico Chile Association](/works/new-mexico-chile-association), [UR Art & Culture](/works/urartsandculture), and national organizations such as the [Election Reformers Network](/works/election-reformers-network).
+
+Tell us about the available budget and approval process. We can identify the essential scope first and discuss phasing or timing when appropriate.

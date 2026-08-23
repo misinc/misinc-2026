@@ -1,48 +1,47 @@
 ---
 title: Answer Engine Optimization
-heading: Get named when people ask AI instead of Google
-summary: AEO for local businesses. We make sure ChatGPT, Perplexity, Google AI Overviews, and voice assistants name you when a local customer asks.
+heading: Make your business easier for AI search to find and understand
+summary: AEO for businesses that want accurate, useful information to be discoverable in ChatGPT, Google AI Overviews, Perplexity, and other answer-driven search experiences.
 pillar: growth
 order: 15
 ranking: false
-platforms: [webflow]
+platforms: []
 highlights:
-  - Structured data & schema markup
-  - Content written to be quoted, not just read
-  - Consistent business facts everywhere AI reads them
+  - AI crawler access and technical review
+  - Clear, structured business information
+  - Citation monitoring and content improvement
 nextStep: >-
-  We will check whether AI assistants currently know your business exists, and show you exactly what is missing.
+  We will check whether major search and AI crawlers can reach your site, review how clearly your business is described, and show you where the information is incomplete or inconsistent.
 seo:
-  title: Answer Engine Optimization (AEO) Experts in Albuquerque, NM | MIS, Inc.
-  description: AEO services for Albuquerque businesses. We help you get cited by ChatGPT, Perplexity, Google AI Overviews, and voice search when local customers ask for what you sell.
+  title: Answer Engine Optimization Services in Albuquerque | MIS, Inc.
+  description: AEO services for Albuquerque businesses. Improve how clearly AI search tools can discover, understand, and cite accurate information about your organization.
 ---
 
-## A search that never shows you a link
+## Search is becoming more conversational
 
-Someone in Albuquerque asks their phone "who's a good [your trade] near me," or types the same thing into ChatGPT. They get a short, confident answer with two or three business names in it. They call one of them. There was no page of blue links, no chance to scroll past a competitor, and no click for you to win with a lower ad bid. The assistant simply decided who to say out loud.
+People still use traditional search results, but they also ask ChatGPT, Perplexity, Google AI Overviews, and voice assistants for direct answers. Those answers may include a few cited sources or business recommendations instead of a page of links.
 
-That decision is Answer Engine Optimization, and it runs on different rules than the search results you are used to watching.
+No agency can guarantee that a particular system will name your business. The practical opportunity is to make your public information accessible, specific, consistent, and useful enough to be considered when an answer is assembled.
 
-## Why this is not just "SEO with a new name"
+That is how we approach Answer Engine Optimization.
 
-Traditional SEO earns a ranking. AEO earns a mention. An assistant is not sorting ten results for a person to choose from — it is synthesizing one answer, which means it is citing sources it trusts to be accurate, well-structured, and consistent, then discarding everything else. There is no page two. You are either named in the answer or you are invisible, and the criteria that decide it are closer to "can a machine parse and verify this" than "did this page use the right keyword."
+## What we work on
 
-For a local business, that raises the stakes. People asking an assistant "near me" questions tend to be further along and ready to call, and the assistant is drawing on the same messy set of local signals a search engine does, just compressed into a single confident sentence.
-
-## What we actually do
-
-- **Structured data.** Schema markup for your organization, services, location, hours, and reviews, so a machine does not have to guess what your page means — it can read it directly.
-- **FAQs, written properly.** A page of real questions your customers actually ask, answered directly and marked up as FAQ schema. It is one of the most reliable formats for getting lifted whole into an assistant's answer, because the question-and-answer structure is already exactly what it is looking for.
-- **Content written to be quoted.** Pages that answer real questions in plain, extractable sentences near the top, not buried under three paragraphs of preamble an assistant will skip.
-- **Consistent facts everywhere.** Your name, address, phone number, and services need to match across your website, Google Business Profile, directories, and social profiles. Assistants cross-check sources, and contradictions cost you the citation.
-- **A fast, crawlable site.** Assistants and the crawlers that feed them still have to reach your pages and parse them quickly. Slow or broken pages get skipped in favor of a competitor's.
-- **Google Business Profile work.** Still the backbone of "near me" answers, in AI Overviews as much as in the map pack. We keep it accurate and active rather than abandoned.
-- **Ongoing checks.** We periodically ask the assistants the questions your customers would ask, and tell you honestly whether you showed up and why.
+- **Crawler access.** We check robots directives, indexing controls, page rendering, and other technical barriers that can keep search and AI crawlers from reaching useful content.
+- **Clear business information.** Services, locations, hours, credentials, policies, and contact details should be stated plainly rather than left for a system to infer.
+- **Structured data.** Appropriate schema markup can clarify the entities and relationships described on a page. It helps machines interpret information, but it does not guarantee a ranking or citation.
+- **Useful answers.** We identify real customer questions and answer them directly in the places where those answers belong. The writing still has to serve people first.
+- **Consistent facts.** We review your website, Google Business Profile, and important public listings for conflicting names, addresses, phone numbers, hours, and services.
+- **Monitoring.** We test representative questions, track referral traffic where it is available, and watch how visibility changes over time.
 
 ## How this fits with SEO
 
-AEO shares a foundation with [SEO](/services/seo): a fast, well-structured, accurately described site earns both a ranking and a citation. The difference is in the finishing work — data structured cleanly enough for a machine to lift out and repeat, and enough consistency across the web that an assistant trusts what it finds.
+AEO and [search engine optimization](/services/seo) share the same foundation: crawlable pages, useful content, clear facts, sound site structure, and a credible presence beyond your own website.
 
-## What we will not do
+The additional work is understanding how answer-driven systems access content, making important facts easy to extract, and measuring a search experience that does not always produce a conventional click.
 
-We will not promise you will be named in every AI answer, because nobody controls what a model decides to say. We will not pad your site with fake reviews or manufactured “As seen in AI” claims to game a citation. What we will do is fix what is genuinely holding you back and tell you honestly when we have.
+## What we will not promise
+
+We cannot control what an AI system says, which sources it selects, or when its underlying data changes. We will not sell a citation guarantee or manufacture claims that make your business appear more authoritative than it is.
+
+We will improve the technical and editorial signals within your control, document what we find, and report what the available evidence shows.

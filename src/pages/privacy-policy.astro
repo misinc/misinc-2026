@@ -10,39 +10,39 @@ import { site } from '../lib/site';
 /**
  * Written to describe what this site actually does, not what a generator
  * assumes it does. Before changing anything here, check it against the code:
- * there is no analytics script in Base.astro, the map is self-hosted tiles
- * (StaticMap.astro), fonts are self-hosted, and the only third-party script
- * is the Cal.com embed on /free-consultation.
+ * there is no audience analytics script in Base.astro, the map is self-hosted
+ * tiles (StaticMap.astro), fonts are self-hosted, Cal.com is embedded on
+ * /free-consultation, and the 1995-mode preference is stored in localStorage.
  *
  * If any of that changes, this page has to change with it.
  */
 
-const updated = '2026-08-17'
-const updatedLabel = 'August 17, 2026'
+const updated = '2026-08-23'
+const updatedLabel = 'August 23, 2026'
 
 // What we tell people up front. Every line has to stay true of the built site.
 const summary = [
-  'This site has no analytics, no advertising pixels, and no tracking cookies. We do not use Google Analytics.',
-  'We do not sell, rent, or trade your information, and there is no arrangement under which we would.',
-  'The only information we hold is what you deliberately send us: a form, a booking, an email, or a phone call.',
-  'Fonts, images, and the map are served from our own site, so no other company learns that you were here.',
-  'Ask us what we hold about you, or ask us to delete it, and we will.',
+  'We do not use audience analytics, advertising pixels, or cross-site tracking on this website.',
+  'We receive information you send through a form, booking, email, or phone call. Cloudflare also processes standard technical information needed to serve and protect the site.',
+  'Cal.com is used on the free consultation page, and Resend delivers website form submissions to our inbox.',
+  'We do not sell or rent personal information. We use service providers only to operate the site and respond to you.',
+  'You can ask what information we hold about you, request a correction, or ask us to delete it, subject to records we are required to keep.',
 ]
 
 const processors = [
   {
     name: 'Resend',
-    role: 'Delivers contact form messages to our inbox.',
+    role: 'Delivers contact and project form messages to our inbox.',
     href: 'https://resend.com/legal/privacy-policy',
   },
   {
     name: 'Cal.com',
-    role: 'Runs the free consultation booking.',
+    role: 'Provides the booking calendar on the free consultation page.',
     href: 'https://cal.com/privacy',
   },
   {
     name: 'Cloudflare',
-    role: 'Hosts and serves this website.',
+    role: 'Hosts, serves, and helps protect this website.',
     href: 'https://www.cloudflare.com/privacypolicy/',
   },
 ]
@@ -75,13 +75,13 @@ const pageSchema = {
 
 <Base
   title="Privacy Policy | MIS, Inc."
-  description="What misinc.com collects, why, and what happens to it. No analytics, no tracking cookies, and nothing sold or shared. Written in plain English."
+  description="What misinc.com collects, why it is collected, which services help operate the site, and the choices available to visitors. Written in plain English."
   schema={[breadcrumbs, pageSchema]}
 >
   <!-- A legal page opens with the document rather than a marketing panel, so
        the hero runs with no media at all. -->
   <div class="border-b border-line">
-    <PageHero layout="full" eyebrow="Legal" title="Privacy policy" lede="We do not track you. This page explains what little information this site collects, why, and what happens to it, in plain English rather than four pages of definitions." showMedia={false}>
+    <PageHero layout="full" eyebrow="Legal" title="Privacy policy" lede="We do not use this site to build advertising profiles or measure visitors with audience analytics. This page explains what information is handled when you browse, contact us, or book a consultation." showMedia={false}>
       <Breadcrumbs
         slot="before"
         items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]}
@@ -136,18 +136,19 @@ const pageSchema = {
 
       <h3>When you fill in the contact form</h3>
       <p>
-        We receive your name, your email address, your phone number if you choose to give
-        one, the subject you select, and your message. It is delivered to our inbox as an
-        email. It is not written to a database, because this site does not have one.
+        We receive the details you submit, which may include your name, email address, phone
+        number, organization, current website, the subject or service you select, budget,
+        timeline, and your message. Resend delivers the submission to our inbox. This website
+        does not store a separate copy in a database.
       </p>
 
       <h3>When you book a free consultation</h3>
       <p>
         Booking runs on Cal.com, embedded on the
         <a href="/free-consultation">free consultation</a> page. When you book, Cal.com collects
-        your name, email address, time zone, and anything you type into the notes, then places
-        the appointment on our calendar and emails the details to both of us. This is the only
-        third-party script anywhere on the site, and it loads only on that page.
+        the information requested by the booking form, such as your name, email address, time
+        zone, and any notes you provide. Cal.com then places the appointment on our calendar
+        and sends the booking details. Its script loads only on that page.
       </p>
 
       <h3>When you email or call us</h3>
@@ -158,32 +159,35 @@ const pageSchema = {
 
       <h3>Automatically, in the server log</h3>
       <p>
-        Our host records the standard details of every request: IP address, browser and
-        device type, the page requested, and the time. Every website on the internet does
-        this, because it is how a server answers a request at all. It is used for security, for
-        blocking abuse, and for working out whether something is broken. We do not join it
-        to anything else, and we do not use it to build a profile of you.
+        Cloudflare processes standard request information when it serves the site, such as an
+        IP address, browser and device details, the requested page, and the time of the request.
+        Cloudflare uses this information to deliver content, maintain security, block abuse,
+        and diagnose problems. We do not use these records for audience analytics or advertising.
       </p>
 
       <h2>Cookies</h2>
       <p>
-        This site sets no cookies of its own. There is no analytics cookie, no advertising
-        cookie, and no preference cookie. Two things are worth naming honestly:
+        MIS does not set analytics or advertising cookies on this site. Three kinds of browser
+        storage may still be involved:
       </p>
       <ul>
-        <li>Cloudflare may set a security cookie to tell real visitors apart from bots.</li>
         <li>
-          The Cal.com booking embed may set its own cookies, on the free consultation page
-          only.
+          The optional 1995 mode stores its on-or-off setting and a local novelty counter in
+          your browser. That information stays on your device and is not sent to MIS.
+        </li>
+        <li>Cloudflare may set cookies needed for security and bot protection.</li>
+        <li>
+          Cal.com may set its own cookies or browser storage when its booking calendar loads
+          on the free consultation page.
         </li>
       </ul>
       <p>
-        Neither is used by us for tracking or advertising. That is also why this site does
-        not interrupt you with a cookie banner: there is nothing to consent to.
+        MIS does not use this storage for advertising. If you prefer not to load the Cal.com
+        calendar, you can contact us by phone, email, or the contact form instead.
       </p>
 
       <h2>Who else sees your information</h2>
-      <p>Three companies, each doing exactly one job:</p>
+      <p>These services are directly involved in operating this website:</p>
     </Prose>
 
     <div class="mt-6 flex max-w-[68ch] flex-col gap-3">
@@ -206,21 +210,24 @@ const pageSchema = {
 
     <Prose class="mt-8">
       <p>
-        That is the entire list. We do not share your information with anyone else, and we
-        do not sell it. We would hand something over if a court required it, and we would
-        tell you unless we were legally prevented from doing so.
+        Form submissions delivered through Resend become ordinary business email and may be
+        stored in the systems we use to manage correspondence. We do not sell or rent personal
+        information, and we do not disclose it to unrelated companies for their marketing. We
+        may disclose information when required by law or when necessary to protect the site,
+        our business, or other people.
       </p>
 
       <h2>How long we keep it</h2>
       <p>
-        Inquiries stay in our email as ordinary business correspondence. Records for work we
-        actually do together we keep while we are working together and for a reasonable
-        period afterwards, for tax and for reference when you come back to us years later,
-        which, in our experience, people do. Server logs belong to our host and expire on
-        their schedule.
+        We keep inquiries and other correspondence for as long as we reasonably need them to
+        respond, maintain business records, or support an ongoing client relationship. Records
+        connected to paid work may be kept longer for legal, tax, accounting, and contractual
+        reasons. Cloudflare controls the retention of its technical and security logs under its
+        own policies.
       </p>
       <p>
-        If you would rather we did not keep your inquiry, say so and we will delete it.
+        If you would rather we did not keep an inquiry, ask us to delete it. We will honor the
+        request unless we need to retain part of the record for a legal or business obligation.
       </p>
 
       <h2>Your choices</h2>
@@ -228,19 +235,18 @@ const pageSchema = {
       <ul>
         <li>Tell you what we hold about you</li>
         <li>Correct anything that is wrong</li>
-        <li>Delete it</li>
+        <li>Ask us to delete it</li>
         <li>Stop contacting you</li>
       </ul>
       <p>
         Email <a href={`mailto:${site.email}`}>{site.email}</a> or call
         <a href={site.phoneHref}>{site.phone}</a>. There is no form and no process. A person
-        reads it and deals with it.
+        reads it and responds.
       </p>
       <p>
         Depending on where you live, you may have further rights under laws such as the
-        GDPR or California&rsquo;s privacy laws. If you want to exercise one of those, just
-        ask. We would rather honor the request than argue about whether it technically
-        applies to a company our size.
+        GDPR or California&rsquo;s privacy laws. If you want to exercise one of those rights,
+        contact us and describe the request.
       </p>
 
       <h2>Links to other websites</h2>

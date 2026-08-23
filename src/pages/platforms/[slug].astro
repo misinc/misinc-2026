@@ -104,9 +104,9 @@ const breadcrumbs = {
             Not sure what fits?
           </h2>
           <p class="text-sm text-ink-soft">
-            We pick the platform that suits your budget and whoever will maintain
-            the site, not the one that keeps you dependent on us. If something
-            cheaper would serve you better, we will say so.
+            We choose around your budget, requirements, and the person who will
+            maintain the site. The platform should reduce dependency, not create
+            another one.
           </p>
           {
             platform.data.url && (
@@ -130,7 +130,7 @@ const breadcrumbs = {
     related.length > 0 && (
       <Section variant="tint" width="full">
         <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
-          <SectionHeader eyebrow="Also" title="Other partners" class="mb-10" />
+          <SectionHeader eyebrow="Also" title="Other options" class="mb-10" />
           <div class="grid gap-5 lg:grid-cols-3">
             {related.map((p) => (
               <Card

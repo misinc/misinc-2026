@@ -1,90 +1,117 @@
 ---
 title: "What SEO Services Actually Include"
-summary: "A plain breakdown of what you are buying when you pay for SEO: the technical work, the content, the local listings, and the reporting, plus which parts you could reasonably do yourself."
+summary: "A practical breakdown of technical SEO, content, local search, authority, and reporting, including which parts a small business can reasonably handle itself."
 date: 2021-02-17
-updated: 2026-08-17
+updated: 2026-08-23
 guide: true
 seo:
   title: "What SEO Services Include | Albuquerque SEO | MIS, Inc."
-  description: "What you actually get when you pay for SEO services in Albuquerque: technical work, content, local listings, link earning, and reporting, explained without jargon."
+  description: "What SEO services should actually include: technical work, content, local search, authority, and reporting, explained clearly by MIS, Inc. in Albuquerque."
 faqs:
-  - q: "Is SEO a one-off project or ongoing?"
-    a: "Both, in sequence. The technical repair and initial content work is project-shaped and has a beginning and an end. Keeping rankings once you have them is ongoing, because competitors keep working and Google keeps changing. Many businesses do a project first and then decide whether the ongoing part is worth it."
+  - q: "Is SEO a one-time project or ongoing?"
+    a: "It can be either. An audit, migration review, technical repair, or defined content project can have a clear endpoint. Ongoing work makes sense when a business needs regular content, local listing management, monitoring, and continued improvement. The scope should follow the problem rather than forcing every client into the same retainer."
   - q: "What is the difference between SEO and local SEO?"
-    a: "Local SEO is the subset aimed at people searching near you, and it is dominated by your Google Business Profile and reviews rather than your website. If your customers are mostly in Albuquerque and New Mexico, local SEO is the part that matters most and is often the cheapest to improve."
+    a: "Local SEO focuses on searches connected to a place or service area. It includes the website, Google Business Profile, reviews, public business information, and local prominence. Traditional organic SEO may target people regardless of location and often depends more heavily on the depth and authority of the website."
   - q: "Which parts of SEO can I do myself?"
-    a: "Your Google Business Profile, your reviews, and keeping your business details consistent across the web. Those three are free, high-impact, and need no technical skill. The technical repair, content writing, and ongoing measurement are where hiring makes sense."
+    a: "A business owner can maintain an accurate Google Business Profile, request reviews, correct important listings, and document the questions customers ask. Technical diagnosis, migrations, structured data, content planning, implementation, and measurement are the areas where specialist help is often most useful."
 ---
 
-"SEO services" is one of those phrases that means everything and nothing. Two companies can quote you wildly different figures for what sounds like the same thing, because they are not selling the same thing at all.
+SEO services can mean anything from a one-time technical audit to years of content and local-search work. Two proposals with similar headings may contain completely different amounts of analysis, implementation, and reporting.
 
-This is a breakdown of what the work actually consists of, so you can tell what you are being sold, and decide which parts you want to pay someone for.
+This is a practical breakdown of the work so you can compare scopes and decide which parts you need.
 
-## 1. Technical work
+## 1. Technical review and repair
 
-This is making sure search engines can read your site properly, and it is usually where the fastest wins are.
+The technical work determines whether search engines can reliably reach, interpret, and index the pages that matter.
 
-- **Speed.** How quickly pages load, particularly on a phone on a weak connection. This is a ranking factor and a conversion factor.
-- **Mobile rendering.** Not just "it fits on a phone" but genuinely usable: tappable buttons, readable text, no horizontal scrolling.
-- **Crawlability.** Whether search engines can find and read every page that matters, and are not wasting effort on ones that do not.
-- **Structured data.** Schema markup telling search engines and AI assistants exactly what your business is, where it is, and what it offers.
-- **Fixing errors.** Broken links, redirect chains, duplicate pages, and the accumulated debris in Search Console that most site owners never look at.
+It may include:
 
-If a site has been neglected, this stage alone can move rankings without a word of new content being written.
+- **Crawling and indexing.** Confirming that important pages are accessible and that unhelpful or duplicate pages are handled appropriately.
+- **Redirects and URLs.** Repairing broken links, redirect chains, inconsistent canonical URLs, and migration mistakes.
+- **Mobile behavior and performance.** Checking that pages work well across devices and that avoidable performance problems are addressed.
+- **Structured data.** Adding accurate markup where it helps describe the visible content and qualifies for supported search features.
+- **Search Console review.** Investigating indexing reports, manual actions, sitemap issues, and changes in search visibility.
 
-## 2. Content
+Technical work can remove barriers, but it cannot make an unhelpful page relevant. It should be paired with a review of the content and the intent behind the searches being targeted.
 
-Pages that answer what people actually search for.
+## 2. Search and content planning
 
-The important distinction: this is not writing pages that *mention* a keyword. It is writing pages that *answer the question behind it*. Someone searching "restaurant website design" wants to know about online ordering, menu updates, and cost, not to read that you are the leading provider of restaurant web design solutions.
+Keyword research is useful when it connects customer language to real pages. It is not useful when it produces a spreadsheet of phrases that nobody can turn into worthwhile content.
 
-Content work usually covers:
+Content work may include:
 
-- **Keyword research**, finding the gap between how you describe your business and the words your customers use. That gap is often wide.
-- **New pages** for services or questions you currently have nothing on.
-- **Rewriting weak pages** that rank on the second or third page. Improving something that already has traction is nearly always cheaper than starting a new page from nothing.
-- **Titles and meta descriptions**, which decide whether someone clicks when you do appear.
+- Identifying important services or questions that have no adequate page.
+- Improving pages that already receive impressions but do not answer the query well.
+- Consolidating repetitive pages that compete with one another.
+- Writing clearer titles, descriptions, headings, and internal links.
+- Preserving pages and URLs that already earn visibility.
+- Planning articles only when an article is the right format for the question.
 
-## 3. Local listings
+The aim is to create the best available explanation, not the highest possible number of pages.
 
-For a business serving Albuquerque and New Mexico, this is the part with the highest return, and it barely involves your website.
+## 3. Local search
 
-- **Google Business Profile**, claimed, complete, categorized correctly, with services, hours, and real photographs.
-- **Reviews**, gathered steadily rather than in bursts, and replied to.
-- **Consistency**, with your name, address, and phone number identical everywhere they appear online. Discrepancies genuinely cost you.
-- **Other directories** that matter in your industry.
+For a business serving Albuquerque, New Mexico, or another defined area, local visibility deserves its own workstream.
 
-If you do nothing else described on this page, do this. It costs nothing but attention.
+That commonly includes:
 
-## 4. Earning links and mentions
+- Verifying and completing the Google Business Profile.
+- Choosing accurate categories and services.
+- Keeping hours, contact details, and locations current.
+- Establishing a steady, ethical process for requesting reviews.
+- Replying to reviews.
+- Correcting important listings where business details conflict.
+- Improving location and service information on the website.
+- Identifying credible local references, memberships, and partnerships.
 
-Other credible sites referencing yours remains one of the strongest signals in search. It is also the slowest part and the one where bad practice is most common.
+Google describes local results in terms of relevance, distance, and prominence. Distance is largely outside anyone’s control. The practical work is to improve relevance and prominence without pretending that either guarantees a particular position.
 
-Honest approaches: being genuinely useful and getting cited, local sponsorships and memberships, supplier and partner listings, and press coverage when something is actually newsworthy.
+## 4. Authority, links, and mentions
 
-What to avoid: anyone offering to *buy* links or place you in "high DA blog networks". It works briefly and then it does not, and recovering from a penalty costs more than the links did.
+Links and references from credible sources can help establish that a business or page is known and trusted.
 
-## 5. Reporting
+Useful opportunities often come from ordinary business activity: professional memberships, suppliers, community organizations, local sponsorships, legitimate directories, useful resources, and press coverage when there is actual news.
 
-You should receive, in plain language: what was done, what moved, and the only number that ultimately matters, which is how many inquiries arrived.
+Be cautious when a proposal promises a fixed number of links without explaining where they will appear. A link has value because of its source and context, not because it exists in a monthly quota.
 
-Be wary of reports heavy on impressions and "engagement" while the phone stays quiet. Ask directly and repeatedly: how many inquiries came from this last month?
+## 5. Implementation
 
-## 6. Answer Engine Optimization
+Some SEO engagements end with a report. That can be appropriate when the client has a capable internal team.
 
-Increasingly part of the same job. When someone asks an AI assistant for a recommendation, the businesses named in the answer get the customer, and being named depends on clear structure, direct answers, accurate structured data, and consistent information.
+Small organizations often need the person finding the problem to fix it as well. Before signing, confirm whether the price includes implementation or only recommendations. Also confirm who will write content, who will approve it, and who has access to make technical changes.
 
-Most of it overlaps with the work above, which is why we build it in rather than charging separately for it. There is more on this in our [guide to choosing an SEO company](/blog/albuquerque-seo-company).
+A detailed audit that nobody can act on is not a result.
 
-## What we would actually recommend
+## 6. Measurement and reporting
 
-For most Albuquerque small businesses, in this order:
+A useful report should explain:
 
-1. **Fix the Google Business Profile and start gathering reviews.** Free, fast, and the biggest single lever on local visibility.
-2. **Repair the technical foundation.** No point optimizing content on a site that loads slowly or renders badly on a phone.
-3. **Write the three or four pages you are missing**, which are the services people search for that you have no page about.
-4. **Then, and only then**, consider an ongoing retainer.
+- What was changed.
+- What happened to relevant rankings and search traffic.
+- Whether calls, forms, bookings, sales, or other important actions changed when that data is available.
+- What the company learned.
+- What it recommends doing next.
 
-Plenty of businesses never need step four. We would rather tell you that than sell it to you.
+Not every business has perfect attribution, especially when customers call, visit in person, or take weeks to decide. The reporting should acknowledge those limits rather than substituting whichever number looks most favorable.
 
-If you would like someone to look at where your site actually stands, [book a free consultation](/free-consultation). You will get the audit and honest recommendations whether or not you hire us. More detail on our [SEO services page](/services/seo).
+## Where AEO belongs
+
+[Answer Engine Optimization](/services/aeo) is related to SEO, but it should not be slipped into a proposal as a mysterious automatic upgrade.
+
+The shared foundations are useful content, crawlable pages, clear facts, sound technical structure, and consistent public information. AEO adds attention to how answer-driven systems access and summarize that information, along with monitoring for accuracy and citations where they can be observed.
+
+No agency can guarantee that an AI assistant will name a business. Our [AEO service](/services/aeo) is separate so clients can see what is being reviewed and what cannot be promised.
+
+## What we would recommend first
+
+For many small local businesses, the order is:
+
+1. Correct the Google Business Profile and important business listings.
+2. Repair technical problems that prevent useful pages from being crawled or used properly.
+3. Improve the service pages that matter most.
+4. Add genuinely missing content.
+5. Decide whether ongoing work is justified by the opportunity and the available evidence.
+
+Not every business needs step five. A defined project may be enough, and maintaining the Business Profile and reviews may be something the owner can handle.
+
+Our [SEO service](/services/seo) includes technical review, local search, content planning, implementation, and measurement in the combination the site actually needs. If you want us to assess that before recommending a scope, [book a free consultation](/free-consultation).

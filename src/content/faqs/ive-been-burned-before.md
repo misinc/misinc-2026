@@ -5,10 +5,8 @@ order: 80
 showOn: [home]
 ---
 
-It is one of the questions we are asked most, and it is a fair one.
+That concern is reasonable, especially after a project with unclear pricing, missed deadlines, or poor communication.
 
-The honest answer is that our reputation is the only reason this studio has lasted since 1995 while most of our competitors came and went. We have kept some clients for more than twenty years, and that only happens by doing good work and being straightforward about it.
+Our process makes the commitments visible. You receive a written scope and fixed price before work begins, added work requires approval, review points are agreed in advance, and Karim remains directly involved throughout the relationship. We also discuss who owns each account, what can be handed over, and who will maintain the result after launch.
 
-What that looks like in practice: a fixed price agreed before work starts, direct access to the person building your site, and a platform you could leave if you ever wanted to.
-
-One of our clients put it better than we can. He had been through several agencies that overran budgets and stopped replying before he found us. [His review is on the Cheezie Chews project](/works/cheezie-chews).
+Our portfolio includes long-running client relationships and testimonials you can evaluate for yourself. One client who came to us after several difficult agency experiences describes his experience on the [Cheezie Chews project](/works/cheezie-chews).

@@ -1,97 +1,124 @@
 ---
 title: "How to Choose a Web Designer in Albuquerque"
-summary: "What to look for, what to ask, and the warning signs, from a studio that has been designing websites in Albuquerque since 1995 and has cleaned up after a lot of bad projects."
+summary: "What to evaluate, which questions to ask, and how to understand ownership, platform limits, scope, and support before hiring a web designer."
 date: 2021-02-17
-updated: 2026-08-17
+updated: 2026-08-23
 guide: true
 seo:
   title: "How to Choose a Web Designer in Albuquerque | MIS, Inc."
-  description: "How to hire a web designer in Albuquerque: the questions to ask, the red flags, what ownership you should insist on, and how to tell a good portfolio from a misleading one."
+  description: "How to hire a web designer in Albuquerque: evaluating portfolios, ownership, platforms, scope, process, ongoing costs, and support after launch."
 faqs:
   - q: "Should I hire a local web designer or use an online service?"
-    a: "It depends what you need. Template services are genuinely fine for a simple presence on a small budget. A local designer earns their fee when the site has a job to do, whether that is generating inquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market."
+    a: "A template service can be appropriate for a simple site with a limited budget. A local designer becomes more valuable when the website has a specific business job, the project requires judgment or integrations, and you want an accountable person who understands the market and remains available after launch."
   - q: "Who owns the website when it is finished?"
-    a: "You should. Insist on owning your domain, your content, your hosting account, and your analytics. Any designer who registers your domain in their own name, or will not hand over access, is creating leverage over you rather than serving you."
+    a: "You should control the domain, your content and uploaded assets, and the client accounts created for the project. The underlying website depends on how it is built. Hosted platforms license their software and may not provide a portable working copy of every feature, while custom code has its own handover and third-party licensing terms. Those distinctions should be explained before the platform is chosen."
   - q: "What should I look for in a portfolio?"
-    a: "Visit the live sites, not just the screenshots. Check them on your phone. See whether they still exist and still look maintained. A designer with five sites that are still running well after five years tells you more than twenty polished mockups."
+    a: "Visit the live websites rather than judging only screenshots. Check them on a phone, see whether the content remains usable, and look for projects with requirements comparable to yours. Long-running client relationships and maintained sites can be as informative as visual polish."
   - q: "How much involvement will the project need from me?"
-    a: "An hour or two at the start, your content and images or a decision to have them produced for you, and prompt feedback at two or three review points. The most common cause of a stalled project is waiting on content from the client."
+    a: "You will need to explain the business, provide access to existing systems, decide how content and photography will be produced, and give feedback at agreed review points. A good process makes those responsibilities clear before the schedule is set."
 ---
 
-Choosing a web designer is difficult mostly because you are being asked to judge work you are not trained to judge. Every portfolio looks good. Everyone says they build responsive, SEO-friendly, conversion-focused websites.
+Choosing a web designer is difficult because polished screenshots do not reveal how the project was scoped, how the site works on real devices, whether the client can maintain it, or what happened after launch.
 
-Here is what actually separates them, written by a studio that has spent thirty-one years in Albuquerque and has rebuilt a lot of sites that went wrong the first time.
+The best way to compare providers is to begin with the job the website needs to do, then evaluate whether the designer’s process, platform recommendation, and experience fit that job.
 
-## Start with the job, not the design
+MIS has designed websites in Albuquerque since 1995. These are the questions we think clients should ask any provider, including us.
 
-The most common mistake is treating a website as a design purchase. It is a business purchase.
+## Start with the business problem
 
-Before you talk to anyone, get clear on what the site has to *do*: bring in phone calls, take bookings, sell products, save your team time answering the same questions. That single sentence determines everything: the platform, the structure, the budget, and how you will know whether it worked.
+Before discussing style, write down the result the website should support.
 
-A designer who does not ask you this in the first conversation is planning to make something attractive and hope.
+Examples include:
 
-## How to read a portfolio properly
+- Generate qualified calls or consultation requests.
+- Take online orders connected to the point-of-sale system.
+- Explain a complicated service clearly.
+- Reduce repetitive questions for staff.
+- Accept donations or memberships.
+- Publish events, research, or clinical trials.
+- Replace a platform that is difficult to maintain.
 
-Screenshots are the least useful part. Instead:
+That answer affects the content, platform, integrations, schedule, and budget. A designer should understand it before proposing a solution.
 
-**Visit the live sites.** Do they still exist? Do they still look maintained, or were they clearly abandoned after launch?
+## Evaluate portfolios beyond the screenshots
 
-**Open them on your phone.** This is where most of your visitors will be, and where weak work shows immediately.
+**Visit the live websites.** A screenshot cannot show navigation, performance, forms, accessibility, or whether the site remains in use.
 
-**Check how fast they load.** On your phone, on mobile data, not on office wifi.
+**Check them on a phone.** Review menus, forms, buttons, text, and any important interactions on a real device.
 
-**Look for range.** A designer whose work all looks identical may be applying one template to every client. Yours will look like it too.
+**Look for relevant decisions.** A restaurant ordering site, nonprofit membership site, healthcare resource, and real estate search have different requirements. Comparable thinking matters more than identical visual style.
 
-**Look for longevity.** Sites still running well after five years say more about a designer than a wall of new mockups.
+**Look for range.** Repeated visual patterns are not automatically bad, but every project should not feel like the same template with a different logo.
+
+**Look for ongoing relationships.** A site that remains maintained and a client who returns for additional work can reveal more than a launch image.
+
+Our [portfolio](/portfolio) is written as a set of case notes so you can see the client’s situation, the decisions, our contribution, and the relationship where it is relevant.
 
 ## Questions worth asking
 
-1. **What platform would you use for me, and why?** The answer should reference *your* situation, meaning who will maintain the site and what your budget is, not just what they prefer to build on.
-2. **Can I update it myself afterwards?** If yes, ask to be shown the editor before you commit. If no, ask what changes will cost.
-3. **Who owns the domain, the hosting, and the content?** The answer must be you. See below.
-4. **What happens after launch?** Silence after launch is common and is worth knowing about in advance.
-5. **Will you write the content, or am I writing it?** This single question causes more delayed projects than any other.
-6. **Who will actually do the work?** Some agencies sell locally and outsource entirely.
-7. **What is the total cost, including hosting and anything ongoing?** Quotes that exclude the running costs are not comparable to ones that include them.
+1. **What would you build this on, and why?** The answer should consider who will maintain it, what integrations are needed, the budget, and the platform’s limits.
+2. **What can my team update?** Ask to see the editing experience and understand which changes may still require help.
+3. **What do I control at handover?** Clarify the domain, content, assets, accounts, code, exports, licenses, and platform restrictions.
+4. **Who produces the content and photography?** This affects the price, schedule, and quality of the result.
+5. **Who will actually do the work?** Understand whether the project is handled locally, internally, or through contractors.
+6. **What is included in the fixed scope?** Pages, features, revisions, content, migration, training, and testing should be written down.
+7. **What happens if the scope changes?** Additional work should be discussed and approved before it is billed.
+8. **What are the recurring costs?** Include hosting, platform subscriptions, plugins, domains, third-party services, and maintenance.
+9. **What support is available after launch?** Know whether help is included, optional, or unavailable.
 
-## Ownership: the one to be firm about
+## Understand ownership and portability
 
-You should own your domain name, your content, your hosting account, and your analytics.
+You should control your domain, your content and uploaded assets, and the client accounts established for the project.
 
-We have taken over sites where the previous designer registered the domain in their own name. When the relationship soured, the business effectively lost its web address and had to negotiate to get it back. This is not rare.
+That does not mean every website is owned in the same way. Webflow, Shopify, Square, Ecwid, Wix, and similar hosted services license their underlying software. A site may be transferable between accounts without being portable as a complete working system outside that platform.
 
-Ask directly, before signing: *if we part ways, what do I keep?* The answer should be "everything", without hesitation.
+A custom codebase has different considerations, including source-code handover, deployment access, documentation, and licenses for third-party packages or services.
+
+The designer should explain what you receive, what remains tied to the platform, and what a future move would require. Our [platform pages](/platforms) describe the systems we work with and the tradeoffs we see.
 
 ## Warning signs
 
-**A price before any questions.** Nobody can quote your project before understanding it.
+**A project quote before the scope is understood.** Published starting prices and standard packages can be useful. A fixed proposal for your specific project should follow enough discovery to define the work.
 
-**"SEO included" with no explanation.** Ask what specifically. If the answer is vague, it means nothing was done beyond filling in a title tag.
+**A platform recommendation with no explanation.** Familiarity is a valid factor, but the provider should still explain why the platform suits your team and requirements.
 
-**No written scope.** What is included, what is not, how many revisions, what happens if you change direction. Verbal agreements become disputes.
+**SEO included without a defined meaning.** Titles and descriptions are useful foundations, but they are not the same as a search strategy. Ask what research, technical work, content, local-search setup, and measurement are included. Our separate [SEO service](/services/seo) shows how we define that work.
 
-**Very cheap and very fast.** A functional small business website takes real hours. A quote far below everyone else usually means a template with your logo dropped in, and often means the designer disappears when support is needed.
+**No written scope.** Assumptions about pages, content, integrations, revisions, and training should not be left to memory.
 
-**They cannot show you anything similar.** Not necessarily disqualifying, but ask how they intend to handle what is unfamiliar.
+**Unexplained urgency.** A real opening, event, grant, or platform deadline may justify a fast schedule. Sales pressure created only to force a decision is different.
 
-**Pressure to decide quickly.** Nothing about a website is urgent enough to justify it.
+**No plan for handover or support.** Launch should not be the first time ownership, training, access, and maintenance are discussed.
 
 ## What a reasonable process looks like
 
-A short discovery conversation about the business and its goals. A written proposal with a fixed price and a clear scope. Design you review and comment on before anything is built. A build with a checkpoint or two. Testing on real devices. Training so you can manage what you should be able to manage. Then launch, and someone still available afterwards.
+A good process does not need to be elaborate. It should make decisions and responsibilities visible.
 
-If a designer cannot describe their process in plain language, that is itself informative.
+Typically, that includes:
 
-## Should you use a template service instead?
+1. A discovery conversation about the business, audience, goals, content, and constraints.
+2. A written scope with a fixed price for the agreed work.
+3. A design direction that can be reviewed before the full build.
+4. Content and asset responsibilities with actual deadlines.
+5. Build checkpoints appropriate to the size of the project.
+6. Testing across devices, browsers, forms, integrations, and redirects.
+7. Training, access, and launch responsibilities.
+8. A clear support and maintenance option after launch.
 
-Sometimes, honestly, yes.
+The exact sequence may vary. What matters is that you understand how decisions will be made and what the project needs from you.
 
-If you need a simple presence, your budget is a few hundred dollars, and the site is not expected to generate business, a template service will serve you fine. Spend the money on something with a better return.
+## When a template service is enough
 
-Where a designer earns their fee is when the site has a real job, bringing in inquiries, taking orders, or serving a specific market, and when you want someone accountable who understands that market. If someone tells you that you need a custom site when a template would do, they are selling rather than advising.
+A template or do-it-yourself service may be the right choice for a simple online presence, an early-stage idea, or a budget that would be better spent elsewhere.
 
-## Where we fit
+A designer earns the additional cost when the site has a meaningful job, needs original judgment, must connect to other systems, carries migration risk, or requires an accountable working relationship after launch.
 
-We are small on purpose. The person who scopes your project builds it, and is still here in two years when something needs changing. We quote a fixed price before starting, we build on platforms you could leave, and we will tell you when a cheaper option would serve you better.
+The honest recommendation is not always the larger project.
 
-If that sounds right, [book a free consultation](/free-consultation), or look at [our work](/portfolio) first and judge it the way this page suggests.
+## Where MIS fits
+
+We are a small Albuquerque studio. Karim scopes projects directly, and the people making the recommendations remain involved in the work.
+
+We use fixed pricing for the agreed scope, explain third-party costs and platform limits, and offer ongoing support without requiring every client to buy it. We also recommend smaller repairs or less expensive platforms when they fit better.
+
+If that approach sounds right, review [our work](/portfolio) or [book a free consultation](/free-consultation). The consultation is 30 minutes, and you do not need to arrive with a finished brief.

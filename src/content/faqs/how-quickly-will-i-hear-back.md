@@ -5,6 +5,6 @@ order: 40
 showOn: [contact]
 ---
 
-Within one business day, and usually the same day.
+Within one business day, and often the same day.
 
-Messages come to Karim directly. There is no intake team or ticket queue between you and the person who would actually do the work.
+Messages go directly to Karim. There is no intake team or ticket queue between your message and the person responsible for deciding the next step.

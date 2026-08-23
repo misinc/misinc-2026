@@ -18,15 +18,15 @@ seo:
 
 ## Why we build on Webflow
 
-Webflow occupies a spot almost nothing else does: designers get genuine control over the output, and clients get an editor they can actually use. Most platforms give you one or the other.
+Webflow occupies a useful middle ground: designers get control over the output, and clients get an editor intended for day-to-day content changes.
 
 For a small business that wants to add a page, change a price, or publish a post without a support ticket, it is usually the right answer.
 
 ## What it gets right
 
-- **Real design control.** We are not fighting a template. What we design is what ships.
+- **Real design control.** We can build beyond a template while keeping the result editable.
 - **A proper CMS.** Blog posts, case studies, team members, and events are structured content you edit in a form, not HTML you might break.
-- **Nothing to maintain.** No plugins, no core updates, no security patching. The platform handles it.
+- **No server or plugin stack to maintain.** Webflow manages the hosting infrastructure and platform updates.
 - **Fast, reliable hosting** on a global CDN, included.
 - **Forms, SEO controls, and basic ecommerce** built in rather than bolted on.
 
@@ -34,7 +34,7 @@ For a small business that wants to add a page, change a price, or publish a post
 
 **There is a monthly cost.** Hosting and CMS plans are ongoing. It is competitive against WordPress once you count hosting, plugins, and maintenance, but unlike a static site it is never zero.
 
-**There is a learning curve for editors.** Not a steep one, and we train you, but the first hour is unfamiliar.
+**There is a learning curve for editors.** We provide training, but the interface will still be unfamiliar at first.
 
 **It has limits at the extremes.** Very large catalogs, complex application logic, or unusual integrations may be better served by a [custom build](/services/website-development). We will say so if that is your situation.
 

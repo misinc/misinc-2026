@@ -1,60 +1,58 @@
 ---
 title: Website Development
-heading: Built properly, on Webflow
-summary: The build itself, turning a design into a fast, maintainable site on a platform chosen for how you will actually run it.
+heading: Turn the design into a site that works
+summary: Website development, CMS architecture, integrations, and migrations using Webflow or a custom framework selected around how the site will be maintained.
 pillar: websites
 order: 20
 platforms: [webflow]
 highlights:
-  - Webflow & Astro builds
-  - Integrations & CMS setup
-  - Migrations from any platform
+  - Webflow and Astro development
+  - CMS architecture and integrations
+  - Careful website migrations
 hero:
   type: image
   src: /img/work/nmderm.jpg
   alt: Dermatology and Skin Cancer Center of New Mexico website
   caption: Dermatology & Skin Cancer Center of NM
 nextStep: >-
-  Bring your design if you have one, or your current site if you do not. We will tell you which platform fits and what the build would involve.
+  Bring an existing design, a current website, or a technical requirement. We will explain which development approach fits and what the work would involve.
 seo:
   title: Webflow & Astro Website Development | MIS, Inc. Albuquerque
-  description: Website development in Albuquerque, New Mexico. We build fast, maintainable sites on Webflow and Astro, including CMS setup, integrations, and migrations from older platforms.
+  description: Website development in Albuquerque using Webflow and the Astro framework, including CMS architecture, integrations, performance work, and website migrations.
 ---
 
-## Design is half the job
+## Development is where the design becomes operational
 
-A beautiful design that loads slowly, breaks on a phone, or requires a developer for every text change has not solved anything. Development is where a design becomes something your business can actually operate.
+A strong design still needs to load reliably, adapt to different screens, support the content, connect to outside systems, and remain understandable to whoever maintains it.
 
-We build on two platforms, and we will tell you plainly which one fits.
+We primarily develop client websites in Webflow or with the Astro framework. The choice depends on editing needs, content, integrations, performance goals, budget, and who will be responsible after launch.
 
-## Webflow
+## Webflow development
 
-Webflow is usually the right answer when you want to manage the site yourself. You get a visual editor for content, a proper CMS for things like blog posts and case studies, hosting that just works, and forms and basic ecommerce without extra plugins.
+[Webflow](/platforms/webflow) is usually the better fit when a client wants to manage pages and structured content through a visual interface. It combines design control, a CMS, forms, and managed hosting without requiring the client to maintain a server or plugin stack.
 
-We are Certified Webflow partners and have built and maintained client sites on it for years. If your team wants to add a page without calling us, this is where we start.
+We use it for marketing sites, content-driven websites, and organizations that want day-to-day editorial independence. As Certified Webflow Partners, we can also take an approved design from another team and turn it into a maintainable Webflow build.
 
-**Good fit for:** marketing sites, content-driven sites, teams who want autonomy, projects that need to launch quickly.
+## Custom development with Astro
 
-## Astro
+Astro is a framework we use when a project benefits from a custom codebase, portable content, or a largely static publishing model. Astro generates static pages by default, although it can also support server-rendered features when a project requires them.
 
-Astro is what we reach for when performance and control matter more than in-browser editing. It produces genuinely static HTML, which means near-instant page loads, excellent Core Web Vitals, and a site that search engines and AI crawlers can read effortlessly.
+For the right site, a static build can reduce server-side complexity and provide a strong performance foundation. Performance still depends on the complete implementation, including images, fonts, scripts, hosting, and third-party services.
 
-It also has no monthly platform fee, and content lives in files under version control, so your site's history is recoverable and nothing is trapped in a proprietary editor.
+Astro does not charge a framework license, but every live website still has costs such as hosting, domains, maintenance, and any connected services. This MIS site is an Astro project, so we use the framework for our own work as well as client work.
 
-This site is built on Astro, which is the most honest demonstration we can offer.
+## What development can include
 
-**Good fit for:** sites where speed and SEO are the priority, larger content migrations, projects that need custom functionality, anyone who wants to own their stack outright.
+- Front-end implementation from an approved design
+- Responsive behavior and cross-device testing
+- CMS modeling for frequently updated content
+- Booking, payment, CRM, email, analytics, and data integrations
+- Image, font, script, and delivery optimization
+- Accessibility work in the underlying structure and interactions
+- Launch planning, training, and documentation
 
-## What development includes
+## Website migrations
 
-- **Front-end build** to match the design, tested across real devices rather than just a desktop browser
-- **CMS setup** so the content you update often is editable without touching code
-- **Integrations** for booking, payments, CRM, email platform, and analytics
-- **Performance work**, including image optimization, font loading, and the details that decide whether a page feels instant
-- **Launch and handover**, including training and documentation for whoever maintains it
+We have migrated sites from Wix, Weebly, Squarespace, Adobe Business Catalyst, WordPress, and other self-hosted systems. The work includes more than moving visible text. Established URLs, metadata, media, forms, structured content, analytics, and redirects all need a plan.
 
-## Migrating from something else
-
-A good portion of our development work is moving sites off platforms that were discontinued, outgrown, or simply became expensive. We have migrated sites from Wix, Weebly, Squarespace, Business Catalyst, and ageing self-hosted installations onto Webflow and Astro, carrying the content across and, critically, the URLs that carry your search rankings.
-
-More detail on that is on our [website migrations page](/website-migrations).
+Our [website migrations overview](/website-migrations) explains how we decide whether a move is justified and how we protect the value of the existing site.

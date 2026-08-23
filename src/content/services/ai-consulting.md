@@ -1,43 +1,43 @@
 ---
 title: AI Consulting
-heading: Practical AI, without the hype
-summary: Straight advice on where AI helps your business and where it does not, from a studio that has evaluated every web technology shift since 1995.
+heading: Decide where AI is useful before buying more of it
+summary: Practical assessment, tool selection, policies, and training for small businesses and nonprofits considering AI-assisted work.
 pillar: software-ai
 order: 20
-platforms: [addonaichat]
+platforms: []
 highlights:
-  - AI strategy for small teams
-  - Tool selection & training
-  - Automating the repetitive parts
+  - Workflow and risk assessment
+  - Tool selection and policies
+  - Training and implementation planning
 nextStep: >-
-  Bring the part of your week you would most like to stop doing manually.
+  Bring a process you are considering changing or a tool you are considering buying. We will help determine whether AI belongs in the solution.
 seo:
   title: AI Consulting for Small Businesses | MIS, Inc. Albuquerque
-  description: Practical AI consulting for New Mexico small businesses and nonprofits. Honest advice on which AI tools are worth paying for and where automation actually saves time.
+  description: Practical AI consulting for New Mexico small businesses and nonprofits, including workflow assessment, tool selection, policies, and staff training.
 ---
 
-## Everyone is trying to sell you AI
+## Begin with the work, not the feature
 
-Every piece of software you already pay for has added an AI feature and raised its price. Meanwhile the advice available ranges from breathless to apocalyptic, and very little of it is aimed at a business with a handful of employees.
+AI features now appear in software for writing, meetings, customer service, accounting, design, and nearly every other business function. Some are useful. Others duplicate tools you already have, add risk, or create more review work than they save.
 
-We have watched this pattern before. The web in 1995, e-commerce in the 2000s, mobile in the 2010s. Each arrived with the same mixture of genuine transformation and expensive nonsense. The job is to separate them, and that is a job that rewards experience more than enthusiasm.
+The first question should be what needs to improve, not which AI product to purchase.
 
-## What AI consulting means here
+## What consulting can include
 
-AI Consulting usually includes one of three concrete things:
+- **Workflow assessment.** We identify repetitive work, bottlenecks, judgment calls, sensitive information, and the points where a person still needs control.
+- **Tool evaluation.** We compare products against the actual requirement, including price, data handling, integrations, limitations, and the work needed to operate them.
+- **Policies and boundaries.** Staff need clear guidance about approved tools, confidential information, review responsibilities, and which decisions should not be delegated.
+- **Training.** We help teams use selected tools effectively, verify outputs, and recognize the situations where the tool is likely to fail.
+- **Implementation planning.** If the opportunity requires an integration, [custom software](/services/custom-software), or an [AI agent](/services/ai-agents), we define a focused first step and how its usefulness will be evaluated.
 
-- **Automating something repetitive.** A task that eats hours weekly: sorting inquiries, drafting routine replies, pulling data from documents, generating first drafts of listings or descriptions.
-- **Choosing tools.** Which AI subscriptions are worth paying for in your specific business, which are duplicating something you already own, and which are charging you for a feature you will never open.
-- **Working out where it does not belong.** Sometimes the answer is that a task needs a person, or a simple script, or a fixed process. We would rather tell you that than sell you something.
+## Cases where AI may not fit
 
-## Being found by AI
+A deterministic rule, a better form, a standard automation, or a change in process may be more dependable than a model. Work involving sensitive decisions, uncertain source material, or consequences that cannot be easily reversed needs stronger review and may not be suitable at all.
 
-There is a second, quieter shift: your customers are starting to ask assistants instead of searching. When someone asks for a web designer in Albuquerque, the businesses that get named are the ones with structured, factual, well-organized information online.
+Recommending a simpler answer is part of the consulting work.
 
-That is an extension of the [SEO](/services/seo) work we already do. It is covered on our [AEO page](/services/aeo).
+## Experience with technology change
 
-## Why us
+MIS has advised businesses on web technology since 1995. The current AI shift is significant, but the evaluation still comes down to cost, usefulness, risk, maintainability, and whether the people responsible can operate what is introduced.
 
-We are not an AI company that appeared last year. We are a web studio that has been advising New Mexico businesses on technology decisions since 1995, applying the same test we always have: does this make your business measurably better, or does it just sound impressive?
-
-Our AI and automation work also runs under [MIS, Inc. AI](https://misinc.ai), where you can see the agents and tools we have built.
+Our implementation work also runs through [MIS, Inc. AI](https://misinc.ai). We built [Add On AI Chat](/platforms/addonaichat) after finding that existing chat products were too expensive and complicated for many of the small organizations we serve.

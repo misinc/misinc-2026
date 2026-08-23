@@ -5,8 +5,8 @@ order: 50
 showOn: [home, services]
 ---
 
-It depends on what you need: a straightforward site of five to eight pages, a site with a CMS you can update yourself, an online store, or custom software and AI work. Ongoing hosting and care is priced separately from the project itself.
+The cost depends on the scope: page count, content work, CMS requirements, ecommerce, integrations, migrations, and custom functionality all affect it. Hosting, ongoing care, and marketing are priced separately from the initial project when they are needed.
 
-What moves the figure within any of those is the size of the project and any custom functionality.
+We define a scope and fixed price before work begins. If you later request work outside that scope, we explain the added cost and receive approval before proceeding.
 
-Every project is quoted as a fixed price before work begins. No hourly meter, no surprise invoices. For our current starting prices, visit our [pricing guide](/albuquerque-web-design-pricing-guide).
+Our [pricing guide](/albuquerque-web-design-pricing-guide) lists current starting prices and explains what moves a project above them.

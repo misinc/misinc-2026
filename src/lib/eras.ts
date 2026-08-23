@@ -14,7 +14,7 @@ export const ERAS = [
   {
     year: '2004',
     title: 'CMS & ecommerce',
-    note: 'Sites owners could update themselves.',
+    note: 'Site owners could update content themselves.',
   },
   {
     year: '2012',

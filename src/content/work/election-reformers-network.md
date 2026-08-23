@@ -1,7 +1,7 @@
 ---
 title: "Election Reformers Network"
 client: "Election Reformers Network"
-summary: "A national nonprofit working on election administration, with a site organized around the problems it exists to solve rather than around itself."
+summary: "A policy nonprofit organized around the election problems its readers care about, with credibility built into every level of the site."
 category: [nonprofit]
 image: /img/work/election-reformers-network.avif
 imageAlt: "Election Reformers Network website homepage"
@@ -11,32 +11,28 @@ order: 20
 services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "Election Reformers Network Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for Election Reformers Network, a national nonprofit working on impartial election administration."
+  title: "Election Reformers Network Website | MIS, Inc."
+  description: "MIS designed and built a publishing-focused Webflow site for Election Reformers Network, a national nonprofit advancing impartial election administration."
 ---
 
-Election Reformers Network is a 501(c)(3) nonprofit working on how elections are administered in the United States. Their own description of their position is that they favor neither the left nor the right, and their focus is the machinery rather than the contests: who runs elections, and under what rules.
+Election Reformers Network is a 501(c)(3) nonprofit focused on how elections are administered in the United States. It favors neither the left nor the right. Its concern is the machinery behind elections: who runs them and under what rules.
 
 ## Problems first, organization second
 
 The main navigation opens with **Key Problems**, then **Solutions**. The organization itself comes third.
 
-That ordering was the central decision on this project, and it runs against the instinct of most nonprofit sites, which lead with who they are and work outward to what they do.
+That ordering was the central decision on this project. Many nonprofit sites begin with the organization and work outward. Here, readers arrive because they care about an issue, not because they already know the institution. Journalists, legislative staff, funders, and academics need to see their concern named before they are asked to learn who is naming it.
 
-It is the right way round here. A policy organization is competing for the attention of people who arrived caring about an issue, not about an institution: journalists, legislative staff, funders, and academics. Somebody who lands on the site because they are worried about how election results get certified wants to see that problem named before they are asked to care about the organization naming it.
-
-The work is grouped into four areas: protected election results, fair districts, impartial election administration, and additional reforms. Each is a route from the homepage, so a visitor with a specific concern is one click from the material rather than searching for it.
+The work is grouped into protected election results, fair districts, impartial election administration, and additional reforms. Each has a direct route from the homepage.
 
 ## Credibility is the currency
 
-In this field the site is largely an argument about seriousness. Nothing else it does matters if a reader concludes the organization is a pressure group with a website.
+In this field, the website is partly an argument about seriousness. Nothing else works if a reader mistakes the organization for a partisan pressure group.
 
-So the structure gives real space to the things that carry that weight: the board, the advisory council, the staff, a documented record of achievements, and outside endorsements presented with attribution rather than trimmed into pull quotes. Policy wins, such as a partnership with a Secretary of State and a first-in-the-nation election ethics law, are stated with the specifics that let a reader check them.
+The structure gives proper space to the board, advisory council, staff, documented achievements, and outside endorsements. Policy wins are stated with enough detail to be checked, including work with a Secretary of State and a first-in-the-nation election ethics law.
 
-Design-wise this means restraint. Institutional typography, documentary photography, and none of the urgency devices that campaign sites use, all of which would read here as the wrong kind of organization.
+The design follows the same principle. Institutional typography and documentary photography establish authority without borrowing the urgency devices of a campaign site.
 
 ## Built to publish constantly
 
-A policy shop lives on output. News, clippings, events, careers, and a Substack all update on their own schedule, and none of it can depend on a developer being available.
-
-[Webflow](/platforms/webflow) handles that: the team publishes directly, and the site keeps its structure while the content underneath moves every week.
+A policy organization lives on its output. News, media coverage, events, careers, and Substack posts all move on different schedules. We built the site in [Webflow](/platforms/webflow) so the team can publish directly while the larger structure stays coherent.

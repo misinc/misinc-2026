@@ -1,7 +1,7 @@
 ---
 title: "bAI Labs"
 client: "bAI Labs"
-summary: "An applied AI lab with two products and three service lines, and a site that had to make frontier work legible to the people who actually buy it."
+summary: "An applied AI lab made clear through concrete language, original artwork, and a structure built for buyers rather than insiders."
 category: [startup]
 image: /img/work/bai-labs.avif
 imageAlt: "bAI Labs applied AI website homepage"
@@ -12,14 +12,22 @@ featured: true
 services: [web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "bAI Labs Applied AI Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. designed and built the website for bAI Labs, an applied AI innovation lab in Annapolis, Maryland, on Webflow."
+  title: "bAI Labs Website Design | MIS, Inc."
+  description: "MIS designed and built a clear, human Webflow site for bAI Labs, an applied AI innovation lab in Annapolis, Maryland."
 ---
 
-bAI Labs is an applied AI innovation lab in Annapolis, Maryland, backed by four decades of engineering leadership at BAI Group. They build AI platforms, custom solutions, executive education, and applied research.
+bAI Labs is an applied AI innovation lab in Annapolis, Maryland, backed by four decades of engineering leadership at BAI Group. Its work spans AI platforms, custom solutions, executive education, and applied research.
 
-The difficulty with an AI company's website is that almost everyone in the category writes and looks the same. Abstract nouns, a gradient background, stock imagery of brains and robots, and no way for a reader to work out what would actually be delivered. The brief here was the opposite: make it concrete, and make it human, so the site is illustrated throughout with original paintings by co-founder Davar Ardalan, layered patterns she adapted for the web with AI. It carries a point of view as much as a look: that as AI becomes part of everyday life, the systems built on it should still reflect the people they're meant to serve, not replace them. Ardalan is a member of the Annapolis Arts Alliance and Gallery 57 West, and her work gives an otherwise complex, technical subject a human touch and room to breathe.
+## Specific work, clearly explained
 
-The structure carries the rest of the weight. Two named platforms get their own space rather than being folded into a features list: Geo-bAI, for talking to geospatial data, and CNOVA, which turns field observation into organizational knowledge. The three service lines are separated so a reader can tell consulting from education without reading closely.
+AI companies often hide ordinary services behind abstract language. Readers hear about transformation and innovation but never learn what they can buy or what will be delivered.
 
-Built on [Webflow](/platforms/webflow), so a team working in a field that changes monthly can publish without waiting on a developer.
+We organized the site around the decisions a prospective client needs to make. Geo-bAI, a platform for working conversationally with geospatial data, and CNOVA, which turns field observations into organizational knowledge, each have room to be understood on their own. Consulting, education, and research are separated just as clearly, so visitors do not have to decode the company’s structure before finding the relevant offering.
+
+## Original art instead of borrowed imagery
+
+Co-founder Davar Ardalan provided the artwork and set an important direction for the project: feature her original paintings instead of relying on stock photography or AI-generated imagery. We translated that material into a visual system for the web, using the paintings and related patterns throughout the site without letting them compete with the content.
+
+The result feels human because the source material is human. That distinction matters for a company making the case that AI systems should reflect and support the people they serve.
+
+We built the site on [Webflow](/platforms/webflow), giving the team direct control over a message and product range that will continue to change.

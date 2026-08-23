@@ -4,10 +4,10 @@ topic: search-ai
 order: 160
 ---
 
-We have been asked this more than any other question, and the answer has not changed: commitment and relevant content, over time.
+There is no single change that puts a website at the top, and the result is different for every search, location, and competitor.
 
-Google's job is to send people to the page that best answers what they searched for, and it weighs hundreds of signals in deciding that: how long your domain has been registered, how often the site is updated, whether it works properly on a phone, how fast it loads, who links to you, and much more.
+We begin by understanding what qualified customers search for and whether the site provides the most useful page for those needs. Technical accessibility, crawlability, content, internal structure, links, reputation, and page experience can all contribute.
 
-For a local business there is a second answer worth knowing: for searches like "web designer in Albuquerque", the map pack sits above the normal results, and that is driven by your Google Business Profile and your reviews rather than your website. We work on both.
+Local results add another set of considerations. Google describes the main local factors as relevance, distance, and prominence. A complete Google Business Profile and useful reviews matter, but the website and information found elsewhere on the web also contribute.
 
-Anyone promising you the top spot is either misunderstanding this or hoping you do.
+Our [SEO service](/services/seo) focuses on the searches that can bring useful business rather than promising one universal top position.

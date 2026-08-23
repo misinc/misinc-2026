@@ -1,7 +1,7 @@
 ---
 title: "Nob Hill Neighborhoods"
 client: "Chris Lucas, Realtor®"
-summary: "A neighborhood-specific site for a Realtor who knows one part of Albuquerque better than anyone."
+summary: "A deliberately narrow real-estate site built around one Realtor’s knowledge and photography of Albuquerque’s Nob Hill."
 category: [real-estate]
 image: /img/work/nob-hill-neighborhoods.jpg
 imageAlt: "Nob Hill Neighborhoods website showing Albuquerque neighborhood photography"
@@ -11,12 +11,12 @@ order: 120
 services: [real-estate-website-design]
 platforms: [webflow]
 seo:
-  title: "Nob Hill Neighborhoods Real Estate Site | MIS, Inc."
-  description: "How MIS, Inc. designed and built a neighborhood-focused real estate website for Albuquerque Realtor Chris Lucas."
+  title: "Nob Hill Neighborhoods Real Estate Website | MIS, Inc."
+  description: "MIS designed a neighborhood-focused real-estate site for Chris Lucas using his photography and knowledge of Albuquerque’s Nob Hill."
 ---
 
-Most agent websites try to cover an entire metro area and end up saying nothing specific about any of it.
+Many real-estate websites try to cover an entire metropolitan area and end up saying very little about any particular place.
 
-Chris Lucas went the other way: a site dedicated to Nob Hill, the Albuquerque neighborhood he knows best. His own photography and genuine local knowledge carry it, and the specificity is the point. Someone searching for Nob Hill wants someone who knows Nob Hill.
+Chris Lucas chose the opposite strategy. We built a site devoted to Nob Hill, the Albuquerque neighborhood he knows best. His own photography and local knowledge provide the substance, giving prospective clients information they would not find on a generic listings page.
 
-It is a strategy more agents should consider. Narrow and deep beats broad and generic, both for buyers and for search.
+The narrow focus was not a limitation. It was the positioning. Someone searching specifically for Nob Hill has a reason to trust a Realtor willing to demonstrate detailed knowledge of it.

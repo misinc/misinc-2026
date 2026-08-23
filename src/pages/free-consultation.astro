@@ -38,9 +38,9 @@ const expectations = [
 const eventSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Free web design and AI strategy consultation',
+  name: 'Free project consultation with MIS, Inc.',
   description:
-    'A free 30-minute consultation with MIS, Inc. in Albuquerque covering websites, e-commerce, SEO, custom software, and practical AI.',
+    'A free 30-minute consultation with MIS, Inc. in Albuquerque covering websites, e-commerce, SEO, AEO, custom software, and practical AI.',
   provider: { '@id': `${site.url}/#organization` },
   areaServed: [
     { '@type': 'City', name: 'Albuquerque' },
@@ -57,7 +57,7 @@ const eventSchema = {
   schema={eventSchema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Free consultation" title="Our expertise at no cost to you" lede={`Pick a time that suits you. We will look at what you have, tell you honestly what would improve it, and give you a clear idea of scope and cost, drawing on ${yearsInBusiness} years of doing this in Albuquerque.`} note="" media={{
+    <PageHero eyebrow="Free consultation" title="Thirty minutes for a straight answer" lede={`Pick a time that suits you. We will talk through what you need, explain the likely scope and cost, and tell you honestly when a smaller solution makes more sense. That judgment comes from ${yearsInBusiness} years of doing this in Albuquerque.`} note="" media={{
         type: 'image',
         src: '/img/office-marquette.jpg',
         alt: 'The MIS, Inc. office building in downtown Albuquerque',
@@ -88,7 +88,7 @@ const eventSchema = {
 
   <!-- Booking -->
   <Section>
-    <SectionHeader eyebrow="Pick a time" title="Book your consultation" lede="Thirty minutes, by video or preferably in person at our downtown office or yours if you're local." class="mb-8" />
+    <SectionHeader eyebrow="Pick a time" title="Book your consultation" lede="Thirty minutes by video, or in person at our downtown office or yours if you’re local." class="mb-8" />
 
     <CalEmbed calLink="misinc/free-consultation" namespace="free-consultation" />
 

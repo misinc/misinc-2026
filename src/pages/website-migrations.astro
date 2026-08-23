@@ -10,10 +10,8 @@ import { yearsInBusiness } from '../lib/site';
 import { breadcrumbs, collectionPage } from '../lib/schema';
 
 /**
- * The migrations hub. The URL is deliberately `/website-migrations` rather than
- * `/migrations` — it carried real search impressions on the Webflow site and
- * the individual pages live under `/migrate/[slug]`, which also predate this
- * rebuild. See docs/seo-migration-map.md before renaming either.
+ * The hub URL and individual `/migrate/[slug]` routes predate this rebuild and
+ * carry search history. See docs/seo-migration-map.md before renaming them.
  */
 const migrations = (await getCollection('migrations')).sort(
   (a, b) => a.data.order - b.data.order,
@@ -21,27 +19,27 @@ const migrations = (await getCollection('migrations')).sort(
 
 const steps = [
   {
-    title: 'We look at what you have',
-    note: 'Every page, every URL, and what the site actually does. This is also where we tell you if moving is not worth it.',
+    title: 'Audit the site and the reason for moving',
+    note: 'We review the content, functionality, traffic, platform account, and maintenance needs before deciding whether a migration is justified.',
   },
   {
-    title: 'Content and design come across',
-    note: 'Rebuilt properly rather than converted, so you are not carrying over the compromises the old platform forced on you.',
+    title: 'Inventory and map what exists',
+    note: 'Important pages, media, metadata, forms, integrations, and URLs are recorded. Each item is marked to stay, improve, consolidate, redirect, or retire.',
   },
   {
-    title: 'Every URL is mapped before launch',
-    note: 'Old address to new address, one to one, live at the moment of the switch. This is the step that protects your rankings.',
+    title: 'Rebuild and test before launch',
+    note: 'The new site is tested for content, responsive behavior, accessibility, forms, analytics, integrations, redirects, indexing controls, and performance.',
   },
   {
-    title: 'We watch it for a month',
-    note: 'Search Console, redirects, and forms, checked after launch, not handed over and forgotten.',
+    title: 'Launch, monitor, and keep redirects working',
+    note: 'We check crawl errors, Search Console, analytics, forms, and important redirects after launch. Permanent redirects remain in place for at least a year and preferably longer.',
   },
 ]
 
 const schema = [
   collectionPage({
     name: 'Website migrations',
-    description: 'Moving a website from one platform to another, with search rankings intact.',
+    description: 'Moving a website from one platform to another while protecting content, established URLs, and existing search visibility.',
     path: '/website-migrations',
     items: migrations.map((m) => ({ name: m.data.title, href: `/migrate/${m.id}` })),
   }),
@@ -50,19 +48,19 @@ const schema = [
 ---
 
 <Base
-  title="Website Migration Services | Move Platforms Without Losing Rankings"
-  description="We move websites between platforms including WordPress, Wix, Weebly, Shopify, Square, and Webflow, with every URL redirected and search rankings intact. Albuquerque, New Mexico."
+  title="Website Migration Services | Careful Platform Moves | MIS, Inc."
+  description="Website migration services for WordPress, Wix, Weebly, Shopify, Square, and Webflow, with content inventory, URL mapping, redirects, testing, and search monitoring."
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Website migrations" title="Moving your website, without losing what you have earned" lede={`We have moved a lot of websites between platforms over ${yearsInBusiness} years. The part that matters is not the rebuild. It is the hundreds of small decisions that keep your search rankings, your content, and your customers' bookmarks working the day after the switch.`} ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]} layout="full" showMedia={false} />
+    <PageHero eyebrow="Website migrations" title="Move your website without discarding what already works" lede={`Over ${yearsInBusiness} years, we have moved websites between platforms that changed, closed, or no longer fit. A careful migration protects useful content, established URLs, working integrations, and the search visibility the site has already earned.`} ctas={[{ label: 'Book a free consultation', href: '/free-consultation' }]} layout="full" showMedia={false} />
   </div>
 
   <Section>
     <SectionHeader
       eyebrow="Common moves"
-      title="Where most people are coming from"
-      lede="Each of these covers what actually migrates, what you give up, how long it takes, and the cases where our honest answer is that you should stay where you are."
+      title="Start with the platform you are leaving"
+      lede="Each guide explains why a move may be worthwhile, what does and does not transfer, the typical timeline, and the situations where staying is the better decision."
       class="mb-10"
     />
 
@@ -82,11 +80,11 @@ const schema = [
     </div>
 
     <p class="mt-8 max-w-(--container-prose) text-ink-soft">
-      Moving from something not listed, such as Squarespace, GoDaddy, Duda, or a site nobody has
-      touched in a decade? We have almost certainly done it. <a
+      Moving from something else, such as Squarespace, GoDaddy, Duda, Adobe Business
+      Catalyst, or a custom system? <a
         href="/start-a-project"
-        class="font-bold text-primary no-underline hover:underline">Tell us what you are on</a
-      > and we will tell you what it would take.
+        class="font-bold text-primary no-underline hover:underline">Tell us what the site uses</a
+      > and we will assess what a move would involve.
     </p>
   </Section>
 
@@ -94,8 +92,8 @@ const schema = [
     <div class="mx-auto max-w-(--container-content) px-6 py-14 md:px-10 lg:py-20">
       <SectionHeader
         eyebrow="How it works"
-        title="The same four steps every time"
-        lede="A migration is mostly discipline. These are the steps that separate a move nobody notices from one that costs you six months of search traffic."
+        title="Four stages, with decisions inside each one"
+        lede="A migration is not a file transfer. It is an inventory, a rebuild, a coordinated launch, and a period of verification."
         class="mb-10"
       />
       <div class="mx-auto flex max-w-(--container-prose) flex-col">
@@ -121,37 +119,44 @@ const schema = [
 
   <Section>
     <SectionHeader
-      eyebrow="The part that matters"
-      title="Why rankings survive a proper migration"
+      eyebrow="Search continuity"
+      title="Reducing avoidable migration risk"
       class="mb-6"
     />
     <div class="max-w-(--container-prose) text-lg leading-relaxed text-ink-soft">
       <p class="mb-5">
-        When a page moves and nothing tells search engines where it went, the value that
-        page had built up is simply lost. Multiply that by a few hundred URLs and you have
-        the migration horror stories people warn each other about.
+        Search visibility can fluctuate while search engines recrawl and reindex a changed
+        site. No agency can promise that rankings will remain unchanged. What we can do is
+        avoid the preventable mistakes that make a move harder than it needs to be.
       </p>
       <p class="mb-5">
-        The fix is not clever. We export every URL from the existing site, map each one to
-        its new home, and put those redirects live at the moment of the switch rather than
-        the week after. Titles, descriptions, and structured data travel with the content.
-        The old site stays reachable until DNS has fully propagated.
+        We build the URL inventory from the existing crawl, sitemaps, analytics, Search
+        Console, and other available records. Equivalent pages keep their addresses where
+        practical or receive permanent redirects to the closest relevant destination.
+        Deliberately consolidated pages are mapped to the new combined resource. Content
+        with no replacement is allowed to retire instead of being redirected somewhere
+        unrelated.
+      </p>
+      <p class="mb-5">
+        Metadata and structured data are reviewed rather than copied without question.
+        Internal links, canonical URLs, sitemaps, robots directives, and temporary
+        development blocks are checked before launch. We then monitor indexing, traffic,
+        errors, forms, and important actions as the new site is discovered.
       </p>
       <p>
-        Then we watch Search Console for a month and fix what surfaces. The usual pattern
-        is a small dip for a fortnight and then recovery, often to better than before,
-        because the new site is faster. We did exactly this to <a
+        We used the same inventory and mapping process when <a
           href="/blog/rebuilding-our-own-website-2026"
-          class="font-bold text-primary no-underline hover:underline">our own website</a
-        >.
+          class="font-bold text-primary no-underline hover:underline">rebuilding this website</a
+        >, preserving established addresses where they still served a purpose and using
+        redirects only for deliberate consolidations.
       </p>
     </div>
   </Section>
 
   <Section divider={false}>
     <CtaBand
-      title="Stuck on a platform you have outgrown?"
-      note="Tell us what you are on and what is frustrating you. We will tell you honestly whether moving is worth it."
+      title="Has your current platform become a constraint?"
+      note="Tell us what is no longer working. We will assess whether migration is justified and what needs to be protected if you move."
     />
   </Section>
 </Base>

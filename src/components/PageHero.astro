@@ -15,12 +15,10 @@ import Button from './Button.astro'
  *   media={{ type: 'image', src: '/img/work/x.jpg', alt: '…' }}
  *   (omit)  → branded fallback panel
  *
- * Autoplay videos use preload="auto", not "metadata". WebKit takes
- * preload="metadata" literally and will not promote it to a playback fetch on
- * its own, so Safari showed a still frame while Chrome played. Autoplay means
- * we are fetching the file regardless, so there is nothing saved by asking for
- * less. The source file also has to be faststart (moov atom before mdat) or
- * Safari cannot begin until the whole file has arrived.
+ * Large decorative videos can set `desktopOnly: true`. Their source is added
+ * only on screens at least 768px wide and only when reduced motion is off, so
+ * phones and visitors who prefer less motion keep the poster without fetching
+ * the video.
  *
  * `layout` chooses the composition — `split` (default), `centered`, `full`,
  * or `background`. See the prop for when each applies.
@@ -39,6 +37,8 @@ export interface HeroMedia {
   alt?: string
   caption?: string
   poster?: string
+  /** Keep the poster on small screens and when reduced motion is requested. */
+  desktopOnly?: boolean
   /**
    * object-position for the crop, e.g. 'center', 'left top', '50% 20%'.
    * Defaults to the top-left for images (screenshots read from there) and
@@ -127,6 +127,7 @@ const {
 const centered = layout === 'centered'
 const isBackground = layout === 'background'
 const withMedia = showMedia && layout !== 'full'
+const deferredVideo = media?.type === 'video' && media.desktopOnly
 
 // Centered puts the media at the full content width, so a portrait frame would
 // become a tower — it is capped and centered instead. Landscape gets 16:9,
@@ -175,15 +176,20 @@ const overlayStyle = isBackground
             <video
               class="h-full w-full object-cover"
               style={`object-position:${position}`}
-              autoplay
               muted
               loop
               playsinline
-              preload="auto"
+              autoplay={!deferredVideo}
+              preload={deferredVideo ? 'none' : 'auto'}
               poster={media.poster}
-              aria-label={media.caption ?? media.alt}
+              aria-label={media.caption || media.alt}
+              data-desktop-video={deferredVideo ? 'true' : undefined}
             >
-              <source src={media.src} type="video/mp4" />
+              <source
+                src={deferredVideo ? undefined : media.src}
+                data-deferred-src={deferredVideo ? media.src : undefined}
+                type="video/mp4"
+              />
             </video>
           )
         }
@@ -356,15 +362,20 @@ const overlayStyle = isBackground
                   <video
                     class="absolute inset-0 h-full w-full object-cover"
                     style={`object-position:${position}`}
-                    autoplay
                     muted
                     loop
                     playsinline
-                    preload="auto"
+                    autoplay={!deferredVideo}
+                    preload={deferredVideo ? 'none' : 'auto'}
                     poster={media.poster}
-                    aria-label={media.caption ?? media.alt}
+                    aria-label={media.caption || media.alt}
+                    data-desktop-video={deferredVideo ? 'true' : undefined}
                   >
-                    <source src={media.src} type="video/mp4" />
+                    <source
+                      src={deferredVideo ? undefined : media.src}
+                      data-deferred-src={deferredVideo ? media.src : undefined}
+                      type="video/mp4"
+                    />
                   </video>
                 )
               }
@@ -417,6 +428,26 @@ const overlayStyle = isBackground
   // reduced motion — the headline is already in the DOM, so it simply renders
   // complete.
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Large decorative videos are poster-only on phones and for visitors who
+  // prefer reduced motion. Adding the source here prevents an eager browser
+  // from downloading a hidden or paused video anyway.
+  const desktop = window.matchMedia('(min-width: 768px)')
+  const loadDesktopVideos = () => {
+    if (reduced || !desktop.matches || document.documentElement.classList.contains('retro')) return
+    document.querySelectorAll<HTMLVideoElement>('video[data-desktop-video="true"]').forEach((video) => {
+      const source = video.querySelector<HTMLSourceElement>('source[data-deferred-src]')
+      if (!source?.dataset.deferredSrc || source.src) return
+      source.src = source.dataset.deferredSrc
+      video.load()
+      void video.play().catch(() => {
+        // The poster remains visible if the browser blocks autoplay.
+      })
+    })
+  }
+  loadDesktopVideos()
+  desktop.addEventListener('change', loadDesktopVideos)
+
   const a = document.querySelector<HTMLElement>('[data-typed-text]')
   const b = document.querySelector<HTMLElement>('[data-typed-highlight]')
   const caret = document.querySelector<HTMLElement>('[data-typed-caret]')

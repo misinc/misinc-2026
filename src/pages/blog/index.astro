@@ -7,11 +7,18 @@ import PageHero from '../../components/PageHero.astro';
 import PostCard from '../../components/PostCard.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { breadcrumbs, collectionPage } from '../../lib/schema';
+import { yearsInBusiness } from '../../lib/site';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )
-const guides = posts.filter((p) => p.data.guide)
+const guides = posts
+  .filter((p) => p.data.guide)
+  .sort(
+    (a, b) =>
+      (b.data.updated ?? b.data.date).valueOf() -
+      (a.data.updated ?? a.data.date).valueOf(),
+  )
 const schema = [
   collectionPage({
     name: 'Blog',
@@ -30,7 +37,7 @@ const schema = [
   schema={schema}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Blog" title="Our Insights" lede={`Practical writing for business owners: what things cost, what is worth doing, and what to ignore. Drawn from years of answering the same questions.`} ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]} layout="full" showMedia={false} />
+    <PageHero eyebrow="Blog" title="Notes from the work" lede={`Practical writing from ${yearsInBusiness} years of designing, building, migrating, and maintaining websites.`} ctas={[{ label: 'Read the guides', href: '/guides', variant: 'ghost' }]} layout="full" showMedia={false} />
   </div>
 
   {
@@ -50,7 +57,8 @@ const schema = [
                 slug={p.id}
                 title={p.data.title}
                 summary={p.data.summary}
-                date={p.data.date}
+                date={p.data.updated ?? p.data.date}
+                updated={Boolean(p.data.updated)}
                 guide
               />
               ))
@@ -75,7 +83,8 @@ const schema = [
             slug={p.id}
             title={p.data.title}
             summary={p.data.summary}
-            date={p.data.date}
+            date={p.data.updated ?? p.data.date}
+            updated={Boolean(p.data.updated)}
             guide={p.data.guide}
           />
         ))

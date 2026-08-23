@@ -1,40 +1,49 @@
 ---
 title: Search Engine Optimization
-heading: Get found by search engines, and stay found
-summary: Local or National SEO. The work that gets you onto page one and keeps you there.
+heading: Improve the searches that bring customers to you
+summary: Local and national SEO focused on qualified visibility, sound technical foundations, useful content, and reporting tied to the searches that matter.
 pillar: growth
 order: 10
 ranking: true
-platforms: [webflow]
+platforms: []
 highlights:
-  - Local SEO & Google Business
-  - National SEO
-  - Content & on-page SEO
+  - Local SEO and Google Business Profile
+  - Technical and on-page SEO
+  - Content planning and measurement
 nextStep: >-
-  We will run your site through the same audit we would run on our own, and tell you what is holding it back, whether or not you hire us to fix it.
+  We will review your site using the same checks we apply to our own and explain what is helping, what is holding it back, and which improvements are worth making first.
 seo:
   title: Albuquerque SEO Services | Search Engine Optimization | MIS, Inc.
-  description: SEO services in Albuquerque, New Mexico. Local search optimization, technical SEO, and content that earns rankings, so customers find you on Google.
+  description: SEO services in Albuquerque, New Mexico, including local search, technical SEO, content planning, and clear reporting focused on qualified visibility.
 ---
 
-## Frustrated that your competitors rank above you?
+## Why a competitor may appear above you
 
-It is a common and reasonable complaint. You have a website, you have been in business for years, and someone who opened last spring is above you in the results.
+Search visibility rarely comes down to one missing keyword. A competitor may have a clearer page, a stronger local presence, better links, more useful reviews, a faster site, or a better match for the person’s location and question.
 
-Ranking is rarely about one thing. It is usually a combination of a site that loads slowly, pages that do not clearly answer what people search for, a Google Business Profile nobody has touched in two years, and no reason for anyone else to link to you.
+Our job is to identify which factors can be improved and which are outside anyone’s control.
 
-## What we actually do
+## What our SEO work includes
 
-- **Find out what people search for.** Not what we assume they search for. There is often a large gap between how a business describes itself and the words its customers use.
-- **Fix the technical foundation.** Speed, mobile rendering, crawlability, structured data, and the errors quietly accumulating in Search Console.
-- **Write pages worth ranking.** A page that genuinely answers the question outperforms a page stuffed with the keyword. This has been true for a decade and it is more true every year.
-- **Own the local results.** For "[service] in Albuquerque" searches, the map pack sits above everything else, and it is driven by your Google Business Profile and your reviews, not by your website. We work on both.
-- **Report honestly.** Rankings, traffic, and inquiries, with plain-language explanations of what moved and why.
+- **Search research.** We look at the language customers use, the intent behind those searches, and which topics deserve their own pages.
+- **Technical review.** Crawlability, indexing, redirects, structured data, mobile behavior, performance, and Search Console issues all affect how reliably a site can be understood.
+- **On-page improvements.** Titles, headings, internal links, page structure, and copy should make the subject clear without reducing the page to a string of keywords.
+- **Content planning.** We identify useful pages that are missing, improve thin or repetitive material, and preserve content that already earns visibility.
+- **Local search.** For location-based businesses, we work on the website and Google Business Profile while accounting for relevance, distance, prominence, reviews, and information found elsewhere on the web.
+- **Measurement.** We report on rankings, search traffic, important actions, and qualified inquiries when the required tracking is available.
 
-## What about AI assistants like ChatGPT?
+## SEO is not independent of the website
 
-Good SEO is most of the foundation AI assistants need to cite you too, and we build that foundation into every project. If getting named in ChatGPT or Perplexity answers matters as much to you as ranking on Google, see [Answer Engine Optimization](/services/aeo), the dedicated service for that work.
+Strong content cannot fully compensate for a site that search engines struggle to crawl, and technical improvements cannot make an unhelpful page deserve attention. Effective SEO brings content, development, local information, and reputation signals together.
+
+That is one advantage of working with the same team for [website design](/services/web-design), development, and ongoing search work. We can fix the underlying problem instead of limiting the work to a report.
+
+## Search beyond a list of links
+
+Many of the same fundamentals also help content become discoverable in AI-assisted search. Our [Answer Engine Optimization service](/services/aeo) adds crawler review, structured business information, citation monitoring, and content work for those newer search experiences.
 
 ## What we will not do
 
-We will not promise a number-one ranking, buy links, or lock you into a contract that renews before you have seen results. Anyone promising the first of those does not understand the second and third.
+We will not guarantee a particular ranking, buy questionable links, or report a favorable-looking number that has no relationship to business. Search results change, competitors change, and local rankings vary by the person’s location.
+
+We will tell you what we changed, what moved, and what the evidence supports doing next.

@@ -1,6 +1,6 @@
 ---
 /**
- * The two easter-egg widgets for "1995 mode" — see the toggle in Header.astro
+ * The two easter-egg widgets for "1995 mode". See the toggle in Header.astro
  * and the theme override in global.css. Both variants render on every page
  * but stay display:none until <html> carries the `retro` class, so there is
  * no per-page wiring and no layout shift when the mode flips.
@@ -15,7 +15,7 @@ const { variant } = Astro.props
   variant === 'banner' && (
     <div class="retro-only border-y-2 border-dashed border-black bg-[#ffcc00] px-4 py-2 text-center">
       <span class="retro-blink text-sm font-bold uppercase text-[#cc0000]">
-        🚧 Under construction — best viewed at 800×600 🚧
+        🚧 Under construction. Best viewed at 800×600 🚧
       </span>
     </div>
   )

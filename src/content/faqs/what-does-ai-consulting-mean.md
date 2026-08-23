@@ -5,8 +5,8 @@ order: 190
 showOn: [home]
 ---
 
-Usually one of three concrete things: automating a repetitive task that eats hours each week, building a [custom agent](/services/ai-agents) that handles routine customer questions, or simply helping you work out which AI tools are worth paying for.
+AI consulting begins with a workflow or decision, not a product demonstration.
 
-We start with what is slow in your business, not with the technology. Sometimes the honest recommendation is that a task needs a person, or a simple script, and we will say so.
+We may assess repetitive work, compare tools, review data and privacy concerns, establish staff policies, provide training, or plan a focused implementation. If the opportunity justifies custom work, that may lead to an [AI agent](/services/ai-agents), integration, or another software tool.
 
-We have watched this pattern before: the web in 1995, e-commerce in the 2000s, mobile in the 2010s. Each arrived with a mix of genuine transformation and expensive nonsense, and separating the two is the job.
+AI is not always the right method. A fixed rule, ordinary automation, better form, or change in process may be less expensive and more dependable. The purpose of consulting is to determine where AI provides enough value to justify its cost and risk.

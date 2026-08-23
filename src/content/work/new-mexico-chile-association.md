@@ -1,7 +1,7 @@
 ---
 title: "New Mexico Chile Association"
 client: "New Mexico Chile Association"
-summary: "A new site for the nonprofit behind New Mexico Certified Chile™, built to defend a crop that gets imitated more than almost any other."
+summary: "A trade association site that makes the case for authentic New Mexico chile and gives growers, buyers, and the public a clear route in."
 category: [nonprofit]
 image: /img/work/nm-chile.avif
 imageAlt: "New Mexico Chile Association website homepage"
@@ -12,26 +12,24 @@ featured: false
 services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "New Mexico Chile Association Website | MIS, Inc. Portfolio"
-  description: "How MIS, Inc. built the New Mexico Chile Association website, covering the New Mexico Certified Chile program, membership, and advocacy."
+  title: "New Mexico Chile Association Website | MIS, Inc."
+  description: "MIS redesigned the New Mexico Chile Association website around certified chile, industry membership, advocacy, and public education."
 ---
 
-We were genuinely pleased to be selected for this one. New Mexico chile is not a small thing here, and the association exists in part to protect it.
+We were pleased to be selected for this project. New Mexico chile carries economic and cultural weight across the state, and the association exists in part to protect both.
 
-Founded in 2005, the New Mexico Chile Association is the nonprofit voice for the state's signature crop: growers, processors, manufacturers, distributors, and the other businesses that make up the industry. This is their current site, replacing the version we built for them previously.
+Founded in 2005, the New Mexico Chile Association represents growers, processors, manufacturers, distributors, and other businesses across the industry. The current site replaces an earlier version we also built for the organization.
 
 ## Authenticity is the whole problem
 
-A great deal of what is sold as New Mexico chile is not grown in New Mexico. The name carries a premium, the premium invites imitation, and the growers who actually farm it carry the cost.
+A great deal of what is sold as New Mexico chile is not grown here. The name carries a premium, that premium invites imitation, and local growers absorb the cost.
 
-New Mexico Certified Chile™ is the association's answer: a program that lets a buyer know the chile in front of them was grown here. So the certification is not filed under a subpage. It is a primary route from the homepage, for buyers checking a label and for producers wanting to join.
+New Mexico Certified Chile™ gives buyers a reliable way to know where a product was grown. We made certification a primary route from the homepage, both for people checking a label and for producers interested in joining the program.
 
-The association's own framing, the battle for authenticity, is the honest description of what the site is for.
+The association calls this the battle for authenticity. That framing gives the site a clear purpose and keeps the issue from dissolving into generic agricultural promotion.
 
 ## Three groups who need different things
 
-A trade association serves its members, the buyers its members sell to, and a public that mostly wants to know where to find the real thing. The structure gives each a clear path: membership and advocacy for growers and processors, certification for buyers, and news and stories for everyone else.
+A trade association has to serve its members, the buyers those members sell to, and a public that wants to find the real thing. Membership and advocacy support the industry. Certification serves buyers. News and stories give the wider public a reason to return.
 
-That last group matters more than a trade body might assume. The chile industry's public support in New Mexico is genuine, and the news section is what converts that goodwill into attention: grower profiles, the certified chile postcard artwork, the journey from seed to salsa.
-
-Built on [Webflow](/platforms/webflow), so the association can publish news, events, and membership updates in season without waiting on anyone.
+The public audience matters. Grower profiles, certified chile artwork, and stories following chile from seed to salsa turn broad goodwill into attention for the people and businesses behind the crop. The association manages those seasonal updates directly in [Webflow](/platforms/webflow).

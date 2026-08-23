@@ -5,8 +5,8 @@ order: 120
 showOn: [home]
 ---
 
-[Webflow](/platforms/webflow) when you want to manage the site yourself, and custom static builds when speed and control matter most. For stores, [Square Online](/platforms/square-online-store) if you already run Square at the counter, [Shopify](/platforms/shopify) at larger scale, and [Ecwid](/platforms/ecwid) when you want to add a store to a site you already have.
+We usually build client-managed marketing sites on [Webflow](/platforms/webflow). When a project benefits from a custom codebase or static publishing, we may use the Astro framework instead.
 
-We are certified partners with each of those, which is a different thing from simply using them. It means direct support channels and someone to escalate to when something breaks on your site.
+For commerce, [Square Online](/platforms/square-online-store) often fits businesses already using Square in person. [Shopify](/platforms/shopify) provides more depth when ecommerce is the main operation, while [Ecwid](/platforms/ecwid) can add a store to an existing website.
 
-We pick the platform that fits your budget and whoever will maintain the site, not the one that locks you in. The full reasoning for each is on our [platforms page](/platforms).
+MIS has formal partner relationships with these platforms, although the credentials and programs differ. We choose around the project requirements, operating costs, and the person who will maintain the site. Our [platforms page](/platforms) explains each recommendation and its limitations.

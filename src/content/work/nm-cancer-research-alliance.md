@@ -1,7 +1,7 @@
 ---
 title: "New Mexico Cancer Research Alliance"
 client: "New Mexico Cancer Research Alliance"
-summary: "A statewide alliance connecting patients with cancer clinical trials, including a search tool built for someone who has just been diagnosed."
+summary: "A statewide clinical-trials site with a search system designed, built, and updated for patients who need clear answers close to home."
 category: [healthcare, nonprofit]
 image: /img/work/nm-cancer-research-alliance.avif
 imageAlt: "New Mexico Cancer Research Alliance clinical trials website"
@@ -12,26 +12,22 @@ featured: true
 services: [healthcare-website-design, nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
 seo:
-  title: "New Mexico Cancer Research Alliance Website | MIS, Inc."
-  description: "How MIS, Inc. designed and built the New Mexico Cancer Research Alliance website, including a clinical trials search connecting New Mexicans to cancer research close to home."
+  title: "NM Cancer Research Alliance Website | MIS, Inc."
+  description: "MIS built the New Mexico Cancer Research Alliance website and a daily updated clinical-trials search powered by data from UNM."
 ---
 
-The New Mexico Cancer Research Alliance exists to close a gap that is easy to state and hard to fix: cutting-edge cancer research tends to happen in a handful of large cities, and New Mexico is a large, rural state.
+The New Mexico Cancer Research Alliance works to close a difficult gap. Leading cancer research is often concentrated in a handful of large cities, while New Mexico is a large, rural state where traveling for care can mean several hours on the road.
 
-Their goal is access: prevention, screening, detection, diagnosis, and treatment trials available to people in their own communities rather than several hours away.
+Its goal is to make prevention, screening, detection, diagnosis, and treatment trials available in communities across the state.
 
 ## The search is the site
 
-Most of this project was the clinical trials search. A trials directory is a genuinely difficult interface problem, because the person using it is rarely in a good state to use it. They have often had a diagnosis in the last few weeks. They are not fluent in oncology vocabulary, and they should not have to be.
+The clinical-trials search was the core of the project. We built the complete site and search system in Webflow, then created the process that receives a data feed from the University of New Mexico, parses it, and updates the available trials every day.
 
-So the search is organized the way a patient thinks, by what stage of the process they are in, rather than the way a research database is structured.
+A trials directory is a demanding interface problem because the person using it may have received a diagnosis only weeks earlier. They should not need to understand the structure or vocabulary of a research database. We organized the search around the stage of care and the information a patient is likely to know.
 
 ## Three audiences, one site
 
-The alliance serves patients and their families, physicians making referrals, and research sponsors deciding where to place a trial. Those groups want very different things, and a site that averages across them serves none of them.
+Patients and their families need understandable options. Physicians need referral information. Research sponsors need to see the alliance’s statewide capabilities. Each group gets a direct route through the site without having to sort through material intended for the others.
 
-The structure gives each a clear route in from the homepage, so nobody has to read someone else's page to find their own.
-
-Two commitments run through the content and shaped how it is presented: equal access across the state, and culturally centered care. New Mexico's population is not the population most clinical research is designed around, and the site is direct about that rather than treating it as a footnote.
-
-Built on [Webflow](/platforms/webflow) so the alliance can publish announcements, events, and new trials themselves.
+Equal access across New Mexico and culturally centered care run through the content. The site treats both as part of the alliance’s work, not as footnotes. The team can also publish announcements and events directly while the automated feed keeps trial information current.

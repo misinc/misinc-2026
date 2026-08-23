@@ -5,8 +5,8 @@ order: 180
 showOn: [home]
 ---
 
-Yes. It is called Answer Engine Optimization, and it is largely an extension of good SEO rather than a separate product.
+We can improve whether AI-assisted search systems are able to discover and understand accurate information about your business. We cannot guarantee that a particular assistant will name or cite it.
 
-Assistants cite sources that are well structured, factually clear, fast to crawl, and consistent about the basics: your name, address, phone number, and what you actually do. Structured data matters more here than it does for traditional search, because it tells a machine unambiguously what your page is about.
+The work may include checking crawler access, making services and locations explicit, correcting inconsistent public information, improving useful answers, and adding appropriate structured data. Structured data can clarify what a page describes, but it does not guarantee inclusion.
 
-We build this into every project now rather than selling it back to you later. More on our [Answer Engine Optimization page](/services/aeo).
+This work overlaps with SEO while adding monitoring for answer-driven search and crawler-specific technical checks. Our [Answer Engine Optimization page](/services/aeo) explains the scope and limitations.

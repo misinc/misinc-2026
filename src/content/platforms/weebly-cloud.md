@@ -1,41 +1,39 @@
 ---
 name: Weebly Cloud
-summary: A platform we built on for years, now winding down under Square's ownership.
+summary: A platform we used successfully for years but no longer choose for new websites.
 icon: /img/platforms/weebly-cloud.svg
 wordmark: /img/platforms/Weebly-wordmark-light.svg
 stance: migrate
-verdict: Weebly Cloud is not being maintained since their purchase by Square and so we are steadily migrating clients off it.
+verdict: We no longer build on Weebly Cloud. Existing sites should be evaluated by account location, service terms, and business needs rather than an assumed universal shutdown.
 insteadUse: [webflow, square-online-store]
 category: websites
 order: 30
 nextStep: >-
-  If your site is still on Weebly Cloud, it is worth planning the move now rather than waiting for a deadline. We have done this migration many times and can tell you what yours involves.
+  If your Weebly Cloud site still works well, migration may not be urgent. We can assess its condition, your account, and what the business needs next before recommending a move.
 seo:
   title: Migrating Off Weebly Cloud | MIS, Inc. Albuquerque
-  description: Why we no longer build on Weebly Cloud, what we recommend instead, and how a Weebly migration works without losing your content or search rankings.
+  description: Why MIS no longer builds on Weebly Cloud, what we recommend instead, and how to plan a careful migration without losing content or search visibility.
 ---
 
 ## We built a lot of sites on Weebly Cloud
 
-Weebly Cloud is the reseller platform Weebly offered to agencies: the same underlying builder, with account management and billing we handled on the client’s behalf. For years it was a genuinely good answer for small businesses: straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
+Weebly Cloud is the reseller platform Weebly offered to agencies: the same underlying builder, with account management and billing handled on the client’s behalf. For years it was a good answer for small businesses because it was straightforward to edit, reliable, and inexpensive. We built and maintained many client sites on it, including several still running today.
 
-Square acquired Weebly in 2018, and development has been steadily folded into Square Online since. New investment goes there, not into Weebly itself.
+Square acquired Weebly in 2018 and has increasingly focused its commerce work on Square Online. Weebly still operates, and its current US support guidance says there are no plans to discontinue the site builder. That guidance addresses the builder generally, so the terms of an agency’s Weebly Cloud account still need to be checked. Weebly also encourages new sites to use Square Online for its more current features.
 
 ## Why we are moving clients off it
 
-**The platform is not being developed.** A site on a platform nobody is improving falls further behind every year in performance, in SEO capability, and in what it can integrate with.
+**Its status depends on where the account is based.** Weebly has [announced a 2026 winddown in 67 countries](https://www.weebly.com/app/help/us/en/topics/changes-to-weebly-global-operations). Separately, its [current US guidance](https://www.weebly.com/app/help/us/en/topics/weebly-website-builder-support-update) says there are no plans to discontinue the website builder. We should not treat the international announcement as a universal US shutdown.
 
-**Performance is dated.** Weebly sites are heavier and slower than what current platforms produce, and page speed matters more now than when these sites were built.
+**The tools have fallen behind newer options.** Design, content management, integrations, and performance controls are more limited than what we can offer on current platforms.
 
-**Design and SEO controls are limited** compared with anything modern.
-
-**The direction of travel is clear.** We would rather move clients deliberately, on a schedule that suits them, than wait for an end-of-life announcement and have to do it under pressure. We have been through that with Adobe Business Catalyst, and planned migrations go far better than forced ones.
+**A planned move is easier than a forced one.** We went through a platform shutdown with Adobe Business Catalyst. Preserving URLs, content, and search visibility is much easier when the work happens on the client’s schedule.
 
 ## Where it still makes sense to wait
 
-If your Weebly site works, gets little traffic, and the business is not depending on it to grow, there is no emergency. It will keep running for now.
+If your US Weebly Cloud site is stable and still meets the business’s needs, there may not be an immediate reason to rebuild it. The right timing depends on how important the site is, what it needs to do next, and which terms apply to the account.
 
-We are flagging it so the decision is yours and made in advance, rather than something that arrives as a surprise.
+We raise the issue now so the decision can be deliberate rather than reactive.
 
 ## What we recommend instead
 
@@ -43,10 +41,8 @@ We are flagging it so the decision is yours and made in advance, rather than som
 
 **[Webflow](/platforms/webflow)** if you want to keep editing your own site with far more design control.
 
-**A custom static build** if speed and search visibility are the priority. See [website development](/services/website-development).
+**A custom static build** if speed, control, and low maintenance are the priorities. See [website development](/services/website-development).
 
 ## Migrating off Weebly Cloud
 
-We have done this often enough to have it down to a routine: content comes across, URLs are preserved or redirected so rankings survive, and we crawl every old address afterwards to confirm nothing broke.
-
-Most small business migrations take two to four weeks.
+A migration should preserve the useful parts of the existing site, including its content, URLs, and search history, while improving the parts that justify the move. Our [Weebly-to-Webflow migration guide](/migrate/from-weebly-to-webflow) explains how we approach that work.

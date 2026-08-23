@@ -1,70 +1,93 @@
 ---
 title: "Web Designer vs Web Developer: Which Do You Need?"
-summary: "The two words get used interchangeably and mean different things. Here is what each actually does, which one your project needs, and why hiring the wrong one is expensive."
+summary: "A practical explanation of design, development, and when a project needs one person, both disciplines, or a specialist team."
 date: 2021-02-17
-updated: 2026-08-17
+updated: 2026-08-23
 guide: false
 seo:
   title: "Web Designer vs Web Developer: Which Do You Need? | MIS, Inc."
-  description: "The difference between a web designer and a web developer, which your project actually needs, and why hiring the wrong one costs more than hiring the right one."
+  description: "The practical difference between a web designer and web developer, which skills a project needs, and how to avoid overbuilding a straightforward website."
 faqs:
   - q: "Do I need both a web designer and a web developer?"
-    a: "For a typical small business website, usually not. Most studios cover both, and for a marketing site the same person often does design and build. You need genuinely separate specialists when the project involves substantial custom functionality: user accounts, complex integrations, or an application rather than a website."
+    a: "A typical small business website needs both design and implementation skills, but they may come from the same person or studio. Separate specialists become more important when the project includes complex interactions, user accounts, unusual integrations, substantial application logic, or a large design system."
   - q: "Is a web developer more expensive than a web designer?"
-    a: "Development time is generally billed higher, but that is not the useful comparison. What drives cost is whether your project needs custom functionality at all. A well-designed marketing site built on a good platform can cost far less than a custom-developed one and serve you better."
+    a: "Rates vary, but the more useful question is how much custom development the project requires. A marketing website built on an appropriate platform may need limited custom code. An application with accounts, data, integrations, and security requirements involves a different level of development and testing."
 ---
 
-People use these two titles interchangeably, and most of the time it does not matter. It starts mattering when you are hiring, because asking for the wrong one gets you a quote for the wrong project.
+Web designer and web developer are often used interchangeably. On a straightforward project, that may not cause a problem because one person or studio can cover both disciplines.
+
+The distinction becomes useful when deciding what kind of help to hire, how to evaluate a proposal, and whether a project is being made more complicated than it needs to be.
 
 ## The short version
 
-**A web designer** decides what the site looks like and how it works for the person using it. Layout, typography, color, hierarchy, the path from landing on a page to picking up the phone.
+**Web design** focuses on the experience and communication: structure, hierarchy, layout, typography, interaction, accessibility, and the path toward an action.
 
-**A web developer** builds the thing that makes it work. Code, databases, integrations, logins, payments, anything that has to *do* something rather than *show* something.
+**Web development** focuses on implementation and behavior: templates, content systems, data, integrations, performance, security, and custom functionality.
 
-A useful analogy: the designer is the architect, the developer is the builder. On a small house one person often does both. On something complex, you want specialists.
+Neither discipline is inherently more important. A beautifully considered interface that does not work is unsuccessful, and technically excellent software that people cannot understand is also unsuccessful.
 
-## What a designer actually does
+## What web design covers
 
-- Works out the structure, meaning what pages exist and how someone moves between them
-- Decides visual hierarchy, so the important thing is the thing you notice
-- Chooses type and color, usually within an existing brand
-- Designs for phone, tablet, and desktop, treating the phone as the primary case
-- Considers accessibility: contrast, tap targets, keyboard navigation
-- Thinks about conversion, the path from arriving to taking action
+Depending on the project, design work may include:
 
-Good design is mostly decisions about what to leave out. That is why it looks easy.
+- Organizing pages and navigation.
+- Establishing visual hierarchy.
+- Applying or extending a brand.
+- Designing responsive layouts for different screen sizes.
+- Planning forms, calls to action, and user journeys.
+- Considering contrast, keyboard use, focus states, readable type, and other accessibility needs.
+- Creating reusable components and patterns.
+- Testing whether the content is understandable before the build is complete.
 
-## What a developer actually does
+Good design is not decoration added after the important decisions. It is how the information and actions are made usable.
 
-- Turns the design into working pages that behave correctly on real devices
-- Sets up the CMS so you can edit what you should be able to edit
-- Connects things: booking systems, payment processors, CRMs, email platforms
-- Builds custom functionality: portals, calculators, dashboards, anything with a login
-- Handles performance, security, and the parts that break at 2am
+## What web development covers
 
-## Which do you need?
+Development work may include:
 
-**Mostly a designer** if you need a marketing website: pages describing what you do, a contact form, maybe a blog. On a modern platform, this needs relatively little development. Most small business websites are this.
+- Turning approved layouts into working responsive pages.
+- Configuring a content management system.
+- Connecting forms, booking tools, payment processors, email platforms, and CRMs.
+- Building ecommerce behavior.
+- Creating custom portals, calculators, dashboards, and account systems.
+- Managing data and integrations.
+- Addressing performance, security, testing, and deployment.
+- Documenting the system so it can be maintained.
 
-**Both** if you need a marketing site *plus* real functionality, such as an online store, a booking system, integrations with software you already run.
+Modern website platforms blur the boundary. A designer working in Webflow may implement most of a marketing site visually, while a developer may also make significant interface decisions. Titles matter less than whether the required skills are actually covered.
 
-**Mostly a developer** if you need something that is really an application: client portals, internal tools, anything with user accounts and data. Here the interface matters but the hard part is what happens behind it.
+## What kind of project do you have?
 
-**Neither, yet** if what you actually need is content and a Google Business Profile. It is worth saying: plenty of businesses that ask us for a rebuild would get more from three good pages and some reviews.
+**A marketing website** describes a business, answers questions, presents evidence, and encourages contact or another clear action. It still needs thoughtful design and competent implementation, but an established platform may handle most of the underlying functionality.
 
-## Why hiring the wrong one is expensive
+**A commerce or integrated website** combines marketing pages with payments, booking, inventory, membership, email, or other systems. It usually benefits from someone who understands both the customer experience and the technical connections.
 
-Hire a developer for a marketing site and you may get something technically sound that nobody wants to use, built with custom code where a platform would have done, which is more expensive to build and more expensive to change.
+**A web application** centers on functionality such as user accounts, permissions, stored data, workflows, dashboards, or internal operations. Development becomes a larger part of the scope, while design remains essential to making the application usable.
 
-Hire a designer for an application and you get something that looks right and does not hold together under real use.
+**A content or visibility problem** may not require a rebuild at all. Sometimes the useful first step is improving service pages, repairing technical issues, or addressing the Google Business Profile.
 
-The more common error, by a distance, is over-engineering. Businesses get talked into custom development for sites a good platform would have handled at a fraction of the cost and with far less to maintain.
+## How projects become unnecessarily expensive
 
-## Where we sit
+The common problem is not hiring the wrong job title. It is choosing an approach before understanding the requirement.
 
-We do both, which is normal for a studio our size, and it means we are not incentivised to push you toward the one we happen to sell.
+A straightforward marketing site can become expensive when it is treated as custom software. The business pays for code, infrastructure, and maintenance that an appropriate platform already provides.
 
-The honest recommendation is usually: build the marketing site on a platform you can manage, and only develop custom functionality where nothing off-the-shelf fits. That is how we scope nearly every project.
+The opposite can also happen. A project with complex workflows may be forced into a website builder that cannot support them cleanly, leading to workarounds and repeated rebuilding.
 
-If you are not sure which side your project falls on, describe it to us on a [free consultation](/free-consultation) and we will tell you, including if the answer is that you need less than you thought. Otherwise, our [web design](/services/web-design), [development](/services/website-development), and [custom software](/services/custom-software) pages cover each in more detail.
+The proposal should explain:
+
+- Which parts use an established platform or service.
+- Which parts require custom development.
+- Why the custom work is necessary.
+- Who will maintain each part.
+- What the recurring costs and platform constraints are.
+
+That explanation is more useful than whether the provider calls itself a design studio, development company, or agency.
+
+## Where MIS fits
+
+MIS handles [web design](/services/web-design), [website development](/services/website-development), and [custom software](/services/custom-software). That lets us choose the amount of development the problem actually requires.
+
+Our usual recommendation is to use a maintainable platform for the marketing site and add custom functionality only where an established service does not fit. Internal platforms such as Add On IDX and Add On AI Chat grew from situations where the available products did not work the way we needed.
+
+If you are unsure whether your project is a website, an integration, or an application, [book a free consultation](/free-consultation). We will help define the problem before recommending what should be built.

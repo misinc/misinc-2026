@@ -5,8 +5,8 @@ order: 210
 showOn: [home]
 ---
 
-Yes, most often to migrate them.
+Yes. We can audit, repair, optimize, extend, or migrate a site we did not originally build, depending on the platform, access, and condition of the existing work.
 
-We move sites off platforms that have been discontinued, outgrown, or become expensive, and rebuild them on [Webflow](/platforms/webflow) or as custom static sites, keeping the URLs that carry your search rankings intact.
+Migration is common when a platform has closed, no longer fits, or has become difficult to maintain. We have moved sites from Wix, Weebly, Squarespace, Adobe Business Catalyst, ExpressionEngine, WordPress, and custom systems.
 
-We have done this from Wix, Weebly, Squarespace, Adobe Business Catalyst, ExpressionEngine, and older WordPress installations. We will audit what you have first and tell you honestly whether rebuilding is worth it.
+Before rebuilding, we inventory the content, functionality, integrations, and established URLs. Important addresses remain unchanged where practical, and relevant permanent redirects are used when they move. Our [website migration overview](/website-migrations) explains the process and the cases where staying is the better decision.

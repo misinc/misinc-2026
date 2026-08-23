@@ -1,50 +1,54 @@
 ---
 title: Real Estate Web Design
-heading: Every MLS listing, right on your website
-summary: IDX-connected websites for Realtors® in Albuquerque and Santa Fe. Your listings and your market's listings, updated automatically, on a site that looks like you.
+heading: Bring MLS listings into a website built around your brand
+summary: IDX-connected websites for real estate professionals, with searchable listings, lead capture, and an experience that is not tied to an IDX company’s website builder.
 pillar: websites
 order: 40
 ranking: true
 platforms: [webflow, addonidx]
 highlights:
-  - IDX / MLS integration
-  - Lead capture built in
-  - Works with any website
+  - IDX and MLS integration
+  - Search and listing detail pages
+  - Lead capture and analytics
 hero:
   type: image
   src: /img/work/kat-jacob.jpg
   alt: Kat Jacob Realtor website with IDX MLS search
   caption: Kat Jacob, Realtor®, IDX search
 nextStep: >-
-  We will look at what your MLS provider allows, what your current site can support, and what it would take to get listings live on it.
+  We will review the website, the local MLS requirements, and the search experience you want before explaining what an IDX integration would involve.
 seo:
   title: Real Estate Website Design & IDX for Realtors | MIS, Inc.
-  description: Real estate websites with IDX MLS integration for Albuquerque and Santa Fe Realtors. Searchable listings, lead capture, and open house tools on a site built around your brand.
+  description: Real estate website design with IDX and MLS integration for Realtors in Albuquerque, Santa Fe, and other supported markets.
 ---
 
-## Buyers start their search online
+## Listings should strengthen your website, not replace it
 
-House hunting begins on a phone long before it involves a phone call. If your site is the one that helps a buyer find the property they want, you are the agent they contact when they are ready.
+Buyers begin researching properties long before they contact an agent. Searchable listings can give them a reason to remain on your website, but the site also needs to explain your market knowledge, services, approach, and the areas you know.
 
-That only works if the listings on your site are current. A site showing last quarter's inventory does the opposite of building trust.
+An IDX feed is one part of that experience, not the entire strategy.
 
-## Your market's listings, kept current for you
+## Add On IDX
 
-We work with your MLS provider to put IDX listings on your site, for any market in the United States, integrated with your own branding and with the search fields your buyers actually use.
+We built [Add On IDX](/platforms/addonidx) so designers and real estate professionals could add MLS search without adopting an IDX vendor’s website builder. It can be integrated into new or existing sites on Webflow, WordPress, Weebly, Weebly Cloud, Framer, Squarespace, and other platforms.
 
-New data is pulled from your MLS provider twice a day. Your listings stay fresh and you never touch a thing.
+We have connected it to MLS providers in markets across the United States. Availability and display rules depend on the individual MLS, so we confirm those requirements before proposing an integration.
 
-## What is included
+Listing data refreshes twice daily from the MLS provider.
 
-- **Featured listings** you choose and control
-- **Works with new or existing sites**, so we can add IDX to a site we did not build
-- **Contact forms on every listing**, so interest becomes a lead
-- **Lead Capture forms**
-- **Social sharing**, so buyers spread your listings for you
-- **Advanced search** with the filters that matter in your market
-- **Virtual tour support**
-- **Analytics** showing what buyers are actually looking at
+## What an integration can include
 
-## Why agents come to us
+- Search fields suited to the available MLS data and local market
+- Featured listings selected by the agent or brokerage
+- Listing detail pages with inquiry forms
+- Open house and virtual tour information where available
+- Lead capture and routing
+- Social sharing controls
+- Analytics showing searches and listing views
+- Placement within a new site or a website you already use
 
-We have built and maintained real estate sites for long enough to have opinions about what works. Our IDX product, [Add On IDX](https://www.addonidx.com), came out of that work. It exists because agents kept needing listings on sites their MLS vendor would not support.
+## The website around the listings
+
+We can also design the rest of the real estate website, including neighborhood information, agent profiles, seller services, relocation content, testimonials, and clear paths to contact.
+
+The result should feel like the agent or brokerage, not like a generic listing portal with a logo added. Our [Add On IDX portfolio note](/works/addonidx) explains how the product developed from the earlier RealtyEngine system.

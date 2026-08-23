@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content'
 import { site, yearsInBusiness } from '../lib/site'
 
 /**
- * /llms.txt — the llmstxt.org convention: a plain-markdown map of the site for
- * language models, which read it far more cheaply than they crawl HTML.
+ * /llms.txt follows the llmstxt.org proposal: a plain-markdown map of the site
+ * for tools that choose to read it. It is not a Google Search ranking signal.
  *
  * Generated from the content collections rather than hand-written, so it
  * cannot drift out of date the way a static file would. If a page is worth
@@ -33,7 +33,13 @@ export const GET: APIRoute = async () => {
   const byOrder = <T extends { data: { order: number } }>(a: T, b: T) =>
     a.data.order - b.data.order
 
-  const guides = blog.filter((p) => p.data.guide)
+  const guides = blog
+    .filter((p) => p.data.guide)
+    .sort(
+      (a, b) =>
+        (b.data.updated ?? b.data.date).valueOf() -
+        (a.data.updated ?? a.data.date).valueOf(),
+    )
   const posts = blog
     .filter((p) => !p.data.guide)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -98,7 +104,7 @@ ${work
 
 ${line('About', '/about', `Who we are and how the studio has lasted ${yearsInBusiness} years.`)}
 ${line('Frequently asked questions', '/faq', 'The questions we are asked most, answered plainly.')}
-${line('Free consultation', '/free-consultation', 'Book a call. No cost, no obligation.')}
+${line('Free consultation', '/free-consultation', 'Book a free 30-minute consultation by video or in person.')}
 ${line('Contact', '/contact', 'Phone, email, address, and a form that reaches a person.')}
 ${line('Privacy policy', '/privacy-policy', 'What this site does and does not collect. There is no analytics script.')}
 `

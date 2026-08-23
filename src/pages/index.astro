@@ -49,16 +49,16 @@ const quotes = allWork
 
 const steps = [
   {
-    title: 'Book a free strategy call',
-    note: "Tell us what's working and what isn't. You'll get honest recommendations either way.",
+    title: 'Book a free consultation',
+    note: 'Tell us what’s working and what isn’t. You’ll get honest recommendations either way.',
   },
   {
     title: 'Get a clear plan and price',
-    note: "A plain-language proposal: what we'll build, what it costs, when it ships.",
+    note: 'Once the scope is clear, we’ll put the work, price, and schedule in writing.',
   },
   {
-    title: 'Launch, then keep improving',
-    note: 'We stay on after launch to keep your site fast, secure, and earning its keep.',
+    title: 'Choose what happens after launch',
+    note: 'If you need ongoing help, we can provide hosting, maintenance, SEO, and continued improvements.',
   },
 ]
 
@@ -72,7 +72,7 @@ const guides = [
   {
     tag: 'Real estate',
     title: 'What Realtors need from a website',
-    blurb: 'IDX, lead capture, and the things that actually convert a browser into a client.',
+    blurb: 'IDX, lead capture, and the decisions that make a real estate website easier to use.',
     href: '/blog/real-estate-web-designers',
   },
   {
@@ -82,25 +82,32 @@ const guides = [
     href: '/blog/albuquerque-seo-company',
   },
 ]
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  publisher: { '@id': `${site.url}/#organization` },
+}
 ---
 
 <Base
-  title="Albuquerque Web Design, Custom Software & AI | MIS, Inc. Since 1995"
+  title="Albuquerque Web Design, Software & AI | MIS, Inc."
   description={site.description}
+  schema={homeSchema}
 >
   <!-- Hero -->
   <PageHero eyebrow="Web design · Custom software · Practical AI" title="Your trusted partner " typed={{ text:'', highlight: 'since 1995' }} lede="MIS, Inc. is a boutique web design and development studio based in Albuquerque, New Mexico. We design and build websites, develop custom software, and implement practical AI for small businesses and nonprofits, here at home and around the world." media={{
       type: 'video',
-      // TODO(video): still 4.8 MB, the heaviest asset on the page. It is now
-      // faststart, so Safari can start on the first bytes rather than waiting
-      // for the whole file — any re-encode must keep -movflags +faststart.
-      // The poster is frame 0, so there is no jump when playback starts.
       src: '/video/anniversary-balloon.mp4',
       poster: '/img/anniversary-balloon-poster.jpg',
       caption: '',
       alt: 'The MIS, Inc. hot air balloon rising over the Albuquerque International Balloon Fiesta (AI generated)',
+      desktopOnly: true,
     }} ctas={[
-      { label: 'Book a free strategy call', href: '/free-consultation' },
+      { label: 'Book a free consultation', href: '/free-consultation' },
       { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
     ]} layout="background" overlayOpacity={90}>
     <ServicesMarquee slot="edge" />
@@ -130,7 +137,7 @@ const guides = [
 
   <!-- Services -->
   <Section id="services">
-    <SectionHeader eyebrow="Services" title="Three ways we can help" lede="Everything under one roof, from your website to your first AI agent so you are never coordinating between multiple vendors who do not talk to each other." class="mb-10" />
+    <SectionHeader eyebrow="Services" title="Three ways we can help" lede="We design and build websites, develop software for work that does not fit an off-the-shelf tool, and help businesses use AI where it is genuinely useful." class="mb-10" />
 
     <div class="grid gap-5 lg:grid-cols-3">
       {
@@ -157,7 +164,7 @@ const guides = [
 
   <!-- Eras -->
   <Section id="about">
-    <SectionHeader eyebrow="Since 1995" title="We’ve built through every era of the web" lede="Most agencies are younger than some of our client relationships. Every few years the web reinvents itself and our job has always been to figure out what actually matters and put it to work for you." class="mb-10" />
+    <SectionHeader eyebrow="Since 1995" title="We’ve built through every era of the web" lede="Some of our client relationships are older than many web studios. Every few years the web reinvents itself, and our job has always been to work out what matters and what can safely be ignored." class="mb-10" />
 
     <Timeline />
   </Section>
@@ -202,8 +209,8 @@ const guides = [
   <Section id="work">
     <SectionHeader
       eyebrow="Selected projects"
-      title="Recent projects"
-      lede="A few things we have built lately. Every project gets the same treatment: understand the client, their audience and their goals, build a beautiful and functional site that achieves it, and support it for years to come."
+      title="Selected projects"
+      lede="Websites, stores, and software shaped around what each client needed. The case notes explain the important decisions, the work MIS contributed, and the relationships behind it."
       class="mb-10"
     />
 
@@ -252,7 +259,7 @@ const guides = [
 
   <!-- FAQ -->
   <Section id="faq">
-    <SectionHeader eyebrow="Common questions" title="Straight answers, before you call" lede="The questions we are asked most often answered plainly, so you can decide whether we are a fit before you spend a minute on the phone." class="mb-10" />
+    <SectionHeader eyebrow="Common questions" title="Straight answers, before you call" lede="The questions we are asked most often, answered plainly so you can decide whether we are a fit before you spend a minute on the phone." class="mb-10" />
     <FaqList items={faqs} openFirst />
     <p class="mt-8">
       <a href="/faq" class="text-[15px] font-extrabold text-primary no-underline hover:underline">
@@ -263,7 +270,7 @@ const guides = [
 
   <!-- Guides -->
   <Section>
-    <SectionHeader eyebrow="Notes" title={`Guides from our years of experience`} lede="Practical writing for business owners what things cost, what is worth doing, and what to ignore." class="mb-10" />
+    <SectionHeader eyebrow="Notes" title="Guides from our years of experience" lede="Practical writing for business owners about what things cost, what is worth doing, and what to ignore." class="mb-10" />
 
     <div class="grid gap-5 lg:grid-cols-3">
       {
