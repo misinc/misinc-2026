@@ -27,12 +27,12 @@ export interface PriceTier {
 export const PRICE_TIERS: PriceTier[] = [
   {
     id: 'starter',
-    name: 'Starter site',
+    name: 'Starter website',
     from: 5000,
     unit: 'project',
-    summary: 'A clean, fast site of five to eight pages, ready to launch.',
+    summary: 'A clean, fast website of up to five pages, ready to launch.',
     includes: [
-      'Five to eight pages, designed not templated',
+      'Up to five pages, designed not templated',
       'Mobile-first build and testing',
       'Contact form and Google Business Profile setup',
       'Basic SEO: titles, descriptions, structured data',
@@ -43,8 +43,8 @@ export const PRICE_TIERS: PriceTier[] = [
   },
   {
     id: 'business',
-    name: 'Business site',
-    from: 7500,
+    name: 'Business website',
+    from: 8500,
     unit: 'project',
     summary: 'A site with up to ten pages and a CMS so you can easily publish and update your website.',
     includes: [
@@ -57,6 +57,24 @@ export const PRICE_TIERS: PriceTier[] = [
     ],
     goodFor:
       'Businesses that publish regularly, have several services to explain, or need the site connected to other software.',
+    href: '/services/website-development',
+  },
+  {
+    id: 'larger',
+    name: 'Larger website',
+    from: 15000,
+    unit: 'project',
+    summary: 'A larger website of up to twenty pages with room for more content and complexity.',
+    includes: [
+      'Everything in the business website up to twenty pages',
+      'A structured CMS for content your team updates',
+      'More detailed service, program, or location content',
+      'Content migration and redirects where required',
+      'Integrations with the systems your organization uses',
+      'Training and documentation for your team',
+    ],
+    goodFor:
+      'Organizations with more services, programs, locations, audiences, or existing content to organize and migrate.',
     href: '/services/website-development',
   },
   {

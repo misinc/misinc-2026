@@ -56,7 +56,7 @@ const included = [
 const faqs = [
   {
     q: 'How much does a website cost in Albuquerque?',
-    a: `Our projects start at ${money(PROJECT_FLOOR)} for a straightforward five to eight page site, ${money(tier('business').from)} for a site with a CMS you can update yourself, and ${money(tier('ecommerce').from)} for an online store. Custom software and AI work starts at ${money(tier('software').from)}. What moves the figure is page count, whether we write the content, and any custom functionality.`,
+    a: `Our website projects start at ${money(PROJECT_FLOOR)} for up to five pages, ${money(tier('business').from)} for a business website of up to ten pages, and ${money(tier('larger').from)} for a larger website of up to twenty pages. E-commerce starts at ${money(tier('ecommerce').from)}, and custom software and AI work starts at ${money(tier('software').from)}. Page count provides a useful baseline, but content development, migrations, integrations, e-commerce, and custom functionality can affect the final scope and price.`,
   },
   {
     q: 'Do you charge hourly or a fixed price?',
@@ -136,7 +136,13 @@ const offerSchema = {
     />
     <PriceTable />
 
-    <p class="mt-8 max-w-(--container-prose) text-sm text-ink-muted">
+    <p class="mt-8 max-w-(--container-prose) text-sm text-ink-soft">
+      Page count provides a useful baseline, but content development, migrations,
+      integrations, e-commerce, and custom functionality can affect the final
+      scope and price.
+    </p>
+
+    <p class="mt-4 max-w-(--container-prose) text-sm text-ink-muted">
       Prices are in US dollars and exclude third-party costs you would pay
       regardless: domain registration, platform subscriptions, stock photography,
       and payment processing fees. We will list those separately in your proposal
