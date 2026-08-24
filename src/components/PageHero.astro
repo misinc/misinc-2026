@@ -118,6 +118,8 @@ interface Props {
    * types out after `title`, with `highlight` in the accent color.
    */
   typed?: { text: string; highlight?: string }
+  /** Use a solid ink panel when text sits over especially variable media. */
+  contrastPanel?: boolean
 }
 
 const {
@@ -133,6 +135,7 @@ const {
   layout = 'split',
   showMedia = true,
   typed,
+  contrastPanel = false,
   overlayColor = '#4a3115', // --color-ink
   overlayOpacity = 70,
 } = Astro.props
@@ -185,13 +188,29 @@ const overlayStyle = isBackground
        structure — full-bleed section, absolute media + scrim, text pinned to
        the bottom — is genuinely different, not just a style variant. Keep the
        eyebrow/title/lede/ctas/note/slots in sync with the block below if you
-       change one. */
+      change one. */
     <section class="relative isolate overflow-hidden" data-hero-layout="background">
       <div class="hero-bg-media absolute inset-0 -z-20">
         {
+          media?.type === 'video' && deferredVideo && media.poster && (
+            <img
+              class="absolute inset-0 h-full w-full object-cover"
+              style={`object-position:${position}`}
+              src={media.poster}
+              alt=""
+              loading="eager"
+              decoding="async"
+              {...({ fetchpriority: 'high' } as Record<string, string>)}
+            />
+          )
+        }
+        {
           media?.type === 'video' && (
             <video
-              class="h-full w-full object-cover"
+              class:list={[
+                'h-full w-full object-cover',
+                deferredVideo && 'absolute inset-0',
+              ]}
               style={`object-position:${position}`}
               muted
               loop
@@ -199,7 +218,7 @@ const overlayStyle = isBackground
               autoplay={!deferredVideo}
               preload={deferredVideo ? 'none' : 'auto'}
               {...({ fetchpriority: 'high' } as Record<string, string>)}
-              poster={media.poster}
+              poster={deferredVideo ? undefined : media.poster}
               aria-label={media.caption || media.alt}
               data-desktop-video={deferredVideo ? 'true' : undefined}
             >
@@ -234,59 +253,67 @@ const overlayStyle = isBackground
 
       <div class="relative mx-auto max-w-(--container-content) px-6 md:px-10">
         <div class="flex min-h-[520px] flex-col justify-end py-14 md:min-h-[600px] md:py-20">
-          <slot name="before" />
-          {
-            eyebrow && (
-              <span class="hero-bg-eyebrow text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
-                {eyebrow}
-              </span>
-            )
-          }
-
-          <h1 class="hero-bg-title my-5 text-4xl font-bold text-white" data-hero-title>
-            {title}
+          <div
+            class:list={[
+              'hero-bg-content max-w-[760px]',
+              contrastPanel &&
+                'rounded-md border border-white/10 bg-ink px-5 py-6 shadow-panel md:px-7 md:py-7',
+            ]}
+          >
+            <slot name="before" />
             {
-              typed && (
-                <>
-                  <br />
-                  {/* prettier-ignore */}
-                  <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-[#fff6e6]">{typed.highlight}</span>}
-                  <span class="caret" data-typed-caret aria-hidden="true" />
-                </>
+              eyebrow && (
+                <span class="hero-bg-eyebrow text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
+                  {eyebrow}
+                </span>
               )
             }
-          </h1>
 
-          {
-            (lede || Astro.slots.has('lede')) && (
-              <p class="hero-bg-lede mb-7 max-w-(--container-prose) text-lg text-white">
-                {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
-              </p>
-            )
-          }
+            <h1 class="hero-bg-title my-5 text-4xl font-bold text-white" data-hero-title>
+              {title}
+              {
+                typed && (
+                  <>
+                    <br />
+                    {/* prettier-ignore */}
+                    <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-[#fff6e6]">{typed.highlight}</span>}
+                    <span class="caret" data-typed-caret aria-hidden="true" />
+                  </>
+                )
+              }
+            </h1>
 
-          {
-            ctas.length > 0 && (
-              <div class="flex flex-wrap items-center gap-3.5">
-                {ctas.map((c) => (
-                  <Button href={c.href} variant={c.variant === 'ghost' ? 'ghostOnDark' : 'primary'}>
-                    {c.label}
-                  </Button>
-                ))}
-              </div>
-            )
-          }
+            {
+              (lede || Astro.slots.has('lede')) && (
+                <p class="hero-bg-lede mb-7 max-w-(--container-prose) text-lg text-white">
+                  {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
+                </p>
+              )
+            }
 
-          {note && <p class="hero-bg-note mt-4 text-sm font-semibold text-white/70">{note}</p>}
-          {
-            media?.caption && (
-              <p class="hero-bg-caption mt-4 text-xs font-bold uppercase tracking-(--tracking-label) text-white/55">
-                {media.caption}
-              </p>
-            )
-          }
+            {
+              ctas.length > 0 && (
+                <div class="flex flex-wrap items-center gap-3.5">
+                  {ctas.map((c) => (
+                    <Button href={c.href} variant={c.variant === 'ghost' ? 'ghostOnDark' : 'primary'}>
+                      {c.label}
+                    </Button>
+                  ))}
+                </div>
+              )
+            }
 
-          <slot name="after" />
+            {note && <p class="hero-bg-note mt-4 text-sm font-semibold text-white">{note}</p>}
+            {
+              media?.caption && (
+                <p class="hero-bg-caption mt-4 text-xs font-bold uppercase tracking-(--tracking-label) text-white">
+                  {media.caption}
+                </p>
+              )
+            }
+
+            <slot name="after" />
+          </div>
         </div>
       </div>
 
@@ -517,8 +544,24 @@ const overlayStyle = isBackground
       })
     })
   }
-  loadDesktopVideos()
-  desktop.addEventListener('change', loadDesktopVideos)
+
+  // The poster is the initial hero media. Fetch the decorative 3 MB video
+  // only after the visitor interacts, keeping it out of the critical path and
+  // avoiding a large transfer for visitors who leave without engaging.
+  let videoRequested = false
+  const requestDesktopVideos = () => {
+    videoRequested = true
+    loadDesktopVideos()
+    ;['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((event) =>
+      window.removeEventListener(event, requestDesktopVideos),
+    )
+  }
+  ;['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((event) =>
+    window.addEventListener(event, requestDesktopVideos, { passive: true, once: true }),
+  )
+  desktop.addEventListener('change', () => {
+    if (videoRequested) loadDesktopVideos()
+  })
 
   const a = document.querySelector<HTMLElement>('[data-typed-text]')
   const b = document.querySelector<HTMLElement>('[data-typed-highlight]')
