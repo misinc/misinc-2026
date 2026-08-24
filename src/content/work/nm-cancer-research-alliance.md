@@ -4,6 +4,7 @@ client: "New Mexico Cancer Research Alliance"
 summary: "A statewide clinical-trials site with a search system designed, built, and updated for patients who need clear answers close to home."
 category: [healthcare, nonprofit]
 image: /img/work/nm-cancer-research-alliance.avif
+cardImage: /img/work/nm-cancer-research-alliance-card.avif
 imageAlt: "New Mexico Cancer Research Alliance clinical trials website"
 projectUrl: https://www.nmcancerresearchalliance.org
 year: 2025

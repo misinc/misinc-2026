@@ -42,7 +42,7 @@ const schema = [
     <PageHero eyebrow="Portfolio" title="Projects we’re proud to put our name on" lede="A selection of websites, stores, and software we have designed, developed, migrated, or supported. Each case note explains what the client needed and the part MIS played." media={{
         type: 'video',
         src: '/video/portfolio-reel.mp4',
-        poster: '/img/portfolio-reel-poster.jpg',
+        poster: '/img/portfolio-reel-poster.avif',
         caption: 'A selection of MIS client projects',
         alt: 'A reel of websites MIS has designed, developed, migrated, or supported',
         desktopOnly: true,
@@ -50,6 +50,7 @@ const schema = [
   </div>
 
   <Section>
+    <h2 class="sr-only">Selected client projects</h2>
     <div
       class="mb-9 flex flex-wrap items-center gap-2.5"
       role="group"
@@ -80,7 +81,7 @@ const schema = [
 
     <div id="work-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        all.map((w, i) => (
+        all.map((w) => (
           <WorkCard
             slug={w.id}
             title={w.data.title}
@@ -90,7 +91,6 @@ const schema = [
             image={w.data.cardImage ?? w.data.image}
             imageAlt={w.data.imageAlt}
             hasTestimonial={Boolean(w.data.testimonial)}
-            eager={i < 3}
           />
         ))
       }

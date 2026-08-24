@@ -4,6 +4,7 @@ client: "Election Reformers Network"
 summary: "A policy nonprofit organized around the election problems its readers care about, with credibility built into every level of the site."
 category: [nonprofit]
 image: /img/work/election-reformers-network.avif
+cardImage: /img/work/election-reformers-network-card.avif
 imageAlt: "Election Reformers Network website homepage"
 projectUrl: https://electionreformers.org
 year: 2023

@@ -209,7 +209,7 @@ const overlayStyle = isBackground
             <video
               class:list={[
                 'h-full w-full object-cover',
-                deferredVideo && 'absolute inset-0',
+                deferredVideo && 'absolute inset-0 hidden md:block',
               ]}
               style={`object-position:${position}`}
               muted
@@ -404,16 +404,35 @@ const overlayStyle = isBackground
           >
             <div class:list={['relative', aspect]}>
               {
+                media?.type === 'video' && deferredVideo && media.poster && (
+                  <img
+                    class="absolute inset-0 h-full w-full object-cover"
+                    style={`object-position:${position}`}
+                    src={media.poster}
+                    alt=""
+                    width="1280"
+                    height="720"
+                    loading="eager"
+                    decoding="async"
+                    {...({ fetchpriority: 'high' } as Record<string, string>)}
+                  />
+                )
+              }
+
+              {
                 media?.type === 'video' && (
                   <video
-                    class="absolute inset-0 h-full w-full object-cover"
+                    class:list={[
+                      'absolute inset-0 h-full w-full object-cover',
+                      deferredVideo && 'hidden md:block',
+                    ]}
                     style={`object-position:${position}`}
                     muted
                     loop
                     playsinline
                     autoplay={!deferredVideo}
                     preload={deferredVideo ? 'none' : 'auto'}
-                    poster={media.poster}
+                    poster={deferredVideo ? undefined : media.poster}
                     aria-label={media.caption || media.alt}
                     data-desktop-video={deferredVideo ? 'true' : undefined}
                   >

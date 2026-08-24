@@ -25,11 +25,14 @@
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Images and video keep their names across deploys, so they get a day in the
-# browser and a week at the edge, revalidated rather than trusted blindly.
+# Images keep their names across deploys, so they are cached for a month rather
+# than marked immutable. A changed asset still reaches every browser without
+# requiring a filename migration, while repeat visits avoid redundant transfers.
 /img/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
 
+# Video stays shorter-lived because those much larger files are more likely to
+# be recompressed or replaced during routine media optimization.
 /video/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 

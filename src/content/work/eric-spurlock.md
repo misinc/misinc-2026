@@ -4,6 +4,7 @@ client: "Eric Spurlock"
 summary: "A second website for a longtime client, rebuilt to put decades of custom-home work first and make new projects easy to publish."
 category: [business]
 image: /img/work/eric-spurlock.avif
+cardImage: /img/work/eric-spurlock-card.avif
 imageAlt: "Eric Spurlock custom home design portfolio website"
 projectUrl: https://www.ericspurlock.com
 year: 2025
