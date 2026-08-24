@@ -10,11 +10,7 @@ highlights:
   - Campaign planning and design
   - List building and management
   - Automations and reporting
-hero:
-  type: image
-  src: /img/work/nm-chile.avif
-  alt: New Mexico Chile Association website
-  caption: New Mexico Chile Association
+heroLabel: Email Marketing
 nextStep: >-
   Tell us who is on your list, what you send now, and what you want recipients to do. We will recommend a practical campaign or automation plan.
 seo:

@@ -10,6 +10,7 @@ highlights:
   - Local SEO and Google Business Profile
   - Technical and on-page SEO
   - Content planning and measurement
+heroLabel: SEO
 nextStep: >-
   We will review your site using the same checks we apply to our own and explain what is helping, what is holding it back, and which improvements are worth making first.
 seo:

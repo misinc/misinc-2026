@@ -9,6 +9,7 @@ highlights:
   - Workflow and risk assessment
   - Tool selection and policies
   - Training and implementation planning
+heroLabel: AI Consulting
 nextStep: >-
   Bring a process you are considering changing or a tool you are considering buying. We will help determine whether AI belongs in the solution.
 seo:

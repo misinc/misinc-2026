@@ -44,7 +44,7 @@ cross-referenced with 12 months of Search Console data. Companion doc: [seo-migr
    description: *"Marco is a beautifully designed UI kit template for digital agencies…"*
    — **fixed.** `/privacy-policy` was rewritten from scratch on 2026-08-17 to describe what
    the Astro site actually does. It is deliberately a factual document, not boilerplate:
-   there is no analytics script, fonts and map tiles are self-hosted, and the Cal.com embed
+   Fathom provides cookie-free aggregate analytics, fonts and map tiles are self-hosted, and the Cal.com embed
    on `/free-consultation` is the only third-party script on the site. **If any of that
    changes, the policy has to change with it** — the page carries a comment saying so.
 3. Home page title says **"30 Years of Expertise"** — will be stale again next year. Make it evergreen:

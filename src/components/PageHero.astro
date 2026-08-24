@@ -47,6 +47,13 @@ export interface HeroMedia {
   position?: string
 }
 
+export interface HeroMediaChoice {
+  src: string
+  alt: string
+  caption?: string
+  position?: string
+}
+
 interface Props {
   eyebrow?: string
   title: string
@@ -54,6 +61,10 @@ interface Props {
   ctas?: { label: string; href: string; variant?: 'primary' | 'ghost' }[]
   note?: string
   media?: HeroMedia
+  /** Image choices selected in the browser on each page load. */
+  mediaChoices?: HeroMediaChoice[]
+  /** Optional text beneath the MIS logo when no media is supplied. */
+  fallbackLabel?: string
   /** `portrait` suits tall video; `landscape` suits site screenshots. */
   shape?: 'portrait' | 'landscape'
   /**
@@ -116,6 +127,8 @@ const {
   ctas = [],
   note,
   media,
+  mediaChoices = [],
+  fallbackLabel,
   shape = 'landscape',
   layout = 'split',
   showMedia = true,
@@ -355,6 +368,7 @@ const overlayStyle = isBackground
               centered && 'mt-11',
               centered && shape === 'portrait' && 'mx-auto max-w-[560px]',
             ]}
+            data-random-media={mediaChoices.length > 0 ? JSON.stringify(mediaChoices) : undefined}
           >
             <div class:list={['relative', aspect]}>
               {
@@ -388,6 +402,7 @@ const overlayStyle = isBackground
                     src={media.src}
                     alt={media.alt ?? ''}
                     loading="eager"
+                    data-random-media-image={mediaChoices.length > 0 ? 'true' : undefined}
                   />
                 )
               }
@@ -396,21 +411,41 @@ const overlayStyle = isBackground
                 !media && (
                   /* Branded fallback until real media exists for this page. */
                   <div class="absolute inset-0 grid place-items-center bg-linear-to-br from-paper-surface via-paper-tint to-[#f6dfb4]">
-                    <img
-                      src="/img/mis-logo.png"
-                      alt=""
-                      width="140"
-                      height="146"
-                      class="w-[38%] max-w-[180px] opacity-15"
-                    />
+                    {
+                      fallbackLabel ? (
+                        <div class="flex w-full flex-col items-center gap-5 px-6 text-center">
+                          <img
+                            src="/img/mis-logo.png"
+                            alt=""
+                            width="140"
+                            height="146"
+                            class="w-[28%] max-w-[180px] opacity-40"
+                          />
+                          <span class="font-display text-2xl font-bold text-primary md:text-3xl">
+                            {fallbackLabel}
+                          </span>
+                        </div>
+                      ) : (
+                        <img
+                          src="/img/mis-logo.png"
+                          alt=""
+                          width="140"
+                          height="146"
+                          class="w-[38%] max-w-[180px] opacity-15"
+                        />
+                      )
+                    }
                   </div>
                 )
               }
 
               {
-                media?.caption && (
-                  <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
-                    {media.caption}
+                (media?.caption || mediaChoices.length > 0) && (
+                  <figcaption
+                    class="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/75 to-transparent px-4 pb-3.5 pt-6 text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]"
+                    data-random-media-caption={mediaChoices.length > 0 ? 'true' : undefined}
+                  >
+                    {media?.caption}
                   </figcaption>
                 )
               }
@@ -424,6 +459,38 @@ const overlayStyle = isBackground
 }
 
 <script>
+  // Service pages can supply a portfolio-image pool. Select in the browser so
+  // the image changes on each page load instead of only when Astro builds.
+  document.querySelectorAll<HTMLElement>('[data-random-media]').forEach((figure) => {
+    if (figure.dataset.randomMediaApplied === 'true') return
+
+    try {
+      const choices = JSON.parse(figure.dataset.randomMedia ?? '[]') as {
+        src: string
+        alt: string
+        caption?: string
+        position?: string
+      }[]
+      if (choices.length === 0) return
+
+      const choice = choices[Math.floor(Math.random() * choices.length)]
+      const img = figure.querySelector<HTMLImageElement>('[data-random-media-image]')
+      const caption = figure.querySelector<HTMLElement>('[data-random-media-caption]')
+      if (!img || !choice) return
+
+      img.src = choice.src
+      img.alt = choice.alt
+      img.style.objectPosition = choice.position ?? 'left top'
+      if (caption) {
+        caption.textContent = choice.caption ?? ''
+        caption.hidden = !choice.caption
+      }
+      figure.dataset.randomMediaApplied = 'true'
+    } catch {
+      // Keep the server-rendered image if the choices cannot be read.
+    }
+  })
+
   // Hero typewriter, only on pages that pass `typed`. Skipped entirely under
   // reduced motion — the headline is already in the DOM, so it simply renders
   // complete.

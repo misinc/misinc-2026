@@ -46,6 +46,11 @@ const formPage = (request) => {
   }
 }
 
+const successPage = (request) =>
+  formPage(request) === '/start-a-project'
+    ? '/contact-thanks?source=project'
+    : '/contact-thanks?source=contact'
+
 /**
  * A fetch() submission wants JSON back. A plain <form> POST from a browser
  * without JavaScript wants to be sent somewhere — otherwise the visitor is
@@ -158,7 +163,7 @@ export async function onRequestPost({ request, env }) {
       : redirect(request, `${formPage(request)}?error=send`)
   }
 
-  return wantsJson(request) ? json(200, { ok: true }) : redirect(request, '/contact-thanks')
+  return wantsJson(request) ? json(200, { ok: true }) : redirect(request, successPage(request))
 }
 
 /**

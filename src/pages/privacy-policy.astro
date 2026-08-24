@@ -10,8 +10,8 @@ import { site } from '../lib/site';
 /**
  * Written to describe what this site actually does, not what a generator
  * assumes it does. Before changing anything here, check it against the code:
- * there is no audience analytics script in Base.astro, the map is self-hosted
- * tiles (StaticMap.astro), fonts are self-hosted, Cal.com is embedded on
+ * Fathom Analytics is loaded in Base.astro, the map is self-hosted tiles
+ * (StaticMap.astro), fonts are self-hosted, Cal.com is embedded on
  * /free-consultation, and the 1995-mode preference is stored in localStorage.
  *
  * If any of that changes, this page has to change with it.
@@ -22,7 +22,7 @@ const updatedLabel = 'August 23, 2026'
 
 // What we tell people up front. Every line has to stay true of the built site.
 const summary = [
-  'We do not use audience analytics, advertising pixels, or cross-site tracking on this website.',
+  'We use Fathom Analytics for cookie-free, aggregate traffic and conversion measurement. We do not use advertising pixels, behavioral profiles, or cross-site tracking.',
   'We receive information you send through a form, booking, email, or phone call. Cloudflare also processes standard technical information needed to serve and protect the site.',
   'Cal.com is used on the free consultation page, and Resend delivers website form submissions to our inbox.',
   'We do not sell or rent personal information. We use service providers only to operate the site and respond to you.',
@@ -30,6 +30,11 @@ const summary = [
 ]
 
 const processors = [
+  {
+    name: 'Fathom Analytics',
+    role: 'Measures aggregate page traffic and successful form and consultation conversions without analytics cookies.',
+    href: 'https://usefathom.com/legal/privacy',
+  },
   {
     name: 'Resend',
     role: 'Delivers contact and project form messages to our inbox.',
@@ -81,7 +86,7 @@ const pageSchema = {
   <!-- A legal page opens with the document rather than a marketing panel, so
        the hero runs with no media at all. -->
   <div class="border-b border-line">
-    <PageHero layout="full" eyebrow="Legal" title="Privacy policy" lede="We do not use this site to build advertising profiles or measure visitors with audience analytics. This page explains what information is handled when you browse, contact us, or book a consultation." showMedia={false}>
+    <PageHero layout="centered" eyebrow="Legal" title="Privacy policy" lede="We use limited, privacy-focused analytics, but we do not build advertising profiles or track people across websites. This page explains what information is handled when you browse, contact us, or book a consultation." showMedia={false}>
       <Breadcrumbs
         slot="before"
         items={[{ label: 'Home', href: '/' }, { label: 'Privacy policy' }]}
@@ -134,6 +139,16 @@ const pageSchema = {
 
       <h2>What we collect, and when</h2>
 
+      <h3>When you browse the site</h3>
+      <p>
+        Fathom Analytics measures aggregate page traffic, referral sources, campaigns, and a
+        small number of successful conversions. We record fixed event names when a contact form
+        or project form is successfully delivered and when a consultation is successfully booked.
+        We do not send Fathom names, email addresses, booking IDs, form contents, website fields,
+        or other visitor-provided values. Fathom does not set analytics cookies, build behavioral
+        profiles, or track visitors across websites.
+      </p>
+
       <h3>When you fill in the contact form</h3>
       <p>
         We receive the details you submit, which may include your name, email address, phone
@@ -162,7 +177,8 @@ const pageSchema = {
         Cloudflare processes standard request information when it serves the site, such as an
         IP address, browser and device details, the requested page, and the time of the request.
         Cloudflare uses this information to deliver content, maintain security, block abuse,
-        and diagnose problems. We do not use these records for audience analytics or advertising.
+        and diagnose problems. We do not use these records for advertising or to build visitor
+        profiles.
       </p>
 
       <h2>Cookies</h2>
@@ -184,6 +200,10 @@ const pageSchema = {
       <p>
         MIS does not use this storage for advertising. If you prefer not to load the Cal.com
         calendar, you can contact us by phone, email, or the contact form instead.
+      </p>
+      <p>
+        Fathom does not set cookies or use local storage for analytics. Our Fathom script also
+        honors your browser&rsquo;s Do Not Track setting.
       </p>
 
       <h2>Who else sees your information</h2>
@@ -223,7 +243,8 @@ const pageSchema = {
         respond, maintain business records, or support an ongoing client relationship. Records
         connected to paid work may be kept longer for legal, tax, accounting, and contractual
         reasons. Cloudflare controls the retention of its technical and security logs under its
-        own policies.
+        own policies. Fathom retains the aggregate analytics available in our account under its
+        service terms; those statistics are not connected to form contents or client records.
       </p>
       <p>
         If you would rather we did not keep an inquiry, ask us to delete it. We will honor the

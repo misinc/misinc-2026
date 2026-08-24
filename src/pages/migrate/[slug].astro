@@ -59,10 +59,18 @@ const trail = breadcrumbs([
   schema={[serviceSchema, trail]}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow="Website migration" title={data.title} lede={data.summary} ctas={[
+    <PageHero
+      eyebrow="Website migration"
+      title={data.title}
+      lede={data.summary}
+      fallbackLabel={data.title}
+      ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'All migrations', href: '/website-migrations', variant: 'ghost' },
-      ]} showMedia={false} layout="full">
+      ]}
+      showMedia={true}
+      layout="split"
+    >
       <Breadcrumbs
         slot="before"
         class="mb-5"

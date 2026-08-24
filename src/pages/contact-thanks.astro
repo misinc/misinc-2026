@@ -61,4 +61,22 @@ const next = [
       </div>
     </div>
   </Section>
+
+  <script is:inline>
+    // A no-JavaScript form submission reaches this page only after the server
+    // confirms delivery. The honeypot path intentionally has no source value.
+    window.addEventListener(
+      'load',
+      () => {
+        const source = new URL(window.location.href).searchParams.get('source')
+        try {
+          if (source === 'contact') window.fathom?.trackEvent('contact form submitted')
+          if (source === 'project') window.fathom?.trackEvent('project form submitted')
+        } catch {
+          // Fathom may be unavailable because of Do Not Track or a blocker.
+        }
+      },
+      { once: true },
+    )
+  </script>
 </Base>

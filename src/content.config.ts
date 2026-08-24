@@ -47,6 +47,8 @@ const services = defineCollection({
         caption: z.string().optional(),
       })
       .optional(),
+    /** Optional text shown with the branded fallback when no hero media exists. */
+    heroLabel: z.string().optional(),
   }),
 })
 

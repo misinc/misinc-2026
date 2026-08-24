@@ -24,6 +24,34 @@ export async function getStaticPaths() {
 const { service, all } = Astro.props
 const { Content } = await render(service)
 
+const projects = await getCollection('work')
+const broadPortfolioServices = new Set(['web-design', 'website-development'])
+const portfolioCategoryByService = {
+  'healthcare-website-design': 'healthcare',
+  'real-estate-website-design': 'real-estate',
+  'nonprofit-web-design': 'nonprofit',
+  'ecommerce-website-design': 'ecommerce',
+} as const
+const portfolioCategory =
+  portfolioCategoryByService[service.id as keyof typeof portfolioCategoryByService]
+const usesPortfolioPool = broadPortfolioServices.has(service.id) || Boolean(portfolioCategory)
+const heroChoices = usesPortfolioPool
+  ? projects
+      .filter(
+        (project) =>
+          !project.data.archived &&
+          project.data.client !== 'MIS, Inc.' &&
+          project.data.image.startsWith('/img/work/') &&
+          (!portfolioCategory || project.data.category.includes(portfolioCategory)),
+      )
+      .sort((a, b) => a.data.title.localeCompare(b.data.title))
+      .map((project) => ({
+        src: project.data.image,
+        alt: project.data.imageAlt,
+        caption: project.data.title,
+      }))
+  : []
+
 const PILLAR_LABEL = {
   websites: 'Websites',
   growth: 'Growth',
@@ -72,10 +100,10 @@ const breadcrumbs = {
   schema={[serviceSchema, breadcrumbs]}
 >
   <div class="border-b border-line">
-    <PageHero eyebrow={PILLAR_LABEL[service.data.pillar]} title={service.data.heading} lede={service.data.summary} media={service.data.hero} ctas={[
+    <PageHero eyebrow={PILLAR_LABEL[service.data.pillar]} title={service.data.heading} lede={service.data.summary} media={service.data.hero} mediaChoices={heroChoices} fallbackLabel={service.data.heroLabel ?? service.data.title} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-      ]} showMedia={false} layout="full">
+      ]} showMedia={true} layout="split">
       <Breadcrumbs
         slot="before"
         class="mb-5"

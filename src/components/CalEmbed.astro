@@ -153,4 +153,20 @@ const elementId = `cal-inline-${namespace}`
       document.getElementById(`${elementId}-placeholder`)?.remove()
     },
   })
+
+  // Count a completed booking once. No Cal payload or visitor-provided value
+  // is passed to Fathom, and analytics failures cannot affect the calendar.
+  let consultationTracked = false
+  Cal.ns[namespace]('on', {
+    action: 'bookingSuccessfulV2',
+    callback: () => {
+      if (consultationTracked) return
+      consultationTracked = true
+      try {
+        window.fathom?.trackEvent('consultation booked')
+      } catch {
+        // Fathom may be unavailable because of Do Not Track or a blocker.
+      }
+    },
+  })
 </script>

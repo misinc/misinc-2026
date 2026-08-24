@@ -10,6 +10,7 @@ highlights:
   - AI crawler access and technical review
   - Clear, structured business information
   - Citation monitoring and content improvement
+heroLabel: AEO
 nextStep: >-
   We will check whether major search and AI crawlers can reach your site, review how clearly your business is described, and show you where the information is incomplete or inconsistent.
 seo:

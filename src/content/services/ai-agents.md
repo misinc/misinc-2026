@@ -9,6 +9,7 @@ highlights:
   - Narrow tasks and permissions
   - Approved knowledge and clean handoff
   - Review, monitoring, and improvement
+heroLabel: AI Agents
 nextStep: >-
   Tell us which repeated task takes time from your team. We will assess whether an agent, a standard automation, or a simpler process is the better answer.
 seo:

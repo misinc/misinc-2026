@@ -65,15 +65,12 @@ const byPillar = PILLARS.map((p) => ({
       <h2 class="sr-only">What we do</h2>
       <div class="grid gap-5 lg:grid-cols-3">
         {
-          byPillar.map((p, i) => (
+          byPillar.map((p) => (
             <a
               href={`#${p.id}`}
               class="group flex flex-col gap-2.5 rounded-lg border border-line-soft bg-paper-panel p-6 no-underline shadow-card transition hover:-translate-y-[3px] hover:shadow-card-hover"
               data-reveal
             >
-              <span class="font-display text-2xl font-bold text-primary tabular-nums">
-                0{i + 1}
-              </span>
               <h3 class="font-display text-xl font-bold text-ink">{p.eyebrow}</h3>
               <p class="text-[15.5px] text-ink-soft">{p.short}</p>
               <span class="mt-2 text-sm font-extrabold text-ink-muted">

@@ -283,6 +283,17 @@ const label = 'mb-1.5 block text-sm font-extrabold text-ink'
         const body = await res.json().catch(() => ({}))
 
         if (res.ok && body.ok) {
+          // The server silently accepts honeypot submissions without delivering
+          // them. Do the same here, but do not count them as conversions.
+          if (!String(new FormData(form).get('company') ?? '').trim()) {
+            try {
+              ;(window as Window & {
+                fathom?: { trackEvent: (eventName: 'project form submitted') => void }
+              }).fathom?.trackEvent('project form submitted')
+            } catch {
+              // Analytics and content blockers must never affect form delivery.
+            }
+          }
           form.hidden = true
           success.hidden = false
           success.scrollIntoView({ block: 'center', behavior: 'smooth' })

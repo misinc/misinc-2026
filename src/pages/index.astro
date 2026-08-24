@@ -38,10 +38,11 @@ const allWork = await getCollection('work')
 const faqs = (await getCollection('faqs'))
   .filter((f) => f.data.showOn.includes('home'))
   .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 5)
 const featuredWork = allWork
   .filter((w) => w.data.featured)
   .sort((a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999))
-  .slice(0, 100)
+  .slice(0, 6)
 const quotes = allWork
   .filter((w) => w.data.testimonial)
   .sort((a, b) => b.data.year - a.data.year)
@@ -49,8 +50,8 @@ const quotes = allWork
 
 const steps = [
   {
-    title: 'Book a free consultation',
-    note: 'Tell us what’s working and what isn’t. You’ll get honest recommendations either way.',
+    title: 'Tell us what you want to accomplish',
+    note: 'Book a consultation if you want to talk it through, or use the project form if you are ready to send the details.',
   },
   {
     title: 'Get a clear plan and price',
@@ -59,27 +60,6 @@ const steps = [
   {
     title: 'Choose what happens after launch',
     note: 'If you need ongoing help, we can provide hosting, maintenance, SEO, and continued improvements.',
-  },
-]
-
-const guides = [
-  {
-    tag: 'Pricing',
-    title: 'What a website really costs in Albuquerque',
-    blurb: 'Honest ranges for small business sites, and what actually drives the number up or down.',
-    href: '/albuquerque-web-design-pricing-guide',
-  },
-  {
-    tag: 'Real estate',
-    title: 'What Realtors need from a website',
-    blurb: 'IDX, lead capture, and the decisions that make a real estate website easier to use.',
-    href: '/blog/real-estate-web-designers',
-  },
-  {
-    tag: 'Local SEO',
-    title: 'Choosing an SEO company in Albuquerque',
-    blurb: 'What to ask, what to avoid, and how to tell real local expertise from a sales pitch.',
-    href: '/blog/albuquerque-seo-company',
   },
 ]
 
@@ -137,7 +117,7 @@ const homeSchema = {
 
   <!-- Services -->
   <Section id="services">
-    <SectionHeader eyebrow="Services" title="Three ways we can help" lede="We design and build websites, develop software for work that does not fit an off-the-shelf tool, and help businesses use AI where it is genuinely useful." class="mb-10" />
+    <SectionHeader eyebrow="Services" title="Our work falls into three areas" lede="Websites, custom software, and practical AI. Some clients need one. Others need a combination." class="mb-10" />
 
     <div class="grid gap-5 lg:grid-cols-3">
       {
@@ -162,47 +142,45 @@ const homeSchema = {
 
   <Marquee />
 
-  <!-- Eras -->
-  <Section id="about">
-    <SectionHeader eyebrow="Since 1995" title="We’ve built through every era of the web" lede="Some of our client relationships are older than many web studios. Every few years the web reinvents itself, and our job has always been to work out what matters and what can safely be ignored." class="mb-10" />
-
-    <Timeline />
-  </Section>
-
   <!-- Process -->
   <Section>
-    <div class="grid gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
-      <div data-reveal>
-        <SectionHeader
-          eyebrow="Albuquerque, New Mexico"
-          title="Rooted here, working anywhere"
-          class="mb-0"
-        />
-        <div class="mt-4 max-w-(--container-prose) text-ink-soft">
-          <p class="mb-4">We&rsquo;ve spent {yearsInBusiness} years working with clients around the world, and what we want most now is to put that experience to work close to home for the small businesses and nonprofits that make New Mexico what it is.</p>
-          <p>That means straight answers, fair pricing, and a partner you can actually meet for coffee. No account managers, no handoffs, you work directly with the people building your project.</p>
-        </div>
-      </div>
+    <SectionHeader
+      eyebrow="How we work"
+      title="From first conversation to launch"
+      lede="Book a free consultation or send us the project details. If the project is a fit, we define the scope, agree on a fixed price, and build it. Ongoing help is available after launch when you need it."
+      class="mb-10"
+    />
 
-      <div class="flex flex-col">
-        {
-          steps.map((s, i) => (
-            <div
-              class="flex items-start gap-4 py-5 not-first:border-t not-first:border-line-soft"
-              data-reveal
-            >
-              <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-full bg-paper-surface font-display text-base font-bold text-primary">
-                {i + 1}
-              </span>
-              <div>
-                <b class="mb-1 block text-[16.5px] font-extrabold text-ink">{s.title}</b>
-                <p class="text-sm text-ink-soft">{s.note}</p>
-              </div>
+    <div class="grid gap-5 lg:grid-cols-3">
+      {
+        steps.map((s, i) => (
+          <div
+            class="flex items-start gap-4 rounded-lg border border-line-soft bg-paper-panel p-6 shadow-card"
+            data-reveal
+          >
+            <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-full bg-paper-surface font-display text-base font-bold text-primary">
+              {i + 1}
+            </span>
+            <div>
+              <b class="mb-1 block text-[16.5px] font-extrabold text-ink">{s.title}</b>
+              <p class="text-sm text-ink-soft">{s.note}</p>
             </div>
-          ))
-        }
-      </div>
+          </div>
+        ))
+      }
     </div>
+
+    <div class="mt-8 flex flex-wrap gap-3.5">
+      <Button href="/start-a-project">Start a project</Button>
+      <Button href="/free-consultation" variant="ghost">Book a free consultation</Button>
+    </div>
+  </Section>
+
+  <!-- Eras -->
+  <Section id="about">
+    <SectionHeader eyebrow="Since 1995" title="From dial-up websites to practical AI" lede={`We have spent ${yearsInBusiness} years adapting to changes in how websites are built, managed, and found. The tools keep changing. Our job is to understand which changes will help our clients and which ones can be ignored.`} class="mb-10" />
+
+    <Timeline />
   </Section>
 
   <!-- Work -->
@@ -266,23 +244,6 @@ const homeSchema = {
         See all frequently asked questions &rarr;
       </a>
     </p>
-  </Section>
-
-  <!-- Guides -->
-  <Section>
-    <SectionHeader eyebrow="Notes" title="Guides from our years of experience" lede="Practical writing for business owners about what things cost, what is worth doing, and what to ignore." class="mb-10" />
-
-    <div class="grid gap-5 lg:grid-cols-3">
-      {
-        guides.map((g) => (
-          <Card variant="note" href={g.href} tag={g.tag} title={g.title} blurb={g.blurb} />
-        ))
-      }
-    </div>
-
-    <div class="mt-10">
-      <Button href="/guides" variant="ghost">Read all our guides</Button>
-    </div>
   </Section>
 
   <!-- CTA -->

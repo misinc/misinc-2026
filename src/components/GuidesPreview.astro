@@ -1,0 +1,74 @@
+---
+import Section from './Section.astro'
+import SectionHeader from './SectionHeader.astro'
+import Card from './Card.astro'
+import Button from './Button.astro'
+
+/**
+ * A reusable preview of three practical MIS guides.
+ *
+ * Add `<GuidesPreview />` to any page, or override the heading copy with the
+ * props below. The links stay curated here so the same preview does not drift
+ * between pages.
+ */
+interface Props {
+  eyebrow?: string
+  title?: string
+  lede?: string
+  showAllLink?: boolean
+}
+
+const {
+  eyebrow = 'Notes',
+  title = 'Guides from our years of experience',
+  lede = 'Practical writing for business owners about what things cost, what is worth doing, and what to ignore.',
+  showAllLink = true,
+} = Astro.props
+
+const guides = [
+  {
+    tag: 'Pricing',
+    title: 'What a website really costs in Albuquerque',
+    blurb: 'Honest ranges for small business sites, and what actually drives the number up or down.',
+    href: '/albuquerque-web-design-pricing-guide',
+  },
+  {
+    tag: 'Real estate',
+    title: 'What Realtors need from a website',
+    blurb: 'IDX, lead capture, and the decisions that make a real estate website easier to use.',
+    href: '/blog/real-estate-web-designers',
+  },
+  {
+    tag: 'Local SEO',
+    title: 'Choosing an SEO company in Albuquerque',
+    blurb: 'What to ask, what to avoid, and how to tell real local expertise from a sales pitch.',
+    href: '/blog/albuquerque-seo-company',
+  },
+]
+---
+
+<Section>
+  <SectionHeader {eyebrow} {title} {lede} class="mb-10" />
+
+  <div class="grid gap-5 lg:grid-cols-3">
+    {
+      guides.map((guide) => (
+        <Card
+          variant="note"
+          href={guide.href}
+          tag={guide.tag}
+          title={guide.title}
+          blurb={guide.blurb}
+        />
+      ))
+    }
+  </div>
+
+  {
+    showAllLink && (
+      <div class="mt-10">
+        <Button href="/guides" variant="ghost">Read all our guides</Button>
+      </div>
+    )
+  }
+</Section>

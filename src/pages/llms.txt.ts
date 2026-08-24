@@ -106,7 +106,7 @@ ${line('About', '/about', `Who we are and how the studio has lasted ${yearsInBus
 ${line('Frequently asked questions', '/faq', 'The questions we are asked most, answered plainly.')}
 ${line('Free consultation', '/free-consultation', 'Book a free 30-minute consultation by video or in person.')}
 ${line('Contact', '/contact', 'Phone, email, address, and a form that reaches a person.')}
-${line('Privacy policy', '/privacy-policy', 'What this site does and does not collect. There is no analytics script.')}
+${line('Privacy policy', '/privacy-policy', 'What this site collects, including privacy-focused aggregate analytics and contact and booking services.')}
 `
 
   return new Response(body, {
