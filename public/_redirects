@@ -222,8 +222,8 @@
 /blog-categories/real-estate-web-designers      /blog/real-estate-web-designers      301
 /blog-categories/square-online-store            /blog/square-online-store            301
 /blog-categories/e-commerce                     /services/ecommerce-website-design   301
-/blog-categories/marketing                      /services/email-marketing            301
-/blog-categories/social-media                   /services/email-marketing            301
+/blog-categories/marketing                      /services                            301
+/blog-categories/social-media                   /services                            301
 /blog-categories/design                         /services/web-design                 301
 /blog-categories/small-business                 /blog                                301
 # --- Booking and scheduling pages --------------------------------------------
@@ -257,7 +257,7 @@
 /estimates                                      /free-consultation                   301
 /services/design.php                            /services/web-design                 301
 /services/development.php                       /services/website-development        301
-/services/promotion.php                         /services/email-marketing            301
+/services/promotion.php                         /services                            301
 /services/realestate.php                        /services/real-estate-website-design 301
 /services/multimedia.php                        /services                            301
 /services/neurodynamics.html                    /services/custom-software            301
