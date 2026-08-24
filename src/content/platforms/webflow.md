@@ -6,7 +6,7 @@ wordmark: /img/platforms/webflow-wordmark-light.svg
 url: https://www.webflow.com
 stance: partner
 credential: Certified Webflow Partner
-verdict: Our first recommendation for most small business websites.
+verdict: Our recommendation for most websites.
 category: websites
 order: 10
 nextStep: >-
@@ -20,7 +20,7 @@ seo:
 
 Webflow occupies a useful middle ground: designers get control over the output, and clients get an editor intended for day-to-day content changes.
 
-For a small business that wants to add a page, change a price, or publish a post without a support ticket, it is usually the right answer.
+For a business that wants to add a page, change a price, or publish a post without a support ticket, it is usually the right answer.
 
 ## What it gets right
 
