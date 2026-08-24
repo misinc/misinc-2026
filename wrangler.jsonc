@@ -23,12 +23,12 @@
     "CONTACT_FROM": "website@misinc.com"
   },
   "assets": {
-    // Astro's static build output. `not_found_handling: single-page-application`
-    // would swallow real 404s into index.html, which is wrong for a
-    // content site — a missing page should 404, so this is left at
-    // Cloudflare's default (serve the matching file, or Astro's own
-    // dist/404.html for anything unmatched).
+    // Astro's static build output. Cloudflare's default returns an empty 404
+    // for unmatched assets; `404-page` serves Astro's built 404.html while
+    // preserving the correct HTTP 404 status. SPA fallback would incorrectly
+    // turn missing content URLs into the home page.
     "directory": "./dist",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
   }
 }

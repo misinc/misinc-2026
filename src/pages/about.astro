@@ -58,13 +58,15 @@ const aboutSchema = {
   <div class="border-b border-line">
     <PageHero eyebrow="About" title={`${yearsInBusiness} years in one city`} lede="MIS, Inc. was founded by Karim Ardalan in Albuquerque in July 1995, back when most businesses were still deciding whether they needed a website at all. We have been building them ever since." media={{
         type: 'image',
-        src: '/img/office-marquette.jpg',
+        src: '/img/office-marquette.avif',
+        width: 1280,
+        height: 852,
         alt: 'The office building at 500 Marquette Avenue NW in downtown Albuquerque, where MIS, Inc. is based',
         caption: '500 Marquette Ave NW, Downtown Albuquerque',
       }} ctas={[
         { label: 'Book a free consultation', href: '/free-consultation' },
         { label: 'See our projects', href: '/portfolio', variant: 'ghost' },
-      ]} layout="background" overlayOpacity={95} />
+      ]} layout="background" overlayOpacity={95} contrastPanel />
   </div>
 
   <div class="border-b border-line bg-paper-tint">

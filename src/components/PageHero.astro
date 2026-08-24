@@ -33,6 +33,8 @@ import Button from './Button.astro'
 export interface HeroMedia {
   type: 'video' | 'image'
   src: string
+  width?: number
+  height?: number
   /** Required for images; videos use `caption` for their visible label. */
   alt?: string
   caption?: string
@@ -237,7 +239,11 @@ const overlayStyle = isBackground
               style={`object-position:${position}`}
               src={media.src}
               alt={media.alt ?? ''}
+              width={media.width}
+              height={media.height}
               loading="eager"
+              decoding="async"
+              {...({ fetchpriority: 'high' } as Record<string, string>)}
             />
           )
         }
