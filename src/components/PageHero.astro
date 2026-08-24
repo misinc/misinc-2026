@@ -257,7 +257,7 @@ const overlayStyle = isBackground
             class:list={[
               'hero-bg-content max-w-[760px]',
               contrastPanel &&
-                'rounded-md border border-white/10 bg-ink px-5 py-6 shadow-panel md:px-7 md:py-7',
+                'rounded-md border border-white/10 bg-[rgba(40,24,10,0.62)] px-5 py-6 shadow-panel md:max-w-[560px] md:px-7 md:py-7',
             ]}
           >
             <slot name="before" />
@@ -545,23 +545,10 @@ const overlayStyle = isBackground
     })
   }
 
-  // The poster is the initial hero media. Fetch the decorative 3 MB video
-  // only after the visitor interacts, keeping it out of the critical path and
-  // avoiding a large transfer for visitors who leave without engaging.
-  let videoRequested = false
-  const requestDesktopVideos = () => {
-    videoRequested = true
-    loadDesktopVideos()
-    ;['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((event) =>
-      window.removeEventListener(event, requestDesktopVideos),
-    )
-  }
-  ;['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((event) =>
-    window.addEventListener(event, requestDesktopVideos, { passive: true, once: true }),
-  )
-  desktop.addEventListener('change', () => {
-    if (videoRequested) loadDesktopVideos()
-  })
+  // Mobile keeps the prioritized poster. On desktop, start the decorative
+  // video as soon as the page is parsed so its motion remains part of the hero.
+  loadDesktopVideos()
+  desktop.addEventListener('change', loadDesktopVideos)
 
   const a = document.querySelector<HTMLElement>('[data-typed-text]')
   const b = document.querySelector<HTMLElement>('[data-typed-highlight]')
