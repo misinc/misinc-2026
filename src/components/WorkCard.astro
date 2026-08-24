@@ -47,7 +47,10 @@ const {
     <img
       src={image}
       alt={imageAlt}
+      width="720"
+      height="450"
       loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
       class="absolute inset-0 h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.03]"
     />
   </div>

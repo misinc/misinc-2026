@@ -137,6 +137,8 @@ const work = defineCollection({
       )
       .min(1),
     image: z.string(),
+    /** Smaller card-ready asset; detail pages continue to use the full image. */
+    cardImage: z.string().optional(),
     imageAlt: z.string(),
     /** The live site, when it is still up. */
     projectUrl: z.url().optional(),

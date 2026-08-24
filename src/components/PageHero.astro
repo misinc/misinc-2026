@@ -168,8 +168,12 @@ const hexToRgb = (hex: string) => {
 }
 const overlayRgb = hexToRgb(overlayColor)
 const o = overlayOpacity / 100
+// Background heroes always keep a sufficiently dark base beneath their text.
+// The gradients still shape the image, while the base prevents bright poster
+// details from lowering contrast at any viewport or animation frame.
+const overlayBase = Math.max(0.72, o * 0.8)
 const overlayStyle = isBackground
-  ? `background-image: linear-gradient(to top, rgba(${overlayRgb}, ${o}) 10%, rgba(${overlayRgb}, ${o * 0.65}) 45%, rgba(${overlayRgb}, 0) 100%), linear-gradient(to right, rgba(${overlayRgb}, ${o * 0.9}) 0%, rgba(${overlayRgb}, ${o * 0.2}) 40%, rgba(${overlayRgb}, 0) 100%)`
+  ? `background-color: rgba(${overlayRgb}, ${overlayBase}); background-image: linear-gradient(to top, rgba(${overlayRgb}, ${o}) 10%, rgba(${overlayRgb}, ${o * 0.65}) 45%, rgba(${overlayRgb}, 0) 100%), linear-gradient(to right, rgba(${overlayRgb}, ${o * 0.9}) 0%, rgba(${overlayRgb}, ${o * 0.2}) 40%, rgba(${overlayRgb}, 0) 100%)`
   : undefined
 ---
 
@@ -194,6 +198,7 @@ const overlayStyle = isBackground
               playsinline
               autoplay={!deferredVideo}
               preload={deferredVideo ? 'none' : 'auto'}
+              {...({ fetchpriority: 'high' } as Record<string, string>)}
               poster={media.poster}
               aria-label={media.caption || media.alt}
               data-desktop-video={deferredVideo ? 'true' : undefined}
@@ -232,7 +237,7 @@ const overlayStyle = isBackground
           <slot name="before" />
           {
             eyebrow && (
-              <span class="hero-bg-eyebrow text-xs font-bold uppercase tracking-(--tracking-label) text-accent-light">
+              <span class="hero-bg-eyebrow text-xs font-bold uppercase tracking-(--tracking-label) text-[#fff6e6]">
                 {eyebrow}
               </span>
             )
@@ -245,7 +250,7 @@ const overlayStyle = isBackground
                 <>
                   <br />
                   {/* prettier-ignore */}
-                  <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-accent-light">{typed.highlight}</span>}
+                  <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-[#fff6e6]">{typed.highlight}</span>}
                   <span class="caret" data-typed-caret aria-hidden="true" />
                 </>
               )
@@ -254,7 +259,7 @@ const overlayStyle = isBackground
 
           {
             (lede || Astro.slots.has('lede')) && (
-              <p class="hero-bg-lede mb-7 max-w-(--container-prose) text-lg text-white/85">
+              <p class="hero-bg-lede mb-7 max-w-(--container-prose) text-lg text-white">
                 {Astro.slots.has('lede') ? <slot name="lede" /> : lede}
               </p>
             )

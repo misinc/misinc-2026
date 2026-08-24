@@ -4,6 +4,7 @@ client: "bAI Labs"
 summary: "An applied AI lab made clear through concrete language, original artwork, and a structure built for buyers rather than insiders."
 category: [startup]
 image: /img/work/bai-labs.avif
+cardImage: /img/work/bai-labs-card.avif
 imageAlt: "bAI Labs applied AI website homepage"
 projectUrl: https://www.bailabs.ai
 year: 2026

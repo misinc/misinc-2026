@@ -27,7 +27,7 @@
         "ink": {
           "DEFAULT": "#4a3115",
           "soft": "#6b4a1e",
-          "muted": "#8f6a35",
+          "muted": "#89622e",
           "description": "Warm brown text ramp. `ink` for headings, `soft` for body, `muted` for labels and captions."
         },
         "paper": {
@@ -292,7 +292,7 @@
       "Every interactive element has a visible focus state — the gold outline above.",
       "The mobile panel closes on Escape, on scrim click, and on link activation; aria-expanded tracks state on the burger.",
       "Decorative SVGs and duplicated marquee items are aria-hidden.",
-      "Body text sits at ink-soft (#6b4a1e) on paper (#fff7ea) — 7.4:1. Never drop body copy to ink-muted, which passes for large text and labels only.",
+      "Body text sits at ink-soft (#6b4a1e) on paper (#fff7ea) — 7.4:1. Ink-muted (#89622e) is reserved for supporting text and labels and also passes AA on the tinted paper surface.",
       "Guard optional DOM lookups in shared scripts; one missing element must not throw and kill every other behavior on the page."
     ]
   },
