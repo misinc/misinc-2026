@@ -14,7 +14,7 @@ heroLabel: SEO
 nextStep: >-
   We will review your site using the same checks we apply to our own and explain what is helping, what is holding it back, and which improvements are worth making first.
 seo:
-  title: Albuquerque SEO Services | Search Engine Optimization | MIS, Inc.
+  title: Albuquerque SEO Experts & SEO Services | MIS, Inc.
   description: SEO services in Albuquerque, New Mexico, including local search, technical SEO, content planning, and clear reporting focused on qualified visibility.
 ---
 
