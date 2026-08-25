@@ -42,6 +42,11 @@ export interface HeroMedia {
   /** Keep the poster on small screens and when reduced motion is requested. */
   desktopOnly?: boolean
   /**
+   * Optional desktop-only transform for full-bleed background media. Useful
+   * when a subject needs reframing beyond what object-position can provide.
+   */
+  desktopTransform?: string
+  /**
    * object-position for the crop, e.g. 'center', 'left top', '50% 20%'.
    * Defaults to the top-left for images (screenshots read from there) and
    * the center for video.
@@ -160,6 +165,9 @@ const aspect = centered
     : 'aspect-[16/10]'
 const position =
   media?.position ?? (isBackground ? 'center' : media?.type === 'image' ? 'left top' : 'center')
+const backgroundMediaStyle = `object-position:${position}${
+  media?.desktopTransform ? `;--hero-media-transform:${media.desktopTransform}` : ''
+}`
 
 // Overlay is built as an inline style, not Tailwind classes, because
 // overlayColor/overlayOpacity are arbitrary runtime values Tailwind's build-time
@@ -196,8 +204,8 @@ const overlayStyle = isBackground
         {
           media?.type === 'video' && deferredVideo && media.poster && (
             <img
-              class="absolute inset-0 h-full w-full object-cover"
-              style={`object-position:${position}`}
+              class="hero-bg-visual absolute inset-0 h-full w-full object-cover"
+              style={backgroundMediaStyle}
               src={media.poster}
               alt=""
               loading="eager"
@@ -210,10 +218,10 @@ const overlayStyle = isBackground
           media?.type === 'video' && (
             <video
               class:list={[
-                'h-full w-full object-cover',
+                'hero-bg-visual h-full w-full object-cover',
                 deferredVideo && 'absolute inset-0 hidden md:block',
               ]}
-              style={`object-position:${position}`}
+              style={backgroundMediaStyle}
               muted
               loop
               playsinline
@@ -235,8 +243,8 @@ const overlayStyle = isBackground
         {
           media?.type === 'image' && (
             <img
-              class="h-full w-full object-cover"
-              style={`object-position:${position}`}
+              class="hero-bg-visual h-full w-full object-cover"
+              style={backgroundMediaStyle}
               src={media.src}
               alt={media.alt ?? ''}
               width={media.width}

@@ -300,6 +300,15 @@ html.retro [data-hero-layout='background'] [class*='border-white'] {
   border-color: var(--color-primary);
 }
 
+/* Some full-bleed hero footage needs more reframing than object-position can
+   provide. Keep that treatment desktop-only so narrow screens retain the
+   source's centered composition. */
+@media (min-width: 768px) {
+  .hero-bg-visual {
+    transform: var(--hero-media-transform, none);
+  }
+}
+
 /* PageHero's other layouts (split/centered/full) frame media in a separate
    figure rather than a full-bleed background — same "no video/photo, plain
    text" treatment applies, plus collapsing the two-column grid back to one
