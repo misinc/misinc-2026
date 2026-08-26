@@ -42,7 +42,6 @@ const faqs = (await getCollection('faqs'))
 const featuredWork = allWork
   .filter((w) => w.data.featured)
   .sort((a, b) => b.data.year - a.data.year || (a.data.order ?? 999) - (b.data.order ?? 999))
-  .slice(0, 6)
 const quotes = allWork
   .filter((w) => w.data.testimonial)
   .sort((a, b) => b.data.year - a.data.year)
@@ -192,9 +191,9 @@ const homeSchema = {
       class="mb-10"
     />
 
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div id="featured-work-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        featuredWork.map((w) => (
+        featuredWork.map((w, index) => (
           <WorkCard
             slug={w.id}
             title={w.data.title}
@@ -204,10 +203,31 @@ const homeSchema = {
             image={w.data.cardImage ?? w.data.image}
             imageAlt={w.data.imageAlt}
             hasTestimonial={Boolean(w.data.testimonial)}
+            class={index >= 6 ? 'hidden' : ''}
           />
         ))
       }
     </div>
+
+    <script is:inline>
+      const featuredWorkGrid = document.getElementById('featured-work-grid')
+
+      if (featuredWorkGrid) {
+        const cards = Array.from(featuredWorkGrid.children)
+
+        // Fisher-Yates gives every featured project an equal chance of being
+        // included and avoids favoring the collection's default order.
+        for (let index = cards.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1))
+          ;[cards[index], cards[randomIndex]] = [cards[randomIndex], cards[index]]
+        }
+
+        cards.forEach((card, index) => {
+          card.classList.toggle('hidden', index >= 6)
+          featuredWorkGrid.appendChild(card)
+        })
+      }
+    </script>
 
     <div class="mt-10">
       <Button href="/portfolio" variant="ghost">See all our projects</Button>
