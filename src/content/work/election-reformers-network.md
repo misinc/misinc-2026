@@ -11,6 +11,7 @@ year: 2023
 order: 20
 services: [nonprofit-web-design, web-design, website-development]
 platforms: [webflow]
+featured: true
 seo:
   title: "Election Reformers Network Website | MIS, Inc."
   description: "MIS designed and built a publishing-focused Webflow site for Election Reformers Network, a national nonprofit advancing impartial election administration."

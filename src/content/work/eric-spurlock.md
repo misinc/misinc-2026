@@ -10,6 +10,7 @@ projectUrl: https://www.ericspurlock.com
 year: 2025
 order: 45
 services: [web-design, website-development]
+featured: false
 platforms: [webflow]
 seo:
   title: "Eric Spurlock Custom Home Website | MIS, Inc."

@@ -8,7 +8,7 @@ imageAlt: "Cheezie Chews website homepage showing the dog chew product range"
 year: 2017
 order: 65
 archived: true
-featured: true
+featured: false
 services: [ecommerce-website-design, web-design]
 platforms: [weebly-cloud]
 testimonial:
