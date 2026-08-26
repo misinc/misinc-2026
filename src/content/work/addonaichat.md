@@ -8,7 +8,7 @@ imageAlt: "Add On AI Chat website showing the AI customer support and lead captu
 projectUrl: https://www.addonaichat.com
 year: 2026
 order: 62
-featured: true
+featured: false
 services: [ai-agents, custom-software]
 platforms: []
 seo:

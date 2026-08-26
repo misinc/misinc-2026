@@ -8,7 +8,7 @@ imageAlt: "Add On IDX website showing its MLS integration for real estate design
 projectUrl: https://www.addonidx.com
 year: 2021
 order: 61
-featured: true
+featured: false
 services: [custom-software, real-estate-website-design]
 platforms: [webflow]
 seo:
