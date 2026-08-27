@@ -98,8 +98,8 @@ interface Props {
   layout?: 'split' | 'centered' | 'full' | 'background'
   /**
    * `background` layout only. The scrim color over the media, as a hex
-   * string. Defaults to the ink token so it stays on-brand rather than a
-   * generic black.
+   * string. Defaults to a neutral charcoal that preserves the media's natural
+   * color while maintaining contrast with white hero text.
    */
   overlayColor?: string
   /**
@@ -143,7 +143,7 @@ const {
   showMedia = true,
   typed,
   contrastPanel = false,
-  overlayColor = '#4a3115', // --color-ink
+  overlayColor = '#20252b',
   overlayOpacity = 70,
 } = Astro.props
 
@@ -271,7 +271,7 @@ const overlayStyle = isBackground
             class:list={[
               'hero-bg-content max-w-[760px]',
               contrastPanel &&
-                'rounded-md border border-white/10 bg-[rgba(40,24,10,0.62)] px-5 py-6 shadow-panel md:max-w-[560px] md:px-7 md:py-7',
+                'rounded-md border border-white/10 bg-[rgba(32,37,43,0.72)] px-5 py-6 shadow-panel md:max-w-[560px] md:px-7 md:py-7',
             ]}
           >
             <slot name="before" />
@@ -290,7 +290,7 @@ const overlayStyle = isBackground
                   <>
                     <br />
                     {/* prettier-ignore */}
-                    <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-[#fff6e6]">{typed.highlight}</span>}
+                    <span data-typed-text>{typed.text}</span>{typed.highlight && <span data-typed-highlight class="text-[#ffb340]">{typed.highlight}</span>}
                     <span class="caret" data-typed-caret aria-hidden="true" />
                   </>
                 )
