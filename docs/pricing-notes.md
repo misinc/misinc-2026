@@ -26,7 +26,7 @@ Two reasons this mattered more than a normal copy error:
 **Recommendation: yes, publish starting-at prices.** Reasoning:
 
 - **It protects your time**, which is the real constraint in a small studio. The
-  enquiry that was never going to afford you costs an hour of calls to discover.
+  inquiry that was never going to afford you costs an hour of calls to discover.
   A published floor filters that out before it reaches your calendar.
 - **It is the strongest AEO play available to you.** "How much does a website
   cost in Albuquerque" is precisely the question an assistant wants to answer,

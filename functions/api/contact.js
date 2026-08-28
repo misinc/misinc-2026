@@ -9,7 +9,7 @@
  *
  * Required environment variables (Cloudflare Pages → Settings → Environment):
  *   RESEND_API_KEY   Resend API key
- *   CONTACT_TO       where enquiries land, e.g. hello@misinc.com
+ *   CONTACT_TO       where inquiries land, e.g. hello@misinc.com
  *   CONTACT_FROM     a verified Resend sender, e.g. website@misinc.com
  */
 
@@ -89,7 +89,7 @@ export async function onRequestPost({ request, env }) {
   const email = String(data.email ?? '').trim()
   const message = String(data.message ?? '').trim()
   const phone = String(data.phone ?? '').trim()
-  const subject = String(data.subject ?? 'Website enquiry').trim()
+  const subject = String(data.subject ?? 'Website inquiry').trim()
   // Project-intake extras. Optional: the plain /contact form never sends
   // them, so a missing value here is normal, not an error.
   const budget = String(data.budget ?? '').trim()
@@ -115,22 +115,109 @@ export async function onRequestPost({ request, env }) {
       : redirect(request, `${formPage(request)}?error=validation`)
   }
 
-  const submittedAt = new Date().toISOString()
+  const submittedAt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Denver',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZoneName: 'short',
+  }).format(new Date())
+  const phoneHref = phone.replace(/[^+\d]/g, '')
+  const websiteHref = website
+    ? /^(?:https?:)?\/\//i.test(website)
+      ? website.startsWith('//')
+        ? `https:${website}`
+        : website
+      : `https://${website}`
+    : ''
+  const detailRow = (label, value, linkedValue = '') =>
+    value
+      ? `<tr>
+          <td style="width:145px;padding:10px 16px 10px 0;color:#89622e;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;vertical-align:top">${label}</td>
+          <td style="padding:10px 0;color:#4a3115;font-size:16px;line-height:1.5;vertical-align:top">${linkedValue || esc(value)}</td>
+        </tr>`
+      : ''
   const html = `
-    <h2>New enquiry from misinc.com</h2>
-    <p><strong>Name:</strong> ${esc(name)}</p>
-    <p><strong>Email:</strong> <a href="mailto:${esc(email)}">${esc(email)}</a></p>
-    ${phone ? `<p><strong>Phone:</strong> ${esc(phone)}</p>` : ''}
-    ${organization ? `<p><strong>Organization:</strong> ${esc(organization)}</p>` : ''}
-    ${website ? `<p><strong>Current website:</strong> ${esc(website)}</p>` : ''}
-    <p><strong>Subject:</strong> ${esc(subject)}</p>
-    ${budget ? `<p><strong>Budget:</strong> ${esc(budget)}</p>` : ''}
-    ${timeline ? `<p><strong>Timeline:</strong> ${esc(timeline)}</p>` : ''}
-    <p><strong>Message:</strong></p>
-    <p style="white-space:pre-wrap">${esc(message)}</p>
-    <hr>
-    <p style="color:#8f6a35;font-size:12px">Submitted ${esc(submittedAt)}</p>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="color-scheme" content="light">
+        <title>${esc(subject)}: ${esc(name)}</title>
+      </head>
+      <body style="margin:0;background:#f0e2c9;color:#4a3115;font-family:Arial,Helvetica,sans-serif">
+        <div style="display:none;max-height:0;overflow:hidden;opacity:0">New website inquiry from ${esc(name)}.</div>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f0e2c9;border-collapse:collapse">
+          <tr>
+            <td align="center" style="padding:32px 16px">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#fffdf9;border:1px solid #e8d6b7;border-radius:12px;border-collapse:separate;overflow:hidden">
+                <tr>
+                  <td style="background:#a62025;padding:30px 34px;color:#fff7ea">
+                    <div style="margin-bottom:10px;color:#ffcf88;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">MIS, Inc. · Website inquiry</div>
+                    <h1 style="margin:0 0 8px;font-size:26px;line-height:1.25">${esc(subject)}</h1>
+                    <p style="margin:0;color:#f6d9cc;font-size:16px;line-height:1.5">Submitted by ${esc(name)}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:30px 34px 10px">
+                    <a href="mailto:${esc(email)}?subject=${encodeURIComponent(`Re: ${subject}`)}" style="display:inline-block;background:#ff9902;border-radius:6px;color:#4a3115;font-size:15px;font-weight:700;padding:12px 18px;text-decoration:none">Reply to ${esc(name)}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 34px 20px">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+                      ${detailRow('Name', name)}
+                      ${detailRow('Email', email, `<a href="mailto:${esc(email)}" style="color:#a62025;text-decoration:underline">${esc(email)}</a>`)}
+                      ${detailRow('Phone', phone, phoneHref ? `<a href="tel:${esc(phoneHref)}" style="color:#a62025;text-decoration:underline">${esc(phone)}</a>` : '')}
+                      ${detailRow('Organization', organization)}
+                      ${detailRow('Current website', website, websiteHref ? `<a href="${esc(websiteHref)}" style="color:#a62025;text-decoration:underline">${esc(website)}</a>` : '')}
+                      ${detailRow('Budget', budget)}
+                      ${detailRow('Timeline', timeline)}
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 34px 30px">
+                    <div style="background:#fff3de;border-left:4px solid #ff9902;border-radius:6px;padding:20px 22px">
+                      <div style="margin-bottom:9px;color:#89622e;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Message</div>
+                      <div style="color:#4a3115;font-size:17px;line-height:1.65;white-space:pre-wrap">${esc(message)}</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-top:1px solid #eadbc2;padding:18px 34px 22px;color:#89622e;font-size:12px;line-height:1.5">
+                    Submitted ${esc(submittedAt)} via <a href="https://misinc.com" style="color:#89622e">misinc.com</a>. Replying to this email will respond directly to ${esc(name)}.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
   `
+  const text = [
+    `New inquiry from misinc.com`,
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    phone ? `Phone: ${phone}` : null,
+    organization ? `Organization: ${organization}` : null,
+    website ? `Current website: ${website}` : null,
+    `Subject: ${subject}`,
+    budget ? `Budget: ${budget}` : null,
+    timeline ? `Timeline: ${timeline}` : null,
+    '',
+    'Message:',
+    message,
+    '',
+    `Submitted ${submittedAt}`,
+  ]
+    .filter((line) => line !== null)
+    .join('\n')
 
   try {
     const res = await fetch('https://api.resend.com/emails', {
@@ -145,6 +232,7 @@ export async function onRequestPost({ request, env }) {
         reply_to: email,
         subject: `${subject}: ${name}`,
         html,
+        text,
       }),
     })
 

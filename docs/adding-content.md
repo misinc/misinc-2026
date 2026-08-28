@@ -57,7 +57,7 @@ order: 3                         # lower sorts first within its pillar
 platforms: [addonaichat]         # slugs from the platforms collection
 highlights:
   - Customer question handling
-  - Enquiry triage & routing
+  - Inquiry triage & routing
 nextStep: >-
   Closing CTA copy, rendered by <NextStep> with a real button.
 seo:
