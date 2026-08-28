@@ -19,6 +19,7 @@ export const PARTNERS = [
   { slug: 'shopify', name: 'Shopify', icon: '/img/platforms/shopify.svg', url:'https://www.shopify.com' },
   { slug: 'mailchimp', name: 'Mailchimp', icon: '/img/platforms/mailchimp.svg', url:'https://www.mailchimp.com' },
   { slug: 'ecwid', name: 'Ecwid', icon: '/img/platforms/ecwid.svg', url:'https://www.ecwid.com' },
+  { slug: 'hyperagent', name: 'Hyperagent', icon: '/img/platforms/hyperagent.svg', url:'https://hyperagent.com/refer/EVWETYQR' },
   { slug: 'addonidx', name: 'Add On IDX', icon: '/img/platforms/addonidx.svg', wide: true, url:'https://www.addonidx.com' },
   { slug: 'addonaichat', name: 'Add On AI Chat', icon: '/img/platforms/addonaichat.svg', wide: true, url:'https://www.addonaichat.com' },
 ] as const

@@ -4,7 +4,7 @@ heading: Give one repetitive task to a carefully limited agent
 summary: Purpose-built agents that use approved information and limited tools to handle routine questions, triage, scheduling, follow-up, and other defined work.
 pillar: software-ai
 order: 30
-platforms: []
+platforms: [hyperagent, addonaichat]
 highlights:
   - Narrow tasks and permissions
   - Approved knowledge and clean handoff
@@ -57,4 +57,4 @@ The exact action and approval model depends on the consequences of a mistake. Se
 
 **Testing and monitoring.** We test expected requests, edge cases, handoffs, and failures before launch, then review real use and adjust the system.
 
-For organizations that need a focused website assistant rather than a custom agent, [Add On AI Chat](/platforms/addonaichat) provides a managed option built for small businesses and nonprofits. More of our implementation work is available at [MIS, Inc. AI](https://misinc.ai).
+[Hyperagent](/platforms/hyperagent) provides the workspace for building AI teammates with persistent instructions, context, tools, and controls. For organizations that need a focused website assistant rather than a custom agent, [Add On AI Chat](/platforms/addonaichat) provides a managed option built for small businesses and nonprofits. More of our implementation work is available at [MIS, Inc. AI](https://misinc.ai).
