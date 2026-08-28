@@ -37,6 +37,7 @@ const services = defineCollection({
           name: z.string(),
           summary: z.string(),
           capabilities: z.array(z.string()).default([]),
+          href: z.string().optional(),
         }),
       )
       .default([]),

@@ -34,6 +34,20 @@ examples:
       - Gather discovery material and website content
       - Collect design feedback and approvals at each stage
       - Manage launch, handoff, and client training documents
+  - name: Add On AI Chat
+    summary: A managed AI chat product for small businesses and nonprofits that need useful website answers without an oversized software package.
+    capabilities:
+      - Learn from approved content on the organization’s website
+      - Answer documented questions around the clock
+      - Capture leads with the conversation context attached
+    href: /platforms/addonaichat
+  - name: Add On IDX
+    summary: A flexible IDX product that adds searchable MLS listings to real estate websites without forcing designers onto a particular platform.
+    capabilities:
+      - Provide MLS search, featured listings, and listing detail pages
+      - Support open houses, virtual tours, lead forms, and analytics
+      - Integrate with Webflow, WordPress, Framer, Squarespace, Weebly, and other platforms
+    href: /platforms/addonidx
 heroLabel: Custom Software
 nextStep: >-
   Describe the process that causes the most repeated work or errors. We will tell you whether custom software is justified or whether a tool you already have can solve it.
@@ -70,4 +84,4 @@ Custom software has a life after launch. Hosting, monitoring, security updates, 
 
 We use established, supported technologies and provide documentation appropriate to the project. The goal is to make the system understandable and maintainable, including if another qualified developer needs to work on it later.
 
-Our own [Add On IDX](/platforms/addonidx) and [Add On AI Chat](/platforms/addonaichat) products began with the same decision: the available software did not fit the job closely enough.
+Two of the examples below, [Add On IDX](/platforms/addonidx) and [Add On AI Chat](/platforms/addonaichat), are products we continue to build and maintain. Both began with the same decision: the available software did not fit the job closely enough.

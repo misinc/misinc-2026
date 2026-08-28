@@ -153,12 +153,13 @@ const breadcrumbs = {
           <div class="grid gap-5 md:grid-cols-2">
             {service.data.examples.map((example) => (
               <Card
-                variant="plain"
+                variant="service"
                 tag="Custom application"
                 title={example.name}
                 blurb={example.summary}
                 bullets={example.capabilities}
-                class="p-7"
+                href={example.href}
+                cta={example.href ? 'Learn more' : undefined}
               />
             ))}
           </div>
