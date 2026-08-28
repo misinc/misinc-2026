@@ -30,6 +30,16 @@ const services = defineCollection({
     platforms: z.array(z.string()).default([]),
     /** Short bullets for the hub card. */
     highlights: z.array(z.string()).default([]),
+    /** Optional examples of completed work shown on the service detail page. */
+    examples: z
+      .array(
+        z.object({
+          name: z.string(),
+          summary: z.string(),
+          capabilities: z.array(z.string()).default([]),
+        }),
+      )
+      .default([]),
     /** Closing call-to-action copy, rendered by <NextStep> with a real button. */
     nextStep: z.string(),
     seo,

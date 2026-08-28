@@ -9,6 +9,31 @@ highlights:
   - Web applications and client portals
   - Integrations between systems
   - Internal tools and automation
+examples:
+  - name: Shelf
+    summary: A read-it-later and bookmarking service for saving useful material and returning to it when there is time to read.
+    capabilities:
+      - Save articles and web pages in one place
+      - Organize bookmarks for later reference
+      - Return to saved material through a focused reading workflow
+  - name: Custom CRM
+    summary: A purpose-built CRM that keeps the full client relationship and the work attached to it in one system.
+    capabilities:
+      - Manage clients and contacts
+      - Track projects, contracts, and estimates
+      - Create and manage invoices alongside the underlying work
+  - name: Prospect
+    summary: A prospecting application for finding relevant companies, identifying the right contacts, and preparing personalized outreach.
+    capabilities:
+      - Search by business type or industry within a chosen radius
+      - Return company names, addresses, phone numbers, email addresses, websites, and ratings
+      - Find contacts and send personalized emails from prepared templates
+  - name: Atlas
+    summary: A project management application designed around the complete web design agency workflow, from discovery through client handoff.
+    capabilities:
+      - Gather discovery material and website content
+      - Collect design feedback and approvals at each stage
+      - Manage launch, handoff, and client training documents
 heroLabel: Custom Software
 nextStep: >-
   Describe the process that causes the most repeated work or errors. We will tell you whether custom software is justified or whether a tool you already have can solve it.
